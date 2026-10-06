@@ -16,7 +16,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
@@ -34,6 +34,11 @@ jobs:
           # KIS_APP_KEY: ${{ secrets.KIS_APP_KEY }}
           # KIS_APP_SECRET: ${{ secrets.KIS_APP_SECRET }}
         run: python run_daily.py --provider naver
+
+      - name: Update frozen OOS log and score matured alerts
+        env:
+          TZ: Asia/Seoul
+        run: python oos_tracker.py --provider naver
 
       - name: Commit results
         run: |
