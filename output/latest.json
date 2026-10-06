@@ -1,0 +1,56 @@
+{
+  "schema": "semis-radar/v2",
+  "generated_at": "2026-10-06T14:00:25+09:00",
+  "provider": "naver",
+  "data_ok": false,
+  "asof": null,
+  "is_new_bar": false,
+  "missing": [],
+  "fetch_errors": {
+    "005930": "005930: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "000660": "000660: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "084370": "084370: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "095610": "095610: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "036930": "036930: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "240810": "240810: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "403870": "403870: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "319660": "319660: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "067310": "067310: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "039030": "039030: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "042700": "042700: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "031980": "031980: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "222800": "222800: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "007660": "007660: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "353200": "353200: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "005290": "005290: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "014680": "014680: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "104830": "104830: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "357780": "357780: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "095340": "095340: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "003160": "003160: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "058470": "058470: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "089030": "089030: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "232140": "232140: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "074600": "074600: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "166090": "166090: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "064760": "064760: 데이터 수신 실패 (multi-byte encodings are not supported)",
+    "183300": "183300: 데이터 수신 실패 (multi-byte encodings are not supported)"
+  },
+  "coverage": {
+    "requested_start": "2024-04-19",
+    "first_dates": {}
+  },
+  "last_ok_state": null,
+  "error_signature": [
+    "과거 데이터 부족 000660: 요청 시작 2024-04-19, 실제 첫 일봉 None",
+    "과거 데이터 부족 005930: 요청 시작 2024-04-19, 실제 첫 일봉 None"
+  ],
+  "alert": {
+    "changed": true,
+    "message": "[데이터 오류] 판정 보류: 과거 데이터 부족 000660: 요청 시작 2024-04-19, 실제 첫 일봉 None / 과거 데이터 부족 005930: 요청 시작 2024-04-19, 실제 첫 일봉 None"
+  },
+  "state": {
+    "phase": "HOLD",
+    "phase_kr": "판정보류"
+  }
+}
