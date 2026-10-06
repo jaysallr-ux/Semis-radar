@@ -1,6 +1,8 @@
 name: semis-radar-daily
 
 on:
+  push:
+    branches: [main]   # 첫 실데이터 검증용 임시 트리거. 검증 후 제거.
   schedule:
     # UTC 07:37 = KST 16:37, 평일. 정각은 혼잡해서 지연/누락될 수 있어 애매한 분으로.
     - cron: "37 7 * * 1-5"
