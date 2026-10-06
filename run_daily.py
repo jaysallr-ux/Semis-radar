@@ -51,17 +51,23 @@ def main():
     ap.add_argument("--provider", default="naver")
     ap.add_argument("--outdir", default=os.path.join(HERE, "output"))
     ap.add_argument("--lookback-days", type=int, default=900, help="달력일 기준 수신 기간")
+    ap.add_argument("--allow-intraday", action="store_true", help="장중 진단용. 생산 스케줄에서는 사용 금지")
     args = ap.parse_args()
+
+    now = dt.datetime.now(KST)
+    if (args.provider.lower() != "fake" and not args.allow_intraday
+            and now.weekday() < 5 and now.time() < dt.time(15, 40)):
+        print(f"[SKIP] 장중 {now:%H:%M} KST — 종가 확정 전이라 판정/저장하지 않음")
+        return
 
     universe = load_json(os.path.join(HERE, "universe.json"))
     p = load_json(os.path.join(HERE, "params.json"))
     os.makedirs(args.outdir, exist_ok=True)
     latest_path = os.path.join(args.outdir, "latest.json")
     prev_out = load_json(latest_path) or {}
-    prev_ok_state = prev_out.get("last_ok_state")      # 마지막으로 정상 판정된 상태 (알림 비교 기준)
-    prev_err_sig = prev_out.get("error_signature")      # 직전 실행의 오류 내용
+    prev_ok_state = prev_out.get("last_ok_state")
+    prev_err_sig = prev_out.get("error_signature")
 
-    now = dt.datetime.now(KST)
     today = now.date()
     start = today - dt.timedelta(days=args.lookback_days)
     provider = get_provider(args.provider)
@@ -90,7 +96,6 @@ def main():
             json.dump(result, f, ensure_ascii=False, indent=2)
 
     def fail(problems: list[str]):
-        """오류 상태 기록. 오류 내용이 직전과 달라졌을 때만 알림."""
         sig = sorted(problems)
         result["data_ok"] = False
         result["error_signature"] = sig
@@ -100,14 +105,12 @@ def main():
         write()
         print(f"판정 보류: {sig} / alert.changed={changed}")
 
-    # ---- 1) 기간 잘림 검사 (조용한 실패 방지) ----
     bm = universe["benchmark"]
     cov_ok, cov_bad, cov_report = check_coverage(prices, [bm["hynix"], bm["samsung"]], start)
     result["coverage"] = {"requested_start": start.isoformat(), "first_dates": cov_report}
     if not cov_ok:
         return fail([f"과거 데이터 부족 {b}" for b in cov_bad])
 
-    # ---- 2) 지표 준비 ----
     try:
         prep = prepare(universe, prices, kospi, p)
     except Exception as e:
@@ -118,7 +121,6 @@ def main():
     is_new_bar = prev_out.get("asof") != result["asof"]
     result["is_new_bar"] = is_new_bar
 
-    # ---- 3) 최신 일봉 결측 검사 ----
     missing, missing_tickers = [], set()
     for j, s in enumerate(universe["stocks"]):
         ld = prep["last_date"].get(s["ticker"])
@@ -139,7 +141,6 @@ def main():
     cur = days[-1]
     cur_state = {k: cur.get(k) for k in ["phase", "hynix_lead", "part_leader", "active_chains", "late_level"]}
 
-    # ---- 종목 표 ----
     rows = []
     a = prep["arr"]
     for j, s in enumerate(universe["stocks"]):
@@ -160,12 +161,7 @@ def main():
             "last_new_turn": prep["dates"][nt_idx[-1]].date().isoformat() if len(nt_idx) else None,
         })
 
-    # ---- 알림 판정 ----
-    #  - 비교 기준은 '마지막으로 정상 판정된 상태'(last_ok_state). 실행이 하루 빠져도 변화를 놓치지 않음
-    #  - 첫 실행은 기준선만 만들고 알림 없음
-    #  - 새 일봉이 없으면(휴장일·재실행) 알림 없음
     if prev_err_sig:
-        # 직전이 오류였으면 새 일봉 여부와 상관없이 정상화 알림 1회 (+ 그 사이 상태 변화)
         _, diff = describe_change(prev_ok_state, cur_state) if prev_ok_state else (False, [])
         changed, msgs = True, ["[데이터 정상화]"] + diff
     elif not is_new_bar:
