@@ -1,0 +1,25 @@
+name: semis-radar-suggest-temp
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/backtest-suggest-temp.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  suggest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Suggest list dates
+        env:
+          TZ: Asia/Seoul
+        run: python backtest.py --provider naver --suggest-list-dates
