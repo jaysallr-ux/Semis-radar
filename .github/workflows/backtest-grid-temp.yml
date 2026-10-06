@@ -1,0 +1,33 @@
+name: semis-radar-grid-v3-temp
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/backtest-grid-temp.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  grid:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Run v3 grid
+        env:
+          TZ: Asia/Seoul
+        run: python backtest.py --provider naver --grid
+      - name: Commit v3 results
+        run: |
+          git config user.name "semis-radar-bot"
+          git config user.email "semis-radar-bot@users.noreply.github.com"
+          git add backtest/
+          git commit -m "backtest v3 grid results" || echo "변경 없음"
+          git pull --rebase
+          git push
