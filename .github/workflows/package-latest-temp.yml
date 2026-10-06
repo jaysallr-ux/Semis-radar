@@ -17,18 +17,14 @@ jobs:
       - name: Build latest zip
         run: |
           python - <<'PY'
-          import os, zipfile
+          import subprocess, zipfile
           out='Semis-radar-latest.zip'
-          exclude={'.git', '.github/workflows/package-latest-temp.yml', out}
+          files=subprocess.check_output(['git','ls-files'], text=True).splitlines()
+          files=[p for p in files if p != '.github/workflows/package-latest-temp.yml']
           with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
-              for root, dirs, files in os.walk('.'):
-                  dirs[:] = [d for d in dirs if os.path.join(root,d).lstrip('./') != '.git']
-                  for f in files:
-                      p=os.path.join(root,f).lstrip('./')
-                      if p in exclude or p.startswith('.git/'):
-                          continue
-                      z.write(p,p)
-          print(out)
+              for p in files:
+                  z.write(p,p)
+          print(out, len(files))
           PY
       - uses: actions/upload-artifact@v4
         with:
