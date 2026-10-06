@@ -1,5 +1,5 @@
 {
-  "_comment": "임계값은 2015~2026 실데이터 백테스트로 1차 튜닝. RS 단위는 %p, 비율은 0~1.",
+  "_comment": "운영 임계값 동결(2026-10-06). 자동사이클+랜덤기준+LOCO 검증 후 25%/10일/60%/5파트 채택. 신규 표본이 쌓이기 전 결과 보고 재튜닝 금지. RS 단위는 %p, 비율은 0~1.",
   "ma": 20,
   "slope_lag": 5,
   "ret_short": 20,
@@ -8,13 +8,13 @@
   "vol_lookback": 20,
   "off_close_below_days": 2,
   "min_off_days_for_new_turn": 10,
-  "new_turn_window": 5,
+  "new_turn_window": 10,
   "min_semis_valid": 8,
   "part_min_valid_n": 2,
   "part_min_valid_share": 0.66,
   "min_valid_share": 0.8,
   "vol_ratio_hot": 1.3,
-  "early_enter_breadth": 0.35,
+  "early_enter_breadth": 0.25,
   "early_min_parts": 2,
   "early_min_vol_share": 0.2,
   "early_exit_breadth": 0.1,
@@ -42,6 +42,8 @@
   "late_fail_share": 0.5,
   "memory_stale_days": 45,
   "pipeline_stale_days": 3,
-  "late_close_dates": [],
-  "_late_close_comment": "수능일 등 장 마감이 16:30으로 늦어지는 날짜(YYYY-MM-DD). 이 날은 16:40 이전 실행을 차단"
+  "late_close_dates": [
+    "2026-11-19"
+  ],
+  "_late_close_comment": "수능일 등 장 마감이 16:30으로 늦어지는 날짜(YYYY-MM-DD). 해당일 16:40 이전 실행 차단. 생산 cron은 16:50 KST라 정상 실행."
 }
