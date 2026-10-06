@@ -1,0 +1,29 @@
+name: semis-radar-oos-verify-temp
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oos-verify-temp.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Syntax check
+        run: python -m py_compile run_daily.py oos_tracker.py backtest.py regime.py data_provider.py indicators.py
+      - name: Verify frozen OOS tracker on current baseline
+        env:
+          TZ: Asia/Seoul
+        run: |
+          python oos_tracker.py --provider naver
+          cat output/history.csv
