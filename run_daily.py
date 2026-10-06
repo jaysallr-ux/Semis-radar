@@ -54,14 +54,17 @@ def main():
     ap.add_argument("--allow-intraday", action="store_true", help="장중 진단용. 생산 스케줄에서는 사용 금지")
     args = ap.parse_args()
 
-    now = dt.datetime.now(KST)
-    if (args.provider.lower() != "fake" and not args.allow_intraday
-            and now.weekday() < 5 and now.time() < dt.time(15, 40)):
-        print(f"[SKIP] 장중 {now:%H:%M} KST — 종가 확정 전이라 판정/저장하지 않음")
-        return
-
     universe = load_json(os.path.join(HERE, "universe.json"))
     p = load_json(os.path.join(HERE, "params.json"))
+
+    now = dt.datetime.now(KST)
+    # 장 마감 확정 전 실행 차단. 수능일처럼 마감이 늦는 날은 params.late_close_dates 에 등록
+    late = now.date().isoformat() in p.get("late_close_dates", [])
+    cutoff = dt.time(16, 40) if late else dt.time(15, 40)
+    if (args.provider.lower() != "fake" and not args.allow_intraday
+            and now.weekday() < 5 and now.time() < cutoff):
+        print(f"[SKIP] {now:%H:%M} KST — 종가 확정 전({cutoff:%H:%M} 이전)이라 판정/저장하지 않음")
+        return
     os.makedirs(args.outdir, exist_ok=True)
     latest_path = os.path.join(args.outdir, "latest.json")
     prev_out = load_json(latest_path) or {}
@@ -106,13 +109,13 @@ def main():
         print(f"판정 보류: {sig} / alert.changed={changed}")
 
     bm = universe["benchmark"]
-    cov_ok, cov_bad, cov_report = check_coverage(prices, [bm["hynix"], bm["samsung"]], start)
-    result["coverage"] = {"requested_start": start.isoformat(), "first_dates": cov_report}
+    cov_ok, cov_bad, cov_report, _ = check_coverage(prices, universe, start)
+    result["coverage"] = {"requested_start": start.isoformat(), "stocks": cov_report}
     if not cov_ok:
         return fail([f"과거 데이터 부족 {b}" for b in cov_bad])
 
     try:
-        prep = prepare(universe, prices, kospi, p)
+        prep = prepare(universe, prices, kospi, p, start=start)
     except Exception as e:
         return fail([f"판정 불가 {e}"])
 

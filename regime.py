@@ -16,6 +16,7 @@ import warnings
 import numpy as np
 import pandas as pd
 
+from data_provider import expected_from
 from indicators import compute_indicators
 
 PHASE_KR = {"NORMAL": "평시", "EARLY": "초입후보", "CONFIRMED": "사이클확인", "HOLD": "판정보류"}
@@ -60,7 +61,7 @@ def update_part_leader(st: dict, part_stats: dict, p: dict):
     return st["leader"]
 
 
-def prepare(universe: dict, prices: dict, kospi: pd.DataFrame | None, p: dict) -> dict:
+def prepare(universe: dict, prices: dict, kospi: pd.DataFrame | None, p: dict, start=None) -> dict:
     stocks = universe["stocks"]
     hy = universe["benchmark"]["hynix"]
     if hy not in prices or prices[hy].empty:
@@ -76,9 +77,13 @@ def prepare(universe: dict, prices: dict, kospi: pd.DataFrame | None, p: dict) -
     new_turn = np.zeros((T, N), dtype=bool)
     turn_on = np.zeros((T, N), dtype=bool)
     last_date, first_date = {}, {}
-    # expected: 그날 데이터가 '있어야 정상'인 종목. 상장 전/valid_from 전은 False,
-    # 수신 자체가 실패한 종목은 전 구간 True (→ 결측으로 잡혀 파트 커버리지에 반영)
-    expected = np.ones((T, N), dtype=bool)
+    # expected: 그날 데이터가 '있어야 정상'인 종목.
+    # 실제 첫 수신일이 아니라 선언된 기대 시작일(list_date/valid_from/요청 시작일)로 정한다.
+    # → 소스가 과거를 잘라도 '상장 전'으로 오인하지 않고 결측으로 잡힘
+    start_d = start or master[0].date()
+    expected = np.zeros((T, N), dtype=bool)
+    for j, s in enumerate(stocks):
+        expected[:, j] = master >= pd.Timestamp(expected_from(s, start_d))
 
     for j, s in enumerate(stocks):
         df = prices.get(s["ticker"])
@@ -91,7 +96,6 @@ def prepare(universe: dict, prices: dict, kospi: pd.DataFrame | None, p: dict) -
                 continue
         last_date[s["ticker"]] = df.index.max()
         first_date[s["ticker"]] = df.index.min()
-        expected[:, j] = master >= df.index.min()
         ind = compute_indicators(df, p).reindex(master)
         for k in keys:
             arr[k][:, j] = ind[k].to_numpy(dtype=float)

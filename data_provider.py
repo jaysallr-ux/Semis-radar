@@ -196,18 +196,40 @@ def get_provider(name: str) -> DataProvider:
     raise ValueError(f"알 수 없는 provider: {name}")
 
 
-def check_coverage(prices: dict, sentinels: list[str], start: dt.date, tolerance_days: int = 20):
+def expected_from(stock: dict, start: dt.date) -> dt.date:
+    """그 종목 데이터가 '있어야 정상'인 첫 날짜 = max(요청 시작일, list_date, valid_from)"""
+    cands = [start]
+    for k in ("list_date", "valid_from"):
+        if stock.get(k):
+            cands.append(dt.date.fromisoformat(stock[k]))
+    return max(cands)
+
+
+def check_coverage(prices: dict, universe: dict, start: dt.date, tolerance_days: int = 20,
+                   require_all: bool = False):
     """
-    조용한 실패 방지: 오래 상장된 기준 종목(하닉·삼전)의 첫 일봉이 요청 시작일 근처인지 확인.
-    소스가 내부적으로 기간을 잘라버리면 여기서 걸린다.
-    신규 상장 종목은 첫 날짜가 늦은 게 정상이라 판정에는 안 쓰고 리포트만 한다.
+    조용한 실패 방지: 모든 종목의 첫 일봉이 기대 시작일(요청 시작일·상장일·valid_from 중 가장 늦은 날) 근처인지 확인.
+    - list_date 를 안 적은 종목은 '요청 시작일부터 있어야 정상'으로 본다.
+      → 소스가 과거를 잘라도 '상장 전'으로 착각하지 않음
+    - 진짜 늦게 상장한 종목은 universe.json 에 list_date(KRX 상장일)를 적어야 통과
+    require_all=True 이면 수신 자체 실패 종목도 오류로 본다(백테스트용).
+    반환: (ok, 문제목록, 리포트, list_date 후보)
     """
-    report = {t: (df.index.min().date().isoformat() if df is not None and not df.empty else None)
-              for t, df in prices.items()}
-    limit = start + dt.timedelta(days=tolerance_days)
-    bad = []
-    for t in sentinels:
-        first = report.get(t)
-        if first is None or dt.date.fromisoformat(first) > limit:
-            bad.append(f"{t}: 요청 시작 {start}, 실제 첫 일봉 {first}")
-    return len(bad) == 0, bad, report
+    tol = dt.timedelta(days=tolerance_days)
+    bad, report, suggest = [], {}, {}
+    for s in universe["stocks"]:
+        t = s["ticker"]
+        df = prices.get(t)
+        exp = expected_from(s, start)
+        first = df.index.min().date() if df is not None and not df.empty else None
+        report[t] = {"name": s["name"], "expected_from": exp.isoformat(),
+                     "first": first.isoformat() if first else None}
+        if first is None:
+            if require_all:
+                bad.append(f"{s['name']}({t}): 데이터 없음")
+            continue
+        if first > exp + tol:
+            bad.append(f"{s['name']}({t}): 기대 시작 {exp}, 실제 첫 일봉 {first}")
+            if not s.get("list_date"):
+                suggest[t] = first.isoformat()
+    return len(bad) == 0, bad, report, suggest
