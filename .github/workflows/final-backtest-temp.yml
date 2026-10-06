@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - name: Run final selected parameters
+      - name: Run final balanced parameters
         env:
           TZ: Asia/Seoul
         run: python backtest.py --provider naver
@@ -28,6 +28,6 @@ jobs:
           git config user.name "semis-radar-bot"
           git config user.email "semis-radar-bot@users.noreply.github.com"
           git add backtest/summary.json backtest/daily_states.csv
-          git commit -m "final selected-parameter backtest" || echo "변경 없음"
+          git commit -m "final balanced-parameter backtest" || echo "변경 없음"
           git pull --rebase
           git push
