@@ -17,7 +17,10 @@ jobs:
           req=urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0 (semis-radar-smoke)'})
           with urllib.request.urlopen(req, timeout=10) as r:
               data=r.read()
-          root=ET.fromstring(data)
+              print('content-type=', r.headers.get('content-type'))
+          print('prefix=', data[:120])
+          text=data.decode('euc-kr')
+          root=ET.fromstring(text)
           rows=[x.get('data') for x in root.iter('item')]
           print('rows=', len(rows))
           print('last=', rows[-1] if rows else None)
