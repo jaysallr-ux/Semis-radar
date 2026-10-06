@@ -2,8 +2,8 @@ name: semis-radar-daily
 
 on:
   schedule:
-    # UTC 07:37 = KST 16:37, 평일. 정각은 혼잡해서 지연/누락될 수 있어 애매한 분으로.
-    - cron: "37 7 * * 1-5"
+    # UTC 07:50 = KST 16:50, 평일. 수능일 16:30 장마감에도 20분 여유 확보.
+    - cron: "50 7 * * 1-5"
   workflow_dispatch: {}   # Actions 탭에서 수동 실행용
 
 permissions:
