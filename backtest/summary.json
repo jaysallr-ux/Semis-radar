@@ -12,9 +12,9 @@
     {
       "reference": "2019-12-02",
       "status": "탐지",
-      "entry_date": "2019-06-24",
-      "entry_lag_td": -110,
-      "entry_phase": "EARLY",
+      "entry_date": "2019-07-05",
+      "entry_lag_td": -101,
+      "entry_phase": "CONFIRMED",
       "confirm_date": "2019-07-05",
       "confirm_lag_td": -101
     },
@@ -39,40 +39,35 @@
   ],
   "detected": 4,
   "too_early": 0,
-  "avg_entry_lag_td": -88.2,
+  "avg_entry_lag_td": -86.0,
   "reference_window_outside_entries": [
     "2015-05-19",
     "2015-09-23",
-    "2015-11-30",
-    "2017-03-16",
     "2017-04-03",
     "2017-06-01",
     "2017-07-18",
     "2017-09-07",
     "2017-11-17",
-    "2018-04-30",
     "2018-05-30",
     "2019-01-16",
     "2019-04-04",
-    "2020-07-14",
     "2020-09-17",
-    "2020-11-12",
+    "2020-11-13",
     "2021-02-19",
-    "2021-04-05",
-    "2021-06-10",
+    "2021-04-07",
     "2021-11-03",
     "2021-12-27",
     "2022-03-25",
     "2022-07-27",
     "2022-10-28",
-    "2023-11-17",
+    "2023-11-20",
     "2024-01-04",
     "2024-03-06",
     "2024-06-18",
-    "2024-10-11",
-    "2025-12-29",
+    "2024-10-14",
+    "2025-12-26",
     "2026-04-17",
-    "2026-08-18",
+    "2026-08-19",
     "2026-09-21"
   ],
   "cycles": [
@@ -117,68 +112,63 @@
       "cycle_start": "2025-04-01",
       "cycle_end": null,
       "status": "탐지",
-      "entry_date": "2025-02-14",
-      "lag_vs_cycle_start_td": -31,
-      "lag_vs_hynix_reference_td": -75,
+      "entry_date": "2025-01-03",
+      "lag_vs_cycle_start_td": -57,
+      "lag_vs_hynix_reference_td": -101,
       "entry_phase": "CONFIRMED",
       "confirm_date": "2025-01-03",
       "confirm_lag_vs_start_td": -57
     }
   ],
   "cycle_detected": 4,
-  "avg_cycle_start_lag_td": -12.0,
+  "avg_cycle_start_lag_td": -18.5,
   "off_cycle_false_positives": [
     "2015-05-19",
     "2015-09-23",
-    "2015-11-30",
     "2019-01-16",
     "2022-07-27"
   ],
   "in_cycle_entries": [
     "2016-06-10",
     "2016-07-13",
-    "2016-12-16",
-    "2017-03-16",
+    "2016-12-15",
     "2017-04-03",
     "2017-06-01",
     "2017-07-18",
     "2017-09-07",
     "2017-11-17",
-    "2018-04-30",
     "2018-05-30",
-    "2019-06-24",
+    "2019-07-05",
     "2019-09-05",
     "2019-12-16",
     "2020-04-14",
-    "2020-07-14",
     "2020-09-17",
-    "2020-11-12",
+    "2020-11-13",
     "2021-02-19",
-    "2021-04-05",
-    "2021-06-10",
+    "2021-04-07",
     "2021-11-03",
     "2021-12-27",
     "2022-03-25",
     "2023-01-11",
-    "2023-03-27",
+    "2023-03-30",
+    "2023-04-10",
     "2023-05-24",
     "2023-07-19",
-    "2023-09-14",
-    "2023-11-17",
+    "2023-11-20",
     "2024-01-04",
     "2024-03-06",
     "2024-06-18",
-    "2024-10-11",
+    "2024-10-14",
     "2024-12-18",
     "2025-05-12",
     "2025-06-05",
     "2025-09-09",
-    "2025-12-29",
+    "2025-12-26",
     "2026-04-17",
-    "2026-08-18",
+    "2026-08-19",
     "2026-09-21"
   ],
-  "n_entries": 50,
+  "n_entries": 46,
   "entries_fwd": [
     {
       "date": "2015-05-19",
@@ -201,16 +191,6 @@
       "ew_fwd120_pct": 2.7
     },
     {
-      "date": "2015-11-30",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": true,
-      "inside_cycle": false,
-      "ew_fwd20_pct": 2.3,
-      "ew_fwd60_pct": 5.6,
-      "ew_fwd120_pct": 11.9
-    },
-    {
       "date": "2016-06-10",
       "phase": "CONFIRMED",
       "near_reference": true,
@@ -231,24 +211,14 @@
       "ew_fwd120_pct": 6.1
     },
     {
-      "date": "2016-12-16",
+      "date": "2016-12-15",
       "phase": "EARLY",
       "near_reference": true,
       "off_cycle_false_positive": false,
       "inside_cycle": true,
-      "ew_fwd20_pct": 1.8,
-      "ew_fwd60_pct": 2.0,
-      "ew_fwd120_pct": 20.1
-    },
-    {
-      "date": "2017-03-16",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 4.5,
-      "ew_fwd60_pct": 17.8,
-      "ew_fwd120_pct": 30.6
+      "ew_fwd20_pct": 5.7,
+      "ew_fwd60_pct": 3.9,
+      "ew_fwd120_pct": 21.9
     },
     {
       "date": "2017-04-03",
@@ -301,16 +271,6 @@
       "ew_fwd120_pct": -10.9
     },
     {
-      "date": "2018-04-30",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 4.3,
-      "ew_fwd60_pct": -4.1,
-      "ew_fwd120_pct": -22.8
-    },
-    {
       "date": "2018-05-30",
       "phase": "CONFIRMED",
       "near_reference": false,
@@ -341,14 +301,14 @@
       "ew_fwd120_pct": -5.3
     },
     {
-      "date": "2019-06-24",
-      "phase": "EARLY",
+      "date": "2019-07-05",
+      "phase": "CONFIRMED",
       "near_reference": true,
       "off_cycle_false_positive": false,
       "inside_cycle": true,
-      "ew_fwd20_pct": 7.3,
-      "ew_fwd60_pct": 7.7,
-      "ew_fwd120_pct": 24.3
+      "ew_fwd20_pct": -4.3,
+      "ew_fwd60_pct": 4.7,
+      "ew_fwd120_pct": 28.5
     },
     {
       "date": "2019-09-05",
@@ -381,16 +341,6 @@
       "ew_fwd120_pct": 62.3
     },
     {
-      "date": "2020-07-14",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 15.3,
-      "ew_fwd60_pct": 13.0,
-      "ew_fwd120_pct": 40.0
-    },
-    {
       "date": "2020-09-17",
       "phase": "CONFIRMED",
       "near_reference": false,
@@ -401,14 +351,14 @@
       "ew_fwd120_pct": 36.6
     },
     {
-      "date": "2020-11-12",
-      "phase": "EARLY",
+      "date": "2020-11-13",
+      "phase": "CONFIRMED",
       "near_reference": false,
       "off_cycle_false_positive": false,
       "inside_cycle": true,
-      "ew_fwd20_pct": 12.2,
-      "ew_fwd60_pct": 32.2,
-      "ew_fwd120_pct": 55.3
+      "ew_fwd20_pct": 10.4,
+      "ew_fwd60_pct": 30.5,
+      "ew_fwd120_pct": 47.2
     },
     {
       "date": "2021-02-19",
@@ -421,24 +371,14 @@
       "ew_fwd120_pct": 14.7
     },
     {
-      "date": "2021-04-05",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 0.6,
-      "ew_fwd60_pct": 4.7,
-      "ew_fwd120_pct": 0.1
-    },
-    {
-      "date": "2021-06-10",
-      "phase": "EARLY",
+      "date": "2021-04-07",
+      "phase": "CONFIRMED",
       "near_reference": false,
       "off_cycle_false_positive": false,
       "inside_cycle": true,
       "ew_fwd20_pct": 2.3,
-      "ew_fwd60_pct": 5.3,
-      "ew_fwd120_pct": 15.6
+      "ew_fwd60_pct": 4.3,
+      "ew_fwd120_pct": -1.4
     },
     {
       "date": "2021-11-03",
@@ -501,14 +441,24 @@
       "ew_fwd120_pct": 42.5
     },
     {
-      "date": "2023-03-27",
+      "date": "2023-03-30",
       "phase": "EARLY",
       "near_reference": true,
       "off_cycle_false_positive": false,
       "inside_cycle": true,
-      "ew_fwd20_pct": 0.2,
-      "ew_fwd60_pct": 25.0,
-      "ew_fwd120_pct": 39.6
+      "ew_fwd20_pct": -6.2,
+      "ew_fwd60_pct": 19.4,
+      "ew_fwd120_pct": 22.7
+    },
+    {
+      "date": "2023-04-10",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "off_cycle_false_positive": false,
+      "inside_cycle": true,
+      "ew_fwd20_pct": -7.5,
+      "ew_fwd60_pct": 17.5,
+      "ew_fwd120_pct": 25.6
     },
     {
       "date": "2023-05-24",
@@ -531,24 +481,14 @@
       "ew_fwd120_pct": 8.5
     },
     {
-      "date": "2023-09-14",
-      "phase": "EARLY",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -6.6,
-      "ew_fwd60_pct": 7.9,
-      "ew_fwd120_pct": 23.1
-    },
-    {
-      "date": "2023-11-17",
-      "phase": "EARLY",
+      "date": "2023-11-20",
+      "phase": "CONFIRMED",
       "near_reference": false,
       "off_cycle_false_positive": false,
       "inside_cycle": true,
-      "ew_fwd20_pct": 2.7,
-      "ew_fwd60_pct": 7.2,
-      "ew_fwd120_pct": 44.3
+      "ew_fwd20_pct": 4.8,
+      "ew_fwd60_pct": 8.1,
+      "ew_fwd120_pct": 45.3
     },
     {
       "date": "2024-01-04",
@@ -581,14 +521,14 @@
       "ew_fwd120_pct": -42.7
     },
     {
-      "date": "2024-10-11",
+      "date": "2024-10-14",
       "phase": "EARLY",
       "near_reference": false,
       "off_cycle_false_positive": false,
       "inside_cycle": true,
-      "ew_fwd20_pct": -6.9,
-      "ew_fwd60_pct": -5.5,
-      "ew_fwd120_pct": -17.9
+      "ew_fwd20_pct": -14.2,
+      "ew_fwd60_pct": -8.4,
+      "ew_fwd120_pct": -13.4
     },
     {
       "date": "2024-12-18",
@@ -599,6 +539,16 @@
       "ew_fwd20_pct": 12.9,
       "ew_fwd60_pct": 27.0,
       "ew_fwd120_pct": 22.7
+    },
+    {
+      "date": "2025-01-03",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "off_cycle_false_positive": false,
+      "inside_cycle": false,
+      "ew_fwd20_pct": 6.6,
+      "ew_fwd60_pct": 3.6,
+      "ew_fwd120_pct": 24.6
     },
     {
       "date": "2025-02-14",
@@ -641,14 +591,14 @@
       "ew_fwd120_pct": 124.7
     },
     {
-      "date": "2025-12-29",
+      "date": "2025-12-26",
       "phase": "EARLY",
       "near_reference": false,
       "off_cycle_false_positive": false,
       "inside_cycle": true,
-      "ew_fwd20_pct": 37.0,
-      "ew_fwd60_pct": 45.1,
-      "ew_fwd120_pct": 114.6
+      "ew_fwd20_pct": 27.5,
+      "ew_fwd60_pct": 52.2,
+      "ew_fwd120_pct": 113.6
     },
     {
       "date": "2026-04-17",
@@ -661,12 +611,12 @@
       "ew_fwd120_pct": null
     },
     {
-      "date": "2026-08-18",
+      "date": "2026-08-19",
       "phase": "EARLY",
       "near_reference": false,
       "off_cycle_false_positive": false,
       "inside_cycle": true,
-      "ew_fwd20_pct": 2.9,
+      "ew_fwd20_pct": 7.4,
       "ew_fwd60_pct": null,
       "ew_fwd120_pct": null
     },
