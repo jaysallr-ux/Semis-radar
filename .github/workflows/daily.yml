@@ -1,0 +1,45 @@
+name: semis-radar-daily
+
+on:
+  schedule:
+    # UTC 07:37 = KST 16:37, 평일. 정각은 혼잡해서 지연/누락될 수 있어 애매한 분으로.
+    - cron: "37 7 * * 1-5"
+  workflow_dispatch: {}   # Actions 탭에서 수동 실행용 (첫 검증 때 사용)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: semis-radar
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Run radar
+        env:
+          TZ: Asia/Seoul
+          # KIS로 교체할 때만 사용. 값은 저장소 Settings > Secrets 에만 넣을 것.
+          # KIS_APP_KEY: ${{ secrets.KIS_APP_KEY }}
+          # KIS_APP_SECRET: ${{ secrets.KIS_APP_SECRET }}
+        run: python run_daily.py --provider naver
+
+      - name: Commit results
+        run: |
+          git config user.name "semis-radar-bot"
+          git config user.email "semis-radar-bot@users.noreply.github.com"
+          git add output/
+          git commit -m "radar $(date +'%Y-%m-%d %H:%M')" || echo "변경 없음"
+          git pull --rebase
+          git push
