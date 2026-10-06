@@ -1,0 +1,66 @@
+{
+  "status": "FROZEN_OOS_POLICY_V1",
+  "frozen_at": "2026-10-06",
+  "oos_start_date": "2026-10-07",
+  "purpose": "운영 파라미터 동결 후 신규 실전 표본으로만 성능을 평가한다. 결과를 본 뒤 기준이나 임계값을 바꾸지 않는다.",
+  "frozen_operating_params": {
+    "early_enter_breadth": 0.25,
+    "new_turn_window": 10,
+    "confirm_enter_on_share": 0.60,
+    "confirm_min_parts": 5,
+    "confirm_exit_on_share": 0.45
+  },
+  "alert_logging": {
+    "path": "output/history.csv",
+    "log_all_market_state_alerts": true,
+    "kinds": [
+      "phase_change",
+      "leader_change",
+      "late_change",
+      "chain_change",
+      "data_recovery",
+      "data_error"
+    ],
+    "performance_scored_kinds": [
+      "phase_change",
+      "leader_change",
+      "late_change"
+    ],
+    "interpretation": {
+      "phase_change": "단계 전환 또는 재진입. 재진입 자체를 매수 신호로 해석하지 않고 사이클 생존 확인 성격으로 본다.",
+      "leader_change": "SK하이닉스 본체 주도 또는 주도 파트 변화.",
+      "late_change": "후반 경고 단계 변화.",
+      "chain_change": "고객사 체인 확산/비활성화. 보조 관찰용이며 성과 채점 대상에서 제외한다."
+    }
+  },
+  "quality_rule": {
+    "maturity_trading_days": 120,
+    "mae_window_trading_days": 60,
+    "mae_floor_pct": -10.0,
+    "forward_window_trading_days": 120,
+    "fwd120_floor_pct": 13.97,
+    "fwd120_floor_note": "2026-10-06 실데이터 전체 판정 가능일의 120거래일 수익률 중앙값. 백테스트 표시값은 14.0%. OOS 평가에서는 이동시키지 않고 13.97%로 동결한다.",
+    "pass_rule": "MAE60 >= -10.0% AND fwd120 >= 13.97%",
+    "benchmark": "동일가중 반도체 바스켓 ew_index"
+  },
+  "retune_gate": {
+    "logic": "OR",
+    "conditions": [
+      "동결일 이후 시작한 새 자동 사이클 1개가 기존 AUTO_CYCLE 규칙에 따라 완전히 종료되어 확정됨",
+      "OOS 성과 채점 대상 신규 알림 10개 이상이 각각 120거래일 성숙 후 채점 완료됨"
+    ],
+    "before_gate": "NO_RETUNE",
+    "rule": "위 조건 중 하나가 충족되기 전에는 운영 임계값과 품질 기준을 수정하지 않는다. 숫자가 불편하게 보여도 예외 없음."
+  },
+  "auto_cycle_rule_frozen_reference": {
+    "reversal": 0.25,
+    "min_gain": 0.50,
+    "min_td": 120
+  },
+  "primary_use": [
+    "단계 전환",
+    "주도 파트/하이닉 주도 변화",
+    "후반 경고"
+  ],
+  "non_primary_use": "단순 재진입 알림은 매수 신호가 아니라 아직 사이클이 살아 있다는 참고로만 본다."
+}
