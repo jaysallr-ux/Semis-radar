@@ -65,7 +65,7 @@ class NaverChartProvider(DataProvider):
             try:
                 r = self.session.get(self.URL, params=params, timeout=self.timeout)
                 r.raise_for_status()
-                root = ET.fromstring(r.content)
+                root = ET.fromstring(r.content.decode("euc-kr"))
                 rows = []
                 for item in root.iter("item"):
                     parts = item.get("data", "").split("|")
