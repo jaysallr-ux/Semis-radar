@@ -1,634 +1,221 @@
 {
-  "references": [
+  "quality_rule": {
+    "mae_window": 60,
+    "mae_floor": -0.1,
+    "fwd_window": 120
+  },
+  "auto_cycle_rule": {
+    "reversal": 0.25,
+    "min_gain": 0.5,
+    "min_td": 120
+  },
+  "auto_cycles": [
     {
-      "reference": "2016-09-01",
-      "status": "탐지",
-      "entry_date": "2016-06-10",
-      "entry_lag_td": -58,
-      "entry_phase": "CONFIRMED",
-      "confirm_date": "2016-06-10",
-      "confirm_lag_td": -58
+      "name": "A1",
+      "start_i": 159,
+      "end_i": 713,
+      "start": "2015-08-24",
+      "end": "2017-11-24",
+      "gain_pct": 126.8,
+      "ongoing": false
     },
     {
-      "reference": "2019-12-02",
-      "status": "탐지",
-      "entry_date": "2019-07-05",
-      "entry_lag_td": -101,
-      "entry_phase": "CONFIRMED",
-      "confirm_date": "2019-07-05",
-      "confirm_lag_td": -101
+      "name": "A2",
+      "start_i": 983,
+      "end_i": 1257,
+      "start": "2019-01-04",
+      "end": "2020-02-17",
+      "gain_pct": 88.2,
+      "ongoing": false
     },
     {
-      "reference": "2023-05-02",
-      "status": "탐지",
-      "entry_date": "2023-01-11",
-      "entry_lag_td": -75,
-      "entry_phase": "EARLY",
-      "confirm_date": "2023-01-18",
-      "confirm_lag_td": -70
+      "name": "A3",
+      "start_i": 1280,
+      "end_i": 1722,
+      "start": "2020-03-19",
+      "end": "2021-12-30",
+      "gain_pct": 327.2,
+      "ongoing": false
     },
     {
-      "reference": "2025-06-09",
-      "status": "탐지",
-      "entry_date": "2024-12-18",
-      "entry_lag_td": -110,
-      "entry_phase": "EARLY",
-      "confirm_date": "2025-01-03",
-      "confirm_lag_td": -101
+      "name": "A4",
+      "start_i": 1906,
+      "end_i": 2327,
+      "start": "2022-09-30",
+      "end": "2024-06-19",
+      "gain_pct": 213.1,
+      "ongoing": false
+    },
+    {
+      "name": "A5",
+      "start_i": 2443,
+      "end_i": 2807,
+      "start": "2024-12-09",
+      "end": "2026-06-12",
+      "gain_pct": 488.2,
+      "ongoing": false
     }
   ],
-  "detected": 4,
-  "too_early": 0,
-  "avg_entry_lag_td": -86.0,
-  "reference_window_outside_entries": [
-    "2015-05-19",
-    "2015-09-23",
-    "2017-04-03",
-    "2017-06-01",
-    "2017-07-18",
-    "2017-09-07",
-    "2017-11-17",
-    "2018-05-30",
-    "2019-01-16",
-    "2019-04-04",
-    "2020-09-17",
-    "2020-11-13",
-    "2021-02-19",
-    "2021-04-07",
-    "2021-11-03",
-    "2021-12-27",
-    "2022-03-25",
-    "2022-07-27",
-    "2022-10-28",
-    "2023-11-20",
-    "2024-01-04",
-    "2024-03-06",
-    "2024-06-18",
-    "2024-10-14",
-    "2025-12-26",
-    "2026-04-17",
-    "2026-08-19",
-    "2026-09-21"
-  ],
-  "cycles": [
-    {
-      "cycle": "1차",
-      "cycle_start": "2016-05-01",
-      "cycle_end": "2018-06-30",
-      "status": "탐지",
-      "entry_date": "2016-06-10",
-      "lag_vs_cycle_start_td": 26,
-      "lag_vs_hynix_reference_td": -58,
-      "entry_phase": "CONFIRMED",
-      "confirm_date": "2016-06-10",
-      "confirm_lag_vs_start_td": 26
+  "auto": {
+    "baseline": {
+      "n_days": 2741,
+      "fwd120_median_pct": 14.0,
+      "fwd120_mean_pct": 17.9,
+      "mae60_mean_pct": -8.6,
+      "quality_pass_rate": 0.416
     },
-    {
-      "cycle": "2차",
-      "cycle_start": "2019-05-01",
-      "cycle_end": "2022-03-31",
-      "status": "탐지",
-      "entry_date": "2019-04-04",
-      "lag_vs_cycle_start_td": -19,
-      "lag_vs_hynix_reference_td": -164,
-      "entry_phase": "CONFIRMED",
-      "confirm_date": "2019-04-04",
-      "confirm_lag_vs_start_td": -19
+    "signals": {
+      "n": 47,
+      "quality_pass_rate": 0.5,
+      "labels": {
+        "진입 성공": 17,
+        "후반 재진입": 12,
+        "진입 실패": 10,
+        "헛방": 5,
+        "너무 이름": 2,
+        "판정대기(기간부족)": 1
+      }
     },
-    {
-      "cycle": "3차",
-      "cycle_start": "2022-12-01",
-      "cycle_end": "2024-12-31",
-      "status": "탐지",
-      "entry_date": "2022-10-28",
-      "lag_vs_cycle_start_td": -24,
-      "lag_vs_hynix_reference_td": -127,
-      "entry_phase": "EARLY",
-      "confirm_date": "2023-01-18",
-      "confirm_lag_vs_start_td": 33
-    },
-    {
-      "cycle": "4차",
-      "cycle_start": "2025-04-01",
-      "cycle_end": null,
-      "status": "탐지",
-      "entry_date": "2025-01-03",
-      "lag_vs_cycle_start_td": -57,
-      "lag_vs_hynix_reference_td": -101,
-      "entry_phase": "CONFIRMED",
-      "confirm_date": "2025-01-03",
-      "confirm_lag_vs_start_td": -57
+    "cycles": [
+      {
+        "cycle": "A1",
+        "start": "2015-08-24",
+        "end": "2017-11-24",
+        "detected": true,
+        "first_date": "2015-09-23",
+        "first_lag_td": 22,
+        "first_label": "진입 실패",
+        "first_usable_date": null,
+        "first_usable_lag_td": null
+      },
+      {
+        "cycle": "A2",
+        "start": "2019-01-04",
+        "end": "2020-02-17",
+        "detected": true,
+        "first_date": "2019-01-16",
+        "first_lag_td": 8,
+        "first_label": "진입 실패",
+        "first_usable_date": null,
+        "first_usable_lag_td": null
+      },
+      {
+        "cycle": "A3",
+        "start": "2020-03-19",
+        "end": "2021-12-30",
+        "detected": true,
+        "first_date": "2020-04-14",
+        "first_lag_td": 18,
+        "first_label": "진입 성공",
+        "first_usable_date": "2020-04-14",
+        "first_usable_lag_td": 18
+      },
+      {
+        "cycle": "A4",
+        "start": "2022-09-30",
+        "end": "2024-06-19",
+        "detected": true,
+        "first_date": "2022-07-27",
+        "first_lag_td": -44,
+        "first_label": "너무 이름",
+        "first_usable_date": "2022-10-28",
+        "first_usable_lag_td": 18
+      },
+      {
+        "cycle": "A5",
+        "start": "2024-12-09",
+        "end": "2026-06-12",
+        "detected": true,
+        "first_date": "2024-10-14",
+        "first_lag_td": -40,
+        "first_label": "너무 이름",
+        "first_usable_date": "2024-12-18",
+        "first_usable_lag_td": 7
+      }
+    ],
+    "random_test": {
+      "signal_in_cycle_share": 0.894,
+      "random_in_cycle_share_mean": 0.832,
+      "in_cycle_percentile": 88.9,
+      "signal_fwd120_mean_pct": 20.8,
+      "random_fwd120_mean_pct": 18.1,
+      "fwd120_percentile": 72.3
     }
-  ],
-  "cycle_detected": 4,
-  "avg_cycle_start_lag_td": -18.5,
-  "off_cycle_false_positives": [
-    "2015-05-19",
-    "2015-09-23",
-    "2019-01-16",
-    "2022-07-27"
-  ],
-  "in_cycle_entries": [
-    "2016-06-10",
-    "2016-07-13",
-    "2016-12-15",
-    "2017-04-03",
-    "2017-06-01",
-    "2017-07-18",
-    "2017-09-07",
-    "2017-11-17",
-    "2018-05-30",
-    "2019-07-05",
-    "2019-09-05",
-    "2019-12-16",
-    "2020-04-14",
-    "2020-09-17",
-    "2020-11-13",
-    "2021-02-19",
-    "2021-04-07",
-    "2021-11-03",
-    "2021-12-27",
-    "2022-03-25",
-    "2023-01-11",
-    "2023-03-30",
-    "2023-04-10",
-    "2023-05-24",
-    "2023-07-19",
-    "2023-11-20",
-    "2024-01-04",
-    "2024-03-06",
-    "2024-06-18",
-    "2024-10-14",
-    "2024-12-18",
-    "2025-05-12",
-    "2025-06-05",
-    "2025-09-09",
-    "2025-12-26",
-    "2026-04-17",
-    "2026-08-19",
-    "2026-09-21"
-  ],
-  "n_entries": 46,
-  "entries_fwd": [
-    {
-      "date": "2015-05-19",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": true,
-      "inside_cycle": false,
-      "ew_fwd20_pct": 3.5,
-      "ew_fwd60_pct": -8.2,
-      "ew_fwd120_pct": -18.9
+  },
+  "manual": {
+    "baseline": {
+      "n_days": 2741,
+      "fwd120_median_pct": 14.0,
+      "fwd120_mean_pct": 17.9,
+      "mae60_mean_pct": -8.6,
+      "quality_pass_rate": 0.416
     },
-    {
-      "date": "2015-09-23",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": true,
-      "inside_cycle": false,
-      "ew_fwd20_pct": -1.2,
-      "ew_fwd60_pct": 1.3,
-      "ew_fwd120_pct": 2.7
+    "signals": {
+      "n": 47,
+      "quality_pass_rate": 0.5,
+      "labels": {
+        "진입 성공": 17,
+        "진입 실패": 10,
+        "후반 재진입": 8,
+        "헛방": 4,
+        "선행 진입 성공": 3,
+        "판정대기(기간부족)": 3,
+        "너무 이름": 2
+      }
     },
-    {
-      "date": "2016-06-10",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 3.9,
-      "ew_fwd60_pct": 6.7,
-      "ew_fwd120_pct": -0.4
-    },
-    {
-      "date": "2016-07-13",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 3.4,
-      "ew_fwd60_pct": -1.9,
-      "ew_fwd120_pct": 6.1
-    },
-    {
-      "date": "2016-12-15",
-      "phase": "EARLY",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 5.7,
-      "ew_fwd60_pct": 3.9,
-      "ew_fwd120_pct": 21.9
-    },
-    {
-      "date": "2017-04-03",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 5.6,
-      "ew_fwd60_pct": 14.0,
-      "ew_fwd120_pct": 24.4
-    },
-    {
-      "date": "2017-06-01",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 5.0,
-      "ew_fwd60_pct": 10.4,
-      "ew_fwd120_pct": 32.8
-    },
-    {
-      "date": "2017-07-18",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -5.8,
-      "ew_fwd60_pct": -1.2,
-      "ew_fwd120_pct": 11.0
-    },
-    {
-      "date": "2017-09-07",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -1.5,
-      "ew_fwd60_pct": 9.3,
-      "ew_fwd120_pct": 10.4
-    },
-    {
-      "date": "2017-11-17",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -2.9,
-      "ew_fwd60_pct": -5.1,
-      "ew_fwd120_pct": -10.9
-    },
-    {
-      "date": "2018-05-30",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -8.4,
-      "ew_fwd60_pct": -9.4,
-      "ew_fwd120_pct": -26.6
-    },
-    {
-      "date": "2019-01-16",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": true,
-      "inside_cycle": false,
-      "ew_fwd20_pct": 19.0,
-      "ew_fwd60_pct": 24.1,
-      "ew_fwd120_pct": 13.2
-    },
-    {
-      "date": "2019-04-04",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": false,
-      "ew_fwd20_pct": 1.6,
-      "ew_fwd60_pct": -10.4,
-      "ew_fwd120_pct": -5.3
-    },
-    {
-      "date": "2019-07-05",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -4.3,
-      "ew_fwd60_pct": 4.7,
-      "ew_fwd120_pct": 28.5
-    },
-    {
-      "date": "2019-09-05",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 3.6,
-      "ew_fwd60_pct": 3.6,
-      "ew_fwd120_pct": 26.6
-    },
-    {
-      "date": "2019-12-16",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 16.0,
-      "ew_fwd60_pct": -18.2,
-      "ew_fwd120_pct": 13.0
-    },
-    {
-      "date": "2020-04-14",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 17.0,
-      "ew_fwd60_pct": 43.9,
-      "ew_fwd120_pct": 62.3
-    },
-    {
-      "date": "2020-09-17",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -4.0,
-      "ew_fwd60_pct": 14.6,
-      "ew_fwd120_pct": 36.6
-    },
-    {
-      "date": "2020-11-13",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 10.4,
-      "ew_fwd60_pct": 30.5,
-      "ew_fwd120_pct": 47.2
-    },
-    {
-      "date": "2021-02-19",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 0.2,
-      "ew_fwd60_pct": 7.6,
-      "ew_fwd120_pct": 14.7
-    },
-    {
-      "date": "2021-04-07",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 2.3,
-      "ew_fwd60_pct": 4.3,
-      "ew_fwd120_pct": -1.4
-    },
-    {
-      "date": "2021-11-03",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 8.9,
-      "ew_fwd60_pct": 6.8,
-      "ew_fwd120_pct": 15.2
-    },
-    {
-      "date": "2021-12-27",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -7.6,
-      "ew_fwd60_pct": -3.4,
-      "ew_fwd120_pct": -21.9
-    },
-    {
-      "date": "2022-03-25",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 3.3,
-      "ew_fwd60_pct": -20.9,
-      "ew_fwd120_pct": -25.3
-    },
-    {
-      "date": "2022-07-27",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": true,
-      "inside_cycle": false,
-      "ew_fwd20_pct": -4.5,
-      "ew_fwd60_pct": -14.5,
-      "ew_fwd120_pct": -11.4
-    },
-    {
-      "date": "2022-10-28",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": false,
-      "ew_fwd20_pct": 11.8,
-      "ew_fwd60_pct": 13.1,
-      "ew_fwd120_pct": 25.9
-    },
-    {
-      "date": "2023-01-11",
-      "phase": "EARLY",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 6.8,
-      "ew_fwd60_pct": 21.2,
-      "ew_fwd120_pct": 42.5
-    },
-    {
-      "date": "2023-03-30",
-      "phase": "EARLY",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -6.2,
-      "ew_fwd60_pct": 19.4,
-      "ew_fwd120_pct": 22.7
-    },
-    {
-      "date": "2023-04-10",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -7.5,
-      "ew_fwd60_pct": 17.5,
-      "ew_fwd120_pct": 25.6
-    },
-    {
-      "date": "2023-05-24",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 15.4,
-      "ew_fwd60_pct": 25.9,
-      "ew_fwd120_pct": 36.5
-    },
-    {
-      "date": "2023-07-19",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -4.7,
-      "ew_fwd60_pct": -4.8,
-      "ew_fwd120_pct": 8.5
-    },
-    {
-      "date": "2023-11-20",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 4.8,
-      "ew_fwd60_pct": 8.1,
-      "ew_fwd120_pct": 45.3
-    },
-    {
-      "date": "2024-01-04",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -5.9,
-      "ew_fwd60_pct": 28.7,
-      "ew_fwd120_pct": 40.3
-    },
-    {
-      "date": "2024-03-06",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 13.6,
-      "ew_fwd60_pct": 18.7,
-      "ew_fwd120_pct": -3.4
-    },
-    {
-      "date": "2024-06-18",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -2.9,
-      "ew_fwd60_pct": -35.2,
-      "ew_fwd120_pct": -42.7
-    },
-    {
-      "date": "2024-10-14",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": -14.2,
-      "ew_fwd60_pct": -8.4,
-      "ew_fwd120_pct": -13.4
-    },
-    {
-      "date": "2024-12-18",
-      "phase": "EARLY",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 12.9,
-      "ew_fwd60_pct": 27.0,
-      "ew_fwd120_pct": 22.7
-    },
-    {
-      "date": "2025-01-03",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": false,
-      "ew_fwd20_pct": 6.6,
-      "ew_fwd60_pct": 3.6,
-      "ew_fwd120_pct": 24.6
-    },
-    {
-      "date": "2025-02-14",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": false,
-      "ew_fwd20_pct": 3.5,
-      "ew_fwd60_pct": -4.0,
-      "ew_fwd120_pct": 15.0
-    },
-    {
-      "date": "2025-05-12",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 8.8,
-      "ew_fwd60_pct": 13.1,
-      "ew_fwd120_pct": 87.6
-    },
-    {
-      "date": "2025-06-05",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 9.8,
-      "ew_fwd60_pct": 14.4,
-      "ew_fwd120_pct": 79.2
-    },
-    {
-      "date": "2025-09-09",
-      "phase": "CONFIRMED",
-      "near_reference": true,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 35.3,
-      "ew_fwd60_pct": 42.5,
-      "ew_fwd120_pct": 124.7
-    },
-    {
-      "date": "2025-12-26",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 27.5,
-      "ew_fwd60_pct": 52.2,
-      "ew_fwd120_pct": 113.6
-    },
-    {
-      "date": "2026-04-17",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 8.8,
-      "ew_fwd60_pct": 4.5,
-      "ew_fwd120_pct": null
-    },
-    {
-      "date": "2026-08-19",
-      "phase": "EARLY",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": 7.4,
-      "ew_fwd60_pct": null,
-      "ew_fwd120_pct": null
-    },
-    {
-      "date": "2026-09-21",
-      "phase": "CONFIRMED",
-      "near_reference": false,
-      "off_cycle_false_positive": false,
-      "inside_cycle": true,
-      "ew_fwd20_pct": null,
-      "ew_fwd60_pct": null,
-      "ew_fwd120_pct": null
+    "cycles": [
+      {
+        "cycle": "1차",
+        "start": "2016-05-01",
+        "end": "2018-06-30",
+        "detected": true,
+        "first_date": "2016-03-03",
+        "first_lag_td": -41,
+        "first_label": "선행 진입 성공",
+        "first_usable_date": "2016-03-03",
+        "first_usable_lag_td": -41
+      },
+      {
+        "cycle": "2차",
+        "start": "2019-05-01",
+        "end": "2022-03-31",
+        "detected": true,
+        "first_date": "2019-04-04",
+        "first_lag_td": -19,
+        "first_label": "너무 이름",
+        "first_usable_date": "2019-09-05",
+        "first_usable_lag_td": 87
+      },
+      {
+        "cycle": "3차",
+        "start": "2022-12-01",
+        "end": "2024-12-31",
+        "detected": true,
+        "first_date": "2022-10-28",
+        "first_lag_td": -24,
+        "first_label": "선행 진입 성공",
+        "first_usable_date": "2022-10-28",
+        "first_usable_lag_td": -24
+      },
+      {
+        "cycle": "4차",
+        "start": "2025-04-01",
+        "end": null,
+        "detected": true,
+        "first_date": "2025-01-03",
+        "first_lag_td": -57,
+        "first_label": "선행 진입 성공",
+        "first_usable_date": "2025-01-03",
+        "first_usable_lag_td": -57
+      }
+    ],
+    "random_test": {
+      "signal_in_cycle_share": 0.915,
+      "random_in_cycle_share_mean": 0.821,
+      "in_cycle_percentile": 96.9,
+      "signal_fwd120_mean_pct": 20.8,
+      "random_fwd120_mean_pct": 17.8,
+      "fwd120_percentile": 74.6
     }
-  ]
+  }
 }
