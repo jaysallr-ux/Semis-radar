@@ -1,19 +1,17 @@
 name: semis-radar-daily
 
 on:
-  push:
-    branches: [main]   # 첫 실데이터 검증용 임시 트리거. 검증 후 제거.
   schedule:
     # UTC 07:37 = KST 16:37, 평일. 정각은 혼잡해서 지연/누락될 수 있어 애매한 분으로.
     - cron: "37 7 * * 1-5"
-  workflow_dispatch: {}   # Actions 탭에서 수동 실행용 (첫 검증 때 사용)
+  workflow_dispatch: {}   # Actions 탭에서 수동 실행용
 
 permissions:
   contents: write
 
 concurrency:
   group: semis-radar
-  cancel-in-progress: true   # 첫 실데이터 검증 중 이전 실패 run 정리용 임시값
+  cancel-in-progress: false
 
 jobs:
   run:
