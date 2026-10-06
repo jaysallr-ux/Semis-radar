@@ -1,0 +1,558 @@
+{
+  "references": [
+    {
+      "reference": "2016-09-01",
+      "status": "탐지",
+      "entry_date": "2016-06-02",
+      "entry_lag_td": -63,
+      "entry_phase": "CONFIRMED",
+      "confirm_date": "2016-06-02",
+      "confirm_lag_td": -63
+    },
+    {
+      "reference": "2019-12-02",
+      "status": "탐지",
+      "entry_date": "2019-06-19",
+      "entry_lag_td": -113,
+      "entry_phase": "EARLY",
+      "confirm_date": "2019-06-27",
+      "confirm_lag_td": -107
+    },
+    {
+      "reference": "2023-05-02",
+      "status": "탐지",
+      "entry_date": "2023-01-10",
+      "entry_lag_td": -76,
+      "entry_phase": "EARLY",
+      "confirm_date": "2023-01-11",
+      "confirm_lag_td": -75
+    },
+    {
+      "reference": "2025-06-09",
+      "status": "탐지",
+      "entry_date": "2024-12-17",
+      "entry_lag_td": -111,
+      "entry_phase": "EARLY",
+      "confirm_date": "2024-12-18",
+      "confirm_lag_td": -110
+    }
+  ],
+  "detected": 4,
+  "too_early": 0,
+  "avg_entry_lag_td": -90.8,
+  "n_entries": 59,
+  "false_positives": [
+    "2015-04-10",
+    "2015-04-29",
+    "2015-09-18",
+    "2015-11-26",
+    "2016-02-23",
+    "2017-03-06",
+    "2017-08-31",
+    "2017-11-01",
+    "2018-02-26",
+    "2018-03-13",
+    "2018-04-30",
+    "2018-05-08",
+    "2018-05-28",
+    "2018-07-19",
+    "2018-11-12",
+    "2019-01-15",
+    "2019-04-03",
+    "2020-07-10",
+    "2020-09-15",
+    "2020-11-09",
+    "2021-04-01",
+    "2021-06-03",
+    "2021-07-23",
+    "2021-09-17",
+    "2021-10-29",
+    "2021-12-22",
+    "2022-03-22",
+    "2022-07-22",
+    "2022-10-25",
+    "2023-11-06",
+    "2024-01-24",
+    "2024-03-04",
+    "2024-05-22",
+    "2024-10-11",
+    "2025-12-26",
+    "2026-04-14",
+    "2026-06-12",
+    "2026-08-14"
+  ],
+  "entries_fwd": [
+    {
+      "date": "2015-04-10",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 3.3,
+      "ew_fwd60_pct": 7.1,
+      "ew_fwd120_pct": -5.0
+    },
+    {
+      "date": "2015-04-29",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 8.1,
+      "ew_fwd60_pct": 2.9,
+      "ew_fwd120_pct": -9.5
+    },
+    {
+      "date": "2015-09-18",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": -3.1,
+      "ew_fwd60_pct": -6.9,
+      "ew_fwd120_pct": -0.4
+    },
+    {
+      "date": "2015-11-26",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": -1.3,
+      "ew_fwd60_pct": -0.2,
+      "ew_fwd120_pct": 8.9
+    },
+    {
+      "date": "2016-02-23",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 1.4,
+      "ew_fwd60_pct": 6.1,
+      "ew_fwd120_pct": 22.1
+    },
+    {
+      "date": "2016-06-02",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": 3.2,
+      "ew_fwd60_pct": 7.1,
+      "ew_fwd120_pct": 3.2
+    },
+    {
+      "date": "2016-07-05",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": 12.3,
+      "ew_fwd60_pct": 5.1,
+      "ew_fwd120_pct": 9.9
+    },
+    {
+      "date": "2016-09-28",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": -1.9,
+      "ew_fwd60_pct": 5.0,
+      "ew_fwd120_pct": 4.4
+    },
+    {
+      "date": "2016-11-16",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": 4.5,
+      "ew_fwd60_pct": 6.5,
+      "ew_fwd120_pct": 22.2
+    },
+    {
+      "date": "2016-12-14",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": 6.7,
+      "ew_fwd60_pct": 5.8,
+      "ew_fwd120_pct": 23.8
+    },
+    {
+      "date": "2017-03-06",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 3.9,
+      "ew_fwd60_pct": 16.9,
+      "ew_fwd120_pct": 28.1
+    },
+    {
+      "date": "2017-08-31",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 1.0,
+      "ew_fwd60_pct": 15.1,
+      "ew_fwd120_pct": 6.0
+    },
+    {
+      "date": "2017-11-01",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 13.4,
+      "ew_fwd60_pct": 6.7,
+      "ew_fwd120_pct": 1.8
+    },
+    {
+      "date": "2018-02-26",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": -3.8,
+      "ew_fwd60_pct": -1.2,
+      "ew_fwd120_pct": -13.3
+    },
+    {
+      "date": "2018-03-13",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": -10.5,
+      "ew_fwd60_pct": -3.4,
+      "ew_fwd120_pct": -11.9
+    },
+    {
+      "date": "2018-04-30",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 4.3,
+      "ew_fwd60_pct": -4.1,
+      "ew_fwd120_pct": -22.8
+    },
+    {
+      "date": "2018-05-08",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 11.2,
+      "ew_fwd60_pct": -0.3,
+      "ew_fwd120_pct": -18.2
+    },
+    {
+      "date": "2018-05-28",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": -8.8,
+      "ew_fwd60_pct": -13.0,
+      "ew_fwd120_pct": -28.9
+    },
+    {
+      "date": "2018-07-19",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": -7.3,
+      "ew_fwd60_pct": -14.3,
+      "ew_fwd120_pct": -24.0
+    },
+    {
+      "date": "2018-11-12",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": -10.0,
+      "ew_fwd60_pct": 5.5,
+      "ew_fwd120_pct": 7.8
+    },
+    {
+      "date": "2019-01-15",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 19.8,
+      "ew_fwd60_pct": 27.1,
+      "ew_fwd120_pct": 13.4
+    },
+    {
+      "date": "2019-04-03",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 4.3,
+      "ew_fwd60_pct": -9.1,
+      "ew_fwd120_pct": -2.9
+    },
+    {
+      "date": "2019-06-19",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": 2.6,
+      "ew_fwd60_pct": 4.0,
+      "ew_fwd120_pct": 13.1
+    },
+    {
+      "date": "2019-09-04",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": 4.8,
+      "ew_fwd60_pct": 8.4,
+      "ew_fwd120_pct": 26.7
+    },
+    {
+      "date": "2019-11-19",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": 8.3,
+      "ew_fwd60_pct": 22.8,
+      "ew_fwd120_pct": 10.7
+    },
+    {
+      "date": "2019-12-12",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": 18.7,
+      "ew_fwd60_pct": -1.8,
+      "ew_fwd120_pct": 26.1
+    },
+    {
+      "date": "2020-02-11",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": -9.8,
+      "ew_fwd60_pct": -8.8,
+      "ew_fwd120_pct": 29.8
+    },
+    {
+      "date": "2020-04-13",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": 18.5,
+      "ew_fwd60_pct": 46.8,
+      "ew_fwd120_pct": 65.9
+    },
+    {
+      "date": "2020-07-10",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 16.3,
+      "ew_fwd60_pct": 13.0,
+      "ew_fwd120_pct": 40.2
+    },
+    {
+      "date": "2020-09-15",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": -9.1,
+      "ew_fwd60_pct": 6.0,
+      "ew_fwd120_pct": 30.2
+    },
+    {
+      "date": "2020-11-09",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 10.0,
+      "ew_fwd60_pct": 29.6,
+      "ew_fwd120_pct": 54.6
+    },
+    {
+      "date": "2021-04-01",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 7.5,
+      "ew_fwd60_pct": 7.8,
+      "ew_fwd120_pct": 7.9
+    },
+    {
+      "date": "2021-06-03",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 1.7,
+      "ew_fwd60_pct": 1.6,
+      "ew_fwd120_pct": 7.5
+    },
+    {
+      "date": "2021-07-23",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": -6.2,
+      "ew_fwd60_pct": -9.6,
+      "ew_fwd120_pct": 12.1
+    },
+    {
+      "date": "2021-09-17",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": -9.2,
+      "ew_fwd60_pct": 6.3,
+      "ew_fwd120_pct": 6.4
+    },
+    {
+      "date": "2021-10-29",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 8.6,
+      "ew_fwd60_pct": 11.6,
+      "ew_fwd120_pct": 15.8
+    },
+    {
+      "date": "2021-12-22",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 1.2,
+      "ew_fwd60_pct": -1.7,
+      "ew_fwd120_pct": -16.0
+    },
+    {
+      "date": "2022-03-22",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 4.8,
+      "ew_fwd60_pct": -10.7,
+      "ew_fwd120_pct": -21.9
+    },
+    {
+      "date": "2022-07-22",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": -4.8,
+      "ew_fwd60_pct": -19.4,
+      "ew_fwd120_pct": -10.9
+    },
+    {
+      "date": "2022-10-25",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": 2.9,
+      "ew_fwd60_pct": 2.2,
+      "ew_fwd120_pct": 22.5
+    },
+    {
+      "date": "2023-01-10",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": 9.7,
+      "ew_fwd60_pct": 22.8,
+      "ew_fwd120_pct": 47.0
+    },
+    {
+      "date": "2023-03-24",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": 2.3,
+      "ew_fwd60_pct": 22.4,
+      "ew_fwd120_pct": 43.4
+    },
+    {
+      "date": "2023-05-22",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": 12.7,
+      "ew_fwd60_pct": 22.3,
+      "ew_fwd120_pct": 35.1
+    },
+    {
+      "date": "2023-09-14",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": -6.6,
+      "ew_fwd60_pct": 7.9,
+      "ew_fwd120_pct": 23.1
+    },
+    {
+      "date": "2023-10-18",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": 5.2,
+      "ew_fwd60_pct": 11.2,
+      "ew_fwd120_pct": 51.0
+    },
+    {
+      "date": "2023-11-06",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 3.2,
+      "ew_fwd60_pct": 5.1,
+      "ew_fwd120_pct": 47.0
+    },
+    {
+      "date": "2024-01-24",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": -2.6,
+      "ew_fwd60_pct": 19.2,
+      "ew_fwd120_pct": 22.7
+    },
+    {
+      "date": "2024-03-04",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 16.9,
+      "ew_fwd60_pct": 23.9,
+      "ew_fwd120_pct": 1.9
+    },
+    {
+      "date": "2024-05-22",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 6.3,
+      "ew_fwd60_pct": -10.3,
+      "ew_fwd120_pct": -38.1
+    },
+    {
+      "date": "2024-10-11",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": -6.9,
+      "ew_fwd60_pct": -5.5,
+      "ew_fwd120_pct": -17.9
+    },
+    {
+      "date": "2024-12-17",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": 13.9,
+      "ew_fwd60_pct": 29.6,
+      "ew_fwd120_pct": 27.7
+    },
+    {
+      "date": "2025-02-13",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": 1.5,
+      "ew_fwd60_pct": 0.4,
+      "ew_fwd120_pct": 14.5
+    },
+    {
+      "date": "2025-03-26",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": -10.6,
+      "ew_fwd60_pct": 4.7,
+      "ew_fwd120_pct": 40.4
+    },
+    {
+      "date": "2025-05-09",
+      "phase": "CONFIRMED",
+      "near_reference": true,
+      "ew_fwd20_pct": 8.2,
+      "ew_fwd60_pct": 19.3,
+      "ew_fwd120_pct": 94.5
+    },
+    {
+      "date": "2025-08-13",
+      "phase": "EARLY",
+      "near_reference": true,
+      "ew_fwd20_pct": 8.3,
+      "ew_fwd60_pct": 54.7,
+      "ew_fwd120_pct": 111.2
+    },
+    {
+      "date": "2025-12-26",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 27.5,
+      "ew_fwd60_pct": 52.2,
+      "ew_fwd120_pct": 113.6
+    },
+    {
+      "date": "2026-04-14",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": 28.4,
+      "ew_fwd60_pct": 9.9,
+      "ew_fwd120_pct": null
+    },
+    {
+      "date": "2026-06-12",
+      "phase": "CONFIRMED",
+      "near_reference": false,
+      "ew_fwd20_pct": -20.6,
+      "ew_fwd60_pct": -21.1,
+      "ew_fwd120_pct": null
+    },
+    {
+      "date": "2026-08-14",
+      "phase": "EARLY",
+      "near_reference": false,
+      "ew_fwd20_pct": -0.0,
+      "ew_fwd60_pct": null,
+      "ew_fwd120_pct": null
+    }
+  ]
+}
