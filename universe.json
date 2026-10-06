@@ -1,0 +1,40 @@
+{
+  "_comment": "chain 값은 사업보고서/IR 매출처 기준으로 직접 채울 것. 허용값: 하닉, 삼전, 공통, 기타AI, 미확인. 미확인은 체인 집계에서 제외된다. valid_from 이전 데이터는 계산에서 제외(사업 구조가 달랐던 구간 차단용).",
+  "benchmark": {"hynix": "000660", "samsung": "005930", "index": "KOSPI"},
+  "stocks": [
+    {"ticker": "005930", "name": "삼성전자",       "part": "대형",   "chain": "미확인"},
+    {"ticker": "000660", "name": "SK하이닉스",     "part": "대형",   "chain": "미확인"},
+
+    {"ticker": "084370", "name": "유진테크",       "part": "전공정", "chain": "미확인"},
+    {"ticker": "095610", "name": "테스",           "part": "전공정", "chain": "미확인"},
+    {"ticker": "036930", "name": "주성엔지니어링", "part": "전공정", "chain": "미확인"},
+    {"ticker": "240810", "name": "원익IPS",        "part": "전공정", "chain": "미확인"},
+    {"ticker": "403870", "name": "HPSP",           "part": "전공정", "chain": "미확인"},
+    {"ticker": "319660", "name": "피에스케이",     "part": "전공정", "chain": "미확인"},
+
+    {"ticker": "067310", "name": "하나마이크론",   "part": "후공정", "chain": "미확인"},
+    {"ticker": "039030", "name": "이오테크닉스",   "part": "후공정", "chain": "미확인"},
+    {"ticker": "042700", "name": "한미반도체",     "part": "후공정", "chain": "미확인"},
+    {"ticker": "031980", "name": "피에스케이홀딩스", "part": "후공정", "chain": "미확인", "valid_from": "2019-05-01"},
+
+    {"ticker": "222800", "name": "심텍",           "part": "기판",   "chain": "미확인"},
+    {"ticker": "007660", "name": "이수페타시스",   "part": "기판",   "chain": "미확인"},
+    {"ticker": "353200", "name": "대덕전자",       "part": "기판",   "chain": "미확인"},
+
+    {"ticker": "005290", "name": "동진쎄미켐",     "part": "소재",   "chain": "미확인"},
+    {"ticker": "014680", "name": "한솔케미칼",     "part": "소재",   "chain": "미확인"},
+    {"ticker": "104830", "name": "원익머트리얼즈", "part": "소재",   "chain": "미확인"},
+    {"ticker": "357780", "name": "솔브레인",       "part": "소재",   "chain": "미확인"},
+
+    {"ticker": "095340", "name": "ISC",            "part": "테스트", "chain": "미확인"},
+    {"ticker": "003160", "name": "디아이",         "part": "테스트", "chain": "미확인"},
+    {"ticker": "058470", "name": "리노공업",       "part": "테스트", "chain": "미확인"},
+    {"ticker": "089030", "name": "테크윙",         "part": "테스트", "chain": "미확인"},
+    {"ticker": "232140", "name": "와이씨",         "part": "테스트", "chain": "미확인"},
+
+    {"ticker": "074600", "name": "원익QnC",        "part": "부품",   "chain": "미확인"},
+    {"ticker": "166090", "name": "하나머티리얼즈", "part": "부품",   "chain": "미확인"},
+    {"ticker": "064760", "name": "티씨케이",       "part": "부품",   "chain": "미확인"},
+    {"ticker": "183300", "name": "코미코",         "part": "부품",   "chain": "미확인"}
+  ]
+}
