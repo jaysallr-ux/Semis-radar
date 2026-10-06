@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: semis-radar
-  cancel-in-progress: false
+  cancel-in-progress: true   # 첫 실데이터 검증 중 이전 실패 run 정리용 임시값
 
 jobs:
   run:
