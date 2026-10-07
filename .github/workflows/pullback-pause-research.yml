@@ -1,0 +1,43 @@
+name: pullback-pause-research
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [pullback-pause-research]
+    paths:
+      - "backtest_pullback_pause.py"
+      - "oos_evaluation_policy.json"
+      - ".github/workflows/pullback-pause-research.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pullback-pause-research
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pullback-pause-research
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Run frozen pullback pause smoke test
+        run: python backtest_pullback_pause.py
+      - name: Commit smoke result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtest_pullback_pause/result.json backtest_pullback_pause/events.csv
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "Record pullback pause smoke result"
+            git push
+          fi
