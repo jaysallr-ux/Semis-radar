@@ -1,5 +1,5 @@
 {
-  "_comment": "TOP detector research only. Existing params.json and production alerts remain untouched. Thresholds are hypotheses, not production settings; validate with LOCO and random-date baselines before use.",
+  "_comment": "PRE-REGISTERED TOP research policy. Freeze before seeing TOP backtest results. Existing params.json and production alerts remain untouched.",
   "maturity_min_confirmed_days": 15,
   "maturity_min_ew_gain": 0.08,
   "memory_window": 60,
@@ -13,6 +13,10 @@
   "confirm_part_weakening": true,
   "confirm_min_items": 2,
   "watch_memory_days": 20,
+
+  "tunable_parameters": ["watch_on_share_drop", "watch_leader_rs_drop", "confirm_on_share_drop"],
+  "max_tunable_parameters": 3,
+
   "target_window_start": -60,
   "target_window_end": 20,
   "preferred_window_start": -20,
@@ -20,7 +24,27 @@
   "false_breakout_days": 20,
   "false_breakout_gain": 0.10,
   "forward_windows": [60, 120],
-  "random_trials": 1000,
+  "random_trials": 5000,
+
+  "acceptance": {
+    "loco_endogenous_hits_min": 3,
+    "loco_endogenous_total": 4,
+    "drawdown60_random_percentile_min": 75,
+    "max_up60_must_be_below_random": true,
+    "false_confirm_rate_max": 0.3333333333,
+    "all_four_required": true,
+    "failure_action": "REJECT",
+    "borderline_action": "REFERENCE_ONLY_NO_ALERT"
+  },
+
+  "correction_warning": {
+    "drawdown_from_prior_high_min": 0.15,
+    "must_later_make_new_high": true,
+    "scoring": "NEUTRAL",
+    "report_count_separately": true,
+    "definition": "Within an auto cycle before its final peak, if ew_index falls at least 15% from a prior running high and later exceeds that prior high, a TOP CONFIRMED occurring from the drawdown start until the recovery/new-high date is classified as CORRECTION_WARNING. It is neither a TOP hit nor a false alert; count separately. Future recovery is used for scoring labels only, never detector input."
+  },
+
   "external_shock_cycles": ["A2"],
   "contaminated_cycles": ["A4", "A5"]
 }
