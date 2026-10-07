@@ -81,8 +81,9 @@ def normalize(rows: list[dict], policy: dict):
     start = policy["oos_start_date"]
     scored_kinds = set(policy["alert_logging"]["performance_scored_kinds"])
     for r in rows:
-        msg = r.get("alert", "")
-        kinds = [x for x in r.get("alert_kinds", "").split("|") if x] or alert_kinds(msg)
+        msg = r.get("alert") or ""
+        raw_kinds = r.get("alert_kinds") or ""
+        kinds = [x for x in raw_kinds.split("|") if x] or alert_kinds(msg)
         changed = b(r.get("alert_changed")) or bool(msg and "기준선 생성" not in msg)
         r["alert_changed"] = str(bool(changed))
         r["alert_kinds"] = "|".join(kinds)
@@ -110,7 +111,6 @@ def merge_latest(rows: list[dict], latest: dict, policy: dict):
         existing = {"asof": asof}
         rows.append(existing)
 
-    # 같은 날 재실행(is_new_bar=false)이 실제 장마감 알림을 지우지 않게 한다.
     preserve_event = b(existing.get("alert_changed")) and not latest.get("is_new_bar", False)
     existing.update({
         "phase": state.get("phase", existing.get("phase", "")),
@@ -139,7 +139,6 @@ def score_matured(rows: list[dict], policy: dict, provider_name: str):
         return
 
     earliest = min(dt.date.fromisoformat(r["asof"]) for r in pending)
-    # 지표/유효성 워밍업을 충분히 확보한다.
     start = earliest - dt.timedelta(days=450)
     end = dt.date.today()
     universe = load_json(os.path.join(HERE, "universe.json"))
