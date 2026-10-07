@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-10-07T10:34:55.854907+00:00",
+  "status": "HISTORICAL_SMOKE_ONLY_NOT_OOS_PASS_FAIL",
+  "frozen_rule_reference": "oos_evaluation_policy.json/pullback_pause_oos",
+  "sample_counts": {
+    "paused": 452,
+    "normal": 131
+  },
+  "summary": {
+    "paused": {
+      "n_all": 452,
+      "20": {
+        "n": 448,
+        "mean_forward_return": 0.032408584774609825,
+        "median_forward_return": 0.0,
+        "mean_MAE": -0.08655446088685123,
+        "mean_MFE": 0.12880863554320784,
+        "loss_rate": 0.4955357142857143
+      },
+      "60": {
+        "n": 440,
+        "mean_forward_return": 0.1015797929238757,
+        "median_forward_return": 0.04244267095539367,
+        "mean_MAE": -0.1511672874405465,
+        "mean_MFE": 0.2668485784798231,
+        "loss_rate": 0.4318181818181818
+      },
+      "120": {
+        "n": 423,
+        "mean_forward_return": 0.22440064755621184,
+        "median_forward_return": 0.10449438202247197,
+        "mean_MAE": -0.1889083944239002,
+        "mean_MFE": 0.495169462251828,
+        "loss_rate": 0.40425531914893614
+      }
+    },
+    "normal": {
+      "n_all": 131,
+      "20": {
+        "n": 131,
+        "mean_forward_return": 0.06392960245987347,
+        "median_forward_return": 0.030864197530864113,
+        "mean_MAE": -0.07530039100035954,
+        "mean_MFE": 0.15926019983047904,
+        "loss_rate": 0.3893129770992366
+      },
+      "60": {
+        "n": 130,
+        "mean_forward_return": 0.1332016346868072,
+        "median_forward_return": 0.020500700442531272,
+        "mean_MAE": -0.14644419518555699,
+        "mean_MFE": 0.3472946297413916,
+        "loss_rate": 0.46923076923076923
+      },
+      "120": {
+        "n": 119,
+        "mean_forward_return": 0.17867429269121815,
+        "median_forward_return": 0.0531400966183575,
+        "mean_MAE": -0.17413627169906257,
+        "mean_MFE": 0.5129433694349465,
+        "loss_rate": 0.40336134453781514
+      }
+    }
+  },
+  "warning": "Historical data are contaminated by prior research. Do not use this result to approve or retune the rule."
+}
