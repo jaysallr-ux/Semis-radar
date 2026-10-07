@@ -8,10 +8,18 @@ on:
     - cron: "10 8 * * 1-5"
     - cron: "30 8 * * 1-5"
   workflow_dispatch: {}
-  # A workflow-file repair should immediately exercise the repaired pipeline.
+  # Pipeline repairs should immediately exercise the repaired pipeline.
   push:
     paths:
       - ".github/workflows/daily.yml"
+      - "run_daily.py"
+      - "oos_tracker.py"
+      - "data_provider.py"
+      - "regime.py"
+      - "params.json"
+      - "universe.json"
+      - "oos_evaluation_policy.json"
+      - "requirements.txt"
 
 permissions:
   contents: write
@@ -65,9 +73,6 @@ jobs:
         if: steps.guard.outputs.run == 'true'
         env:
           TZ: Asia/Seoul
-          # KIS로 교체할 때만 사용. 값은 저장소 Settings > Secrets 에만 넣을 것.
-          # KIS_APP_KEY: ${{ secrets.KIS_APP_KEY }}
-          # KIS_APP_SECRET: ${{ secrets.KIS_APP_SECRET }}
         run: python run_daily.py --provider naver
 
       - name: Update frozen OOS log and score matured alerts
