@@ -1,0 +1,285 @@
+{
+  "generated_at": "2026-10-07T10:21:07.186582+00:00",
+  "policy_frozen": true,
+  "tuning_grid": {
+    "watch_on_share_drop": [
+      0.15,
+      0.2,
+      0.25
+    ],
+    "watch_leader_rs_drop": [
+      4.0,
+      6.0,
+      8.0
+    ],
+    "confirm_on_share_drop": [
+      0.25,
+      0.3,
+      0.35
+    ]
+  },
+  "cycles": [
+    {
+      "id": "A1",
+      "start_i": 159,
+      "peak_i": 713,
+      "start_date": "2015-08-24",
+      "peak_date": "2017-11-24",
+      "ongoing": false,
+      "gain_pct": 126.8
+    },
+    {
+      "id": "A2",
+      "start_i": 983,
+      "peak_i": 1257,
+      "start_date": "2019-01-04",
+      "peak_date": "2020-02-17",
+      "ongoing": false,
+      "gain_pct": 88.2
+    },
+    {
+      "id": "A3",
+      "start_i": 1280,
+      "peak_i": 1722,
+      "start_date": "2020-03-19",
+      "peak_date": "2021-12-30",
+      "ongoing": false,
+      "gain_pct": 327.2
+    },
+    {
+      "id": "A4",
+      "start_i": 1906,
+      "peak_i": 2327,
+      "start_date": "2022-09-30",
+      "peak_date": "2024-06-19",
+      "ongoing": false,
+      "gain_pct": 213.1
+    },
+    {
+      "id": "A5",
+      "start_i": 2443,
+      "peak_i": 2807,
+      "start_date": "2024-12-09",
+      "peak_date": "2026-06-12",
+      "ongoing": false,
+      "gain_pct": 488.2
+    }
+  ],
+  "base": {
+    "cycles": [
+      {
+        "cycle": "A1",
+        "kind": "endogenous",
+        "contaminated": false,
+        "peak_date": "2017-11-24",
+        "hit": false
+      },
+      {
+        "cycle": "A2",
+        "kind": "external_shock",
+        "contaminated": false,
+        "peak_date": "2020-02-17",
+        "hit": false
+      },
+      {
+        "cycle": "A3",
+        "kind": "endogenous",
+        "contaminated": false,
+        "peak_date": "2021-12-30",
+        "hit": true,
+        "alert_date": "2021-12-03",
+        "calendar_days_from_peak": -27,
+        "excursions": {
+          "60": {
+            "max_up": 0.09151325175833946,
+            "max_drawdown": -0.08748469877673348
+          },
+          "120": {
+            "max_up": 0.09151325175833946,
+            "max_drawdown": -0.10003645302613562
+          }
+        }
+      },
+      {
+        "cycle": "A4",
+        "kind": "endogenous",
+        "contaminated": true,
+        "peak_date": "2024-06-19",
+        "hit": false
+      },
+      {
+        "cycle": "A5",
+        "kind": "endogenous",
+        "contaminated": true,
+        "peak_date": "2026-06-12",
+        "hit": false
+      }
+    ],
+    "events": [
+      {
+        "i": 609,
+        "date": "2017-06-22",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.1177483285012193,
+        "max_up60": 0.14317949755683346,
+        "max_drawdown60": -0.00964192064485625
+      },
+      {
+        "i": 1184,
+        "date": "2019-10-30",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.022476765151988598,
+        "max_up60": 0.271973169635888,
+        "max_drawdown60": -0.05436491840180091
+      },
+      {
+        "i": 1327,
+        "date": "2020-05-29",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.08325804099576617,
+        "max_up60": 0.365430723091573,
+        "max_drawdown60": -0.07025063074376237
+      },
+      {
+        "i": 1487,
+        "date": "2021-01-20",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.054460545069121125,
+        "max_up60": 0.2254562547850465,
+        "max_drawdown60": -0.06544252176567689
+      },
+      {
+        "i": 1549,
+        "date": "2021-04-21",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.023070475619140884,
+        "max_up60": 0.023070475619140884,
+        "max_drawdown60": -0.1190351019250171
+      },
+      {
+        "i": 1703,
+        "date": "2021-12-03",
+        "class": "TOP_HIT",
+        "max_up20": 0.09151325175833946,
+        "max_up60": 0.09151325175833946,
+        "max_drawdown60": -0.08748469877673348
+      },
+      {
+        "i": 2095,
+        "date": "2023-07-06",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.1720576460643093,
+        "max_up60": 0.1720576460643093,
+        "max_drawdown60": -0.046374136798570054
+      },
+      {
+        "i": 2280,
+        "date": "2024-04-08",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.06540826262955712,
+        "max_up60": 0.144009658125553,
+        "max_drawdown60": -0.026728030215935616
+      },
+      {
+        "i": 2581,
+        "date": "2025-07-08",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.059813679312972434,
+        "max_up60": 0.47963614796988296,
+        "max_drawdown60": -0.02254512278543863
+      },
+      {
+        "i": 2644,
+        "date": "2025-10-13",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.06419967883596778,
+        "max_up60": 0.17071643155267413,
+        "max_drawdown60": -0.08075695876257671
+      },
+      {
+        "i": 2721,
+        "date": "2026-02-02",
+        "class": "OTHER_CONFIRMED",
+        "max_up20": 0.2659233650280466,
+        "max_up60": 0.48968715213068004,
+        "max_drawdown60": 0.006158451019073974
+      }
+    ],
+    "counts": {
+      "confirmed_events": 11,
+      "top_hits": 1,
+      "correction_warnings": 0,
+      "false_breakouts": 3,
+      "judged_non_neutral": 11
+    },
+    "false_confirm_rate": 0.2727272727272727,
+    "value": {
+      "endogenous_hit_n": 1,
+      "mean_max_drawdown60": -0.08748469877673348,
+      "drawdown60_random_percentile": 66.02,
+      "mean_max_up60": 0.09151325175833946,
+      "random_mean_max_up60": 0.19748920481626953
+    }
+  },
+  "loco": [
+    {
+      "held_out": "A1",
+      "contaminated": false,
+      "selected": {
+        "watch_on_share_drop": 0.2,
+        "watch_leader_rs_drop": 4.0,
+        "confirm_on_share_drop": 0.35
+      },
+      "hit": false,
+      "alert_date": null,
+      "calendar_days_from_peak": null
+    },
+    {
+      "held_out": "A3",
+      "contaminated": false,
+      "selected": {
+        "watch_on_share_drop": 0.2,
+        "watch_leader_rs_drop": 4.0,
+        "confirm_on_share_drop": 0.35
+      },
+      "hit": true,
+      "alert_date": "2021-12-03",
+      "calendar_days_from_peak": -27
+    },
+    {
+      "held_out": "A4",
+      "contaminated": true,
+      "selected": {
+        "watch_on_share_drop": 0.2,
+        "watch_leader_rs_drop": 4.0,
+        "confirm_on_share_drop": 0.35
+      },
+      "hit": false,
+      "alert_date": null,
+      "calendar_days_from_peak": null
+    },
+    {
+      "held_out": "A5",
+      "contaminated": true,
+      "selected": {
+        "watch_on_share_drop": 0.2,
+        "watch_leader_rs_drop": 4.0,
+        "confirm_on_share_drop": 0.35
+      },
+      "hit": false,
+      "alert_date": null,
+      "calendar_days_from_peak": null
+    }
+  ],
+  "verdict": {
+    "tests": {
+      "detection": false,
+      "value": false,
+      "false_alerts": true,
+      "degrees_of_freedom": true
+    },
+    "loco_hits": 1,
+    "loco_total": 4,
+    "decision": "REJECT"
+  }
+}
