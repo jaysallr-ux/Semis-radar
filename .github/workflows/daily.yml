@@ -2,9 +2,16 @@ name: semis-radar-daily
 
 on:
   schedule:
-    # UTC 07:50 = KST 16:50, 평일. 수능일 16:30 장마감에도 20분 여유 확보.
+    # GitHub scheduled runs can be delayed/dropped. Use three attempts; freshness guard prevents duplicate radar runs.
+    # UTC 07:50/08:10/08:30 = KST 16:50/17:10/17:30, weekdays.
     - cron: "50 7 * * 1-5"
-  workflow_dispatch: {}   # Actions 탭에서 수동 실행용
+    - cron: "10 8 * * 1-5"
+    - cron: "30 8 * * 1-5"
+  workflow_dispatch: {}
+  # A workflow-file repair should immediately exercise the repaired pipeline.
+  push:
+    paths:
+      - ".github/workflows/daily.yml"
 
 permissions:
   contents: write
@@ -24,10 +31,38 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Freshness guard
+        id: guard
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          from pathlib import Path
+
+          run = True
+          p = Path("output/latest.json")
+          if p.exists():
+              try:
+                  d = json.loads(p.read_text(encoding="utf-8"))
+                  ts = d.get("generated_at")
+                  if ts:
+                      generated = datetime.fromisoformat(ts).astimezone(ZoneInfo("Asia/Seoul")).date()
+                      today = datetime.now(ZoneInfo("Asia/Seoul")).date()
+                      if generated == today and d.get("data_ok") is True:
+                          run = False
+              except Exception:
+                  run = True
+          print(f"run={'true' if run else 'false'}")
+          PY
+
       - name: Install
+        if: steps.guard.outputs.run == 'true'
         run: pip install -r requirements.txt
 
       - name: Run radar
+        if: steps.guard.outputs.run == 'true'
         env:
           TZ: Asia/Seoul
           # KIS로 교체할 때만 사용. 값은 저장소 Settings > Secrets 에만 넣을 것.
@@ -36,11 +71,13 @@ jobs:
         run: python run_daily.py --provider naver
 
       - name: Update frozen OOS log and score matured alerts
+        if: steps.guard.outputs.run == 'true'
         env:
           TZ: Asia/Seoul
         run: python oos_tracker.py --provider naver
 
       - name: Commit results
+        if: steps.guard.outputs.run == 'true'
         run: |
           git config user.name "semis-radar-bot"
           git config user.email "semis-radar-bot@users.noreply.github.com"
