@@ -44,58 +44,12 @@
   "auto_cycle_rule_frozen_reference": {"reversal": 0.25, "min_gain": 0.50, "min_td": 120},
   "primary_use": ["단계 전환", "주도 파트/하이닉 주도 변화", "후반 경고"],
   "non_primary_use": "단순 재진입 알림은 매수 신호가 아니라 아직 사이클이 살아 있다는 참고로만 본다.",
-  "pullback_pause_oos": {
-    "status": "FROZEN_SHADOW_ONLY",
-    "frozen_at": "2026-10-07",
-    "oos_start_date": "2026-10-08",
-    "purpose": "기존 레이더 신호를 눌림매수 중단 규칙에 사용하는 것이 실제로 손실 회피에 도움이 되는지 신규 OOS 표본으로만 검증한다. 검증 완료 전에는 성능이 입증된 전략으로 간주하지 않는다.",
-    "pause_rule": {
-      "logic": "OR",
-      "conditions": [
-        "phase가 CONFIRMED에서 이탈",
-        "주도 파트가 소실(part_leader 없음)",
-        "late_level이 후반경고 이상"
-      ]
-    },
-    "resume_rule": {
-      "logic": "AND",
-      "conditions": [
-        "phase가 CONFIRMED로 복귀",
-        "주도 파트가 재등장(part_leader 존재)"
-      ],
-      "note": "재개 조건에서는 late_level을 추가 조건으로 요구하지 않는다. 이 규칙은 2026-10-07에 동결한다."
-    },
-    "mechanical_pullback_definition": {
-      "universe": "universe.json에 정의된 28종목",
-      "eligibility": "해당 거래일 소속 파트가 현재 주도 파트이거나 해당 종목의 추세가 ON",
-      "condition_all": [
-        "종가가 직전 20거래일 고점 대비 -8% 이하 하락",
-        "종가가 20일 이동평균 대비 -3% 이상 +1% 이하"
-      ],
-      "same_ticker_cooldown_trading_days": 20,
-      "selection": "실제 매매 여부와 무관하게 코드가 모든 거래일에 동일 기준으로 자동 기록한다. 중단구간과 정상구간에 같은 정의를 적용하며 수동 선택·기억 기반 추가를 금지한다."
-    },
-    "event_classification": {
-      "paused": "눌림 발생일이 pause_rule 발동 후 resume_rule 충족 전 구간",
-      "normal": "그 외 구간",
-      "entry_price": "눌림 발생일 종가",
-      "forward_windows_trading_days": [20, 60, 120],
-      "metrics": ["forward_return", "MAE", "MFE", "loss_rate"],
-      "comparison": "paused 가상 눌림과 normal 가상 눌림을 동일한 산식으로 비교하여 손실 회피 효과와 놓친 상승을 함께 평가한다."
-    },
-    "minimum_evaluation_gate": {
-      "paused_pullbacks_min": 30,
-      "normal_pullbacks_min": 30,
-      "minimum_elapsed_months": 12,
-      "logic": "AND",
-      "rule": "중단구간 눌림 30건 이상, 정상구간 눌림 30건 이상, OOS 시작 후 최소 12개월 경과를 모두 충족해야 최종 판정한다. 하나라도 부족하면 판정 보류한다. 각 표본의 120거래일 결과가 성숙하지 않았으면 해당 표본은 최종 판정 표본 수에서 제외한다."
-    },
-    "anti_overfit": {
-      "historical_data_use": "구현 오류 확인 및 코드 스모크 테스트에만 허용. 과거 성과로 이 규칙의 합격을 선언하지 않는다.",
-      "no_retune": "OOS 결과를 본 뒤 임계값, 눌림 정의, 중단/재개 규칙, 최소 표본 수를 수정하지 않는다. 수정이 필요하면 새 버전으로 명시하고 그 버전의 OOS 시작일과 최소 12개월 시계를 다시 시작한다.",
-      "manual_override": "성과 평가 데이터에는 수동으로 눌림 표본을 추가·삭제하지 않는다."
-    },
-    "interpretation": "이 연구는 TOP 예측이 아니다. 신규 위험 노출을 일시 중단하는 규칙의 효용만 평가한다."
+  "pullback_pause_research": {
+    "status": "RETIRED",
+    "retired_at": "2026-10-07",
+    "decision": "폐지. OOS 수집·판정 및 운영 적용을 하지 않는다.",
+    "historical_smoke_note": "과거 스모크 테스트는 연구 기록으로만 취급하며 전략 승인 근거로 사용하지 않는다.",
+    "no_production_effect": true
   },
   "top_detector_research": {
     "v1_decision": "REJECT",
