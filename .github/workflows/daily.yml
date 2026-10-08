@@ -2,11 +2,15 @@ name: semis-radar-daily
 
 on:
   schedule:
-    # GitHub scheduled runs can be delayed/dropped. Use three attempts; freshness guard prevents duplicate radar runs.
-    # UTC 07:50/08:10/08:30 = KST 16:50/17:10/17:30, weekdays.
-    - cron: "50 7 * * 1-5"
-    - cron: "10 8 * * 1-5"
-    - cron: "30 8 * * 1-5"
+    # GitHub scheduled runs can be delayed or occasionally dropped.
+    # Retry every 20 minutes from KST 16:10 through 17:50 on weekdays.
+    # Freshness guard makes later attempts no-ops after one successful same-day run.
+    - cron: "10 7 * * 1-5"  # KST 16:10
+    - cron: "30 7 * * 1-5"  # KST 16:30
+    - cron: "50 7 * * 1-5"  # KST 16:50
+    - cron: "10 8 * * 1-5"  # KST 17:10
+    - cron: "30 8 * * 1-5"  # KST 17:30
+    - cron: "50 8 * * 1-5"  # KST 17:50
   workflow_dispatch: {}
   # Pipeline repairs should immediately exercise the repaired pipeline.
   push:
