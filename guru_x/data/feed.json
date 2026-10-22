@@ -1,6 +1,6 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-22T16:53:12+09:00",
+  "generated_at": "2026-10-22T21:55:27+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
@@ -10,15 +10,15 @@
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 66,
-    "already_known": 64,
+    "urls_found": 65,
+    "already_known": 59,
     "too_old": 0,
-    "verified_syndication": 0,
+    "verified_syndication": 4,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-20T13:26:19.000Z",
+    "list_oldest": "2026-10-20T14:51:01.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -33,7 +33,7 @@
       "tier": 1,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
+      "last_success_at": "2026-10-22T21:55:27+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -43,7 +43,7 @@
       "tier": 1,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
+      "last_success_at": "2026-10-22T21:55:27+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -53,7 +53,7 @@
       "tier": 1,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
+      "last_success_at": "2026-10-22T21:55:27+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -63,7 +63,7 @@
       "tier": 1,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
+      "last_success_at": "2026-10-22T21:55:27+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -73,8 +73,8 @@
       "tier": 2,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-22T21:55:27+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -83,8 +83,8 @@
       "tier": 2,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-22T21:55:27+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -93,7 +93,7 @@
       "tier": 2,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
+      "last_success_at": "2026-10-22T21:55:27+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -103,7 +103,7 @@
       "tier": 3,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
+      "last_success_at": "2026-10-22T21:55:27+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -113,8 +113,8 @@
       "tier": 3,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-22T21:55:27+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -123,7 +123,7 @@
       "tier": 3,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:53:12+09:00",
+      "last_success_at": "2026-10-22T21:55:27+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -134,6 +134,104 @@
     "usd_estimate": 0.0
   },
   "posts": [
+    {
+      "id": "2113229908830748950",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-22T11:24:06.000Z",
+      "url": "https://x.com/RyanDetrick/status/2113229908830748950",
+      "text": "👀",
+      "quoted_post_id": "2113224153096425518",
+      "quoted_post": {
+        "id": "2113224153096425518",
+        "author": "MacroCharts",
+        "created_at": "2026-10-22T11:01:14.000Z",
+        "url": "https://x.com/MacroCharts/status/2113224153096425518",
+        "text": "From GS via BBG:\n\n- Hedge funds have loaded up on shorts, pushing bearish bets near a 5-year high and raising the risk of a sharp squeeze.\n- Short/Buy ratio hit ~5x across global equities, and short leverage is now at 99th percentile over the past 5 years.\n\nWhat's the setup? https://t.co/TzHPxc0hMN",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2113227616849195078",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-22T11:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2113227616849195078",
+      "text": "High Nominal Growth -> Demand Destruction\n\nFinancial markets looked right through the drags on the economy from high oil prices for most of the year. As oil gets back to Iran war highs, we are seeing an important shift in the market action.\n\nhttps://t.co/9Shk6IfGGv https://t.co/9g2Dy307dl",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/high-nominal-growth-demand-destruction"
+      ],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2113224900794016015",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "author_id": "1546222940",
+      "created_at": "2026-10-22T11:04:12.000Z",
+      "url": "https://x.com/dampedspring/status/2113224900794016015",
+      "text": "Looking at catching a particular knife today https://t.co/JsN7QuU9af",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2113209199580573808",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "author_id": "1546222940",
+      "created_at": "2026-10-22T10:01:49.000Z",
+      "url": "https://x.com/dampedspring/status/2113209199580573808",
+      "text": "Wordle 1,951 3/6*\n\n🟨⬜⬜🟨🟨\n⬜⬜🟩🟩🟨\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2113113700638785648",
       "person": "Lyn Alden",
