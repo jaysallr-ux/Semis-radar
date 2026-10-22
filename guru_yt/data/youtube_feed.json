@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-22T22:07:25+09:00",
+  "generated_at": "2026-10-22T22:49:27+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-22T20:49:54+09:00",
+    "last_discovery_at": "2026-10-22T22:07:25+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {}
   },
@@ -30,7 +30,7 @@
       "resolved_by": "config",
       "rss_ok": true,
       "rss_count": 15,
-      "oldest_rss": "2026-10-13T00:23:11+09:00",
+      "oldest_rss": "2026-10-14T03:19:20+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -90,7 +90,7 @@
       "resolved_by": "cached",
       "rss_ok": true,
       "rss_count": 15,
-      "oldest_rss": "2026-10-21T19:25:02+09:00",
+      "oldest_rss": "2026-10-21T19:25:47+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -136,7 +136,7 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 10,
+    "gemini_calls_today": 12,
     "gemini_est_video_hours_today": 1.113,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "quota or rate limit (429 after 65s retry)"
@@ -617,14 +617,14 @@
       "appearance_excerpt": " going up to 15%. Wow, what is going on? For these two topics, first yields, then AI credit, I'm going to be talking to Jim Bianco of Bianco Research and the WTBN ETF. Jim, wonderful to see you. How are you?  [1:02] >> Thanks for having me, Jack. Looking forward to the conversation. >> So, Jim, probably one of the grea",
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "error",
+      "gemini_status": "unavailable",
       "gemini_model": null,
       "gemini_at": null,
       "person_speaks": null,
       "gemini_evidence": null,
       "stance": null,
       "quotes": [],
-      "gemini_error_count": 2,
+      "gemini_error_count": 3,
       "gemini_last_error": "quota (429)",
       "evidence_ready_at": "2026-10-22T20:49:54+09:00",
       "evidence_grade": "자막 확보, 인용 대기",
@@ -636,7 +636,7 @@
       },
       "backfilled_at": "2026-10-22T20:49:54+09:00",
       "gemini_mode": null,
-      "transcript_retained": true
+      "transcript_retained": false
     },
     {
       "video_id": "SKrGZWgnH1A",
