@@ -25,6 +25,7 @@ import math
 XAI_URL = "https://api.x.ai/v1/responses"
 SYNDICATION_URL = "https://cdn.syndication.twimg.com/tweet-result"
 TIMELINE_URL = "https://syndication.twitter.com/srv/timeline-profile/screen-name/{handle}"
+LIST_URL = "https://syndication.twitter.com/srv/timeline-list/list-id/{list_id}"
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
                     "Chrome/126.0 Safari/537.36", "Accept-Language": "en-US,en;q=0.9"}
 OEMBED_URL = "https://publish.twitter.com/oembed"
@@ -130,6 +131,33 @@ class GrokOembed:
         if status == 200 and isinstance(body, dict) and body.get("id_str") == post_id and body.get("user"):
             return body
         return None
+
+    def list_ids(self, list_id: str) -> tuple[list[tuple[str, str]], str]:
+        """Public X list embed. Returns ([(post_id, author_screen_name)], status). Reposts are skipped."""
+        status, body = self._get(LIST_URL.format(list_id=list_id), {})
+        raw = body.get("raw") if isinstance(body, dict) else None
+        if status != 200 or not raw:
+            return [], f"blocked_{status}"
+        m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', raw, re.S)
+        if not m:
+            return [], "no_data"
+        try:
+            entries = json.loads(m.group(1))["props"]["pageProps"]["timeline"]["entries"]
+        except Exception:
+            return [], "no_data"
+        if not entries:
+            return [], "empty (list private?)"
+        out, all_ids = [], []
+        for e in entries:
+            t = (e.get("content") or {}).get("tweet") or {}
+            if not t.get("id_str"):
+                continue
+            all_ids.append(int(t["id_str"]))
+            if t.get("retweeted_status"):
+                continue
+            out.append((t["id_str"], (t.get("user") or {}).get("screen_name") or ""))
+        self.list_oldest = snowflake_time(str(min(all_ids))) if all_ids else None
+        return out, f"ok ({len(entries)} entries)"
 
     def timeline_ids(self, handle: str) -> tuple[list[str], str]:
         """Returns (ids authored by handle, status). status: ok / blocked_<code> / no_data."""
@@ -245,20 +273,34 @@ def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, 
     g = cfg.get("grok", {})
     by_handle = {a["handle"].lower(): a for a in accounts}
     window = timedelta(days=cfg.get("window_days", 7))
-    stats = {"timeline": {}, "grok": None, "manual": len(manual_ids or {}), "urls_found": 0, "already_known": 0, "too_old": 0,
+    stats = {"list": None, "timeline": {}, "grok": None, "manual": len(manual_ids or {}), "urls_found": 0, "already_known": 0, "too_old": 0,
              "verified_syndication": 0, "verified_oembed": 0, "rejected_author": 0, "reply_other": 0, "verify_failed": 0}
     found: dict[str, str | None] = {}
     sources: dict[str, set] = {}
 
-    for a in accounts:
+    list_id = cfg.get("x_list_id")
+    if list_id:
         try:
-            ids, st = client.timeline_ids(a["handle"])
+            pairs, st = client.list_ids(str(list_id))
         except Exception as e:
-            ids, st = [], f"error_{type(e).__name__}"
-        stats["timeline"][a["handle"]] = st
-        for pid in ids:
-            found.setdefault(pid, a["handle"])
-            sources.setdefault(pid, set()).add("profile_embed")
+            pairs, st = [], f"error_{type(e).__name__}"
+        stats["list"] = st
+        stats["list_oldest"] = getattr(client, "list_oldest", None)
+        for pid, h in pairs:
+            if h.lower() in by_handle:
+                found.setdefault(pid, by_handle[h.lower()]["handle"])
+                sources.setdefault(pid, set()).add("list_embed")
+
+    if cfg.get("try_profile_embed", False):
+        for a in accounts:
+            try:
+                ids, st = client.timeline_ids(a["handle"])
+            except Exception as e:
+                ids, st = [], f"error_{type(e).__name__}"
+            stats["timeline"][a["handle"]] = st
+            for pid in ids:
+                found.setdefault(pid, a["handle"])
+                sources.setdefault(pid, set()).add("profile_embed")
 
     for pid, h in (manual_ids or {}).items():
         if pid not in found or (found[pid] is None and h):

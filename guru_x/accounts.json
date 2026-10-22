@@ -1,5 +1,7 @@
 {
   "window_days": 7,
+  "x_list_id": "2113167856594726920",
+  "try_profile_embed": false,
   "max_originals_per_account_per_run": 20,
   "max_thread_replies_per_post": 15,
   "thread_recheck_hours": 12,
@@ -7,19 +9,67 @@
   "grok": {
     "model": "grok-4.3",
     "lookback_days": 2,
-    "prices": {"input_per_m": 1.25, "output_per_m": 2.5, "x_post": 0.005, "x_user": 0.01}
+    "prices": {
+      "input_per_m": 1.25,
+      "output_per_m": 2.5,
+      "x_post": 0.005,
+      "x_user": 0.01
+    }
   },
-  "oembed_selftest": {"post_id": "2111801778551259342", "handle": "RyanDetrick"},
+  "oembed_selftest": {
+    "post_id": "2111801778551259342",
+    "handle": "RyanDetrick"
+  },
   "accounts": [
-    {"person": "Mark Newton", "handle": "MarkNewtonCMT", "tier": 1},
-    {"person": "Cem Karsan", "handle": "jam_croissant", "tier": 1},
-    {"person": "Warren Pies", "handle": "WarrenPies", "tier": 1},
-    {"person": "Darius Dale", "handle": "DariusDale42", "tier": 1},
-    {"person": "Ryan Detrick", "handle": "RyanDetrick", "tier": 2},
-    {"person": "Andy Constan", "handle": "dampedspring", "tier": 2},
-    {"person": "Marko Papic", "handle": "Geo_papic", "tier": 2},
-    {"person": "Jim Bianco", "handle": "BiancoResearch", "tier": 3},
-    {"person": "Bob Elliott", "handle": "BobEUnlimited", "tier": 3},
-    {"person": "Lyn Alden", "handle": "LynAldenContact", "tier": 3}
+    {
+      "person": "Mark Newton",
+      "handle": "MarkNewtonCMT",
+      "tier": 1
+    },
+    {
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1
+    },
+    {
+      "person": "Warren Pies",
+      "handle": "WarrenPies",
+      "tier": 1
+    },
+    {
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1
+    },
+    {
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2
+    },
+    {
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2
+    },
+    {
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2
+    },
+    {
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3
+    },
+    {
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3
+    },
+    {
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3
+    }
   ]
 }
