@@ -150,6 +150,41 @@ def read_rss(http: Http, channel_id: str) -> list[dict]:
     return out
 
 
+def video_meta(http: Http, vid: str, supadata_key: str | None, state: dict) -> dict:
+    """Channel from YouTube oEmbed (works from Actions; the watch page is behind a bot check there) and the
+    exact upload date from Supadata metadata (1 credit) when a key is set."""
+    out = {}
+    try:
+        status, text, _ = http.get("https://www.youtube.com/oembed",
+                                   params={"url": f"https://www.youtube.com/watch?v={vid}", "format": "json"})
+        if status == 200:
+            j = json.loads(text)
+            out.update(title=j.get("title", ""), channel_name=j.get("author_name"), channel_url=j.get("author_url"))
+    except Exception:
+        pass
+    sup = state.setdefault("supadata", {"used_total": 0})
+    if out.get("channel_name") and supadata_key and sup.get("used_total", 0) < 90:
+        try:
+            sup["used_total"] = sup.get("used_total", 0) + 1
+            status, text, _ = http.get("https://api.supadata.ai/v1/metadata",
+                                       params={"url": f"https://www.youtube.com/watch?v={vid}"},
+                                       headers={"x-api-key": supadata_key})
+            if status == 200:
+                j = json.loads(text)
+                media = j.get("media") if isinstance(j.get("media"), dict) else {}
+                out["published_at"] = j.get("uploadDate") or j.get("createdAt") or j.get("publishedAt") or media.get("uploadDate")
+                ch = j.get("channel") or j.get("author") or {}
+                if isinstance(ch, dict):
+                    out["channel_id"] = ch.get("id")
+                out["description"] = (j.get("description") or "")[:1500]
+                dur = j.get("duration") or media.get("duration")
+                if isinstance(dur, (int, float)):
+                    out["is_short"] = dur <= 60
+        except Exception:
+            pass
+    return out
+
+
 EXTRA_MATCHES = ("web_discovery", "extra")  # videos accepted one by one: exempt from the 48h backfill limit
 
 
@@ -767,6 +802,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     # Each is checked on its own watch page: it must be on an allowlisted channel and inside the window.
     # Accepted ones become normal records (Gemini + captions + per-quote grades); published_at stays the real date.
     allowed = {c["channel_id"]: c["label"] for c in channel_out if c.get("channel_id")}
+    label_to_id = {lbl.strip().lower(): cid for cid, lbl in allowed.items()}
     modes = {c.get("channel_id") or state["channel_ids"].get(c["label"]): c["mode"] for c in cfg["channels"]}
     seen_extra = set(state.get("extra_checked", []))
     extra_in = list(cfg.get("extra_videos", [])) + list(queue.get("extra_videos", []))
@@ -775,20 +811,23 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         vid, person = ex.get("video_id"), ex.get("person")
         if not vid or vid in videos or vid in seen_extra or person not in by_person:
             continue
-        meta = watch_meta(http, vid)
-        cid, pub = meta.get("channel_id"), meta.get("published_at")
-        reason = None
-        if not cid or not pub:
+        meta = video_meta(http, vid, supadata_key, state)
+        if not meta.get("channel_name"):
             extra_stats.setdefault("retry_next_run", []).append(vid)  # transient: try again next run
             continue
-        seen_extra.add(vid)
-        pub = datetime.fromisoformat(pub).astimezone(timezone.utc).isoformat()
-        if False:
-            pass
-        elif cid not in allowed:
+        cid = label_to_id.get(meta["channel_name"].strip().lower()) or (meta.get("channel_id") if meta.get("channel_id") in allowed else None)
+        pub = meta.get("published_at") or ex.get("published_at")
+        reason = None
+        if not cid:
             reason = f"channel {meta.get('channel_name')} not allowlisted"
-        elif now - parse_ts(pub) > window:
-            reason = "older than window"
+        elif not pub:
+            extra_stats.setdefault("retry_next_run", []).append(vid)  # no reliable date yet
+            continue
+        else:
+            pub = datetime.fromisoformat(pub.replace("Z", "+00:00")).astimezone(timezone.utc).isoformat()
+            if now - parse_ts(pub) > window:
+                reason = "older than window"
+        seen_extra.add(vid)
         if reason:
             extra_stats["rejected"] += 1
             extra_stats.setdefault("reasons", {})[vid] = reason
