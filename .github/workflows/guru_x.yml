@@ -1,0 +1,81 @@
+name: guru-x-feed
+
+on:
+  schedule:
+    # GPT Macro Guru Stance Watch runs at 11:00 and 22:00 KST.
+    # Fetch 45 minutes earlier, with one retry 20 minutes later in case GitHub delays or drops a run.
+    # Freshness guard makes the retry a no-op after a successful run.
+    - cron: "15 1 * * *"   # KST 10:15
+    - cron: "35 1 * * *"   # KST 10:35
+    - cron: "15 12 * * *"  # KST 21:15
+    - cron: "35 12 * * *"  # KST 21:35
+  workflow_dispatch: {}
+  push:
+    paths:
+      - ".github/workflows/guru_x.yml"
+      - "guru_x/fetch_x.py"
+      - "guru_x/accounts.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guru-x
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Freshness guard
+        id: guard
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          run = True
+          if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+              p = Path("guru_x/data/feed.json")
+              if p.exists():
+                  try:
+                      d = json.loads(p.read_text(encoding="utf-8"))
+                      age = datetime.now(timezone.utc) - datetime.fromisoformat(d["generated_at"])
+                      if d.get("data_ok") is True and age.total_seconds() < 50 * 60:
+                          run = False
+                  except Exception:
+                      run = True
+          print(f"run={'true' if run else 'false'}")
+          PY
+
+      - name: Install
+        if: steps.guard.outputs.run == 'true'
+        run: pip install requests
+
+      - name: Fetch X posts
+        if: steps.guard.outputs.run == 'true'
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: python guru_x/fetch_x.py
+
+      - name: Commit feed
+        if: steps.guard.outputs.run == 'true'
+        run: |
+          git config user.name "guru-x-bot"
+          git config user.email "guru-x-bot@users.noreply.github.com"
+          git add guru_x/data/
+          git commit -m "guru-x feed $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')" || { echo "변경 없음"; exit 0; }
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 5
+          done
+          exit 1
