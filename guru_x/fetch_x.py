@@ -221,12 +221,8 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     prev_status = {a.get("handle"): a for a in old_feed.get("accounts", [])}
     budget_stop = False
 
-    provider = "x_api" if token else ("grok_oembed" if xai_key else "none")
-    client = None
-    if provider == "none":
-        errors["_global"] = "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
-    elif provider == "x_api":
-        client = XClient(token, cfg.get("max_posts_billed_per_run", 300), http_get)
+    provider = "x_api" if token else "free"
+    client = XClient(token, cfg.get("max_posts_billed_per_run", 300), http_get) if provider == "x_api" else None
 
     if client:
         missing = [a["handle"] for a in accounts if a["handle"].lower() not in state["user_ids"]]
@@ -276,18 +272,20 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
                         break
 
     grok_cost, grok_stats, selftest = None, None, None
-    gclient = grok_client or (grok_source.GrokOembed(xai_key or "") if provider != "x_api" else None)
-    if provider == "grok_oembed":
-        try:
-            res = grok_source.collect(gclient, cfg, accounts, now, set(posts))
-            for r in res["records"]:
-                posts[r["id"]] = r
-                acc_status[r["handle"]]["new_originals"] += 1
-            for a in accounts:
+    gclient = grok_client or (grok_source.GrokOembed(xai_key) if provider == "free" else None)
+    if provider == "free":
+        res = grok_source.collect(gclient, cfg, accounts, now, set(posts))
+        for r in res["records"]:
+            posts[r["id"]] = r
+            acc_status[r["handle"]]["new_originals"] += 1
+        grok_cost, grok_stats = res["cost"], res["stats"]
+        grok_ok = (grok_stats.get("grok") or "").startswith("ok")
+        for a in accounts:
+            tl = grok_stats["timeline"].get(a["handle"], "")
+            if tl == "ok" or grok_ok:
                 acc_status[a["handle"]]["last_fetch_ok"] = True
-            grok_cost, grok_stats = res["cost"], res["stats"]
-        except RuntimeError as e:
-            errors["_global"] = str(e)
+            else:
+                errors[a["handle"]] = f"탐색 실패 (프로필 임베드: {tl or '미시도'}, Grok: {grok_stats.get('grok')})"
     if gclient is not None and cfg.get("oembed_selftest"):
         st_cfg = cfg["oembed_selftest"]
         try:
@@ -332,9 +330,9 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
                 "usd_estimate": round(posts_billed * PRICE_PER_POST + users_billed * PRICE_PER_USER, 4)}
     sources = {
         "x_api": "X API v2 (official). author verified by user_id. text is verbatim.",
-        "grok_oembed": "Grok x_search finds post URLs only; text and author come from X oEmbed (verbatim). "
-                       "Discovery may miss posts. Long posts may be truncated (see possibly_truncated).",
-        "none": "no credentials",
+        "free": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). "
+                "Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. "
+                "Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
     }
     feed = {
         "schema": "guru-x/v1",
@@ -344,6 +342,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
         "source": sources[provider],
         "oembed_selftest": selftest,
         "discovery_stats": grok_stats,
+        "discovery_complete": provider == "x_api",
         "window_days": cfg.get("window_days", 7),
         "budget_stop": budget_stop,
         "errors": errors,

@@ -7,18 +7,22 @@ semis-radar 와 같은 역할 분담을 따른다.
 - Python = 수집, 중복 제거, 7일 보관
 - GPT = `guru_x/data/feed.json` 을 읽고 판정
 
-## 데이터 소스 (둘 중 하나, 자동 선택)
+## 데이터 소스 (자동 선택)
 
-| 우선순위 | 시크릿 | 방식 | posts[].verification |
+| 조건 | provider | 탐색 (새 글 찾기) | 검증 (원문·작성자) |
 |---|---|---|---|
-| 1 | `X_BEARER_TOKEN` | X 공식 API로 원문·작성자 user_id 직접 수신 | `x_api` |
-| 2 | `XAI_API_KEY` | Grok x_search 로 게시물 URL만 탐색 → X 공개 oEmbed 로 원문·작성자 확인 | `oembed` |
+| `X_BEARER_TOKEN` 있음 | `x_api` | X 공식 API 타임라인 | X 공식 API (`verification: x_api`) |
+| 없음 | `free` | X 프로필 임베드 (막히면 건너뜀) + `XAI_API_KEY` 있으면 Grok x_search | X syndication (`syndication`), 실패 시 X oEmbed (`oembed`) |
 
-Grok 경로에서 Grok 이 쓴 문장은 저장하지 않는다. 시스템이 붙인 출처 URL만 뽑아서 oEmbed 로 원문을 받고,
-작성자가 추적 대상 핸들과 다르면 버린다. 작성 시각은 게시물 ID(snowflake)로 계산한다.
-한계: Grok 탐색이라 일부 글을 놓칠 수 있고, 긴 글은 oEmbed 에서 잘릴 수 있다(`possibly_truncated`).
-`discovery_stats` 에 찾은 URL 수, 검증 성공, 작성자 불일치, oEmbed 실패 수가 찍힌다.
-`oembed_selftest` 는 매 실행마다 알려진 게시물 하나로 oEmbed 가 살아있는지 확인한 결과다.
+free 경로 원칙
+- Grok 이 쓴 문장은 저장하지 않는다. 출처 URL 만 뽑는다
+- 원문, 작성자, 시각은 X 서버가 돌려준 값만 쓴다. 작성자가 추적 대상 핸들과 다르면 버린다
+- 남에게 단 답글은 버리고, 본인 스레드 이어쓰기는 `is_self_reply: true` 인 개별 post 로 넣는다
+- 탐색이 완전하지 않다 (`discovery_complete: false`). 피드에 없다고 그 사람이 글을 안 쓴 게 아니다
+- 2026-10-22 프로브 결과: GitHub Actions IP 에서 프로필 임베드는 429 로 막힘. syndication, oEmbed 는 정상
+
+`discovery_stats` 에 계정별 프로필 임베드 상태, Grok 상태, 찾은 URL 수, 검증 결과별 개수가 찍힌다.
+`oembed_selftest` 는 매 실행마다 알려진 게시물 하나로 syndication 과 oEmbed 가 살아있는지 확인한 결과다.
 
 ## 실행 시각
 
@@ -59,9 +63,10 @@ X API 로 갈 때
 1. X Developer Console 에서 앱 생성, pay-per-use 크레딧 충전, 월 지출 한도 설정
 2. 앱의 Bearer Token 을 이 레포 Settings → Secrets and variables → Actions 에 `X_BEARER_TOKEN` 이름으로 등록
 
-Grok 으로 갈 때
-1. console.x.ai 가입, 무료 크레딧과 데이터 공유 크레딧 적용 여부 확인, 지출 한도 설정
-2. API 키를 `XAI_API_KEY` 이름으로 등록 (`X_BEARER_TOKEN` 은 비워둘 것. 둘 다 있으면 X API 가 우선)
+무료로 갈 때
+1. 키 없이도 free 경로가 돈다. 다만 프로필 임베드가 막혀 있으면 탐색이 안 되므로 Grok 을 붙이는 게 현실적
+2. console.x.ai 가입, 무료 크레딧과 데이터 공유 크레딧 적용 여부 확인, 지출 한도 설정
+3. API 키를 `XAI_API_KEY` 이름으로 등록 (`X_BEARER_TOKEN` 은 비워둘 것. 있으면 X API 가 우선)
 3. Actions 탭에서 `guru-x-feed` 를 Run workflow 로 한 번 수동 실행해서 `feed.json` 생성 확인
 
 ## 계정 추가/수정
