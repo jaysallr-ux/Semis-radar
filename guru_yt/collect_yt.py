@@ -129,8 +129,20 @@ def resolve_channel_id(http: Http, handles: list[str]) -> tuple[str | None, str]
     return None, last if handles else "no handles"
 
 
-def read_rss(http: Http, channel_id: str) -> list[dict]:
-    status, text, _ = http.get("https://www.youtube.com/feeds/videos.xml", params={"channel_id": channel_id})
+def read_rss(http: Http, channel_id: str, sleep: Callable = time.sleep) -> list[dict]:
+    """YouTube's channel feed intermittently answers 404/500 for valid channels. Retry, then fall back to the
+    same channel's uploads playlist feed (playlist_id=UU...), which is served separately."""
+    attempts = [("channel_id", channel_id)] * 2 + [("playlist_id", "UU" + channel_id[2:])] * 2
+    status, text = None, ""
+    for i, (key, val) in enumerate(attempts):
+        try:
+            status, text, _ = http.get("https://www.youtube.com/feeds/videos.xml", params={key: val})
+        except Exception as e:
+            status, text = None, type(e).__name__
+        if status == 200 and "<feed" in text[:2000]:
+            break
+        if i < len(attempts) - 1:
+            sleep(2 + 2 * i)
     if status != 200:
         raise RuntimeError(f"rss {status}")
     root = ET.fromstring(text)
