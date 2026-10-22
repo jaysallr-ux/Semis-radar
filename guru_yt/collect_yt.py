@@ -45,9 +45,9 @@ DATA_DIR = ROOT / "data"
 FEED_PATH = DATA_DIR / "youtube_feed.json"
 STATE_PATH = DATA_DIR / "state.json"
 RUNS_PATH = DATA_DIR / "runs.csv"
-TRANSCRIPT_DIR = DATA_DIR / "transcripts"
+LEGACY_TRANSCRIPT_DIR = DATA_DIR / "transcripts"  # old public location, migrated away on first run
+TRANSCRIPT_DIR = ROOT / "cache" / "transcripts"    # gitignored; persisted between runs by actions/cache only
 QUEUE_PATH = DATA_DIR / "discovered.json"
-RAW_BASE = "https://raw.githubusercontent.com/jaysallr-ux/Semis-radar/main/guru_yt/data/transcripts"
 KST = ZoneInfo("Asia/Seoul")
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
                     "Chrome/126.0 Safari/537.36", "Accept-Language": "en-US,en;q=0.9"}
@@ -311,26 +311,52 @@ class GeminiBusy(Exception):
     pass
 
 
-def fetch_gemini(http: Http, key: str, model: str, vid: str, person: str, cfg: dict, sleep: Callable):
-    """Returns (parsed dict, usage). Raises GeminiBusy on persistent 5xx, QuotaExhausted on 429,
-    KeyInvalid on 401/403-key, RuntimeError on other failures."""
-    part = {"file_data": {"file_uri": f"https://www.youtube.com/watch?v={vid}"},
-            "videoMetadata": {"fps": cfg.get("gemini_fps", 0.1)}}
-    body = {"contents": [{"parts": [part, {"text": gemini_prompt(person, cfg.get("gemini_max_quotes", 12))}]}],
-            "generationConfig": {"temperature": 0, "responseMimeType": "application/json",
-                                 "responseSchema": GEMINI_SCHEMA, "mediaResolution": "MEDIA_RESOLUTION_LOW"}}
+class BudgetOut(Exception):
+    """Ran out of this run's Gemini time budget. Not the video's fault: never counts as an error."""
+
+
+def gemini_text_prompt(person: str, n: int) -> str:
+    return (f"Tracked person: {person}.\n"
+            "Below is an auto-generated caption transcript of a video. Lines start with [M:SS] or [H:MM:SS] markers. "
+            "There are no speaker labels; '>>' usually marks a change of speaker. Captions may misspell names.\n"
+            "1. From the conversation itself, decide whether this person personally speaks in the video. "
+            "Being mentioned or introduced by someone else does not count by itself.\n"
+            f"2. Give up to {n} short quotes (1-3 sentences each) that THIS person clearly says, stating a view on "
+            "markets, the economy, rates, stocks, credit, volatility or positioning. Copy the caption words exactly. "
+            "Use a passage only if the context makes it clear that this person is the one speaking "
+            "(for example it answers a question addressed to them). Never use the host's or another guest's words. "
+            "t = the nearest preceding [M:SS] marker. speaker = who is speaking.\n"
+            "3. stance: this person's own view on US equities, based only on their own words.\n"
+            "If the person does not clearly speak, return person_speaks=false, empty quotes and stance not_stated.")
+
+
+def _gemini_call(http: Http, key: str, model: str, body: dict, sleep: Callable, clock: Callable, deadline: float):
+    """One logical call with retries, never running past the deadline.
+    5xx: up to 3 tries with backoff. 429: wait 65s and retry once."""
     status, text = None, ""
-    for a in range(3):
+    tries_5xx, tries_429 = 0, 0
+    while True:
+        left = deadline - clock()
+        if left < 60:
+            raise BudgetOut()
         try:
             status, text, _ = http.post_json(f"{GEMINI_BASE}/{model}:generateContent", body,
-                                             headers={"x-goog-api-key": key})
+                                             headers={"x-goog-api-key": key}, timeout=min(420, left - 10))
         except requests.Timeout:
             status, text = 504, "timeout"
         except Exception as e:
             raise RuntimeError(type(e).__name__)
-        if status not in (500, 502, 503, 504):
+        if status in (500, 502, 503, 504) and tries_5xx < 2:
+            tries_5xx += 1
+            wait = 20 * tries_5xx
+        elif status == 429 and tries_429 < 1:
+            tries_429 += 1
+            wait = 65
+        else:
             break
-        sleep(20 * (a + 1))
+        if deadline - clock() - wait < 60:
+            raise BudgetOut()
+        sleep(wait)
     if status in (500, 502, 503, 504):
         raise GeminiBusy(str(status))
     if status == 429:
@@ -352,6 +378,97 @@ def fetch_gemini(http: Http, key: str, model: str, vid: str, person: str, cfg: d
     if not out:
         raise RuntimeError(f"empty ({cand.get('finishReason')})")
     return json.loads(out), j.get("usageMetadata") or {}
+
+
+def _gen_config() -> dict:
+    return {"temperature": 0, "responseMimeType": "application/json", "responseSchema": GEMINI_SCHEMA}
+
+
+def fetch_gemini(http: Http, key: str, model: str, vid: str, person: str, cfg: dict, sleep: Callable,
+                 clock: Callable = time.monotonic, deadline: float | None = None, start: int | None = None,
+                 end: int | None = None):
+    """Video mode. Optional clip [start, end) in seconds."""
+    deadline = deadline if deadline is not None else clock() + 3600
+    meta = {"fps": cfg.get("gemini_fps", 0.1)}
+    if start is not None:
+        meta["startOffset"] = f"{int(start)}s"
+    if end is not None:
+        meta["endOffset"] = f"{int(end)}s"
+    part = {"file_data": {"file_uri": f"https://www.youtube.com/watch?v={vid}"}, "videoMetadata": meta}
+    gen = {**_gen_config(), "mediaResolution": "MEDIA_RESOLUTION_LOW"}
+    body = {"contents": [{"parts": [part, {"text": gemini_prompt(person, cfg.get("gemini_max_quotes", 12))}]}],
+            "generationConfig": gen}
+    return _gemini_call(http, key, model, body, sleep, clock, deadline)
+
+
+def fetch_gemini_text(http: Http, key: str, model: str, caption: str, person: str, cfg: dict, sleep: Callable,
+                      clock: Callable = time.monotonic, deadline: float | None = None):
+    """Caption-text mode: used when video mode failed but we hold captions. Uses no YouTube video hours."""
+    deadline = deadline if deadline is not None else clock() + 3600
+    body = {"contents": [{"parts": [{"text": gemini_text_prompt(person, cfg.get("gemini_max_quotes", 12))},
+                                    {"text": "TRANSCRIPT:\n" + caption[:400000]}]}],
+            "generationConfig": _gen_config()}
+    return _gemini_call(http, key, model, body, sleep, clock, deadline)
+
+
+def video_duration(http: Http, vid: str, caption: str | None) -> int | None:
+    if caption:
+        marks = re.findall(r"\[(\d+):(\d+)(?::(\d+))?\]", caption)
+        if marks:
+            a, b, c = marks[-1]
+            return int(a) * 3600 + int(b) * 60 + int(c) if c else int(a) * 60 + int(b)
+    try:
+        status, text, _ = http.get(f"https://www.youtube.com/watch?v={vid}")
+    except Exception:
+        return None
+    m = re.search(r'"lengthSeconds":"(\d+)"', text) if status == 200 else None
+    return int(m.group(1)) if m else None
+
+
+def chunk_plan(duration: int | None, cfg: dict) -> list[tuple[int | None, int | None]]:
+    """Whole video, or 40-minute clips with 30s overlap for long videos (free-tier tokens per minute)."""
+    limit = cfg.get("gemini_chunk_over_sec", 3000)
+    size = cfg.get("gemini_chunk_sec", 2400)
+    overlap = cfg.get("gemini_chunk_overlap_sec", 30)
+    if not duration or duration <= limit:
+        return [(None, None)]
+    out, start = [], 0
+    while start < duration:
+        end = min(duration, start + size)
+        out.append((start, end))
+        if end >= duration:
+            break
+        start = end - overlap
+    return out
+
+
+def merge_chunks(results: list[tuple[dict, int | None]], max_total: int) -> dict:
+    """Merge per-clip answers. Clip timestamps that come back relative to the clip start are moved to
+    whole-video time, and quotes repeated in the overlap are dropped."""
+    from rapidfuzz import fuzz
+    speaks = any(r.get("person_speaks") for r, _ in results)
+    quotes, seen = [], []
+    stances, summaries = [], []
+    for r, start in results:
+        for q in r.get("quotes") or []:
+            sec = ts_to_sec(q.get("t"))
+            if start and sec is not None and sec < start:
+                sec += start
+                q = {**q, "t": f"{sec // 3600}:{sec % 3600 // 60:02d}:{sec % 60:02d}"}
+            nt = norm_text(str(q.get("text", "")))
+            if any(fuzz.ratio(nt, x) >= 90 for x in seen):
+                continue
+            seen.append(nt)
+            quotes.append(q)
+        st = r.get("stance") or {}
+        if r.get("person_speaks") and st.get("us_equities") not in (None, "not_stated"):
+            stances.append(st["us_equities"])
+            summaries.append(st.get("summary", ""))
+    lean = stances[0] if stances and len(set(stances)) == 1 else ("mixed" if stances else "not_stated")
+    return {"person_speaks": speaks,
+            "evidence": " / ".join(str(r.get("evidence", ""))[:200] for r, _ in results),
+            "quotes": quotes[:max_total],
+            "stance": {"us_equities": lean, "summary": " | ".join(x for x in summaries if x)[:800]}}
 
 
 def ts_to_sec(t) -> int | None:
@@ -389,32 +506,39 @@ def caption_index(raw: str) -> tuple[str, list[tuple[int, int]]]:
     return " ".join(parts), marks
 
 
-def verify_quotes(quotes: list[dict], caption_raw: str | None, threshold: float) -> None:
-    """Grade each quote on its own: 1차-A only if this quote matches the captions >= threshold."""
-    idx = caption_index(caption_raw) if caption_raw else None
+def speaker_ok(person: dict, speaker: str) -> bool:
+    sp = (speaker or "").lower()
+    return any(re.search(r"\b" + re.escape(n.lower()) + r"\b", sp) for n in person.get("speaker_names", person["names"]))
+
+
+def verify_quotes(quotes: list[dict], caption_raw: str, threshold: float, min_chars: int) -> None:
+    """Grade each quote on its own against the captions. Called only while captions are held; the grades
+    are then stored on the quote and survive after the captions are deleted."""
+    from rapidfuzz import fuzz
+    idx = caption_index(caption_raw)
     for q in quotes:
         q["caption_match"], q["caption_sec"] = None, None
         q["grade"] = "1차-B"
         q.pop("caption_conflict", None)
-        if not idx:
-            continue
         qt = norm_text(q.get("text", ""))
         if len(qt) < 15:
             continue
-        from rapidfuzz import fuzz
         al = fuzz.partial_ratio_alignment(qt, idx[0])
         q["caption_match"] = round(al.score, 1)
         sec = None
-        for p, s in idx[1]:
+        for p, s_ in idx[1]:
             if p <= al.dest_start:
-                sec = s
+                sec = s_
             else:
                 break
         q["caption_sec"] = sec
-        if al.score >= threshold:
+        if al.score >= threshold and len(qt) >= min_chars:
             q["grade"] = "1차-A"
+        elif al.score >= threshold:
+            q["grade_note"] = f"matched captions but shorter than {min_chars} chars, kept at 1차-B"
         elif al.score < 70:
             q["caption_conflict"] = True  # captions exist but this wording is not in them: treat with caution
+        q["caption_checked"] = True
 
 
 def clean_quotes(raw: list, vid: str, n: int) -> list[dict]:
@@ -430,10 +554,10 @@ def clean_quotes(raw: list, vid: str, n: int) -> list[dict]:
     return out
 
 
-GEMINI_DEFAULTS = {"gemini_status": "pending", "gemini_model": None, "gemini_at": None, "person_speaks": None,
-                   "gemini_evidence": None, "stance": None, "quotes": [], "gemini_error_count": 0,
-                   "gemini_last_error": None, "evidence_ready_at": None, "evidence_grade": "제목·설명만 확인",
-                   "appearance_source": None}
+GEMINI_DEFAULTS = {"gemini_status": "pending", "gemini_model": None, "gemini_at": None, "gemini_mode": None,
+                   "person_speaks": None, "gemini_evidence": None, "stance": None, "quotes": [],
+                   "gemini_error_count": 0, "gemini_last_error": None, "evidence_ready_at": None,
+                   "evidence_grade": "제목·설명만 확인", "appearance_source": None, "transcript_retained": False}
 
 
 # ---------- discovery ----------
@@ -574,8 +698,6 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             v.setdefault(k, list(d) if isinstance(d, list) else d)
         if v["gemini_status"] == "pending" and v.get("transcript_status") in ("skipped_old", "skipped_short"):
             v["gemini_status"] = "skipped"
-        if not v.get("evidence_ready_at") and v.get("transcript_ready_at"):
-            v["evidence_ready_at"] = v["transcript_ready_at"]
     prev_gen = old.get("generated_at")
     errors: dict[str, str] = {}
     fetched_at = iso_kst(now)
@@ -627,98 +749,127 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         rem = yta.get("server_remaining")
         return rem is None or rem > reserve
 
-    # transcripts: pending/error first, then by tier, then newest
-    todo = [v for v in videos.values() if v["transcript_status"] in ("pending_quota", "error")]
-    todo.sort(key=lambda v: (0 if v.get("first_seen_at") != fetched_at else 1, v["tier"],
-                             -parse_ts(v["published_at"]).timestamp()))
-    stats = {"attempted": 0, "ready": 0, "unavailable": 0, "errors": 0, "skipped_short": 0, "expired": 0, "left_pending": 0}
-    for v in todo:
-        if now - parse_ts(v["published_at"]) > max_age and v["transcript_status"] == "pending_quota" and v["error_count"] == 0 \
-                and v.get("first_seen_at") == fetched_at:
-            v["transcript_status"] = "skipped_old"
-            v["gemini_status"] = "skipped"
-            v["last_error"] = "older than transcript_max_age_hours when first discovered (backfill limit)"
-            stats["expired"] += 1
-            continue
-        if now - parse_ts(v["published_at"]) > window:
-            v["transcript_status"] = "unavailable"
-            v["last_error"] = "expired (older than window)"
-            stats["expired"] += 1
-            continue
-        if cfg.get("skip_shorts", True) and v.get("is_short") is None:
-            v["is_short"] = is_short(http, v["video_id"])
-        if v.get("is_short"):
-            v["transcript_status"] = "skipped_short"
-            v["gemini_status"] = "skipped"
-            v["last_error"] = "short (skipped)"
-            stats["skipped_short"] += 1
-            continue
+    # one-time migration: captions used to be committed to the public repo. Move them to the private cache.
+    TRANSCRIPT_DIR.mkdir(parents=True, exist_ok=True)
+    (TRANSCRIPT_DIR / ".keep").touch()
+    if LEGACY_TRANSCRIPT_DIR.exists():
+        for f in LEGACY_TRANSCRIPT_DIR.glob("*.txt"):
+            dst = TRANSCRIPT_DIR / f.name
+            if not dst.exists():
+                dst.write_text(f.read_text(encoding="utf-8"), encoding="utf-8")
+            f.unlink()
+        try:
+            LEGACY_TRANSCRIPT_DIR.rmdir()
+        except OSError:
+            pass
 
-        text, outcome, provider, lang = None, None, None, None
-        if yta_available():
-            try:
-                stats["attempted"] += 1
-                yta["used"] += 1
-                text, outcome, rem = fetch_yta(http, yta_key, v["video_id"])
-                provider = "youtube-transcript-ai"
-                if rem is not None:
-                    yta["server_remaining"] = rem
-            except QuotaExhausted:
-                yta["server_remaining"] = 0
-                provider_notes["youtube-transcript-ai"] = "quota exhausted"
-            except KeyInvalid:
-                yta_ok = False
-                provider_notes["youtube-transcript-ai"] = "key invalid (401)"
-            except Exception as e:
-                outcome, provider = f"error:{type(e).__name__}", "youtube-transcript-ai"
-        if outcome is None and sup_ok and v["tier"] in sup_tiers and sup["used_total"] < sup_cap:
-            try:
-                stats["attempted"] += 1
-                sup["used_total"] += 1
-                text, outcome, lang = fetch_supadata(http, supadata_key, v["video_id"])
-                provider = "supadata"
-            except QuotaExhausted:
-                sup_ok = False
-                provider_notes["supadata"] = "quota exhausted"
-            except KeyInvalid:
-                sup_ok = False
-                provider_notes["supadata"] = "key invalid"
-            except Exception as e:
-                outcome, provider = f"error:{type(e).__name__}", "supadata"
-        if outcome is None:
-            v["transcript_status"] = "pending_quota"
-            stats["left_pending"] += 1
-            continue
-        if outcome == "ready":
-            TRANSCRIPT_DIR.mkdir(parents=True, exist_ok=True)
-            (TRANSCRIPT_DIR / f"{v['video_id']}.txt").write_text(text, encoding="utf-8")
-            p = by_person[v["person"]]
-            cnt, excerpt = appearance(p, text)
-            v.update(
-                transcript_status="ready",
-                transcript_provider=provider,
-                transcript_language=lang,
-                transcript_chars=len(text),
-                transcript_url=f"{RAW_BASE}/{v['video_id']}.txt",
-                name_mentions=cnt,
-                appearance_confirmed=(v["channel_mode"] == "dedicated") or cnt > 0,
-                appearance_excerpt=excerpt,
-                last_error=None,
-            )
-            if not v.get("transcript_ready_at"):
-                v["transcript_ready_at"] = fetched_at
-            stats["ready"] += 1
-        elif outcome == "unavailable":
-            v.update(transcript_status="unavailable", transcript_provider=provider, last_error="no transcript")
-            stats["unavailable"] += 1
-        else:
-            v["error_count"] = v.get("error_count", 0) + 1
-            v["last_error"] = outcome
-            v["transcript_status"] = "unavailable" if v["error_count"] >= cfg.get("max_error_retries", 3) else "error"
-            stats["errors"] += 1
-        sleep(1)
+    def caption_of(v: dict) -> str | None:
+        f = TRANSCRIPT_DIR / f"{v['video_id']}.txt"
+        return f.read_text(encoding="utf-8") if v["transcript_status"] == "ready" and f.exists() else None
 
-    # gemini: direct video analysis, T1 -> T2 -> T3, newest first, within a time budget
+    def needs_gemini_first(v: dict) -> bool:
+        # filter channel matched only through the description (often an old-episode list): spend no caption
+        # quota until Gemini has confirmed the person actually speaks
+        return bool(gemini_key) and v["channel_mode"] == "filter" and v.get("match") == "description" \
+            and v.get("gemini_status") != "ready"
+
+    stats = {"attempted": 0, "ready": 0, "unavailable": 0, "errors": 0, "skipped_short": 0, "expired": 0,
+             "left_pending": 0, "waiting_for_gemini": 0}
+
+    def caption_pass(first_pass: bool) -> None:
+        nonlocal yta_ok, sup_ok
+        todo = [v for v in videos.values() if v["transcript_status"] in ("pending_quota", "error")]
+        todo.sort(key=lambda v: (0 if v.get("first_seen_at") != fetched_at else 1, v["tier"],
+                                 -parse_ts(v["published_at"]).timestamp()))
+        for v in todo:
+            age = now - parse_ts(v["published_at"])
+            if first_pass and age > max_age and v["transcript_status"] == "pending_quota" and v["error_count"] == 0 \
+                    and v.get("first_seen_at") == fetched_at:
+                v["transcript_status"] = "skipped_old"
+                v["gemini_status"] = "skipped"
+                v["last_error"] = "older than transcript_max_age_hours when first discovered (backfill limit)"
+                stats["expired"] += 1
+                continue
+            if age > window:
+                v["transcript_status"] = "unavailable"
+                v["last_error"] = "expired (older than window)"
+                stats["expired"] += 1
+                continue
+            if cfg.get("skip_shorts", True) and v.get("is_short") is None:
+                v["is_short"] = is_short(http, v["video_id"])
+            if v.get("is_short"):
+                v["transcript_status"] = "skipped_short"
+                v["gemini_status"] = "skipped"
+                v["last_error"] = "short (skipped)"
+                stats["skipped_short"] += 1
+                continue
+            if v.get("gemini_status") == "not_speaking":
+                v["transcript_status"] = "not_needed"
+                v["last_error"] = "Gemini: person does not speak"
+                continue
+            if needs_gemini_first(v):
+                if first_pass:
+                    stats["waiting_for_gemini"] += 1
+                continue
+
+            text, outcome, provider, lang = None, None, None, None
+            if yta_available():
+                try:
+                    stats["attempted"] += 1
+                    yta["used"] += 1
+                    text, outcome, rem = fetch_yta(http, yta_key, v["video_id"])
+                    provider = "youtube-transcript-ai"
+                    if rem is not None:
+                        yta["server_remaining"] = rem
+                except QuotaExhausted:
+                    yta["server_remaining"] = 0
+                    provider_notes["youtube-transcript-ai"] = "quota exhausted"
+                except KeyInvalid:
+                    yta_ok = False
+                    provider_notes["youtube-transcript-ai"] = "key invalid (401)"
+                except Exception as e:
+                    outcome, provider = f"error:{type(e).__name__}", "youtube-transcript-ai"
+            if outcome is None and sup_ok and v["tier"] in sup_tiers and sup["used_total"] < sup_cap:
+                try:
+                    stats["attempted"] += 1
+                    sup["used_total"] += 1
+                    text, outcome, lang = fetch_supadata(http, supadata_key, v["video_id"])
+                    provider = "supadata"
+                except QuotaExhausted:
+                    sup_ok = False
+                    provider_notes["supadata"] = "quota exhausted"
+                except KeyInvalid:
+                    sup_ok = False
+                    provider_notes["supadata"] = "key invalid"
+                except Exception as e:
+                    outcome, provider = f"error:{type(e).__name__}", "supadata"
+            if outcome is None:
+                v["transcript_status"] = "pending_quota"
+                stats["left_pending"] += 1
+                continue
+            if outcome == "ready":
+                TRANSCRIPT_DIR.mkdir(parents=True, exist_ok=True)
+                (TRANSCRIPT_DIR / f"{v['video_id']}.txt").write_text(text, encoding="utf-8")
+                cnt, excerpt = appearance(by_person[v["person"]], text)
+                v.update(transcript_status="ready", transcript_provider=provider, transcript_language=lang,
+                         transcript_chars=len(text), transcript_url=None, name_mentions=cnt,
+                         appearance_excerpt=excerpt, last_error=None)
+                if not v.get("transcript_ready_at"):
+                    v["transcript_ready_at"] = fetched_at
+                stats["ready"] += 1
+            elif outcome == "unavailable":
+                v.update(transcript_status="unavailable", transcript_provider=provider, last_error="no transcript")
+                stats["unavailable"] += 1
+            else:
+                v["error_count"] = v.get("error_count", 0) + 1
+                v["last_error"] = outcome
+                v["transcript_status"] = "unavailable" if v["error_count"] >= cfg.get("max_error_retries", 3) else "error"
+                stats["errors"] += 1
+            sleep(1)
+
+    caption_pass(True)
+
+    # gemini: direct video analysis, T1 -> T2 -> T3, newest first, within a hard time budget
     gem_day = state.get("gemini") or {}
     if gem_day.get("date") != today:
         gem_day = {"date": today, "calls": 0, "est_video_hours": 0.0}
@@ -730,11 +881,38 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     gem_hours_cap = cfg.get("gemini_daily_video_hours", 7.5)
     gem_tok_per_sec = cfg.get("gemini_tokens_per_video_sec", 38)
     max_q = cfg.get("gemini_max_quotes", 12)
-    gstats = {"attempted": 0, "ready": 0, "not_speaking": 0, "busy": 0, "errors": 0, "left_pending": 0}
-    t_start = clock()
+    gstats = {"attempted": 0, "ready": 0, "not_speaking": 0, "busy": 0, "errors": 0, "left_pending": 0,
+              "budget_out": 0, "chunked": 0, "text_mode": 0}
+    deadline = clock() + gem_budget
     gtodo = [v for v in videos.values() if v["gemini_status"] in ("pending", "error")
              and v.get("transcript_status") not in ("skipped_old", "skipped_short")]
     gtodo.sort(key=lambda v: (v["tier"], -parse_ts(v["published_at"]).timestamp()))
+
+    def try_models(fn):
+        """Run fn(model) over the model list. Returns (parsed, usage, model, last_error)."""
+        nonlocal gem_ok, gem_note
+        last = None
+        for model in gem_models:
+            gstats["attempted"] += 1
+            gem_day["calls"] += 1
+            try:
+                parsed, usage = fn(model)
+                return parsed, usage, model, None
+            except GeminiBusy as e:
+                last = f"busy {e} ({model.split('/')[-1]})"
+                continue
+            except QuotaExhausted:
+                gem_ok, gem_note = False, "quota or rate limit (429 after 65s retry)"
+                return None, {}, None, "quota (429)"
+            except KeyInvalid:
+                gem_ok, gem_note = False, "key invalid"
+                return None, {}, None, "key invalid"
+            except BudgetOut:
+                raise
+            except Exception as e:
+                return None, {}, None, f"error {str(e)[:160]}"
+        return None, {}, None, last
+
     for v in gtodo:
         age = now - parse_ts(v["published_at"])
         if age > window:
@@ -744,51 +922,73 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
                 and v.get("first_seen_at") == fetched_at:
             v["gemini_status"], v["gemini_last_error"] = "skipped", "older than gemini_max_age_hours when first discovered"
             continue
-        if not gem_ok or clock() - t_start > gem_budget or gem_day["est_video_hours"] >= gem_hours_cap:
-            gstats["left_pending"] += 1
+        if not gem_ok or deadline - clock() < 60 or gem_day["est_video_hours"] >= gem_hours_cap:
+            gstats["left_pending" if gem_ok and deadline - clock() >= 60 else "budget_out"] += 1
             continue
-        parsed, usage, last_exc = None, {}, None
-        for model in list(gem_models):
-            try:
-                gstats["attempted"] += 1
-                gem_day["calls"] += 1
-                parsed, usage = fetch_gemini(http, gemini_key, model, v["video_id"], v["person"], cfg, sleep)
-                v["gemini_model"] = model
-                break
-            except GeminiBusy as e:
-                last_exc = f"busy {e} ({model.split('/')[-1]})"
-                continue
-            except QuotaExhausted:
-                last_exc, gem_ok, gem_note = "quota (429)", False, "quota or rate limit (429)"
-                break
-            except KeyInvalid:
-                last_exc, gem_ok, gem_note = "key invalid", False, "key invalid"
-                break
-            except Exception as e:
-                last_exc = f"error {str(e)[:160]}"
-                break
+        caption = caption_of(v)
+        parsed, usage, model, last_err, mode = None, {}, None, None, None
+        try:
+            plan = chunk_plan(video_duration(http, v["video_id"], caption), cfg)
+            if len(plan) > 1:
+                gstats["chunked"] += 1
+                parts, ok = [], True
+                for i, (st, en) in enumerate(plan):
+                    if i:
+                        sleep(min(65, max(0, deadline - clock() - 120)))  # tokens-per-minute spacing
+                    r, u, m, err = try_models(lambda mdl: fetch_gemini(http, gemini_key, mdl, v["video_id"], v["person"],
+                                                                       cfg, sleep, clock, deadline, st, en))
+                    if r is None:
+                        ok, last_err = False, err
+                        break
+                    parts.append((r, st))
+                    usage = {"promptTokenCount": (usage.get("promptTokenCount") or 0) + (u.get("promptTokenCount") or 0)}
+                    model = m
+                if ok:
+                    parsed, mode = merge_chunks(parts, max_q * 2), f"video_chunks_{len(plan)}"
+            else:
+                parsed, usage, model, last_err = try_models(
+                    lambda mdl: fetch_gemini(http, gemini_key, mdl, v["video_id"], v["person"], cfg, sleep, clock, deadline))
+                mode = "video" if parsed is not None else None
+            if parsed is None and caption and gem_ok:
+                # video path failed: read our own captions instead (no YouTube video hours, small token count)
+                parsed, usage, model, err2 = try_models(
+                    lambda mdl: fetch_gemini_text(http, gemini_key, mdl, caption, v["person"], cfg, sleep, clock, deadline))
+                if parsed is not None:
+                    mode, usage = "caption_text", {}
+                    gstats["text_mode"] += 1
+                else:
+                    last_err = f"{last_err}; text: {err2}"
+        except BudgetOut:
+            gstats["budget_out"] += 1
+            continue  # leave status as it was: not an error
         if parsed is None:
             v["gemini_error_count"] += 1
-            v["gemini_last_error"] = last_exc
+            v["gemini_last_error"] = last_err
             v["gemini_status"] = "unavailable" if v["gemini_error_count"] >= cfg.get("max_error_retries", 3) else "error"
-            gstats["busy" if last_exc and last_exc.startswith("busy") else "errors"] += 1
+            gstats["busy" if last_err and last_err.startswith("busy") else "errors"] += 1
             continue
         tokens = usage.get("promptTokenCount") or 0
         gem_day["est_video_hours"] = round(gem_day["est_video_hours"] + tokens / gem_tok_per_sec / 3600, 3)
         speaks = bool(parsed.get("person_speaks"))
-        v.update(gemini_at=fetched_at, person_speaks=speaks, gemini_evidence=str(parsed.get("evidence", ""))[:400],
-                 stance=parsed.get("stance") if speaks else None,
-                 quotes=clean_quotes(parsed.get("quotes"), v["video_id"], max_q) if speaks else [],
+        person = by_person[v["person"]]
+        qs = clean_quotes(parsed.get("quotes"), v["video_id"], max_q * 2) if speaks else []
+        for q in qs:
+            q["speaker_verified"] = speaker_ok(person, q["speaker"])
+        v.update(gemini_at=fetched_at, gemini_model=model, gemini_mode=mode, person_speaks=speaks,
+                 gemini_evidence=str(parsed.get("evidence", ""))[:400],
+                 stance=parsed.get("stance") if speaks else None, quotes=qs,
                  gemini_status="ready" if speaks else "not_speaking", gemini_last_error=None,
                  gemini_prompt_tokens=tokens)
         gstats["ready" if speaks else "not_speaking"] += 1
-        sleep(max(3, min(60, tokens / 250000 * 60)))  # stay under free-tier tokens per minute
+        sleep(max(3, min(60, tokens / 250000 * 60, max(0, deadline - clock() - 60))))
 
-    # per-video: appearance, per-quote verification, grade, evidence clock (cheap; runs every time)
+    caption_pass(False)  # description-only matches that Gemini just confirmed get their captions now
+
+    # per-video: verification while captions are held, grades, evidence clock, caption retention
     threshold = cfg.get("quote_verify_threshold", 90)
+    min_a = cfg.get("quote_min_chars_for_a", 40)
     for v in videos.values():
-        f = TRANSCRIPT_DIR / f"{v['video_id']}.txt"
-        caption = f.read_text(encoding="utf-8") if v["transcript_status"] == "ready" and f.exists() else None
+        caption = caption_of(v)
         if caption and v["person"] in by_person:
             cnt, excerpt = appearance(by_person[v["person"]], caption)
             v.update(name_mentions=cnt, appearance_excerpt=excerpt)
@@ -796,27 +996,36 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             v["appearance_confirmed"], v["appearance_source"] = bool(v["person_speaks"]), "gemini"
         elif v["channel_mode"] == "dedicated":
             v["appearance_confirmed"], v["appearance_source"] = True, "dedicated_channel"
-        elif caption:
-            v["appearance_confirmed"] = (v.get("name_mentions") or 0) > 0
-            v["appearance_source"] = "caption_name_mentions"
         else:
-            v["appearance_confirmed"], v["appearance_source"] = None, None
-        if v["quotes"]:
-            verify_quotes(v["quotes"], caption, threshold)
-        a = sum(q["grade"] == "1차-A" for q in v["quotes"])
-        v["quotes_grade_count"] = {"1차-A": a, "1차-B": len(v["quotes"]) - a}
+            v["appearance_confirmed"], v["appearance_source"] = None, None  # unconfirmed until Gemini answers
+        for q in v["quotes"]:
+            q.setdefault("speaker_verified", speaker_ok(by_person[v["person"]], q.get("speaker", "")))
+        if v["quotes"] and caption:
+            verify_quotes(v["quotes"], caption, threshold, min_a)
+        good = [q for q in v["quotes"] if q.get("speaker_verified")]
+        a = sum(q.get("grade") == "1차-A" for q in good)
+        v["quotes_grade_count"] = {"1차-A": a, "1차-B": len(good) - a,
+                                   "excluded_speaker_mismatch": len(v["quotes"]) - len(good)}
         if v["appearance_confirmed"] is False:
             v["evidence_grade"] = "본인 발언 없음"
         elif a:
             v["evidence_grade"] = "1차-A"
-        elif v["quotes"]:
+        elif good:
             v["evidence_grade"] = "1차-B"
-        elif caption and v["appearance_confirmed"]:
-            v["evidence_grade"] = "1차-A (자막 원문, 인용 추출 전)"
+        elif caption:
+            v["evidence_grade"] = "자막 확보, 인용 대기"
         else:
             v["evidence_grade"] = "제목·설명만 확인"
-        if not v.get("evidence_ready_at") and v["appearance_confirmed"] and (v["quotes"] or caption):
+        if not v.get("evidence_ready_at") and v["appearance_confirmed"] and good:
             v["evidence_ready_at"] = fetched_at
+        # captions are kept (privately) only while they can still be used: verification or a text-mode retry
+        f = TRANSCRIPT_DIR / f"{v['video_id']}.txt"
+        done = v["gemini_status"] in ("ready", "not_speaking", "unavailable", "skipped") and \
+            (not v["quotes"] or all(q.get("caption_checked") for q in v["quotes"]))
+        if f.exists() and done:
+            f.unlink()
+        v["transcript_retained"] = f.exists()
+        v["transcript_url"] = None
 
     # prune
     cutoff = now - window
@@ -824,6 +1033,9 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     for k in set(videos) - set(keep):
         f = TRANSCRIPT_DIR / f"{k}.txt"
         if f.exists():
+            f.unlink()
+    for f in TRANSCRIPT_DIR.glob("*.txt") if TRANSCRIPT_DIR.exists() else []:
+        if f.stem not in keep:
             f.unlink()
     vids = sorted(keep.values(), key=lambda v: v["published_at"], reverse=True)
 
@@ -840,16 +1052,19 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         "schema": "guru-yt/v1",
         "generated_at": fetched_at,
         "data_ok": not errors,
-        "source": "Discovery via allowlisted channel RSS. Transcripts are verbatim captions from "
-                  "youtube-transcript.ai (primary) or Supadata (native captions); text is in transcript_url. "
-                  "quotes[] are extracted by Gemini from the video itself; each quote carries its own grade: "
-                  "1차-A = matched captions >= quote_verify_threshold, 1차-B = Gemini direct video check only. "
+        "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself "
+                  "(gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). "
+                  "Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at "
+                  "least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept "
+                  "for audit but excluded from grade counts and must not be used as evidence. Captions are never "
+                  "published: they are held privately only until verification is done. "
                   "stance is Gemini's reading of the person's own words, not a quote.",
         "new_statement_clock": "evidence_ready_at",
         "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). "
                              "Discovery-only runs never change it; see discovery.last_discovery_at.",
         "discovery": discovery_info,
         "quote_verify_threshold": threshold,
+        "quote_min_chars_for_a": min_a,
         "errors": errors,
         "channels": channel_out,
         "quota": {"yta_used_today": yta["used"], "yta_server_remaining": yta.get("server_remaining"),

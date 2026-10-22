@@ -68,6 +68,14 @@ jobs:
           print(f"mode={mode}")
           PY
 
+      - name: Restore private caption cache
+        if: steps.guard.outputs.run == 'true' && steps.guard.outputs.mode == 'full'
+        uses: actions/cache/restore@v4
+        with:
+          path: guru_yt/cache
+          key: guru-yt-captions-${{ github.run_id }}
+          restore-keys: guru-yt-captions-
+
       - name: Install
         if: steps.guard.outputs.run == 'true'
         run: pip install requests rapidfuzz
@@ -84,6 +92,14 @@ jobs:
           else
             python guru_yt/collect_yt.py
           fi
+
+      - name: Save private caption cache
+        if: always() && steps.guard.outputs.run == 'true' && steps.guard.outputs.mode == 'full'
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: guru_yt/cache
+          key: guru-yt-captions-${{ github.run_id }}
 
       - name: Commit feed
         if: steps.guard.outputs.run == 'true'
