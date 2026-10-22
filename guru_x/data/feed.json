@@ -1,35 +1,26 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-22T16:27:10+09:00",
+  "generated_at": "2026-10-22T16:30:47+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "timeline": {
-      "MarkNewtonCMT": "blocked_429",
-      "jam_croissant": "blocked_429",
-      "WarrenPies": "blocked_429",
-      "DariusDale42": "blocked_429",
-      "RyanDetrick": "blocked_429",
-      "dampedspring": "blocked_429",
-      "Geo_papic": "blocked_429",
-      "BiancoResearch": "blocked_429",
-      "BobEUnlimited": "blocked_429",
-      "LynAldenContact": "blocked_429"
-    },
+    "list": "ok (78 entries)",
+    "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 55,
+    "urls_found": 66,
     "already_known": 53,
     "too_old": 0,
-    "verified_syndication": 0,
+    "verified_syndication": 11,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
-    "verify_failed": 0
+    "verify_failed": 0,
+    "list_oldest": "2026-10-20T13:26:19.000Z"
   },
-  "discovery_complete": false,
+  "discovery_complete": true,
   "manual_ids_updated_at": "2026-10-22T07:25:55+00:00",
   "window_days": 7,
   "budget_stop": false,
@@ -41,7 +32,7 @@
       "tier": 1,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
+      "last_success_at": "2026-10-22T16:30:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -51,8 +42,8 @@
       "tier": 1,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-22T16:30:47+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -61,7 +52,7 @@
       "tier": 1,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
+      "last_success_at": "2026-10-22T16:30:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -71,7 +62,7 @@
       "tier": 1,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
+      "last_success_at": "2026-10-22T16:30:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -81,8 +72,8 @@
       "tier": 2,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-22T16:30:47+09:00",
+      "new_originals_this_run": 5,
       "error": null
     },
     {
@@ -91,8 +82,8 @@
       "tier": 2,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-22T16:30:47+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -101,8 +92,8 @@
       "tier": 2,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-22T16:30:47+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -111,7 +102,7 @@
       "tier": 3,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
+      "last_success_at": "2026-10-22T16:30:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -121,7 +112,7 @@
       "tier": 3,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
+      "last_success_at": "2026-10-22T16:30:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -131,8 +122,8 @@
       "tier": 3,
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-22T16:27:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-22T16:30:47+09:00",
+      "new_originals_this_run": 1,
       "error": null
     }
   ],
@@ -1094,6 +1085,204 @@
       "possibly_truncated": false,
       "discovered_via": [
         "manual_browser"
+      ]
+    },
+    {
+      "id": "2112642713543758100",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "author_id": "199170156",
+      "created_at": "2026-10-20T20:30:48.000Z",
+      "url": "https://x.com/jam_croissant/status/2112642713543758100",
+      "text": "https://t.co/oIF5pdLvRO",
+      "quoted_post_id": "2112528840593387590",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112619837797351923",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "author_id": "1502354421421785088",
+      "created_at": "2026-10-20T18:59:54.000Z",
+      "url": "https://x.com/Geo_papic/status/2112619837797351923",
+      "text": "I know, I know... perhaps an unfair comparison but still funny. https://t.co/Uq75SB7zKz",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112567339321262553",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "author_id": "199170156",
+      "created_at": "2026-10-20T15:31:17.000Z",
+      "url": "https://x.com/jam_croissant/status/2112567339321262553",
+      "text": "ICYMI - Yesterday's Tasty Crumbs on @tastyliveshow \n🍒🥐\n\nhttps://t.co/8smXx7cXJW",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112562370841100410",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "author_id": "1546222940",
+      "created_at": "2026-10-20T15:11:33.000Z",
+      "url": "https://x.com/dampedspring/status/2112562370841100410",
+      "text": "This is how a credit analysis works.  Great read.",
+      "quoted_post_id": "2112553466266636336",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112561371736838416",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-20T15:07:35.000Z",
+      "url": "https://x.com/LynAldenContact/status/2112561371736838416",
+      "text": "Not great. https://t.co/2mlLeZ52ga",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112559423746875479",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-20T14:59:50.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112559423746875479",
+      "text": "Looking like yet another really solid breadth day, with 10 of 11 sectors higher. \n\nHard to have that October crash we keep hearing about when most stocks are going higher.",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112556597398622525",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-20T14:48:36.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112556597398622525",
+      "text": "Is it really all about AI or Bust?\n\nWe think so and @sonusvarghese and I discuss why in our latest Glass Half Full video.\n\nhttps://t.co/mRoxOatcAY",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112549966287671463",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "author_id": "1546222940",
+      "created_at": "2026-10-20T14:22:15.000Z",
+      "url": "https://x.com/dampedspring/status/2112549966287671463",
+      "text": "The question for earnings season is equity financing. https://t.co/5iGfdh1DWr",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112537949728305275",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-20T13:34:30.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112537949728305275",
+      "text": "“Getting out is easy, but getting back in is hard,” @DataTrekMB co-founder Nicholas Colas once said. “I’ve seen every major market low since the 1980s, and none of them were even remotely obvious.”\n\nNice reminder in @SamRo's note today.",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112536744880967850",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-20T13:29:43.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112536744880967850",
+      "text": "Yes, semis have been hit very hard, but @JC_ParetsX notes that $SMH is still simply consolidating here. \n\nWhich way this breaks will go a long way for the next major market move. https://t.co/cuWpf2FwFW",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2112535890471911576",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-20T13:26:19.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112535890471911576",
+      "text": "CoreWeave has a market cap of less than $34 billion and has more than $51 billion in total long term debt. $CRWV \n\n😐😐 https://t.co/mI2x12GA8Y",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
       ]
     }
   ]

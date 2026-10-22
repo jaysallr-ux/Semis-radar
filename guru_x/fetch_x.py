@@ -285,12 +285,14 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
         grok_ok = (grok_stats.get("grok") or "").startswith("ok")
         manual_at = load_json(MANUAL_PATH, {}).get("updated_at")
         manual_fresh = bool(manual_at) and now - parse_ts(manual_at) <= timedelta(hours=14)
+        list_ok = (grok_stats.get("list") or "").startswith("ok")
         for a in accounts:
             tl = grok_stats["timeline"].get(a["handle"], "")
-            if tl == "ok" or grok_ok or manual_fresh:
+            if list_ok or tl == "ok" or grok_ok or manual_fresh:
                 acc_status[a["handle"]]["last_fetch_ok"] = True
             else:
-                errors[a["handle"]] = f"탐색 실패 (프로필 임베드: {tl or '미시도'}, Grok: {grok_stats.get('grok')})"
+                errors[a["handle"]] = (f"탐색 실패 (리스트 임베드: {grok_stats.get('list') or '미설정'}, "
+                                       f"Grok: {grok_stats.get('grok')}, 수동 ID: {'최신' if manual_fresh else '없음/만료'})")
     if gclient is not None and cfg.get("oembed_selftest"):
         st_cfg = cfg["oembed_selftest"]
         try:
@@ -306,6 +308,15 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     cutoff = now - window
     kept = [p for p in posts.values() if p.get("created_at") and parse_ts(p["created_at"]) >= cutoff]
     kept.sort(key=lambda p: p["created_at"], reverse=True)
+
+    discovery_complete = provider == "x_api"
+    if provider == "free" and grok_stats and (grok_stats.get("list") or "").startswith("ok") and grok_stats.get("list_oldest"):
+        oldest = parse_ts(grok_stats["list_oldest"])
+        prev_ok = (old_feed.get("discovery_stats") or {}).get("list", "") or ""
+        if prev_ok.startswith("ok") and old_feed.get("generated_at"):
+            discovery_complete = oldest <= parse_ts(old_feed["generated_at"])
+        else:
+            discovery_complete = oldest <= now - timedelta(hours=24)
 
     fetched_at = iso_kst(now)
     acc_out = []
@@ -347,7 +358,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
         "source": sources[provider],
         "oembed_selftest": selftest,
         "discovery_stats": grok_stats,
-        "discovery_complete": provider == "x_api",
+        "discovery_complete": discovery_complete,
         "manual_ids_updated_at": load_json(MANUAL_PATH, {}).get("updated_at"),
         "window_days": cfg.get("window_days", 7),
         "budget_stop": budget_stop,
