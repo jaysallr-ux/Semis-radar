@@ -646,8 +646,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     gem_day = state.get("gemini") or {}
     if gem_day.get("date") != today:
         gem_day = {"date": today, "calls": 0, "est_video_hours": 0.0}
-    gem_models = list(cfg.get("gemini_models", ["models/gemini-3.5-flash", "models/gemini-flash-latest",
-                                                  "models/gemini-2.5-flash"]))
+    gem_models = list(cfg.get("gemini_models", ["models/gemini-3.5-flash", "models/gemini-flash-latest"]))
     gem_ok = bool(gemini_key)
     gem_note = "ok" if gem_ok else "no key"
     gem_budget = cfg.get("gemini_time_budget_sec", 900)
