@@ -82,6 +82,18 @@ def main() -> int:
             lines.append(f"SKIP  {tg['name']}: no token for {tg['repo']} (add DISPATCH_TOKEN secret)")
             continue
         base = f"https://api.github.com/repos/{tg['repo']}/actions/workflows/{tg['workflow']}"
+        # GitHub keeps only one pending run per concurrency group and cancels the older pending one when a
+        # new run is queued. So never dispatch while ANY run of this workflow (any mode) is still active:
+        # wait for the next tick instead, or a discover dispatch could cancel a pending full run.
+        busy = False
+        for status in ("queued", "in_progress", "pending", "waiting", "requested"):
+            st, data = api("GET", f"{base}/runs?status={status}&per_page=1", tok)
+            if st == 200 and data.get("total_count"):
+                busy = True
+                break
+        if busy:
+            lines.append(f"WAIT  {tg['name']}: a run of {tg['workflow']} is still active")
+            continue
         since = slot.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         st, data = api("GET", f"{base}/runs?created=%3E%3D{since}&per_page=30", tok)
         if st != 200:
@@ -92,11 +104,11 @@ def main() -> int:
         suf = tg.get("title_suffix")
         if suf:
             runs = [r for r in runs if (r.get("display_title") or "").strip().endswith(suf)]
-        ok_runs = [r for r in runs if r.get("conclusion") != "failure"]
-        fails = len(runs) - len(ok_runs)
+        ok_runs = [r for r in runs if r.get("conclusion") in ("success", "skipped", "neutral")]
+        fails = sum(1 for r in runs if r.get("conclusion") in ("failure", "cancelled", "timed_out", "startup_failure"))
         if ok_runs:
             continue  # already covered (running, queued or done) since this slot
-        if fails >= 2:
+        if fails >= 3:
             lines.append(f"GIVEUP {tg['name']}: {fails} failed runs since {slot:%H:%M}")
             continue
         body = {"ref": tg.get("ref", "main")}
