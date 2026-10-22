@@ -47,14 +47,12 @@ def list_models():
     return 200, "", [m["name"] for m in ms]
 
 
+ORDER = ["models/gemini-3.5-flash", "models/gemini-flash-latest", "models/gemini-2.5-flash",
+         "models/gemini-3.8-flash", "models/gemini-3.6-flash", "models/gemini-3.7-flash"]
+
+
 def pick_models(names):
-    def ver(n):
-        m = re.search(r"gemini-(\d+(?:\.\d+)?)", n)
-        return float(m.group(1)) if m else 0.0
-    flash = [n for n in names if "flash" in n and "lite" not in n and "image" not in n
-             and "tts" not in n and "live" not in n and "audio" not in n and "exp" not in n]
-    stable = [n for n in flash if "preview" not in n] or flash
-    return sorted(stable, key=ver, reverse=True)[:3]
+    return [m for m in ORDER if m in names]
 
 
 # ---------- ground truth ----------
@@ -143,11 +141,21 @@ def call(model, vid, prompt, mode, schema=SCHEMA, end=None):
         part["mediaProcessing"] = "AGENTIC"
     body = {"contents": [{"parts": [part, {"text": prompt}]}], "generationConfig": gen}
     t0 = time.time()
-    try:
-        r = requests.post(f"{BASE}/{model}:generateContent", headers=H(), json=body, timeout=900)
-    except Exception as e:
-        return {"ok": False, "error": scrub(e)[:300], "secs": round(time.time() - t0, 1)}
-    res = {"http": r.status_code, "secs": round(time.time() - t0, 1)}
+    attempts = []
+    for a in range(3):  # 503 "high demand" is transient: back off and retry
+        try:
+            r = requests.post(f"{BASE}/{model}:generateContent", headers=H(), json=body, timeout=420)
+        except Exception as e:
+            attempts.append(f"exc {scrub(e)[:120]}")
+            r = None
+        else:
+            attempts.append(r.status_code)
+            if r.status_code not in (500, 503, 504):
+                break
+        time.sleep(30 * (a + 1))
+    if r is None:
+        return {"ok": False, "error": "all attempts failed", "attempts": attempts, "secs": round(time.time() - t0, 1)}
+    res = {"http": r.status_code, "secs": round(time.time() - t0, 1), "attempts": attempts}
     if r.status_code != 200:
         res.update(ok=False, error=scrub(r.text[:800]))
         return res
@@ -165,7 +173,7 @@ def run_quotes(model, v, mode, out):
     gt, marks = load_gt(v["id"])
     r = call(model, v["id"], quote_prompt(v["person"]), mode)
     rec = {"video": v["id"], "person": v["person"], "kind": v["kind"], "mode": mode, "model": model,
-           **{k: r.get(k) for k in ("ok", "http", "secs", "usage", "finish", "error")}}
+           **{k: r.get(k) for k in ("ok", "http", "secs", "attempts", "usage", "finish", "error")}}
     if r.get("ok"):
         try:
             d = json.loads(r["text"])
@@ -204,7 +212,7 @@ def run_transcribe(model, vid, out):
     prompt = "Transcribe the speech verbatim from 0:00 to 3:00. Plain text only, no timestamps, no speaker labels."
     r = call(model, vid, prompt, "static_low", schema=None, end="180s")
     rec = {"video": vid, "test": "transcribe_first_3min", "model": model,
-           **{k: r.get(k) for k in ("ok", "http", "secs", "usage", "finish", "error")}}
+           **{k: r.get(k) for k in ("ok", "http", "secs", "attempts", "usage", "finish", "error")}}
     if r.get("ok"):
         g = norm(r["text"])
         rec["ratio_vs_captions"] = round(fuzz.ratio(g, gt3), 1)
@@ -234,7 +242,7 @@ def main():
         if rec.get("ok"):
             model = m
             break
-        time.sleep(20)
+        time.sleep(10)
     out["model_used"] = model
     if model:
         plan = [(VIDEOS[1], "static_low"), (VIDEOS[2], "static_low"), (VIDEOS[2], "agentic")]
