@@ -1,4 +1,5 @@
 name: guru-yt-feed
+run-name: guru-yt ${{ (github.event_name == 'workflow_dispatch' && inputs.mode) || (github.event.schedule == '20,50 * * * *' && 'discover') || 'full' }}
 
 on:
   schedule:

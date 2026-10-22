@@ -1,0 +1,29 @@
+name: dispatch-tick
+
+# Called every 5 minutes by cron-job.org (workflow_dispatch). The GitHub schedule below is only a backup.
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: dispatch-tick
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: tick
+      - name: Dispatch due workflows
+        env:
+          GH_TOKEN_SELF: ${{ secrets.GITHUB_TOKEN }}
+          DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+        run: python3 tick/tick.py
