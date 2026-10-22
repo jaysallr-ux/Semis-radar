@@ -698,6 +698,21 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             v.setdefault(k, list(d) if isinstance(d, list) else d)
         if v["gemini_status"] == "pending" and v.get("transcript_status") in ("skipped_old", "skipped_short"):
             v["gemini_status"] = "skipped"
+    migrations = set(state.get("migrations", []))
+    if "evidence_clock_v2" not in migrations:
+        # Before PR #8 the evidence clock could start on captions alone. Under the current rule it starts only
+        # when speaker-verified quotes exist, so clear clocks that have no such quotes yet; they will be set
+        # (once) when the quotes arrive. Also forget error counts caused only by our own Gemini quota.
+        for v in videos.values():
+            person = by_person.get(v.get("person"))
+            good = [q for q in v.get("quotes") or []
+                    if q.get("speaker_verified", person is not None and speaker_ok(person, q.get("speaker", "")))]
+            if v.get("evidence_ready_at") and not good:
+                v["evidence_ready_at"] = None
+            if v.get("gemini_status") == "error" and str(v.get("gemini_last_error") or "").startswith("quota"):
+                v["gemini_error_count"] = 0
+        migrations.add("evidence_clock_v2")
+    state["migrations"] = sorted(migrations)
     prev_gen = old.get("generated_at")
     errors: dict[str, str] = {}
     fetched_at = iso_kst(now)
@@ -882,17 +897,21 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     gem_tok_per_sec = cfg.get("gemini_tokens_per_video_sec", 38)
     max_q = cfg.get("gemini_max_quotes", 12)
     gstats = {"attempted": 0, "ready": 0, "not_speaking": 0, "busy": 0, "errors": 0, "left_pending": 0,
-              "budget_out": 0, "chunked": 0, "text_mode": 0}
+              "budget_out": 0, "chunked": 0, "text_mode": 0, "quota_wait": 0}
     deadline = clock() + gem_budget
     gtodo = [v for v in videos.values() if v["gemini_status"] in ("pending", "error")
              and v.get("transcript_status") not in ("skipped_old", "skipped_short")]
     gtodo.sort(key=lambda v: (v["tier"], -parse_ts(v["published_at"]).timestamp()))
+
+    exhausted: set[str] = set()  # free-tier quotas are per model: a 429 on one model does not stop the others
 
     def try_models(fn):
         """Run fn(model) over the model list. Returns (parsed, usage, model, last_error)."""
         nonlocal gem_ok, gem_note
         last = None
         for model in gem_models:
+            if model in exhausted:
+                continue
             gstats["attempted"] += 1
             gem_day["calls"] += 1
             try:
@@ -902,8 +921,12 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
                 last = f"busy {e} ({model.split('/')[-1]})"
                 continue
             except QuotaExhausted:
-                gem_ok, gem_note = False, "quota or rate limit (429 after 65s retry)"
-                return None, {}, None, "quota (429)"
+                exhausted.add(model)
+                last = last or f"quota (429) {model.split('/')[-1]}"
+                if all(m in exhausted for m in gem_models):
+                    gem_ok, gem_note = False, "quota or rate limit (429) on every model"
+                    return None, {}, None, "quota (429) on every model"
+                continue
             except KeyInvalid:
                 gem_ok, gem_note = False, "key invalid"
                 return None, {}, None, "key invalid"
@@ -949,7 +972,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
                 parsed, usage, model, last_err = try_models(
                     lambda mdl: fetch_gemini(http, gemini_key, mdl, v["video_id"], v["person"], cfg, sleep, clock, deadline))
                 mode = "video" if parsed is not None else None
-            if parsed is None and caption and gem_ok:
+            if parsed is None and caption and gem_ok and len(exhausted) < len(gem_models):
                 # video path failed: read our own captions instead (no YouTube video hours, small token count)
                 parsed, usage, model, err2 = try_models(
                     lambda mdl: fetch_gemini_text(http, gemini_key, mdl, caption, v["person"], cfg, sleep, clock, deadline))
@@ -961,6 +984,10 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         except BudgetOut:
             gstats["budget_out"] += 1
             continue  # leave status as it was: not an error
+        if parsed is None and last_err and last_err.startswith("quota"):
+            v["gemini_last_error"] = last_err  # our quota, not the video's fault: retry next run, no error count
+            gstats["quota_wait"] += 1
+            continue
         if parsed is None:
             v["gemini_error_count"] += 1
             v["gemini_last_error"] = last_err
