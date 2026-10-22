@@ -51,20 +51,33 @@ jobs:
         run: |
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import json, os
-          from datetime import datetime, timezone
+          from datetime import datetime, timedelta, timezone
           from pathlib import Path
+          from zoneinfo import ZoneInfo
+          # GitHub schedules can arrive hours late. dispatch-tick (cron-job.org) runs the slots on time, so a
+          # scheduled run is skipped if the slot it belongs to has already been covered.
+          KST = ZoneInfo("Asia/Seoul")
+          now = datetime.now(KST)
+          def ts(path, key):
+              try:
+                  return datetime.fromisoformat(json.loads(Path(path).read_text(encoding="utf-8"))[key])
+              except Exception:
+                  return None
+          def latest_slot(slots):
+              cands = [now.replace(hour=h, minute=m, second=0, microsecond=0) - timedelta(days=d)
+                       for d in (0, 1) for h, m in slots]
+              return max(c for c in cands if c <= now)
           run = True
           mode = "discover" if (os.environ.get("SCHED") == "20,50 * * * *" or os.environ.get("INPUT_MODE") == "discover") else "full"
-          if mode == "full" and os.environ.get("GITHUB_EVENT_NAME") == "schedule":
-              p = Path("guru_yt/data/youtube_feed.json")
-              if p.exists():
-                  try:
-                      d = json.loads(p.read_text(encoding="utf-8"))
-                      age = datetime.now(timezone.utc) - datetime.fromisoformat(d["generated_at"])
-                      if age.total_seconds() < 50 * 60:
-                          run = False
-                  except Exception:
-                      run = True
+          if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+              if mode == "full":
+                  gen = ts("guru_yt/data/youtube_feed.json", "generated_at")
+                  if gen and gen >= latest_slot([(10, 10), (21, 10)]) - timedelta(minutes=10):
+                      run = False
+              else:
+                  last = ts("guru_yt/data/discovered.json", "last_checked_at")
+                  if last and now - last < timedelta(minutes=20):
+                      run = False
           print(f"run={'true' if run else 'false'}")
           print(f"mode={mode}")
           PY

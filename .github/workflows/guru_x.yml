@@ -42,22 +42,24 @@ jobs:
         run: |
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import json, os
-          from datetime import datetime, timezone
+          from datetime import datetime, timedelta
           from pathlib import Path
-
+          from zoneinfo import ZoneInfo
+          # GitHub schedules can arrive hours late. dispatch-tick (cron-job.org) runs the slots on time, so a
+          # scheduled run is skipped if the slot it belongs to has already been covered.
+          KST = ZoneInfo("Asia/Seoul")
+          now = datetime.now(KST)
           run = True
           if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
-              p = Path("guru_x/data/feed.json")
-              if p.exists():
-                  try:
-                      d = json.loads(p.read_text(encoding="utf-8"))
-                      age = datetime.now(timezone.utc) - datetime.fromisoformat(d["generated_at"])
-                      # Skip the retry slot if any run already happened in this window (success or not),
-                      # so missing credentials don't produce duplicate commits.
-                      if age.total_seconds() < 50 * 60:
-                          run = False
-                  except Exception:
-                      run = True
+              try:
+                  gen = datetime.fromisoformat(json.loads(Path("guru_x/data/feed.json").read_text(encoding="utf-8"))["generated_at"])
+                  cands = [now.replace(hour=h, minute=15, second=0, microsecond=0) - timedelta(days=d)
+                           for d in (0, 1) for h in (10, 21)]
+                  slot = max(c for c in cands if c <= now)
+                  if gen >= slot - timedelta(minutes=10):
+                      run = False
+              except Exception:
+                  run = True
           print(f"run={'true' if run else 'false'}")
           PY
 
