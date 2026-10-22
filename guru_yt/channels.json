@@ -9,6 +9,18 @@
   ],
   "max_error_retries": 3,
   "skip_shorts": true,
+  "gemini_models": [
+    "models/gemini-3.5-flash",
+    "models/gemini-flash-latest",
+    "models/gemini-2.5-flash"
+  ],
+  "gemini_max_age_hours": 48,
+  "gemini_time_budget_sec": 900,
+  "gemini_daily_video_hours": 7.5,
+  "gemini_fps": 0.1,
+  "gemini_max_quotes": 12,
+  "gemini_tokens_per_video_sec": 38,
+  "quote_verify_threshold": 90,
   "people": [
     {
       "person": "Mark Newton",
