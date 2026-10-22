@@ -1,26 +1,25 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-23T00:44:09+09:00",
+  "generated_at": "2026-10-23T00:52:17+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-23T00:39:24+09:00",
+    "last_discovery_at": "2026-10-23T00:44:09+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 0,
-      "rejected": 0,
-      "retry_next_run": [
-        "ffiSgUoDNbQ",
-        "-zUY6bH_LIM",
-        "jdRH4nXvmpE",
-        "X4ehXm5FnLM",
-        "7WFf4ryfZeY",
-        "Wo9PbJNCNbU",
-        "aRwlDuI2jLQ"
-      ]
+      "accepted": 1,
+      "rejected": 6,
+      "reasons": {
+        "-zUY6bH_LIM": "older than window",
+        "jdRH4nXvmpE": "older than window",
+        "X4ehXm5FnLM": "older than window",
+        "7WFf4ryfZeY": "older than window",
+        "Wo9PbJNCNbU": "older than window",
+        "aRwlDuI2jLQ": "older than window"
+      }
     }
   },
   "quote_verify_threshold": 90,
@@ -143,20 +142,20 @@
     "yta_server_remaining": 3,
     "yta_daily_cap": 7,
     "yta_reserve_for_manual": 3,
-    "supadata_used_total": 0,
+    "supadata_used_total": 8,
     "supadata_total_cap": 90,
     "providers": {
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 25,
+    "gemini_calls_today": 29,
     "gemini_est_video_hours_today": 1.113,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "quota or rate limit (429) on every model"
   },
   "stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 1,
+    "ready": 1,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -171,7 +170,7 @@
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 1,
+    "budget_out": 2,
     "chunked": 0,
     "text_mode": 0,
     "quota_wait": 1
@@ -455,6 +454,51 @@
       "gemini_prompt_tokens": 123896,
       "gemini_mode": null,
       "transcript_retained": false
+    },
+    {
+      "video_id": "ffiSgUoDNbQ",
+      "url": "https://www.youtube.com/watch?v=ffiSgUoDNbQ",
+      "channel": "CNBC Television",
+      "channel_id": "UCvJJ_dzjViJCoLf5uKUTwoA",
+      "channel_mode": "filter",
+      "person": "Mark Newton",
+      "tier": 1,
+      "match": "web_discovery",
+      "title": "Fundstrat’s Mark Newton: Markets remain resilient, earnings have started to kick off in good shape",
+      "description": "Mark Newton, Fundstrat technical strategy head, joins 'Closing Bell' to discuss the latest in the markets.",
+      "published_at": "2026-10-21T00:00:00+00:00",
+      "first_seen_at": "2026-10-23T00:52:17+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "supadata",
+      "transcript_ready_at": "2026-10-23T00:52:17+09:00",
+      "transcript_language": "en",
+      "transcript_chars": 3062,
+      "transcript_url": null,
+      "name_mentions": 3,
+      "appearance_confirmed": null,
+      "appearance_excerpt": "KNOW OUR NEXT GUEST SAYS THE RALLY LOOKS STRONGER UNDER THE SURFACE THAN BOTH THE S&P 500 AND NASDAQ 100 WOULD SUGGEST. MARK NEWTON IS HEAD OF TECHNICAL STRATEGY AT FUNDSTRAT JOINS US NOW. IT'S GOOD TO HAVE YOU BACK. YOUR NOTE CAUGHT OUR ATTENTION CLEARLY. WHY DO YOU BELIEVE THAT? WELL LOOK SCOTT YOU'VE SEEN THE S&P JU",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "pending",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "자막 확보, 인용 대기",
+      "appearance_source": null,
+      "transcript_retained": true,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
     },
     {
       "video_id": "VvbPfe6qucU",
