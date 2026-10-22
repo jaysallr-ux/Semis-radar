@@ -12,14 +12,14 @@ semis-radar 와 같은 역할 분담을 따른다.
 | 조건 | provider | 탐색 (새 글 찾기) | 검증 (원문·작성자) |
 |---|---|---|---|
 | `X_BEARER_TOKEN` 있음 | `x_api` | X 공식 API 타임라인 | X 공식 API (`verification: x_api`) |
-| 없음 | `free` | X 프로필 임베드 (막히면 건너뜀) + `XAI_API_KEY` 있으면 Grok x_search | X syndication (`syndication`), 실패 시 X oEmbed (`oembed`) |
+| 없음 | `free` | 공개 X 리스트 임베드 (`x_list_id`) + 수동 ID (`data/manual_ids.json`) + `XAI_API_KEY` 있으면 Grok x_search | X syndication (`syndication`), 실패 시 X oEmbed (`oembed`) |
 
 free 경로 원칙
 - Grok 이 쓴 문장은 저장하지 않는다. 출처 URL 만 뽑는다
 - 원문, 작성자, 시각은 X 서버가 돌려준 값만 쓴다. 작성자가 추적 대상 핸들과 다르면 버린다
 - 남에게 단 답글은 버리고, 본인 스레드 이어쓰기는 `is_self_reply: true` 인 개별 post 로 넣는다
-- 탐색이 완전하지 않다 (`discovery_complete: false`). 피드에 없다고 그 사람이 글을 안 쓴 게 아니다
-- 2026-10-22 프로브 결과: GitHub Actions IP 에서 프로필 임베드는 429 로 막힘. syndication, oEmbed 는 정상
+- `discovery_complete` 는 리스트 임베드의 가장 오래된 글이 지난 성공 수집 시점보다 이전일 때만 true. false 면 피드에 없다고 그 사람이 글을 안 쓴 게 아니다
+- 2026-10-22 확인: 프로필 임베드는 Actions·가정용 IP 모두 429. 공개 리스트 임베드는 Actions 에서 정상(78개). 리스트를 비공개로 바꾸면 비어서 나온다
 
 `discovery_stats` 에 계정별 프로필 임베드 상태, Grok 상태, 찾은 URL 수, 검증 결과별 개수가 찍힌다.
 `oembed_selftest` 는 매 실행마다 알려진 게시물 하나로 syndication 과 oEmbed 가 살아있는지 확인한 결과다.
@@ -41,6 +41,13 @@ GPT 알람(11:00, 22:00)보다 45분 먼저 끝나도록 잡았다.
 | cost_this_run | 이번 실행 과금 추정 |
 
 리트윗과 남에게 단 답글은 수집하지 않는다. 본인 스레드 이어쓰기만 원글에 붙인다.
+
+free 경로 post 추가 필드
+- `quoted_post`: 인용한 글의 id, author, created_at, url, text, available, has_media (인용글 원문은 X syndication 이 돌려준 값)
+- `links`: 본문의 t.co 링크를 펼친 실제 주소
+- `has_media`: 이미지/영상 첨부 여부. 텍스트만으로 뜻을 알 수 없을 수 있다는 표시
+- `discovered_via`: list_embed / manual_browser / grok / profile_embed
+- `rev`: 레코드 형식 버전. 낮은 버전 레코드는 다음 실행에서 무료로 재검증된다
 
 ## 비용
 

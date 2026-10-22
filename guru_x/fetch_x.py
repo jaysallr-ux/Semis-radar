@@ -277,10 +277,16 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     if provider == "free":
         manual = {m["id"]: m.get("handle_hint") for m in load_json(MANUAL_PATH, {}).get("ids", [])
                   if str(m.get("id", "")).isdigit()}
-        res = grok_source.collect(gclient, cfg, accounts, now, set(posts), manual)
+        current = {pid for pid, r in posts.items() if r.get("rev", 1) >= 3 or r.get("verification") == "x_api"}
+        refresh = {pid: r.get("handle") for pid, r in posts.items() if pid not in current}
+        res = grok_source.collect(gclient, cfg, accounts, now, current, manual, refresh)
         for r in res["records"]:
+            old_rec = posts.get(r["id"])
+            if old_rec:
+                r["discovered_via"] = sorted((set(old_rec.get("discovered_via", [])) | set(r["discovered_via"])) - {"refresh"})
+            else:
+                acc_status[r["handle"]]["new_originals"] += 1
             posts[r["id"]] = r
-            acc_status[r["handle"]]["new_originals"] += 1
         grok_cost, grok_stats = res["cost"], res["stats"]
         grok_ok = (grok_stats.get("grok") or "").startswith("ok")
         manual_at = load_json(MANUAL_PATH, {}).get("updated_at")
