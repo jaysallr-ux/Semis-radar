@@ -1,7 +1,7 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-22T16:08:35+09:00",
-  "data_ok": false,
+  "generated_at": "2026-10-22T16:26:27+09:00",
+  "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
@@ -19,130 +19,121 @@
       "LynAldenContact": "blocked_429"
     },
     "grok": "skipped (no XAI_API_KEY)",
-    "urls_found": 0,
+    "manual": 55,
+    "urls_found": 55,
     "already_known": 0,
     "too_old": 0,
-    "verified_syndication": 0,
+    "verified_syndication": 53,
     "verified_oembed": 0,
-    "rejected_author": 0,
-    "reply_other": 0,
+    "rejected_author": 1,
+    "reply_other": 1,
     "verify_failed": 0
   },
   "discovery_complete": false,
+  "manual_ids_updated_at": "2026-10-22T07:25:55+00:00",
   "window_days": 7,
   "budget_stop": false,
-  "errors": {
-    "MarkNewtonCMT": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
-    "jam_croissant": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
-    "WarrenPies": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
-    "DariusDale42": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
-    "RyanDetrick": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
-    "dampedspring": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
-    "Geo_papic": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
-    "BiancoResearch": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
-    "BobEUnlimited": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
-    "LynAldenContact": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
-  },
+  "errors": {},
   "accounts": [
     {
       "person": "Mark Newton",
       "handle": "MarkNewtonCMT",
       "tier": 1,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 1,
+      "error": null
     },
     {
       "person": "Cem Karsan",
       "handle": "jam_croissant",
       "tier": 1,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 6,
+      "error": null
     },
     {
       "person": "Warren Pies",
       "handle": "WarrenPies",
       "tier": 1,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 2,
+      "error": null
     },
     {
       "person": "Darius Dale",
       "handle": "DariusDale42",
       "tier": 1,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 1,
+      "error": null
     },
     {
       "person": "Ryan Detrick",
       "handle": "RyanDetrick",
       "tier": 2,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 19,
+      "error": null
     },
     {
       "person": "Andy Constan",
       "handle": "dampedspring",
       "tier": 2,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 5,
+      "error": null
     },
     {
       "person": "Marko Papic",
       "handle": "Geo_papic",
       "tier": 2,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 1,
+      "error": null
     },
     {
       "person": "Jim Bianco",
       "handle": "BiancoResearch",
       "tier": 3,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 3,
+      "error": null
     },
     {
       "person": "Bob Elliott",
       "handle": "BobEUnlimited",
       "tier": 3,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 3,
+      "error": null
     },
     {
       "person": "Lyn Alden",
       "handle": "LynAldenContact",
       "tier": 3,
       "user_id": null,
-      "last_fetch_ok": false,
-      "last_success_at": null,
-      "new_originals_this_run": 0,
-      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
+      "last_fetch_ok": true,
+      "last_success_at": "2026-10-22T16:26:27+09:00",
+      "new_originals_this_run": 12,
+      "error": null
     }
   ],
   "cost_this_run": {
@@ -150,5 +141,960 @@
     "users_billed": 0,
     "usd_estimate": 0.0
   },
-  "posts": []
+  "posts": [
+    {
+      "id": "2113113700638785648",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-22T03:42:20.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113113700638785648",
+      "text": "If the Fed was like, \"the internet is being hacked beyond our wildest comprehension, and our quarter-point decisions aren't changing anything amid fiscal dominance and energy crises, so we're just going to hold firm and watch the mayhem\", that would be a reasonable outcome.",
+      "quoted_post_id": "2113049240448671965",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113112134582440130",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-22T03:36:07.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113112134582440130",
+      "text": "One must imagine Sisyphus happy.",
+      "quoted_post_id": "2113110818502160867",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113108231882936335",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-22T03:20:36.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113108231882936335",
+      "text": "Over a year later, this one keeps catching likes.\n\nMainly because the person it was in response to implied we shouldn’t stop asking about it, which I agree with.",
+      "quoted_post_id": "1942298452282528171",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113086998248640839",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-22T01:56:14.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113086998248640839",
+      "text": "I think about this sometimes, but the energy requirements are significant and whenever it is tried it's kind of an advertisement. https://t.co/woCLyyCfJP",
+      "quoted_post_id": "2113054840595390792",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113084982717743320",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-22T01:48:13.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113084982717743320",
+      "text": "@cutesy_kuromiii Legend of Korra is all over my feed now.\n\nThis aspect seems obvious.",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113054876997767636",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-21T23:48:35.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113054876997767636",
+      "text": "Logging back into X, period.",
+      "quoted_post_id": "2113052507048120490",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113047525049372974",
+      "person": "Mark Newton",
+      "handle": "MarkNewtonCMT",
+      "tier": 1,
+      "author_id": "253168011",
+      "created_at": "2026-10-21T23:19:23.000Z",
+      "url": "https://x.com/MarkNewtonCMT/status/2113047525049372974",
+      "text": "Agilent Tech ($A) pushing up aggressively in recent mths following five yrs of lifeless consolidation.\n\nStocks like these hitting multi-year highs following massive bases are always worth keeping on the \"front burner\" when the sector is starting to accelerate after having trended https://t.co/ZI74lbwxPk",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113046566324015274",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-21T23:15:34.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113046566324015274",
+      "text": "Novels used to be the primary entertainment medium but now they have more competition.\n\nTwo key advantages they still have:\n\n-Better interiority and emotional depth than other media.\n\n-Written by one author with a vision, not a committee. Lower expense means they can write niche.",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113030015084335460",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "author_id": "199170156",
+      "created_at": "2026-10-21T22:09:48.000Z",
+      "url": "https://x.com/jam_croissant/status/2113030015084335460",
+      "text": "Coming this spring to a market near you:\n\nThe old debate…\n\nbecomes \n\nthe new debate. https://t.co/rLvMFrtkol",
+      "quoted_post_id": "2112628249096593513",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113029557569675692",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-21T22:07:59.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113029557569675692",
+      "text": "For those who don't know the reference, Palantir refers to those seeing stones in Lord of the Rings that are dangerous because Sauron corrupted them and they are not all accounted for, meaning enemies can see through them, too.\nhttps://t.co/Z23i9tHpWH",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113026465713577990",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-21T21:55:42.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113026465713577990",
+      "text": "I still think about this sometimes.\n\nPalantir was named after a leaked surveillance database, if you didn’t know.",
+      "quoted_post_id": "2062065434103255167",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113025996228067615",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "author_id": "199170156",
+      "created_at": "2026-10-21T21:53:50.000Z",
+      "url": "https://x.com/jam_croissant/status/2113025996228067615",
+      "text": "Data center debt is the bottom of the capital stack… \n\nNot nearly risky enough for 20 year Trump Accounts. \n\nData center equity. 🎯 https://t.co/5su25tApbd",
+      "quoted_post_id": "2112921118982148175",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113024421212651530",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-21T21:47:34.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113024421212651530",
+      "text": "And Korra was a good avatar, actually.\n\nShe gets a lot of hate on this app but she had a rough go and did well.",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2113019763379392990",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-21T21:29:04.000Z",
+      "url": "https://x.com/DariusDale42/status/2113019763379392990",
+      "text": "Question: Why won’t high interest rates break the US economy? Answer below. Hint: It has nothing to do with AI.",
+      "quoted_post_id": "2112997353930248199",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112997282589409470",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-21T19:59:44.000Z",
+      "url": "https://x.com/LynAldenContact/status/2112997282589409470",
+      "text": "@Eleven__11XI I mean:",
+      "quoted_post_id": "2112673356583432360",
+      "thread": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112994328868196664",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "author_id": "199170156",
+      "created_at": "2026-10-21T19:48:00.000Z",
+      "url": "https://x.com/jam_croissant/status/2112994328868196664",
+      "text": "Live in 10 minutes on @tastyliveshow — 3pm CT (4pm ET). See you there 🍒🥐\n\nhttps://t.co/Bd9lpVrhNn",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112987248832528666",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-21T19:19:52.000Z",
+      "url": "https://x.com/LynAldenContact/status/2112987248832528666",
+      "text": "National aggregate home prices will continue to chop sideways with low volume for years, imo. That's been my view since 2022 and still is. https://t.co/mK4RdnVakE",
+      "quoted_post_id": "2112881344346792309",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112980178750292359",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T18:51:46.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112980178750292359",
+      "text": "@CarsonResearch More on it all\n\nhttps://t.co/08hzF3YqLD",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112980138652525005",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T18:51:36.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112980138652525005",
+      "text": "Here's the always popular @CarsonResearch Earnings Season Snapshot.  So far so 💪 https://t.co/tvhBWop2pk",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112975980205940949",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "author_id": "1546222940",
+      "created_at": "2026-10-21T18:35:05.000Z",
+      "url": "https://x.com/dampedspring/status/2112975980205940949",
+      "text": "This is great.  I'm long bonds but just renting for alpha.  For beta they are a better balance than they have been.",
+      "quoted_post_id": "2112972218607235219",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112957500098031715",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "author_id": "1546222940",
+      "created_at": "2026-10-21T17:21:39.000Z",
+      "url": "https://x.com/dampedspring/status/2112957500098031715",
+      "text": "Enjoyed this monthly conversation",
+      "quoted_post_id": "2112938697079361804",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112954165445972306",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T17:08:24.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112954165445972306",
+      "text": "We were joined by @LibbyCantrill of @PIMCO on Facts vs Feelings this week! This was her fifth appearance and it was awesome. 👇 👇",
+      "quoted_post_id": "2112946673475359109",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112953213259329632",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T17:04:37.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112953213259329632",
+      "text": "This conversation between @philrosenn and @MebFaber was so good. Meb was on 🔥",
+      "quoted_post_id": "2112529517071720794",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112952721334480949",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "author_id": "1546222940",
+      "created_at": "2026-10-21T17:02:40.000Z",
+      "url": "https://x.com/dampedspring/status/2112952721334480949",
+      "text": "C+",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112943005934264646",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "author_id": "199170156",
+      "created_at": "2026-10-21T16:24:03.000Z",
+      "url": "https://x.com/jam_croissant/status/2112943005934264646",
+      "text": "I’ll be joining @tastyliveshow at 3pm CT (4pm ET) today. Come hang 🍒🥐\n\nhttps://t.co/Bd9lpVrhNn",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112925627133100322",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-21T15:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2112925627133100322",
+      "text": "Only need to 18x quarterly revenue from here until $SPCX is at the 1tln ARR necessary to justify their current 2tln market cap. Keep at it! https://t.co/2C1fEwwQv3",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112923611115700244",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "author_id": "188369814",
+      "created_at": "2026-10-21T15:06:59.000Z",
+      "url": "https://x.com/BiancoResearch/status/2112923611115700244",
+      "text": "4/4\n\nWe addressed it in the inflation section of this post.\n\nTL:dr - the era of goods deflation from China is over.\n\nIt’s over by choice, as neither political party wants globalization back.\n\nWithout goods deflation we are a 3% inflation economy with 5% yields.\n\nGet used to it.",
+      "quoted_post_id": "2107179794563531068",
+      "thread": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112923599208358381",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "author_id": "188369814",
+      "created_at": "2026-10-21T15:06:56.000Z",
+      "url": "https://x.com/BiancoResearch/status/2112923599208358381",
+      "text": "3/4\n\nThe chart above shows economists have continuously making the same call as the WSJ survey, in 18 to 24 months inflation will 2%. \n\nIt has been continuously wrong.\n\nWhy?",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112923531063472554",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "author_id": "188369814",
+      "created_at": "2026-10-21T15:06:40.000Z",
+      "url": "https://x.com/BiancoResearch/status/2112923531063472554",
+      "text": "1/4\n\nThe WSJ surveyed 71 economists (repost) and this graphic is their outlook on inflation (cyan dots).\n—-\nThis has been the constant economic forecast for 5-plus years, in 18 to 24 months inflation will be back to 2%.\n\nAnd for 5-plus years it has been constantly wrong.\n\n🧵 https://t.co/5FS5y3pK9m",
+      "quoted_post_id": "2112209155956093439",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112917332830114064",
+      "person": "Warren Pies",
+      "handle": "WarrenPies",
+      "tier": 1,
+      "author_id": "2326980139",
+      "created_at": "2026-10-21T14:42:02.000Z",
+      "url": "https://x.com/WarrenPies/status/2112917332830114064",
+      "text": "more below...\n\nhttps://t.co/YsOFKfOtIm",
+      "quoted_post_id": "2107241435686936827",
+      "thread": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112917154668433888",
+      "person": "Warren Pies",
+      "handle": "WarrenPies",
+      "tier": 1,
+      "author_id": "2326980139",
+      "created_at": "2026-10-21T14:41:20.000Z",
+      "url": "https://x.com/WarrenPies/status/2112917154668433888",
+      "text": "Bears out discussing AI's vulnerability to a VC funding retrenchment\n\nIF VC funding tracks the last hike cycle, ~25% of lab ARR is at risk\n\nHowever, the likelihood that the current tightening tracks 2022 is v low + ex-labs VC funding is below last cycle's peak (excerpt 9/17 3FR) https://t.co/EtqU9swztc",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112904803852443702",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T13:52:15.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112904803852443702",
+      "text": "Not everyone was talking about a recession this time four years ago. Here is @sonusvarghese on October 6, 2022 on why Economic Indicators Still Don’t Point to a Recession\n\nhttps://t.co/cO1K6SNUOH",
+      "quoted_post_id": "2112893659935015288",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112902002606792793",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T13:41:07.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112902002606792793",
+      "text": "Remembering our friend @JBoorman today. He passed away six years ago. 🙏 ❤️ 😇 https://t.co/NaeYfZcJ25",
+      "quoted_post_id": "1324051038672986122",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112900759020769660",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T13:36:11.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112900759020769660",
+      "text": "Jon was one of the best.  He is greatly missed but not forgotten. @JBoorman",
+      "quoted_post_id": "2112874598341710021",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112900152994214118",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T13:33:46.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112900152994214118",
+      "text": "👀",
+      "quoted_post_id": "2112898461993517067",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112895761390182492",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T13:16:19.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112895761390182492",
+      "text": "Good reminder that the number of households with incomes of $150k or more have moved from 5% to 28% the past 60 years. https://t.co/4Lna2JbFsc",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112895427750367410",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-21T13:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2112895427750367410",
+      "text": "The latest \"leaked\" Anthropic financials cast doubt on just how indicative that 10% operating margin print was last week.  Add in \"other expenses\" which were conviently forgotten about and the company is still clearly in the red.  \n\nNothing here aligns with a 2tln valuation. https://t.co/Dcg17d4Cc5",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112893659935015288",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T13:07:58.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112893659935015288",
+      "text": "Great compilation of scary headlines that were all very, very wrong from @awealthofcs https://t.co/MLdHkk3QyD",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112891119143211300",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T12:57:53.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112891119143211300",
+      "text": "As someone who tries to only fly United anymore because they have Starlink, has Starlink in my house, and has a Starlini mini, I don't think any of this $SPCX news is very surprising.",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112887478612848719",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T12:43:25.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112887478612848719",
+      "text": "One of the big stories from October (so far) is how breadth has gotten significantly better.\n\nS&P 500 A/D line has been soaring the past few weeks, but it is now nearing a big level. Should it eventually get above this line (I think it will), new highs on the S&P 500 won't be far https://t.co/cYbpH93Wgw",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112884280892527073",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "author_id": "1546222940",
+      "created_at": "2026-10-21T12:30:42.000Z",
+      "url": "https://x.com/dampedspring/status/2112884280892527073",
+      "text": "Trump = Grace Penn\n\nVance not = Hal\nRubio not = Miguel\nWiles not = Billie\nStephens not = Kate\n\nDiplomat season 4 ending is a pipe dream but we could wish\n\nBiden = Grace Penn too and his squad was criminally negligent as well.",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112865228962578452",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-21T11:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2112865228962578452",
+      "text": "Higher For Longer Oil Prices\n\nNear-term oil prices are pushing back to Iran war highs and markets are increasingly expecting elevated prices through next year, suggesting little relief from central bank hiking cycles ahead.\n\nhttps://t.co/b3mTiSc1H4 https://t.co/QoxuwJEiOe",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112843346804633612",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "author_id": "1546222940",
+      "created_at": "2026-10-21T09:48:03.000Z",
+      "url": "https://x.com/dampedspring/status/2112843346804633612",
+      "text": "Wordle 1,950 3/6*\n\n⬜🟨⬜⬜🟨\n⬜⬜🟨⬜🟨\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112717975862104522",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T01:29:52.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112717975862104522",
+      "text": "Four years ago right now I wrote why we likely just made a major bottom and the bear market was over. We've been bullish ever since and still think the 🌊 isn't done yet. \n\nThis bullish call was mocked for nearly two years. \n\nhttps://t.co/xu9E3gDTBt",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112715811769176411",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T01:21:16.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112715811769176411",
+      "text": "402 stocks in the S&P 500 up today, the most since April 8th https://t.co/lFn5O9Cfyl",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112714809800069314",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-21T01:17:17.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112714809800069314",
+      "text": "Breadth continues to improve, with new highs in the number of stocks in the S&P 500 above their 20-, 50-, and 200-day MAs. https://t.co/4bc6rYlcDl",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112675319970705629",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-20T22:40:22.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112675319970705629",
+      "text": "@sonusvarghese 📺 \n\nhttps://t.co/LGeBpOsBW9",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112675173174308953",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-20T22:39:47.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112675173174308953",
+      "text": "Bull markets only stop once they are murdered. @sonusvarghese explans https://t.co/eANuuNfLcU",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112669410813210804",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "author_id": "1502354421421785088",
+      "created_at": "2026-10-20T22:16:53.000Z",
+      "url": "https://x.com/Geo_papic/status/2112669410813210804",
+      "text": "The GeoMacro Beta has dropped... Big thank you to my colleagues @SavaryMathieu and Jeremie Peloso for their thoughts. https://t.co/VmzD6w9OEf",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112667761075761258",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "author_id": "199170156",
+      "created_at": "2026-10-20T22:10:20.000Z",
+      "url": "https://x.com/jam_croissant/status/2112667761075761258",
+      "text": "https://t.co/pSMKslhivM",
+      "quoted_post_id": "2112267727163556026",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112664760957206804",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-20T21:58:25.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112664760957206804",
+      "text": "Another great @CNBCMorningCall panel today with @MorganLBrennan 👏👏 ⏰ \n\nNice job by @FrankCappelleri as always ☕",
+      "quoted_post_id": "2112507864153514091",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112649925209317685",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "author_id": "199170156",
+      "created_at": "2026-10-20T20:59:27.000Z",
+      "url": "https://x.com/jam_croissant/status/2112649925209317685",
+      "text": "https://t.co/pQNG7z5yaR",
+      "quoted_post_id": "2112571646230024655",
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    },
+    {
+      "id": "2112646900939649293",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "author_id": "21232827",
+      "created_at": "2026-10-20T20:47:26.000Z",
+      "url": "https://x.com/RyanDetrick/status/2112646900939649293",
+      "text": "The stock market crashed 39 years ago right now 🐻 \n\nI take a trip down memory lane and look into the Crash of 1987 📉 📉 📉 \n\nhttps://t.co/SAvRZx0GFf",
+      "quoted_post_id": null,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "possibly_truncated": false,
+      "discovered_via": [
+        "manual_browser"
+      ]
+    }
+  ]
 }
