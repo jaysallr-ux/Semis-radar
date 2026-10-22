@@ -4,7 +4,7 @@ on:
   schedule:
     # GPT Macro Guru Stance Watch runs at 11:00 and 22:00 KST.
     # Fetch 45 minutes earlier, with one retry 20 minutes later in case GitHub delays or drops a run.
-    # Freshness guard makes the retry a no-op after a successful run.
+    # Freshness guard makes the retry a no-op if a run already happened in the last 50 minutes.
     - cron: "15 1 * * *"   # KST 10:15
     - cron: "35 1 * * *"   # KST 10:35
     - cron: "15 12 * * *"  # KST 21:15
@@ -51,7 +51,9 @@ jobs:
                   try:
                       d = json.loads(p.read_text(encoding="utf-8"))
                       age = datetime.now(timezone.utc) - datetime.fromisoformat(d["generated_at"])
-                      if d.get("data_ok") is True and age.total_seconds() < 50 * 60:
+                      # Skip the retry slot if any run already happened in this window (success or not),
+                      # so missing credentials don't produce duplicate commits.
+                      if age.total_seconds() < 50 * 60:
                           run = False
                   except Exception:
                       run = True
