@@ -238,13 +238,14 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
     }, "oembed"
 
 
-def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, known_ids: set[str]) -> dict:
+def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, known_ids: set[str],
+            manual_ids: dict[str, str | None] | None = None) -> dict:
     """Free discovery (profile embed) + optional Grok discovery, then free verification.
     Returns {"records", "cost", "stats", "discovered_by_handle"}. Grok failure is recorded, not raised."""
     g = cfg.get("grok", {})
     by_handle = {a["handle"].lower(): a for a in accounts}
     window = timedelta(days=cfg.get("window_days", 7))
-    stats = {"timeline": {}, "grok": None, "urls_found": 0, "already_known": 0, "too_old": 0,
+    stats = {"timeline": {}, "grok": None, "manual": len(manual_ids or {}), "urls_found": 0, "already_known": 0, "too_old": 0,
              "verified_syndication": 0, "verified_oembed": 0, "rejected_author": 0, "reply_other": 0, "verify_failed": 0}
     found: dict[str, str | None] = {}
     sources: dict[str, set] = {}
@@ -258,6 +259,11 @@ def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, 
         for pid in ids:
             found.setdefault(pid, a["handle"])
             sources.setdefault(pid, set()).add("profile_embed")
+
+    for pid, h in (manual_ids or {}).items():
+        if pid not in found or (found[pid] is None and h):
+            found[pid] = h
+        sources.setdefault(pid, set()).add("manual_browser")
 
     cost = None
     if client.api_key:

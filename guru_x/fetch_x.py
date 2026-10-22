@@ -38,6 +38,7 @@ DATA_DIR = ROOT / "data"
 STATE_PATH = DATA_DIR / "state.json"
 FEED_PATH = DATA_DIR / "feed.json"
 RUNS_PATH = DATA_DIR / "runs.csv"
+MANUAL_PATH = DATA_DIR / "manual_ids.json"
 
 PRICE_PER_POST = 0.005
 PRICE_PER_USER = 0.010
@@ -274,15 +275,19 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     grok_cost, grok_stats, selftest = None, None, None
     gclient = grok_client or (grok_source.GrokOembed(xai_key) if provider == "free" else None)
     if provider == "free":
-        res = grok_source.collect(gclient, cfg, accounts, now, set(posts))
+        manual = {m["id"]: m.get("handle_hint") for m in load_json(MANUAL_PATH, {}).get("ids", [])
+                  if str(m.get("id", "")).isdigit()}
+        res = grok_source.collect(gclient, cfg, accounts, now, set(posts), manual)
         for r in res["records"]:
             posts[r["id"]] = r
             acc_status[r["handle"]]["new_originals"] += 1
         grok_cost, grok_stats = res["cost"], res["stats"]
         grok_ok = (grok_stats.get("grok") or "").startswith("ok")
+        manual_at = load_json(MANUAL_PATH, {}).get("updated_at")
+        manual_fresh = bool(manual_at) and now - parse_ts(manual_at) <= timedelta(hours=14)
         for a in accounts:
             tl = grok_stats["timeline"].get(a["handle"], "")
-            if tl == "ok" or grok_ok:
+            if tl == "ok" or grok_ok or manual_fresh:
                 acc_status[a["handle"]]["last_fetch_ok"] = True
             else:
                 errors[a["handle"]] = f"탐색 실패 (프로필 임베드: {tl or '미시도'}, Grok: {grok_stats.get('grok')})"
@@ -343,6 +348,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
         "oembed_selftest": selftest,
         "discovery_stats": grok_stats,
         "discovery_complete": provider == "x_api",
+        "manual_ids_updated_at": load_json(MANUAL_PATH, {}).get("updated_at"),
         "window_days": cfg.get("window_days", 7),
         "budget_stop": budget_stop,
         "errors": errors,
