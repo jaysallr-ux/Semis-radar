@@ -1,0 +1,27 @@
+name: guru-web-probe
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [web-probe]
+    paths:
+      - ".github/workflows/guru_web_probe.yml"
+      - "guru_web/probe/web_probe.py"
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - run: python guru_web/probe/web_probe.py
+      - run: |
+          git config user.name "guru-web-bot"
+          git config user.email "guru-web-bot@users.noreply.github.com"
+          git add guru_web/probe/web_probe.json
+          git commit -m "web probe result" || exit 0
+          git pull --rebase && git push
