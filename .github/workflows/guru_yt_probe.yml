@@ -1,0 +1,35 @@
+name: guru-yt-probe
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "guru_yt/yt_probe.py"
+      - ".github/workflows/guru_yt_probe.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guru-yt
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests youtube-transcript-api
+      - run: python guru_yt/yt_probe.py
+      - name: Commit probe result
+        run: |
+          git config user.name "guru-yt-bot"
+          git config user.email "guru-yt-bot@users.noreply.github.com"
+          git add guru_yt/data/yt_probe.json
+          git commit -m "guru-yt probe $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1
