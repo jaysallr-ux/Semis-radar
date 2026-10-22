@@ -1,15 +1,47 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-22T15:55:52+09:00",
+  "generated_at": "2026-10-22T16:05:19+09:00",
   "data_ok": false,
-  "provider": "none",
-  "source": "no credentials",
-  "oembed_selftest": "ok",
-  "discovery_stats": null,
+  "provider": "free",
+  "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
+  "oembed_selftest": "syndication ok, oembed ok",
+  "discovery_stats": {
+    "timeline": {
+      "MarkNewtonCMT": "blocked_429",
+      "jam_croissant": "blocked_429",
+      "WarrenPies": "blocked_429",
+      "DariusDale42": "blocked_429",
+      "RyanDetrick": "blocked_429",
+      "dampedspring": "blocked_429",
+      "Geo_papic": "blocked_429",
+      "BiancoResearch": "blocked_429",
+      "BobEUnlimited": "blocked_429",
+      "LynAldenContact": "blocked_429"
+    },
+    "grok": "skipped (no XAI_API_KEY)",
+    "urls_found": 0,
+    "already_known": 0,
+    "too_old": 0,
+    "verified_syndication": 0,
+    "verified_oembed": 0,
+    "rejected_author": 0,
+    "reply_other": 0,
+    "verify_failed": 0
+  },
+  "discovery_complete": false,
   "window_days": 7,
   "budget_stop": false,
   "errors": {
-    "_global": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+    "MarkNewtonCMT": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
+    "jam_croissant": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
+    "WarrenPies": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
+    "DariusDale42": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
+    "RyanDetrick": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
+    "dampedspring": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
+    "Geo_papic": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
+    "BiancoResearch": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
+    "BobEUnlimited": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))",
+    "LynAldenContact": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
   },
   "accounts": [
     {
@@ -20,7 +52,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     },
     {
       "person": "Cem Karsan",
@@ -30,7 +62,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     },
     {
       "person": "Warren Pies",
@@ -40,7 +72,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     },
     {
       "person": "Darius Dale",
@@ -50,7 +82,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     },
     {
       "person": "Ryan Detrick",
@@ -60,7 +92,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     },
     {
       "person": "Andy Constan",
@@ -70,7 +102,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     },
     {
       "person": "Marko Papic",
@@ -80,7 +112,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     },
     {
       "person": "Jim Bianco",
@@ -90,7 +122,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     },
     {
       "person": "Bob Elliott",
@@ -100,7 +132,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     },
     {
       "person": "Lyn Alden",
@@ -110,7 +142,7 @@
       "last_fetch_ok": false,
       "last_success_at": null,
       "new_originals_this_run": 0,
-      "error": "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+      "error": "탐색 실패 (프로필 임베드: blocked_429, Grok: skipped (no XAI_API_KEY))"
     }
   ],
   "cost_this_run": {
