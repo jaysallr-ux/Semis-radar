@@ -1,0 +1,27 @@
+name: guru-yt-probe-channels
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [yt-probe]
+    paths:
+      - ".github/workflows/guru_yt_probe_channels.yml"
+      - "guru_yt/probe/channel_probe.py"
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - run: python guru_yt/probe/channel_probe.py
+      - run: |
+          git config user.name "guru-yt-bot"
+          git config user.email "guru-yt-bot@users.noreply.github.com"
+          git add guru_yt/probe/channel_probe.json
+          git commit -m "channel probe result" || exit 0
+          git pull --rebase && git push
