@@ -635,6 +635,7 @@ def new_record(e: dict, first_seen_at: str) -> dict:
         "channel_mode": e["channel_mode"],
         "person": e["person"],
         "tier": e["tier"],
+        "role": e.get("role", "core"),
         "match": e["match"],
         "title": e["title"],
         "description": e["description"][:1500],
@@ -698,7 +699,7 @@ def discover(http: Http, cfg: dict, state: dict, people: list, by_person: dict, 
                 continue
             matched += 1
             found.append({**e, "channel": label, "channel_id": cid, "channel_mode": ch["mode"],
-                          "person": p["person"], "tier": p["tier"], "match": field})
+                          "person": p["person"], "tier": p["tier"], "role": p.get("role", "core"), "match": field})
         info["matched"] = matched
         channel_out.append(info)
     return channel_out, found
@@ -758,6 +759,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     old = load_json(FEED_PATH, {})
     videos = {v["video_id"]: v for v in old.get("videos", [])}
     for v in videos.values():  # migrate older records
+        v.setdefault("role", by_person.get(v.get("person"), {}).get("role", "core"))
         for k, d in GEMINI_DEFAULTS.items():
             v.setdefault(k, list(d) if isinstance(d, list) else d)
         if v["gemini_status"] == "pending" and v.get("transcript_status") in ("skipped_old", "skipped_short"):
@@ -834,7 +836,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             continue
         p_ = by_person[person]
         videos[vid] = new_record({"video_id": vid, "channel": allowed[cid], "channel_id": cid,
-                                  "channel_mode": modes.get(cid, "filter"), "person": person, "tier": p_["tier"],
+                                  "channel_mode": modes.get(cid, "filter"), "person": person, "tier": p_["tier"], "role": p_.get("role", "core"),
                                   "match": ex.get("source", "extra"), "title": meta.get("title", ""),
                                   "description": meta.get("description", ""), "published_at": pub}, fetched_at)
         videos[vid]["is_short"] = meta.get("is_short")
@@ -929,6 +931,10 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             if v.get("gemini_status") == "not_speaking":
                 v["transcript_status"] = "not_needed"
                 v["last_error"] = "Gemini: person does not speak"
+                continue
+            if v.get("role", "core") != "core":
+                v["transcript_status"] = "not_needed"
+                v["last_error"] = f"{v['role']}: captions are reserved for the core 11"
                 continue
             if needs_gemini_first(v):
                 if first_pass:
@@ -1056,6 +1062,9 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
                 and v.get("first_seen_at") == fetched_at and v.get("match") not in EXTRA_MATCHES:
             v["gemini_status"], v["gemini_last_error"] = "skipped", "older than gemini_max_age_hours when first discovered"
             continue
+        if v.get("role", "core") != "core" and gem_day.get("non_core", 0) >= cfg.get("non_core_gemini_daily", 2):
+            gstats["left_pending"] += 1
+            continue
         if not gem_ok or deadline - clock() < 60 or gem_day["est_video_hours"] >= gem_hours_cap:
             gstats["left_pending" if gem_ok and deadline - clock() >= 60 else "budget_out"] += 1
             continue
@@ -1105,6 +1114,8 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             v["gemini_status"] = "unavailable" if v["gemini_error_count"] >= cfg.get("max_error_retries", 3) else "error"
             gstats["busy" if last_err and last_err.startswith("busy") else "errors"] += 1
             continue
+        if v.get("role", "core") != "core":
+            gem_day["non_core"] = gem_day.get("non_core", 0) + 1
         tokens = usage.get("promptTokenCount") or 0
         gem_day["est_video_hours"] = round(gem_day["est_video_hours"] + tokens / gem_tok_per_sec / 3600, 3)
         speaks = bool(parsed.get("person_speaks"))
