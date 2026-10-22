@@ -5,7 +5,7 @@ on:
     branches: [web-probe]
     paths:
       - ".github/workflows/guru_web_probe.yml"
-      - "guru_web/probe/web_probe3.py"
+      - "guru_web/probe/meta_probe.py"
 permissions:
   contents: write
 jobs:
@@ -18,10 +18,10 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install requests
-      - run: python guru_web/probe/web_probe3.py
+      - run: python guru_web/probe/meta_probe.py
       - run: |
           git config user.name "guru-web-bot"
           git config user.email "guru-web-bot@users.noreply.github.com"
-          git add guru_web/probe/web_probe3.json
+          git add guru_web/probe/meta_probe.json
           git commit -m "web probe result" || exit 0
           git pull --rebase && git push
