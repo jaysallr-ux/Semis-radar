@@ -37,6 +37,10 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Always start from the latest main, not the commit that triggered the run. A run that waited in
+          # the concurrency queue would otherwise start from stale data and fail to push its feed.
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
