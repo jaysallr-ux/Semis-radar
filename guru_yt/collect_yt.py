@@ -451,6 +451,14 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             stats["errors"] += 1
         sleep(1)
 
+    # re-evaluate appearance for already-downloaded transcripts (free; picks up alias changes)
+    for v in videos.values():
+        f = TRANSCRIPT_DIR / f"{v['video_id']}.txt"
+        if v["transcript_status"] == "ready" and f.exists() and v["person"] in by_person:
+            cnt, excerpt = appearance(by_person[v["person"]], f.read_text(encoding="utf-8"))
+            v.update(name_mentions=cnt, appearance_confirmed=(v["channel_mode"] == "dedicated") or cnt > 0,
+                     appearance_excerpt=excerpt)
+
     # prune
     cutoff = now - window
     keep = {k: v for k, v in videos.items() if v.get("published_at") and parse_ts(v["published_at"]) >= cutoff}

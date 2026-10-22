@@ -4,33 +4,236 @@
   "yta_daily_cap": 7,
   "yta_reserve_for_manual": 3,
   "supadata_total_cap": 90,
-  "supadata_tiers": [1],
+  "supadata_tiers": [
+    1
+  ],
   "max_error_retries": 3,
   "skip_shorts": true,
   "people": [
-    {"person": "Mark Newton", "tier": 1, "names": ["Mark Newton"], "aliases": ["Newton"]},
-    {"person": "Cem Karsan", "tier": 1, "names": ["Cem Karsan", "Karsan"], "aliases": ["Karsan", "Carson", "Kai Volatility"]},
-    {"person": "Warren Pies", "tier": 1, "names": ["Warren Pies"], "aliases": ["Pies", "3Fourteen", "314 Research"]},
-    {"person": "Darius Dale", "tier": 1, "names": ["Darius Dale"], "aliases": ["Darius", "Dale", "42 Macro"]},
-    {"person": "Ryan Detrick", "tier": 2, "names": ["Ryan Detrick"], "aliases": ["Detrick"]},
-    {"person": "David Sekera", "tier": 2, "names": ["David Sekera", "Dave Sekera"], "aliases": ["Sekera"]},
-    {"person": "Andy Constan", "tier": 2, "names": ["Andy Constan"], "aliases": ["Constan", "Damped Spring"]},
-    {"person": "Marko Papic", "tier": 2, "names": ["Marko Papic"], "aliases": ["Papic"]},
-    {"person": "Jim Bianco", "tier": 3, "names": ["Jim Bianco"], "aliases": ["Bianco"]},
-    {"person": "Bob Elliott", "tier": 3, "names": ["Bob Elliott"], "aliases": ["Elliott", "Unlimited"]},
-    {"person": "Lyn Alden", "tier": 3, "names": ["Lyn Alden"], "aliases": ["Alden"]}
+    {
+      "person": "Mark Newton",
+      "tier": 1,
+      "names": [
+        "Mark Newton"
+      ],
+      "aliases": [
+        "Newton",
+        "Fundstrat"
+      ]
+    },
+    {
+      "person": "Cem Karsan",
+      "tier": 1,
+      "names": [
+        "Cem Karsan",
+        "Karsan"
+      ],
+      "aliases": [
+        "Karsan",
+        "Carson",
+        "Kai Volatility",
+        "Cem",
+        "Jem",
+        "Jim Carson"
+      ]
+    },
+    {
+      "person": "Warren Pies",
+      "tier": 1,
+      "names": [
+        "Warren Pies"
+      ],
+      "aliases": [
+        "Pies",
+        "3Fourteen",
+        "314 Research",
+        "Three Fourteen",
+        "Warren"
+      ]
+    },
+    {
+      "person": "Darius Dale",
+      "tier": 1,
+      "names": [
+        "Darius Dale"
+      ],
+      "aliases": [
+        "Darius",
+        "Dale",
+        "42 Macro"
+      ]
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "names": [
+        "Ryan Detrick"
+      ],
+      "aliases": [
+        "Detrick",
+        "Carson Group",
+        "Ryan"
+      ]
+    },
+    {
+      "person": "David Sekera",
+      "tier": 2,
+      "names": [
+        "David Sekera",
+        "Dave Sekera"
+      ],
+      "aliases": [
+        "Sekera",
+        "Dave",
+        "David"
+      ]
+    },
+    {
+      "person": "Andy Constan",
+      "tier": 2,
+      "names": [
+        "Andy Constan"
+      ],
+      "aliases": [
+        "Constan",
+        "Constant",
+        "Damped Spring",
+        "DampSpring",
+        "Damp Spring",
+        "Andy"
+      ]
+    },
+    {
+      "person": "Marko Papic",
+      "tier": 2,
+      "names": [
+        "Marko Papic"
+      ],
+      "aliases": [
+        "Papic",
+        "Marko",
+        "BCA Research",
+        "Clocktower"
+      ]
+    },
+    {
+      "person": "Jim Bianco",
+      "tier": 3,
+      "names": [
+        "Jim Bianco"
+      ],
+      "aliases": [
+        "Bianco",
+        "Bianco Research",
+        "Jim"
+      ]
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "names": [
+        "Bob Elliott"
+      ],
+      "aliases": [
+        "Elliott",
+        "Elliot",
+        "Unlimited",
+        "Bob"
+      ]
+    },
+    {
+      "person": "Lyn Alden",
+      "tier": 3,
+      "names": [
+        "Lyn Alden"
+      ],
+      "aliases": [
+        "Alden",
+        "Lyn",
+        "Lynn"
+      ]
+    }
   ],
   "channels": [
-    {"label": "42 Macro", "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ", "mode": "dedicated", "person": "Darius Dale"},
-    {"label": "Schwab Network", "channel_id": "UCToe3dspZyw2L_JY-JmP3Mw", "mode": "filter"},
-    {"label": "CNBC Television", "channel_id": "UCvJJ_dzjViJCoLf5uKUTwoA", "mode": "filter"},
-    {"label": "Morningstar", "channel_id": "UChub1tZZuWn9YYHJZZYTbMg", "mode": "filter"},
-    {"label": "Excess Returns", "handles": ["ExcessReturns", "ExcessReturnsPodcast", "excessreturnspod"], "mode": "filter"},
-    {"label": "Monetary Matters", "handles": ["MonetaryMatters", "monetarymatterspod", "MonetaryMattersPodcast"], "mode": "filter"},
-    {"label": "Forward Guidance", "handles": ["ForwardGuidanceBW", "ForwardGuidance", "forwardguidancebw"], "mode": "filter"},
-    {"label": "Yahoo Finance", "handles": ["YahooFinance"], "mode": "filter"},
-    {"label": "Thoughtful Money", "handles": ["ThoughtfulMoney", "thoughtfulmoney"], "mode": "filter"},
-    {"label": "MacroVoices", "handles": ["MacroVoices", "macrovoices"], "mode": "filter"},
-    {"label": "Fundstrat", "handles": ["Fundstrat", "FundstratGlobalAdvisors", "fundstratdirect"], "mode": "filter"}
+    {
+      "label": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "mode": "dedicated",
+      "person": "Darius Dale"
+    },
+    {
+      "label": "Schwab Network",
+      "channel_id": "UCToe3dspZyw2L_JY-JmP3Mw",
+      "mode": "filter"
+    },
+    {
+      "label": "CNBC Television",
+      "channel_id": "UCvJJ_dzjViJCoLf5uKUTwoA",
+      "mode": "filter"
+    },
+    {
+      "label": "Morningstar",
+      "channel_id": "UChub1tZZuWn9YYHJZZYTbMg",
+      "mode": "filter"
+    },
+    {
+      "label": "Excess Returns",
+      "handles": [
+        "ExcessReturns",
+        "ExcessReturnsPodcast",
+        "excessreturnspod"
+      ],
+      "mode": "filter"
+    },
+    {
+      "label": "Monetary Matters",
+      "handles": [
+        "MonetaryMatters",
+        "monetarymatterspod",
+        "MonetaryMattersPodcast"
+      ],
+      "mode": "filter"
+    },
+    {
+      "label": "Forward Guidance",
+      "handles": [
+        "ForwardGuidanceBW",
+        "ForwardGuidance",
+        "forwardguidancebw"
+      ],
+      "mode": "filter"
+    },
+    {
+      "label": "Yahoo Finance",
+      "handles": [
+        "YahooFinance"
+      ],
+      "mode": "filter"
+    },
+    {
+      "label": "Thoughtful Money",
+      "handles": [
+        "ThoughtfulMoney",
+        "thoughtfulmoney"
+      ],
+      "mode": "filter"
+    },
+    {
+      "label": "MacroVoices",
+      "handles": [
+        "MacroVoices",
+        "macrovoices"
+      ],
+      "mode": "filter"
+    },
+    {
+      "label": "Fundstrat",
+      "handles": [
+        "Fundstrat",
+        "FundstratGlobalAdvisors",
+        "fundstratdirect"
+      ],
+      "mode": "filter"
+    }
   ]
 }
