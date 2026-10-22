@@ -24,6 +24,12 @@ from zoneinfo import ZoneInfo
 
 import requests
 
+try:
+    from guru_x import grok_source
+except ImportError:  # 직접 실행 시
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from guru_x import grok_source
+
 BASE = "https://api.x.com/2"
 KST = ZoneInfo("Asia/Seoul")
 ROOT = Path(__file__).resolve().parent
@@ -182,6 +188,8 @@ def to_record(t: dict, acc: dict) -> dict:
         "text": post_text(t),
         "quoted_post_id": quoted_id(t),
         "thread": [],
+        "verification": "x_api",
+        "possibly_truncated": False,
     }
 
 
@@ -197,7 +205,8 @@ def merge_thread(rec: dict, replies: list[dict], acc: dict) -> None:
     rec["thread"] = sorted(by_id.values(), key=lambda r: r.get("created_at") or "")
 
 
-def run(token: str | None, http_get: Callable | None = None, now: datetime | None = None) -> dict:
+def run(token: str | None, http_get: Callable | None = None, now: datetime | None = None,
+        xai_key: str | None = None, grok_client=None) -> dict:
     now = now or now_utc()
     cfg = load_json(CONFIG_PATH, {})
     accounts = cfg["accounts"]
@@ -212,10 +221,11 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     prev_status = {a.get("handle"): a for a in old_feed.get("accounts", [])}
     budget_stop = False
 
-    if not token:
-        errors["_global"] = "X_BEARER_TOKEN 없음"
-        client = None
-    else:
+    provider = "x_api" if token else ("grok_oembed" if xai_key else "none")
+    client = None
+    if provider == "none":
+        errors["_global"] = "X_BEARER_TOKEN, XAI_API_KEY 둘 다 없음"
+    elif provider == "x_api":
         client = XClient(token, cfg.get("max_posts_billed_per_run", 300), http_get)
 
     if client:
@@ -265,6 +275,26 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
                         errors["_global"] = f"인증 실패: {e}"
                         break
 
+    grok_cost, grok_stats, selftest = None, None, None
+    gclient = grok_client or (grok_source.GrokOembed(xai_key or "") if provider != "x_api" else None)
+    if provider == "grok_oembed":
+        try:
+            res = grok_source.collect(gclient, cfg, accounts, now, set(posts))
+            for r in res["records"]:
+                posts[r["id"]] = r
+                acc_status[r["handle"]]["new_originals"] += 1
+            for a in accounts:
+                acc_status[a["handle"]]["last_fetch_ok"] = True
+            grok_cost, grok_stats = res["cost"], res["stats"]
+        except RuntimeError as e:
+            errors["_global"] = str(e)
+    if gclient is not None and cfg.get("oembed_selftest"):
+        st_cfg = cfg["oembed_selftest"]
+        try:
+            selftest = grok_source.oembed_selftest(gclient, st_cfg["post_id"], st_cfg["handle"])
+        except Exception as e:
+            selftest = f"fail: {e}"
+
     for a in accounts:
         h = a["handle"]
         if not acc_status[h]["last_fetch_ok"] and h not in errors and "_global" not in errors:
@@ -293,20 +323,32 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
 
     posts_billed = client.posts_billed if client else 0
     users_billed = client.users_billed if client else 0
+    if grok_cost:
+        cost = {"posts_billed": grok_cost["x_posts_fetched"], "users_billed": grok_cost["x_users_fetched"],
+                "input_tokens": grok_cost["input_tokens"], "output_tokens": grok_cost["output_tokens"],
+                "usd_estimate": grok_cost["usd_estimate"]}
+    else:
+        cost = {"posts_billed": posts_billed, "users_billed": users_billed,
+                "usd_estimate": round(posts_billed * PRICE_PER_POST + users_billed * PRICE_PER_USER, 4)}
+    sources = {
+        "x_api": "X API v2 (official). author verified by user_id. text is verbatim.",
+        "grok_oembed": "Grok x_search finds post URLs only; text and author come from X oEmbed (verbatim). "
+                       "Discovery may miss posts. Long posts may be truncated (see possibly_truncated).",
+        "none": "no credentials",
+    }
     feed = {
         "schema": "guru-x/v1",
         "generated_at": fetched_at,
         "data_ok": not errors and not budget_stop,
-        "source": "X API v2 (official). author verified by user_id. text is verbatim.",
+        "provider": provider,
+        "source": sources[provider],
+        "oembed_selftest": selftest,
+        "discovery_stats": grok_stats,
         "window_days": cfg.get("window_days", 7),
         "budget_stop": budget_stop,
         "errors": errors,
         "accounts": acc_out,
-        "cost_this_run": {
-            "posts_billed": posts_billed,
-            "users_billed": users_billed,
-            "usd_estimate": round(posts_billed * PRICE_PER_POST + users_billed * PRICE_PER_USER, 4),
-        },
+        "cost_this_run": cost,
         "posts": kept,
     }
 
@@ -316,17 +358,19 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     with RUNS_PATH.open("a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         if new_file:
-            w.writerow(["generated_at", "data_ok", "posts_billed", "users_billed", "usd_estimate", "errors"])
-        w.writerow([fetched_at, feed["data_ok"], posts_billed, users_billed,
-                    feed["cost_this_run"]["usd_estimate"], "; ".join(f"{k}: {v}" for k, v in errors.items())])
+            w.writerow(["generated_at", "provider", "data_ok", "posts_billed", "users_billed", "usd_estimate",
+                        "oembed_selftest", "errors"])
+        w.writerow([fetched_at, provider, feed["data_ok"], cost["posts_billed"], cost["users_billed"],
+                    cost["usd_estimate"], selftest or "", "; ".join(f"{k}: {v}" for k, v in errors.items())])
     return feed
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.parse_args()
-    feed = run(os.environ.get("X_BEARER_TOKEN"))
-    print(json.dumps({k: feed[k] for k in ("generated_at", "data_ok", "errors", "cost_this_run")},
+    feed = run(os.environ.get("X_BEARER_TOKEN") or None, xai_key=os.environ.get("XAI_API_KEY") or None)
+    print(json.dumps({k: feed[k] for k in ("generated_at", "provider", "data_ok", "errors", "cost_this_run",
+                                           "oembed_selftest", "discovery_stats")},
                      ensure_ascii=False, indent=2))
     print(f"posts in window: {len(feed['posts'])}")
     return 0
