@@ -251,6 +251,7 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
                 "url": f"https://x.com/{qauthor or 'i'}/status/{quoted}",
                 "text": qtext,
                 "available": bool(qtext),
+                "has_media": bool(qt.get("photos") or qt.get("mediaDetails") or qt.get("video")),
             }
         links = [u.get("expanded_url") for u in ((syn.get("entities") or {}).get("urls") or []) if u.get("expanded_url")]
         return {
@@ -258,10 +259,11 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
             "author_id": (syn.get("user") or {}).get("id_str"),
             "created_at": syn.get("created_at") or snowflake_time(post_id),
             "url": f"https://x.com/{acc['handle']}/status/{post_id}",
-            "text": text, "quoted_post_id": quoted, "quoted_post": quoted_post, "links": links, "thread": [],
+            "text": text, "quoted_post_id": quoted, "quoted_post": quoted_post, "links": links,
+            "has_media": bool(syn.get("photos") or syn.get("mediaDetails") or syn.get("video")), "thread": [],
             "is_self_reply": bool(reply_to),
             "verification": "syndication",
-            "rev": 2,
+            "rev": 3,
             "possibly_truncated": (not note) and (text.endswith("…") or text.endswith("...")),
         }, "syndication"
     emb = client.oembed(post_id, hint)
@@ -278,7 +280,7 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
         "url": f"https://x.com/{acc['handle']}/status/{post_id}",
         "text": text, "quoted_post_id": None, "quoted_post": None, "links": [], "thread": [], "is_self_reply": None,
         "verification": "oembed",
-        "rev": 2,
+        "rev": 3,
         "possibly_truncated": text.endswith("…") or text.endswith("..."),
     }, "oembed"
 

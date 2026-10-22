@@ -277,7 +277,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     if provider == "free":
         manual = {m["id"]: m.get("handle_hint") for m in load_json(MANUAL_PATH, {}).get("ids", [])
                   if str(m.get("id", "")).isdigit()}
-        current = {pid for pid, r in posts.items() if r.get("rev", 1) >= 2 or r.get("verification") == "x_api"}
+        current = {pid for pid, r in posts.items() if r.get("rev", 1) >= 3 or r.get("verification") == "x_api"}
         refresh = {pid: r.get("handle") for pid, r in posts.items() if pid not in current}
         res = grok_source.collect(gclient, cfg, accounts, now, current, manual, refresh)
         for r in res["records"]:
