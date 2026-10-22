@@ -1,6 +1,7 @@
 {
   "_note": "Times are KST (Asia/Seoul). 5-field cron: minute hour day-of-month month day-of-week (0=Sun). Each slot is dispatched once unless a run of that workflow (and mode) already started at or after the slot time. Missed slots are caught up for catch_up_minutes.",
   "catch_up_minutes": 90,
+  "stuck_run_minutes": 90,
   "targets": [
     {"name": "guru_x",           "repo": "jaysallr-ux/Semis-radar", "workflow": "guru_x.yml",  "cron": "15 10,21 * * *"},
     {"name": "guru_yt full",     "repo": "jaysallr-ux/Semis-radar", "workflow": "guru_yt.yml", "cron": "10 10,21 * * *", "inputs": {"mode": "full"},     "title_suffix": "full"},
