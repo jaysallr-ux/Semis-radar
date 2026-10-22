@@ -255,7 +255,7 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
             }
         links = [u.get("expanded_url") for u in ((syn.get("entities") or {}).get("urls") or []) if u.get("expanded_url")]
         return {
-            "id": post_id, "person": acc["person"], "handle": acc["handle"], "tier": acc["tier"],
+            "id": post_id, "person": acc["person"], "handle": acc["handle"], "tier": acc["tier"], "role": acc.get("role", "core"),
             "author_id": (syn.get("user") or {}).get("id_str"),
             "created_at": syn.get("created_at") or snowflake_time(post_id),
             "url": f"https://x.com/{acc['handle']}/status/{post_id}",
@@ -275,7 +275,7 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
         return None, "rejected_author"
     text = oembed_text(emb["html"])
     return {
-        "id": post_id, "person": acc["person"], "handle": acc["handle"], "tier": acc["tier"],
+        "id": post_id, "person": acc["person"], "handle": acc["handle"], "tier": acc["tier"], "role": acc.get("role", "core"),
         "author_id": None, "created_at": snowflake_time(post_id),
         "url": f"https://x.com/{acc['handle']}/status/{post_id}",
         "text": text, "quoted_post_id": None, "quoted_post": None, "links": [], "thread": [], "is_self_reply": None,
