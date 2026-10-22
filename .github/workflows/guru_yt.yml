@@ -1,0 +1,81 @@
+name: guru-yt-feed
+
+on:
+  schedule:
+    # GPT Macro Guru Stance Watch runs at 11:00 and 22:00 KST.
+    # Collect 50 minutes earlier with one retry 20 minutes later. The guard skips the retry
+    # if a run already happened in the last 50 minutes.
+    - cron: "10 1 * * *"   # KST 10:10
+    - cron: "30 1 * * *"   # KST 10:30
+    - cron: "10 12 * * *"  # KST 21:10
+    - cron: "30 12 * * *"  # KST 21:30
+  workflow_dispatch: {}
+  push:
+    paths:
+      - ".github/workflows/guru_yt.yml"
+      - "guru_yt/collect_yt.py"
+      - "guru_yt/channels.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guru-yt
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Freshness guard
+        id: guard
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+          run = True
+          if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+              p = Path("guru_yt/data/youtube_feed.json")
+              if p.exists():
+                  try:
+                      d = json.loads(p.read_text(encoding="utf-8"))
+                      age = datetime.now(timezone.utc) - datetime.fromisoformat(d["generated_at"])
+                      if age.total_seconds() < 50 * 60:
+                          run = False
+                  except Exception:
+                      run = True
+          print(f"run={'true' if run else 'false'}")
+          PY
+
+      - name: Install
+        if: steps.guard.outputs.run == 'true'
+        run: pip install requests
+
+      - name: Collect YouTube
+        if: steps.guard.outputs.run == 'true'
+        env:
+          YT_TRANSCRIPT_KEY: ${{ secrets.YT_TRANSCRIPT_KEY }}
+          SUPADATA_KEY: ${{ secrets.SUPADATA_KEY }}
+        run: python guru_yt/collect_yt.py
+
+      - name: Commit feed
+        if: steps.guard.outputs.run == 'true'
+        run: |
+          git config user.name "guru-yt-bot"
+          git config user.email "guru-yt-bot@users.noreply.github.com"
+          git add guru_yt/data/
+          git commit -m "guru-yt feed $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')" || { echo "변경 없음"; exit 0; }
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 5
+          done
+          exit 1
