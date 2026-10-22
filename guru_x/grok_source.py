@@ -237,15 +237,31 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
             return None, "reply_other"
         note = (((syn.get("note_tweet") or {}).get("note_tweet_results") or {}).get("result") or {}).get("text")
         text = htmllib.unescape(note or syn.get("text") or "").strip()
-        quoted = (syn.get("quoted_tweet") or {}).get("id_str")
+        qt = syn.get("quoted_tweet") or {}
+        quoted = qt.get("id_str")
+        quoted_post = None
+        if quoted:
+            qnote = (((qt.get("note_tweet") or {}).get("note_tweet_results") or {}).get("result") or {}).get("text")
+            qauthor = (qt.get("user") or {}).get("screen_name")
+            qtext = htmllib.unescape(qnote or qt.get("text") or "").strip()
+            quoted_post = {
+                "id": quoted,
+                "author": qauthor,
+                "created_at": qt.get("created_at") or snowflake_time(quoted),
+                "url": f"https://x.com/{qauthor or 'i'}/status/{quoted}",
+                "text": qtext,
+                "available": bool(qtext),
+            }
+        links = [u.get("expanded_url") for u in ((syn.get("entities") or {}).get("urls") or []) if u.get("expanded_url")]
         return {
             "id": post_id, "person": acc["person"], "handle": acc["handle"], "tier": acc["tier"],
             "author_id": (syn.get("user") or {}).get("id_str"),
             "created_at": syn.get("created_at") or snowflake_time(post_id),
             "url": f"https://x.com/{acc['handle']}/status/{post_id}",
-            "text": text, "quoted_post_id": quoted, "thread": [],
+            "text": text, "quoted_post_id": quoted, "quoted_post": quoted_post, "links": links, "thread": [],
             "is_self_reply": bool(reply_to),
             "verification": "syndication",
+            "rev": 2,
             "possibly_truncated": (not note) and (text.endswith("…") or text.endswith("...")),
         }, "syndication"
     emb = client.oembed(post_id, hint)
@@ -260,14 +276,16 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
         "id": post_id, "person": acc["person"], "handle": acc["handle"], "tier": acc["tier"],
         "author_id": None, "created_at": snowflake_time(post_id),
         "url": f"https://x.com/{acc['handle']}/status/{post_id}",
-        "text": text, "quoted_post_id": None, "thread": [], "is_self_reply": None,
+        "text": text, "quoted_post_id": None, "quoted_post": None, "links": [], "thread": [], "is_self_reply": None,
         "verification": "oembed",
+        "rev": 2,
         "possibly_truncated": text.endswith("…") or text.endswith("..."),
     }, "oembed"
 
 
 def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, known_ids: set[str],
-            manual_ids: dict[str, str | None] | None = None) -> dict:
+            manual_ids: dict[str, str | None] | None = None,
+            refresh_ids: dict[str, str | None] | None = None) -> dict:
     """Free discovery (profile embed) + optional Grok discovery, then free verification.
     Returns {"records", "cost", "stats", "discovered_by_handle"}. Grok failure is recorded, not raised."""
     g = cfg.get("grok", {})
@@ -301,6 +319,11 @@ def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, 
             for pid in ids:
                 found.setdefault(pid, a["handle"])
                 sources.setdefault(pid, set()).add("profile_embed")
+
+    for pid, h in (refresh_ids or {}).items():
+        found.setdefault(pid, h)
+        sources.setdefault(pid, set()).add("refresh")
+    stats["refreshed"] = len(refresh_ids or {})
 
     for pid, h in (manual_ids or {}).items():
         if pid not in found or (found[pid] is None and h):
