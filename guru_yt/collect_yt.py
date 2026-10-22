@@ -1009,7 +1009,10 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     deadline = clock() + gem_budget
     gtodo = [v for v in videos.values() if v["gemini_status"] in ("pending", "error")
              and v.get("transcript_status") not in ("skipped_old", "skipped_short")]
-    gtodo.sort(key=lambda v: (v["tier"], -parse_ts(v["published_at"]).timestamp()))
+    # tier first; inside a tier, videos already waiting from earlier runs (captions held, quota/budget misses)
+    # go before newly found ones, so a freshness-critical carry-over is not pushed back by new uploads
+    gtodo.sort(key=lambda v: (v["tier"], 0 if v.get("first_seen_at") != fetched_at else 1,
+                              -parse_ts(v["published_at"]).timestamp()))
 
     exhausted: set[str] = set()  # free-tier quotas are per model: a 429 on one model does not stop the others
 
