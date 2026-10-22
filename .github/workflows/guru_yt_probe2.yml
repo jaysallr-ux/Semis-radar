@@ -1,0 +1,62 @@
+name: guru-yt-probe-matrix
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "guru_yt/yt_probe_one.py"
+      - ".github/workflows/guru_yt_probe2.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: karsan, vid: "YIR7RVLadt8"}
+          - {name: bianco, vid: "bygJZ4o0SJE"}
+          - {name: constan, vid: "-nDxML0csuM"}
+          - {name: dale, vid: "rVz79aPJnqE"}
+          - {name: karsan_again, vid: "YIR7RVLadt8"}
+          - {name: dale_again, vid: "rVz79aPJnqE"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests youtube-transcript-api
+      - run: python guru_yt/yt_probe_one.py "${{ matrix.name }}" "${{ matrix.vid }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r-${{ matrix.name }}
+          path: out/${{ matrix.name }}.json
+  collect:
+    needs: fetch
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: res
+          merge-multiple: true
+      - name: Commit
+        run: |
+          mkdir -p guru_yt/data
+          python - <<'PY'
+          import json, glob
+          rows = [json.load(open(p)) for p in sorted(glob.glob("res/*.json"))]
+          json.dump({"matrix": rows}, open("guru_yt/data/yt_probe_matrix.json", "w"), indent=2)
+          print(json.dumps(rows, indent=1))
+          PY
+          git config user.name "guru-yt-bot"
+          git config user.email "guru-yt-bot@users.noreply.github.com"
+          git add guru_yt/data/yt_probe_matrix.json
+          git commit -m "guru-yt matrix probe" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1
