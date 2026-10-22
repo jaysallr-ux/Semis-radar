@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-22T22:07:25+09:00",
+  "generated_at": "2026-10-23T00:17:06+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-22T20:49:54+09:00",
+    "last_discovery_at": "2026-10-22T22:07:25+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {}
   },
@@ -30,7 +30,7 @@
       "resolved_by": "config",
       "rss_ok": true,
       "rss_count": 15,
-      "oldest_rss": "2026-10-13T00:23:11+09:00",
+      "oldest_rss": "2026-10-14T03:19:20+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -40,7 +40,7 @@
       "resolved_by": "config",
       "rss_ok": true,
       "rss_count": 15,
-      "oldest_rss": "2026-10-06T23:30:22+09:00",
+      "oldest_rss": "2026-10-07T23:00:10+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -90,7 +90,7 @@
       "resolved_by": "cached",
       "rss_ok": true,
       "rss_count": 15,
-      "oldest_rss": "2026-10-21T19:25:02+09:00",
+      "oldest_rss": "2026-10-22T02:48:28+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -136,10 +136,10 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 10,
+    "gemini_calls_today": 17,
     "gemini_est_video_hours_today": 1.113,
     "gemini_daily_video_hours_cap": 7.5,
-    "gemini": "quota or rate limit (429 after 65s retry)"
+    "gemini": "ok"
   },
   "stats": {
     "attempted": 0,
@@ -152,15 +152,16 @@
     "waiting_for_gemini": 0
   },
   "gemini_stats": {
-    "attempted": 2,
+    "attempted": 7,
     "ready": 0,
     "not_speaking": 0,
     "busy": 0,
-    "errors": 1,
+    "errors": 0,
     "left_pending": 0,
-    "budget_out": 0,
+    "budget_out": 1,
     "chunked": 1,
-    "text_mode": 0
+    "text_mode": 0,
+    "quota_wait": 0
   },
   "videos": [
     {
@@ -624,9 +625,9 @@
       "gemini_evidence": null,
       "stance": null,
       "quotes": [],
-      "gemini_error_count": 2,
+      "gemini_error_count": 0,
       "gemini_last_error": "quota (429)",
-      "evidence_ready_at": "2026-10-22T20:49:54+09:00",
+      "evidence_ready_at": null,
       "evidence_grade": "자막 확보, 인용 대기",
       "appearance_source": null,
       "quotes_grade_count": {
