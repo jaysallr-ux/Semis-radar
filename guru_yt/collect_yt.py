@@ -150,6 +150,35 @@ def read_rss(http: Http, channel_id: str) -> list[dict]:
     return out
 
 
+EXTRA_MATCHES = ("web_discovery", "extra")  # videos accepted one by one: exempt from the 48h backfill limit
+
+
+def watch_meta(http: Http, vid: str) -> dict:
+    """Channel, publish date, title, description and length from the public watch page."""
+    try:
+        status, text, _ = http.get(f"https://www.youtube.com/watch?v={vid}")
+    except Exception:
+        return {}
+    if status != 200:
+        return {}
+    def find(pat):
+        m = re.search(pat, text)
+        return m.group(1) if m else None
+    def unesc(x):
+        try:
+            return json.loads(f'"{x}"') if x is not None else None
+        except Exception:
+            return x
+    pub = find(r'"uploadDate":"([^"]+)"') or find(r'"publishDate":"([^"]+)"')
+    if pub and len(pub) == 10:
+        pub += "T00:00:00+00:00"
+    secs = find(r'"lengthSeconds":"(\d+)"')
+    return {"channel_id": find(r'"channelId":"(UC[\w-]{22})"'), "channel_name": unesc(find(r'"ownerChannelName":"((?:[^"\\]|\\.)*)"')),
+            "published_at": pub, "title": unesc(find(r'"videoDetails":\{"videoId":"[\w-]{11}","title":"((?:[^"\\]|\\.)*)"')) or "",
+            "description": (unesc(find(r'"shortDescription":"((?:[^"\\]|\\.)*)"')) or "")[:1500],
+            "is_short": (int(secs) <= 60) if secs else None}
+
+
 def is_short(http: Http, vid: str) -> bool | None:
     try:
         status, _, _ = http.get(f"https://www.youtube.com/shorts/{vid}", allow_redirects=False)
@@ -734,6 +763,46 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         else:
             videos[e["video_id"]] = new_record(e, fetched_at)
 
+    # extra videos found outside channel RSS (web discovery, or listed by hand in channels.json "extra_videos").
+    # Each is checked on its own watch page: it must be on an allowlisted channel and inside the window.
+    # Accepted ones become normal records (Gemini + captions + per-quote grades); published_at stays the real date.
+    allowed = {c["channel_id"]: c["label"] for c in channel_out if c.get("channel_id")}
+    modes = {c.get("channel_id") or state["channel_ids"].get(c["label"]): c["mode"] for c in cfg["channels"]}
+    seen_extra = set(state.get("extra_checked", []))
+    extra_in = list(cfg.get("extra_videos", [])) + list(queue.get("extra_videos", []))
+    extra_stats = {"accepted": 0, "rejected": 0}
+    for ex in extra_in:
+        vid, person = ex.get("video_id"), ex.get("person")
+        if not vid or vid in videos or vid in seen_extra or person not in by_person:
+            continue
+        meta = watch_meta(http, vid)
+        cid, pub = meta.get("channel_id"), meta.get("published_at")
+        reason = None
+        if not cid or not pub:
+            extra_stats.setdefault("retry_next_run", []).append(vid)  # transient: try again next run
+            continue
+        seen_extra.add(vid)
+        pub = datetime.fromisoformat(pub).astimezone(timezone.utc).isoformat()
+        if False:
+            pass
+        elif cid not in allowed:
+            reason = f"channel {meta.get('channel_name')} not allowlisted"
+        elif now - parse_ts(pub) > window:
+            reason = "older than window"
+        if reason:
+            extra_stats["rejected"] += 1
+            extra_stats.setdefault("reasons", {})[vid] = reason
+            continue
+        p_ = by_person[person]
+        videos[vid] = new_record({"video_id": vid, "channel": allowed[cid], "channel_id": cid,
+                                  "channel_mode": modes.get(cid, "filter"), "person": person, "tier": p_["tier"],
+                                  "match": ex.get("source", "extra"), "title": meta.get("title", ""),
+                                  "description": meta.get("description", ""), "published_at": pub}, fetched_at)
+        videos[vid]["is_short"] = meta.get("is_short")
+        extra_stats["accepted"] += 1
+    state["extra_checked"] = sorted(seen_extra)[-500:]
+    discovery_info["extra_videos"] = extra_stats
+
     # one-time manual backfill: exactly the video_ids listed in channels.json "backfill_once", each at most once ever.
     # published_at is untouched, so freshness still counts from the day the person spoke.
     done = set(state.get("backfill_done", []))
@@ -799,7 +868,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         for v in todo:
             age = now - parse_ts(v["published_at"])
             if first_pass and age > max_age and v["transcript_status"] == "pending_quota" and v["error_count"] == 0 \
-                    and v.get("first_seen_at") == fetched_at:
+                    and v.get("first_seen_at") == fetched_at and v.get("match") not in EXTRA_MATCHES:
                 v["transcript_status"] = "skipped_old"
                 v["gemini_status"] = "skipped"
                 v["last_error"] = "older than transcript_max_age_hours when first discovered (backfill limit)"
@@ -942,7 +1011,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             v["gemini_status"], v["gemini_last_error"] = "unavailable", "expired (older than window)"
             continue
         if v["gemini_status"] == "pending" and v["gemini_error_count"] == 0 and age > gem_max_age \
-                and v.get("first_seen_at") == fetched_at:
+                and v.get("first_seen_at") == fetched_at and v.get("match") not in EXTRA_MATCHES:
             v["gemini_status"], v["gemini_last_error"] = "skipped", "older than gemini_max_age_hours when first discovered"
             continue
         if not gem_ok or deadline - clock() < 60 or gem_day["est_video_hours"] >= gem_hours_cap:
