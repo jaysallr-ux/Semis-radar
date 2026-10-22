@@ -1,6 +1,6 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-22T20:22:39+09:00",
+  "generated_at": "2026-10-22T20:29:42+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. Transcripts are verbatim captions from youtube-transcript.ai (primary) or Supadata (native captions); text is in transcript_url. quotes[] are extracted by Gemini from the video itself; each quote carries its own grade: 1차-A = matched captions >= quote_verify_threshold, 1차-B = Gemini direct video check only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
@@ -127,8 +127,8 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 5,
-    "gemini_est_video_hours_today": 0.154,
+    "gemini_calls_today": 6,
+    "gemini_est_video_hours_today": 1.06,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "ok"
   },
@@ -142,10 +142,10 @@
     "left_pending": 0
   },
   "gemini_stats": {
-    "attempted": 5,
-    "ready": 2,
+    "attempted": 1,
+    "ready": 1,
     "not_speaking": 0,
-    "busy": 1,
+    "busy": 0,
     "errors": 0,
     "left_pending": 0
   },
@@ -269,22 +269,94 @@
       "appearance_excerpt": "[0:02] Hi Andy, it's great to have you back on our monthly first principles discussion. Thanks again for joining us. >> It's always a pleasure, Justin. Good to see you. >> For those who may not know, you are fo",
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "error",
-      "gemini_model": null,
-      "gemini_at": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-10-22T20:29:42+09:00",
+      "person_speaks": true,
+      "gemini_evidence": "Andy Constan appears on video starting around 01:30 and speaks throughout the interview discussing financial markets, Treasury refunding, AI financing, and market positioning.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Andy Constan is currently positioned short US equities and long bonds, expecting higher sustained interest rates over the next 3 to 6 months to act as a headwind for equities and shave off market optimism.",
+        "timeframe": "3 to 6 months"
+      },
+      "quotes": [
+        {
+          "t": "11:38",
+          "t_sec": 698,
+          "speaker": "Andy Constan",
+          "topic": "AI Demand",
+          "text": "It's just hard to extrapolate that. The demand for the AI itself seems robust. The investments from the big, the biggies seem robust.",
+          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=698s",
+          "caption_match": 95.3,
+          "caption_sec": 690,
+          "grade": "1차-A"
+        },
+        {
+          "t": "35:10",
+          "t_sec": 2110,
+          "speaker": "Andy Constan",
+          "topic": "Interest Rates & Economy",
+          "text": "Suppressing interest rates impacts the economy. Suppressing interest rates impacts the markets.",
+          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=2110s",
+          "caption_match": 100.0,
+          "caption_sec": 2103,
+          "grade": "1차-A"
+        },
+        {
+          "t": "35:30",
+          "t_sec": 2130,
+          "speaker": "Andy Constan",
+          "topic": "Asset Valuation",
+          "text": "But all other assets that are priced off of that discount rate trade at a higher price than they otherwise would.",
+          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=2130s",
+          "caption_match": 100.0,
+          "caption_sec": 2103,
+          "grade": "1차-A"
+        },
+        {
+          "t": "51:36",
+          "t_sec": 3096,
+          "speaker": "Andy Constan",
+          "topic": "US Equities & Earnings",
+          "text": "If we continue to grow at the rate that we're growing, stocks aren't going to go down.",
+          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=3096s",
+          "caption_match": 95.2,
+          "caption_sec": 3093,
+          "grade": "1차-A"
+        },
+        {
+          "t": "55:01",
+          "t_sec": 3301,
+          "speaker": "Andy Constan",
+          "topic": "Corporate Earnings",
+          "text": "It's a bull market for earnings. And it's showing up in a broad, cross the board marketplace.",
+          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=3301s",
+          "caption_match": 100.0,
+          "caption_sec": 3276,
+          "grade": "1차-A"
+        },
+        {
+          "t": "1:04:30",
+          "t_sec": 3870,
+          "speaker": "Andy Constan",
+          "topic": "Portfolio Positioning",
+          "text": "To me, the best way to do that is to buy some bonds, cause they've gotten much cheaper, and short some equities. And so that's the way I'm positioned.",
+          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=3870s",
+          "caption_match": 95.9,
+          "caption_sec": 3864,
+          "grade": "1차-A"
+        }
+      ],
       "gemini_error_count": 1,
-      "gemini_last_error": "busy 404 model (gemini-2.5-flash)",
+      "gemini_last_error": null,
       "evidence_ready_at": "2026-10-22T19:31:09+09:00",
-      "evidence_grade": "1차-A (자막 원문, 인용 추출 전)",
-      "appearance_source": "caption_name_mentions",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
       "quotes_grade_count": {
-        "1차-A": 0,
+        "1차-A": 6,
         "1차-B": 0
-      }
+      },
+      "gemini_prompt_tokens": 123896
     },
     {
       "video_id": "VvbPfe6qucU",
