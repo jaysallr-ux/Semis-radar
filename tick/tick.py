@@ -85,15 +85,19 @@ def main() -> int:
         # GitHub keeps only one pending run per concurrency group and cancels the older pending one when a
         # new run is queued. So never dispatch while ANY run of this workflow (any mode) is still active:
         # wait for the next tick instead, or a discover dispatch could cancel a pending full run.
-        busy = False
+        active = []
         for status in ("queued", "in_progress", "pending", "waiting", "requested"):
-            st, data = api("GET", f"{base}/runs?status={status}&per_page=1", tok)
-            if st == 200 and data.get("total_count"):
-                busy = True
-                break
-        if busy:
+            st, data = api("GET", f"{base}/runs?status={status}&per_page=20", tok)
+            if st == 200:
+                active += data.get("workflow_runs", [])
+        stuck_min = cfg.get("stuck_run_minutes", 90)
+        fresh = [r for r in active if now - datetime.fromisoformat(r["created_at"].replace("Z", "+00:00")) < timedelta(minutes=stuck_min)]
+        if fresh:
             lines.append(f"WAIT  {tg['name']}: a run of {tg['workflow']} is still active")
             continue
+        for r in active:  # older than stuck_run_minutes and still not finished: GitHub is stuck on it
+            st, _ = api("POST", f"https://api.github.com/repos/{tg['repo']}/actions/runs/{r['id']}/cancel", tok, {})
+            lines.append(f"CANCEL {tg['name']}: stuck run {r['id']} ({r['status']} since {r['created_at']}) -> HTTP {st}")
         since = slot.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         st, data = api("GET", f"{base}/runs?created=%3E%3D{since}&per_page=30", tok)
         if st != 200:
