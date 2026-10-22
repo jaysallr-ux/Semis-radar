@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-22T10:37:47.750847+00:00",
+  "ran_at": "2026-10-22T10:55:11.619069+00:00",
   "key_present": true,
   "runs": [
     {
@@ -7,36 +7,440 @@
       "person": "Darius Dale",
       "kind": "solo short",
       "mode": "static_low",
-      "model": "models/gemini-3.8-flash",
-      "ok": false,
-      "http": 503,
-      "secs": 30.2,
-      "usage": null,
-      "finish": null,
-      "error": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+      "model": "models/gemini-3.5-flash",
+      "ok": true,
+      "http": 200,
+      "secs": 13.6,
+      "attempts": [
+        200
+      ],
+      "usage": {
+        "promptTokenCount": 8760,
+        "candidatesTokenCount": 1068,
+        "totalTokenCount": 10946,
+        "promptTokensDetails": [
+          {
+            "modality": "VIDEO",
+            "tokenCount": 8628
+          },
+          {
+            "modality": "TEXT",
+            "tokenCount": 132
+          }
+        ],
+        "thoughtsTokenCount": 1118,
+        "serviceTier": "standard"
+      },
+      "finish": "STOP",
+      "error": null,
+      "person_present": true,
+      "person_speaks": true,
+      "evidence": "Darius Dale appears on camera throughout the video and delivers a macro market update report.",
+      "quotes": [
+        {
+          "t": "0:10",
+          "speaker": "Darius Dale",
+          "text": "Today, what did we learn today that will likely have the greatest impact on your portfolio? Is the SpaceX results and the Anthropic S-1 filing challenged the durability and severity of the current risk-off inflation market regime.",
+          "match": 100.0,
+          "gt_sec": 0,
+          "claimed_sec": 10,
+          "ts_delta": 10
+        },
+        {
+          "t": "0:27",
+          "speaker": "Darius Dale",
+          "text": "Earlier reporting from Q3 earnings season and Anthropic's historic capital commitments to secure compute are supportive of our view that the US is in the early innings of a corporate profit boosting productivity boom.",
+          "match": 94.0,
+          "gt_sec": 0,
+          "claimed_sec": 27,
+          "ts_delta": 27
+        },
+        {
+          "t": "0:38",
+          "speaker": "Darius Dale",
+          "text": "In Japan, the Takaichi administration's doubling down on its reflationary fiscal policy agenda will likely continue to supply upper pressure upon long-term JGB yields and upon bond yields globally. This dynamic is supportive of our play action pass to set up the run theme, as well as our Fed Treasury core 2.0 theme.",
+          "match": 99.0,
+          "gt_sec": 30,
+          "claimed_sec": 38,
+          "ts_delta": 8
+        },
+        {
+          "t": "1:04",
+          "speaker": "Darius Dale",
+          "text": "Iran's hardline negotiating position, which has not changed since the advent of the absurdly pro-Iran MOU in June, challenges the consensus forecast of sharply slowing inflation throughout the first half of 2027.",
+          "match": 100.0,
+          "gt_sec": 60,
+          "claimed_sec": 64,
+          "ts_delta": 4
+        },
+        {
+          "t": "2:04",
+          "speaker": "Darius Dale",
+          "text": "In our view, that's long been a view of ours is that, yes, those at the top of the K in terms of the households and the corporate sector are beyond flush enough to overwhelm the negative dynamism that we're seeing in the bottom part of the K from a household and small business perspective.",
+          "match": 95.8,
+          "gt_sec": 120,
+          "claimed_sec": 124,
+          "ts_delta": 4
+        },
+        {
+          "t": "2:23",
+          "speaker": "Darius Dale",
+          "text": "So just a couple stats on that, you know, if you just look at cash on US household sector balance sheets, we've more than tripled since the end of 2019 to I want to say about $11 or $12 trillion. That's about 5 or 6% of total household assets. It's the highest ratio of liquidity in terms of household highest ratio of liquidity on the household balance sheet in the history of the US economy.",
+          "match": 97.9,
+          "gt_sec": 120,
+          "claimed_sec": 143,
+          "ts_delta": 23
+        },
+        {
+          "t": "2:48",
+          "speaker": "Darius Dale",
+          "text": "So, you know, that amount of liquidity is allowing, you know, the consumption cycle in the United States economy to become detached from income, to be detached from the interest rate cycle as well.",
+          "match": 100.0,
+          "gt_sec": 151,
+          "claimed_sec": 168,
+          "ts_delta": 17
+        },
+        {
+          "t": "3:15",
+          "speaker": "Darius Dale",
+          "text": "You can very clearly see that the bottom half of the K in the United States economy has been in recession since 2022, but on an aggregate basis, it's not enough to, you know, take the GDP down on an aggregate basis. In fact, GDP is actually booming when you look at nominal GDP ex-government and ex-exports, compounding at 8.4% on a quarter-over-quarter SAAR basis in the most recent quarter, which i",
+          "match": 95.5,
+          "gt_sec": 181,
+          "claimed_sec": 195,
+          "ts_delta": 14
+        },
+        {
+          "t": "3:37",
+          "speaker": "Darius Dale",
+          "text": "So this is a booming Paradigm C economy. It's exactly what we forecasted at the lows of April of 2025 when everybody was freaking out about tariffs. Recall that we told you to put earmuffs on and start buying, you know, risk assets because the markets are going to leave tariff bears behind. That's exactly what's happening.",
+          "match": 100.0,
+          "gt_sec": 212,
+          "claimed_sec": 217,
+          "ts_delta": 5
+        },
+        {
+          "t": "3:53",
+          "speaker": "Darius Dale",
+          "text": "And so in our opinion, we think headlines like this, albeit, you know, it is serious, it means a lot to the folks who are suffering from this, it doesn't necessarily mean much to the stock market, which it's one of our core theses, and in support of our job loss recovery theme. Our job loss recovery theme is calling for, explicitly calling for, the stock market to permanently detach itself from th",
+          "match": 96.4,
+          "gt_sec": 212,
+          "claimed_sec": 233,
+          "ts_delta": 21
+        }
+      ],
+      "summary": {
+        "n": 10,
+        "verbatim_ge90": 10,
+        "close_80_90": 0,
+        "fabricated_lt70": 0,
+        "median_match": 99.0,
+        "ts_within_15s": 6,
+        "ts_checked": 10,
+        "median_ts_err": 14
+      }
     },
     {
-      "video": "rVz79aPJnqE",
+      "video": "VvbPfe6qucU",
       "person": "Darius Dale",
       "kind": "solo short",
       "mode": "static_low",
-      "model": "models/gemini-3.7-flash",
+      "model": "models/gemini-3.5-flash",
+      "ok": true,
+      "http": 200,
+      "secs": 14.4,
+      "attempts": [
+        200
+      ],
+      "usage": {
+        "promptTokenCount": 12039,
+        "candidatesTokenCount": 694,
+        "totalTokenCount": 13533,
+        "promptTokensDetails": [
+          {
+            "modality": "VIDEO",
+            "tokenCount": 11907
+          },
+          {
+            "modality": "TEXT",
+            "tokenCount": 132
+          }
+        ],
+        "thoughtsTokenCount": 800,
+        "serviceTier": "standard"
+      },
+      "finish": "STOP",
+      "error": null,
+      "person_present": true,
+      "person_speaks": true,
+      "evidence": "Darius Dale is visible on screen throughout the video and delivers the macro market analysis.",
+      "quotes": [
+        {
+          "t": "0:12",
+          "speaker": "Darius Dale",
+          "text": "The October NAHB homebuilder sentiment index and September building permits, housing starts, and pending home sales data challenged the durability and severity of the current risk-off inflation market regime.",
+          "match": 99.0,
+          "gt_sec": 0,
+          "claimed_sec": 12,
+          "ts_delta": 12
+        },
+        {
+          "t": "0:26",
+          "speaker": "Darius Dale",
+          "text": "The meaningful headwind that our macro weather model is currently signaling for the monetary policy cycle is likely to prove transitory in the context of our Play-Action Pass to set up the Run theme.",
+          "match": 100.0,
+          "gt_sec": 0,
+          "claimed_sec": 26,
+          "ts_delta": 26
+        },
+        {
+          "t": "0:41",
+          "speaker": "Darius Dale",
+          "text": "The September housing starts and pending home sales data—the latter of which plunged to an all-time low—supported our Paradigm C aka Run It Hot theme.",
+          "match": 98.0,
+          "gt_sec": 30,
+          "claimed_sec": 41,
+          "ts_delta": 11
+        },
+        {
+          "t": "0:49",
+          "speaker": "Darius Dale",
+          "text": "The housing market is unlikely to recover given that upward pressure on rates is a persistent feature of Paradigm C.",
+          "match": 100.0,
+          "gt_sec": 30,
+          "claimed_sec": 49,
+          "ts_delta": 19
+        },
+        {
+          "t": "1:00",
+          "speaker": "Darius Dale",
+          "text": "The October NAHB homebuilder sentiment index and September building permits, housing starts, and pending home sales data challenged the consensus forecast of accelerating growth.",
+          "match": 97.7,
+          "gt_sec": 30,
+          "claimed_sec": 60,
+          "ts_delta": 30
+        },
+        {
+          "t": "1:15",
+          "speaker": "Darius Dale",
+          "text": "We analyzed the lock-in effect in the U.S. housing market.",
+          "match": 96.4,
+          "gt_sec": 62,
+          "claimed_sec": 75,
+          "ts_delta": 13
+        },
+        {
+          "t": "1:18",
+          "speaker": "Darius Dale",
+          "text": "We analyzed how the latest U.K. jobs report impacts our outlook for Bank of England monetary policy.",
+          "match": 98.0,
+          "gt_sec": 62,
+          "claimed_sec": 78,
+          "ts_delta": 16
+        },
+        {
+          "t": "1:24",
+          "speaker": "Darius Dale",
+          "text": "And then we analyzed the neocloud company Elice, which debuted today in Korea; it plunged 32% in its trading debut.",
+          "match": 91.0,
+          "gt_sec": 62,
+          "claimed_sec": 84,
+          "ts_delta": 22
+        },
+        {
+          "t": "1:31",
+          "speaker": "Darius Dale",
+          "text": "So that's a pretty meaningful signal as it relates to investor appetite for incremental capitalization of this AI theme.",
+          "match": 95.0,
+          "gt_sec": 62,
+          "claimed_sec": 91,
+          "ts_delta": 29
+        },
+        {
+          "t": "5:45",
+          "speaker": "Darius Dale",
+          "text": "If you can just invest from the perspective of avoiding type two errors, you're going to do a whole heck of a lot better than the folks out there, you know, scrapping and fighting and knife fighting for, you know, year-to-date, month-to-date, week-to-date returns.",
+          "match": 99.6,
+          "gt_sec": 337,
+          "claimed_sec": 345,
+          "ts_delta": 8
+        }
+      ],
+      "summary": {
+        "n": 10,
+        "verbatim_ge90": 10,
+        "close_80_90": 0,
+        "fabricated_lt70": 0,
+        "median_match": 98.0,
+        "ts_within_15s": 4,
+        "ts_checked": 10,
+        "median_ts_err": 19
+      }
+    },
+    {
+      "video": "-nDxML0csuM",
+      "person": "Andy Constan",
+      "kind": "long interview",
+      "mode": "static_low",
+      "model": "models/gemini-3.5-flash",
+      "ok": true,
+      "http": 200,
+      "secs": 39.3,
+      "attempts": [
+        200
+      ],
+      "usage": {
+        "promptTokenCount": 123799,
+        "candidatesTokenCount": 723,
+        "totalTokenCount": 126389,
+        "promptTokensDetails": [
+          {
+            "modality": "VIDEO",
+            "tokenCount": 123666
+          },
+          {
+            "modality": "TEXT",
+            "tokenCount": 133
+          }
+        ],
+        "thoughtsTokenCount": 1867,
+        "serviceTier": "standard"
+      },
+      "finish": "STOP",
+      "error": null,
+      "person_present": true,
+      "person_speaks": true,
+      "evidence": "Andy Constan is present throughout the video and discusses macroeconomic topics including AI capital expenditures, corporate debt, Treasury issuance, interest rate suppression, and equity market positioning.",
+      "quotes": [
+        {
+          "t": "03:11",
+          "speaker": "Andy Constan",
+          "text": "AI models are extraordinarily compute intensive. And so, that demand for AI services has generated massive capital expenditure and turned many businesses into capital intensive businesses versus capital light businesses.",
+          "match": 100.0,
+          "gt_sec": 190,
+          "claimed_sec": 191,
+          "ts_delta": 1
+        },
+        {
+          "t": "04:45",
+          "speaker": "Andy Constan",
+          "text": "It's the scale that's unusual. The scale has, the CapEx run rate is about a trillion now, where it had been dramatically less, a third of that.",
+          "match": 84.1,
+          "gt_sec": 284,
+          "claimed_sec": 285,
+          "ts_delta": 1
+        },
+        {
+          "t": "10:18",
+          "speaker": "Andy Constan",
+          "text": "What's difficult, though, is the next marginal dollar is going to cost 15%. And so, that, some would say that these companies are like the shark that has to keep swimming in order to survive. Once it stalls, it dies.",
+          "match": 100.0,
+          "gt_sec": 598,
+          "claimed_sec": 618,
+          "ts_delta": 20
+        },
+        {
+          "t": "11:26",
+          "speaker": "Andy Constan",
+          "text": "I think it's very hard to extrapolate today that somehow just because a particular or the Neoclouds in general are struggling, that the AI trade is dead.",
+          "match": 99.3,
+          "gt_sec": 659,
+          "claimed_sec": 686,
+          "ts_delta": 27
+        },
+        {
+          "t": "19:53",
+          "speaker": "Andy Constan",
+          "text": "Money creation, borrowing, and lending is somewhat circular. Every dollar the government borrows, it spends.",
+          "match": 100.0,
+          "gt_sec": 1183,
+          "claimed_sec": 1193,
+          "ts_delta": 10
+        },
+        {
+          "t": "21:33",
+          "speaker": "Andy Constan",
+          "text": "The demand for money is growing rapidly, and the supply of money isn't changing much.",
+          "match": 100.0,
+          "gt_sec": 1276,
+          "claimed_sec": 1293,
+          "ts_delta": 17
+        },
+        {
+          "t": "25:30",
+          "speaker": "Andy Constan",
+          "text": "The Yellen administration manipulated the Treasury issuance policy using activist Treasury issuance in order to suppress long-term interest rates.",
+          "match": 100.0,
+          "gt_sec": 1522,
+          "claimed_sec": 1530,
+          "ts_delta": 8
+        },
+        {
+          "t": "36:03",
+          "speaker": "Andy Constan",
+          "text": "So, by driving up asset prices, you create upward inflationary and growth pressures that would otherwise not have been there.",
+          "match": 85.2,
+          "gt_sec": 2135,
+          "claimed_sec": 2163,
+          "ts_delta": 28
+        },
+        {
+          "t": "51:43",
+          "speaker": "Andy Constan",
+          "text": "It's very, very hard when you're growing at 30-odd percent annually on an earnings basis for stocks to go down.",
+          "match": 100.0,
+          "gt_sec": 3093,
+          "claimed_sec": 3103,
+          "ts_delta": 10
+        },
+        {
+          "t": "1:04:23",
+          "speaker": "Andy Constan",
+          "text": "To me, the best way to do that is to buy some bonds, because they've got much cheaper, and short some equities. And so, that's the way I'm positioned.",
+          "match": 96.5,
+          "gt_sec": 3864,
+          "claimed_sec": 3863,
+          "ts_delta": -1
+        }
+      ],
+      "summary": {
+        "n": 10,
+        "verbatim_ge90": 8,
+        "close_80_90": 2,
+        "fabricated_lt70": 0,
+        "median_match": 100.0,
+        "ts_within_15s": 5,
+        "ts_checked": 9,
+        "median_ts_err": 10
+      }
+    },
+    {
+      "video": "-nDxML0csuM",
+      "person": "Andy Constan",
+      "kind": "long interview",
+      "mode": "agentic",
+      "model": "models/gemini-3.5-flash",
       "ok": false,
-      "http": null,
-      "secs": 900.1,
+      "http": 400,
+      "secs": 0.2,
+      "attempts": [
+        400
+      ],
       "usage": null,
       "finish": null,
-      "error": "HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=900)"
+      "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"mime_type must be set when media_processing is specified.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
     },
     {
       "video": "rVz79aPJnqE",
-      "person": "Darius Dale",
-      "kind": "solo short",
-      "mode": "static_low",
-      "model": "models/gemini-3.6-flash",
+      "test": "transcribe_first_3min",
+      "model": "models/gemini-3.5-flash",
       "ok": false,
       "http": 503,
-      "secs": 6.2,
+      "secs": 188.7,
+      "attempts": [
+        503,
+        503,
+        503
+      ],
       "usage": null,
       "finish": null,
       "error": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
@@ -93,9 +497,12 @@
     "models/deep-research-pro-preview-12-2025"
   ],
   "models_tried_order": [
+    "models/gemini-3.5-flash",
+    "models/gemini-flash-latest",
+    "models/gemini-2.5-flash",
     "models/gemini-3.8-flash",
-    "models/gemini-3.7-flash",
-    "models/gemini-3.6-flash"
+    "models/gemini-3.6-flash",
+    "models/gemini-3.7-flash"
   ],
-  "model_used": null
+  "model_used": "models/gemini-3.5-flash"
 }
