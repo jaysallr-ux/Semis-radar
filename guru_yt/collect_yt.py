@@ -46,6 +46,7 @@ FEED_PATH = DATA_DIR / "youtube_feed.json"
 STATE_PATH = DATA_DIR / "state.json"
 RUNS_PATH = DATA_DIR / "runs.csv"
 TRANSCRIPT_DIR = DATA_DIR / "transcripts"
+QUEUE_PATH = DATA_DIR / "discovered.json"
 RAW_BASE = "https://raw.githubusercontent.com/jaysallr-ux/Semis-radar/main/guru_yt/data/transcripts"
 KST = ZoneInfo("Asia/Seoul")
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -435,33 +436,42 @@ GEMINI_DEFAULTS = {"gemini_status": "pending", "gemini_model": None, "gemini_at"
                    "appearance_source": None}
 
 
-# ---------- main ----------
+# ---------- discovery ----------
 
-def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None, now: datetime | None = None,
-        sleep: Callable = time.sleep, gemini_key: str | None = None, clock: Callable = time.monotonic) -> dict:
-    http = http or Http()
-    now = now or now_utc()
-    cfg = load_json(CONFIG_PATH, {})
-    people = cfg["people"]
-    by_person = {p["person"]: p for p in people}
-    window = timedelta(days=cfg.get("window_days", 7))
-    max_age = timedelta(hours=cfg.get("transcript_max_age_hours", 48))
-    state = load_json(STATE_PATH, {"channel_ids": {}, "yta": {}, "supadata": {"used_total": 0}})
-    old = load_json(FEED_PATH, {})
-    videos = {v["video_id"]: v for v in old.get("videos", [])}
-    for v in videos.values():  # migrate older records
-        for k, d in GEMINI_DEFAULTS.items():
-            v.setdefault(k, list(d) if isinstance(d, list) else d)
-        if v["gemini_status"] == "pending" and v.get("transcript_status") in ("skipped_old", "skipped_short"):
-            v["gemini_status"] = "skipped"
-        if not v.get("evidence_ready_at") and v.get("transcript_ready_at"):
-            v["evidence_ready_at"] = v["transcript_ready_at"]
-    prev_gen = old.get("generated_at")
-    errors: dict[str, str] = {}
-    fetched_at = iso_kst(now)
+def new_record(e: dict, first_seen_at: str) -> dict:
+    return {
+        "video_id": e["video_id"],
+        "url": f"https://www.youtube.com/watch?v={e['video_id']}",
+        "channel": e["channel"],
+        "channel_id": e["channel_id"],
+        "channel_mode": e["channel_mode"],
+        "person": e["person"],
+        "tier": e["tier"],
+        "match": e["match"],
+        "title": e["title"],
+        "description": e["description"][:1500],
+        "published_at": e["published_at"],
+        "first_seen_at": first_seen_at,
+        "is_short": None,
+        "transcript_status": "pending_quota",
+        "transcript_provider": None,
+        "transcript_ready_at": None,
+        "transcript_language": None,
+        "transcript_chars": None,
+        "transcript_url": None,
+        "name_mentions": None,
+        "appearance_confirmed": None,
+        "appearance_excerpt": None,
+        "error_count": 0,
+        "last_error": None,
+        **{k: (list(d) if isinstance(d, list) else d) for k, d in GEMINI_DEFAULTS.items()},
+    }
 
-    # discovery
-    channel_out = []
+
+def discover(http: Http, cfg: dict, state: dict, people: list, by_person: dict, window: timedelta, now: datetime,
+             prev_gen: str | None, errors: dict) -> tuple[list[dict], list[dict]]:
+    """Read every allowlisted channel's RSS and return (channel status, matched entries within the window)."""
+    channel_out, found = [], []
     for ch in cfg["channels"]:
         label = ch["label"]
         cid = ch.get("channel_id") or state["channel_ids"].get(label)
@@ -499,39 +509,93 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             if not p:
                 continue
             matched += 1
-            v = videos.get(e["video_id"])
-            if v:
-                v.update(title=e["title"], description=e["description"][:1500])
-                continue
-            videos[e["video_id"]] = {
-                "video_id": e["video_id"],
-                "url": f"https://www.youtube.com/watch?v={e['video_id']}",
-                "channel": label,
-                "channel_id": cid,
-                "channel_mode": ch["mode"],
-                "person": p["person"],
-                "tier": p["tier"],
-                "match": field,
-                "title": e["title"],
-                "description": e["description"][:1500],
-                "published_at": e["published_at"],
-                "first_seen_at": fetched_at,
-                "is_short": None,
-                "transcript_status": "pending_quota",
-                "transcript_provider": None,
-                "transcript_ready_at": None,
-                "transcript_language": None,
-                "transcript_chars": None,
-                "transcript_url": None,
-                "name_mentions": None,
-                "appearance_confirmed": None,
-                "appearance_excerpt": None,
-                "error_count": 0,
-                "last_error": None,
-                **{k: (list(d) if isinstance(d, list) else d) for k, d in GEMINI_DEFAULTS.items()},
-            }
+            found.append({**e, "channel": label, "channel_id": cid, "channel_mode": ch["mode"],
+                          "person": p["person"], "tier": p["tier"], "match": field})
         info["matched"] = matched
         channel_out.append(info)
+    return channel_out, found
+
+
+def run_discover(http: Http | None = None, now: datetime | None = None) -> dict:
+    """Hourly, free: RSS only. Parks newly matched videos in discovered.json so high-volume channels
+    (RSS shows only the latest 15) are not missed between the twice-daily full runs.
+    Never touches youtube_feed.json, captions or Gemini."""
+    http = http or Http()
+    now = now or now_utc()
+    cfg = load_json(CONFIG_PATH, {})
+    people = cfg["people"]
+    by_person = {p["person"]: p for p in people}
+    window = timedelta(days=cfg.get("window_days", 7))
+    max_age = timedelta(hours=cfg.get("transcript_max_age_hours", 48))
+    state = load_json(STATE_PATH, {"channel_ids": {}, "yta": {}, "supadata": {"used_total": 0}})
+    feed = load_json(FEED_PATH, {})
+    known = {v["video_id"] for v in feed.get("videos", [])}
+    queue = load_json(QUEUE_PATH, {"videos": []})
+    queued = {q["video_id"] for q in queue["videos"]}
+    last_check = queue.get("last_checked_at") or feed.get("generated_at")
+    errors: dict[str, str] = {}
+    channel_out, found = discover(http, cfg, state, people, by_person, window, now, last_check, errors)
+    added = []
+    for e in found:
+        if e["video_id"] in known or e["video_id"] in queued:
+            continue
+        # backlog guard: anything already older than the transcript age limit is left to the full run's rules
+        if now - parse_ts(e["published_at"]) > max_age:
+            continue
+        added.append({**e, "description": e["description"][:1500], "first_seen_at": iso_kst(now)})
+    gaps = sorted(c["label"] for c in channel_out if c.get("gap_possible"))
+    changed = bool(added) or errors != queue.get("errors", {}) or gaps != queue.get("gap_possible", [])
+    queue["videos"] = queue["videos"] + added
+    queue.update(last_checked_at=iso_kst(now), errors=errors, gap_possible=gaps)
+    if changed or not QUEUE_PATH.exists():
+        write_json(QUEUE_PATH, queue)
+    if state.get("channel_ids") != load_json(STATE_PATH, {}).get("channel_ids"):
+        write_json(STATE_PATH, state)
+    return {"added": [(a["person"], a["channel"], a["title"]) for a in added], "queued_total": len(queue["videos"]),
+            "errors": errors, "gap_possible": gaps, "file_written": changed}
+
+
+# ---------- main ----------
+
+def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None, now: datetime | None = None,
+        sleep: Callable = time.sleep, gemini_key: str | None = None, clock: Callable = time.monotonic) -> dict:
+    http = http or Http()
+    now = now or now_utc()
+    cfg = load_json(CONFIG_PATH, {})
+    people = cfg["people"]
+    by_person = {p["person"]: p for p in people}
+    window = timedelta(days=cfg.get("window_days", 7))
+    max_age = timedelta(hours=cfg.get("transcript_max_age_hours", 48))
+    state = load_json(STATE_PATH, {"channel_ids": {}, "yta": {}, "supadata": {"used_total": 0}})
+    old = load_json(FEED_PATH, {})
+    videos = {v["video_id"]: v for v in old.get("videos", [])}
+    for v in videos.values():  # migrate older records
+        for k, d in GEMINI_DEFAULTS.items():
+            v.setdefault(k, list(d) if isinstance(d, list) else d)
+        if v["gemini_status"] == "pending" and v.get("transcript_status") in ("skipped_old", "skipped_short"):
+            v["gemini_status"] = "skipped"
+        if not v.get("evidence_ready_at") and v.get("transcript_ready_at"):
+            v["evidence_ready_at"] = v["transcript_ready_at"]
+    prev_gen = old.get("generated_at")
+    errors: dict[str, str] = {}
+    fetched_at = iso_kst(now)
+
+    # discovery: hourly discovery-only runs park new videos in discovered.json; merge them first
+    queue = load_json(QUEUE_PATH, {"videos": []})
+    merged = 0
+    for q in queue.get("videos", []):
+        if q["video_id"] not in videos:
+            videos[q["video_id"]] = new_record(q, q["first_seen_at"])
+            merged += 1
+    discovery_info = {"last_discovery_at": queue.get("last_checked_at"), "merged_from_discovery": merged,
+                      "discovery_errors": queue.get("errors", {})}
+    channel_out, found = discover(http, cfg, state, people, by_person, window, now, prev_gen, errors)
+    for e in found:
+        v = videos.get(e["video_id"])
+        if v:
+            v.update(title=e["title"], description=e["description"][:1500])
+        else:
+            videos[e["video_id"]] = new_record(e, fetched_at)
 
     # quotas (count ourselves; also respect server remaining)
     today = now.strftime("%Y-%m-%d")
@@ -770,6 +834,9 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
                   "1차-A = matched captions >= quote_verify_threshold, 1차-B = Gemini direct video check only. "
                   "stance is Gemini's reading of the person's own words, not a quote.",
         "new_statement_clock": "evidence_ready_at",
+        "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). "
+                             "Discovery-only runs never change it; see discovery.last_discovery_at.",
+        "discovery": discovery_info,
         "quote_verify_threshold": threshold,
         "errors": errors,
         "channels": channel_out,
@@ -785,6 +852,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     }
     write_json(STATE_PATH, state)
     write_json(FEED_PATH, feed)
+    write_json(QUEUE_PATH, {"videos": [], "last_checked_at": fetched_at, "errors": {}, "gap_possible": []})
     new_file = not RUNS_PATH.exists()
     with RUNS_PATH.open("a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -797,6 +865,9 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
 
 
 def main() -> int:
+    if "--discover" in sys.argv:
+        print(json.dumps(run_discover(), ensure_ascii=False, indent=2))
+        return 0
     feed = run(os.environ.get("YT_TRANSCRIPT_KEY") or None, os.environ.get("SUPADATA_KEY") or None,
                gemini_key=os.environ.get("GEMINI_API_KEY") or None)
     summary = {k: feed[k] for k in ("generated_at", "data_ok", "errors", "quota", "stats", "gemini_stats")}
