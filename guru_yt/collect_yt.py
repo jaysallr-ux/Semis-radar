@@ -151,6 +151,9 @@ def read_rss(http: Http, channel_id: str, sleep: Callable = time.sleep) -> list[
         vid = e.findtext("yt:videoId", default="", namespaces=NS)
         if not vid:
             continue
+        ch = e.findtext("yt:channelId", default="", namespaces=NS)
+        if ch and ch != channel_id:
+            continue  # never accept an entry from another channel, whichever feed URL answered
         group = e.find("m:group", NS)
         desc = group.findtext("m:description", default="", namespaces=NS) if group is not None else ""
         out.append({
