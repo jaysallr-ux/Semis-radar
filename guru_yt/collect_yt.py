@@ -597,6 +597,18 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         else:
             videos[e["video_id"]] = new_record(e, fetched_at)
 
+    # one-time manual backfill: exactly the video_ids listed in channels.json "backfill_once", each at most once ever.
+    # published_at is untouched, so freshness still counts from the day the person spoke.
+    done = set(state.get("backfill_done", []))
+    for vid in cfg.get("backfill_once", []):
+        v = videos.get(vid)
+        if v and vid not in done and v["transcript_status"] == "skipped_old":
+            v.update(transcript_status="pending_quota", error_count=0, last_error=None,
+                     gemini_status="pending", gemini_error_count=0, gemini_last_error=None,
+                     backfilled_at=fetched_at)
+            done.add(vid)
+    state["backfill_done"] = sorted(done)
+
     # quotas (count ourselves; also respect server remaining)
     today = now.strftime("%Y-%m-%d")
     yta = state.get("yta") or {}
