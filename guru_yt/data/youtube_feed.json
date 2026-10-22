@@ -1,6 +1,6 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-22T19:31:09+09:00",
+  "generated_at": "2026-10-22T19:32:12+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. Transcripts are verbatim captions from youtube-transcript.ai (primary) or Supadata (native captions). Transcript text is in transcript_url.",
   "new_statement_clock": "transcript_ready_at",
@@ -49,7 +49,7 @@
     {
       "label": "Excess Returns",
       "channel_id": "UCPYvx_y92dvI1PSdiho0ALw",
-      "resolved_by": "@ExcessReturns",
+      "resolved_by": "cached",
       "rss_ok": true,
       "rss_count": 15,
       "oldest_rss": "2026-10-05T02:45:16+09:00",
@@ -59,7 +59,7 @@
     {
       "label": "Monetary Matters",
       "channel_id": "UC8IrKCJw7dlBIEpBuFinNig",
-      "resolved_by": "@MonetaryMatters",
+      "resolved_by": "cached",
       "rss_ok": true,
       "rss_count": 0,
       "matched": 0
@@ -67,7 +67,7 @@
     {
       "label": "Forward Guidance",
       "channel_id": "UCEOv-8wHvYC6mzsY2Gm5WcQ",
-      "resolved_by": "@ForwardGuidanceBW",
+      "resolved_by": "cached",
       "rss_ok": true,
       "rss_count": 15,
       "oldest_rss": "2026-10-08T04:00:11+09:00",
@@ -77,7 +77,7 @@
     {
       "label": "Yahoo Finance",
       "channel_id": "UCEAZeUIeJs0IjQiqTCdVSIg",
-      "resolved_by": "@YahooFinance",
+      "resolved_by": "cached",
       "rss_ok": true,
       "rss_count": 15,
       "oldest_rss": "2026-10-22T01:00:21+09:00",
@@ -87,7 +87,7 @@
     {
       "label": "Thoughtful Money",
       "channel_id": "UCKSl2GeK0iK1Ld9dzSv2HTw",
-      "resolved_by": "@ThoughtfulMoney",
+      "resolved_by": "cached",
       "rss_ok": true,
       "rss_count": 15,
       "oldest_rss": "2023-03-29T13:10:21+09:00",
@@ -97,7 +97,7 @@
     {
       "label": "MacroVoices",
       "channel_id": "UCPQsZQ2yvJFv0TCo2wqZMgg",
-      "resolved_by": "@MacroVoices",
+      "resolved_by": "cached",
       "rss_ok": true,
       "rss_count": 1,
       "oldest_rss": "2026-02-23T03:15:08+09:00",
@@ -107,7 +107,7 @@
     {
       "label": "Fundstrat",
       "channel_id": "UCXKmQMS4TsR0fpviXJ17lRw",
-      "resolved_by": "@Fundstrat",
+      "resolved_by": "cached",
       "rss_ok": true,
       "rss_count": 1,
       "oldest_rss": "2024-08-17T08:00:17+09:00",
@@ -128,12 +128,12 @@
     }
   },
   "stats": {
-    "attempted": 3,
-    "ready": 3,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
-    "expired": 3,
+    "expired": 0,
     "left_pending": 0
   },
   "videos": [
@@ -183,9 +183,9 @@
       "transcript_language": null,
       "transcript_chars": 53226,
       "transcript_url": "https://raw.githubusercontent.com/jaysallr-ux/Semis-radar/main/guru_yt/data/transcripts/-nDxML0csuM.txt",
-      "name_mentions": 0,
-      "appearance_confirmed": false,
-      "appearance_excerpt": null,
+      "name_mentions": 4,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "[0:02] Hi Andy, it's great to have you back on our monthly first principles discussion. Thanks again for joining us. >> It's always a pleasure, Justin. Good to see you. >> For those who may not know, you are fo",
       "error_count": 0,
       "last_error": null
     },
