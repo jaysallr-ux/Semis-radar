@@ -111,8 +111,10 @@ def html_text(html: str) -> str:
 
 
 def name_hit(person: dict, text: str) -> bool:
+    """Full names only on the web: a bare surname ('Karsan') also matches unrelated companies and people."""
     low = (text or "").lower()
-    return any(re.search(r"\b" + re.escape(n.lower()) + r"\b", low) for n in person["names"])
+    full = [n for n in person["names"] if " " in n.strip()] or person["names"]
+    return any(re.search(r"\b" + re.escape(n.lower()) + r"\b", low) for n in full)
 
 
 def last_names(person: dict) -> list[str]:
@@ -383,7 +385,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
     order = sorted(people, key=lambda p: (p["tier"], p["person"]))
     queue: list[tuple[dict, dict]] = []
     for p in order:
-        q = " OR ".join(f'"{n}"' for n in p["names"]) + (f" {p['web_query_extra']}" if p.get("web_query_extra") else "")
+        q = " OR ".join(f'"{n}"' for n in p["names"] if " " in n.strip()) + (f" {p['web_query_extra']}" if p.get("web_query_extra") else "")
         try:
             found = gnews_search(http, q, days)
         except Exception as e:
@@ -461,7 +463,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
             if not it.get("yt_searched"):
                 it["yt_searched"] = True
                 for r in youtube_search(http, it["title"]):
-                    if title_similar(r["title"], it["title"]) >= 70 and r["video_id"] not in cand_ids:
+                    if title_similar(r["title"], it["title"]) >= 80 and r["video_id"] not in cand_ids:
                         candidates["videos"].append({"video_id": r["video_id"], "person": it["person"],
                                                      "source": "web_discovery", "article_url": it["canonical_url"],
                                                      "article_date": it["published_at"], "title_hint": r["title"],
