@@ -1,0 +1,78 @@
+name: guru-web-feed
+
+# Called by dispatch-tick (cron-job.org) at 10:05 / 21:05 KST. The GitHub schedule below is only a backup.
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "5 1 * * *"    # KST 10:05
+    - cron: "5 12 * * *"   # KST 21:05
+  push:
+    paths:
+      - ".github/workflows/guru_web.yml"
+      - "guru_web/collect_web.py"
+      - "guru_web/config.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guru-web
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Slot guard
+        id: guard
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from datetime import datetime, timedelta
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+          now = datetime.now(ZoneInfo("Asia/Seoul"))
+          run = True
+          if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+              try:
+                  gen = datetime.fromisoformat(json.loads(Path("guru_web/data/web_feed.json").read_text())["generated_at"])
+                  cands = [now.replace(hour=h, minute=5, second=0, microsecond=0) - timedelta(days=d) for d in (0, 1) for h in (10, 21)]
+                  if gen >= max(c for c in cands if c <= now) - timedelta(minutes=10):
+                      run = False
+              except Exception:
+                  run = True
+          print(f"run={'true' if run else 'false'}")
+          PY
+
+      - name: Install
+        if: steps.guard.outputs.run == 'true'
+        run: pip install requests rapidfuzz
+
+      - name: Collect web
+        if: steps.guard.outputs.run == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python guru_web/collect_web.py
+
+      - name: Commit feed
+        if: steps.guard.outputs.run == 'true'
+        run: |
+          git config user.name "guru-web-bot"
+          git config user.email "guru-web-bot@users.noreply.github.com"
+          git add guru_web/data/
+          git commit -m "guru-web feed $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')" || { echo "변경 없음"; exit 0; }
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 5
+          done
+          exit 1

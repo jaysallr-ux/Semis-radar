@@ -3,19 +3,103 @@
   "catch_up_minutes": 90,
   "stuck_run_minutes": 90,
   "targets": [
-    {"name": "guru_x",           "repo": "jaysallr-ux/Semis-radar", "workflow": "guru_x.yml",  "cron": "15 10,21 * * *"},
-    {"name": "guru_yt full",     "repo": "jaysallr-ux/Semis-radar", "workflow": "guru_yt.yml", "cron": "10 10,21 * * *", "inputs": {"mode": "full"},     "title_suffix": "full"},
-    {"name": "guru_yt discover", "repo": "jaysallr-ux/Semis-radar", "workflow": "guru_yt.yml", "cron": "20,50 * * * *",  "inputs": {"mode": "discover"}, "title_suffix": "discover"},
-    {"name": "semis radar",      "repo": "jaysallr-ux/Semis-radar", "workflow": "daily.yml",   "cron": "10 16 * * 1-5"},
-    {"name": "ACKKS",            "repo": "jaysallr-ux/-", "workflow": "ackks.yml",            "cron": "20 6 * * 2-6"},
-    {"name": "RSM",              "repo": "jaysallr-ux/-", "workflow": "rsm.yml",              "cron": "37 9 * * 2-6"},
-    {"name": "RSM late",         "repo": "jaysallr-ux/-", "workflow": "rsm.yml",              "cron": "17 17 * * 2-6"},
-    {"name": "BTC MVRV",         "repo": "jaysallr-ux/-", "workflow": "btc_mvrv_native.yml",  "cron": "10 9,16 * * *"},
-    {"name": "BTC phase bottom", "repo": "jaysallr-ux/-", "workflow": "btc_phase_bottom.yml", "cron": "0 11 * * *"},
-    {"name": "BTC phase top",    "repo": "jaysallr-ux/-", "workflow": "btc_phase_top.yml",    "cron": "25 13 * * *"},
-    {"name": "Treasury live pm", "repo": "jaysallr-ux/-", "workflow": "treasury_market_live_alert_only.yml", "cron": "30 16 * * 1-5"},
-    {"name": "Treasury live am", "repo": "jaysallr-ux/-", "workflow": "treasury_market_live_alert_only.yml", "cron": "0 7 * * 2-6"},
-    {"name": "Treasury narrative","repo": "jaysallr-ux/-", "workflow": "treasury_narrative.yml", "cron": "10 17 * * 1-6"},
-    {"name": "ChatGPT receipt guard", "repo": "jaysallr-ux/-", "workflow": "chatgpt_monitor_receipt_guard.yml", "cron": "20 18,23 * * *"}
+    {
+      "name": "guru_web",
+      "repo": "jaysallr-ux/Semis-radar",
+      "workflow": "guru_web.yml",
+      "cron": "5 10,21 * * *"
+    },
+    {
+      "name": "guru_x",
+      "repo": "jaysallr-ux/Semis-radar",
+      "workflow": "guru_x.yml",
+      "cron": "15 10,21 * * *"
+    },
+    {
+      "name": "guru_yt full",
+      "repo": "jaysallr-ux/Semis-radar",
+      "workflow": "guru_yt.yml",
+      "cron": "10 10,21 * * *",
+      "inputs": {
+        "mode": "full"
+      },
+      "title_suffix": "full"
+    },
+    {
+      "name": "guru_yt discover",
+      "repo": "jaysallr-ux/Semis-radar",
+      "workflow": "guru_yt.yml",
+      "cron": "20,50 * * * *",
+      "inputs": {
+        "mode": "discover"
+      },
+      "title_suffix": "discover"
+    },
+    {
+      "name": "semis radar",
+      "repo": "jaysallr-ux/Semis-radar",
+      "workflow": "daily.yml",
+      "cron": "10 16 * * 1-5"
+    },
+    {
+      "name": "ACKKS",
+      "repo": "jaysallr-ux/-",
+      "workflow": "ackks.yml",
+      "cron": "20 6 * * 2-6"
+    },
+    {
+      "name": "RSM",
+      "repo": "jaysallr-ux/-",
+      "workflow": "rsm.yml",
+      "cron": "37 9 * * 2-6"
+    },
+    {
+      "name": "RSM late",
+      "repo": "jaysallr-ux/-",
+      "workflow": "rsm.yml",
+      "cron": "17 17 * * 2-6"
+    },
+    {
+      "name": "BTC MVRV",
+      "repo": "jaysallr-ux/-",
+      "workflow": "btc_mvrv_native.yml",
+      "cron": "10 9,16 * * *"
+    },
+    {
+      "name": "BTC phase bottom",
+      "repo": "jaysallr-ux/-",
+      "workflow": "btc_phase_bottom.yml",
+      "cron": "0 11 * * *"
+    },
+    {
+      "name": "BTC phase top",
+      "repo": "jaysallr-ux/-",
+      "workflow": "btc_phase_top.yml",
+      "cron": "25 13 * * *"
+    },
+    {
+      "name": "Treasury live pm",
+      "repo": "jaysallr-ux/-",
+      "workflow": "treasury_market_live_alert_only.yml",
+      "cron": "30 16 * * 1-5"
+    },
+    {
+      "name": "Treasury live am",
+      "repo": "jaysallr-ux/-",
+      "workflow": "treasury_market_live_alert_only.yml",
+      "cron": "0 7 * * 2-6"
+    },
+    {
+      "name": "Treasury narrative",
+      "repo": "jaysallr-ux/-",
+      "workflow": "treasury_narrative.yml",
+      "cron": "10 17 * * 1-6"
+    },
+    {
+      "name": "ChatGPT receipt guard",
+      "repo": "jaysallr-ux/-",
+      "workflow": "chatgpt_monitor_receipt_guard.yml",
+      "cron": "20 18,23 * * *"
+    }
   ]
 }
