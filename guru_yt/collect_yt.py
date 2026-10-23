@@ -178,9 +178,12 @@ def video_meta(http: Http, vid: str, supadata_key: str | None, state: dict) -> d
     except Exception:
         pass
     sup = state.setdefault("supadata", {"used_total": 0})
-    if out.get("channel_name") and supadata_key and sup.get("used_total", 0) < 90:
+    month = datetime.now(timezone.utc).strftime("%Y-%m")
+    if sup.get("meta_month") != month:  # free credits renew monthly: count metadata calls per month
+        sup["meta_month"], sup["meta_used"] = month, 0
+    if out.get("channel_name") and supadata_key and sup.get("meta_used", 0) < 40:
+        sup["meta_used"] = sup.get("meta_used", 0) + 1
         try:
-            sup["used_total"] = sup.get("used_total", 0) + 1
             status, text, _ = http.get("https://api.supadata.ai/v1/metadata",
                                        params={"url": f"https://www.youtube.com/watch?v={vid}"},
                                        headers={"x-api-key": supadata_key})
@@ -822,7 +825,8 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     label_to_id = {lbl.strip().lower(): cid for cid, lbl in allowed.items()}
     modes = {c.get("channel_id") or state["channel_ids"].get(c["label"]): c["mode"] for c in cfg["channels"]}
     seen_extra = set(state.get("extra_checked", []))
-    extra_in = list(cfg.get("extra_videos", [])) + list(queue.get("extra_videos", []))
+    web_cands = load_json(ROOT.parent / "guru_web" / "data" / "yt_candidates.json", {"videos": []}).get("videos", [])
+    extra_in = list(cfg.get("extra_videos", [])) + list(queue.get("extra_videos", [])) + list(web_cands)
     extra_stats = {"accepted": 0, "rejected": 0}
     for ex in extra_in:
         vid, person = ex.get("video_id"), ex.get("person")
@@ -844,6 +848,8 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             pub = datetime.fromisoformat(pub.replace("Z", "+00:00")).astimezone(timezone.utc).isoformat()
             if now - parse_ts(pub) > window:
                 reason = "older than window"
+            elif ex.get("article_date") and abs(parse_ts(pub) - parse_ts(ex["article_date"])) > timedelta(days=1.5):
+                reason = "upload date does not match the source article (likely an older clip with a similar title)"
         seen_extra.add(vid)
         if reason:
             extra_stats["rejected"] += 1

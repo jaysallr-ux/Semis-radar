@@ -358,7 +358,10 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
     fetched_at = iso_kst(now)
     state = load_json(STATE_PATH, {})
     old = load_json(FEED_PATH, {})
-    items = {i["canonical_url"]: i for i in old.get("items", [])}
+    items = {i["canonical_url"]: i for i in old.get("items", [])
+             # drop news items whose headline no longer passes the full-name filter (e.g. 'Karsan Otomotiv')
+             if i.get("source_kind") not in ("news_article", "video_page")
+             or (i["person"] in by_name and name_hit(by_name[i["person"]], i["title"]))}
     gem_day = state.get("gemini") or {}
     if gem_day.get("date") != now.strftime("%Y-%m-%d"):
         gem_day = {"date": now.strftime("%Y-%m-%d"), "calls": 0}
