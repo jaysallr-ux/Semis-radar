@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-23T10:10:35+09:00",
+  "generated_at": "2026-10-23T15:08:50+09:00",
   "data_ok": false,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-23T09:20:26+09:00",
+    "last_discovery_at": "2026-10-23T14:50:29+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {
       "42 Macro": "RSS 실패 (rss 404)",
@@ -30,7 +30,16 @@
   "quote_min_chars_for_a": 40,
   "errors": {
     "42 Macro": "RSS 실패 (rss 404)",
-    "Morningstar": "RSS 실패 (rss 404)"
+    "Schwab Network": "RSS 실패 (rss 404)",
+    "CNBC Television": "RSS 실패 (rss 404)",
+    "Morningstar": "RSS 실패 (rss 404)",
+    "Excess Returns": "RSS 실패 (rss 404)",
+    "Monetary Matters": "RSS 실패 (rss 404)",
+    "Forward Guidance": "RSS 실패 (rss 404)",
+    "Yahoo Finance": "RSS 실패 (rss 404)",
+    "Thoughtful Money": "RSS 실패 (rss 404)",
+    "MacroVoices": "RSS 실패 (rss 404)",
+    "Fundstrat": "RSS 실패 (rss 404)"
   },
   "channels": [
     {
@@ -44,21 +53,15 @@
       "label": "Schwab Network",
       "channel_id": "UCToe3dspZyw2L_JY-JmP3Mw",
       "resolved_by": "config",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2026-10-16T04:53:09+09:00",
-      "gap_possible": false,
-      "matched": 0
+      "rss_ok": false,
+      "error": "rss 404"
     },
     {
       "label": "CNBC Television",
       "channel_id": "UCvJJ_dzjViJCoLf5uKUTwoA",
       "resolved_by": "config",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2026-10-07T23:00:10+09:00",
-      "gap_possible": false,
-      "matched": 0
+      "rss_ok": false,
+      "error": "rss 404"
     },
     {
       "label": "Morningstar",
@@ -71,71 +74,50 @@
       "label": "Excess Returns",
       "channel_id": "UCPYvx_y92dvI1PSdiho0ALw",
       "resolved_by": "cached",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2026-10-05T02:45:16+09:00",
-      "gap_possible": false,
-      "matched": 1
+      "rss_ok": false,
+      "error": "rss 404"
     },
     {
       "label": "Monetary Matters",
       "channel_id": "UCeyqw1Ns_cnhSJh5XvXPWgw",
       "resolved_by": "config",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2026-09-14T01:00:37+09:00",
-      "gap_possible": false,
-      "matched": 1
+      "rss_ok": false,
+      "error": "rss 404"
     },
     {
       "label": "Forward Guidance",
       "channel_id": "UCEOv-8wHvYC6mzsY2Gm5WcQ",
       "resolved_by": "cached",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2026-10-08T04:00:11+09:00",
-      "gap_possible": false,
-      "matched": 0
+      "rss_ok": false,
+      "error": "rss 404"
     },
     {
       "label": "Yahoo Finance",
       "channel_id": "UCEAZeUIeJs0IjQiqTCdVSIg",
       "resolved_by": "cached",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2026-10-22T22:37:43+09:00",
-      "gap_possible": false,
-      "matched": 0
+      "rss_ok": false,
+      "error": "rss 404"
     },
     {
       "label": "Thoughtful Money",
       "channel_id": "UCKSl2GeK0iK1Ld9dzSv2HTw",
       "resolved_by": "cached",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2023-03-29T13:10:21+09:00",
-      "gap_possible": false,
-      "matched": 0
+      "rss_ok": false,
+      "error": "rss 404"
     },
     {
       "label": "MacroVoices",
       "channel_id": "UCICRehoZjq3ZtAWgRJX118A",
       "resolved_by": "config",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2026-09-25T04:05:04+09:00",
-      "gap_possible": false,
-      "matched": 0
+      "rss_ok": false,
+      "error": "rss 404"
     },
     {
       "label": "Fundstrat",
       "channel_id": "UCcBzKSM4A-pIHMJWSnxmi_g",
       "resolved_by": "config",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2026-10-13T05:29:36+09:00",
-      "gap_possible": false,
-      "matched": 3
+      "rss_ok": false,
+      "error": "rss 404"
     }
   ],
   "quota": {
@@ -149,10 +131,10 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 4,
-    "gemini_est_video_hours_today": 0.0,
+    "gemini_calls_today": 8,
+    "gemini_est_video_hours_today": 1.062,
     "gemini_daily_video_hours_cap": 7.5,
-    "gemini": "quota or rate limit (429) on every model"
+    "gemini": "ok"
   },
   "stats": {
     "attempted": 0,
@@ -166,7 +148,7 @@
   },
   "gemini_stats": {
     "attempted": 4,
-    "ready": 0,
+    "ready": 1,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
@@ -174,7 +156,7 @@
     "budget_out": 0,
     "chunked": 1,
     "text_mode": 0,
-    "quota_wait": 1
+    "quota_wait": 0
   },
   "videos": [
     {
@@ -734,7 +716,8 @@
           "topic": "us_equities",
           "text": "Well look Scott, you've seen the equal-weighted S&P just in the last month rise to the highest level since early September. It's been a great comeback in the broader market at a time when technology yet again has been whipsawed and has started to pull back.",
           "url": "https://www.youtube.com/watch?v=ffiSgUoDNbQ&t=20s",
-          "speaker_verified": true
+          "speaker_verified": true,
+          "grade": "1차-B"
         },
         {
           "t": "0:36",
@@ -743,7 +726,8 @@
           "topic": "us_equities",
           "text": "The percentage of stocks above their 20-day moving average has actually doubled in the last two and a half weeks. So we've gone from 20% to about 45%, that is very encouraging at a time when we still have very elevated bond yields, crude is higher than what we want to see, and or inflation, and obviously two ongoing wars.",
           "url": "https://www.youtube.com/watch?v=ffiSgUoDNbQ&t=36s",
-          "speaker_verified": true
+          "speaker_verified": true,
+          "grade": "1차-B"
         },
         {
           "t": "0:56",
@@ -752,7 +736,8 @@
           "topic": "us_equities",
           "text": "My thinking is the market has started to stabilize, and so now we see a little bit of backing and filling in tech, and yes it has been what it has been.",
           "url": "https://www.youtube.com/watch?v=ffiSgUoDNbQ&t=56s",
-          "speaker_verified": true
+          "speaker_verified": true,
+          "grade": "1차-B"
         },
         {
           "t": "1:14",
@@ -761,7 +746,8 @@
           "topic": "us_equities",
           "text": "The broader market right now is still doing very well. The S&P is less than 100 points from its all-time highs, we made new all-time highs just what, 11 trading days ago.",
           "url": "https://www.youtube.com/watch?v=ffiSgUoDNbQ&t=74s",
-          "speaker_verified": true
+          "speaker_verified": true,
+          "grade": "1차-B"
         },
         {
           "t": "2:00",
@@ -770,7 +756,8 @@
           "topic": "us_equities",
           "text": "As a technical analyst, we're taught really to ignore a lot of the exogenous events in the news. We know that headlines like that can affect stocks in the near term headlines, but you know, we've seen the war ongoing most of the year, the S&P is up 13 and a half percent.",
           "url": "https://www.youtube.com/watch?v=ffiSgUoDNbQ&t=120s",
-          "speaker_verified": true
+          "speaker_verified": true,
+          "grade": "1차-B"
         },
         {
           "t": "2:34",
@@ -779,7 +766,8 @@
           "topic": "us_equities",
           "text": "I'm encouraged, I think it's going to be a choppy time until we get past the midterms. I think we need to see evidence of bond yields, crude starting to peak and fall, that likely is still a little bit premature, but I'm very encouraged just with the technical structure itself with the market right now.",
           "url": "https://www.youtube.com/watch?v=ffiSgUoDNbQ&t=154s",
-          "speaker_verified": true
+          "speaker_verified": true,
+          "grade": "1차-B"
         }
       ],
       "gemini_error_count": 0,
@@ -1015,31 +1003,322 @@
       "transcript_chars": 74233,
       "transcript_url": null,
       "name_mentions": 23,
-      "appearance_confirmed": null,
+      "appearance_confirmed": true,
       "appearance_excerpt": " going up to 15%. Wow, what is going on? For these two topics, first yields, then AI credit, I'm going to be talking to Jim Bianco of Bianco Research and the WTBN ETF. Jim, wonderful to see you. How are you?  [1:02] >> Thanks for having me, Jack. Looking forward to the conversation. >> So, Jim, probably one of the grea",
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "error",
-      "gemini_model": null,
-      "gemini_at": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.6-flash",
+      "gemini_at": "2026-10-23T15:08:50+09:00",
+      "person_speaks": true,
+      "gemini_evidence": "Jim Bianco appears via webcam and speaks extensively about the bond market, inflation dynamics, Treasury yields, economic growth, and Federal Reserve policy. / Jim Bianco appears on screen and speaks extensively throughout the video clip discussing monetary policy, Federal Reserve interest rates, corporate credit markets, and the long-term impact and bubble ",
+      "stance": {
+        "us_equities": "bullish",
+        "summary": "Jim Bianco argues that interest rates around 5% are appropriate for the current economy. He is extremely bullish on Artificial Intelligence, comparing the current market cycle to 1997 rather than the peak of the 2000 dot-com bubble, and expects equities and AI investments to rise much further before reaching a ultimate peak."
+      },
+      "quotes": [
+        {
+          "t": "1:49",
+          "t_sec": 109,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "let's say the beginning of the month, the last couple of weeks, I became very constructive on the bond market, for the first time, as you pointed out, in six years.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=109s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.5,
+          "caption_sec": 93,
+          "caption_checked": true
+        },
+        {
+          "t": "1:59",
+          "t_sec": 119,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "I'm not arguing that bonds are cheap. I am arguing that they are no longer expensive.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=119s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 93,
+          "caption_checked": true
+        },
+        {
+          "t": "2:34",
+          "t_sec": 154,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "I think that we should expect the US economy to grow between say 5 and 6%.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=154s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.4,
+          "caption_sec": 153,
+          "caption_checked": true
+        },
+        {
+          "t": "3:22",
+          "t_sec": 202,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "bonds are no longer expensive, meaning the yields are too low relative to the economy, and I'll step up and own longer durations, meaning longer maturity bonds with higher yields, because I want to capture those yields",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=202s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 185,
+          "caption_checked": true
+        },
+        {
+          "t": "4:51",
+          "t_sec": 291,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "So going forward, I don't think you're going to see that kind of a negative return in bonds.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=291s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 276,
+          "caption_checked": true
+        },
+        {
+          "t": "6:05",
+          "t_sec": 365,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "And now what I'm arguing is there is a yield in the bond market, 5%, and while inflation is sticky at three, it seems to have settled in around that 3% range, and the risk that it runs to 4, 5, 6, 7 or something like that is low.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=365s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 338,
+          "caption_checked": true
+        },
+        {
+          "t": "7:10",
+          "t_sec": 430,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "Right, I'm not I'm not in the recession camp at all.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=430s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 400,
+          "caption_checked": true
+        },
+        {
+          "t": "12:51",
+          "t_sec": 771,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "My point is we're not going back to goods deflation. And if we're not going back to goods deflation, we cannot disinflate back under say 3% on overall inflation",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=771s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 743,
+          "caption_checked": true
+        },
+        {
+          "t": "23:23",
+          "t_sec": 1403,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "I'm arguing we're stuck at three, and we just need to understand that we are a 3% inflation world, and going back to my earlier argument, plus two-ish or so for real growth means nominal growth is probably going to stay in the 5 to 6% range, which is why interest rates are finally at normal rates, 5 to 6%",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=1403s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.3,
+          "caption_sec": 1390,
+          "caption_checked": true
+        },
+        {
+          "t": "29:50",
+          "t_sec": 1790,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "What's the fastest way to get them down? Raise rates. Raise rates. The Fed raises rates.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=1790s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 1757,
+          "caption_checked": true
+        },
+        {
+          "t": "32:34",
+          "t_sec": 1954,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "So 5% interest rates are normal. This is a good thing that we have interest rates back to 5%.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=1954s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 1939,
+          "caption_checked": true
+        },
+        {
+          "t": "39:28",
+          "t_sec": 2368,
+          "speaker": "Jim Bianco",
+          "topic": "",
+          "text": "it means we have a stronger economy, we're able to pay those higher rates. If your rates are lower, your economy's weaker.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=2368s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 2367,
+          "caption_checked": true
+        },
+        {
+          "t": "39:33",
+          "t_sec": 2373,
+          "speaker": "Jim Bianco",
+          "topic": "Interest Rates & Economy",
+          "text": "If your rates are lower, your economy's weaker. And that's really where the issue comes in.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=2373s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 2367,
+          "caption_checked": true
+        },
+        {
+          "t": "41:13",
+          "t_sec": 2473,
+          "speaker": "Jim Bianco",
+          "topic": "Interest Rates",
+          "text": "Too low an interest rate is as big a problem as too high an interest rate. And I know that that's controversial.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=2473s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 95.5,
+          "caption_sec": 2460,
+          "caption_checked": true
+        },
+        {
+          "t": "43:24",
+          "t_sec": 2604,
+          "speaker": "Jim Bianco",
+          "topic": "Interest Rates & Speculation",
+          "text": "So you wind up dragging down the growth of your economy when you have too low an interest rate, and that creates a lot of problems. You also get speculative excesses.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=2604s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 2580,
+          "caption_checked": true
+        },
+        {
+          "t": "45:02",
+          "t_sec": 2702,
+          "speaker": "Jim Bianco",
+          "topic": "Federal Reserve & Interest Rates",
+          "text": "So yeah, I think rates should be around 5%. That's normal. Zero was the abnormal, and that will create the optimal growth rate for our economy if we get them back to the appropriate rate.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=2702s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.8,
+          "caption_sec": 2673,
+          "caption_checked": true
+        },
+        {
+          "t": "48:42",
+          "t_sec": 2922,
+          "speaker": "Jim Bianco",
+          "topic": "Fed Funds Rate",
+          "text": "I think the fair value of the funds rate's 4.5-ish percent. That means we need three more rate hikes in order to just get back to fair value.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=2922s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 95.0,
+          "caption_sec": 2918,
+          "caption_checked": true
+        },
+        {
+          "t": "52:02",
+          "t_sec": 3122,
+          "speaker": "Jim Bianco",
+          "topic": "Credit Markets",
+          "text": "So in general, the corporate credit market is not overlevered. It is not dependent on taking out risky loans or a bunch of levered loans and rolling them over.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=3122s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.4,
+          "caption_sec": 3102,
+          "caption_checked": true
+        },
+        {
+          "t": "57:02",
+          "t_sec": 3422,
+          "speaker": "Jim Bianco",
+          "topic": "Artificial Intelligence",
+          "text": "I am a gigantic AI bull. I think it is as revolutionary as the railroads, anything we've seen in the last 100 years.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=3422s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.2,
+          "caption_sec": 3414,
+          "caption_checked": true
+        },
+        {
+          "t": "62:25",
+          "t_sec": 3745,
+          "speaker": "Jim Bianco",
+          "topic": "AI Bubble Analogy",
+          "text": "If you want an analogy, it's 1997 right now. It's not the spring of 2000 when you come to the internet bubble.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=3745s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 3726,
+          "caption_checked": true
+        },
+        {
+          "t": "63:15",
+          "t_sec": 3795,
+          "speaker": "Jim Bianco",
+          "topic": "Market Direction & AI",
+          "text": "It's going to go up a lot more than people think before eventually we get that bust on the downside.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=3795s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.0,
+          "caption_sec": 3787,
+          "caption_checked": true
+        },
+        {
+          "t": "63:55",
+          "t_sec": 3835,
+          "speaker": "Jim Bianco",
+          "topic": "US Equities & AI",
+          "text": "I'm in the kind of the market's going to go up a lot more than you think and this is going to be a lot more transformative than you think.",
+          "url": "https://www.youtube.com/watch?v=bygJZ4o0SJE&t=3835s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 3818,
+          "caption_checked": true
+        }
+      ],
       "gemini_error_count": 0,
-      "gemini_last_error": "quota (429) on every model",
-      "evidence_ready_at": null,
-      "evidence_grade": "자막 확보, 인용 대기",
-      "appearance_source": null,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-10-23T15:08:50+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
       "quotes_grade_count": {
-        "1차-A": 0,
+        "1차-A": 22,
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       },
       "backfilled_at": "2026-10-22T20:49:54+09:00",
-      "gemini_mode": null,
-      "transcript_retained": true,
-      "role": "core"
+      "gemini_mode": "video_chunks_2",
+      "transcript_retained": false,
+      "role": "core",
+      "gemini_prompt_tokens": 145288
     },
     {
       "video_id": "SKrGZWgnH1A",
