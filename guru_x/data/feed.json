@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-23T10:15:27+09:00",
+  "generated_at": "2026-10-23T21:15:32+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (81 entries)",
+    "list": "ok (80 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 75,
-    "already_known": 62,
+    "urls_found": 80,
+    "already_known": 73,
     "too_old": 0,
-    "verified_syndication": 11,
+    "verified_syndication": 5,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-21T01:21:16.000Z",
+    "list_oldest": "2026-10-21T12:57:53.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,8 +34,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-10-23T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-23T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
+      "last_success_at": "2026-10-23T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-10-23T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -78,7 +78,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
+      "last_success_at": "2026-10-23T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
-      "new_originals_this_run": 5,
+      "last_success_at": "2026-10-23T21:15:32+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -100,8 +100,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-23T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
+      "last_success_at": "2026-10-23T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-23T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
+      "last_success_at": "2026-10-23T21:15:32+09:00",
       "new_originals_this_run": 1,
       "error": null
     },
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-23T10:15:27+09:00",
+      "last_success_at": "2026-10-23T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -155,6 +155,139 @@
     "usd_estimate": 0.0
   },
   "posts": [
+    {
+      "id": "2113594731737567610",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-23T11:33:47.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2113594731737567610",
+      "text": "Weak Stock Markets, Resilient Economies & Companies\n\nStocks outside the US have meaningfully underperformed the US in the face of the second oil-price surge, even as economic and corporate fundamentals look pretty resilient.\n\nhttps://t.co/MfxxCkKPYI https://t.co/iIhTxbZEZF",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/weak-stock-markets-resilient-economies"
+      ],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2113581420342128874",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-23T10:40:53.000Z",
+      "url": "https://x.com/dampedspring/status/2113581420342128874",
+      "text": "Wordle 1,952 4/6*\n\n⬜⬜⬜🟨⬜\n🟩🟩⬜⬜⬜\n🟩🟩🟩⬜⬜\n🟩🟩🟩🟩🟩\n\nWas gonna guess the answer in guess 3 but thought it was a crap word.  Picked the other choice. 🤷‍♂️",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2113562950313365609",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-10-23T09:27:30.000Z",
+      "url": "https://x.com/Geo_papic/status/2113562950313365609",
+      "text": "What the price action is telling us - but also the \"political action\" in the streets of France and US polls - is that the West is going to have to take an L somewhere. Too many wars on too many fronts. Can't have it all.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2113440889507024950",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-23T01:22:28.000Z",
+      "url": "https://x.com/LynAldenContact/status/2113440889507024950",
+      "text": "Pierce Brosnan comes out of retirement for a moment, silver fox badass, is the Bond I’d watch.",
+      "quoted_post_id": "2113376679112454203",
+      "quoted_post": {
+        "id": "2113376679112454203",
+        "author": "nerd_cookies",
+        "created_at": "2026-10-22T21:07:19.000Z",
+        "url": "https://x.com/nerd_cookies/status/2113376679112454203",
+        "text": "The mystery actor 🔥 https://t.co/NyHBJsrBni",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2113439237395632213",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-23T01:15:54.000Z",
+      "url": "https://x.com/dampedspring/status/2113439237395632213",
+      "text": "40BN SPCX https://t.co/babVF4vra5",
+      "quoted_post_id": "2113363236687126578",
+      "quoted_post": {
+        "id": "2113363236687126578",
+        "author": "financialjuice",
+        "created_at": "2026-10-22T20:13:54.000Z",
+        "url": "https://x.com/financialjuice/status/2113363236687126578",
+        "text": "SpaceX debt deal being led by Apollo and Goldman Sachs - Semafor $SPCX $GS",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2113427934484549751",
       "person": "Lyn Alden",
