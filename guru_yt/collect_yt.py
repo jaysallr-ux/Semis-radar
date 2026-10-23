@@ -1164,6 +1164,8 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
             v["appearance_confirmed"], v["appearance_source"] = None, None  # unconfirmed until Gemini answers
         for q in v["quotes"]:
             q.setdefault("speaker_verified", speaker_ok(by_person[v["person"]], q.get("speaker", "")))
+            if not q.get("grade"):
+                q["grade"] = "1차-B"  # no caption check (yet): Gemini direct video check only
         if v["quotes"] and caption:
             verify_quotes(v["quotes"], caption, threshold, min_a)
         good = [q for q in v["quotes"] if q.get("speaker_verified")]
