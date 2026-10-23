@@ -112,7 +112,9 @@ def main() -> int:
         fails = sum(1 for r in runs if r.get("conclusion") in ("failure", "cancelled", "timed_out", "startup_failure"))
         if ok_runs:
             continue  # already covered (running, queued or done) since this slot
-        if fails >= 3:
+        # other repos: their failures come from their own code/state, so a retry only burns private Actions minutes
+        max_fails = tg.get("max_retries_after_failure", 2 if tg["repo"] == SELF_REPO else 0) + 1
+        if fails >= max_fails:
             lines.append(f"GIVEUP {tg['name']}: {fails} failed runs since {slot:%H:%M}")
             continue
         body = {"ref": tg.get("ref", "main")}
