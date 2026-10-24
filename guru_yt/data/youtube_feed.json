@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-24T15:45:33+09:00",
-  "data_ok": false,
+  "generated_at": "2026-10-24T15:56:53+09:00",
+  "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-24T15:41:32+09:00",
+    "last_discovery_at": "2026-10-24T15:56:18+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -16,96 +16,128 @@
   },
   "quote_verify_threshold": 90,
   "quote_min_chars_for_a": 40,
-  "errors": {
-    "42 Macro": "RSS 실패 (rss 404)",
-    "Schwab Network": "RSS 실패 (rss 404)",
-    "CNBC Television": "RSS 실패 (rss 404)",
-    "Morningstar": "RSS 실패 (rss 404)",
-    "Excess Returns": "RSS 실패 (rss 404)",
-    "Monetary Matters": "RSS 실패 (rss 404)",
-    "Forward Guidance": "RSS 실패 (rss 404)",
-    "Yahoo Finance": "RSS 실패 (rss 404)",
-    "Thoughtful Money": "RSS 실패 (rss 404)",
-    "MacroVoices": "RSS 실패 (rss 404)",
-    "Fundstrat": "RSS 실패 (rss 404)"
-  },
+  "errors": {},
   "channels": [
     {
       "label": "42 Macro",
       "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
       "resolved_by": "config",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-10-01T05:00:20+09:00",
+      "gap_possible": false,
+      "matched": 5
     },
     {
       "label": "Schwab Network",
       "channel_id": "UCToe3dspZyw2L_JY-JmP3Mw",
       "resolved_by": "config",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-10-17T03:32:45+09:00",
+      "gap_possible": false,
+      "matched": 0
     },
     {
       "label": "CNBC Television",
       "channel_id": "UCvJJ_dzjViJCoLf5uKUTwoA",
       "resolved_by": "config",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-10-09T00:09:08+09:00",
+      "gap_possible": false,
+      "matched": 0
     },
     {
       "label": "Morningstar",
       "channel_id": "UChub1tZZuWn9YYHJZZYTbMg",
       "resolved_by": "config",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-10-14T00:00:27+09:00",
+      "gap_possible": false,
+      "matched": 2
     },
     {
       "label": "Excess Returns",
       "channel_id": "UCPYvx_y92dvI1PSdiho0ALw",
       "resolved_by": "cached",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-10-06T04:55:24+09:00",
+      "gap_possible": false,
+      "matched": 1
     },
     {
       "label": "Monetary Matters",
       "channel_id": "UCeyqw1Ns_cnhSJh5XvXPWgw",
       "resolved_by": "config",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-09-17T06:04:32+09:00",
+      "gap_possible": false,
+      "matched": 1
     },
     {
       "label": "Forward Guidance",
       "channel_id": "UCEOv-8wHvYC6mzsY2Gm5WcQ",
       "resolved_by": "cached",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-10-14T02:03:09+09:00",
+      "gap_possible": false,
+      "matched": 0
     },
     {
       "label": "Yahoo Finance",
       "channel_id": "UCEAZeUIeJs0IjQiqTCdVSIg",
       "resolved_by": "cached",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-10-23T22:39:07+09:00",
+      "gap_possible": false,
+      "matched": 0
     },
     {
       "label": "Thoughtful Money",
       "channel_id": "UCKSl2GeK0iK1Ld9dzSv2HTw",
       "resolved_by": "cached",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2023-03-29T13:10:21+09:00",
+      "gap_possible": false,
+      "matched": 0
     },
     {
       "label": "MacroVoices",
       "channel_id": "UCICRehoZjq3ZtAWgRJX118A",
       "resolved_by": "config",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-09-25T04:05:04+09:00",
+      "gap_possible": false,
+      "matched": 0
     },
     {
       "label": "Fundstrat",
       "channel_id": "UCcBzKSM4A-pIHMJWSnxmi_g",
       "resolved_by": "config",
-      "rss_ok": false,
-      "error": "rss 404"
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-10-13T22:12:50+09:00",
+      "gap_possible": false,
+      "matched": 3
     }
   ],
   "quota": {
@@ -135,11 +167,11 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 1,
+    "attempted": 0,
     "ready": 0,
     "not_speaking": 0,
     "busy": 0,
-    "errors": 1,
+    "errors": 0,
     "left_pending": 0,
     "budget_out": 0,
     "chunked": 0,
