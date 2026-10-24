@@ -443,8 +443,12 @@ def _gemini_call(http: Http, key: str, model: str, body: dict, sleep: Callable, 
         raise GeminiBusy(str(status))
     if status == 429:
         raise QuotaExhausted()
-    if status in (401, 403) and ("API key" in text or "PERMISSION_DENIED" in text):
+    if status in (400, 401, 403) and any(m in text for m in ("API_KEY_INVALID", "API key not valid", "API key expired", "API_KEY_SERVICE_BLOCKED")):
         raise KeyInvalid()
+    if status == 403:
+        # PERMISSION_DENIED on a key that works elsewhere = this video is not accessible to Gemini
+        # (scheduled premiere, private, members-only). Per-video error; never stops other videos.
+        raise RuntimeError("403 video not accessible to Gemini")
     if status == 404:
         raise GeminiBusy("404 model")
     if status != 200:
