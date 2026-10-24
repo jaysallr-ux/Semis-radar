@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-24T10:15:30+09:00",
+  "generated_at": "2026-10-24T21:15:36+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (82 entries)",
+    "list": "ok (83 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 97,
-    "already_known": 78,
+    "urls_found": 99,
+    "already_known": 95,
     "too_old": 0,
-    "verified_syndication": 17,
+    "verified_syndication": 2,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-21T19:48:00.000Z",
+    "list_oldest": "2026-10-21T21:29:04.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
+      "last_success_at": "2026-10-24T21:15:36+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
+      "last_success_at": "2026-10-24T21:15:36+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
-      "new_originals_this_run": 9,
+      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
+      "last_success_at": "2026-10-24T21:15:36+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,8 +111,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -122,7 +122,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
+      "last_success_at": "2026-10-24T21:15:36+09:00",
       "new_originals_this_run": 1,
       "error": null
     },
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
+      "last_success_at": "2026-10-24T21:15:36+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T10:15:30+09:00",
+      "last_success_at": "2026-10-24T21:15:36+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -155,6 +155,54 @@
     "usd_estimate": 0.0
   },
   "posts": [
+    {
+      "id": "2113945333336281302",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-24T10:46:57.000Z",
+      "url": "https://x.com/dampedspring/status/2113945333336281302",
+      "text": "Wordle 1,953 5/6*\n\n⬜⬜⬜⬜🟨\n⬜⬜🟩🟩⬜\n⬜🟩🟩🟩⬜\n🟩🟩🟩🟩⬜\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2113937910747574284",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-24T10:17:27.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2113937910747574284",
+      "text": "Stopped by CNBC Wed morning to talk through the challenges facing the AI trade and how bonds could just be a good buy in this environment.\n\nhttps://t.co/PxwWyDWnGk",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://www.cnbc.com/video/2026/10/21/market-overall-has-become-one-big-bet-on-ai-unlimited-etfs-elliott.html"
+      ],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2113758655967629637",
       "person": "Darius Dale",
