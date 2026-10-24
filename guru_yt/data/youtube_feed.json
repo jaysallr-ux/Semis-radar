@@ -1,17 +1,20 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-24T10:10:30+09:00",
+  "generated_at": "2026-10-24T15:41:32+09:00",
   "data_ok": false,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-24T09:50:30+09:00",
-    "merged_from_discovery": 4,
+    "last_discovery_at": "2026-10-24T13:20:25+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {
       "42 Macro": "RSS 실패 (rss 404)",
+      "Schwab Network": "RSS 실패 (rss 404)",
       "CNBC Television": "RSS 실패 (rss 404)",
+      "Morningstar": "RSS 실패 (rss 404)",
       "Excess Returns": "RSS 실패 (rss 404)",
+      "Monetary Matters": "RSS 실패 (rss 404)",
       "Forward Guidance": "RSS 실패 (rss 404)",
       "Yahoo Finance": "RSS 실패 (rss 404)",
       "Thoughtful Money": "RSS 실패 (rss 404)",
@@ -28,6 +31,7 @@
   "errors": {
     "42 Macro": "RSS 실패 (rss 404)",
     "Schwab Network": "RSS 실패 (rss 404)",
+    "CNBC Television": "RSS 실패 (rss 404)",
     "Morningstar": "RSS 실패 (rss 404)",
     "Excess Returns": "RSS 실패 (rss 404)",
     "Monetary Matters": "RSS 실패 (rss 404)",
@@ -35,8 +39,7 @@
     "Yahoo Finance": "RSS 실패 (rss 404)",
     "Thoughtful Money": "RSS 실패 (rss 404)",
     "MacroVoices": "RSS 실패 (rss 404)",
-    "Fundstrat": "RSS 실패 (rss 404)",
-    "gemini": "key invalid"
+    "Fundstrat": "RSS 실패 (rss 404)"
   },
   "channels": [
     {
@@ -57,11 +60,8 @@
       "label": "CNBC Television",
       "channel_id": "UCvJJ_dzjViJCoLf5uKUTwoA",
       "resolved_by": "config",
-      "rss_ok": true,
-      "rss_count": 15,
-      "oldest_rss": "2026-10-09T00:09:08+09:00",
-      "gap_possible": false,
-      "matched": 0
+      "rss_ok": false,
+      "error": "rss 404"
     },
     {
       "label": "Morningstar",
@@ -131,25 +131,25 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 3,
+    "gemini_calls_today": 4,
     "gemini_est_video_hours_today": 0.128,
     "gemini_daily_video_hours_cap": 7.5,
-    "gemini": "key invalid"
+    "gemini": "ok"
   },
   "stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 1,
+    "skipped_short": 0,
     "expired": 0,
     "left_pending": 0,
-    "waiting_for_gemini": 2
+    "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 3,
-    "ready": 1,
-    "not_speaking": 1,
+    "attempted": 1,
+    "ready": 0,
+    "not_speaking": 0,
     "busy": 0,
     "errors": 1,
     "left_pending": 0,
@@ -392,8 +392,8 @@
       "gemini_evidence": null,
       "stance": null,
       "quotes": [],
-      "gemini_error_count": 1,
-      "gemini_last_error": "key invalid",
+      "gemini_error_count": 2,
+      "gemini_last_error": "error 403 video not accessible to Gemini",
       "evidence_ready_at": null,
       "evidence_grade": "제목·설명만 확인",
       "appearance_source": null,
