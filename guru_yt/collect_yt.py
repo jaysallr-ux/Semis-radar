@@ -165,6 +165,50 @@ def read_rss(http: Http, channel_id: str, sleep: Callable = time.sleep) -> list[
     return out
 
 
+def read_uploads_api(http: Http, channel_id: str, key: str) -> list[dict]:
+    """YouTube Data API v3 uploads playlist (1 unit per call). Used because the public RSS feed answers 404
+    to GitHub Actions IPs for long stretches. The key travels only in a header, never in a URL or log."""
+    try:
+        status, text, _ = http.get("https://www.googleapis.com/youtube/v3/playlistItems",
+                                   params={"part": "snippet,contentDetails", "playlistId": "UU" + channel_id[2:],
+                                           "maxResults": 15},
+                                   headers={"X-Goog-Api-Key": key})
+    except Exception as e:
+        raise RuntimeError(f"api {type(e).__name__}")
+    if status != 200:
+        reason = ""
+        try:
+            reason = (json.loads(text).get("error", {}).get("errors") or [{}])[0].get("reason", "")
+        except Exception:
+            pass
+        raise RuntimeError(f"api {status} {reason}".strip())
+    out = []
+    for it in json.loads(text).get("items", []):
+        sn, cd = it.get("snippet") or {}, it.get("contentDetails") or {}
+        vid = cd.get("videoId") or (sn.get("resourceId") or {}).get("videoId")
+        owner = sn.get("videoOwnerChannelId")
+        published = cd.get("videoPublishedAt")
+        if not vid or not published or (owner and owner != channel_id):
+            continue  # private/deleted/not-yet-public items carry no videoPublishedAt
+        out.append({"video_id": vid, "title": (sn.get("title") or "").strip(),
+                    "published_at": published, "description": (sn.get("description") or "").strip()})
+    return out
+
+
+def read_uploads(http: Http, channel_id: str, api_key: str | None) -> tuple[list[dict], str, str | None]:
+    """Data API first when a key is set (reliable from Actions), RSS as fallback. Returns (entries, source, api_error)."""
+    api_err = None
+    if api_key:
+        try:
+            return read_uploads_api(http, channel_id, api_key), "data_api", None
+        except Exception as e:
+            api_err = str(e)
+    try:
+        return read_rss(http, channel_id), "rss", api_err
+    except Exception as e:
+        raise RuntimeError(f"{e}" + (f"; {api_err}" if api_err else ""))
+
+
 def video_meta(http: Http, vid: str, supadata_key: str | None, state: dict) -> dict:
     """Channel from YouTube oEmbed (works from Actions; the watch page is behind a bot check there) and the
     exact upload date from Supadata metadata (1 credit) when a key is set."""
@@ -683,6 +727,7 @@ def discover(http: Http, cfg: dict, state: dict, people: list, by_person: dict, 
              prev_gen: str | None, errors: dict) -> tuple[list[dict], list[dict]]:
     """Read every allowlisted channel's RSS and return (channel status, matched entries within the window)."""
     channel_out, found = [], []
+    api_key = os.environ.get("YT_DATA_API_KEY") or None
     for ch in cfg["channels"]:
         label = ch["label"]
         cid = ch.get("channel_id") or state["channel_ids"].get(label)
@@ -698,13 +743,15 @@ def discover(http: Http, cfg: dict, state: dict, people: list, by_person: dict, 
             channel_out.append(info)
             continue
         try:
-            entries = read_rss(http, cid)
+            entries, source, api_err = read_uploads(http, cid, api_key)
         except Exception as e:
             info["error"] = str(e)
             errors[label] = f"RSS 실패 ({e})"
             channel_out.append(info)
             continue
-        info.update(rss_ok=True, rss_count=len(entries))
+        info.update(rss_ok=True, rss_count=len(entries), list_source=source)
+        if api_err:
+            info["data_api_error"] = api_err
         if entries:
             oldest = min(parse_ts(x["published_at"]) for x in entries if x["published_at"])
             info["oldest_rss"] = iso_kst(oldest)

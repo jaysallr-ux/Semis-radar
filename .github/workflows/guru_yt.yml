@@ -104,6 +104,7 @@ jobs:
           YT_TRANSCRIPT_KEY: ${{ secrets.YT_TRANSCRIPT_KEY }}
           SUPADATA_KEY: ${{ secrets.SUPADATA_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YT_DATA_API_KEY: ${{ secrets.YT_DATA_API_KEY }}
         run: |
           if [ "${{ steps.guard.outputs.mode }}" = "discover" ]; then
             python guru_yt/collect_yt.py --discover
