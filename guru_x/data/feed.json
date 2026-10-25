@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-25T10:15:29+09:00",
+  "generated_at": "2026-10-25T21:15:33+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (81 entries)",
+    "list": "ok (80 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 110,
-    "already_known": 93,
+    "urls_found": 109,
+    "already_known": 104,
     "too_old": 0,
-    "verified_syndication": 15,
+    "verified_syndication": 3,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-22T13:32:10.000Z",
+    "list_oldest": "2026-10-22T15:46:34.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "last_success_at": "2026-10-25T21:15:33+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "last_success_at": "2026-10-25T21:15:33+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "last_success_at": "2026-10-25T21:15:33+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
-      "new_originals_this_run": 10,
+      "last_success_at": "2026-10-25T21:15:33+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-10-25T21:15:33+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-25T21:15:33+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "last_success_at": "2026-10-25T21:15:33+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,8 +111,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-25T21:15:33+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -122,7 +122,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "last_success_at": "2026-10-25T21:15:33+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-25T21:15:33+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -144,8 +144,8 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-25T10:15:29+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-10-25T21:15:33+09:00",
+      "new_originals_this_run": 0,
       "error": null
     }
   ],
@@ -155,6 +155,91 @@
     "usd_estimate": 0.0
   },
   "posts": [
+    {
+      "id": "2114280267753849102",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-25T08:57:51.000Z",
+      "url": "https://x.com/dampedspring/status/2114280267753849102",
+      "text": "Wordle 1,954 5/6*\n\n🟨⬜⬜🟨🟨\n⬜⬜🟨🟨🟨\n⬜🟩🟩🟩⬜\n⬜🟩🟩🟩⬜\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114189441241641396",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "role": "core",
+      "author_id": "188369814",
+      "created_at": "2026-10-25T02:56:57.000Z",
+      "url": "https://x.com/BiancoResearch/status/2114189441241641396",
+      "text": "NFL fans in Paris are getting ready for the Steelers/Saints",
+      "quoted_post_id": "2112180193431367818",
+      "quoted_post": {
+        "id": "2112180193431367818",
+        "author": "visegrad24",
+        "created_at": "2026-10-19T13:52:55.000Z",
+        "url": "https://x.com/visegrad24/status/2112180193431367818",
+        "text": "Crazy video of a French couple enjoying drinks and cigarettes at an outdoor café near the Arc de Triomphe in Paris as rioters and looters fight riot police and set fires just 50 meters behind the couple https://t.co/DsihcyzMcf",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114183193276350789",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "role": "core",
+      "author_id": "188369814",
+      "created_at": "2026-10-25T02:32:07.000Z",
+      "url": "https://x.com/BiancoResearch/status/2114183193276350789",
+      "text": "In the middle of all this chaos of over 110,000 protesters, in exactly 11 hours, the NFL intends on playing a football game in Paris at the Stade de France, which is about 5 miles away from where this video was taken. \n\nGood luck to the Steelers and the Saints tomorrow.",
+      "quoted_post_id": "2114049476096876926",
+      "quoted_post": {
+        "id": "2114049476096876926",
+        "author": "MarioNawfal",
+        "created_at": "2026-10-24T17:40:46.000Z",
+        "url": "https://x.com/MarioNawfal/status/2114049476096876926",
+        "text": "🇫🇷 France's protests are turning into something MUCH BIGGER than a weekend of unrest.\n\nHuge crowds are flooding the streets over soaring living costs and concerns about democracy.\n\nIn Paris alone, police counted 110,000 demonstrators.\n\nAnd the movement isn't winding down.",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2114125257720160667",
       "person": "Darius Dale",
