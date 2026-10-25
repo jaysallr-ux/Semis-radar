@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-10-25T11:15:42+09:00",
+  "generated_at": "2026-10-25T11:16:11+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
