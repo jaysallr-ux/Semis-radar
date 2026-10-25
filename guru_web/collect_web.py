@@ -386,6 +386,9 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
 
     # 1) news discovery, T1 -> T2 -> T3 -> non-core
     order = sorted(people, key=lambda p: (p["tier"], p["person"]))
+    pstat = {p["person"]: {"person": p["person"], "tier": p["tier"], "role": p.get("role", "core"),
+                           "discovery_ok": True, "error": None} for p in order}
+    complete = {"discovery": True, "processing": True}
     queue: list[tuple[dict, dict]] = []
     for p in order:
         q = " OR ".join(f'"{n}"' for n in p["names"] if " " in n.strip()) + (f" {p['web_query_extra']}" if p.get("web_query_extra") else "")
@@ -393,6 +396,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
             found = gnews_search(http, q, days)
         except Exception as e:
             errors[p["person"]] = f"google news 실패 ({e})"
+            pstat[p["person"]].update(discovery_ok=False, error=f"google news 실패 ({str(e)[:80]})")
             continue
         stats["discovered"] += len(found)
         for f in found[: cfg.get("max_items_per_person", 6)]:
@@ -404,6 +408,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
     seen_titles: dict[str, str] = {}
     for p, f in queue:
         if clock() - t0 > budget:
+            complete["discovery"] = False
             break
         key = (p["person"], norm(f["title"])[:80])
         if key in seen_titles:  # same story syndicated by several outlets
@@ -438,8 +443,10 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
                     items[post["url"]] = it
                 elif items[post["url"]]["gemini_status"] in ("pending", "error"):
                     items[post["url"]]["_text"] = post["text"]
+            pstat["Ryan Detrick"]["official_source_ok"] = True
         except Exception as e:
             errors["Carson Group feed"] = str(e)[:120]
+            pstat["Ryan Detrick"]["official_source_ok"] = False
     if "Mike Wilson" in by_name:
         try:
             for ep in wilson_episodes(http, since):
@@ -449,8 +456,10 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
                     items[ep["url"]] = it
                 elif items[ep["url"]]["gemini_status"] in ("pending", "error"):
                     items[ep["url"]]["_text"] = ep["text"]
+            pstat["Mike Wilson"]["official_source_ok"] = True
         except Exception as e:
             errors["Morgan Stanley podcast"] = str(e)[:120]
+            pstat["Mike Wilson"]["official_source_ok"] = False
 
     # 3) process: video bridge, then bodies + quotes (T1 first, newest first, capped)
     todo = [i for i in items.values() if i["gemini_status"] in ("pending", "error")
@@ -458,6 +467,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
     todo.sort(key=lambda i: (i["tier"], 0 if i["source_kind"] != "video_page" else 1, -parse_ts(i["published_at"]).timestamp()))
     for it in todo:
         if clock() - t0 > budget:
+            complete["processing"] = False
             break
         person = by_name.get(it["person"])
         if not person:
@@ -526,6 +536,12 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
     keep.sort(key=lambda i: i["published_at"], reverse=True)
     candidates["videos"] = [c for c in candidates["videos"] if now - parse_ts(c["added_at"]) <= window]
     state["gemini"] = gem_day
+    pending_left = [i for i in keep if i["gemini_status"] in ("pending", "error")]
+    for st in pstat.values():
+        mine = [i for i in keep if i["person"] == st["person"]]
+        st["items_in_window"] = len(mine)
+        st["scoring_items"] = sum(1 for i in mine if i["evidence_grade"] in ("1차", "1차-인용"))
+        st["pending_items"] = sum(1 for i in mine if i in pending_left)
     feed = {
         "schema": "guru-web/v1",
         "generated_at": fetched_at,
@@ -537,6 +553,10 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
                   "News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not "
                   "evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
         "new_statement_clock": "evidence_ready_at",
+        "discovery_complete": complete["discovery"],
+        "processing_complete": complete["processing"] and not any(
+            i["gemini_status"] == "pending" for i in pending_left),
+        "people": list(pstat.values()),
         "stats": stats,
         "gemini": {"calls_today": gem_day["calls"], "daily_cap": gem_cap, "models": models,
                    "status": "ok" if gem_ok else ("no key" if not gemini_key else "quota")},
