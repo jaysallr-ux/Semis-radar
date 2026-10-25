@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-24T21:15:36+09:00",
+  "generated_at": "2026-10-25T10:15:29+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (83 entries)",
+    "list": "ok (81 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 99,
-    "already_known": 95,
+    "urls_found": 110,
+    "already_known": 93,
     "too_old": 0,
-    "verified_syndication": 2,
+    "verified_syndication": 15,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-21T21:29:04.000Z",
+    "list_oldest": "2026-10-22T13:32:10.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "last_success_at": "2026-10-25T10:15:29+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "last_success_at": "2026-10-25T10:15:29+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "last_success_at": "2026-10-25T10:15:29+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "new_originals_this_run": 10,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "last_success_at": "2026-10-25T10:15:29+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
+      "last_success_at": "2026-10-25T10:15:29+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -144,8 +144,8 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-24T21:15:36+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-25T10:15:29+09:00",
+      "new_originals_this_run": 2,
       "error": null
     }
   ],
@@ -155,6 +155,445 @@
     "usd_estimate": 0.0
   },
   "posts": [
+    {
+      "id": "2114125257720160667",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T22:41:54.000Z",
+      "url": "https://x.com/DariusDale42/status/2114125257720160667",
+      "text": "It seems most of you are willful participants in the creation of an economy where ~10% of households are extremely happy and the other ~90% are miserable. \n\nFWIW, this outcome has NEVER been sustainable in human history. What will likely occur instead is that ~90% of households https://t.co/XWUXa2ATfr",
+      "quoted_post_id": "2113948073671921972",
+      "quoted_post": {
+        "id": "2113948073671921972",
+        "author": "Claudia_Sahm",
+        "created_at": "2026-10-24T10:57:50.000Z",
+        "url": "https://x.com/Claudia_Sahm/status/2113948073671921972",
+        "text": "Furman picking AI over CEA staff deserves scrutiny. His staff went on to found the Yale Budget Lab, run Treasury economic policy and a Fed institute, serve in later admins, and publish research on trade, environment, and taxes. That's what \"20 staff\" become. No model does that.",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114121069238100424",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T22:25:16.000Z",
+      "url": "https://x.com/DariusDale42/status/2114121069238100424",
+      "text": "My friend @RaoulGMI would make the same amount of money—if not more—by NOT sharing this information with you. He’s sharing it because of this ⬇️, whether explicitly or implicitly. Me too. https://t.co/3Wna655ldK",
+      "quoted_post_id": "2113337571530899569",
+      "quoted_post": {
+        "id": "2113337571530899569",
+        "author": "RaoulGMI",
+        "created_at": "2026-10-22T18:31:55.000Z",
+        "url": "https://x.com/RaoulGMI/status/2113337571530899569",
+        "text": "The democratisation of financial intelligence has driven pretty much everything Ive done.\n\nFor years I paid Bloomberg and Refinitiv to build business cycle indicators and dashboards... then AI arrived and I thought... why not just give it to people? Let them play with it, the https://t.co/MFctLszDFT",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114119273996259634",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T22:18:08.000Z",
+      "url": "https://x.com/DariusDale42/status/2114119273996259634",
+      "text": "The list of reasons why the AI capex bubble is highly likely to precede a secular 🐻 market grows by the week. https://t.co/qWycSAg6JG",
+      "quoted_post_id": "2113109837382901905",
+      "quoted_post": {
+        "id": "2113109837382901905",
+        "author": "resetbasis",
+        "created_at": "2026-10-22T03:26:59.000Z",
+        "url": "https://x.com/resetbasis/status/2113109837382901905",
+        "text": "Dinner with an exec/friend at a large national property management company tonight. This person oversees ~150k apartments; access to an insane amount of data. \n\nCurrent multifamily market in most of the country is worse than S&L, .com bust, or the GFC. Worst they’ve seen. \n\nClass",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114115999674835185",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T22:05:07.000Z",
+      "url": "https://x.com/DariusDale42/status/2114115999674835185",
+      "text": "I haven’t had a chance to watch this yet, but I’m sharing it anyway because I’m certain that when two of the smartest people in the world sit down to talk about stuff, it’s a good idea to pay attention. Enjoy!",
+      "quoted_post_id": "2113384761209004154",
+      "quoted_post": {
+        "id": "2113384761209004154",
+        "author": "APompliano",
+        "created_at": "2026-10-22T21:39:26.000Z",
+        "url": "https://x.com/APompliano/status/2113384761209004154",
+        "text": "I sat down with @DivesTech to discuss the AI trade, what bears get wrong, what Dan saw on the ground in Korea, and why there is so much left to go in the bull market.\n\nWe also discuss the potential $TSLA and $SPCX merger, $CRWV and AI debt fears, the midterms, interest rates, and https://t.co/Cgry1giwQs",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114115059202887980",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T22:01:23.000Z",
+      "url": "https://x.com/DariusDale42/status/2114115059202887980",
+      "text": "My good friend @adamtaggart is right. FWIW, I’ve been trying to tell you guys this since last October.",
+      "quoted_post_id": "2114109636018385207",
+      "quoted_post": {
+        "id": "2114109636018385207",
+        "author": "adamtaggart",
+        "created_at": "2026-10-24T21:39:50.000Z",
+        "url": "https://x.com/adamtaggart/status/2114109636018385207",
+        "text": "I'm using AI more agentically now (meaning: I'm training it to do tasks for me across multiple applications)\n\nAnd 2 things are immediately apparent to me:\n\n1) this is so easy & valuable, it's going to change the world\n\n2) companies are going to need WAY fewer human workers (and",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114112871177314422",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-24T21:52:41.000Z",
+      "url": "https://x.com/LynAldenContact/status/2114112871177314422",
+      "text": "It has been fascinating to watch this term go from niche to normal, both within institution and sovereigns.",
+      "quoted_post_id": "2112141884688925150",
+      "quoted_post": {
+        "id": "2112141884688925150",
+        "author": "EricFine123",
+        "created_at": "2026-10-19T11:20:41.000Z",
+        "url": "https://x.com/EricFine123/status/2112141884688925150",
+        "text": "The takeaway\n\n“Fiscal dominance\" is now the dominant frame for every sovereign. We've used it since 2012. The G-10 colleagues who called it extremely unlikely in DMs now say it themselves. That's the beginning of the end of denial, not the end.",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114108495851110406",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-24T21:35:18.000Z",
+      "url": "https://x.com/RyanDetrick/status/2114108495851110406",
+      "text": "Some wild numbers last week via @DualityResearch \n\nNearly 350 stocks did better than the 0.47% drop in the S&P 500 and the average stock gained more than 1%. \n\nObviously felt much worse though, as tech/comm services lagged again. \n\nBut 😳 https://t.co/ujjK3xDbiz",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114094819698237805",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T20:40:57.000Z",
+      "url": "https://x.com/DariusDale42/status/2114094819698237805",
+      "text": "This wonderful tweet will spare many families from financial ruin.",
+      "quoted_post_id": "2113751512510013518",
+      "quoted_post": {
+        "id": "2113751512510013518",
+        "author": "Grahame_",
+        "created_at": "2026-10-23T21:56:46.000Z",
+        "url": "https://x.com/Grahame_/status/2113751512510013518",
+        "text": "@JEChalmers @Citi Our economic challenges are considerable when all politicians and unelected bureaucrats contribute to the systematic debasement of our currency and inflation, through bad policy. In this environment capitol wins over labour.\n\nPeople need to understand the financial system we",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114065989159776403",
+      "person": "Joseph Wang",
+      "handle": "josephwang",
+      "tier": 4,
+      "role": "shadow",
+      "author_id": "718702333",
+      "created_at": "2026-10-24T18:46:23.000Z",
+      "url": "https://x.com/josephwang/status/2114065989159776403",
+      "text": "Markets Weekly October 24, 2026\n\nAI cracks widen\nMiddle East heats up\nEurozone simmers\n\nhttps://t.co/XW8HaIGPJv",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://youtu.be/9EjKDcqBJhs"
+      ],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114031097881256290",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T16:27:45.000Z",
+      "url": "https://x.com/DariusDale42/status/2114031097881256290",
+      "text": "ICYMI... don't.",
+      "quoted_post_id": "2112174027238265035",
+      "quoted_post": {
+        "id": "2112174027238265035",
+        "author": "42Macro",
+        "created_at": "2026-10-19T13:28:25.000Z",
+        "url": "https://x.com/42Macro/status/2112174027238265035",
+        "text": "Every Investor Needs to Know This If They Want Their Portfolio to Survive the Next 5-10 Years Intact\n\nEnjoy these excerpts from our October 17, 2026, weekly Around the Horn webcast and our Oct-26 monthly Macro Scouting Report webcast in which we offer some of the supporting https://t.co/GyIUwJ6lGP",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114030946945282114",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T16:27:09.000Z",
+      "url": "https://x.com/DariusDale42/status/2114030946945282114",
+      "text": "The @Bloomberg Money show is a phenomenal resource that more investors should pay attention to. @tomkeene, @scarletfu, and their team have quickly catapulted themselves into a weekly must-watch for anyone who is seeking to understand the pulse of the retail investor.",
+      "quoted_post_id": "2113734280786456597",
+      "quoted_post": {
+        "id": "2113734280786456597",
+        "author": "tomkeene",
+        "created_at": "2026-10-23T20:48:18.000Z",
+        "url": "https://x.com/tomkeene/status/2113734280786456597",
+        "text": "on Bloomberg Money, we reviewed the fire hose news flow with @TheStalwart. \n\nhere, Brendan Fagan,\n\n…as Bloomberg's Brendan Fagan noted that for all the complexity around the US midterm election, gasoline prices remain the simplest expression of how households perceive the state",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114023988376817972",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T15:59:30.000Z",
+      "url": "https://x.com/DariusDale42/status/2114023988376817972",
+      "text": "https://t.co/8fNbHZPuNR",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://42macro.com/42-macro-sample-research"
+      ],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114023912417689734",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-24T15:59:12.000Z",
+      "url": "https://x.com/DariusDale42/status/2114023912417689734",
+      "text": "https://t.co/CLapchgQRh",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://42macro.com/testimonials"
+      ],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114003450619167225",
+      "person": "Joseph Wang",
+      "handle": "josephwang",
+      "tier": 4,
+      "role": "shadow",
+      "author_id": "718702333",
+      "created_at": "2026-10-24T14:37:53.000Z",
+      "url": "https://x.com/josephwang/status/2114003450619167225",
+      "text": "Wow. Commercial banks have KYC obligations and are under law enforcement, but i guess you can bypass that by having access to an account at a central bank. This takes 'off the books' transactions to a whole other level.",
+      "quoted_post_id": "2113610384800190938",
+      "quoted_post": {
+        "id": "2113610384800190938",
+        "author": "DeanObeidallah",
+        "created_at": "2026-10-23T12:35:59.000Z",
+        "url": "https://x.com/DeanObeidallah/status/2113610384800190938",
+        "text": "Netanyahu helped Kushner hide $1 billion in UAE funds at Israel's central bank, new book claims. This is from Israeli media https://t.co/hpgfNYkKdL",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2113975616919749004",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-24T12:47:17.000Z",
+      "url": "https://x.com/RyanDetrick/status/2113975616919749004",
+      "text": "Off the charts short ETF volume. \n\nNice one from @MacroCharts",
+      "quoted_post_id": "2113956320881811747",
+      "quoted_post": {
+        "id": "2113956320881811747",
+        "author": "MacroCharts",
+        "created_at": "2026-10-24T11:30:36.000Z",
+        "url": "https://x.com/MacroCharts/status/2113956320881811747",
+        "text": "A lot of people are going to be spectacularly right, or dead wrong. https://t.co/7uFhDZipP9",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2113945333336281302",
       "person": "Andy Constan",
