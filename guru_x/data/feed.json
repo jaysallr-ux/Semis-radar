@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-26T10:15:34+09:00",
+  "generated_at": "2026-10-26T21:15:40+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (70 entries)",
+    "list": "ok (75 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 103,
-    "already_known": 93,
+    "urls_found": 109,
+    "already_known": 94,
     "too_old": 0,
-    "verified_syndication": 8,
+    "verified_syndication": 13,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-23T01:37:25.000Z",
+    "list_oldest": "2026-10-23T13:58:32.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
+      "last_success_at": "2026-10-26T21:15:40+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
+      "last_success_at": "2026-10-26T21:15:40+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
+      "last_success_at": "2026-10-26T21:15:40+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-26T21:15:40+09:00",
+      "new_originals_this_run": 6,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
-      "new_originals_this_run": 6,
+      "last_success_at": "2026-10-26T21:15:40+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-26T21:15:40+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -100,8 +100,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-26T21:15:40+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
+      "last_success_at": "2026-10-26T21:15:40+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,7 +122,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
+      "last_success_at": "2026-10-26T21:15:40+09:00",
       "new_originals_this_run": 1,
       "error": null
     },
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-26T21:15:40+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-26T10:15:34+09:00",
+      "last_success_at": "2026-10-26T21:15:40+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -155,6 +155,355 @@
     "usd_estimate": 0.0
   },
   "posts": [
+    {
+      "id": "2114677167544320235",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-26T11:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2114677167544320235",
+      "text": "Rudderless Economic Policy Ahead\n\nChina’s Fifth Plenum usually details the next 5-year economic plan, but the focus on party governance this time makes it clear economic success remains subservient to power consolidation.\n\nhttps://t.co/yQfU75SJKB https://t.co/nzdDMiIwEO",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/rudderless-economic-policy-ahead"
+      ],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114673940996231426",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-26T11:02:10.000Z",
+      "url": "https://x.com/dampedspring/status/2114673940996231426",
+      "text": "$META lol.  Are you paying attention? https://t.co/CJFXIXlw58",
+      "quoted_post_id": "2114673261829316918",
+      "quoted_post": {
+        "id": "2114673261829316918",
+        "author": "financialjuice",
+        "created_at": "2026-10-26T10:59:29.000Z",
+        "url": "https://x.com/financialjuice/status/2114673261829316918",
+        "text": "Meta to offer $22.5b class A common stock via forward sales, to offer 250m series A depository shares $META",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114652743633887527",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-26T09:37:57.000Z",
+      "url": "https://x.com/dampedspring/status/2114652743633887527",
+      "text": "Wordle 1,955 6/6*\n\n⬜⬜⬜⬜🟨\n⬜🟩⬜⬜⬜\n⬜🟩🟩⬜⬜\n⬜🟩🟩⬜🟩\n⬜🟩🟩⬜🟩\n🟩🟩🟩🟩🟩\n\nI feel seen",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114562499445977176",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-26T03:39:21.000Z",
+      "url": "https://x.com/DariusDale42/status/2114562499445977176",
+      "text": "🚨 Tom Lee of @fundstrat does not think the AI capex bubble will precede a secular bear market. Darius Dale of @42Macro does. It will likely commence in 2H27 or 1H28 based on everything that we know today. Bookmark this post.",
+      "quoted_post_id": "2114193961632010744",
+      "quoted_post": {
+        "id": "2114193961632010744",
+        "author": "fundstrat",
+        "created_at": "2026-10-25T03:14:54.000Z",
+        "url": "https://x.com/fundstrat/status/2114193961632010744",
+        "text": "Too bearish",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114557748041904467",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-26T03:20:28.000Z",
+      "url": "https://x.com/DariusDale42/status/2114557748041904467",
+      "text": "The champs are looking an awful lot like the champs again. It’s amazing what a football team can accomplish when they don’t turn the ball over 3-5 times per game. 🙄",
+      "quoted_post_id": "2020701563489239520",
+      "quoted_post": {
+        "id": "2020701563489239520",
+        "author": "DariusDale42",
+        "created_at": "2026-02-09T03:29:30.000Z",
+        "url": "https://x.com/DariusDale42/status/2020701563489239520",
+        "text": "https://t.co/xgth6nMTqC",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114557041201025351",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-26T03:17:39.000Z",
+      "url": "https://x.com/DariusDale42/status/2114557041201025351",
+      "text": "Answer: By amplifying my message that our country’s formerly sound campaign finance regulations have been deliberately dismantled by many bad people to support the siphoning of income from the masses to the elites. https://t.co/cuxtjoglcZ",
+      "quoted_post_id": "2114440314006237586",
+      "quoted_post": {
+        "id": "2114440314006237586",
+        "author": "ntuckerpar",
+        "created_at": "2026-10-25T19:33:49.000Z",
+        "url": "https://x.com/ntuckerpar/status/2114440314006237586",
+        "text": "@DariusDale42 “Willful participant” means what? That we go to work every day? That we don’t know how to affect change in a system rigged to marginalize all small voices? How do we avoid being a willful participant?",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114553830297743593",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-26T03:04:54.000Z",
+      "url": "https://x.com/RyanDetrick/status/2114553830297743593",
+      "text": "😂",
+      "quoted_post_id": "2114495974601093351",
+      "quoted_post": {
+        "id": "2114495974601093351",
+        "author": "Kalshi",
+        "created_at": "2026-10-25T23:15:00.000Z",
+        "url": "https://x.com/Kalshi/status/2114495974601093351",
+        "text": "BREAKING: A new study found that paper straws are worse for the environment than plastic straws",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114551129065287829",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-26T02:54:10.000Z",
+      "url": "https://x.com/DariusDale42/status/2114551129065287829",
+      "text": "This is definitely not a harbinger of the pending Fourth Turning climax—i.e., Paradigm E. Move along. Nothing to see here…",
+      "quoted_post_id": "2114296536922529937",
+      "quoted_post": {
+        "id": "2114296536922529937",
+        "author": "foxnewspolitics",
+        "created_at": "2026-10-25T10:02:30.000Z",
+        "url": "https://x.com/foxnewspolitics/status/2114296536922529937",
+        "text": "FORTRESS: The Pentagon is preparing every major U.S. military base to survive 90 days without outside support — no civilian power grid, no global supply chains, no outside fuel or water.\n\nThe initiative, revealed in documents reviewed by Fox News Digital, envisions portable https://t.co/PFbVTlkfgH",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": true,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114550488771252351",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-26T02:51:37.000Z",
+      "url": "https://x.com/DariusDale42/status/2114550488771252351",
+      "text": "Harrison Butker going to get left at Sea-Tac.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114540400006607212",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-26T02:11:32.000Z",
+      "url": "https://x.com/LynAldenContact/status/2114540400006607212",
+      "text": "Value investors watching tonight's Brazil's election sell-off. https://t.co/cGpx10PUwu",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114534807149371458",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-26T01:49:18.000Z",
+      "url": "https://x.com/RyanDetrick/status/2114534807149371458",
+      "text": "Something has to give, as October 28th is historically the best day of the year. \n\nThis day falls on this Wednesday and that is also a Fed meeting. Under Kevin Warsh we've seen the S&P 500 fall 1.21% in June, 1.52% in July, and 0.45% in September. \n\nWhich history will repeat? https://t.co/1ow3yfDPzw",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114531657973645771",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-10-26T01:36:48.000Z",
+      "url": "https://x.com/Geo_papic/status/2114531657973645771",
+      "text": "Big losses for right leaning populists in Brazil and Serbia. Along with Orban in Hungary, that's now three big names on the right that are down for the count. Colombia's Espriella did manage to squeak through in Colombia in June, so not all is lost for the right. Bottom line: no",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114529805450244376",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-26T01:29:26.000Z",
+      "url": "https://x.com/DariusDale42/status/2114529805450244376",
+      "text": "JSN @jaxon_smith1 is so good. He serves a heaping helping of @JerryRice week after week and will retire as one of the 🐐🐐 if he stays healthy. https://t.co/G92yJtyGgT",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2114520992110305398",
       "person": "Andy Constan",
