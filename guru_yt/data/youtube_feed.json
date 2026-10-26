@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-26T10:10:29+09:00",
+  "generated_at": "2026-10-26T21:10:31+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-25T21:10:28+09:00",
+    "last_discovery_at": "2026-10-26T10:10:29+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -102,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-23T22:39:07+09:00",
+      "oldest_rss": "2026-10-23T23:21:26+09:00",
       "gap_possible": false,
       "matched": 0
     },
