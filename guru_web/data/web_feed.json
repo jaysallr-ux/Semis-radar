@@ -1,8 +1,10 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-10-26T21:05:29+09:00",
-  "data_ok": true,
-  "errors": {},
+  "generated_at": "2026-10-27T10:05:34+09:00",
+  "data_ok": false,
+  "errors": {
+    "Carson Group feed": "carson 403"
+  },
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
   "new_statement_clock": "evidence_ready_at",
   "discovery_complete": true,
@@ -14,7 +16,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
+      "items_in_window": 0,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -54,7 +56,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
+      "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -84,8 +86,8 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "official_source_ok": true,
-      "items_in_window": 4,
+      "official_source_ok": false,
+      "items_in_window": 5,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -137,14 +139,14 @@
       "error": null,
       "official_source_ok": true,
       "items_in_window": 3,
-      "scoring_items": 2,
+      "scoring_items": 1,
       "pending_items": 0
     }
   ],
   "stats": {
-    "discovered": 72,
-    "new_items": 0,
-    "decoded": 0,
+    "discovered": 70,
+    "new_items": 2,
+    "decoded": 2,
     "bodies": 0,
     "quotes_verified": 0,
     "video_candidates": 0,
@@ -162,6 +164,25 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Mike Wilson",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "Morgan Stanley's Mike Wilson outlines key catalysts for year-end rally (SPY:NYSEARCA)",
+      "outlet": "Seeking Alpha",
+      "published_at": "2026-10-26T17:24:54+00:00",
+      "discovered_at": "2026-10-27T10:05:34+09:00",
+      "article_url": "https://seekingalpha.com/news/4657437-morgan-stanleys-mike-wilson-outlines-key-catalysts-for-market-low",
+      "canonical_url": "https://seekingalpha.com/news/4657437-morgan-stanleys-mike-wilson-outlines-key-catalysts-for-market-low",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Ryan Detrick",
       "tier": 2,
@@ -238,6 +259,25 @@
       "gemini_status": "no_direct_quotes",
       "gemini_error_count": 0,
       "yt_searched": true
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Ryan Detrick: Goldman Sachs Prime Book net selling in global equities nears late March levels",
+      "outlet": "Traders Union",
+      "published_at": "2026-10-23T16:35:16+00:00",
+      "discovered_at": "2026-10-27T10:05:34+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/3947659-goldman-sachs-net-selling/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/3947659-goldman-sachs-net-selling/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
     },
     {
       "person": "Jim Bianco",
@@ -451,71 +491,6 @@
       "gemini_status": "no_direct_quotes",
       "gemini_error_count": 0,
       "yt_searched": true
-    },
-    {
-      "person": "Andy Constan",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Gold promotion called misleading for representing only a small part of Ray's wealth, Andy Constan argues",
-      "outlet": "Traders Union",
-      "published_at": "2026-10-20T00:20:15+00:00",
-      "discovered_at": "2026-10-23T17:22:15+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/3883456-gold-allocation-misrepresentation/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/3883456-gold-allocation-misrepresentation/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "tasty Crumbs with Cem Karsan",
-      "outlet": "tastylive",
-      "published_at": "2026-10-19T21:08:04+00:00",
-      "discovered_at": "2026-10-23T17:22:15+09:00",
-      "article_url": "https://www.tastylive.com/shows/tasty-crumbs-with-cem-karsan/episodes/tasty-crumbs-with-cem-karsan-10-19-2026",
-      "canonical_url": "https://www.tastylive.com/shows/tasty-crumbs-with-cem-karsan/episodes/tasty-crumbs-with-cem-karsan-10-19-2026",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Mike Wilson",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "news_article",
-      "title": "Morgan Stanley’s Mike Wilson Says Get Ready To Buy. The Stock Market’s Correction Is Almost Over.",
-      "outlet": "The Wealth Advisor",
-      "published_at": "2026-10-19T13:24:19+00:00",
-      "discovered_at": "2026-10-23T17:22:15+09:00",
-      "article_url": "https://www.thewealthadvisor.com/article/morgan-stanleys-mike-wilson-says-get-ready-buy-stock-markets-correction-almost-over",
-      "canonical_url": "https://www.thewealthadvisor.com/article/morgan-stanleys-mike-wilson-says-get-ready-buy-stock-markets-correction-almost-over",
-      "body_fetch_status": 200,
-      "direct_quotes": [
-        {
-          "text": "We advise investors to be ready for either a very rapid reconciliation or a slower bleed into November because in our view, that will be the time to add risk rather than shun it",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "Wilson wrote in a Monday client note"
-        }
-      ],
-      "direction_hint": "bullish",
-      "evidence_grade": "1차-인용",
-      "evidence_ready_at": "2026-10-23T17:22:15+09:00",
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
     }
   ]
 }
