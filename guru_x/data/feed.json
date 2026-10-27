@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-27T10:15:29+09:00",
+  "generated_at": "2026-10-27T21:15:32+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (79 entries)",
+    "list": "ok (80 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 99,
-    "already_known": 81,
+    "urls_found": 100,
+    "already_known": 93,
     "too_old": 0,
-    "verified_syndication": 16,
+    "verified_syndication": 5,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-24T22:05:07.000Z",
+    "list_oldest": "2026-10-25T00:51:13.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
+      "last_success_at": "2026-10-27T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-10-27T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -56,8 +56,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-27T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-10-27T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-10-27T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
-      "new_originals_this_run": 4,
+      "last_success_at": "2026-10-27T21:15:32+09:00",
+      "new_originals_this_run": 3,
       "error": null
     },
     {
@@ -100,8 +100,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-10-27T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
+      "last_success_at": "2026-10-27T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-27T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-27T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-27T10:15:29+09:00",
+      "last_success_at": "2026-10-27T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -155,6 +155,139 @@
     "usd_estimate": 0.0
   },
   "posts": [
+    {
+      "id": "2115041202114297929",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-27T11:21:32.000Z",
+      "url": "https://x.com/dampedspring/status/2115041202114297929",
+      "text": "I will gladly pay you Tuesday for a hamburger today",
+      "quoted_post_id": "2115039556596605227",
+      "quoted_post": {
+        "id": "2115039556596605227",
+        "author": "BobEUnlimited",
+        "created_at": "2026-10-27T11:15:00.000Z",
+        "url": "https://x.com/BobEUnlimited/status/2115039556596605227",
+        "text": "That Giant Sucking Noise\n\nThe latest news of AI-related equity & debt financing highlights just how much asset supply is required to finance surging investment and the challenging environment for asset prices that comes with it.\n\nhttps://t.co/rkhS8LgMxQ https://t.co/VYZujvswFH",
+        "available": true,
+        "has_media": true
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2115039973942378907",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-27T11:16:39.000Z",
+      "url": "https://x.com/dampedspring/status/2115039973942378907",
+      "text": "Three solid services imho if your interested",
+      "quoted_post_id": "1995851306859180460",
+      "quoted_post": {
+        "id": "1995851306859180460",
+        "author": "dampedspring",
+        "created_at": "2025-12-02T13:43:27.000Z",
+        "url": "https://x.com/dampedspring/status/1995851306859180460",
+        "text": "https://t.co/Jbx6VGncmd offers three products that our clients value.  Happy to discuss which product is best for you. Discounts available for multiple product packages. \n\nDS Read/Alpha. Our flagship macro economic research and trading strategy offering.  We are excited to be",
+        "available": true,
+        "has_media": false
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2115039556596605227",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-27T11:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2115039556596605227",
+      "text": "That Giant Sucking Noise\n\nThe latest news of AI-related equity & debt financing highlights just how much asset supply is required to finance surging investment and the challenging environment for asset prices that comes with it.\n\nhttps://t.co/rkhS8LgMxQ https://t.co/VYZujvswFH",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/that-giant-sucking-noise"
+      ],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2115015373254971827",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-27T09:38:54.000Z",
+      "url": "https://x.com/dampedspring/status/2115015373254971827",
+      "text": "Wordle 1,956 4/6*\n\n⬜⬜⬜⬜⬜\n⬜🟨⬜🟨⬜\n🟩⬜🟨⬜⬜\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2114928594854023460",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-27T03:54:05.000Z",
+      "url": "https://x.com/RyanDetrick/status/2114928594854023460",
+      "text": "Nice chart from @scottcharts in his report today that shows software could continue to outperform semiconductors. https://t.co/C5LXnkgtt5",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 3,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2114882009579339998",
       "person": "Lyn Alden",
