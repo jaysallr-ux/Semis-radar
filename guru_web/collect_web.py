@@ -290,10 +290,31 @@ def verify_quotes(person: dict, proposals: list[dict], text: str, kind: str) -> 
 
 # ---------- official sources ----------
 
+CARSON_FEEDS = [
+    "https://www.carsongroup.com/feed",
+    "https://www.carsongroup.com/feed/",
+    "https://www.carsongroup.com/insights/blog/feed/",
+    "https://www.carsongroup.com/author/ryan-detrick/feed/",
+    "https://carsongroup.com/feed/",
+]
+
+
 def carson_detrick(http: Http, since: datetime) -> list[dict]:
-    status, text, _ = http.get("https://www.carsongroup.com/feed")
-    if status != 200:
-        raise RuntimeError(f"carson {status}")
+    """Carson Group RSS. The main feed URL started answering 403 to Actions on 10/26; try the other public
+    feed URLs WordPress serves before giving up. Records every attempt's status in the error."""
+    tried, text = [], None
+    for url in CARSON_FEEDS:
+        try:
+            status, body, _ = http.get(url, headers={"Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.8"})
+        except Exception as e:
+            tried.append(f"{url.split('carsongroup.com')[-1] or '/'}:{type(e).__name__}")
+            continue
+        tried.append(f"{url.split('carsongroup.com')[-1] or '/'}:{status}")
+        if status == 200 and "<rss" in body[:500].lower():
+            text = body
+            break
+    if text is None:
+        raise RuntimeError("carson " + " ".join(tried))
     root = ET.fromstring(text.encode())
     out = []
     for it in root.findall(".//item"):
