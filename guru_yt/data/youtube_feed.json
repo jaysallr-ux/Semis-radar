@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-28T11:28:17+09:00",
+  "generated_at": "2026-10-28T12:31:33+09:00",
   "data_ok": true,
-  "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. stance is Gemini's reading of the person's own words, not a quote.",
+  "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-28T11:27:31+09:00",
+    "last_discovery_at": "2026-10-28T11:28:17+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -151,8 +151,8 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 2,
-    "gemini_est_video_hours_today": 0.193,
+    "gemini_calls_today": 4,
+    "gemini_est_video_hours_today": 0.388,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "ok"
   },
@@ -167,8 +167,8 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 2,
+    "ready": 2,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
@@ -205,85 +205,117 @@
       "appearance_excerpt": "[0:00] Happy Tuesday out there, team 42. It's your skipper here at Darius Dale to present our macro minute for Tuesday, October 27th, 2026. As always, we'll start with the executive summary from today's leadoff morning note. So, let's dive right in. What do we learn ",
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "pending",
+      "gemini_status": "ready",
       "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-10-28T10:10:28+09:00",
+      "gemini_at": "2026-10-28T12:31:33+09:00",
       "gemini_mode": "video",
       "person_speaks": true,
-      "gemini_evidence": "Darius Dale appears on camera and presents the 42 Macro morning update throughout the video.",
+      "gemini_evidence": "Darius Dale presents the 42 Macro Minute video, discussing macro market regimes, tech earnings, AI capex, redistributive policies, and equity market risks.",
       "stance": {
         "us_equities": "bearish",
-        "summary": "Darius Dale warns of a high-probability secular bear market following the AI CapEx bubble, driven by political shift towards redistributive policies, wealth taxes, and macroeconomic headwinds.",
+        "summary": "Darius Dale views the market as operating under a durable risk-off inflation regime and considers a secular bear market on the other side of the AI capex bubble to be a very high-probability outcome.",
         "invalidation": "",
         "targets": [],
-        "timeframe": ""
+        "timeframe": "secular"
       },
       "quotes": [
         {
-          "t": "0:15",
-          "t_sec": 15,
+          "t": "00:13",
+          "t_sec": 13,
           "speaker": "Darius Dale",
-          "topic": "macro",
+          "topic": "market regime",
           "text": "The reaction of President Lula's reelection in Brazilian financial markets supported the durability and severity of the current risk off inflation market regime.",
-          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=15s",
+          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=13s",
           "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.8,
-          "caption_sec": 0,
-          "caption_checked": true
+          "grade": "1차-B"
         },
         {
-          "t": "0:36",
-          "t_sec": 36,
+          "t": "02:11",
+          "t_sec": 131,
           "speaker": "Darius Dale",
-          "topic": "economy",
-          "text": "In fact, we view any failure of tax the rich efforts next week as increasing the odds of a tidal wave of significant redistributive policies in 2028 because voters will finally realize that their divided and conquered votes don't matter anymore to the decades of corrupt campaign finance deregulation.",
-          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=36s",
+          "topic": "tech earnings and AI spending",
+          "text": "Although Microsoft earnings tomorrow will test whether AI spending continues to pay off in the form of incrementally booming revenue and earnings growth, it probably will, but we're not so sure backward looking results and make believe capex guidance will matter until markets see the whites of the eyes of any politically induced slowdown in data center construction",
+          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=131s",
           "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.0,
-          "caption_sec": 31,
-          "caption_checked": true
+          "grade": "1차-B"
         },
         {
-          "t": "1:34",
-          "t_sec": 94,
+          "t": "03:04",
+          "t_sec": 184,
           "speaker": "Darius Dale",
-          "topic": "economy",
-          "text": "The September core capital goods new orders, durable goods new orders data supported our resilient US economy and Paradigm C.A.K. run-it-hot themes.",
-          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=94s",
+          "topic": "AI bubble",
+          "text": "All told, we view Anthropic's and OpenAI's, the world's two largest closed source LLM providers, as the most likely poster children of the eventual AI burst.",
+          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=184s",
           "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 92.4,
-          "caption_sec": 92,
-          "caption_checked": true
+          "grade": "1차-B"
         },
         {
-          "t": "7:22",
+          "t": "07:22",
           "t_sec": 442,
           "speaker": "Darius Dale",
-          "topic": "us_equities",
-          "text": "And so if you see more and more and more of this stuff, then you're going to ultimately have a real issue from a secular bear market standpoint, which is in our thing, a very high probability outcome, anyway, on the other side of this AI CapEx bubble...",
+          "topic": "secular bear market",
+          "text": "And so if you see more and more and more of this stuff, then you're going to ultimately have a real issue from a secular bear market standpoint, which is in our thing a very high probability outcome anyway on the other side of this AI capex bubble.",
           "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=442s",
           "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.6,
-          "caption_sec": 430,
-          "caption_checked": true
+          "grade": "1차-B"
         }
       ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
       "evidence_ready_at": "2026-10-28T10:10:28+09:00",
-      "evidence_grade": "1차-A",
+      "evidence_grade": "1차-B",
       "appearance_source": "gemini",
       "transcript_retained": false,
-      "gemini_prompt_tokens": 15280,
+      "gemini_prompt_tokens": 15406,
       "quotes_grade_count": {
-        "1차-A": 4,
-        "1차-B": 0,
+        "1차-A": 0,
+        "1차-B": 4,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "00:13",
+          "point": "Market reactions to political events in emerging markets support the ongoing durability and severity of a risk-off inflation regime.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "00:36",
+          "point": "Failure of near-term wealth tax ballot initiatives will only increase the likelihood of massive redistributive tax policies by 2028 due to rising populist sentiment.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "02:11",
+          "point": "Backward-looking tech earnings and capex guidance will matter less to markets as investors focus on potential politically induced slowdowns in data center construction.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "03:04",
+          "point": "Leading closed-source AI LLM providers are the most vulnerable poster children for an eventual burst of the AI spending bubble.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "03:14",
+          "point": "China's lower-cost compute and abundant open-source LLMs make it highly likely to win the AI race unless governments intervene.",
+          "condition": "absent government intervention",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "07:02",
+          "point": "Enactment of state wealth taxes could force high-net-worth individuals to liquidate stocks or bonds to cover tax bills, draining market liquidity and triggering a secular bear market.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": "long_term"
+        }
+      ]
     },
     {
       "video_id": "A8yCVOLGrC0",
@@ -311,27 +343,59 @@
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": "observer: captions are reserved for the core 11",
-      "gemini_status": "pending",
+      "gemini_status": "ready",
       "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-10-28T11:27:31+09:00",
+      "gemini_at": "2026-10-28T12:31:33+09:00",
       "gemini_mode": "video",
       "person_speaks": true,
-      "gemini_evidence": "Mike Wilson appears live on set at Bloomberg Surveillance, discussing US equity markets, Fed liquidity, midterms, and market clearing events.",
+      "gemini_evidence": "Mike Wilson appears on set at Bloomberg Surveillance and speaks extensively about market clearing events, AI capex, liquidity constraints, and Fed policy.",
       "stance": {
         "us_equities": "bullish",
-        "summary": "Mike Wilson sees ongoing market chop and clearing events as attractive opportunities to add risk and buy US equities, expecting positive returns over a 6 to 12-month horizon as the market looks ahead to earnings growth and potential central bank liquidity support.",
+        "summary": "Mike Wilson expects current market chop and clearing events—such as midterm elections, AI capex digestion, and liquidity constraints—to provide attractive buying opportunities ahead of another leg higher in earnings growth.",
         "invalidation": "",
-        "targets": [],
+        "targets": [
+          "8,000"
+        ],
         "timeframe": "6 to 12 months"
       },
       "quotes": [
         {
-          "t": "00:46",
-          "t_sec": 46,
+          "t": "00:45",
+          "t_sec": 45,
           "speaker": "Mike Wilson",
-          "topic": "US equities / midterm elections",
+          "topic": "Midterm Elections",
           "text": "The obvious ones are the midterm elections, which is always a clearing event. I mean, historically, it's always a good time to be adding risk into that event.",
-          "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0&t=46s",
+          "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0&t=45s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "00:54",
+          "t_sec": 54,
+          "speaker": "Mike Wilson",
+          "topic": "US Equities",
+          "text": "Over the next 6 to 12 months, 100% certainty, going back to 1952, you make positive returns, and usually double digits.",
+          "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0&t=54s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "01:08",
+          "t_sec": 68,
+          "speaker": "Mike Wilson",
+          "topic": "AI Capex",
+          "text": "I think is around this idea around AI capex and the scarcity of capital.",
+          "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0&t=68s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "01:46",
+          "t_sec": 106,
+          "speaker": "Mike Wilson",
+          "topic": "Liquidity",
+          "text": "And then the one I think that's not as appreciated is the liquidity constraint.",
+          "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0&t=106s",
           "speaker_verified": true,
           "grade": "1차-B"
         },
@@ -339,7 +403,7 @@
           "t": "02:24",
           "t_sec": 144,
           "speaker": "Mike Wilson",
-          "topic": "Fed / liquidity",
+          "topic": "Fed Policy",
           "text": "So my general take is the markets are going to press the Fed and other central banks to probably add liquidity at some point between now and year end.",
           "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0&t=144s",
           "speaker_verified": true,
@@ -349,19 +413,19 @@
           "t": "02:33",
           "t_sec": 153,
           "speaker": "Mike Wilson",
-          "topic": "US equities / market direction",
-          "text": "No, I'm looking for more chop. And I'm looking for this to resolve itself. We've been correcting.",
+          "topic": "Market Volatility",
+          "text": "No, I'm looking for more chop, and I'm looking for this to resolve itself.",
           "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0&t=153s",
           "speaker_verified": true,
           "grade": "1차-B"
         },
         {
-          "t": "05:35",
-          "t_sec": 335,
+          "t": "04:24",
+          "t_sec": 264,
           "speaker": "Mike Wilson",
-          "topic": "US equities / buying opportunities",
-          "text": "What I will tell you is those are always buying opportunities.",
-          "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0&t=335s",
+          "topic": "Fed Policy",
+          "text": "So if the Fed is proactive this week and they kind of give us some dovish language or indications about maybe increasing the RMP again, right, adding more liquidity.",
+          "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0&t=264s",
           "speaker_verified": true,
           "grade": "1차-B"
         }
@@ -372,12 +436,49 @@
       "evidence_grade": "1차-B",
       "appearance_source": "gemini",
       "transcript_retained": false,
-      "gemini_prompt_tokens": 11051,
+      "gemini_prompt_tokens": 11177,
       "quotes_grade_count": {
         "1차-A": 0,
-        "1차-B": 4,
+        "1차-B": 7,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "00:45",
+          "point": "Midterm elections serve as a major clearing event where historical data shows 100% certainty of positive returns over the subsequent 6 to 12 months.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "6 to 12 months"
+        },
+        {
+          "t": "01:08",
+          "point": "Companies are managing AI capex demands through balanced equity and debt issuance, a digestion process that is nearing its final stages.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "next month"
+        },
+        {
+          "t": "01:46",
+          "point": "Financial conditions are as tight as in 2018, which will likely force markets to press central banks into providing liquidity before year-end.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "by year-end"
+        },
+        {
+          "t": "02:33",
+          "point": "The market is undergoing a quality rotation and sideways chop rather than requiring a 20% broad index correction.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "near term"
+        },
+        {
+          "t": "04:24",
+          "point": "If the Fed signals dovish stance or liquidity expansion proactively, investors should aggressively add risk to equities.",
+          "condition": "If the Fed provides dovish rhetoric or expands balance sheet liquidity proactively",
+          "conviction": "hypothetical",
+          "horizon": "short term"
+        }
+      ]
     },
     {
       "video_id": "LoSjbZRVRyE",
