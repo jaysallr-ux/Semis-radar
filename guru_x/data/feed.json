@@ -1,25 +1,25 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-28T11:16:08+09:00",
+  "generated_at": "2026-10-28T11:18:47+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (76 entries)",
+    "list": "ok (75 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 158,
-    "already_known": 38,
-    "too_old": 9,
-    "verified_syndication": 109,
+    "urls_found": 106,
+    "already_known": 94,
+    "too_old": 10,
+    "verified_syndication": 0,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-26T11:12:58.000Z",
-    "refreshed": 110
+    "list_oldest": "2026-10-26T13:16:02.000Z",
+    "refreshed": 0
   },
   "discovery_complete": true,
   "manual_ids_updated_at": "2026-10-22T07:25:55+00:00",
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,7 +67,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -78,7 +78,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -89,7 +89,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,7 +122,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-28T11:18:47+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:16:08+09:00",
+      "last_success_at": "2026-10-28T11:18:47+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -156,10 +156,10 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 25,
-    "pending": 23,
+    "described": 15,
+    "pending": 8,
     "errors": 0,
-    "calls_today": 25,
+    "calls_today": 40,
     "daily_cap": 40,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
@@ -200,7 +200,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2114834419194179585/img/ehzmrAzZjuWWJPLz.jpg",
+            "image_text": "",
+            "what_it_shows": "This screenshot from an animated series shows a bald young character with an arrow tattoo on his head and a winged lemur perched on his shoulder while holding a staff.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2115250780152135972",
@@ -861,7 +877,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVqB7wPXoAAiB3r.png",
+            "image_text": "Daily National Average Gasoline Prices Regular Unleaded As Surveyed by the AAA Motor Club $5.00 Black = 2026 Orange = 2022 Blue = 2008 Gray = All Other Years Back to 2004 $4.50 Oct-26 2026 $4.266 $4.00 $3.50 $3.00 $2.50 $2.00 $1.50 Jan-01 Feb-22 Apr-14 Jun-05 Jul-27 Sep-17 Nov-08 Dec-30 Day of the Year Data Source: Bloomberg, American Automobile Association (AAA) © 2026 Bianco Research, L.L.C.",
+            "what_it_shows": "This line chart displays daily national average regular unleaded gasoline prices by day of the year from 2004 through 2026, with 2026 highlighted in black, 2022 in orange, and 2008 in blue. The 2026 series shows prices ending at $4.266 on October 26.",
+            "chart_credit": "Bianco Research, L.L.C."
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2115142764782305477",
@@ -1063,7 +1095,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVlIDm2WUAIU7uS.png",
+            "image_text": "-1Jan2026- -23Oct2026- 1 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1 0 -0.1 2026 Jan Feb Mar Apr May Jun Jul Aug Sep Oct \"ai winners\" vs \"ai at risk\" has given back 100% of 2026 ytd gain GS AI vs AI at risk (1y normalized return) source :: gs global banking and markets / as of 15oct26 / past performance not indicative future results",
+            "what_it_shows": "This line chart shows the performance of GS AI vs AI at risk (1y normalized return) from January 2026 to October 2026. The series rises through the first half of the year before declining sharply toward zero by mid-October.",
+            "chart_credit": "gs global banking and markets"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2115096278216609973",
@@ -1900,7 +1948,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVklcpMXoAAOdJM.jpg",
+            "image_text": "IGV iShares Expanded Tech-Software Sector ETF (unadjusted) NYSE StockCharts.com 23-Oct-2026 Open 105.50 High 110.76 Low 104.96 Close 110.59 Volume 34.5M Chg +6.25 (+5.99%) -On Balance Vol 146 _IGV (Weekly) 110.59 115 110 105 100 95 90 85 80 75 70 65 60 55 50 23 Apr Jul Oct 24 Apr Jul Oct 25 Apr Jul Oct 26 Apr Jul Oct CAPPTHESIS",
+            "what_it_shows": "This is a weekly price chart of the iShares Expanded Tech-Software Sector ETF (IGV) spanning from 2023 through October 2026. The chart features technical analysis annotations displaying an inverse head and shoulders pattern with a measured move target of 146.",
+            "chart_credit": "StockCharts.com / CAPPTHESIS"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114759035169702014",
@@ -1960,7 +2024,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVj9qUvXAAENYGO.jpg",
+            "image_text": "HOW DO YOU DO, FELLOW KIDS WHEN ANDY BUYS 1% OF HIS AUM IN BTC AT 69,420",
+            "what_it_shows": "This image is a meme featuring a selfie of a man holding a skateboard, mimicking the Steve Buscemi 'How do you do, fellow kids' meme format.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114716961359704423",
@@ -1998,7 +2078,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HU_5QtpX0AA0ytM.jpg",
+            "image_text": "I'll be on with Janet Alvarez today at 10am ET! Listen on SiriusXM Channel 132 Janet Alvarez & Ryan Detrick THE BUSINESS BRIEFING",
+            "what_it_shows": "An announcement graphic featuring portraits of Janet Alvarez and Ryan Detrick with text promoting an appearance on SiriusXM Channel 132 at 10am ET.",
+            "chart_credit": "The Business Briefing"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114716718261998047",
@@ -2081,7 +2177,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVj2sKdXsAA3-uN.jpg",
+            "image_text": "We may require additional capital to meet our substantial ongoing obligations and support our business growth, and our ability to generate sufficient revenue and secure additional capital on acceptable terms is critical to our continued operations and competitive position. Our business model requires substantial and increasing capital to support our ability to remain competitive and to stay at the",
+            "what_it_shows": "This image shows an excerpt from a corporate filing discussing capital requirements, financing arrangements with CSPs, and risks related to funding AI infrastructure growth.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114710114124943415",
@@ -2166,7 +2278,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVjzYaiXEAAeNKy.jpg",
+            "image_text": "Who's next",
+            "what_it_shows": "This is the album cover for The Who's 'Who's Next', showing four men standing near a large concrete monolith in a barren landscape against a cloudy sky.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114677167544320235",
@@ -2235,7 +2363,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVjUvf-WcAA6p4M.jpg",
+            "image_text": "Who's next",
+            "what_it_shows": "This is the album cover for The Who's Who's Next, featuring the four band members standing next to a large concrete monolith in a landscape. The title Who's next appears at the top center.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114652743633887527",
@@ -2587,7 +2731,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVhV_1EWwAAQC8a.png",
+            "image_text": "The Best Day of The Year Is October 28th\nS&P 500 Average Performance Per Day (1950 - 2025)\nJanuary February March April May June July August September October November December\n(Columns 1 to 31 with percentage values for each calendar day)\nSource: Carson Investment Research, FactSet 10/25/2026\n@ryandetrick\nCARSON",
+            "what_it_shows": "This heatmap table shows the S&P 500 average daily performance from 1950 to 2025 across every calendar day of the year. October 28 is highlighted with a black border showing an average performance of 0.50%.",
+            "chart_credit": "Carson Investment Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114531657973645771",
@@ -2693,7 +2853,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/tweet_video_thumb/HVhJoaoWsAAQ7MN.jpg",
+            "image_text": "\"I will gladly pay you Tuesday for a hamburger today,\"",
+            "what_it_shows": "This image shows a black-and-white cartoon scene featuring the character J. Wellington Wimpy holding a hamburger, with a stack of hamburgers and a sign reading HAMBURGER visible in the background.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114372754455560636",
@@ -2722,7 +2898,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVfCz4XWIAAtxK-.jpg",
+            "image_text": "CLASSIC HDCP Blind Lineup Skip Unskip Add bowler Remove bowler Name Hand",
+            "what_it_shows": "A group of ten young people holding bowling balls and posing together inside a bowling alley.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114367607310590378",
@@ -2811,7 +3003,31 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVe5pNmWwAA601c.jpg",
+            "image_text": "S&P 500 Percentage of S&P 500 Stocks At 20-Day Highs 2008 2010 2012 2014 2016 2018 2020 2022 2024 2026",
+            "what_it_shows": "The top panel shows the S&P 500 index price from approximately 2006 to 2026, and the bottom panel shows the percentage of S&P 500 stocks making 20-day highs over the same period, with several highlighted shaded regions.",
+            "chart_credit": "unknown"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVe5pctW0AA5Jh9.jpg",
+            "image_text": "Why The 20-Day Breadth Thrust is Important If you get above 55% you have 0 negative returns going forward 12-months Close enough is not good enough Percentage of S&P 500 Stocks Making 20-Day High 12-Month Forward Return",
+            "what_it_shows": "A scatter plot displaying the percentage of S&P 500 stocks making 20-day highs against 12-month forward returns, with a horizontal reference line at 55%.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114360593721266327",
@@ -2840,7 +3056,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVe3wRmW0AAGWh-.jpg",
+            "image_text": "NAME SYM LAST CHG (1W) Energy XLE 69.33 +1.09 Health Care XLV 179.28 +2.57 Real Estate XLRE 42.57 +0.41 Utilities XLU 42.56 +0.35 Materials XLB 51.31 +0.39 Consumer Staples XLP 88.26 +0.64 Financial XLF 55.90 +0.38 Consumer Discretionary XLY 113.10 +0.64 Technology XLK 183.23 -0.24 S&P 500 SPY 759.97 -3.28 Industrial XLI 164.62 -3.14 Communication Services XLC 105.51 -4.81",
+            "what_it_shows": "A table showing market sectors with their symbols, last prices, and 1-week changes.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114355880359518530",
@@ -2869,7 +3101,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-28T02:18:47+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVezd9CWQAAw4A_.jpg",
+            "image_text": "S&P FLOWS INTO MONEY MARKET & CASH-LIKE ETFs (3-Month Rolling) 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 macrocharts.com",
+            "what_it_shows": "The chart shows the S&P index alongside a 3-month rolling measure of flows into money market and cash-like ETFs from 2015 to 2026, with the latest surge highlighted by a red box.",
+            "chart_credit": "macrocharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2114337571056873728",
