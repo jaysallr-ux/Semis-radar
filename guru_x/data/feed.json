@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-28T11:18:47+09:00",
+  "generated_at": "2026-10-28T21:15:32+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (75 entries)",
+    "list": "ok (66 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 106,
-    "already_known": 94,
+    "urls_found": 101,
+    "already_known": 84,
     "too_old": 10,
-    "verified_syndication": 0,
+    "verified_syndication": 5,
     "verified_oembed": 0,
     "rejected_author": 1,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-26T13:16:02.000Z",
+    "list_oldest": "2026-10-26T20:04:52.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
+      "last_success_at": "2026-10-28T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
+      "last_success_at": "2026-10-28T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
+      "last_success_at": "2026-10-28T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,7 +67,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
+      "last_success_at": "2026-10-28T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-28T21:15:32+09:00",
+      "new_originals_this_run": 3,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-28T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
+      "last_success_at": "2026-10-28T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
+      "last_success_at": "2026-10-28T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-28T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
+      "last_success_at": "2026-10-28T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-28T11:18:47+09:00",
+      "last_success_at": "2026-10-28T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -156,7 +156,7 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 15,
+    "described": 0,
     "pending": 8,
     "errors": 0,
     "calls_today": 40,
@@ -164,6 +164,149 @@
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2115415539245871427",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-28T12:09:01.000Z",
+      "url": "https://x.com/RyanDetrick/status/2115415539245871427",
+      "text": "I'm set to join Premarket Prep in about 25 minutes at 8:35am ET! You can watch it all 👇👇👇 \n\nAlways fun to chat with my friends @Spus and @TripleDTrader 🎙️",
+      "quoted_post_id": "2115413311449948626",
+      "quoted_post": {
+        "id": "2115413311449948626",
+        "author": "Spus",
+        "created_at": "2026-10-28T12:00:10.000Z",
+        "url": "https://x.com/Spus/status/2115413311449948626",
+        "text": "Unprecedented Divergence | Blu Putnam, Chief Economist | Oct 28, 2026 https://t.co/LfxAxm8XvW",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2115401943397044498",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-28T11:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2115401943397044498",
+      "text": "The Glacial Hiking Cycle\n\nWhile most developed economies face headline inflation of 3-4% these days, central bankers are taking their sweet time to respond, suggesting a far different reaction function than in the past. h/t @IFM_Economist \n\nhttps://t.co/XPQaPLx9Ft https://t.co/hsSsbafIpK",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/the-glacial-hiking-cycle"
+      ],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HVtjs0JWcAAKY6J.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2115399562739527778",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-28T11:05:32.000Z",
+      "url": "https://x.com/dampedspring/status/2115399562739527778",
+      "text": "Wordle 1,957 5/6*\n\n🟨⬜⬜🟨⬜\n🟨⬜⬜🟩🟩\n⬜🟨🟨🟩🟩\n⬜🟩🟩🟩🟩\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2115266794596229550",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-28T02:17:58.000Z",
+      "url": "https://x.com/RyanDetrick/status/2115266794596229550",
+      "text": "@LibbyCantrill @PIMCO @sonusvarghese 📺 \n\nhttps://t.co/2QF6MPqwlU",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://youtu.be/G6M56ukDLs8?is=5zcIKVdYaG3X98zx"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": true,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2115266756369404028",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-28T02:17:49.000Z",
+      "url": "https://x.com/RyanDetrick/status/2115266756369404028",
+      "text": "Could Texas really flip? @LibbyCantrill of @PIMCO weighs in https://t.co/UTvdeBuT1z",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "video_frame",
+          "url": "https://pbs.twimg.com/amplify_video_thumb/2115266590929293313/img/T_LTyYGCyp7kJHk7.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2115263390025429195",
       "person": "Lyn Alden",
@@ -6411,61 +6554,6 @@
       "created_at": "2026-10-21T12:30:42.000Z",
       "url": "https://x.com/dampedspring/status/2112884280892527073",
       "text": "Trump = Grace Penn\n\nVance not = Hal\nRubio not = Miguel\nWiles not = Billie\nStephens not = Kate\n\nDiplomat season 4 ending is a pipe dream but we could wish\n\nBiden = Grace Penn too and his squad was criminally negligent as well.",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed",
-        "manual_browser"
-      ]
-    },
-    {
-      "id": "2112865228962578452",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-10-21T11:15:00.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2112865228962578452",
-      "text": "Higher For Longer Oil Prices\n\nNear-term oil prices are pushing back to Iran war highs and markets are increasingly expecting elevated prices through next year, suggesting little relief from central bank hiking cycles ahead.\n\nhttps://t.co/b3mTiSc1H4 https://t.co/QoxuwJEiOe",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://bobeunlimited.substack.com/p/higher-for-longer-oil-prices"
-      ],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVJgt14X0AA1GED.png"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed",
-        "manual_browser"
-      ]
-    },
-    {
-      "id": "2112843346804633612",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "author_id": "1546222940",
-      "created_at": "2026-10-21T09:48:03.000Z",
-      "url": "https://x.com/dampedspring/status/2112843346804633612",
-      "text": "Wordle 1,950 3/6*\n\n⬜🟨⬜⬜🟨\n⬜⬜🟨⬜🟨\n🟩🟩🟩🟩🟩",
       "quoted_post_id": null,
       "quoted_post": null,
       "links": [],
