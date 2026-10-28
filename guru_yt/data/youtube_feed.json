@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-28T12:33:18+09:00",
+  "generated_at": "2026-10-28T12:40:03+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-28T12:31:33+09:00",
+    "last_discovery_at": "2026-10-28T12:33:18+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -138,6 +138,17 @@
       "oldest_rss": "2026-10-15T05:00:34+09:00",
       "gap_possible": false,
       "matched": 3
+    },
+    {
+      "label": "Joseph Wang",
+      "channel_id": "UCsJxlgjWIOcuEbOJZ591V3Q",
+      "resolved_by": "seed:9EjKDcqBJhs",
+      "rss_ok": true,
+      "rss_count": 15,
+      "list_source": "data_api",
+      "oldest_rss": "2026-08-09T02:15:52+09:00",
+      "gap_possible": false,
+      "matched": 1
     }
   ],
   "quota": {
@@ -162,7 +173,7 @@
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
-    "expired": 0,
+    "expired": 1,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
@@ -870,6 +881,52 @@
       "gemini_prompt_tokens": 93396,
       "quotes_grade_count": {
         "1차-A": 7,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "9EjKDcqBJhs",
+      "url": "https://www.youtube.com/watch?v=9EjKDcqBJhs",
+      "channel": "Joseph Wang",
+      "channel_id": "UCsJxlgjWIOcuEbOJZ591V3Q",
+      "channel_mode": "dedicated",
+      "person": "Joseph Wang",
+      "tier": 4,
+      "role": "shadow",
+      "match": "dedicated_channel",
+      "title": "Markets Weekly October 24, 2026",
+      "description": "#federalreserve #marketsanalysis\n00:00 - Intro \n01:32 - AI cracks widen\n06:30 - Middle East Heating Up\n13:41 - Eurozone trouble\n\nFor macro courses:\nwww.centralbanking101.com\n\nMy best seller on monetary policy:\nhttps://www.amazon.com/dp/0999136771",
+      "published_at": "2026-10-24T17:06:13Z",
+      "first_seen_at": "2026-10-28T12:40:03+09:00",
+      "is_short": null,
+      "transcript_status": "skipped_old",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": true,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": "dedicated_channel",
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
