@@ -414,6 +414,10 @@ GEMINI_SCHEMA = {
             "targets": {"type": "ARRAY", "items": {"type": "STRING"}},
             "timeframe": {"type": "STRING"},
             "invalidation": {"type": "STRING"}}, "required": ["us_equities", "summary"]},
+        "key_points": {"type": "ARRAY", "items": {"type": "OBJECT", "properties": {
+            "t": {"type": "STRING"}, "point": {"type": "STRING"}, "condition": {"type": "STRING"},
+            "conviction": {"type": "STRING", "enum": ["base_case", "risk_scenario", "hypothetical", "not_expected", "unclear"]},
+            "horizon": {"type": "STRING"}}, "required": ["t", "point", "conviction"]}},
     },
     "required": ["person_speaks", "evidence", "quotes", "stance"],
 }
@@ -430,6 +434,11 @@ def gemini_prompt(person: str, n: int) -> str:
             "another guest's words to this person. t = start time as M:SS or H:MM:SS. speaker = who is speaking.\n"
             "3. stance: this person's own view on US equities in this video, based only on their own words. "
             "targets, timeframe and invalidation only if they actually said them, otherwise leave empty.\n"
+            "4. key_points: every distinct argument THIS person makes in the video, in order (normally 4-10), one "
+            "plain English sentence each, faithful to what they said, keeping their reasons, numbers, levels, dates and "
+            "time horizon. condition = the 'if' that the point depends on, if any. conviction = base_case (what they "
+            "expect), risk_scenario (a risk they flag), hypothetical (an if-then they walk through), not_expected (a "
+            "scenario they say they do not expect), or unclear. t = where it starts. Never include the host's views.\n"
             "If the person does not speak, return person_speaks=false, empty quotes and stance not_stated.")
 
 
@@ -598,6 +607,7 @@ def merge_chunks(results: list[tuple[dict, int | None]], max_total: int) -> dict
     return {"person_speaks": speaks,
             "evidence": " / ".join(str(r.get("evidence", ""))[:200] for r, _ in results),
             "quotes": quotes[:max_total],
+            "key_points": [kp for r, _ in results for kp in (r.get("key_points") or [])][:16],
             "stance": {"us_equities": lean, "summary": " | ".join(x for x in summaries if x)[:800]}}
 
 
@@ -1205,6 +1215,8 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         v.update(gemini_at=fetched_at, gemini_model=model, gemini_mode=mode, person_speaks=speaks,
                  gemini_evidence=str(parsed.get("evidence", ""))[:400],
                  stance=parsed.get("stance") if speaks else None, quotes=qs,
+                 key_points=[{k: str(kp.get(k, ""))[:400] for k in ("t", "point", "condition", "conviction", "horizon")}
+                             for kp in (parsed.get("key_points") or [])][:16] if speaks else [],
                  gemini_status="ready" if speaks else "not_speaking", gemini_last_error=None,
                  gemini_prompt_tokens=tokens)
         gstats["ready" if speaks else "not_speaking"] += 1
@@ -1288,6 +1300,8 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
                   "least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept "
                   "for audit but excluded from grade counts and must not be used as evidence. Captions are never "
                   "published: they are held privately only until verification is done. "
+                  "key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and "
+                  "conviction); they are NOT verified quotes and are for the reading digest only. "
                   "stance is Gemini's reading of the person's own words, not a quote.",
         "new_statement_clock": "evidence_ready_at",
         "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). "
