@@ -25,10 +25,10 @@ from zoneinfo import ZoneInfo
 import requests
 
 try:
-    from guru_x import grok_source
+    from guru_x import grok_source, media_vision
 except ImportError:  # 직접 실행 시
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-    from guru_x import grok_source
+    from guru_x import grok_source, media_vision
 
 BASE = "https://api.x.com/2"
 KST = ZoneInfo("Asia/Seoul")
@@ -278,7 +278,10 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     if provider == "free":
         manual = {m["id"]: m.get("handle_hint") for m in load_json(MANUAL_PATH, {}).get("ids", [])
                   if str(m.get("id", "")).isdigit()}
-        current = {pid for pid, r in posts.items() if r.get("rev", 1) >= 3 or r.get("verification") == "x_api"}
+        # rev 4 added image URLs: re-verify (once) only the older media posts that lack them
+        current = {pid for pid, r in posts.items()
+                   if r.get("verification") == "x_api" or r.get("rev", 1) >= 4
+                   or (r.get("rev", 1) >= 3 and not r.get("has_media") and not (r.get("quoted_post") or {}).get("has_media"))}
         refresh = {pid: r.get("handle") for pid, r in posts.items() if pid not in current}
         res = grok_source.collect(gclient, cfg, accounts, now, current, manual, refresh)
         for r in res["records"]:
@@ -314,6 +317,13 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
 
     cutoff = now - window
     kept = [p for p in posts.values() if p.get("created_at") and parse_ts(p["created_at"]) >= cutoff]
+    # carry previous image descriptions forward, then describe new images (context only, never evidence)
+    old_ms = {p["id"]: p.get("media_summary") for p in old_feed.get("posts", []) if p.get("media_summary")}
+    for p in kept:
+        if not p.get("media_summary") and p["id"] in old_ms:
+            p["media_summary"] = old_ms[p["id"]]
+    vision_stats = media_vision.describe_posts(kept, state, now, os.environ.get("GEMINI_API_KEY") or None,
+                                               cfg.get("media_vision", {}))
     kept.sort(key=lambda p: p["created_at"], reverse=True)
 
     discovery_complete = provider == "x_api"
@@ -373,6 +383,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
         "errors": errors,
         "accounts": acc_out,
         "cost_this_run": cost,
+        "media_vision": vision_stats,
         "posts": kept,
     }
 

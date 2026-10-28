@@ -100,6 +100,23 @@ def oembed_text(html: str) -> str:
     return htmllib.unescape(body).strip()
 
 
+def media_list(syn: dict) -> list[dict]:
+    """Image URLs from a syndication tweet: photos, plus the poster frame of a video/GIF (kind marks which)."""
+    out, seen = [], set()
+    for ph in syn.get("photos") or []:
+        u = ph.get("url")
+        if u and u not in seen:
+            seen.add(u); out.append({"kind": "photo", "url": u})
+    for md in syn.get("mediaDetails") or []:
+        u = md.get("media_url_https")
+        if u and u not in seen:
+            seen.add(u); out.append({"kind": "photo" if md.get("type") == "photo" else "video_frame", "url": u})
+    v = syn.get("video") or {}
+    if v.get("poster") and v["poster"] not in seen:
+        out.append({"kind": "video_frame", "url": v["poster"]})
+    return out[:4]
+
+
 def handle_from_author_url(url: str) -> str | None:
     m = re.search(r"(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})/?$", url or "")
     return m.group(1) if m else None
@@ -252,6 +269,7 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
                 "text": qtext,
                 "available": bool(qtext),
                 "has_media": bool(qt.get("photos") or qt.get("mediaDetails") or qt.get("video")),
+                "media": media_list(qt),
             }
         links = [u.get("expanded_url") for u in ((syn.get("entities") or {}).get("urls") or []) if u.get("expanded_url")]
         return {
@@ -261,9 +279,10 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
             "url": f"https://x.com/{acc['handle']}/status/{post_id}",
             "text": text, "quoted_post_id": quoted, "quoted_post": quoted_post, "links": links,
             "has_media": bool(syn.get("photos") or syn.get("mediaDetails") or syn.get("video")), "thread": [],
+            "media": media_list(syn),
             "is_self_reply": bool(reply_to),
             "verification": "syndication",
-            "rev": 3,
+            "rev": 4,
             "possibly_truncated": (not note) and (text.endswith("…") or text.endswith("...")),
         }, "syndication"
     emb = client.oembed(post_id, hint)
