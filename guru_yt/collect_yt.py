@@ -195,6 +195,20 @@ def read_uploads_api(http: Http, channel_id: str, key: str) -> list[dict]:
     return out
 
 
+def channel_from_video_api(http: Http, video_id: str, key: str) -> tuple[str | None, str]:
+    """Owner channel of a known video via Data API videos.list (1 unit). Used once to learn a channel ID."""
+    try:
+        status, text, _ = http.get("https://www.googleapis.com/youtube/v3/videos",
+                                   params={"part": "snippet", "id": video_id}, headers={"X-Goog-Api-Key": key})
+    except Exception as e:
+        return None, f"seed api {type(e).__name__}"
+    if status != 200:
+        return None, f"seed api {status}"
+    items = json.loads(text).get("items") or []
+    cid = (items[0].get("snippet") or {}).get("channelId") if items else None
+    return (cid, f"seed:{video_id}") if cid else (None, "seed video not found")
+
+
 def read_uploads(http: Http, channel_id: str, api_key: str | None) -> tuple[list[dict], str, str | None]:
     """Data API first when a key is set (reliable from Actions), RSS as fallback. Returns (entries, source, api_error)."""
     api_err = None
@@ -742,6 +756,10 @@ def discover(http: Http, cfg: dict, state: dict, people: list, by_person: dict, 
         label = ch["label"]
         cid = ch.get("channel_id") or state["channel_ids"].get(label)
         how = "config" if ch.get("channel_id") else ("cached" if cid else None)
+        if not cid and ch.get("seed_video_id") and api_key:
+            cid, how = channel_from_video_api(http, ch["seed_video_id"], api_key)
+            if cid:
+                state["channel_ids"][label] = cid
         if not cid:
             cid, how = resolve_channel_id(http, ch.get("handles", []))
             if cid:
