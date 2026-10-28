@@ -890,6 +890,13 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         cid = label_to_id.get(meta["channel_name"].strip().lower()) or (meta.get("channel_id") if meta.get("channel_id") in allowed else None)
         pub = meta.get("published_at") or ex.get("published_at")
         reason = None
+        # Major outlets that are not RSS-scanned are accepted only as a web hand-off: the clip must come from a
+        # dated article (guru_web) and its upload date must match that article (checked below).
+        handoff = {n.strip().lower() for n in cfg.get("handoff_channels", [])}
+        if not cid and ex.get("source") == "web_discovery" and ex.get("article_date") \
+                and meta["channel_name"].strip().lower() in handoff:
+            cid = meta.get("channel_id") or ("handoff:" + meta["channel_name"].strip())
+            allowed[cid] = meta["channel_name"].strip()
         if not cid:
             reason = f"channel {meta.get('channel_name')} not allowlisted"
         elif not pub:
