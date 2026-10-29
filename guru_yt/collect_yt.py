@@ -306,7 +306,7 @@ def match_person(people: list[dict], title: str, desc: str) -> tuple[dict | None
     for field, text in (("title", title), ("description", desc)):
         low = text.lower()
         for p in sorted(people, key=lambda x: x["tier"]):
-            for n in p["names"]:
+            for n in p["names"] + p.get("headline_names", []):
                 if re.search(r"\b" + re.escape(n.lower()) + r"\b", low):
                     return p, field
     return None, None

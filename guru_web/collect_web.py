@@ -113,7 +113,7 @@ def html_text(html: str) -> str:
 def name_hit(person: dict, text: str) -> bool:
     """Full names only on the web: a bare surname ('Karsan') also matches unrelated companies and people."""
     low = (text or "").lower()
-    full = [n for n in person["names"] if " " in n.strip()] or person["names"]
+    full = ([n for n in person["names"] if " " in n.strip()] or person["names"]) + person.get("headline_names", [])
     return any(re.search(r"\b" + re.escape(n.lower()) + r"\b", low) for n in full)
 
 
@@ -412,7 +412,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
     complete = {"discovery": True, "processing": True}
     queue: list[tuple[dict, dict]] = []
     for p in order:
-        q = " OR ".join(f'"{n}"' for n in p["names"] if " " in n.strip()) + (f" {p['web_query_extra']}" if p.get("web_query_extra") else "")
+        q = " OR ".join(f'"{n}"' for n in [n for n in p["names"] if " " in n.strip()] + p.get("headline_names", [])) + (f" {p['web_query_extra']}" if p.get("web_query_extra") else "")
         try:
             found = gnews_search(http, q, days)
         except Exception as e:
