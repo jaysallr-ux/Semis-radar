@@ -1,17 +1,20 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-28T21:10:36+09:00",
+  "generated_at": "2026-10-29T10:10:32+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-28T12:41:19+09:00",
-    "merged_from_discovery": 0,
+    "last_discovery_at": "2026-10-29T05:20:31+09:00",
+    "merged_from_discovery": 3,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
-      "rejected": 0
+      "rejected": 1,
+      "reasons": {
+        "OK1BBBaX9h0": "older than window"
+      }
     }
   },
   "quote_verify_threshold": 90,
@@ -25,9 +28,9 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-02T05:00:15+09:00",
+      "oldest_rss": "2026-10-05T22:32:42+09:00",
       "gap_possible": false,
-      "matched": 6
+      "matched": 7
     },
     {
       "label": "Schwab Network",
@@ -36,7 +39,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-17T03:36:10+09:00",
+      "oldest_rss": "2026-10-19T23:13:02+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -58,7 +61,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-16T04:00:09+09:00",
+      "oldest_rss": "2026-10-16T18:00:18+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -71,7 +74,7 @@
       "list_source": "data_api",
       "oldest_rss": "2026-10-10T01:22:13+09:00",
       "gap_possible": false,
-      "matched": 2
+      "matched": 1
     },
     {
       "label": "Monetary Matters",
@@ -80,7 +83,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-20T22:00:04+09:00",
+      "oldest_rss": "2026-09-23T21:53:59+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -102,8 +105,8 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-28T00:44:48+09:00",
-      "gap_possible": false,
+      "oldest_rss": "2026-10-29T04:23:34+09:00",
+      "gap_possible": true,
       "matched": 0
     },
     {
@@ -135,7 +138,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-15T05:00:34+09:00",
+      "oldest_rss": "2026-10-17T04:04:05+09:00",
       "gap_possible": false,
       "matched": 3
     },
@@ -146,14 +149,14 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-08-09T02:15:52+09:00",
+      "oldest_rss": "2026-08-16T00:43:35+09:00",
       "gap_possible": false,
-      "matched": 1
+      "matched": 2
     }
   ],
   "quota": {
-    "yta_used_today": 1,
-    "yta_server_remaining": 9,
+    "yta_used_today": 2,
+    "yta_server_remaining": 8,
     "yta_daily_cap": 7,
     "yta_reserve_for_manual": 3,
     "supadata_used_total": 9,
@@ -163,13 +166,13 @@
       "supadata": "ok"
     },
     "gemini_calls_today": 4,
-    "gemini_est_video_hours_today": 0.388,
+    "gemini_est_video_hours_today": 0.78,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 2,
+    "ready": 2,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -178,18 +181,477 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 4,
+    "ready": 4,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
-    "left_pending": 1,
+    "left_pending": 0,
     "budget_out": 0,
     "chunked": 0,
     "text_mode": 0,
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "lfuYwR7XA1A",
+      "url": "https://www.youtube.com/watch?v=lfuYwR7XA1A",
+      "channel": "Joseph Wang",
+      "channel_id": "UCsJxlgjWIOcuEbOJZ591V3Q",
+      "channel_mode": "dedicated",
+      "person": "Joseph Wang",
+      "tier": 4,
+      "role": "shadow",
+      "match": "dedicated_channel",
+      "title": "October 2026 FOMC Debrief",
+      "description": "Interesting tid bids.",
+      "published_at": "2026-10-28T20:18:08Z",
+      "first_seen_at": "2026-10-29T05:20:31+09:00",
+      "is_short": false,
+      "transcript_status": "not_needed",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": true,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "shadow: captions are reserved for the core 11",
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-10-29T10:10:32+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Joseph Wang appears on camera and speaks directly throughout the video, analyzing the FOMC statement, Fed policy, and market implications.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Joseph Wang highlights that higher interest rates are actively impacting the tech and AI sectors by raising capital costs and widening credit spreads, warning that a tumble in the AI trade could trigger a substantial equity market correction.",
+        "invalidation": "A substantial equity market correction triggered by a pullback in the AI trade would likely stop the Fed from hiking rates in December.",
+        "targets": [],
+        "timeframe": "By December 2026"
+      },
+      "quotes": [
+        {
+          "t": "04:18",
+          "t_sec": 258,
+          "speaker": "Joseph Wang",
+          "topic": "Interest Rates & Financial Conditions",
+          "text": "Financial conditions have tightened, but they are not tight. That tells you straight up that he wants to continue to hike, and that's in the market price.",
+          "url": "https://www.youtube.com/watch?v=lfuYwR7XA1A&t=258s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "06:04",
+          "t_sec": 364,
+          "speaker": "Joseph Wang",
+          "topic": "Fed Policy & Market Volatility",
+          "text": "So by kind of shrinking the window of action, I think that is causing some havoc in the short-term interest rates markets because now you kind of have to try to figure out, it's going to be I guess a little bit more jagged in how markets price expectations of Fed policy.",
+          "url": "https://www.youtube.com/watch?v=lfuYwR7XA1A&t=364s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "10:13",
+          "t_sec": 613,
+          "speaker": "Joseph Wang",
+          "topic": "US Equities & December Fed Rate Hike",
+          "text": "I suspect that if we have a tumble in the AI trade that leads to a substantial equity market correction, we won't be hiking in December. But barring that, it seems like we're going to hike in December.",
+          "url": "https://www.youtube.com/watch?v=lfuYwR7XA1A&t=613s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-10-29T10:10:32+09:00",
+      "evidence_grade": "1차-B",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "02:47",
+          "point": "The latest FOMC outcome was more hawkish than anticipated due to two dissents advocating for rate hikes.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "04:18",
+          "point": "While financial conditions have tightened, Fed leadership still considers them not sufficiently tight, signalling further rate hikes ahead.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "05:18",
+          "point": "Reducing the number of live FOMC decision meetings in future years narrows the Fed's window for rate changes and increases volatility in interest rate markets.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "09:20",
+          "point": "Higher interest rates are now impacting the tech and AI sectors by increasing financing costs and widening credit spreads for speculative business models.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "10:13",
+          "point": "The Fed is expected to hike interest rates in December unless a sharp decline in the AI trade leads to a major equity market selloff.",
+          "condition": "Barring a tumble in the AI trade that leads to a substantial equity market correction",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 20302,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 3,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "ssjZ0TTfZH4",
+      "url": "https://www.youtube.com/watch?v=ssjZ0TTfZH4",
+      "channel": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "channel_mode": "dedicated",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "dedicated_channel",
+      "title": "The Macro Minute: SK Hynix’s Booming Profits Signal Medium-Term Strength & Long-Term Deflation Risk",
+      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
+      "published_at": "2026-10-28T20:00:29Z",
+      "first_seen_at": "2026-10-29T05:20:31+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-10-29T10:10:32+09:00",
+      "transcript_language": null,
+      "transcript_chars": 14134,
+      "transcript_url": null,
+      "name_mentions": 3,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "[0:00] Happy Wednesday out there team42. It's your escaper here, Darius Dell to present our macro minute for Wednesday, October 28th, 2026. As always, we'll start with the executive summary from today's leadoff morning note. So, let's dive right in. What do we lear",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-10-29T10:10:32+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Darius Dale presents the 42 Macro Executive Summary and discusses macro market trends, SK Hynix earnings, Fed policy expectations, credit markets, geopolitical risks, and active risk management versus buy-and-hold strategies.",
+      "stance": {
+        "us_equities": "mixed",
+        "summary": "Darius Dale is medium-term bullish on compute and memory infrastructure due to strong order backlogs, but advocates for dynamic risk management to navigate drawdowns, volatility drag, and long-term macro risks rather than passive buy-and-hold equity strategies.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": "Medium to long-term"
+      },
+      "quotes": [
+        {
+          "t": "00:14",
+          "t_sec": 14,
+          "speaker": "Darius Dale",
+          "topic": "Technology & Equity Markets",
+          "text": "SK Hynix's Q3 results challenge the durability and severity of the current risk-off inflation market regime. The seven-fold increase in profits and multi-year backlog through 2029 to 2030 signals that memory prices have not yet peaked. This is bullish with respect to the medium term.",
+          "url": "https://www.youtube.com/watch?v=ssjZ0TTfZH4&t=14s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.9,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "01:16",
+          "t_sec": 76,
+          "speaker": "Darius Dale",
+          "topic": "Fed Policy",
+          "text": "The FOMC is expected to hold at its October 27th-28th meeting later today. Markets price nearly a full December hike, and most FOMC participants have backed an additional rate hike by year end.",
+          "url": "https://www.youtube.com/watch?v=ssjZ0TTfZH4&t=76s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 85.8,
+          "caption_sec": 61,
+          "caption_checked": true
+        },
+        {
+          "t": "04:04",
+          "t_sec": 244,
+          "speaker": "Darius Dale",
+          "topic": "Risk Management vs Buy-and-Hold",
+          "text": "My industry, the global hedge fund industry which we are making available to you at a very retail-friendly price point, exists because everything in the premise of this question is flat-out wrong.",
+          "url": "https://www.youtube.com/watch?v=ssjZ0TTfZH4&t=244s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.0,
+          "caption_sec": 214,
+          "caption_checked": true
+        },
+        {
+          "t": "06:33",
+          "t_sec": 393,
+          "speaker": "Darius Dale",
+          "topic": "Buy-and-Hold Marketing",
+          "text": "If you learn one thing from Darius Dale throughout my near two-decade career on Wall Street, is that that 'ten best days in the market' crap is the most insidious form of self-centered, self-serving marketing that harms so many investors.",
+          "url": "https://www.youtube.com/watch?v=ssjZ0TTfZH4&t=393s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 78.7,
+          "caption_sec": 366,
+          "caption_checked": true
+        },
+        {
+          "t": "11:17",
+          "t_sec": 677,
+          "speaker": "Darius Dale",
+          "topic": "Volatility Drag & Drawdowns",
+          "text": "Just by avoiding bear markets, just by avoiding what they call volatility drag, please look that up after this, just by avoiding volatility drag you wind up with either 50% more money or twice as much money.",
+          "url": "https://www.youtube.com/watch?v=ssjZ0TTfZH4&t=677s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 95.0,
+          "caption_sec": 668,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-10-29T10:10:32+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "00:14",
+          "point": "Strong Q3 earnings and multi-year order backlogs from SK Hynix show memory prices have not peaked, creating a medium-term bullish signal for the global compute ecosystem.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "00:29",
+          "point": "Paying supply-constrained 2026 prices for capital equipment delivered into a supply-abundant 2029-2030 compute market creates secular deflation and capital misallocation risks.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": "long_term"
+        },
+        {
+          "t": "00:49",
+          "point": "Weak housing market sales data indicate a durable housing recovery remains unlikely without direct policy intervention.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "01:16",
+          "point": "The Federal Reserve is expected to hold policy rates steady while market consensus gradually aligns with expectations for dovish policy easing in 2027 and 2028.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "02:03",
+          "point": "Rising yields and widening credit default swap spreads for major technology firms demonstrate an increasing marginal cost of capital to fund AI buildouts.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "02:38",
+          "point": "Escalating cyberattacks on critical infrastructure across NATO nations heighten geopolitical instability and political realignment risks.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": "long_term"
+        },
+        {
+          "t": "04:04",
+          "point": "Wall Street narrative about missing the ten best days of the market is self-serving marketing that distracts retail investors from avoiding severe drawdown losses.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "06:33",
+          "point": "Historical market data proves that active risk management excluding extreme drawdowns generates far higher long-term cumulative returns than passive buy-and-hold investing.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        }
+      ],
+      "gemini_prompt_tokens": 24326,
+      "quotes_grade_count": {
+        "1차-A": 3,
+        "1차-B": 2,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "Xwp8SWkrCi4",
+      "url": "https://www.youtube.com/watch?v=Xwp8SWkrCi4",
+      "channel": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "channel_mode": "dedicated",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "dedicated_channel",
+      "title": "The Second-Largest Risk to Asset Markets Is an AI Capex Bust… What Is the Largest?",
+      "description": "Enjoy these clips from our Oct-26 monthly Macro Scouting Report webcast in which we detail a small-but-robust portion of the analysis that we performed to conclude the following:\n\n1. The historic Cantillon effect from accelerating fiscal largesse is the key driver of the K-Shaped Economy Crisis (KEC). \n\n2. The KEC is highly probable to result in significant redistributive policies, total war, or both—i.e., Paradigm E. \n\n3. For those of you who are unfamiliar, Paradigm E is 42 Macro's shorthand for the Fourth Turning climax, a historically well-researched theory from our founder Darius Dale’s friend, mentor, and former colleague Neil Howe.\n\nDownload a complimentary sample of our industry-leading research today:\nhttps://42macro.com/42-macro-sample-r...\n\n#Team42 #investing #finance #stockmarket #trading #marketupdates #macroeconomics #marketinsights #globalmarkets #economictrends #marketoutlook #stocks #federalreserve #inflation #liquidity #bitcoin #riskmanagement #assetmarkets #macroeconomics #macroinvesting #fourthturning \n\nSubscribe to the 42 Macro channel for tips about enhancing your risk management processes and preparing your portfolio for the changing market! \n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
+      "published_at": "2026-10-28T13:00:35Z",
+      "first_seen_at": "2026-10-28T22:13:09+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-10-29T10:10:32+09:00",
+      "transcript_language": null,
+      "transcript_chars": 16554,
+      "transcript_url": null,
+      "name_mentions": 1,
+      "appearance_confirmed": true,
+      "appearance_excerpt": " data to support or challenge your basian prior. That is how the super forecasters forecast, that is how we forecast at 42 Macro uh. One of the best books I've ever read, the US viol US violating Ferguson's law dramatically increases the posterior odds  [5:08] of Paradigm E, aka major political the alignment and total ",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-10-29T10:10:32+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Darius Dale appears on screen and presents his macro analysis throughout the video.",
+      "stance": {
+        "us_equities": "not_stated",
+        "summary": "Darius Dale focuses on macro structural risks including U.S. budget deficits, sovereign debt sustainability, Treasury market supply-demand imbalances, and global capital flow shifts rather than stating a direct call on U.S. equities."
+      },
+      "quotes": [
+        {
+          "t": "02:51",
+          "t_sec": 171,
+          "speaker": "Darius Dale",
+          "topic": "economy",
+          "text": "The reason I bring this up is to show you that the probability of Paradigm C grow your way out of the problem, sorry Scott Treasury Secretary Scott Bessent former client of mine. Sorry Scott, you're not going to grow your way out of it as evidenced by the budget deficit widening 89 basis points year-over-year in a booming Paradigm C economy.",
+          "url": "https://www.youtube.com/watch?v=Xwp8SWkrCi4&t=171s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.8,
+          "caption_sec": 155,
+          "caption_checked": true
+        },
+        {
+          "t": "03:19",
+          "t_sec": 199,
+          "speaker": "Darius Dale",
+          "topic": "sovereign debt",
+          "text": "The US has already passed the point of no return in sovereign indebtedness terms.",
+          "url": "https://www.youtube.com/watch?v=Xwp8SWkrCi4&t=199s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 187,
+          "caption_checked": true
+        },
+        {
+          "t": "10:41",
+          "t_sec": 641,
+          "speaker": "Darius Dale",
+          "topic": "treasury bond market",
+          "text": "The projected acceleration in marketable Treasury debt supply, likely durable reversal of global capital flows, and likely durable deceleration in global savings growth are each key contributors to the durability of the Geopolitically Driven Supply-Demand Imbalance in the Treasury Bond Market",
+          "url": "https://www.youtube.com/watch?v=Xwp8SWkrCi4&t=641s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.0,
+          "caption_sec": 611,
+          "caption_checked": true
+        },
+        {
+          "t": "11:51",
+          "t_sec": 711,
+          "speaker": "Darius Dale",
+          "topic": "macro risk",
+          "text": "Why is the Geopolitically Driven Supply-Demand Imbalance in the Treasury Bond Market our macro risk management North Star? Because it is PC1, explaining key dynamics like regime change in cross-asset correlations and performance, policy intervention, and the US's K-shaped Economy Crisis.",
+          "url": "https://www.youtube.com/watch?v=Xwp8SWkrCi4&t=711s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 79.2,
+          "caption_sec": 703,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-10-29T10:10:32+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "00:00",
+          "point": "The U.S. federal budget deficit is widening due to falling corporate tax receipts and accelerating interest expense.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "02:51",
+          "point": "The U.S. cannot grow its way out of its deficit issues, as the budget deficit expanded by 89 basis points year-over-year even in a strong nominal economic environment.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "03:19",
+          "point": "The U.S. has crossed the point of no return in sovereign debt sustainability as net interest expense outpaces major spending categories.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "05:04",
+          "point": "Crossing critical debt-servicing thresholds historically creates high base rates for political realignment and social instability.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "08:14",
+          "point": "Foreign investors have steadily rotated out of U.S. Treasuries and into U.S. equities over the past decade.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "08:31",
+          "point": "European remilitarization, Japanese reflation, and Chinese decoupling are structurally reducing global demand for U.S. Treasury debt.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "09:36",
+          "point": "The U.S. Treasury must capitalize and refinance $12 trillion in debt over the next twelve months, more than double pre-COVID requirements.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "11:50",
+          "point": "The supply-demand imbalance in the U.S. Treasury bond market is the primary driver of cross-asset regime shifts and the K-shaped economy.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 26922,
+      "quotes_grade_count": {
+        "1차-A": 3,
+        "1차-B": 1,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "3YXNPOEPZms",
       "url": "https://www.youtube.com/watch?v=3YXNPOEPZms",
@@ -911,26 +1373,125 @@
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": "shadow: captions are reserved for the core 11",
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-10-29T10:10:32+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Joseph Wang appears on screen and speaks throughout the video.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Joseph Wang is cautious to bearish on US markets due to widening cracks and financing constraints in the AI buildout, rising Middle East geopolitical risks boosting oil prices, and simmering European debt concerns.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": "Short to medium term"
+      },
+      "quotes": [
+        {
+          "t": "00:58",
+          "t_sec": 58,
+          "speaker": "Joseph Wang",
+          "topic": "market outlook",
+          "text": "There is more of a cautious tone in the markets and I think for good reason. There are three things that are facing the markets that don't seem to dissipate very quickly.",
+          "url": "https://www.youtube.com/watch?v=9EjKDcqBJhs&t=58s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "06:18",
+          "t_sec": 378,
+          "speaker": "Joseph Wang",
+          "topic": "AI trade and US recession risk",
+          "text": "Should cracks in the AI trade further widen, you have a significant increase in the probability of a US recession.",
+          "url": "https://www.youtube.com/watch?v=9EjKDcqBJhs&t=378s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "12:36",
+          "t_sec": 756,
+          "speaker": "Joseph Wang",
+          "topic": "oil prices and US economy",
+          "text": "Should oil prices continue to spike, again this is bad for the US economy. It takes money out of the pockets of consumers, interest rates of course also have to remain high, and so that is just a slowing down of the US economy.",
+          "url": "https://www.youtube.com/watch?v=9EjKDcqBJhs&t=756s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "17:54",
+          "t_sec": 1074,
+          "speaker": "Joseph Wang",
+          "topic": "Federal Reserve rate policy",
+          "text": "I don't think we're going to have a rate hike. I think it's unlikely.",
+          "url": "https://www.youtube.com/watch?v=9EjKDcqBJhs&t=1074s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": "dedicated_channel",
+      "evidence_ready_at": "2026-10-29T10:10:32+09:00",
+      "evidence_grade": "1차-B",
+      "appearance_source": "gemini",
       "transcript_retained": false,
       "quotes_grade_count": {
         "1차-A": 0,
-        "1차-B": 0,
+        "1차-B": 4,
         "excluded_speaker_mismatch": 0
       },
-      "backfilled_at": "2026-10-28T12:41:19+09:00"
+      "backfilled_at": "2026-10-28T12:41:19+09:00",
+      "key_points": [
+        {
+          "t": "01:08",
+          "point": "Cracks are appearing in the AI trade as markets respond negatively to high capital expenditure announcements despite strong earnings.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "03:22",
+          "point": "Credit default swap spreads for hyperscalers and chipmakers are widening, reflecting increased debt market skepticism about AI financing.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "06:18",
+          "point": "The probability of a US recession will increase significantly if the AI buildout slows down further.",
+          "condition": "If cracks in the AI trade further widen",
+          "conviction": "risk_scenario",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "07:03",
+          "point": "Geopolitical escalation in the Middle East is likely to drive up global oil prices.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "12:36",
+          "point": "A sustained spike in oil prices will slow the US economy by reducing consumer spending power and keeping interest rates elevated.",
+          "condition": "If oil prices continue to spike",
+          "conviction": "risk_scenario",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "13:42",
+          "point": "French sovereign debt pressures and social unrest in Europe pose a growing risk of economic deflation and political instability.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "17:54",
+          "point": "The Federal Reserve is unlikely to raise interest rates at its upcoming meeting.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        }
+      ],
+      "gemini_prompt_tokens": 35201
     },
     {
       "video_id": "TWZoYhCxWVY",
@@ -1451,242 +2012,6 @@
       },
       "role": "core",
       "gemini_prompt_tokens": 5797
-    },
-    {
-      "video_id": "rVz79aPJnqE",
-      "url": "https://www.youtube.com/watch?v=rVz79aPJnqE",
-      "channel": "42 Macro",
-      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
-      "channel_mode": "dedicated",
-      "person": "Darius Dale",
-      "tier": 1,
-      "match": "dedicated_channel",
-      "title": "The Macro Minute: SpaceX's Results & Anthropic's S-1 Filing Challenged the Risk-off INFLATION Regime",
-      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
-      "published_at": "2026-10-21T20:00:20+00:00",
-      "first_seen_at": "2026-10-22T19:31:09+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-10-22T19:31:09+09:00",
-      "transcript_language": null,
-      "transcript_chars": 5435,
-      "transcript_url": null,
-      "name_mentions": 3,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "[0:00] Happy Wednesday out there team 42, it's your skipper here Darius Dale with another macro minute for Wednesday, October 21st, 2026. As always, we start with the executive summary from today's Little Owl Morning Note, so let's dive right in. Today, what did we",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-10-22T20:22:39+09:00",
-      "person_speaks": true,
-      "gemini_evidence": "Darius Dale appears on camera and speaks throughout the video.",
-      "stance": {
-        "us_equities": "bullish",
-        "summary": "Darius Dale is bullish on US equities, arguing that the US is in the early innings of a corporate profit-boosting productivity boom and that strong liquidity at the top tier of households and corporations will shield the stock market from consumer debt stress.",
-        "invalidation": "",
-        "targets": [],
-        "timeframe": ""
-      },
-      "quotes": [
-        {
-          "t": "0:26",
-          "t_sec": 26,
-          "speaker": "Darius Dale",
-          "topic": "economy",
-          "text": "Earlier reporting from Q3 earnings season and Anthropic's historic capital commitments to secure compute are supportive of our view that the US is in the early innings of a corporate profit-boosting productivity boom.",
-          "url": "https://www.youtube.com/watch?v=rVz79aPJnqE&t=26s",
-          "caption_match": 94.0,
-          "caption_sec": 0,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        },
-        {
-          "t": "2:05",
-          "t_sec": 125,
-          "speaker": "Darius Dale",
-          "topic": "economy",
-          "text": "In our view, that's long been a view of ours is that yes, those at the top of the K, in terms of the households and the corporate sector, are beyond flush enough to overwhelm the negative dynamism that we've seen in the bottom part of the K from a household and small business perspective.",
-          "url": "https://www.youtube.com/watch?v=rVz79aPJnqE&t=125s",
-          "caption_match": 94.7,
-          "caption_sec": 120,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        },
-        {
-          "t": "3:38",
-          "t_sec": 218,
-          "speaker": "Darius Dale",
-          "topic": "economy",
-          "text": "This is a booming paradigm C economy. It's exactly what we forecasted at the lows of April of 2025 when everybody was freaking out about tariffs.",
-          "url": "https://www.youtube.com/watch?v=rVz79aPJnqE&t=218s",
-          "caption_match": 100.0,
-          "caption_sec": 212,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        },
-        {
-          "t": "3:52",
-          "t_sec": 232,
-          "speaker": "Darius Dale",
-          "topic": "us_equities",
-          "text": "And so in our opinion, we think headlines like this, all be it, you know, it is serious, it means a lot to the folks who are suffering from this, it doesn't necessarily mean much to the stock market, which it's one of our core theses and in support of our Jobless Recovery theme.",
-          "url": "https://www.youtube.com/watch?v=rVz79aPJnqE&t=232s",
-          "caption_match": 97.8,
-          "caption_sec": 212,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-10-22T19:31:09+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "gemini_prompt_tokens": 8857,
-      "quotes_grade_count": {
-        "1차-A": 4,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      },
-      "gemini_mode": null,
-      "transcript_retained": false,
-      "role": "core"
-    },
-    {
-      "video_id": "-nDxML0csuM",
-      "url": "https://www.youtube.com/watch?v=-nDxML0csuM",
-      "channel": "Excess Returns",
-      "channel_id": "UCPYvx_y92dvI1PSdiho0ALw",
-      "channel_mode": "filter",
-      "person": "Andy Constan",
-      "tier": 2,
-      "match": "title",
-      "title": "CoreWeave's Debt Is Cracking. AI Stocks Are Falling. So Why Is Andy Constan Watching Bond Issuance?",
-      "description": "Andy Constan of Damped Spring Advisors explains why strong AI demand can coexist with financing pressure and falling stock prices. The key distinction: a difficult funding environment can hurt investors without turning into a financial crisis.\n\nIn this month’s First Principles, Andy joins Jack Forehand and Justin Carbonneau to examine CoreWeave, the commitments supporting the AI buildout, and how competition for capital affects asset prices. They also explore Treasury borrowing and buybacks, the upcoming quarterly refunding announcement, and the tension between strong earnings and ambitious expectations. Andy closes by explaining the bull case he takes seriously and why he is nevertheless positioned with some bonds and short equity exposure.\n\nTopics covered:\n\n- AI’s shift from cash-generating, asset-light businesses toward capital-intensive infrastructure\n- CoreWeave’s funding risks and why a rising bond yield does not immediately change an existing fixed coupon\n- Customer commitments, financing backstops, and the difference between stock losses and systemic contagion\n- How borrowing, spending, and savings interact with the price of capital\n- Why the mix of Treasury bills and longer-term bonds matters for markets\n- Treasury buybacks, off-the-run bonds, and Andy Constan’s argument about interest-rate suppression\n- The 20-year Treasury and possible outcomes of the quarterly refunding announcement\n- Strong earnings, market breadth, and the importance of challenging your own inve",
-      "published_at": "2026-10-21T13:54:32+00:00",
-      "first_seen_at": "2026-10-22T19:31:09+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-10-22T19:31:09+09:00",
-      "transcript_language": null,
-      "transcript_chars": 53226,
-      "transcript_url": null,
-      "name_mentions": 4,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "[0:02] Hi Andy, it's great to have you back on our monthly first principles discussion. Thanks again for joining us. >> It's always a pleasure, Justin. Good to see you. >> For those who may not know, you are fo",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-10-22T20:29:42+09:00",
-      "person_speaks": true,
-      "gemini_evidence": "Andy Constan appears on video starting around 01:30 and speaks throughout the interview discussing financial markets, Treasury refunding, AI financing, and market positioning.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Andy Constan is currently positioned short US equities and long bonds, expecting higher sustained interest rates over the next 3 to 6 months to act as a headwind for equities and shave off market optimism.",
-        "timeframe": "3 to 6 months"
-      },
-      "quotes": [
-        {
-          "t": "11:38",
-          "t_sec": 698,
-          "speaker": "Andy Constan",
-          "topic": "AI Demand",
-          "text": "It's just hard to extrapolate that. The demand for the AI itself seems robust. The investments from the big, the biggies seem robust.",
-          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=698s",
-          "caption_match": 95.3,
-          "caption_sec": 690,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        },
-        {
-          "t": "35:10",
-          "t_sec": 2110,
-          "speaker": "Andy Constan",
-          "topic": "Interest Rates & Economy",
-          "text": "Suppressing interest rates impacts the economy. Suppressing interest rates impacts the markets.",
-          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=2110s",
-          "caption_match": 100.0,
-          "caption_sec": 2103,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        },
-        {
-          "t": "35:30",
-          "t_sec": 2130,
-          "speaker": "Andy Constan",
-          "topic": "Asset Valuation",
-          "text": "But all other assets that are priced off of that discount rate trade at a higher price than they otherwise would.",
-          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=2130s",
-          "caption_match": 100.0,
-          "caption_sec": 2103,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        },
-        {
-          "t": "51:36",
-          "t_sec": 3096,
-          "speaker": "Andy Constan",
-          "topic": "US Equities & Earnings",
-          "text": "If we continue to grow at the rate that we're growing, stocks aren't going to go down.",
-          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=3096s",
-          "caption_match": 95.2,
-          "caption_sec": 3093,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        },
-        {
-          "t": "55:01",
-          "t_sec": 3301,
-          "speaker": "Andy Constan",
-          "topic": "Corporate Earnings",
-          "text": "It's a bull market for earnings. And it's showing up in a broad, cross the board marketplace.",
-          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=3301s",
-          "caption_match": 100.0,
-          "caption_sec": 3276,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        },
-        {
-          "t": "1:04:30",
-          "t_sec": 3870,
-          "speaker": "Andy Constan",
-          "topic": "Portfolio Positioning",
-          "text": "To me, the best way to do that is to buy some bonds, cause they've gotten much cheaper, and short some equities. And so that's the way I'm positioned.",
-          "url": "https://www.youtube.com/watch?v=-nDxML0csuM&t=3870s",
-          "caption_match": 95.9,
-          "caption_sec": 3864,
-          "grade": "1차-A",
-          "speaker_verified": true,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 1,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-10-22T19:31:09+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "quotes_grade_count": {
-        "1차-A": 6,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      },
-      "gemini_prompt_tokens": 123896,
-      "gemini_mode": null,
-      "transcript_retained": false,
-      "role": "core"
     }
   ]
 }
