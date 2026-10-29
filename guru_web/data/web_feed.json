@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-10-29T10:05:25+09:00",
+  "generated_at": "2026-10-29T20:25:40+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -115,7 +115,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
+      "items_in_window": 3,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -139,16 +139,26 @@
       "items_in_window": 5,
       "scoring_items": 0,
       "pending_items": 0
+    },
+    {
+      "person": "Scott Rubner",
+      "tier": 4,
+      "role": "observer",
+      "discovery_ok": true,
+      "error": null,
+      "items_in_window": 0,
+      "scoring_items": 0,
+      "pending_items": 0
     }
   ],
   "stats": {
-    "discovered": 73,
-    "new_items": 5,
-    "decoded": 5,
-    "bodies": 3,
-    "quotes_verified": 2,
-    "video_candidates": 1,
-    "gemini_calls": 1,
+    "discovered": 74,
+    "new_items": 2,
+    "decoded": 2,
+    "bodies": 2,
+    "quotes_verified": 0,
+    "video_candidates": 0,
+    "gemini_calls": 0,
     "gemini_skipped_cap": 0
   },
   "gemini": {
@@ -162,6 +172,44 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Bitcoin may have hit cycle low near $80,000, investor Lyn Alden says",
+      "outlet": "Coin Gabbar",
+      "published_at": "2026-10-29T10:40:00+00:00",
+      "discovered_at": "2026-10-29T20:25:40+09:00",
+      "article_url": "https://www.coingabbar.com/en/bitcoin-may-have-hit-cycle-low-near-80000-investor-lyn-alden-say",
+      "canonical_url": "https://www.coingabbar.com/en/bitcoin-may-have-hit-cycle-low-near-80000-investor-lyn-alden-say",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Lyn Alden Says Bitcoin's Cycle Low May Be Behind It After Leverage Flush",
+      "outlet": "www.tokenpost.com",
+      "published_at": "2026-10-29T06:52:40+00:00",
+      "discovered_at": "2026-10-29T20:25:40+09:00",
+      "article_url": "https://www.tokenpost.com/news/insights/43275",
+      "canonical_url": "https://www.tokenpost.com/news/insights/43275",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0
+    },
     {
       "person": "Lyn Alden",
       "tier": 3,
