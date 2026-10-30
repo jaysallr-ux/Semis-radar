@@ -1,6 +1,6 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-30T10:15:30+09:00",
+  "generated_at": "2026-10-30T11:23:57+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
@@ -10,15 +10,15 @@
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 112,
-    "already_known": 30,
+    "urls_found": 111,
+    "already_known": 56,
     "too_old": 55,
-    "verified_syndication": 27,
+    "verified_syndication": 0,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-10-28T15:35:19.000Z",
+    "list_oldest": "2026-10-28T15:44:35.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,8 +34,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-10-30T11:23:57+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-30T11:23:57+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
+      "last_success_at": "2026-10-30T11:23:57+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-10-30T11:23:57+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-10-30T11:23:57+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
-      "new_originals_this_run": 12,
+      "last_success_at": "2026-10-30T11:23:57+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -100,8 +100,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-30T11:23:57+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
+      "last_success_at": "2026-10-30T11:23:57+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
-      "new_originals_this_run": 4,
+      "last_success_at": "2026-10-30T11:23:57+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-10-30T11:23:57+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T10:15:30+09:00",
+      "last_success_at": "2026-10-30T11:23:57+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -156,7 +156,7 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 14,
+    "described": 0,
     "pending": 0,
     "errors": 0,
     "calls_today": 14,
@@ -7220,82 +7220,838 @@
       "discovered_via": [
         "list_embed"
       ]
-    },
-    {
-      "id": "2113440889507024950",
-      "person": "Lyn Alden",
-      "handle": "LynAldenContact",
-      "tier": 3,
-      "role": "core",
-      "author_id": "823766058909761536",
-      "created_at": "2026-10-23T01:22:28.000Z",
-      "url": "https://x.com/LynAldenContact/status/2113440889507024950",
-      "text": "Pierce Brosnan comes out of retirement for a moment, silver fox badass, is the Bond I’d watch.",
-      "quoted_post_id": "2113376679112454203",
-      "quoted_post": {
-        "id": "2113376679112454203",
-        "author": "nerd_cookies",
-        "created_at": "2026-10-22T21:07:19.000Z",
-        "url": "https://x.com/nerd_cookies/status/2113376679112454203",
-        "text": "The mystery actor 🔥 https://t.co/NyHBJsrBni",
-        "available": true,
-        "has_media": true,
-        "media": [
+    }
+  ],
+  "person_index": {
+    "clock": "created_at",
+    "lookback_hours": 72,
+    "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
+    "people": {
+      "Andy Constan": {
+        "role": "core",
+        "count": 27,
+        "non_noise": 21,
+        "items": [
           {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVQ44o4WAAAxa9r.jpg"
+            "at": "2026-10-27T18:38:54+09:00",
+            "url": "https://x.com/dampedspring/status/2115015373254971827",
+            "kind": "post",
+            "preview": "Wordle 1,956 4/6* ⬜⬜⬜⬜⬜ ⬜🟨⬜🟨⬜ 🟩⬜🟨⬜⬜ 🟩🟩🟩🟩🟩",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-10-27T20:16:39+09:00",
+            "url": "https://x.com/dampedspring/status/2115039973942378907",
+            "kind": "quote_post",
+            "preview": "Three solid services imho if your interested",
+            "quoted_author": "dampedspring",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-27T20:21:32+09:00",
+            "url": "https://x.com/dampedspring/status/2115041202114297929",
+            "kind": "quote_post",
+            "preview": "I will gladly pay you Tuesday for a hamburger today",
+            "quoted_author": "BobEUnlimited",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-27T22:36:04+09:00",
+            "url": "https://x.com/dampedspring/status/2115075056833265874",
+            "kind": "post",
+            "preview": "Selling chips and using the profits to buy Neo cloud, hyperscalers, and frontier model company corp…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T01:35:32+09:00",
+            "url": "https://x.com/dampedspring/status/2115120220138328454",
+            "kind": "post",
+            "preview": "I wonder if the Brazil election surprise is impacting US markets such that the republicans NOT losi…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T02:06:35+09:00",
+            "url": "https://x.com/dampedspring/status/2115128036454515011",
+            "kind": "post",
+            "preview": "C-",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-10-28T03:05:07+09:00",
+            "url": "https://x.com/dampedspring/status/2115142764782305477",
+            "kind": "quote_post",
+            "preview": "Full size. 192bn annual pace or 43% of total planned new issuance. Offers are sparse. @SecScottBess…",
+            "quoted_author": "financialjuice",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T20:05:32+09:00",
+            "url": "https://x.com/dampedspring/status/2115399562739527778",
+            "kind": "post",
+            "preview": "Wordle 1,957 5/6* 🟨⬜⬜🟨⬜ 🟨⬜⬜🟩🟩 ⬜🟨🟨🟩🟩 ⬜🟩🟩🟩🟩 🟩🟩🟩🟩🟩",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-10-28T22:10:15+09:00",
+            "url": "https://x.com/dampedspring/status/2115430949198418207",
+            "kind": "post",
+            "preview": "It really is quite amazing that the @SecScottBessent treasury thinks it's a good idea to issue 444B…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T03:06:21+09:00",
+            "url": "https://x.com/dampedspring/status/2115505464817623239",
+            "kind": "post",
+            "preview": "Is strong hawkier than solid? What has become of our life😂",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T04:18:41+09:00",
+            "url": "https://x.com/dampedspring/status/2115523666322624734",
+            "kind": "post",
+            "preview": "We as DS call bragging about markets a \"mook\" others call it a goucher or a jinx. Anyway what was W…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T05:13:33+09:00",
+            "url": "https://x.com/dampedspring/status/2115537474285969550",
+            "kind": "post",
+            "preview": "Well that was fun",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T05:14:39+09:00",
+            "url": "https://x.com/dampedspring/status/2115537753429381629",
+            "kind": "post",
+            "preview": "Definely GOOG is finding it difficult to get its slice of pie.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T19:13:59+09:00",
+            "url": "https://x.com/dampedspring/status/2115748978574893396",
+            "kind": "post",
+            "preview": "Wordle 1,958 5/6* ⬜⬜⬜🟨⬜ 🟨🟨🟨⬜⬜ ⬜🟩🟨🟨⬜ ⬜🟩🟩🟩🟩 🟩🟩🟩🟩🟩",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-10-29T20:53:20+09:00",
+            "url": "https://x.com/dampedspring/status/2115773979411787890",
+            "kind": "post",
+            "preview": "$MSFT offering benchmark 10 maturities debt for the first time since 2017. Capital \"lite\" is dead",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T02:02:53+09:00",
+            "url": "https://x.com/dampedspring/status/2115851880010305939",
+            "kind": "post",
+            "preview": "C+",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-10-30T05:06:38+09:00",
+            "url": "https://x.com/dampedspring/status/2115898123805446187",
+            "kind": "post",
+            "preview": "$Aapl up on INTC and Amzn shitting the bed. Lol",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T05:11:26+09:00",
+            "url": "https://x.com/dampedspring/status/2115899328388870445",
+            "kind": "post",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-10-30T05:14:44+09:00",
+            "url": "https://x.com/dampedspring/status/2115900162732404834",
+            "kind": "post",
+            "preview": "What sort of issuance will $AMZN do? 1. equity underwriting plus mandatory 2. ATM equity 3. Bofe 4.…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T05:34:06+09:00",
+            "url": "https://x.com/dampedspring/status/2115905033716056314",
+            "kind": "post",
+            "preview": "Sold my STIR long just now into the spike",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T05:37:00+09:00",
+            "url": "https://x.com/dampedspring/status/2115905763612770631",
+            "kind": "post",
+            "preview": "Kirk out living Picard 🤯🪦",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T06:03:41+09:00",
+            "url": "https://x.com/dampedspring/status/2115912480983511271",
+            "kind": "post",
+            "preview": "Lots of short term capital losses to harvest on the $INTC and $GOOG issuance. Also let's investors …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T06:22:08+09:00",
+            "url": "https://x.com/dampedspring/status/2115917120634511745",
+            "kind": "post",
+            "preview": "$AMZN It's pretty amazing that a \"hyperscaler\"in a sweet spot of AI has an 8% annualized five year …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T06:52:53+09:00",
+            "url": "https://x.com/dampedspring/status/2115924861222838375",
+            "kind": "post",
+            "preview": "Based on the amount of cheerleading of Hyperliquid and the new position by Druck how big do you thi…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T06:55:26+09:00",
+            "url": "https://x.com/dampedspring/status/2115925501344895304",
+            "kind": "post",
+            "preview": "lol AI trains on $RDDT so now people don't use it.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T08:51:59+09:00",
+            "url": "https://x.com/dampedspring/status/2115954834675282403",
+            "kind": "quote_post",
+            "preview": "Here's how I think about hyperliquid fwiw. I also had the pleasure of discussing the topic with the…",
+            "quoted_author": "dampedspring",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T10:04:28+09:00",
+            "url": "https://x.com/dampedspring/status/2115973076286337106",
+            "kind": "quote_post",
+            "preview": "Bonds are the best tm",
+            "quoted_author": "dampedspring",
+            "noise_hint": false
           }
         ]
       },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2113439237395632213",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-23T01:15:54.000Z",
-      "url": "https://x.com/dampedspring/status/2113439237395632213",
-      "text": "40BN SPCX https://t.co/babVF4vra5",
-      "quoted_post_id": "2113363236687126578",
-      "quoted_post": {
-        "id": "2113363236687126578",
-        "author": "financialjuice",
-        "created_at": "2026-10-22T20:13:54.000Z",
-        "url": "https://x.com/financialjuice/status/2113363236687126578",
-        "text": "SpaceX debt deal being led by Apollo and Goldman Sachs - Semafor $SPCX $GS",
-        "available": true,
-        "has_media": false,
-        "media": []
+      "Bob Elliott": {
+        "role": "core",
+        "count": 9,
+        "non_noise": 9,
+        "items": [
+          {
+            "at": "2026-10-27T20:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2115039556596605227",
+            "kind": "post",
+            "preview": "That Giant Sucking Noise The latest news of AI-related equity & debt financing highlights just how …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-27T23:24:15+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2115087182092210429",
+            "kind": "post",
+            "preview": "Wen ROI coming?",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T01:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2115115052911263879",
+            "kind": "quote_post",
+            "preview": "Relative individual equity performance meaningfully downrating the benefits of AI ahead.",
+            "quoted_author": "BlakeMillardCFA",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T20:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2115401943397044498",
+            "kind": "post",
+            "preview": "The Glacial Hiking Cycle While most developed economies face headline inflation of 3-4% these days,…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T05:36:10+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2115543166065549786",
+            "kind": "post",
+            "preview": "All Hat, No Cattle.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T22:17:36+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2115795187125403896",
+            "kind": "post",
+            "preview": "The dissaving driven economy.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T00:00:49+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2115821162642956485",
+            "kind": "post",
+            "preview": "So many bad takes coming today that AI-related investment is driving the economy. The vast majority…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T02:11:43+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2115854101020065810",
+            "kind": "post",
+            "preview": "Unlimited is expanding our product suite and our sales team with it. If you have ETF sales experien…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T07:03:41+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2115927580276850985",
+            "kind": "quote_post",
+            "preview": "Tomorrow we are back LIVE at the normal time. Bring your lunch.",
+            "quoted_author": "AahanPrometheus",
+            "noise_hint": false
+          }
+        ]
       },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVRxyWLXgAEmbUW.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
+      "Cem Karsan": {
+        "role": "core",
+        "count": 11,
+        "non_noise": 11,
+        "items": [
+          {
+            "at": "2026-10-29T00:45:02+09:00",
+            "url": "https://x.com/jam_croissant/status/2115469900877857004",
+            "kind": "post",
+            "preview": "🍒🥐 I’ll be joining @tastyliveshow today at 3pm CT (4pm ET). Tune in for the conversation live. We w…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T01:01:00+09:00",
+            "url": "https://x.com/jam_croissant/status/2115473918584553620",
+            "kind": "post",
+            "preview": "BIG DAY!! I’ll join @CNBC LIVE at 1pm CT (2pm ET) for a panel on one of the most consequential Fed …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T02:08:00+09:00",
+            "url": "https://x.com/jam_croissant/status/2115490778730664029",
+            "kind": "post",
+            "preview": "Reminder: I’ll be on @CNBCTheExchange LIVE at 1pm CT (2pm ET) as the Fed takes center stage. I’m lo…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T02:55:00+09:00",
+            "url": "https://x.com/jam_croissant/status/2115502606663778568",
+            "kind": "post",
+            "preview": "GOING LIVE in just a few minutes on @CNBC. We’ll be setting the table for Fed Chair Warsh’s remarks…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T04:50:00+09:00",
+            "url": "https://x.com/jam_croissant/status/2115531547315212315",
+            "kind": "post",
+            "preview": "Live in 10 minutes: I’m back with @tastyliveshow at 3pm CT (4pm ET). Join us live. 🍒🥐",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T07:18:38+09:00",
+            "url": "https://x.com/jam_croissant/status/2115568954903314939",
+            "kind": "quote_post",
+            "preview": "Kabuki",
+            "quoted_author": "darioperkins",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T07:21:12+09:00",
+            "url": "https://x.com/jam_croissant/status/2115569599177805917",
+            "kind": "quote_post",
+            "preview": "Kabuki",
+            "quoted_author": "perfiliev",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T08:51:01+09:00",
+            "url": "https://x.com/jam_croissant/status/2115592201627398188",
+            "kind": "quote_post",
+            "preview": "🎭",
+            "quoted_author": "BobEUnlimited",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T10:14:34+09:00",
+            "url": "https://x.com/jam_croissant/status/2115613229997023606",
+            "kind": "quote_post",
+            "preview": "This Fed is SO ‘independent’ that the Fed Chairman dutifully uses Dear Leader’s new made up termino…",
+            "quoted_author": "PeterSchiff",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T11:41:46+09:00",
+            "url": "https://x.com/jam_croissant/status/2115635173001683073",
+            "kind": "quote_post",
+            "quoted_author": "atrupar",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T22:41:28+09:00",
+            "url": "https://x.com/jam_croissant/status/2115801194010448372",
+            "kind": "quote_post",
+            "quoted_author": "FinanceLancelot",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Darius Dale": {
+        "role": "core",
+        "count": 9,
+        "non_noise": 9,
+        "items": [
+          {
+            "at": "2026-10-27T21:29:00+09:00",
+            "url": "https://x.com/DariusDale42/status/2115058180803948754",
+            "kind": "quote_post",
+            "quoted_author": "BraveNewtWorld",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-27T23:02:20+09:00",
+            "url": "https://x.com/DariusDale42/status/2115081668226580932",
+            "kind": "quote_post",
+            "preview": "WHY IS THERE SO MUCH POLITICAL CHAOS IN WESTERN SOCIETY? If you can read and do math at a ~high sch…",
+            "quoted_author": "ThetaBurnVictim",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T02:10:12+09:00",
+            "url": "https://x.com/DariusDale42/status/2115128946245107732",
+            "kind": "quote_post",
+            "preview": "Following up on the brilliant tweet from @GrayGhost below... One of my core principles is that disc…",
+            "quoted_author": "GrayGhost",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T02:32:03+09:00",
+            "url": "https://x.com/DariusDale42/status/2115134442830254122",
+            "kind": "quote_post",
+            "preview": "The bipartisan donor class that controls what you see and hear on nearly every media platform knows…",
+            "quoted_author": "JRanalletta",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T06:08:38+09:00",
+            "url": "https://x.com/DariusDale42/status/2115188950243643546",
+            "kind": "quote_post",
+            "preview": "Question: What is the #1 structural market risk that we think is highly probable that consensus is …",
+            "quoted_author": "42Macro",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T22:29:29+09:00",
+            "url": "https://x.com/DariusDale42/status/2115435786753687745",
+            "kind": "quote_post",
+            "preview": "I highly recommend that you watch this short video and read the brief prose in the post below if yo…",
+            "quoted_author": "42Macro",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T05:52:33+09:00",
+            "url": "https://x.com/DariusDale42/status/2115547289997521149",
+            "kind": "quote_post",
+            "preview": "Question: Everyone has seen the “miss the 10 best days of the market” marketing fluff. Statisticall…",
+            "quoted_author": "42Macro",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T22:57:38+09:00",
+            "url": "https://x.com/DariusDale42/status/2115805258819481662",
+            "kind": "post",
+            "preview": "Zoom into the Paradigm C prose in my profile picture from Apr-25, when everyone was freaking out ab…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T00:42:42+09:00",
+            "url": "https://x.com/DariusDale42/status/2115831703260328116",
+            "kind": "quote_post",
+            "preview": "ANSWER: Unequivocally “yes.” And it’s not just me: the entire global 2&20-to-3&30 industry agrees. …",
+            "quoted_author": "Tleblebijian",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Jim Bianco": {
+        "role": "core",
+        "count": 5,
+        "non_noise": 4,
+        "items": [
+          {
+            "at": "2026-10-28T03:17:44+09:00",
+            "url": "https://x.com/BiancoResearch/status/2115145941347082405",
+            "kind": "post",
+            "preview": "What's going on with gas prices? Since gas prices are highly seasonal, it may help to look at them …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T06:11:37+09:00",
+            "url": "https://x.com/BiancoResearch/status/2115189700587655674",
+            "kind": "post",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-10-28T06:11:51+09:00",
+            "url": "https://x.com/BiancoResearch/status/2115189758347612595",
+            "kind": "quote_post",
+            "preview": "Finance has run on two inputs for centuries: labor and capital. AI is adding a third input, intelli…",
+            "quoted_author": "biancoresearch",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T03:18:32+09:00",
+            "url": "https://x.com/BiancoResearch/status/2115508532086968511",
+            "kind": "post",
+            "preview": "With Cook dissenting, four different voters have voted to hike rates against the majority between t…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T03:36:29+09:00",
+            "url": "https://x.com/BiancoResearch/status/2115513047158866156",
+            "kind": "quote_post",
+            "preview": "You could argue that the only signal in this markup is the change from \"solid\" to \"strong.\" \"Strong…",
+            "quoted_author": "NickTimiraos",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Joseph Wang": {
+        "role": "shadow",
+        "count": 2,
+        "non_noise": 2,
+        "items": [
+          {
+            "at": "2026-10-29T03:34:55+09:00",
+            "url": "https://x.com/josephwang/status/2115512654702018611",
+            "kind": "post",
+            "preview": "Warsh \"unwilling and unable to call financial conditions tight.\"",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T05:18:38+09:00",
+            "url": "https://x.com/josephwang/status/2115538752559022392",
+            "kind": "post",
+            "preview": "October 2026 FOMC Debrief",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Lyn Alden": {
+        "role": "core",
+        "count": 3,
+        "non_noise": 3,
+        "items": [
+          {
+            "at": "2026-10-28T11:04:26+09:00",
+            "url": "https://x.com/LynAldenContact/status/2115263390025429195",
+            "kind": "quote_post",
+            "preview": "Sometimes in war scenes, it is pretended that massive battles can happen without casualties. Just a…",
+            "quoted_author": "Qualite4Real",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T05:40:44+09:00",
+            "url": "https://x.com/LynAldenContact/status/2115906705498296682",
+            "kind": "quote_post",
+            "preview": "Epic run. Rip.",
+            "quoted_author": "AP",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T07:33:23+09:00",
+            "url": "https://x.com/LynAldenContact/status/2115935054392418569",
+            "kind": "quote_post",
+            "preview": "The implicit assumption in the question is that higher rates help fix inflation in all contexts. In…",
+            "quoted_author": "atrupar",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Mark Newton": {
+        "role": "core",
+        "count": 3,
+        "non_noise": 3,
+        "items": [
+          {
+            "at": "2026-10-28T08:13:57+09:00",
+            "url": "https://x.com/MarkNewtonCMT/status/2115220487081013750",
+            "kind": "post",
+            "preview": "$EMR Emerson Electric quietly pushing back up to new all-time highs on a daily and weekly closing b…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T21:36:46+09:00",
+            "url": "https://x.com/MarkNewtonCMT/status/2115784908052324652",
+            "kind": "quote_post",
+            "preview": "I think this is a great quote from RR- \"In some ways, the Fed is operating a house with one thermos…",
+            "quoted_author": "RickRieder",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T08:57:19+09:00",
+            "url": "https://x.com/MarkNewtonCMT/status/2115956177531994121",
+            "kind": "post",
+            "preview": "$AMZN gave plenty of warning technically on its mild rally attempt into mid-October, but the real w…",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Marko Papic": {
+        "role": "core",
+        "count": 5,
+        "non_noise": 5,
+        "items": [
+          {
+            "at": "2026-10-27T22:27:38+09:00",
+            "url": "https://x.com/Geo_papic/status/2115072935681544554",
+            "kind": "post",
+            "preview": "Lots of \"largest turnout ever/since...\" elections. Brazil, Serbia, now it looks like Israel. That's…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T06:45:07+09:00",
+            "url": "https://x.com/Geo_papic/status/2115198130564247774",
+            "kind": "post",
+            "preview": "This is one of those \"thanks tips\" obvious conclusions... but my colleague @WeisbergerNoah actually…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T07:58:26+09:00",
+            "url": "https://x.com/Geo_papic/status/2115216580929835395",
+            "kind": "quote_post",
+            "preview": "The only two avenues I see are a caretaker government by Bibi or a minority government by Eiznkot. …",
+            "quoted_author": "academic_la",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T22:55:56+09:00",
+            "url": "https://x.com/Geo_papic/status/2115442443432968593",
+            "kind": "post",
+            "preview": "Just a simple chart... both for everyone to \"settle down a bit,\" and also as a reminder of how bad …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T09:52:28+09:00",
+            "url": "https://x.com/Geo_papic/status/2115970055557062754",
+            "kind": "post",
+            "preview": "Thinking out loud here, but do we need to create a basket of stocks that are outright pro-GOP or pr…",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Ryan Detrick": {
+        "role": "core",
+        "count": 26,
+        "non_noise": 26,
+        "items": [
+          {
+            "at": "2026-10-27T12:54:05+09:00",
+            "url": "https://x.com/RyanDetrick/status/2114928594854023460",
+            "kind": "post",
+            "preview": "Nice chart from @scottcharts in his report today that shows software could continue to outperform s…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-27T23:59:21+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115096015661351140",
+            "kind": "post",
+            "preview": "After a 15% rally in April/May, the S&P 500 has simply consolidated those gains for nearly five mon…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T03:21:23+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115146859081548124",
+            "kind": "quote_post",
+            "preview": "👀👀 Deal Monday",
+            "quoted_author": "sonusvarghese",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T04:27:29+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115163492605120757",
+            "kind": "post",
+            "preview": "Tomorrow is historically the most bullish day of the year, but it is also a Fed day and those have …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T04:39:05+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115166412498956626",
+            "kind": "post",
+            "preview": "Social Hour is this Friday! 🥂🍻 @sonusvarghese and I are so excited to be joined by @AGraylin to div…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T05:15:55+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115175681302880762",
+            "kind": "post",
+            "preview": "We made it, my favorite stat is finally here. October 28th is the best day of the year for the S&P …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T06:15:05+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115190573543923943",
+            "kind": "post",
+            "preview": "Here is the latest @CarsonResearch Earnings Season Snapshot",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T08:24:45+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115223205459669284",
+            "kind": "post",
+            "preview": "We are Talking Midterms on our latest Glass Half Full video. @sonusvarghese and I discuss what you …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T08:35:35+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115225929186165182",
+            "kind": "quote_post",
+            "preview": "Capex is still 🔥 📈",
+            "quoted_author": "sonusvarghese",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T09:18:10+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115236647281250560",
+            "kind": "post",
+            "preview": "Yes, CCC spreads have widened significantly this year, but high yield spreads are just back to late…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T10:14:20+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115250780152135972",
+            "kind": "post",
+            "preview": "I always learn something when I read @SamRo and an honor to see me in there.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T11:17:49+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115266756369404028",
+            "kind": "post",
+            "preview": "Could Texas really flip? @LibbyCantrill of @PIMCO weighs in",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T11:17:58+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115266794596229550",
+            "kind": "reply",
+            "preview": "@LibbyCantrill @PIMCO @sonusvarghese 📺",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T21:09:01+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115415539245871427",
+            "kind": "quote_post",
+            "preview": "I'm set to join Premarket Prep in about 25 minutes at 8:35am ET! You can watch it all 👇👇👇 Always fu…",
+            "quoted_author": "Spus",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T21:31:33+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115421209571610652",
+            "kind": "quote_post",
+            "preview": "Starting in five minutes with @Spus and @TripleDTrader I have a record 34 slides to discuss ;)",
+            "quoted_author": "RyanDetrick",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T22:49:15+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115440762569535726",
+            "kind": "post",
+            "preview": "Had such a great time joining my friend @APompliano talking about why this is still a bull market, …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T00:35:19+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115467456072286609",
+            "kind": "post",
+            "preview": "Equal weight software is breaking out. Hard to get super bearish when you see this happening. Nice …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T00:44:35+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115469785341235259",
+            "kind": "quote_post",
+            "preview": "Thanks @stocktradernet for have me back! 34 charts in 35 minutes with @Spus and @TripleDTrader 🔥🔥",
+            "quoted_author": "stocktradernet",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T04:52:49+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115532258165543258",
+            "kind": "post",
+            "preview": "Oh my. @Adam_Parker_Tri just now on @CNBCClosingBell. 👏",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T04:57:14+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115533367706059146",
+            "kind": "post",
+            "preview": "Careful what you wish for with market breadth. @sonusvarghese and I explain on Facts vs Feelings Ep…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T05:01:41+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115534488805491052",
+            "kind": "quote_post",
+            "preview": "Even the Fed couldn't ruin the historically most bullish day of the year 🐂 💪",
+            "quoted_author": "RyanDetrick",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T06:38:59+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115558976347611603",
+            "kind": "quote_post",
+            "preview": "💥💥",
+            "quoted_author": "philrosenn",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T10:23:14+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115615408447164823",
+            "kind": "quote_post",
+            "preview": "Great look at AI success from @sonusvarghese 👇👇",
+            "quoted_author": "sonusvarghese",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T22:32:14+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115798868327555232",
+            "kind": "post",
+            "preview": "Records are made to be broken. Amazing list from @sonusvarghese on major AI financing announcements…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T00:08:23+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115823066328584695",
+            "kind": "quote_post",
+            "preview": "He is right ;)",
+            "quoted_author": "sonusvarghese",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T01:43:29+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115846999148728676",
+            "kind": "post",
+            "preview": "How cool is this new @CNBCMorningCall commercial with @MorganLBrennan? ☕ ⏰ I am in here, along with…",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Warren Pies": {
+        "role": "core",
+        "count": 2,
+        "non_noise": 2,
+        "items": [
+          {
+            "at": "2026-10-28T00:00:23+09:00",
+            "url": "https://x.com/WarrenPies/status/2115096278216609973",
+            "kind": "quote_post",
+            "preview": "One of the ongoing projects at @3F_Research is to understand what kind of investing advice AI will …",
+            "quoted_author": "fernavid",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T03:31:09+09:00",
+            "url": "https://x.com/WarrenPies/status/2115511703450304809",
+            "kind": "quote_post",
+            "preview": "FED Based on SOFR, the Fed's focus has gone from oil to QQQ...The risk is Warsh hinting that the cu…",
+            "quoted_author": "WarrenPies",
+            "noise_hint": false
+          }
+        ]
+      }
     }
-  ]
+  }
 }
