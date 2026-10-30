@@ -8,6 +8,7 @@ and it is never evidence.
 from __future__ import annotations
 
 import re
+from difflib import SequenceMatcher
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
@@ -85,19 +86,50 @@ def for_x(posts: list[dict], generated_at: str) -> dict:
     return build(entries, generated_at, "created_at")
 
 
+def _norm(t: str) -> str:
+    return " ".join(NONWORD_RE.sub(" ", (t or "").lower()).split())
+
+
+def same_interview_groups(videos: list[dict]) -> dict[str, list[str]]:
+    """video_id -> other video_ids of the same person sharing at least 2 near-identical quotes (ratio >= 0.85)."""
+    qs = {v["video_id"]: [_norm(q.get("text")) for q in v.get("quotes") or [] if len(q.get("text") or "") >= 40]
+          for v in videos if v.get("video_id")}
+    out: dict[str, list[str]] = {}
+    vs = [v for v in videos if qs.get(v.get("video_id"))]
+    for i, a in enumerate(vs):
+        for b in vs[i + 1:]:
+            if a.get("person") != b.get("person"):
+                continue
+            hits = sum(1 for x in qs[a["video_id"]]
+                       if any(SequenceMatcher(None, x, y).ratio() >= 0.85 for y in qs[b["video_id"]]))
+            if hits >= 2:
+                out.setdefault(a["video_id"], []).append(b["video_id"])
+                out.setdefault(b["video_id"], []).append(a["video_id"])
+    return out
+
+
 def for_yt(videos: list[dict], generated_at: str) -> dict:
+    groups = same_interview_groups(videos)
+    pub = {v.get("video_id"): v.get("published_at") or "" for v in videos}
     entries = []
     for v in videos:
         if not v.get("appearance_confirmed"):
             continue
+        same = groups.get(v.get("video_id")) or []
         entries.append({
             "person": v.get("person"), "role": v.get("role"),
             "at": v.get("evidence_ready_at") or v.get("first_seen_at"),
             "url": v.get("url"), "kind": "video", "preview": _preview(v.get("title")),
             "grade": v.get("evidence_grade"), "published_at": v.get("published_at"),
+            "same_interview_as": same or None,
+            "earliest_published_at": min([pub[x] for x in same if pub.get(x)] + [v.get("published_at") or ""]) if same else None,
             "noise_hint": False,
         })
-    return build(entries, generated_at, "evidence_ready_at (first_seen_at when no usable quotes yet)")
+    idx = build(entries, generated_at, "evidence_ready_at (first_seen_at when no usable quotes yet)")
+    idx["same_interview_note"] = ("same_interview_as lists other videos of the same person that share at least two "
+                                  "near-identical quotes: treat them as one interview (CROSS-UPLOAD INTERVIEW DEDUPE), "
+                                  "dated by earliest_published_at.")
+    return idx
 
 
 def for_web(items: list[dict], generated_at: str) -> dict:
