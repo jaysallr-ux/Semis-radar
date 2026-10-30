@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-30T11:24:17+09:00",
+  "generated_at": "2026-10-30T11:25:02+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-30T11:23:59+09:00",
+    "last_discovery_at": "2026-10-30T11:24:17+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -2301,6 +2301,10 @@
             "preview": "\"This market cycle will not survive contact with the 2028 general election\" | Market Hang",
             "grade": "1차-A",
             "published_at": "2026-10-29T22:00:16Z",
+            "same_interview_as": [
+              "jKmxb7VTxdU"
+            ],
+            "earliest_published_at": "2026-10-28T11:26:54Z",
             "noise_hint": false
           },
           {
@@ -2310,6 +2314,10 @@
             "preview": "A 2028 reckoning, data centers as a luxury belief, and the liberal arts comeback | Market Hang",
             "grade": "1차-A",
             "published_at": "2026-10-28T11:26:54Z",
+            "same_interview_as": [
+              "a1BrYVWnyY8"
+            ],
+            "earliest_published_at": "2026-10-28T11:26:54Z",
             "noise_hint": false
           }
         ]
@@ -2330,6 +2338,7 @@
           }
         ]
       }
-    }
+    },
+    "same_interview_note": "same_interview_as lists other videos of the same person that share at least two near-identical quotes: treat them as one interview (CROSS-UPLOAD INTERVIEW DEDUPE), dated by earliest_published_at."
   }
 }
