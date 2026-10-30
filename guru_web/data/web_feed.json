@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-10-30T11:24:34+09:00",
+  "generated_at": "2026-10-30T21:05:26+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -85,7 +85,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 4,
+      "items_in_window": 5,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -105,8 +105,8 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
-      "scoring_items": 1,
+      "items_in_window": 5,
+      "scoring_items": 2,
       "pending_items": 0
     },
     {
@@ -152,17 +152,17 @@
     }
   ],
   "stats": {
-    "discovered": 136,
-    "new_items": 4,
-    "decoded": 4,
-    "bodies": 0,
-    "quotes_verified": 0,
+    "discovered": 140,
+    "new_items": 7,
+    "decoded": 7,
+    "bodies": 2,
+    "quotes_verified": 1,
     "video_candidates": 0,
-    "gemini_calls": 0,
+    "gemini_calls": 1,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 0,
+    "calls_today": 1,
     "daily_cap": 10,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -172,6 +172,25 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "TSLA moves out of year-long downtrend, Ryan Detrick notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-10-30T03:35:12+00:00",
+      "discovered_at": "2026-10-30T21:05:26+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4025549-tsla-breaks-downtrend/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4025549-tsla-breaks-downtrend/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Lyn Alden",
       "tier": 3,
@@ -190,6 +209,52 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
+    },
+    {
+      "person": "Jim Bianco",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "‘Who Are You Really Protecting?’ Jim Bianco on Banks Blocking Agents",
+      "outlet": "unchainedcrypto.com",
+      "published_at": "2026-10-29T22:00:00+00:00",
+      "discovered_at": "2026-10-30T21:05:26+09:00",
+      "article_url": "https://unchainedcrypto.com/who-are-you-really-protecting-jim-bianco-on-banks-blocking-agents/",
+      "canonical_url": "https://unchainedcrypto.com/who-are-you-really-protecting-jim-bianco-on-banks-blocking-agents/",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Jim Bianco",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Jim Bianco Calls for Overhaul of Fed’s Post-Crisis Guidance",
+      "outlet": "TOKENPOST",
+      "published_at": "2026-10-29T20:30:44+00:00",
+      "discovered_at": "2026-10-30T21:05:26+09:00",
+      "article_url": "https://www.tokenpost.com/news/regulation/43859",
+      "canonical_url": "https://www.tokenpost.com/news/regulation/43859",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "than the problems it has solved.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Bianco said"
+        }
+      ],
+      "direction_hint": "not_stated",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-10-30T21:05:26+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
     },
     {
       "person": "Andy Constan",
@@ -826,18 +891,9 @@
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-10-27T16:16:59+09:00",
-            "url": "https://www.tastylive.com/shows/tasty-crumbs-with-cem-karsan/episodes/tasty-crumbs-with-cem-karsan-10-26-2026",
-            "kind": "news_article",
-            "preview": "tasty Crumbs with Cem Karsan",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-26T22:35:05+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-29T10:05:25+09:00",
             "url": "https://www.cnbc.com/video/2026/10/28/nothing-has-changed-to-make-fed-chair-warsh-more-hawkish-or-dovish-says-kai-wealthas-cem-karsan.html",
@@ -851,8 +907,8 @@
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-10-28T10:05:25+09:00",
@@ -870,6 +926,24 @@
             "preview": "FOMC’s forward guidance has caused more problems than it has solved, says Jim Bianco",
             "grade": "제목·설명만 확인",
             "published_at": "2026-10-29T15:21:22+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T21:05:26+09:00",
+            "url": "https://unchainedcrypto.com/who-are-you-really-protecting-jim-bianco-on-banks-blocking-agents/",
+            "kind": "news_article",
+            "preview": "‘Who Are You Really Protecting?’ Jim Bianco on Banks Blocking Agents",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-29T22:00:00+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T21:05:26+09:00",
+            "url": "https://www.tokenpost.com/news/regulation/43859",
+            "kind": "news_article",
+            "preview": "Jim Bianco Calls for Overhaul of Fed’s Post-Crisis Guidance",
+            "grade": "1차-인용",
+            "published_at": "2026-10-29T20:30:44+00:00",
             "noise_hint": false
           }
         ]
@@ -962,8 +1036,8 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-10-28T21:05:29+09:00",
@@ -981,6 +1055,15 @@
             "preview": "Ryan Detrick: Bull market conditions persist with unexpected breadth and rising sentiment",
             "grade": "제목·설명만 확인",
             "published_at": "2026-10-28T13:50:26+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T21:05:26+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4025549-tsla-breaks-downtrend/",
+            "kind": "news_article",
+            "preview": "TSLA moves out of year-long downtrend, Ryan Detrick notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-30T03:35:12+00:00",
             "noise_hint": false
           }
         ]
