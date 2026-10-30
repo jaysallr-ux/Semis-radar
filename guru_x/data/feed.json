@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-30T11:24:10+09:00",
+  "generated_at": "2026-10-30T21:15:34+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (79 entries)",
+    "list": "ok (76 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 111,
-    "already_known": 56,
+    "urls_found": 108,
+    "already_known": 45,
     "too_old": 55,
-    "verified_syndication": 0,
+    "verified_syndication": 8,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-10-28T15:44:35.000Z",
+    "list_oldest": "2026-10-28T19:18:41.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
+      "last_success_at": "2026-10-30T21:15:34+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
+      "last_success_at": "2026-10-30T21:15:34+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -56,8 +56,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-30T21:15:34+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -67,7 +67,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
+      "last_success_at": "2026-10-30T21:15:34+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-30T21:15:34+09:00",
+      "new_originals_this_run": 3,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-30T21:15:34+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
+      "last_success_at": "2026-10-30T21:15:34+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
+      "last_success_at": "2026-10-30T21:15:34+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-30T21:15:34+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-10-30T21:15:34+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-30T11:24:10+09:00",
+      "last_success_at": "2026-10-30T21:15:34+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -156,14 +156,312 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 0,
+    "described": 4,
     "pending": 0,
     "errors": 0,
-    "calls_today": 14,
+    "calls_today": 18,
     "daily_cap": 40,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2116138356924928415",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-10-30T12:01:14.000Z",
+      "url": "https://x.com/LynAldenContact/status/2116138356924928415",
+      "text": "It’s not that every person necessarily wants to run their own local systems; it’s that some nontrivial percentage want/need to do that.\n\nBusinesses and individuals protective of their data privacy, or wanting to analyze/perform things that centralized providers might block from",
+      "quoted_post_id": "2115838856524120128",
+      "quoted_post": {
+        "id": "2115838856524120128",
+        "author": "morqon",
+        "created_at": "2026-10-29T16:11:08.000Z",
+        "url": "https://x.com/morqon/status/2115838856524120128",
+        "text": "sam: local inference is a terrible allocation of scarce resources\n\n“a lot of people want local inference, and somehow they assume that the problem is solved now because we have open-source models, we're going to be able to run them on our computers, and so we're not going to need https://t.co/1li36ZxUu6",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2115838725477253120/img/bMgZREkjDDSIxPZP.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-30T12:15:34+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2115838725477253120/img/bMgZREkjDDSIxPZP.jpg",
+            "image_text": "",
+            "what_it_shows": "A man wearing a tan sweater sitting in a booth with a radio and clock on the wood-paneled wall behind him and glasses of beer on the table in the foreground.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2116136067787260232",
+      "person": "Warren Pies",
+      "handle": "WarrenPies",
+      "tier": 1,
+      "role": "core",
+      "author_id": "2326980139",
+      "created_at": "2026-10-30T11:52:09.000Z",
+      "url": "https://x.com/WarrenPies/status/2116136067787260232",
+      "text": "Over the past month, the 10y has become much more correlated to the Nasdaq than oil.\n\nThis is a more risky regime...If the Fed decides that it must slow AI to calm inflation, then there is no easy \"supply side\" end to the tightening cycle. https://t.co/1zplPLw7yB",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HV4GW5yWsAAuG_x.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-30T12:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HV4GW5yWsAAuG_x.jpg",
+            "image_text": "10-Year Treasury Correlation - Oil vs Nasdaq Daily Frequency 2025-10-29 to 2026-10-27 10-year yield vs. WTI crude oil (latest: +0.16) 10-year yield vs. Nasdaq Composite (latest: +0.52) 10Y CORRELATION TO OIL 10Y CORRELATION TO NASDAQ TECH STOCKS NOW THE FED'S INFLATION FOCUS 3FOURTEEN RESEARCH MANAGE RISK. EXPLOIT OPPORTUNITY",
+            "what_it_shows": "The chart shows the daily correlation of the 10-year Treasury yield with WTI crude oil (teal line) and the Nasdaq Composite (purple line) from November 2025 to October 2026. The latest readings show the 10-year yield correlation to oil at +0.16 and to the Nasdaq Composite at +0.52.",
+            "chart_credit": "3Fourteen Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2116134003010920787",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-30T11:43:56.000Z",
+      "url": "https://x.com/dampedspring/status/2116134003010920787",
+      "text": "Fwiw. Best practices in tradfi and in your personal life is to have locally stored hard copy or digital copies of ever \"savings\" account or title of ownership of every asset you have.  For highly active investors it should be daily.  For most of us it should be monthly. But the",
+      "quoted_post_id": "2115971848550613084",
+      "quoted_post": {
+        "id": "2115971848550613084",
+        "author": "dampedspring",
+        "created_at": "2026-10-30T00:59:36.000Z",
+        "url": "https://x.com/dampedspring/status/2115971848550613084",
+        "text": "@MSGCapital Really?   For most of my professional career all my firms downloaded a daily copy of every account from third party custody accounts and held it locally specifically to have a back up if counterparty had any number of problems?   I still do it every day.  I'm surprised you don't.",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2116126720507957724",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-30T11:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2116126720507957724",
+      "text": "Past Peak Nominal GDP Growth\n\nFor much of the second half markets have been all-in on a nominal growth boom ahead. The latest growth data and AI-related company reports are calling those hopes into question.\n\nhttps://t.co/V6wH1NyjSD https://t.co/zQUrKKkVnf",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/past-peak-nominal-gdp-growth"
+      ],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HV322GeWIAAHrCK.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-30T12:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HV322GeWIAAHrCK.png",
+            "image_text": "FRED Gross Domestic Product\nContinuously Compounded Annual Rate of Change\nQ1 2023 Q3 2023 Q1 2024 Q3 2024 Q1 2025 Q3 2025 Q1 2026 Q3 2026\n9 8 7 6 5 4 3 2 1 0\nSource: U.S. Bureau of Economic Analysis via FRED(R)\nExcluding inventory build",
+            "what_it_shows": "This bar chart displays the Continuously Compounded Annual Rate of Change for Gross Domestic Product from Q1 2023 to Q3 2026, featuring an annotated red curve highlighting the rate excluding inventory build.",
+            "chart_credit": "FRED"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2116114641554481367",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-30T10:27:00.000Z",
+      "url": "https://x.com/dampedspring/status/2116114641554481367",
+      "text": "Wordle 1,959 3/6*\n\n🟩⬜⬜⬜🟩\n🟩⬜⬜⬜🟩\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2116018269975121953",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-30T04:04:03.000Z",
+      "url": "https://x.com/RyanDetrick/status/2116018269975121953",
+      "text": "The S&P 500 has been lower the past two Fridays.\n\nHasn't been down three in a row since six in a row in March/April.\n\nFutures sure look like it'll be three.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2116009055995257032",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-30T03:27:27.000Z",
+      "url": "https://x.com/RyanDetrick/status/2116009055995257032",
+      "text": "$TSLA breaking out of a year-long downtrend\n\nNice one in @scottcharts note today https://t.co/dRnv1iJqdF",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HV2S2HLWIAAuD50.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-10-30T12:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HV2S2HLWIAAuD50.jpg",
+            "image_text": "BTI 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 -480.00 -450.00 -420.00 403.65 385.71 367.45 -340.00 -320.00 -300.00 -280.00 -260.00 -240.00 -220.00 100.00 63.27 0.00 12/26/9 MACD-C 10.00 -20.00 Relative Index Comparison to S&P 500 Index & 200 DMA vs. S&P 500 -4000 -3000 pr Jul Oct 2026 Apr Jul Oct 2027 TSLA Optuma 28th Oct 2026",
+            "what_it_shows": "The chart shows a technical analysis of TSLA spanning from 2010 to 2027, featuring price action with moving averages, RSI, MACD, and a relative index comparison against the S&P 500.",
+            "chart_credit": "Optuma"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2115993753496572105",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-10-30T02:26:38.000Z",
+      "url": "https://x.com/RyanDetrick/status/2115993753496572105",
+      "text": "Bookmark this and read it a few times.\n\nAmazing work from @sonusvarghese and Blake Anderson (aka little Dan Ives) on our team regarding the Anthropic S1, AI buildouts, Javons' Paradox, and so much more. \n\nhttps://t.co/of4usu1Ukj",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://www.carsongroup.com/insights/blog/anthropic-showed-ai-can-make-money-but-the-buildout-has-to-prove-it/"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2115973076286337106",
       "person": "Andy Constan",
@@ -7143,83 +7441,6 @@
       "discovered_via": [
         "list_embed"
       ]
-    },
-    {
-      "id": "2113594731737567610",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-10-23T11:33:47.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2113594731737567610",
-      "text": "Weak Stock Markets, Resilient Economies & Companies\n\nStocks outside the US have meaningfully underperformed the US in the face of the second oil-price surge, even as economic and corporate fundamentals look pretty resilient.\n\nhttps://t.co/MfxxCkKPYI https://t.co/iIhTxbZEZF",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://bobeunlimited.substack.com/p/weak-stock-markets-resilient-economies"
-      ],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVT_KaOboAAZ5vW.png"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2113581420342128874",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-23T10:40:53.000Z",
-      "url": "https://x.com/dampedspring/status/2113581420342128874",
-      "text": "Wordle 1,952 4/6*\n\n⬜⬜⬜🟨⬜\n🟩🟩⬜⬜⬜\n🟩🟩🟩⬜⬜\n🟩🟩🟩🟩🟩\n\nWas gonna guess the answer in guess 3 but thought it was a crap word.  Picked the other choice. 🤷‍♂️",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2113562950313365609",
-      "person": "Marko Papic",
-      "handle": "Geo_papic",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1502354421421785088",
-      "created_at": "2026-10-23T09:27:30.000Z",
-      "url": "https://x.com/Geo_papic/status/2113562950313365609",
-      "text": "What the price action is telling us - but also the \"political action\" in the streets of France and US polls - is that the West is going to have to take an L somewhere. Too many wars on too many fronts. Can't have it all.",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
     }
   ],
   "person_index": {
@@ -7229,32 +7450,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 27,
-        "non_noise": 21,
+        "count": 26,
+        "non_noise": 20,
         "items": [
-          {
-            "at": "2026-10-27T18:38:54+09:00",
-            "url": "https://x.com/dampedspring/status/2115015373254971827",
-            "kind": "post",
-            "preview": "Wordle 1,956 4/6* ⬜⬜⬜⬜⬜ ⬜🟨⬜🟨⬜ 🟩⬜🟨⬜⬜ 🟩🟩🟩🟩🟩",
-            "noise_hint": true
-          },
-          {
-            "at": "2026-10-27T20:16:39+09:00",
-            "url": "https://x.com/dampedspring/status/2115039973942378907",
-            "kind": "quote_post",
-            "preview": "Three solid services imho if your interested",
-            "quoted_author": "dampedspring",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-27T20:21:32+09:00",
-            "url": "https://x.com/dampedspring/status/2115041202114297929",
-            "kind": "quote_post",
-            "preview": "I will gladly pay you Tuesday for a hamburger today",
-            "quoted_author": "BobEUnlimited",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-27T22:36:04+09:00",
             "url": "https://x.com/dampedspring/status/2115075056833265874",
@@ -7424,6 +7622,21 @@
             "preview": "Bonds are the best tm",
             "quoted_author": "dampedspring",
             "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T19:27:00+09:00",
+            "url": "https://x.com/dampedspring/status/2116114641554481367",
+            "kind": "post",
+            "preview": "Wordle 1,959 3/6* 🟩⬜⬜⬜🟩 🟩⬜⬜⬜🟩 🟩🟩🟩🟩🟩",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-10-30T20:43:56+09:00",
+            "url": "https://x.com/dampedspring/status/2116134003010920787",
+            "kind": "quote_post",
+            "preview": "Fwiw. Best practices in tradfi and in your personal life is to have locally stored hard copy or dig…",
+            "quoted_author": "dampedspring",
+            "noise_hint": false
           }
         ]
       },
@@ -7432,13 +7645,6 @@
         "count": 9,
         "non_noise": 9,
         "items": [
-          {
-            "at": "2026-10-27T20:15:00+09:00",
-            "url": "https://x.com/BobEUnlimited/status/2115039556596605227",
-            "kind": "post",
-            "preview": "That Giant Sucking Noise The latest news of AI-related equity & debt financing highlights just how …",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-27T23:24:15+09:00",
             "url": "https://x.com/BobEUnlimited/status/2115087182092210429",
@@ -7495,6 +7701,13 @@
             "kind": "quote_post",
             "preview": "Tomorrow we are back LIVE at the normal time. Bring your lunch.",
             "quoted_author": "AahanPrometheus",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T20:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2116126720507957724",
+            "kind": "post",
+            "preview": "Past Peak Nominal GDP Growth For much of the second half markets have been all-in on a nominal grow…",
             "noise_hint": false
           }
         ]
@@ -7730,8 +7943,8 @@
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-10-28T11:04:26+09:00",
@@ -7755,6 +7968,14 @@
             "kind": "quote_post",
             "preview": "The implicit assumption in the question is that higher rates help fix inflation in all contexts. In…",
             "quoted_author": "atrupar",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T21:01:14+09:00",
+            "url": "https://x.com/LynAldenContact/status/2116138356924928415",
+            "kind": "quote_post",
+            "preview": "It’s not that every person necessarily wants to run their own local systems; it’s that some nontriv…",
+            "quoted_author": "morqon",
             "noise_hint": false
           }
         ]
@@ -7833,16 +8054,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 26,
-        "non_noise": 26,
+        "count": 28,
+        "non_noise": 28,
         "items": [
-          {
-            "at": "2026-10-27T12:54:05+09:00",
-            "url": "https://x.com/RyanDetrick/status/2114928594854023460",
-            "kind": "post",
-            "preview": "Nice chart from @scottcharts in his report today that shows software could continue to outperform s…",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-27T23:59:21+09:00",
             "url": "https://x.com/RyanDetrick/status/2115096015661351140",
@@ -8026,13 +8240,34 @@
             "kind": "post",
             "preview": "How cool is this new @CNBCMorningCall commercial with @MorganLBrennan? ☕ ⏰ I am in here, along with…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T11:26:38+09:00",
+            "url": "https://x.com/RyanDetrick/status/2115993753496572105",
+            "kind": "post",
+            "preview": "Bookmark this and read it a few times. Amazing work from @sonusvarghese and Blake Anderson (aka lit…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T12:27:27+09:00",
+            "url": "https://x.com/RyanDetrick/status/2116009055995257032",
+            "kind": "post",
+            "preview": "$TSLA breaking out of a year-long downtrend Nice one in @scottcharts note today",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T13:04:03+09:00",
+            "url": "https://x.com/RyanDetrick/status/2116018269975121953",
+            "kind": "post",
+            "preview": "The S&P 500 has been lower the past two Fridays. Hasn't been down three in a row since six in a row…",
+            "noise_hint": false
           }
         ]
       },
       "Warren Pies": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-10-28T00:00:23+09:00",
@@ -8048,6 +8283,13 @@
             "kind": "quote_post",
             "preview": "FED Based on SOFR, the Fed's focus has gone from oil to QQQ...The risk is Warsh hinting that the cu…",
             "quoted_author": "WarrenPies",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T20:52:09+09:00",
+            "url": "https://x.com/WarrenPies/status/2116136067787260232",
+            "kind": "post",
+            "preview": "Over the past month, the 10y has become much more correlated to the Nasdaq than oil. This is a more…",
             "noise_hint": false
           }
         ]
