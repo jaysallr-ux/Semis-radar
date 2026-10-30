@@ -1,13 +1,13 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-30T10:10:28+09:00",
+  "generated_at": "2026-10-30T11:23:59+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-30T07:20:25+09:00",
-    "merged_from_discovery": 3,
+    "last_discovery_at": "2026-10-30T10:10:28+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
@@ -103,7 +103,7 @@
       "rss_count": 15,
       "list_source": "data_api",
       "oldest_rss": "2026-10-30T02:00:06+09:00",
-      "gap_possible": true,
+      "gap_possible": false,
       "matched": 2
     },
     {
@@ -168,18 +168,18 @@
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 3,
-    "ready": 3,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
     "expired": 0,
     "left_pending": 0,
-    "waiting_for_gemini": 3
+    "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 3,
-    "ready": 3,
+    "attempted": 0,
+    "ready": 0,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
@@ -2215,5 +2215,121 @@
         "excluded_speaker_mismatch": 0
       }
     }
-  ]
+  ],
+  "person_index": {
+    "clock": "evidence_ready_at (first_seen_at when no usable quotes yet)",
+    "lookback_hours": 72,
+    "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
+    "people": {
+      "Darius Dale": {
+        "role": "core",
+        "count": 4,
+        "non_noise": 4,
+        "items": [
+          {
+            "at": "2026-10-28T10:10:28+09:00",
+            "url": "https://www.youtube.com/watch?v=3YXNPOEPZms",
+            "kind": "video",
+            "preview": "The Macro Minute: Are Markets Underpricing the Coming Wave of Redistributive Policies?",
+            "grade": "1차-B",
+            "published_at": "2026-10-27T20:00:20Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T10:10:32+09:00",
+            "url": "https://www.youtube.com/watch?v=ssjZ0TTfZH4",
+            "kind": "video",
+            "preview": "The Macro Minute: SK Hynix’s Booming Profits Signal Medium-Term Strength & Long-Term Deflation Risk",
+            "grade": "1차-A",
+            "published_at": "2026-10-28T20:00:29Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T10:10:32+09:00",
+            "url": "https://www.youtube.com/watch?v=Xwp8SWkrCi4",
+            "kind": "video",
+            "preview": "The Second-Largest Risk to Asset Markets Is an AI Capex Bust… What Is the Largest?",
+            "grade": "1차-A",
+            "published_at": "2026-10-28T13:00:35Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T10:10:28+09:00",
+            "url": "https://www.youtube.com/watch?v=KN6MzXQgG-Y",
+            "kind": "video",
+            "preview": "Will Today’s AI Frenzy Create Tomorrow’s Biggest Market Risk?",
+            "grade": "1차-A",
+            "published_at": "2026-10-29T19:58:20Z",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Joseph Wang": {
+        "role": "shadow",
+        "count": 2,
+        "non_noise": 2,
+        "items": [
+          {
+            "at": "2026-10-29T10:10:32+09:00",
+            "url": "https://www.youtube.com/watch?v=lfuYwR7XA1A",
+            "kind": "video",
+            "preview": "October 2026 FOMC Debrief",
+            "grade": "1차-B",
+            "published_at": "2026-10-28T20:18:08Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T10:10:32+09:00",
+            "url": "https://www.youtube.com/watch?v=9EjKDcqBJhs",
+            "kind": "video",
+            "preview": "Markets Weekly October 24, 2026",
+            "grade": "1차-B",
+            "published_at": "2026-10-24T17:06:13Z",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Mark Newton": {
+        "role": "core",
+        "count": 2,
+        "non_noise": 2,
+        "items": [
+          {
+            "at": "2026-10-30T10:10:28+09:00",
+            "url": "https://www.youtube.com/watch?v=a1BrYVWnyY8",
+            "kind": "video",
+            "preview": "\"This market cycle will not survive contact with the 2028 general election\" | Market Hang",
+            "grade": "1차-A",
+            "published_at": "2026-10-29T22:00:16Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T10:10:28+09:00",
+            "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU",
+            "kind": "video",
+            "preview": "A 2028 reckoning, data centers as a luxury belief, and the liberal arts comeback | Market Hang",
+            "grade": "1차-A",
+            "published_at": "2026-10-28T11:26:54Z",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Mike Wilson": {
+        "role": "observer",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-10-28T11:27:31+09:00",
+            "url": "https://www.youtube.com/watch?v=A8yCVOLGrC0",
+            "kind": "video",
+            "preview": "Wilson Pinpoints Clearing Events as Buying Opportunities",
+            "grade": "1차-B",
+            "published_at": "2026-10-27T00:00:00+00:00",
+            "noise_hint": false
+          }
+        ]
+      }
+    }
+  }
 }
