@@ -1,10 +1,8 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-10-30T10:05:27+09:00",
-  "data_ok": false,
-  "errors": {
-    "Carson Group feed": "carson /feed:403 /feed/:403 /insights/blog/feed/:403 /author/ryan-detrick/feed/:403 /feed/:403"
-  },
+  "generated_at": "2026-10-30T11:23:58+09:00",
+  "data_ok": true,
+  "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
   "new_statement_clock": "evidence_ready_at",
   "discovery_complete": true,
@@ -86,7 +84,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "official_source_ok": false,
+      "official_source_ok": true,
       "items_in_window": 4,
       "scoring_items": 1,
       "pending_items": 0
@@ -154,9 +152,9 @@
     }
   ],
   "stats": {
-    "discovered": 119,
-    "new_items": 9,
-    "decoded": 9,
+    "discovered": 126,
+    "new_items": 4,
+    "decoded": 4,
     "bodies": 0,
     "quotes_verified": 0,
     "video_candidates": 0,
@@ -752,5 +750,241 @@
       "gemini_status": "no_body",
       "gemini_error_count": 0
     }
-  ]
+  ],
+  "person_index": {
+    "clock": "evidence_ready_at (discovered_at when not graded)",
+    "lookback_hours": 72,
+    "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
+    "people": {
+      "Andy Constan": {
+        "role": "core",
+        "count": 3,
+        "non_noise": 3,
+        "items": [
+          {
+            "at": "2026-10-28T10:05:25+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/3988318-annual-issuance-statistics-constan/",
+            "kind": "news_article",
+            "preview": "Andy Constan: $192 billion annual pace is 43% of total planned new issuance",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-27T18:20:07+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T10:05:25+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4003991-interest-rate-comment-questioned/",
+            "kind": "news_article",
+            "preview": "Warsh’s comment on interest rates prompts debate, Andy Constan notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-28T19:20:28+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T10:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4021093-amzn-issuance-options-question/",
+            "kind": "news_article",
+            "preview": "Andy Constan: Possible options for AMZN issuance include equity, ATM, or $25 billion bond deal",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-29T20:20:15+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Bob Elliott": {
+        "role": "core",
+        "count": 3,
+        "non_noise": 3,
+        "items": [
+          {
+            "at": "2026-10-28T21:05:29+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/3968161-compute-supply-revenue-gap/",
+            "kind": "news_article",
+            "preview": "Bob Elliott: Revenue gap could undermine compute supply expansion",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-26T13:35:26+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T10:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4011376-google-ai-forward-commitments/",
+            "kind": "news_article",
+            "preview": "Bob Elliott: Google’s $1 trillion in forward commitments reflects future cash driving the AI boom",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-29T11:20:20+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T10:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/3953903-ai-trade-bond-opportunity/",
+            "kind": "news_article",
+            "preview": "AI trade faces challenges while bonds offer appeal, Bob Elliott says",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-24T10:20:21+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Cem Karsan": {
+        "role": "core",
+        "count": 2,
+        "non_noise": 2,
+        "items": [
+          {
+            "at": "2026-10-27T16:16:59+09:00",
+            "url": "https://www.tastylive.com/shows/tasty-crumbs-with-cem-karsan/episodes/tasty-crumbs-with-cem-karsan-10-26-2026",
+            "kind": "news_article",
+            "preview": "tasty Crumbs with Cem Karsan",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-26T22:35:05+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T10:05:25+09:00",
+            "url": "https://www.cnbc.com/video/2026/10/28/nothing-has-changed-to-make-fed-chair-warsh-more-hawkish-or-dovish-says-kai-wealthas-cem-karsan.html",
+            "kind": "video_page",
+            "preview": "Nothing has changed to make Fed Chair Warsh more hawkish or dovish, says Kai Wealth’s Cem Karsan",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-28T18:12:47+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Jim Bianco": {
+        "role": "core",
+        "count": 2,
+        "non_noise": 2,
+        "items": [
+          {
+            "at": "2026-10-28T10:05:25+09:00",
+            "url": "https://unchainedcrypto.com/jim-bianco-says-banks-blocking-ai-agents-are-protecting-their-profits-not-customers/",
+            "kind": "news_article",
+            "preview": "Jim Bianco Says Banks Blocking AI Agents Are Protecting Their Profits, Not Customers",
+            "grade": "1차-인용",
+            "published_at": "2026-10-27T23:23:12+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T10:05:27+09:00",
+            "url": "https://seekingalpha.com/news/4660425-fomc-s-forward-guidance-has-caused-more-problems-than-it-has-solved-says-jim-bianco",
+            "kind": "news_article",
+            "preview": "FOMC’s forward guidance has caused more problems than it has solved, says Jim Bianco",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-29T15:21:22+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Lyn Alden": {
+        "role": "core",
+        "count": 4,
+        "non_noise": 4,
+        "items": [
+          {
+            "at": "2026-10-29T10:05:25+09:00",
+            "url": "https://www.tradingview.com/news/benzinga:16c33c36c094b:0-bitcoin-could-steal-ai-s-spotlight-as-fast-money-is-long-gone-lyn-alden-says/",
+            "kind": "news_article",
+            "preview": "Bitcoin Could Steal AI’s Spotlight as ‘Fast Money Is Long Gone,’ Lyn Alden Says",
+            "grade": "1차-인용",
+            "published_at": "2026-10-28T20:31:23+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T20:25:40+09:00",
+            "url": "https://www.coingabbar.com/en/bitcoin-may-have-hit-cycle-low-near-80000-investor-lyn-alden-say",
+            "kind": "news_article",
+            "preview": "Bitcoin may have hit cycle low near $80,000, investor Lyn Alden says",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-29T10:40:00+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T20:25:40+09:00",
+            "url": "https://www.tokenpost.com/news/insights/43275",
+            "kind": "news_article",
+            "preview": "Lyn Alden Says Bitcoin's Cycle Low May Be Behind It After Leverage Flush",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-29T06:52:40+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-30T10:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4023176-higher-rates-inflation-limits/",
+            "kind": "news_article",
+            "preview": "Lyn Alden: Higher rates do not always resolve inflation issues",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-29T22:35:18+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Mike Wilson": {
+        "role": "observer",
+        "count": 4,
+        "non_noise": 4,
+        "items": [
+          {
+            "at": "2026-10-28T10:05:25+09:00",
+            "url": "https://www.cnbc.com/video/2026/10/27/watch-cnbcs-full-interview-with-morgan-stanleys-mike-wilson.html",
+            "kind": "video_page",
+            "preview": "Watch CNBC's full interview with Morgan Stanley's Mike Wilson",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-27T19:27:18+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T10:05:25+09:00",
+            "url": "https://www.bloomberg.com/news/videos/2026-10-27/wilson-pinpoints-clearing-events-as-buying-opportunities-video",
+            "kind": "video_page",
+            "preview": "Watch Markets: Morgan Stanley's Mike Wilson Pinpoints Clearing Events as Buying Opportunities",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-27T00:00:00+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-28T21:05:29+09:00",
+            "url": "https://thedarksideoftheboom.substack.com/p/morgan-stanleys-mike-wilson-sees",
+            "kind": "news_article",
+            "preview": "Morgan Stanley's Mike Wilson Sees Three Clearing Events Before Wall Street's Next Rally",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-28T02:45:38+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T10:05:25+09:00",
+            "url": "https://www.cnbc.com/video/2026/10/27/morgan-stanleys-mike-wilson-on-the-correction-in-ai-stocks.html",
+            "kind": "video_page",
+            "preview": "Morgan Stanley's Mike Wilson on the correction in AI stocks",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-27T19:23:00+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Ryan Detrick": {
+        "role": "core",
+        "count": 2,
+        "non_noise": 2,
+        "items": [
+          {
+            "at": "2026-10-28T21:05:29+09:00",
+            "url": "https://www.carsongroup.com/insights/blog/tomorrow-is-the-fed-and-it-is-also-the-best-day-of-the-year/",
+            "kind": "official_blog",
+            "preview": "Tomorrow Is the Fed, and It Is Also the Best Day of the Year",
+            "grade": "1차",
+            "published_at": "2026-10-27T16:26:20+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-29T10:05:25+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/3998132-bull-market-breadth-sentiment/",
+            "kind": "news_article",
+            "preview": "Ryan Detrick: Bull market conditions persist with unexpected breadth and rising sentiment",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-28T13:50:26+00:00",
+            "noise_hint": false
+          }
+        ]
+      }
+    }
+  }
 }
