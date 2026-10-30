@@ -1,13 +1,13 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-29T21:10:35+09:00",
+  "generated_at": "2026-10-30T10:10:28+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-29T20:27:57+09:00",
-    "merged_from_discovery": 0,
+    "last_discovery_at": "2026-10-30T07:20:25+09:00",
+    "merged_from_discovery": 3,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
@@ -25,7 +25,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-05T22:32:42+09:00",
+      "oldest_rss": "2026-10-06T05:00:04+09:00",
       "gap_possible": false,
       "matched": 7
     },
@@ -36,7 +36,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-19T23:13:02+09:00",
+      "oldest_rss": "2026-10-19T23:35:56+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -47,7 +47,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-13T23:00:20+09:00",
+      "oldest_rss": "2026-10-14T23:00:16+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -58,7 +58,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-16T18:00:18+09:00",
+      "oldest_rss": "2026-10-18T00:00:10+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -69,7 +69,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-10T01:22:13+09:00",
+      "oldest_rss": "2026-10-11T21:01:57+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -102,9 +102,9 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-29T04:23:34+09:00",
-      "gap_possible": false,
-      "matched": 0
+      "oldest_rss": "2026-10-30T02:00:06+09:00",
+      "gap_possible": true,
+      "matched": 2
     },
     {
       "label": "Thoughtful Money",
@@ -124,7 +124,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-25T04:05:04+09:00",
+      "oldest_rss": "2026-10-02T02:42:56+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -137,7 +137,7 @@
       "list_source": "data_api",
       "oldest_rss": "2026-10-17T04:04:05+09:00",
       "gap_possible": false,
-      "matched": 3
+      "matched": 2
     },
     {
       "label": "Joseph Wang",
@@ -152,8 +152,8 @@
     }
   ],
   "quota": {
-    "yta_used_today": 2,
-    "yta_server_remaining": 8,
+    "yta_used_today": 3,
+    "yta_server_remaining": 7,
     "yta_daily_cap": 7,
     "yta_reserve_for_manual": 3,
     "supadata_used_total": 9,
@@ -162,24 +162,24 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 4,
-    "gemini_est_video_hours_today": 0.78,
+    "gemini_calls_today": 3,
+    "gemini_est_video_hours_today": 0.978,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 3,
+    "ready": 3,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
     "expired": 0,
     "left_pending": 0,
-    "waiting_for_gemini": 1
+    "waiting_for_gemini": 3
   },
   "gemini_stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 3,
+    "ready": 3,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
@@ -190,6 +190,319 @@
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "a1BrYVWnyY8",
+      "url": "https://www.youtube.com/watch?v=a1BrYVWnyY8",
+      "channel": "Yahoo Finance",
+      "channel_id": "UCEAZeUIeJs0IjQiqTCdVSIg",
+      "channel_mode": "filter",
+      "person": "Mark Newton",
+      "tier": 1,
+      "role": "core",
+      "match": "description",
+      "title": "\"This market cycle will not survive contact with the 2028 general election\" | Market Hang",
+      "description": "Darius Dale, Founder and CEO of 42 Macro, puts a date on the end of the cycle and offers to guarantee it. His case is that labor versus capital sits at an extreme last seen in the 1920s and early 1930s, right before the New Deal, and that if AI keeps reducing the need for labor then redistributive politics arrive on a schedule. Michael Monaghan of Founder ETFs argues elections are close to irrelevant once you zoom out far enough. Then Mark Newton of Fundstrat gets to the same year from charts.\n\nWatch the full episode: https://youtube.com/live/jKmxb7VTxdU\n\nMarket Hang is live weekdays 12:30-1:30pm ET on Yahoo Finance, hosted today by Nancy Tengler.\n\nTimestamps\n0:00 \"This market cycle will not survive 2028\"\n1:18 Labor versus capital, and the last time it looked like this\n3:10 Where a technician is putting money right now\n4:35 Why the tech selloff is not the signal\n6:32 A second route to the same year\n7:50 \"The most market risk I've seen in my career\"\n\n#StockMarket #2028Election #AICapex #MarketHang #YahooFinance\n\n==\nAlphaSpace by Yahoo Finance: A Professional-Grade Investment Platform Built for Everyday Investors.\n👉 https://finance.yahoo.com/about/promos/gold/alphaspace?ncid=100003571",
+      "published_at": "2026-10-29T22:00:16Z",
+      "first_seen_at": "2026-10-30T07:20:25+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-10-30T10:10:28+09:00",
+      "transcript_language": null,
+      "transcript_chars": 9382,
+      "transcript_url": null,
+      "name_mentions": 0,
+      "appearance_confirmed": true,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-10-30T10:10:28+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Mark Newton appears on video and speaks from 03:29 to 06:58 about sector positioning, tech sector resilience, post-midterm election market cycles, and the long-term outlook to 2028.",
+      "stance": {
+        "us_equities": "bullish",
+        "summary": "Mark Newton is bullish on US equities for the remainder of the year and into the post-election period, expecting typical midterm election strength (15% average gain over 6 months). He recommends buying dips in technology and staying overweight healthcare, while anticipating that the current market cycle will likely peak around 2028.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": "6 months to 2028"
+      },
+      "quotes": [
+        {
+          "t": "03:30",
+          "t_sec": 210,
+          "speaker": "Mark Newton",
+          "topic": "Healthcare Sector",
+          "text": "Look, I think recently, it's really proper to be overweight healthcare probably more than any other sector.",
+          "url": "https://www.youtube.com/watch?v=a1BrYVWnyY8&t=210s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 74.0,
+          "caption_sec": 183,
+          "caption_checked": true
+        },
+        {
+          "t": "04:11",
+          "t_sec": 251,
+          "speaker": "Mark Newton",
+          "topic": "Sector Strategy and Market Volatility",
+          "text": "healthcare still looks to be, you know, the better area between now and and probably the end of the year, and because I do, you know, suspect there will be ongoing volatility, so technology is right to buy the dips.",
+          "url": "https://www.youtube.com/watch?v=a1BrYVWnyY8&t=251s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.6,
+          "caption_sec": 244,
+          "caption_checked": true
+        },
+        {
+          "t": "05:10",
+          "t_sec": 310,
+          "speaker": "Mark Newton",
+          "topic": "Technology Sector Outlook",
+          "text": "I expect tech to re-emerge and we've seen some evidence of that with the AI infrastructure stocks in recent days as well as, you know, various parts of software, memory semiconductors, so tech should be just fine.",
+          "url": "https://www.youtube.com/watch?v=a1BrYVWnyY8&t=310s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.1,
+          "caption_sec": 305,
+          "caption_checked": true
+        },
+        {
+          "t": "05:51",
+          "t_sec": 351,
+          "speaker": "Mark Newton",
+          "topic": "Midterm Election Seasonality",
+          "text": "And we know that after the mid-term election, it's normally the best time in the entire four-year cycle, that it's been literally 19 for 19 with an average gain of 15% in the six months to come.",
+          "url": "https://www.youtube.com/watch?v=a1BrYVWnyY8&t=351s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.9,
+          "caption_sec": 337,
+          "caption_checked": true
+        },
+        {
+          "t": "06:37",
+          "t_sec": 397,
+          "speaker": "Mark Newton",
+          "topic": "Long-term Market Outlook",
+          "text": "In general, you know, I think the market's still in a very good cycle. I would agree with the 2028 comment, but I think the market likely peaks then, and the time from 2028 into 2030 could be quite difficult.",
+          "url": "https://www.youtube.com/watch?v=a1BrYVWnyY8&t=397s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.5,
+          "caption_sec": 369,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-10-30T10:10:28+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "03:30",
+          "point": "Healthcare is the preferred sector to overweight through year-end as biotech and life sciences companies show multi-year technical breakouts.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "End of year"
+        },
+        {
+          "t": "04:22",
+          "point": "Recent weakness in the tech sector is a pull-back to buy rather than a structural breakdown.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Short term"
+        },
+        {
+          "t": "05:10",
+          "point": "Tech leadership is expected to re-emerge, driven by AI infrastructure, software, and memory semiconductors.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Near term"
+        },
+        {
+          "t": "05:51",
+          "point": "The period following midterm elections has historically been the strongest part of the 4-year cycle, yielding average gains of 15% over six months.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "6 months post-election"
+        },
+        {
+          "t": "06:17",
+          "point": "Political gridlock resulting from elections is generally favored by stock markets and should help drive equity prices higher.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Post-election"
+        },
+        {
+          "t": "06:27",
+          "point": "A major unexpected slowdown in data center investment is a key personal concern that could harm the tech bull narrative.",
+          "condition": "If a major slowdown occurs in data center CapEx",
+          "conviction": "risk_scenario",
+          "horizon": "Unspecified"
+        },
+        {
+          "t": "06:37",
+          "point": "The broad market remains in a strong cycle that will likely peak around 2028, followed by a challenging environment from 2028 to 2030.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Long term (2028-2030)"
+        }
+      ],
+      "gemini_prompt_tokens": 16042,
+      "quotes_grade_count": {
+        "1차-A": 4,
+        "1차-B": 1,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "KN6MzXQgG-Y",
+      "url": "https://www.youtube.com/watch?v=KN6MzXQgG-Y",
+      "channel": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "channel_mode": "dedicated",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "dedicated_channel",
+      "title": "Will Today’s AI Frenzy Create Tomorrow’s Biggest Market Risk?",
+      "description": "Enjoy the following excerpt from today’s episode of Yahoo Finance's Market Hang, in which Darius explains why the AI investment boom is supporting earnings and profits in the near term. \n\nBut will that remain true through 2029 in a world of more abundant compute supply?\n\nYou can watch the full episode using the following link: https://finance.yahoo.com/video/investor-confidence-thwarted-by-big-tech-and-does-ai-beat-out-fed-rates-175254249.html\n\nDownload a complimentary sample of our industry-leading research today:\nhttps://42macro.com/42-macro-sample-r...\n\n#Team42 #investing #finance #stockmarket #trading #marketupdates #macroeconomics #marketinsights #globalmarkets #economictrends #marketoutlook #stocks #federalreserve #inflation #liquidity #bitcoin #riskmanagement #assetmarkets #macroeconomics #macroinvesting #fourthturning \n\nSubscribe to the 42 Macro channel for tips about enhancing your risk management processes and preparing your portfolio for the changing market! \n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
+      "published_at": "2026-10-29T19:58:20Z",
+      "first_seen_at": "2026-10-30T05:20:34+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-10-30T10:10:28+09:00",
+      "transcript_language": null,
+      "transcript_chars": 2297,
+      "transcript_url": null,
+      "name_mentions": 0,
+      "appearance_confirmed": true,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-10-30T10:10:28+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Darius Dale appears on set in a suit and tie, speaking extensively about capex bubbles, market cycles, and long-term market risks.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Darius Dale is long-term bearish on US equities, warning that the current AI-driven capex bubble—the largest in economic history—will disrupt legacy industries and eventually trigger a historic secular bear market before or by the 2028 general election.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": "Long-term / through 2028-2029"
+      },
+      "quotes": [
+        {
+          "t": "00:38",
+          "t_sec": 38,
+          "speaker": "Darius Dale",
+          "topic": "Capex bubbles and bear markets",
+          "text": "Every capex bubble we've seen in the history of this economy and this is by far the biggest one, I think thanks to that work at Columbia Business School recently, this is by far the biggest capex bubble we've seen in economy. They all end in secular bear markets.",
+          "url": "https://www.youtube.com/watch?v=KN6MzXQgG-Y&t=38s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.6,
+          "caption_sec": 30,
+          "caption_checked": true
+        },
+        {
+          "t": "00:57",
+          "t_sec": 57,
+          "speaker": "Darius Dale",
+          "topic": "Market cycle outlook",
+          "text": "And anytime you have a significant amount of change with legacy positioning, you have to go through the plumbing and the plumbing always leads downward. So you have to be very negative on this market cycle from a long-term perspective.",
+          "url": "https://www.youtube.com/watch?v=KN6MzXQgG-Y&t=57s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 30,
+          "caption_checked": true
+        },
+        {
+          "t": "01:07",
+          "t_sec": 67,
+          "speaker": "Darius Dale",
+          "topic": "Secular bear market risk",
+          "text": "When we peak, I mean we're talking about potentially a historic secular bear market.",
+          "url": "https://www.youtube.com/watch?v=KN6MzXQgG-Y&t=67s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 60,
+          "caption_checked": true
+        },
+        {
+          "t": "01:43",
+          "t_sec": 103,
+          "speaker": "Darius Dale",
+          "topic": "Market cycle timeframe",
+          "text": "This market cycle will not survive contact with the 2028 general election.",
+          "url": "https://www.youtube.com/watch?v=KN6MzXQgG-Y&t=103s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 91,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-10-30T10:10:28+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "00:00",
+          "point": "Companies are currently over-investing in AI compute and capex, creating uncertainty over whether profitability can be sustained by 2029 in a compute-abundant world.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "2029"
+        },
+        {
+          "t": "00:38",
+          "point": "The current capex bubble is the largest in economic history, and historically every major capex bubble ends in a secular bear market.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "00:49",
+          "point": "Significant innovation disrupts legacy industries and forces positioning adjustments through market plumbing that push prices downward.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "01:07",
+          "point": "While the market cycle has not peaked yet, the eventual peak will likely lead to a historic secular bear market.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "01:43",
+          "point": "The current market cycle will not survive past the 2028 US general election.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "2028"
+        }
+      ],
+      "gemini_prompt_tokens": 3791,
+      "quotes_grade_count": {
+        "1차-A": 4,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "lfuYwR7XA1A",
       "url": "https://www.youtube.com/watch?v=lfuYwR7XA1A",
@@ -646,6 +959,173 @@
       "quotes_grade_count": {
         "1차-A": 3,
         "1차-B": 1,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "jKmxb7VTxdU",
+      "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU",
+      "channel": "Yahoo Finance",
+      "channel_id": "UCEAZeUIeJs0IjQiqTCdVSIg",
+      "channel_mode": "filter",
+      "person": "Mark Newton",
+      "tier": 1,
+      "role": "core",
+      "match": "description",
+      "title": "A 2028 reckoning, data centers as a luxury belief, and the liberal arts comeback | Market Hang",
+      "description": "Nancy Tengler hosts a panel that starts on big tech earnings and ends on what your children should study. Darius Dale, Founder and CEO of 42 Macro, says this market cycle will not survive contact with the 2028 general election, and explains why he thinks labor versus capital is at an extreme last seen before the New Deal. Mark Newton, Managing Director and Global Head of Technical Strategy at Fundstrat Global Advisors, is overweight healthcare and arrives at the same year by a different route.\n\nMarket Hang is live weekdays 12:30-1:30pm ET on Yahoo Finance.\n\nTimestamps\n0:00 Welcome, and two contrary signals from big tech\n2:23 The strongest GDP data he has ever seen\n3:59 Capital allocation is the whole question now\n6:15 The existential question hanging over search\n11:54 Oracle, and what has to clear before momentum returns\n14:46 Every company is incentivized to overbuild\n17:28 \"This market cycle will not survive 2028\"\n18:53 Labor versus capital at a historic extreme\n20:45 Why healthcare is the overweight right now\n23:24 The post-midterm cycle, and where it breaks\n25:52 Who actually pays for a data center\n27:09 \"Being anti data center is a luxury belief\"\n28:58 Elevated rates, high crude, and a market still up\n30:51 Three Mile Island, and what the backlash cost\n31:58 The part of AI nobody is pricing\n34:51 GLP-1s, Lilly, and the mid cap nobody could name\n39:06 A risk-off inflation regime\n41:19 ServiceNow, and the question hanging over SaaS\n46:51 The elephant in the room: Warsh and",
+      "published_at": "2026-10-28T11:26:54Z",
+      "first_seen_at": "2026-10-30T04:20:27+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-10-30T10:10:28+09:00",
+      "transcript_language": null,
+      "transcript_chars": 63634,
+      "transcript_url": null,
+      "name_mentions": 2,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "ew crowd today. Dinner party crowd. Um, joining me in studio is Michael, Darius, and Julie, whom you all know. And then Mark Newton and I are remote. Uh, [music] I'm sad to say I had to leave New York. It was a It was a great time. Uh, made my I made it to New York in 30 [music] minutes, so I feel like I might get a >>",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-10-30T10:10:28+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Mark Newton speaks extensively throughout the panel discussion starting from 12:25, providing technical analysis and market outlooks on tech, healthcare, Oracle, and the broader US equity market.",
+      "stance": {
+        "us_equities": "bullish",
+        "summary": "Mark Newton is bullish on US equities, noting that technology dips should be bought and healthcare is an ideal overweight position. He highlights that market sentiment remains defensive and historical post-election seasonality strongly favors further upside.",
+        "timeframe": "End of year to 6 months post-election"
+      },
+      "quotes": [
+        {
+          "t": "21:07",
+          "t_sec": 1267,
+          "speaker": "Mark Newton",
+          "topic": "",
+          "text": "Look, I think recently, it's really proper to be overweight healthcare, probably more than any other sector. We've really started to turn the corner on many of these companies that were affected by, you know, the drug pricing issues.",
+          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1267s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.9,
+          "caption_sec": 1256,
+          "caption_checked": true
+        },
+        {
+          "t": "21:58",
+          "t_sec": 1318,
+          "speaker": "Mark Newton",
+          "topic": "",
+          "text": "Technology is right to buy the dips. We've not really seen sufficient evidence of tech really breaking down.",
+          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1318s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.2,
+          "caption_sec": 1317,
+          "caption_checked": true
+        },
+        {
+          "t": "22:45",
+          "t_sec": 1365,
+          "speaker": "Mark Newton",
+          "topic": "",
+          "text": "I expect tech to re-emerge, and we've seen some evidence of that with the AI infrastructure stocks in recent days, as well as, you know, various parts of software, memory, semiconductors.",
+          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1365s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.7,
+          "caption_sec": 1347,
+          "caption_checked": true
+        },
+        {
+          "t": "23:28",
+          "t_sec": 1408,
+          "speaker": "Mark Newton",
+          "topic": "",
+          "text": "After the midterm election, it's normally the best time in the entire four-year cycle, that it's been literally 19 for 19 with an average gain of 15% in the six months to come.",
+          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1408s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.8,
+          "caption_sec": 1408,
+          "caption_checked": true
+        },
+        {
+          "t": "29:43",
+          "t_sec": 1783,
+          "speaker": "Mark Newton",
+          "topic": "",
+          "text": "Sentiment is nowhere near where we need to see to see a long-term market top. Everybody is on the sidelines.",
+          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1783s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 1778,
+          "caption_checked": true
+        },
+        {
+          "t": "30:09",
+          "t_sec": 1809,
+          "speaker": "Mark Newton",
+          "topic": "",
+          "text": "We could certainly have a 3% to 5% pullback in November, but that would be a very good buying opportunity as part of this cycle.",
+          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1809s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 1778,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-10-30T10:10:28+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "21:07",
+          "point": "Healthcare is currently the best sector to be overweight as companies recover from drug pricing pressures and show technical strength.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "21:58",
+          "point": "Technology stocks should be bought on pullbacks because there is no technical evidence of a broader structural breakdown.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "23:28",
+          "point": "Historically, the six months following a midterm election represent the strongest seasonal period of the four-year election cycle, averaging 15% gains.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "29:43",
+          "point": "Market sentiment remains overly cautious with high cash on the sidelines, signaling that the equity market is far from a major cyclical top.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "30:09",
+          "point": "A potential 3% to 5% market pullback in November would serve as an attractive buying opportunity rather than a trend reversal.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 113901,
+      "quotes_grade_count": {
+        "1차-A": 6,
+        "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
     },
@@ -1734,281 +2214,6 @@
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "KeaNPJbdPQI",
-      "url": "https://www.youtube.com/watch?v=KeaNPJbdPQI",
-      "channel": "42 Macro",
-      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
-      "channel_mode": "dedicated",
-      "person": "Darius Dale",
-      "tier": 1,
-      "role": "core",
-      "match": "dedicated_channel",
-      "title": "The Macro Minute: Is Investor Fatigue Catching Up With Big Tech?",
-      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
-      "published_at": "2026-10-22T20:00:36+00:00",
-      "first_seen_at": "2026-10-23T05:12:43+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "supadata",
-      "transcript_ready_at": "2026-10-23T08:25:43+09:00",
-      "transcript_language": "en",
-      "transcript_chars": 5750,
-      "transcript_url": null,
-      "name_mentions": 4,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "Happy Thursday out there team 42. It's your skipper here at Darius Dale to present our macro minute for Thursday October 22nd 2026. Hope everyone's having a great week. So as always we start with the executive summary from today's leadoff morning note. So let'",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-flash-latest",
-      "gemini_at": "2026-10-23T08:25:43+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Darius Dale speaks throughout the video as the host presenting the 42 Macro Macro Minute.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Dale highlights a persistent 'risk-off inflation market regime' driven by investor fatigue in tech megacaps following Meta and Tesla earnings, drawing parallels to the asset price declines of Q4 2018, while noting high short positioning raises short squeeze risk on rebounds.",
-        "invalidation": "An Nvidia or equivalent company demonstrating balance sheet discipline alongside booming earnings and expanding margins to truncate negative sentiment.",
-        "targets": [],
-        "timeframe": "Q4 through Q1"
-      },
-      "quotes": [
-        {
-          "t": "0:16",
-          "t_sec": 16,
-          "speaker": "Darius Dale",
-          "topic": "markets",
-          "text": "The Meta and Tesla results and guidance supported the durability and severity of the current risk-off inflation market regime.",
-          "url": "https://www.youtube.com/watch?v=KeaNPJbdPQI&t=16s",
-          "speaker_verified": true,
-          "caption_match": 99.2,
-          "caption_sec": null,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "0:22",
-          "t_sec": 22,
-          "speaker": "Darius Dale",
-          "topic": "equities",
-          "text": "Specifically, signals from Meta, CapEx up, stock down, and Tesla, CapEx down, stock down, point to investor fatigue with respect to most tech stocks amid historic concentration in the sector in the US and global stock markets.",
-          "url": "https://www.youtube.com/watch?v=KeaNPJbdPQI&t=22s",
-          "speaker_verified": true,
-          "caption_match": 100.0,
-          "caption_sec": null,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "0:36",
-          "t_sec": 36,
-          "speaker": "Darius Dale",
-          "topic": "equities",
-          "text": "It will likely take an Nvidia or roughly equivalent company to demonstrate balance sheet discipline amid booming earnings and expanding margins to truncate the negative sentiment.",
-          "url": "https://www.youtube.com/watch?v=KeaNPJbdPQI&t=36s",
-          "speaker_verified": true,
-          "caption_match": 95.5,
-          "caption_sec": null,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "2:47",
-          "t_sec": 167,
-          "speaker": "Darius Dale",
-          "topic": "economy",
-          "text": "Investors must respect the coincident and prospective implications of this spread widening for the global liquidity cycle.",
-          "url": "https://www.youtube.com/watch?v=KeaNPJbdPQI&t=167s",
-          "speaker_verified": true,
-          "caption_match": 99.2,
-          "caption_sec": null,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "2:56",
-          "t_sec": 176,
-          "speaker": "Darius Dale",
-          "topic": "positioning",
-          "text": "Per Goldman Sachs, hedge fund short positioning is near a 5-year high, raising squeeze risk on any rebound.",
-          "url": "https://www.youtube.com/watch?v=KeaNPJbdPQI&t=176s",
-          "speaker_verified": true,
-          "caption_match": 100.0,
-          "caption_sec": null,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "3:06",
-          "t_sec": 186,
-          "speaker": "Darius Dale",
-          "topic": "equities",
-          "text": "If Q4 2026 winds up resembling Q4 2018 in risk-off inflation market regime terms, then these data suggest Q1 2027 is highly likely to resemble Q1 2019, which caused severe type II errors among the permabear community...",
-          "url": "https://www.youtube.com/watch?v=KeaNPJbdPQI&t=186s",
-          "speaker_verified": true,
-          "caption_match": 97.2,
-          "caption_sec": null,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "4:41",
-          "t_sec": 281,
-          "speaker": "Darius Dale",
-          "topic": "markets",
-          "text": "Recall the the the accelerated decline that we saw in asset prices in Q4 18, truncating or culminating with folks, you know, in the fetal position under their desk on the day before Christmas.",
-          "url": "https://www.youtube.com/watch?v=KeaNPJbdPQI&t=281s",
-          "speaker_verified": true,
-          "caption_match": 94.1,
-          "caption_sec": null,
-          "grade": "1차-A",
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-10-23T08:25:43+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "gemini_prompt_tokens": 10010,
-      "quotes_grade_count": {
-        "1차-A": 7,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "alvjJm4duHk",
-      "url": "https://www.youtube.com/watch?v=alvjJm4duHk",
-      "channel": "Fundstrat",
-      "channel_id": "UCcBzKSM4A-pIHMJWSnxmi_g",
-      "channel_mode": "filter",
-      "person": "Mark Newton",
-      "tier": 1,
-      "match": "title",
-      "title": "The Two Things Fundstrat's Mark Newton Needs to See Peak",
-      "description": "Bond yields are still elevated and crude is higher than markets want to see, yet Mark Newton told CNBC he is encouraged by the market’s technical structure. He also laid out what he needs to see before the chop ends.\n\nMark applied that same yields and crude backdrop to Bitcoin and Ethereum in Fundstrat’s October Crypto Market Update.\n\nWatch the replay: https://research.fundstratdirect.com/2026-10-20-crypto-webinar-replay/?utm_medium=social&utm_source=youtube&utm_campaign=appearance&utm_term=20261022&utm_content=CNBC-MN\n\nStart your 30-day free trial for Mark Newton’s full research: https://fundstratdirect.com/full-services/?utm_medium=social&utm_source=youtube&utm_campaign=appearance&utm_term=20261022&utm_content=CNBC-MN\n\nScan the QR code in the video to watch Mark Newton’s full crypto read in the October replay.\n\nFollow Fundstrat Direct on socials:\nX/Twitter → https://x.com/FundstratDirect\nLinkedIn → https://www.linkedin.com/company/fundstrat-direct/\nTikTok → https://www.tiktok.com/@fundstrat_directt\nFacebook → https://www.facebook.com/fundstratglobal\nInstagram → https://www.instagram.com/fundstratdirect/\n\n#SP500 #StockMarket #MarkNewton #BondYields #OilPrices #Bitcoin #Crypto #CNBC #Fundstrat",
-      "published_at": "2026-10-22T15:12:43+00:00",
-      "first_seen_at": "2026-10-23T00:39:24+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-10-23T00:39:24+09:00",
-      "transcript_language": null,
-      "transcript_chars": 3140,
-      "transcript_url": null,
-      "name_mentions": 2,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "now. Our next guest says the rally looks stronger under the surface than both the S&P 500 and NASDAQ 100 would suggest. Mark Newton is head of technical strategy at Funstrat joins now. It's good to have you back. Uh your note caught our attention clearly. Um why do you believe that? >> Well, look Scott, you've seen the",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-flash-latest",
-      "gemini_at": "2026-10-23T08:25:43+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Mark Newton appears via video link from Fundstrat and discusses market technical breadth, S&P 500 performance, and his positive outlook on market structure.",
-      "stance": {
-        "us_equities": "bullish",
-        "summary": "Mark Newton is bullish on US equities, noting that underlying technical market breadth is expanding with the equal-weighted S&P rebounding and market resilience persisting despite high bond yields and geopolitics. While expecting choppy conditions until past the midterms, he is very encouraged by the technical structure.",
-        "timeframe": "Near to medium term (until past the midterms)"
-      },
-      "quotes": [
-        {
-          "t": "0:20",
-          "t_sec": 20,
-          "speaker": "Mark Newton",
-          "topic": "us_equities",
-          "text": "Well, look, Scott, you've seen the equal-weighted S&P just in the last month rise to the highest level since early September. It's been a great comeback in the broader market at a time when technology yet again has been whipsawed and has started to pull back.",
-          "url": "https://www.youtube.com/watch?v=alvjJm4duHk&t=20s",
-          "speaker_verified": true,
-          "caption_match": 96.5,
-          "caption_sec": 0,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "0:35",
-          "t_sec": 35,
-          "speaker": "Mark Newton",
-          "topic": "us_equities",
-          "text": "You know, the percentage of stocks above their 20-day moving average has actually doubled in the last two and a half weeks. So we've gone from 20% to about 45%. That is very encouraging at a time when we still have very elevated bond yields, crude is higher than what we want to see, and/or inflation, and obviously two ongoing wars.",
-          "url": "https://www.youtube.com/watch?v=alvjJm4duHk&t=35s",
-          "speaker_verified": true,
-          "caption_match": 96.3,
-          "caption_sec": 31,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "0:56",
-          "t_sec": 56,
-          "speaker": "Mark Newton",
-          "topic": "us_equities",
-          "text": "My thinking is the market has started to stabilize, and so now we see a little bit of backing and filling in tech.",
-          "url": "https://www.youtube.com/watch?v=alvjJm4duHk&t=56s",
-          "speaker_verified": true,
-          "caption_match": 100.0,
-          "caption_sec": 31,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "1:13",
-          "t_sec": 73,
-          "speaker": "Mark Newton",
-          "topic": "us_equities",
-          "text": "The broader market right now is is still doing very well. The S&P is less than 100 points from its all-time highs. We made new all-time highs just what, 11 trading days ago? So markets remain resilient, and earnings have started to kick off in very good shape thus far.",
-          "url": "https://www.youtube.com/watch?v=alvjJm4duHk&t=73s",
-          "speaker_verified": true,
-          "caption_match": 97.7,
-          "caption_sec": 62,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "2:01",
-          "t_sec": 121,
-          "speaker": "Mark Newton",
-          "topic": "us_equities",
-          "text": "Well, look, you know, as as a technical analyst, we're taught really to ignore a lot of the exogenous events and the news. We know that headlines like that can affect stocks in the near term, headlines, but you know, we've seen the war ongoing most of the year, the S&P is up 13 and a half percent. It really pays to ignore what's happening as much as we want to concentrate on it, and really concentrate on earnings, concentrate on really technical strength and really what's driving this move.",
-          "url": "https://www.youtube.com/watch?v=alvjJm4duHk&t=121s",
-          "speaker_verified": true,
-          "caption_match": 94.0,
-          "caption_sec": 93,
-          "grade": "1차-A",
-          "caption_checked": true
-        },
-        {
-          "t": "2:34",
-          "t_sec": 154,
-          "speaker": "Mark Newton",
-          "topic": "us_equities",
-          "text": "So, yeah, I'm encouraged. I think it's going to be a choppy time until we get past the midterms. I think we need to see evidence of bond yields, crude starting to peak and fall. That likely is still a little bit premature, but I'm very encouraged just with the technical structure itself with the market right now.",
-          "url": "https://www.youtube.com/watch?v=alvjJm4duHk&t=154s",
-          "speaker_verified": true,
-          "caption_match": 97.4,
-          "caption_sec": 154,
-          "grade": "1차-A",
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-10-23T08:25:43+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 6,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      },
-      "role": "core",
-      "gemini_prompt_tokens": 5797
     }
   ]
 }
