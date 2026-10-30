@@ -23,6 +23,8 @@ from typing import Callable
 from zoneinfo import ZoneInfo
 
 import requests
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import person_index  # noqa: E402
 
 try:
     from guru_x import grok_source, media_vision
@@ -386,6 +388,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
         "media_vision": vision_stats,
         "posts": kept,
     }
+    feed["person_index"] = person_index.for_x(kept, fetched_at)
 
     write_json(STATE_PATH, state)
     write_json(FEED_PATH, feed)

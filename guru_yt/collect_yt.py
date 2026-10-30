@@ -38,6 +38,8 @@ from typing import Callable
 from zoneinfo import ZoneInfo
 
 import requests
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import person_index  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "channels.json"
@@ -1339,6 +1341,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         "gemini_stats": gstats,
         "videos": vids,
     }
+    feed["person_index"] = person_index.for_yt(vids, fetched_at)
     write_json(STATE_PATH, state)
     write_json(FEED_PATH, feed)
     write_json(QUEUE_PATH, {"videos": [], "last_checked_at": fetched_at, "errors": {}, "gap_possible": []})

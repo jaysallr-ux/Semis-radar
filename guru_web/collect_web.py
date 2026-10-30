@@ -36,6 +36,8 @@ from typing import Callable
 from zoneinfo import ZoneInfo
 
 import requests
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import person_index  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
@@ -583,6 +585,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
                    "status": "ok" if gem_ok else ("no key" if not gemini_key else "quota")},
         "items": keep,
     }
+    feed["person_index"] = person_index.for_web(keep, fetched_at)
     write_json(FEED_PATH, feed)
     write_json(STATE_PATH, state)
     write_json(CANDIDATES_PATH, candidates)
