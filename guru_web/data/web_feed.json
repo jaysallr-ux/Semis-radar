@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-10-30T21:05:26+09:00",
+  "generated_at": "2026-10-31T10:05:27+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -54,7 +54,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 4,
+      "items_in_window": 5,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -85,7 +85,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 5,
+      "items_in_window": 4,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -95,7 +95,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
+      "items_in_window": 4,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -105,7 +105,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 5,
+      "items_in_window": 4,
       "scoring_items": 2,
       "pending_items": 0
     },
@@ -115,7 +115,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 4,
+      "items_in_window": 5,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -125,8 +125,8 @@
       "role": "shadow",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
-      "scoring_items": 0,
+      "items_in_window": 2,
+      "scoring_items": 1,
       "pending_items": 0
     },
     {
@@ -136,7 +136,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 5,
+      "items_in_window": 6,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -152,17 +152,17 @@
     }
   ],
   "stats": {
-    "discovered": 140,
-    "new_items": 7,
-    "decoded": 7,
-    "bodies": 2,
+    "discovered": 129,
+    "new_items": 10,
+    "decoded": 10,
+    "bodies": 4,
     "quotes_verified": 1,
     "video_candidates": 0,
-    "gemini_calls": 1,
+    "gemini_calls": 2,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 1,
+    "calls_today": 2,
     "daily_cap": 10,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -172,6 +172,130 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Joseph Wang",
+      "tier": 4,
+      "role": "shadow",
+      "source_kind": "news_article",
+      "title": "🇺🇸 Pop the AI bubble and office jobs vanish even faster: recessions are when companies start swapping people for software Joseph Wang, a former Federal Reserve trader, says the Iran war's energy shock pushed central banks into hiking, and those higher r",
+      "outlet": "X",
+      "published_at": "2026-10-31T00:43:56+00:00",
+      "discovered_at": "2026-10-31T10:05:27+09:00",
+      "article_url": "https://x.com/MarioNawfal/status/2116330293992853888/video/1",
+      "canonical_url": "https://x.com/MarioNawfal/status/2116330293992853888/video/1",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "I actually think it&#x27;s going to speed it up.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "says"
+        }
+      ],
+      "direction_hint": "bearish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-10-31T10:05:27+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Warren Pies",
+      "tier": 1,
+      "role": "core",
+      "source_kind": "video_page",
+      "title": "3Fourteen's Warren Pies: Tech selloff is technical, not fundamental",
+      "outlet": "CNBC",
+      "published_at": "2026-10-30T21:21:08+00:00",
+      "discovered_at": "2026-10-31T10:05:27+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/10/30/3fourteens-warren-pies-tech-selloff-is-technical-not-fundamental.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/10/30/3fourteens-warren-pies-tech-selloff-is-technical-not-fundamental.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Andy Constan",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Index puts and calls bought at 15–20 implied volatility have resulted in pain trades, Andy Constan notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-10-30T21:20:29+00:00",
+      "discovered_at": "2026-10-31T10:05:27+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4042529-index-option-pain-trade/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4042529-index-option-pain-trade/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Bitcoin Price Forecast from Lyn Alden: She Outlines Scenarios of $1 Million and $2 Million",
+      "outlet": "Bitcoin Sistemi",
+      "published_at": "2026-10-30T18:31:14+00:00",
+      "discovered_at": "2026-10-31T10:05:27+09:00",
+      "article_url": "https://en.bitcoinsistemi.com/bitcoin-price-forecast-from-lyn-alden-she-outlines-scenarios-of-1-million-and-2-million/",
+      "canonical_url": "https://en.bitcoinsistemi.com/bitcoin-price-forecast-from-lyn-alden-she-outlines-scenarios-of-1-million-and-2-million/",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Wage data at cycle lows suggest limited labor market momentum, Bob Elliott notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-10-30T13:20:13+00:00",
+      "discovered_at": "2026-10-31T10:05:27+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4034063-eci-wage-data-cycle-lows/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4034063-eci-wage-data-cycle-lows/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Mike Wilson",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "Valley Update With Mike Wilson-10/28/26",
+      "outlet": "WSJD 100.5",
+      "published_at": "2026-10-30T11:01:52+00:00",
+      "discovered_at": "2026-10-31T10:05:27+09:00",
+      "article_url": "https://wsjd.fm/new-blog-3/2026/10/30/valley-update-with-mike-wilson-102826",
+      "canonical_url": "https://wsjd.fm/new-blog-3/2026/10/30/valley-update-with-mike-wilson-102826",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0
+    },
     {
       "person": "Ryan Detrick",
       "tier": 2,
@@ -756,64 +880,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Warren Pies",
-      "tier": 1,
-      "role": "core",
-      "source_kind": "video_page",
-      "title": "3Fourteen Research’s Warren Pies: Next two weeks are likely to be choppy",
-      "outlet": "CNBC",
-      "published_at": "2026-10-23T21:18:42+00:00",
-      "discovered_at": "2026-10-24T10:05:24+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/10/23/3fourteen-researchas-warren-pies-next-two-weeks-are-likely-to-be-choppy.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/10/23/3fourteen-researchas-warren-pies-next-two-weeks-are-likely-to-be-choppy.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
-    },
-    {
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Ryan Detrick: Goldman Sachs Prime Book net selling in global equities nears late March levels",
-      "outlet": "Traders Union",
-      "published_at": "2026-10-23T16:35:16+00:00",
-      "discovered_at": "2026-10-27T10:05:34+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/3947659-goldman-sachs-net-selling/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/3947659-goldman-sachs-net-selling/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Jim Bianco",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "George Gammon: Discussion with Jim Bianco on potential for major moves in interest rates",
-      "outlet": "Traders Union",
-      "published_at": "2026-10-23T14:35:25+00:00",
-      "discovered_at": "2026-10-24T10:05:24+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/3945299-interest-rate-moves-discussion/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/3945299-interest-rate-moves-discussion/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
     }
   ],
   "person_index": {
@@ -826,15 +892,6 @@
         "count": 3,
         "non_noise": 3,
         "items": [
-          {
-            "at": "2026-10-28T10:05:25+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/3988318-annual-issuance-statistics-constan/",
-            "kind": "news_article",
-            "preview": "Andy Constan: $192 billion annual pace is 43% of total planned new issuance",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-27T18:20:07+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-29T10:05:25+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4003991-interest-rate-comment-questioned/",
@@ -852,13 +909,22 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-10-29T20:20:15+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-10-31T10:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4042529-index-option-pain-trade/",
+            "kind": "news_article",
+            "preview": "Index puts and calls bought at 15–20 implied volatility have resulted in pain trades, Andy Constan …",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-30T21:20:29+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-10-28T21:05:29+09:00",
@@ -886,6 +952,15 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-10-24T10:20:21+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-10-31T10:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4034063-eci-wage-data-cycle-lows/",
+            "kind": "news_article",
+            "preview": "Wage data at cycle lows suggest limited labor market momentum, Bob Elliott notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-30T13:20:13+00:00",
+            "noise_hint": false
           }
         ]
       },
@@ -907,18 +982,9 @@
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-10-28T10:05:25+09:00",
-            "url": "https://unchainedcrypto.com/jim-bianco-says-banks-blocking-ai-agents-are-protecting-their-profits-not-customers/",
-            "kind": "news_article",
-            "preview": "Jim Bianco Says Banks Blocking AI Agents Are Protecting Their Profits, Not Customers",
-            "grade": "1차-인용",
-            "published_at": "2026-10-27T23:23:12+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-30T10:05:27+09:00",
             "url": "https://seekingalpha.com/news/4660425-fomc-s-forward-guidance-has-caused-more-problems-than-it-has-solved-says-jim-bianco",
@@ -948,10 +1014,26 @@
           }
         ]
       },
+      "Joseph Wang": {
+        "role": "shadow",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-10-31T10:05:27+09:00",
+            "url": "https://x.com/MarioNawfal/status/2116330293992853888/video/1",
+            "kind": "news_article",
+            "preview": "🇺🇸 Pop the AI bubble and office jobs vanish even faster: recessions are when companies start swappi…",
+            "grade": "1차-인용",
+            "published_at": "2026-10-31T00:43:56+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
       "Lyn Alden": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 5,
+        "non_noise": 5,
         "items": [
           {
             "at": "2026-10-29T10:05:25+09:00",
@@ -988,32 +1070,23 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-10-29T22:35:18+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-10-31T10:05:27+09:00",
+            "url": "https://en.bitcoinsistemi.com/bitcoin-price-forecast-from-lyn-alden-she-outlines-scenarios-of-1-million-and-2-million/",
+            "kind": "news_article",
+            "preview": "Bitcoin Price Forecast from Lyn Alden: She Outlines Scenarios of $1 Million and $2 Million",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-30T18:31:14+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Mike Wilson": {
         "role": "observer",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-10-28T10:05:25+09:00",
-            "url": "https://www.cnbc.com/video/2026/10/27/watch-cnbcs-full-interview-with-morgan-stanleys-mike-wilson.html",
-            "kind": "video_page",
-            "preview": "Watch CNBC's full interview with Morgan Stanley's Mike Wilson",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-27T19:27:18+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-28T10:05:25+09:00",
-            "url": "https://www.bloomberg.com/news/videos/2026-10-27/wilson-pinpoints-clearing-events-as-buying-opportunities-video",
-            "kind": "video_page",
-            "preview": "Watch Markets: Morgan Stanley's Mike Wilson Pinpoints Clearing Events as Buying Opportunities",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-27T00:00:00+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-28T21:05:29+09:00",
             "url": "https://thedarksideoftheboom.substack.com/p/morgan-stanleys-mike-wilson-sees",
@@ -1030,6 +1103,15 @@
             "preview": "Morgan Stanley's Mike Wilson on the correction in AI stocks",
             "grade": "제목·설명만 확인",
             "published_at": "2026-10-27T19:23:00+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-31T10:05:27+09:00",
+            "url": "https://wsjd.fm/new-blog-3/2026/10/30/valley-update-with-mike-wilson-102826",
+            "kind": "news_article",
+            "preview": "Valley Update With Mike Wilson-10/28/26",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-30T11:01:52+00:00",
             "noise_hint": false
           }
         ]
@@ -1064,6 +1146,22 @@
             "preview": "TSLA moves out of year-long downtrend, Ryan Detrick notes",
             "grade": "제목·설명만 확인",
             "published_at": "2026-10-30T03:35:12+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Warren Pies": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-10-31T10:05:27+09:00",
+            "url": "https://www.cnbc.com/video/2026/10/30/3fourteens-warren-pies-tech-selloff-is-technical-not-fundamental.html",
+            "kind": "video_page",
+            "preview": "3Fourteen's Warren Pies: Tech selloff is technical, not fundamental",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-10-30T21:21:08+00:00",
             "noise_hint": false
           }
         ]
