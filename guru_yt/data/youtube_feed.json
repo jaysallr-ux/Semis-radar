@@ -1,13 +1,13 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-10-31T10:10:32+09:00",
+  "generated_at": "2026-10-31T11:09:21+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-10-31T02:50:39+09:00",
-    "merged_from_discovery": 3,
+    "last_discovery_at": "2026-10-31T10:10:32+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
@@ -103,7 +103,7 @@
       "rss_count": 15,
       "list_source": "data_api",
       "oldest_rss": "2026-10-30T21:37:34+09:00",
-      "gap_possible": true,
+      "gap_possible": false,
       "matched": 0
     },
     {
@@ -162,14 +162,14 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 3,
+    "gemini_calls_today": 4,
     "gemini_est_video_hours_today": 0.212,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 2,
-    "ready": 2,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -178,8 +178,8 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 3,
-    "ready": 2,
+    "attempted": 1,
+    "ready": 0,
     "not_speaking": 0,
     "busy": 0,
     "errors": 1,
@@ -962,7 +962,7 @@
       "gemini_evidence": null,
       "stance": null,
       "quotes": [],
-      "gemini_error_count": 1,
+      "gemini_error_count": 2,
       "gemini_last_error": "error 403 video not accessible to Gemini",
       "evidence_ready_at": null,
       "evidence_grade": "제목·설명만 확인",
@@ -2016,6 +2016,52 @@
       "gemini_prompt_tokens": 9368,
       "quotes_grade_count": {
         "1차-A": 5,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "EkHFyB5l4_c",
+      "url": "https://www.youtube.com/watch?v=EkHFyB5l4_c",
+      "channel": "Morningstar",
+      "channel_id": "UChub1tZZuWn9YYHJZZYTbMg",
+      "channel_mode": "filter",
+      "person": "David Sekera",
+      "tier": 2,
+      "role": "core",
+      "match": "description",
+      "title": "5 Stocks to Buy Trading at Big Discounts I October 26, 2026",
+      "description": "#TheMorningFilter #StockstoBuy #MarketVolatility \n\nPlus, what the recent volatility in the bond market means for investors. \n\nIn this new episode of The Morning Filter podcast, co-hosts Dave Sekera and Sarah Hansen unpack a very bumpy week in the markets, from a dramatic selloff in AI-linked names and an ongoing rotation from growth to value to a huge rally in the Treasury market. They cover what to watch for in upcoming earnings reports from Alphabet, Microsoft, Amazon, and more. They also recap a busy week of earnings and new research on SpaceX SPCX, Meta META, and Tesla TSLA. \n\nThey answer a viewer question about Morningstar’s star ratings for stocks, and Dave explains how to incorporate those ratings into a broader investment strategy. They wrap up with five stock buys that are trading at big discounts. \n\nEpisode Highlights  \n\n00:00:00 Welcome\n00:01:00 What’s behind the AI selloff and rally in Treasury bonds. \n00:07:01 Expectations for the October Fed meeting. \n00:09:04 What to watch in upcoming earnings from Alphabet GOOGL, Microsoft MSFT, and Amazon AMZN.  \n00:26:55 Is Hasbro HAS still a buy after earnings? \nWhat slowing growth at Netflix NFLX means for the stock. \n00:28:30 How to incorporate Morningstar’s stock ratings into your investment strategy. \n00:38:50 Stocks to buy while they’re trading at big discounts. \n\n \nRead about topics from this episode.  \n\nQ4 2026 Stock Market Outlook: Individual Stock Selection Looks Increasingly Important https://www.morningstar.com/m",
+      "published_at": "2026-10-26T13:55:50Z",
+      "first_seen_at": "2026-10-31T11:09:21+09:00",
+      "is_short": null,
+      "transcript_status": "skipped_old",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
