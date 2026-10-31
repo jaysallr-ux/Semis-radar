@@ -119,6 +119,24 @@ def name_hit(person: dict, text: str) -> bool:
     return any(re.search(r"\b" + re.escape(n.lower()) + r"\b", low) for n in full)
 
 
+def context_hit(person: dict, text: str) -> bool:
+    """For common names: the page must also name the person's firm or show (context_terms in channels.json)."""
+    terms = person.get("context_terms") or []
+    if not terms:
+        return True
+    low = (text or "").lower()
+    return any(t.lower() in low for t in terms)
+
+
+SOCIAL_HOSTS = ("x.com/", "twitter.com/", "nitter.", "threads.net/", "facebook.com/", "instagram.com/", "tiktok.com/")
+
+
+def is_social(url: str) -> bool:
+    """Third-party social posts are not publications: they never become guru_web items."""
+    u = url.lower().split("//", 1)[-1]
+    return any(u.startswith(h) or u.startswith("www." + h) or u.startswith("mobile." + h) for h in SOCIAL_HOSTS)
+
+
 def last_names(person: dict) -> list[str]:
     out = {n.split()[-1].lower() for n in person["names"]}
     return sorted(out)
@@ -384,7 +402,8 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
     items = {i["canonical_url"]: i for i in old.get("items", [])
              # drop news items whose headline no longer passes the full-name filter (e.g. 'Karsan Otomotiv')
              if i.get("source_kind") not in ("news_article", "video_page")
-             or (i["person"] in by_name and name_hit(by_name[i["person"]], i["title"]))}
+             or (i["person"] in by_name and name_hit(by_name[i["person"]], i["title"])
+                 and not is_social(i["canonical_url"]) and i.get("gemini_status") != "not_about_person")}
     gem_day = state.get("gemini") or {}
     if gem_day.get("date") != now.strftime("%Y-%m-%d"):
         gem_day = {"date": now.strftime("%Y-%m-%d"), "calls": 0}
@@ -449,7 +468,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
             continue
         stats["decoded"] += 1
         seen_titles[key] = url
-        if url in items:
+        if url in items or is_social(url) or url in state.get("excluded", {}):
             continue
         kind = "video_page" if is_video_page(url) else "news_article"
         items[url] = new_item(p, kind, f["title"], f["outlet"], url, f["published_at"])
@@ -519,8 +538,9 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
         else:
             it["body_fetch_status"] = 200
         stats["bodies"] += 1
-        if it["source_kind"] in ("news_article", "video_page") and not name_hit(person, text):
+        if it["source_kind"] in ("news_article", "video_page") and not (name_hit(person, text) and context_hit(person, text)):
             it["gemini_status"] = "not_about_person"
+            state.setdefault("excluded", {})[it["canonical_url"]] = fetched_at
             continue
         if it["source_kind"] in ("news_article", "video_page") and not re.search(r'["“][^"”]{25,}["”]', text):
             it["gemini_status"] = "no_direct_quotes"  # nothing in quotation marks: cannot be 1차-인용
@@ -555,7 +575,9 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
 
     for it in items.values():
         it.pop("_text", None)
-    keep = [i for i in items.values() if now - parse_ts(i["published_at"]) <= window]
+    keep = [i for i in items.values() if now - parse_ts(i["published_at"]) <= window
+            and i.get("gemini_status") != "not_about_person"]
+    state["excluded"] = {u: t for u, t in state.get("excluded", {}).items() if now - parse_ts(t) <= window}
     keep.sort(key=lambda i: i["published_at"], reverse=True)
     candidates["videos"] = [c for c in candidates["videos"] if now - parse_ts(c["added_at"]) <= window]
     state["gemini"] = gem_day
