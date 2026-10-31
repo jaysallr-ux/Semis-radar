@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-10-31T10:15:30+09:00",
+  "generated_at": "2026-10-31T21:15:28+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (80 entries)",
+    "list": "ok (78 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 115,
-    "already_known": 26,
+    "urls_found": 103,
+    "already_known": 45,
     "too_old": 55,
-    "verified_syndication": 34,
+    "verified_syndication": 3,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-10-29T15:42:42.000Z",
+    "list_oldest": "2026-10-29T22:14:54.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
+      "last_success_at": "2026-10-31T21:15:28+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-10-31T21:15:28+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
+      "last_success_at": "2026-10-31T21:15:28+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
-      "new_originals_this_run": 4,
+      "last_success_at": "2026-10-31T21:15:28+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
-      "new_originals_this_run": 12,
+      "last_success_at": "2026-10-31T21:15:28+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
-      "new_originals_this_run": 12,
+      "last_success_at": "2026-10-31T21:15:28+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
+      "last_success_at": "2026-10-31T21:15:28+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,8 +111,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-31T21:15:28+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -122,7 +122,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
+      "last_success_at": "2026-10-31T21:15:28+09:00",
       "new_originals_this_run": 1,
       "error": null
     },
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-10-31T21:15:28+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-10-31T10:15:30+09:00",
+      "last_success_at": "2026-10-31T21:15:28+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -156,7 +156,7 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 18,
+    "described": 0,
     "pending": 0,
     "errors": 0,
     "calls_today": 18,
@@ -164,6 +164,89 @@
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2116474007612498294",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-10-31T10:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2116474007612498294",
+      "text": "A spooooky MacroTalk this week with @AahanPrometheus .  At least if you are an AI manic.  Check it out!\n\nhttps://t.co/6GGyVQNkp0",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://youtu.be/2QHbaBseK18?si=-I9KqOgcKzKUVbew"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2116466999916220728",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-10-31T09:47:09.000Z",
+      "url": "https://x.com/dampedspring/status/2116466999916220728",
+      "text": "Wordle 1,960 4/6*\n\n⬜⬜🟨⬜⬜\n⬜🟩⬜⬜⬜\n⬜🟩⬜⬜🟨\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2116389594832793807",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-10-31T04:39:34.000Z",
+      "url": "https://x.com/DariusDale42/status/2116389594832793807",
+      "text": "Darius Dale the human is still quite bullish. As consistently stated here and elsewhere, we don’t think this market cycle peaks until 2H27 or 1H28. Darius Dale’s portfolio isn’t, however. \n\nThis dichotomy is the difference between investing with risk management overlays and",
+      "quoted_post_id": "2116211036579885122",
+      "quoted_post": {
+        "id": "2116211036579885122",
+        "author": "chuhakey",
+        "created_at": "2026-10-30T16:50:03.000Z",
+        "url": "https://x.com/chuhakey/status/2116211036579885122",
+        "text": "@42Macro @DariusDale42 @lisaabramowicz1 @annmarie so you are a bear now? just few days ago you were a bull !",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2116292637548331094",
       "person": "Andy Constan",
@@ -8145,54 +8228,6 @@
       "discovered_via": [
         "list_embed"
       ]
-    },
-    {
-      "id": "2113945333336281302",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-24T10:46:57.000Z",
-      "url": "https://x.com/dampedspring/status/2113945333336281302",
-      "text": "Wordle 1,953 5/6*\n\n⬜⬜⬜⬜🟨\n⬜⬜🟩🟩⬜\n⬜🟩🟩🟩⬜\n🟩🟩🟩🟩⬜\n🟩🟩🟩🟩🟩",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2113937910747574284",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-10-24T10:17:27.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2113937910747574284",
-      "text": "Stopped by CNBC Wed morning to talk through the challenges facing the AI trade and how bonds could just be a good buy in this environment.\n\nhttps://t.co/PxwWyDWnGk",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://www.cnbc.com/video/2026/10/21/market-overall-has-become-one-big-bet-on-ai-unlimited-etfs-elliott.html"
-      ],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
     }
   ],
   "person_index": {
@@ -8205,13 +8240,6 @@
         "count": 34,
         "non_noise": 29,
         "items": [
-          {
-            "at": "2026-10-28T20:05:32+09:00",
-            "url": "https://x.com/dampedspring/status/2115399562739527778",
-            "kind": "post",
-            "preview": "Wordle 1,957 5/6* 🟨⬜⬜🟨⬜ 🟨⬜⬜🟩🟩 ⬜🟨🟨🟩🟩 ⬜🟩🟩🟩🟩 🟩🟩🟩🟩🟩",
-            "noise_hint": true
-          },
           {
             "at": "2026-10-28T22:10:15+09:00",
             "url": "https://x.com/dampedspring/status/2115430949198418207",
@@ -8447,6 +8475,13 @@
             "kind": "post",
             "preview": "It would be great if we at least visit one of the two $JHEQX strikes over the next two months. If n…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-10-31T18:47:09+09:00",
+            "url": "https://x.com/dampedspring/status/2116466999916220728",
+            "kind": "post",
+            "preview": "Wordle 1,960 4/6* ⬜⬜🟨⬜⬜ ⬜🟩⬜⬜⬜ ⬜🟩⬜⬜🟨 🟩🟩🟩🟩🟩",
+            "noise_hint": true
           }
         ]
       },
@@ -8455,13 +8490,6 @@
         "count": 8,
         "non_noise": 8,
         "items": [
-          {
-            "at": "2026-10-28T20:15:00+09:00",
-            "url": "https://x.com/BobEUnlimited/status/2115401943397044498",
-            "kind": "post",
-            "preview": "The Glacial Hiking Cycle While most developed economies face headline inflation of 3-4% these days,…",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-29T05:36:10+09:00",
             "url": "https://x.com/BobEUnlimited/status/2115543166065549786",
@@ -8510,6 +8538,13 @@
             "url": "https://x.com/BobEUnlimited/status/2116156150282354983",
             "kind": "post",
             "preview": "Benchmark ECI wage data at cycle lows. In line with what we have seen with monthly AHE. Suggests li…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-10-31T19:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2116474007612498294",
+            "kind": "post",
+            "preview": "A spooooky MacroTalk this week with @AahanPrometheus . At least if you are an AI manic. Check it ou…",
             "noise_hint": false
           }
         ]
@@ -8625,8 +8660,8 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 8,
-        "non_noise": 8,
+        "count": 9,
+        "non_noise": 9,
         "items": [
           {
             "at": "2026-10-28T22:29:29+09:00",
@@ -8689,6 +8724,14 @@
             "preview": "ANSWER: You can make plenty of money buying the dip in a risk-off Market Regime. This requires gett…",
             "quoted_author": "42Macro",
             "noise_hint": false
+          },
+          {
+            "at": "2026-10-31T13:39:34+09:00",
+            "url": "https://x.com/DariusDale42/status/2116389594832793807",
+            "kind": "quote_post",
+            "preview": "Darius Dale the human is still quite bullish. As consistently stated here and elsewhere, we don’t t…",
+            "quoted_author": "chuhakey",
+            "noise_hint": false
           }
         ]
       },
@@ -8744,17 +8787,9 @@
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 4,
+        "non_noise": 4,
         "items": [
-          {
-            "at": "2026-10-28T11:04:26+09:00",
-            "url": "https://x.com/LynAldenContact/status/2115263390025429195",
-            "kind": "quote_post",
-            "preview": "Sometimes in war scenes, it is pretended that massive battles can happen without casualties. Just a…",
-            "quoted_author": "Qualite4Real",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-30T05:40:44+09:00",
             "url": "https://x.com/LynAldenContact/status/2115906705498296682",
@@ -8834,31 +8869,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 30,
-        "non_noise": 30,
+        "count": 27,
+        "non_noise": 27,
         "items": [
-          {
-            "at": "2026-10-28T11:17:49+09:00",
-            "url": "https://x.com/RyanDetrick/status/2115266756369404028",
-            "kind": "post",
-            "preview": "Could Texas really flip? @LibbyCantrill of @PIMCO weighs in",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-28T11:17:58+09:00",
-            "url": "https://x.com/RyanDetrick/status/2115266794596229550",
-            "kind": "reply",
-            "preview": "@LibbyCantrill @PIMCO @sonusvarghese 📺",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-28T21:09:01+09:00",
-            "url": "https://x.com/RyanDetrick/status/2115415539245871427",
-            "kind": "quote_post",
-            "preview": "I'm set to join Premarket Prep in about 25 minutes at 8:35am ET! You can watch it all 👇👇👇 Always fu…",
-            "quoted_author": "Spus",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-28T21:31:33+09:00",
             "url": "https://x.com/RyanDetrick/status/2115421209571610652",
