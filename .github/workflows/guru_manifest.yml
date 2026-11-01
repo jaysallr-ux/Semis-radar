@@ -1,0 +1,46 @@
+name: guru-manifest
+
+# Builds guru_manifest/data/manifest.json after the morning X / YouTube / guru_web feeds are in (10:40 KST),
+# so the 11:00 Macro Guru report gets a fixed list of records (R001...) and their count from code.
+on:
+  schedule:
+    - cron: "45 1 * * *"   # KST 10:45 fallback; dispatch-tick runs the 10:40 slot on time
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "build outside the 10:00-10:59 KST slot"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guru-manifest
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Build manifest
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then python guru_manifest/build_manifest.py --force; else python guru_manifest/build_manifest.py; fi
+      - name: Commit
+        run: |
+          git config user.name "guru-manifest-bot"
+          git config user.email "guru-manifest-bot@users.noreply.github.com"
+          git add guru_manifest/data/
+          git commit -m "guru manifest $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')" || { echo "변경 없음"; exit 0; }
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 5
+          done
+          exit 1
