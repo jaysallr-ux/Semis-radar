@@ -1,6 +1,6 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-01T10:15:33+09:00",
+  "generated_at": "2026-11-01T21:15:32+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
@@ -10,15 +10,15 @@
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 104,
-    "already_known": 39,
+    "urls_found": 103,
+    "already_known": 45,
     "too_old": 55,
-    "verified_syndication": 10,
+    "verified_syndication": 3,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-10-30T11:52:09.000Z",
+    "list_oldest": "2026-10-30T12:49:54.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
+      "last_success_at": "2026-11-01T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
+      "last_success_at": "2026-11-01T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
+      "last_success_at": "2026-11-01T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-01T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
-      "new_originals_this_run": 7,
+      "last_success_at": "2026-11-01T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -89,7 +89,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
+      "last_success_at": "2026-11-01T21:15:32+09:00",
       "new_originals_this_run": 1,
       "error": null
     },
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
+      "last_success_at": "2026-11-01T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
+      "last_success_at": "2026-11-01T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-01T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
+      "last_success_at": "2026-11-01T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -144,8 +144,8 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-01T10:15:33+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-01T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     }
   ],
@@ -156,14 +156,120 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 5,
+    "described": 1,
     "pending": 0,
     "errors": 0,
-    "calls_today": 5,
+    "calls_today": 6,
     "daily_cap": 40,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2116866595163406840",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-11-01T12:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2116866595163406840",
+      "text": "Much of the AI investment boom today is driven by promises to receive trillions of cash in the future. Any whiff that won't come and the house of cards falls apart. Free on the blog app this week.\n\nhttps://t.co/JvjXb3Gesv",
+      "quoted_post_id": "2115764331480858674",
+      "quoted_post": {
+        "id": "2115764331480858674",
+        "author": "BobEUnlimited",
+        "created_at": "2026-10-29T11:15:00.000Z",
+        "url": "https://x.com/BobEUnlimited/status/2115764331480858674",
+        "text": "The $6tln House of Cards\n\nGoogle’s announcement of nearly $1tln in forward commitments alone once again highlights how much of the AI boom today is being greased by all those involved committing to deliver future cash.\n\nhttps://t.co/AjLluMuRLA https://t.co/gSkHnnKRTc",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVyuKlcWIAAIR9H.jpg"
+          }
+        ]
+      },
+      "links": [
+        "https://x.com/BobEUnlimited/status/2115764331480858674?a=4zGZp0OvlyLKaZG0xgI&s=20"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-01T12:15:32+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HVyuKlcWIAAIR9H.jpg",
+            "image_text": "Hyperscalers, NVDA, AVGO and SpaceX now disclose $3.59tn of off-balance-sheet commitments\nLatest filings as of 21 Oct 2026 (META on 3Q26, provisional; SpaceX added). USD bn, undiscounted; $3.81tn incl. news-based items vs MS $3.29tn in August\nGOOGL | $707 | $91 | $75 | $895bn\nMETA | $349 | $342 | $41 | $747bn\nMSFT | $229 | $329 | $559bn\nAMZN | $130 | $137 | $48 | $301bn (+ $48bn news-based)\nORCL |",
+            "what_it_shows": "The horizontal bar chart displays off-balance-sheet commitments by company, totaling $3.59tn as of October 2026, broken down into categories such as purchases, leases, and guarantees. GOOGL reports the highest total at $895bn, followed by META at $747bn and MSFT at $559bn.",
+            "chart_credit": "ZeroHedge"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2116827246828929381",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-01T09:38:39.000Z",
+      "url": "https://x.com/dampedspring/status/2116827246828929381",
+      "text": "Wordle 1,961 4/6*\n\n⬜🟨⬜🟨🟨\n🟨⬜⬜🟩🟩\n⬜⬜🟩🟩🟩\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2116706622391325050",
+      "person": "Joseph Wang",
+      "handle": "josephwang",
+      "tier": 4,
+      "role": "shadow",
+      "author_id": "718702333",
+      "created_at": "2026-11-01T01:39:19.000Z",
+      "url": "https://x.com/josephwang/status/2116706622391325050",
+      "text": "Markets Weekly October 31, 2026\n\nSpooky markets\nMid-term implications\n\nhttps://t.co/C1ILo8BERD",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://youtu.be/5RwaOFdZQXM"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2116646565150425446",
       "person": "Darius Dale",
@@ -8038,105 +8144,6 @@
       "discovered_via": [
         "list_embed"
       ]
-    },
-    {
-      "id": "2114280267753849102",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-25T08:57:51.000Z",
-      "url": "https://x.com/dampedspring/status/2114280267753849102",
-      "text": "Wordle 1,954 5/6*\n\n🟨⬜⬜🟨🟨\n⬜⬜🟨🟨🟨\n⬜🟩🟩🟩⬜\n⬜🟩🟩🟩⬜\n🟩🟩🟩🟩🟩",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114189441241641396",
-      "person": "Jim Bianco",
-      "handle": "BiancoResearch",
-      "tier": 3,
-      "role": "core",
-      "author_id": "188369814",
-      "created_at": "2026-10-25T02:56:57.000Z",
-      "url": "https://x.com/BiancoResearch/status/2114189441241641396",
-      "text": "NFL fans in Paris are getting ready for the Steelers/Saints",
-      "quoted_post_id": "2112180193431367818",
-      "quoted_post": {
-        "id": "2112180193431367818",
-        "author": "visegrad24",
-        "created_at": "2026-10-19T13:52:55.000Z",
-        "url": "https://x.com/visegrad24/status/2112180193431367818",
-        "text": "Crazy video of a French couple enjoying drinks and cigarettes at an outdoor café near the Arc de Triomphe in Paris as rioters and looters fight riot police and set fires just 50 meters behind the couple https://t.co/DsihcyzMcf",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2112180157469319169/img/aCmISudI8kXr6WBy.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114183193276350789",
-      "person": "Jim Bianco",
-      "handle": "BiancoResearch",
-      "tier": 3,
-      "role": "core",
-      "author_id": "188369814",
-      "created_at": "2026-10-25T02:32:07.000Z",
-      "url": "https://x.com/BiancoResearch/status/2114183193276350789",
-      "text": "In the middle of all this chaos of over 110,000 protesters, in exactly 11 hours, the NFL intends on playing a football game in Paris at the Stade de France, which is about 5 miles away from where this video was taken. \n\nGood luck to the Steelers and the Saints tomorrow.",
-      "quoted_post_id": "2114049476096876926",
-      "quoted_post": {
-        "id": "2114049476096876926",
-        "author": "MarioNawfal",
-        "created_at": "2026-10-24T17:40:46.000Z",
-        "url": "https://x.com/MarioNawfal/status/2114049476096876926",
-        "text": "🇫🇷 France's protests are turning into something MUCH BIGGER than a weekend of unrest.\n\nHuge crowds are flooding the streets over soaring living costs and concerns about democracy.\n\nIn Paris alone, police counted 110,000 demonstrators.\n\nAnd the movement isn't winding down.",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2114026189656403968/img/NNAVD01Va2vxIDJ9.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
     }
   ],
   "person_index": {
@@ -8146,23 +8153,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 30,
-        "non_noise": 25,
+        "count": 29,
+        "non_noise": 24,
         "items": [
-          {
-            "at": "2026-10-29T19:13:59+09:00",
-            "url": "https://x.com/dampedspring/status/2115748978574893396",
-            "kind": "post",
-            "preview": "Wordle 1,958 5/6* ⬜⬜⬜🟨⬜ 🟨🟨🟨⬜⬜ ⬜🟩🟨🟨⬜ ⬜🟩🟩🟩🟩 🟩🟩🟩🟩🟩",
-            "noise_hint": true
-          },
-          {
-            "at": "2026-10-29T20:53:20+09:00",
-            "url": "https://x.com/dampedspring/status/2115773979411787890",
-            "kind": "post",
-            "preview": "$MSFT offering benchmark 10 maturities debt for the first time since 2017. Capital \"lite\" is dead",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-30T02:02:53+09:00",
             "url": "https://x.com/dampedspring/status/2115851880010305939",
@@ -8363,13 +8356,20 @@
             "kind": "post",
             "preview": "Most of what you should want to know about the QRA this week. Clients will get real time interpreta…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-01T18:38:39+09:00",
+            "url": "https://x.com/dampedspring/status/2116827246828929381",
+            "kind": "post",
+            "preview": "Wordle 1,961 4/6* ⬜🟨⬜🟨🟨 🟨⬜⬜🟩🟩 ⬜⬜🟩🟩🟩 🟩🟩🟩🟩🟩",
+            "noise_hint": true
           }
         ]
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 7,
-        "non_noise": 7,
+        "count": 8,
+        "non_noise": 8,
         "items": [
           {
             "at": "2026-10-29T22:17:36+09:00",
@@ -8420,21 +8420,22 @@
             "kind": "post",
             "preview": "A spooooky MacroTalk this week with @AahanPrometheus . At least if you are an AI manic. Check it ou…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-01T21:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2116866595163406840",
+            "kind": "quote_post",
+            "preview": "Much of the AI investment boom today is driven by promises to receive trillions of cash in the futu…",
+            "quoted_author": "BobEUnlimited",
+            "noise_hint": false
           }
         ]
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 4,
+        "non_noise": 4,
         "items": [
-          {
-            "at": "2026-10-29T11:41:46+09:00",
-            "url": "https://x.com/jam_croissant/status/2115635173001683073",
-            "kind": "quote_post",
-            "quoted_author": "atrupar",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-29T22:41:28+09:00",
             "url": "https://x.com/jam_croissant/status/2115801194010448372",
@@ -8555,6 +8556,20 @@
           }
         ]
       },
+      "Joseph Wang": {
+        "role": "shadow",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-01T10:39:19+09:00",
+            "url": "https://x.com/josephwang/status/2116706622391325050",
+            "kind": "post",
+            "preview": "Markets Weekly October 31, 2026 Spooky markets Mid-term implications",
+            "noise_hint": false
+          }
+        ]
+      },
       "Lyn Alden": {
         "role": "core",
         "count": 4,
@@ -8632,17 +8647,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 26,
-        "non_noise": 26,
+        "count": 25,
+        "non_noise": 25,
         "items": [
-          {
-            "at": "2026-10-29T10:23:14+09:00",
-            "url": "https://x.com/RyanDetrick/status/2115615408447164823",
-            "kind": "quote_post",
-            "preview": "Great look at AI success from @sonusvarghese 👇👇",
-            "quoted_author": "sonusvarghese",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-29T22:32:14+09:00",
             "url": "https://x.com/RyanDetrick/status/2115798868327555232",
