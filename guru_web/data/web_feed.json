@@ -1,10 +1,8 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-01T10:05:24+09:00",
-  "data_ok": false,
-  "errors": {
-    "Carson Group feed": "carson /feed:403 /feed/:403 /insights/blog/feed/:403 /author/ryan-detrick/feed/:403 /feed/:403"
-  },
+  "generated_at": "2026-11-01T21:05:23+09:00",
+  "data_ok": true,
+  "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
   "new_statement_clock": "evidence_ready_at",
   "discovery_complete": true,
@@ -86,7 +84,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "official_source_ok": false,
+      "official_source_ok": true,
       "items_in_window": 3,
       "scoring_items": 1,
       "pending_items": 0
@@ -154,10 +152,10 @@
     }
   ],
   "stats": {
-    "discovered": 122,
-    "new_items": 5,
-    "decoded": 7,
-    "bodies": 1,
+    "discovered": 126,
+    "new_items": 4,
+    "decoded": 6,
+    "bodies": 0,
     "quotes_verified": 0,
     "video_candidates": 0,
     "gemini_calls": 0,
@@ -827,18 +825,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-10-29T10:05:25+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4003991-interest-rate-comment-questioned/",
-            "kind": "news_article",
-            "preview": "Warsh’s comment on interest rates prompts debate, Andy Constan notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-28T19:20:28+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-30T10:05:27+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4021093-amzn-issuance-options-question/",
@@ -886,18 +875,9 @@
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-10-29T10:05:25+09:00",
-            "url": "https://www.cnbc.com/video/2026/10/28/nothing-has-changed-to-make-fed-chair-warsh-more-hawkish-or-dovish-says-kai-wealthas-cem-karsan.html",
-            "kind": "video_page",
-            "preview": "Nothing has changed to make Fed Chair Warsh more hawkish or dovish, says Kai Wealth’s Cem Karsan",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-28T18:12:47+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-31T11:09:15+09:00",
             "url": "https://www.tastylive.com/shows/tasty-guests/episodes/tasty-guests-cem-karsan-10-30-2026",
@@ -954,36 +934,9 @@
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 6,
-        "non_noise": 6,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-10-29T10:05:25+09:00",
-            "url": "https://www.tradingview.com/news/benzinga:16c33c36c094b:0-bitcoin-could-steal-ai-s-spotlight-as-fast-money-is-long-gone-lyn-alden-says/",
-            "kind": "news_article",
-            "preview": "Bitcoin Could Steal AI’s Spotlight as ‘Fast Money Is Long Gone,’ Lyn Alden Says",
-            "grade": "1차-인용",
-            "published_at": "2026-10-28T20:31:23+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-29T20:25:40+09:00",
-            "url": "https://www.coingabbar.com/en/bitcoin-may-have-hit-cycle-low-near-80000-investor-lyn-alden-say",
-            "kind": "news_article",
-            "preview": "Bitcoin may have hit cycle low near $80,000, investor Lyn Alden says",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-29T10:40:00+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-29T20:25:40+09:00",
-            "url": "https://www.tokenpost.com/news/insights/43275",
-            "kind": "news_article",
-            "preview": "Lyn Alden Says Bitcoin's Cycle Low May Be Behind It After Leverage Flush",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-29T06:52:40+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-30T10:05:27+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4023176-higher-rates-inflation-limits/",
@@ -1013,36 +966,11 @@
           }
         ]
       },
-      "Mike Wilson": {
-        "role": "observer",
+      "Ryan Detrick": {
+        "role": "core",
         "count": 1,
         "non_noise": 1,
         "items": [
-          {
-            "at": "2026-10-29T10:05:25+09:00",
-            "url": "https://www.cnbc.com/video/2026/10/27/morgan-stanleys-mike-wilson-on-the-correction-in-ai-stocks.html",
-            "kind": "video_page",
-            "preview": "Morgan Stanley's Mike Wilson on the correction in AI stocks",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-27T19:23:00+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Ryan Detrick": {
-        "role": "core",
-        "count": 2,
-        "non_noise": 2,
-        "items": [
-          {
-            "at": "2026-10-29T10:05:25+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/3998132-bull-market-breadth-sentiment/",
-            "kind": "news_article",
-            "preview": "Ryan Detrick: Bull market conditions persist with unexpected breadth and rising sentiment",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-28T13:50:26+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-30T21:05:26+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4025549-tsla-breaks-downtrend/",
