@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-02T10:05:30+09:00",
+  "generated_at": "2026-11-02T21:05:29+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -85,8 +85,8 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 3,
-      "scoring_items": 1,
+      "items_in_window": 4,
+      "scoring_items": 2,
       "pending_items": 0
     },
     {
@@ -152,17 +152,17 @@
     }
   ],
   "stats": {
-    "discovered": 139,
-    "new_items": 6,
-    "decoded": 8,
-    "bodies": 0,
-    "quotes_verified": 0,
+    "discovered": 141,
+    "new_items": 5,
+    "decoded": 7,
+    "bodies": 1,
+    "quotes_verified": 6,
     "video_candidates": 0,
-    "gemini_calls": 0,
+    "gemini_calls": 1,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 0,
+    "calls_today": 1,
     "daily_cap": 10,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -172,6 +172,63 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "S&P 500 Is Up '19 For 19 Times' In Midterm November-April Window, According To Ryan Detrick",
+      "outlet": "TradingView",
+      "published_at": "2026-11-02T07:32:00+00:00",
+      "discovered_at": "2026-11-02T21:05:29+09:00",
+      "article_url": "https://www.tradingview.com/news/benzinga:f8e895ed0094b:0-s-p-500-is-up-19-for-19-times-in-midterm-november-april-window-according-to-ryan-detrick/",
+      "canonical_url": "https://www.tradingview.com/news/benzinga:f8e895ed0094b:0-s-p-500-is-up-19-for-19-times-in-midterm-november-april-window-according-to-ryan-detrick/",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "These next six months are historically the best of the year, but they are even better in a midterm year.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Detrick stated on X"
+        },
+        {
+          "text": "In fact, 19 for 19 times we’ve seen November – April higher when starting in a midterm year.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Detrick emphasized this specific timeframe by noting"
+        },
+        {
+          "text": "We are leaving the historically worst six months and the next six months are the historically best for the S&P 500.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "leading Detrick to observe"
+        },
+        {
+          "text": "No month in a midterm year is more likely to be higher than November at 78.9% of the time.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Detrick stated"
+        },
+        {
+          "text": "November is the best month of the year on average since 1950, second best the past 20 years, the best past 10 years, and the second best in midterm years.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "He further elaborated that"
+        },
+        {
+          "text": "October and November have never both been lower in a midterm year.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Addressing prior market drops, Detrick stated"
+        }
+      ],
+      "direction_hint": "bullish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-02T21:05:29+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
     {
       "person": "Mike Wilson",
       "tier": 4,
@@ -920,27 +977,9 @@
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-10-30T21:05:26+09:00",
-            "url": "https://unchainedcrypto.com/who-are-you-really-protecting-jim-bianco-on-banks-blocking-agents/",
-            "kind": "news_article",
-            "preview": "‘Who Are You Really Protecting?’ Jim Bianco on Banks Blocking Agents",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-29T22:00:00+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T21:05:26+09:00",
-            "url": "https://www.tokenpost.com/news/regulation/43859",
-            "kind": "news_article",
-            "preview": "Jim Bianco Calls for Overhaul of Fed’s Post-Crisis Guidance",
-            "grade": "1차-인용",
-            "published_at": "2026-10-29T20:30:44+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-31T21:05:24+09:00",
             "url": "https://www.financialsense.com/podcast/21844/jim-bianco-bonds-are-back-data-centers-are-ballot",
@@ -999,12 +1038,12 @@
         "non_noise": 1,
         "items": [
           {
-            "at": "2026-10-30T21:05:26+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4025549-tsla-breaks-downtrend/",
+            "at": "2026-11-02T21:05:29+09:00",
+            "url": "https://www.tradingview.com/news/benzinga:f8e895ed0094b:0-s-p-500-is-up-19-for-19-times-in-midterm-november-april-window-according-to-ryan-detrick/",
             "kind": "news_article",
-            "preview": "TSLA moves out of year-long downtrend, Ryan Detrick notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-30T03:35:12+00:00",
+            "preview": "S&P 500 Is Up '19 For 19 Times' In Midterm November-April Window, According To Ryan Detrick",
+            "grade": "1차-인용",
+            "published_at": "2026-11-02T07:32:00+00:00",
             "noise_hint": false
           }
         ]
