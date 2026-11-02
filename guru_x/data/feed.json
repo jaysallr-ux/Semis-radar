@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-02T10:15:30+09:00",
+  "generated_at": "2026-11-02T21:15:31+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (83 entries)",
+    "list": "ok (82 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 93,
-    "already_known": 18,
+    "urls_found": 92,
+    "already_known": 33,
     "too_old": 55,
-    "verified_syndication": 19,
+    "verified_syndication": 3,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-30T21:41:32.000Z",
+    "list_oldest": "2026-10-31T00:00:31.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
+      "last_success_at": "2026-11-02T21:15:31+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
+      "last_success_at": "2026-11-02T21:15:31+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,7 +67,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
+      "last_success_at": "2026-11-02T21:15:31+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
-      "new_originals_this_run": 10,
+      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
+      "last_success_at": "2026-11-02T21:15:31+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,8 +111,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
-      "new_originals_this_run": 5,
+      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T10:15:30+09:00",
+      "last_success_at": "2026-11-02T21:15:31+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -156,14 +156,139 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 15,
+    "described": 2,
     "pending": 0,
     "errors": 0,
-    "calls_today": 15,
+    "calls_today": 17,
     "daily_cap": 40,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2117228982206648756",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-11-02T12:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2117228982206648756",
+      "text": "Underestimating the RBA’s Resolve\n\nDespite 100bps of hikes in the bag and another coming today, the economy is far from cooling enough for the RBA to meet its inflation goals. STIR likely unprices their efforts ahead.\n\nhttps://t.co/i3C0Y4Xmui https://t.co/Xdi7NwZFcD",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/underestimating-the-rbas-resolve"
+      ],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWHhegdXgAALpY1.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-02T12:15:31+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWHhegdXgAALpY1.png",
+            "image_text": "Australia 2Y 4.931 (4.5430%) AU Interest Rate 4.600 1 2 3 4 5 Mar Nov Jul Mar Nov Jul Mar No 1Y 5Y 10Y All",
+            "what_it_shows": "The chart shows the Australia 2Y yield (blue line) and the AU Interest Rate (green line) over a 5-year period. At the end of the series, the Australia 2Y yield is at 4.931% and the AU Interest Rate is at 4.600%.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117162944274239997",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-02T07:52:35.000Z",
+      "url": "https://x.com/dampedspring/status/2117162944274239997",
+      "text": "Wordle 1,962 3/6*\n\n🟩⬜⬜⬜⬜\n🟩🟩🟩⬜🟩\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117123499235975522",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-02T05:15:51.000Z",
+      "url": "https://x.com/LynAldenContact/status/2117123499235975522",
+      "text": "Anakin is indeed the worst looser possible to emulate.\n\nSome people on this app say he just wanted a family. In reality, he ignored his family for power, as a pawn of Darth Sidious.\n\nDude got played. Don’t be a loser like Anakin. Go home to your family.\n\nHe choked his own wife",
+      "quoted_post_id": "2116589349261193474",
+      "quoted_post": {
+        "id": "2116589349261193474",
+        "author": "brianmccoppin",
+        "created_at": "2026-10-31T17:53:19.000Z",
+        "url": "https://x.com/brianmccoppin/status/2116589349261193474",
+        "text": "I'll never understand people who stan Anakin Skywalker.\n\nDude had EVERYTHING. Literal superpowers, a gorgeous, wealthy, powerful wife, loyal friends, and a servant droid.\n\nThen some creepy old politician promised him he could save everyone he loved.\n\nSo Anakin murdered children, https://t.co/642sXK2GQb",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HV-iy5AWwAAxWBu.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-02T12:15:31+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HV-iy5AWwAAxWBu.jpg",
+            "image_text": "",
+            "what_it_shows": "This is a still image of the character Anakin Skywalker, portrayed by Hayden Christensen, with a scar over his right eye and a serious expression.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
     {
       "id": "2117058974361026608",
       "person": "Lyn Alden",
@@ -8100,559 +8225,6 @@
         ],
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
       }
-    },
-    {
-      "id": "2114677167544320235",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-10-26T11:15:00.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2114677167544320235",
-      "text": "Rudderless Economic Policy Ahead\n\nChina’s Fifth Plenum usually details the next 5-year economic plan, but the focus on party governance this time makes it clear economic success remains subservient to power consolidation.\n\nhttps://t.co/yQfU75SJKB https://t.co/nzdDMiIwEO",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://bobeunlimited.substack.com/p/rudderless-economic-policy-ahead"
-      ],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVjQqE2WYAAEmeL.png"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVjQqE2WYAAEmeL.png",
-            "image_text": "SHANGHAI 3697.52 (+61.28%) US Index 500 7623.68 (+480.89%) 2014 2016 2018 2020 2022 2024 2026 1D 1W 1M 6M 1Y 5Y 10Y 25Y All 0% +100% +200% +300% +400% +500%",
-            "what_it_shows": "This line chart compares the performance of the Shanghai index and the US Index 500 from approximately 2013 to 2026, displaying percentage returns ranging from 0% to +500%. The US Index 500 shows a strong upward trend reaching +480.89%, while the Shanghai index remains relatively flat with a gain of",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114673940996231426",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-26T11:02:10.000Z",
-      "url": "https://x.com/dampedspring/status/2114673940996231426",
-      "text": "$META lol.  Are you paying attention? https://t.co/CJFXIXlw58",
-      "quoted_post_id": "2114673261829316918",
-      "quoted_post": {
-        "id": "2114673261829316918",
-        "author": "financialjuice",
-        "created_at": "2026-10-26T10:59:29.000Z",
-        "url": "https://x.com/financialjuice/status/2114673261829316918",
-        "text": "Meta to offer $22.5b class A common stock via forward sales, to offer 250m series A depository shares $META",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVjUvf-WcAA6p4M.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:18:47+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVjUvf-WcAA6p4M.jpg",
-            "image_text": "Who's next",
-            "what_it_shows": "This is the album cover for The Who's Who's Next, featuring the four band members standing next to a large concrete monolith in a landscape. The title Who's next appears at the top center.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114652743633887527",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-26T09:37:57.000Z",
-      "url": "https://x.com/dampedspring/status/2114652743633887527",
-      "text": "Wordle 1,955 6/6*\n\n⬜⬜⬜⬜🟨\n⬜🟩⬜⬜⬜\n⬜🟩🟩⬜⬜\n⬜🟩🟩⬜🟩\n⬜🟩🟩⬜🟩\n🟩🟩🟩🟩🟩\n\nI feel seen",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114562499445977176",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-26T03:39:21.000Z",
-      "url": "https://x.com/DariusDale42/status/2114562499445977176",
-      "text": "🚨 Tom Lee of @fundstrat does not think the AI capex bubble will precede a secular bear market. Darius Dale of @42Macro does. It will likely commence in 2H27 or 1H28 based on everything that we know today. Bookmark this post.",
-      "quoted_post_id": "2114193961632010744",
-      "quoted_post": {
-        "id": "2114193961632010744",
-        "author": "fundstrat",
-        "created_at": "2026-10-25T03:14:54.000Z",
-        "url": "https://x.com/fundstrat/status/2114193961632010744",
-        "text": "Too bearish",
-        "available": true,
-        "has_media": false
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114557748041904467",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-26T03:20:28.000Z",
-      "url": "https://x.com/DariusDale42/status/2114557748041904467",
-      "text": "The champs are looking an awful lot like the champs again. It’s amazing what a football team can accomplish when they don’t turn the ball over 3-5 times per game. 🙄",
-      "quoted_post_id": "2020701563489239520",
-      "quoted_post": {
-        "id": "2020701563489239520",
-        "author": "DariusDale42",
-        "created_at": "2026-02-09T03:29:30.000Z",
-        "url": "https://x.com/DariusDale42/status/2020701563489239520",
-        "text": "https://t.co/xgth6nMTqC",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HAr4h2Ia4AEFc31.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HAr4h2Ia4AEFc31.jpg",
-            "image_text": "LEVI'S STADIUM BUD LIGHT RUN THE DAMN BALL FAN 12 FAN",
-            "what_it_shows": "A fan wearing a Seattle Seahawks jersey and a cap that says 'RUN THE DAMN BALL' stands with hands clasped in prayer at a crowded stadium with confetti falling. The stadium screen and field are visible in the background.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114557041201025351",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-26T03:17:39.000Z",
-      "url": "https://x.com/DariusDale42/status/2114557041201025351",
-      "text": "Answer: By amplifying my message that our country’s formerly sound campaign finance regulations have been deliberately dismantled by many bad people to support the siphoning of income from the masses to the elites. https://t.co/cuxtjoglcZ",
-      "quoted_post_id": "2114440314006237586",
-      "quoted_post": {
-        "id": "2114440314006237586",
-        "author": "ntuckerpar",
-        "created_at": "2026-10-25T19:33:49.000Z",
-        "url": "https://x.com/ntuckerpar/status/2114440314006237586",
-        "text": "@DariusDale42 “Willful participant” means what? That we go to work every day? That we don’t know how to affect change in a system rigged to marginalize all small voices? How do we avoid being a willful participant?",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVhqbAfXoAAzsF_.jpg"
-        },
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVhqbAOWwAAnT-E.jpg"
-        },
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVhqbAZXsAAzMsh.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVhqbAfXoAAzsF_.jpg",
-            "image_text": "The bipartisan \"Wealth Pump\"/\"Reverse Robin Hood effect\" is not an accident or mere \"byproduct of capitalism,\" as the rapidly growing cohort of Democratic Socialists mistakenly suggests. Rather, it is the result of very explicit lobbying and campaign finance efforts by those in the K-1/capital class who view people in the W-2/working class as mere tools for wealth accumulation. Buckley v. Valeo (1",
-            "what_it_shows": "A text-based slide outlining key Supreme Court campaign finance rulings, political control context, and analytical takeaways regarding wealth and income distribution.",
-            "chart_credit": "42 Macro"
-          },
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVhqbAOWwAAnT-E.jpg",
-            "image_text": "The K-Shaped Economy Crisis (KEC) is not an accident. Wall Street has been cheering on expanding corporate margins, booming corporate earnings, and soaring stock prices for decades. All these incremental profits had to come from somewhere—i.e., people in the W-2 class. Labor's Share of Gross Domestic Income (Nominal Employee Compensation) (R1) 50.3 High on 03/31/70 58.7 Average 55.2 Low on 06/30/2",
-            "what_it_shows": "A line chart comparing Labor's Share of Gross Domestic Income and Capital's Share of Gross Domestic Income from the late 1960s to 2024, displaying divergence and recent lows for labor share.",
-            "chart_credit": "42 Macro"
-          },
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVhqbAZXsAAzMsh.jpg",
-            "image_text": "While the US Median Household Income has grown sevenfold in nominal terms over the past 50 years (12.2% p.a.), it has increased only 24% on a real basis (0.5% p.a.). Worse, it has declined 42% in real terms when deflated by Nonfarm Productivity, -59% when deflated by Gross Domestic Income, -74% when deflated by Corporate Profits, and -76% when deflated by Asset Prices. This means the median US hou",
-            "what_it_shows": "A multi-panel chart displaying nominal and inflation-adjusted median household income alongside top 5 percent household income and various deflators over a multi-decade timeframe.",
-            "chart_credit": "42 Macro"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114553830297743593",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-26T03:04:54.000Z",
-      "url": "https://x.com/RyanDetrick/status/2114553830297743593",
-      "text": "😂",
-      "quoted_post_id": "2114495974601093351",
-      "quoted_post": {
-        "id": "2114495974601093351",
-        "author": "Kalshi",
-        "created_at": "2026-10-25T23:15:00.000Z",
-        "url": "https://x.com/Kalshi/status/2114495974601093351",
-        "text": "BREAKING: A new study found that paper straws are worse for the environment than plastic straws",
-        "available": true,
-        "has_media": false
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114551129065287829",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-26T02:54:10.000Z",
-      "url": "https://x.com/DariusDale42/status/2114551129065287829",
-      "text": "This is definitely not a harbinger of the pending Fourth Turning climax—i.e., Paradigm E. Move along. Nothing to see here…",
-      "quoted_post_id": "2114296536922529937",
-      "quoted_post": {
-        "id": "2114296536922529937",
-        "author": "foxnewspolitics",
-        "created_at": "2026-10-25T10:02:30.000Z",
-        "url": "https://x.com/foxnewspolitics/status/2114296536922529937",
-        "text": "FORTRESS: The Pentagon is preparing every major U.S. military base to survive 90 days without outside support — no civilian power grid, no global supply chains, no outside fuel or water.\n\nThe initiative, revealed in documents reviewed by Fox News Digital, envisions portable https://t.co/PFbVTlkfgH",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVd9fr6awAAMp4s.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": true,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVd9fr6awAAMp4s.jpg",
-            "image_text": "BERNIE BECK GATE WELCOME TO III CORPS & FORT HOOD \"THE GREAT PLACE\"",
-            "what_it_shows": "The image combines a photo of a smoking industrial cooling tower on the left with a photo of the entrance sign for Bernie Beck Gate at Fort Hood on the right.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114550488771252351",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-26T02:51:37.000Z",
-      "url": "https://x.com/DariusDale42/status/2114550488771252351",
-      "text": "Harrison Butker going to get left at Sea-Tac.",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114540400006607212",
-      "person": "Lyn Alden",
-      "handle": "LynAldenContact",
-      "tier": 3,
-      "role": "core",
-      "author_id": "823766058909761536",
-      "created_at": "2026-10-26T02:11:32.000Z",
-      "url": "https://x.com/LynAldenContact/status/2114540400006607212",
-      "text": "Value investors watching tonight's Brazil's election sell-off. https://t.co/cGpx10PUwu",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVhbSKLWEAAnxa-.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVhbSKLWEAAnxa-.jpg",
-            "image_text": "",
-            "what_it_shows": "This is a meme image showing a man in a white robe standing behind glass partitions with his hands clasped together.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114534807149371458",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-26T01:49:18.000Z",
-      "url": "https://x.com/RyanDetrick/status/2114534807149371458",
-      "text": "Something has to give, as October 28th is historically the best day of the year. \n\nThis day falls on this Wednesday and that is also a Fed meeting. Under Kevin Warsh we've seen the S&P 500 fall 1.21% in June, 1.52% in July, and 0.45% in September. \n\nWhich history will repeat? https://t.co/1ow3yfDPzw",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVhV_1EWwAAQC8a.png"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:18:47+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVhV_1EWwAAQC8a.png",
-            "image_text": "The Best Day of The Year Is October 28th\nS&P 500 Average Performance Per Day (1950 - 2025)\nJanuary February March April May June July August September October November December\n(Columns 1 to 31 with percentage values for each calendar day)\nSource: Carson Investment Research, FactSet 10/25/2026\n@ryandetrick\nCARSON",
-            "what_it_shows": "This heatmap table shows the S&P 500 average daily performance from 1950 to 2025 across every calendar day of the year. October 28 is highlighted with a black border showing an average performance of 0.50%.",
-            "chart_credit": "Carson Investment Research"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114531657973645771",
-      "person": "Marko Papic",
-      "handle": "Geo_papic",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1502354421421785088",
-      "created_at": "2026-10-26T01:36:48.000Z",
-      "url": "https://x.com/Geo_papic/status/2114531657973645771",
-      "text": "Big losses for right leaning populists in Brazil and Serbia. Along with Orban in Hungary, that's now three big names on the right that are down for the count. Colombia's Espriella did manage to squeak through in Colombia in June, so not all is lost for the right. Bottom line: no",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114529805450244376",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-26T01:29:26.000Z",
-      "url": "https://x.com/DariusDale42/status/2114529805450244376",
-      "text": "JSN @jaxon_smith1 is so good. He serves a heaping helping of @JerryRice week after week and will retire as one of the 🐐🐐 if he stays healthy. https://t.co/G92yJtyGgT",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVhRphsWEAA2vxL.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVhRphsWEAA2vxL.jpg",
-            "image_text": "",
-            "what_it_shows": "This is a photo of an American football player wearing a dark jersey with the number 11 on the back, running on the field during a game with a blurred crowd in the background.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
     }
   ],
   "person_index": {
@@ -8662,24 +8234,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 17,
-        "non_noise": 14,
+        "count": 16,
+        "non_noise": 13,
         "items": [
-          {
-            "at": "2026-10-30T19:27:00+09:00",
-            "url": "https://x.com/dampedspring/status/2116114641554481367",
-            "kind": "post",
-            "preview": "Wordle 1,959 3/6* 🟩⬜⬜⬜🟩 🟩⬜⬜⬜🟩 🟩🟩🟩🟩🟩",
-            "noise_hint": true
-          },
-          {
-            "at": "2026-10-30T20:43:56+09:00",
-            "url": "https://x.com/dampedspring/status/2116134003010920787",
-            "kind": "quote_post",
-            "preview": "Fwiw. Best practices in tradfi and in your personal life is to have locally stored hard copy or dig…",
-            "quoted_author": "dampedspring",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-31T00:23:57+09:00",
             "url": "https://x.com/dampedspring/status/2116189370336084256",
@@ -8787,6 +8344,13 @@
             "kind": "post",
             "preview": "Wordle 1,961 4/6* ⬜🟨⬜🟨🟨 🟨⬜⬜🟩🟩 ⬜⬜🟩🟩🟩 🟩🟩🟩🟩🟩",
             "noise_hint": true
+          },
+          {
+            "at": "2026-11-02T16:52:35+09:00",
+            "url": "https://x.com/dampedspring/status/2117162944274239997",
+            "kind": "post",
+            "preview": "Wordle 1,962 3/6* 🟩⬜⬜⬜⬜ 🟩🟩🟩⬜🟩 🟩🟩🟩🟩🟩",
+            "noise_hint": true
           }
         ]
       },
@@ -8795,13 +8359,6 @@
         "count": 4,
         "non_noise": 4,
         "items": [
-          {
-            "at": "2026-10-30T20:15:00+09:00",
-            "url": "https://x.com/BobEUnlimited/status/2116126720507957724",
-            "kind": "post",
-            "preview": "Past Peak Nominal GDP Growth For much of the second half markets have been all-in on a nominal grow…",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-30T22:11:57+09:00",
             "url": "https://x.com/BobEUnlimited/status/2116156150282354983",
@@ -8822,6 +8379,13 @@
             "kind": "quote_post",
             "preview": "Much of the AI investment boom today is driven by promises to receive trillions of cash in the futu…",
             "quoted_author": "BobEUnlimited",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-02T21:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2117228982206648756",
+            "kind": "post",
+            "preview": "Underestimating the RBA’s Resolve Despite 100bps of hikes in the bag and another coming today, the …",
             "noise_hint": false
           }
         ]
@@ -8979,14 +8543,6 @@
         "non_noise": 7,
         "items": [
           {
-            "at": "2026-10-30T21:01:14+09:00",
-            "url": "https://x.com/LynAldenContact/status/2116138356924928415",
-            "kind": "quote_post",
-            "preview": "It’s not that every person necessarily wants to run their own local systems; it’s that some nontriv…",
-            "quoted_author": "morqon",
-            "noise_hint": false
-          },
-          {
             "at": "2026-10-31T03:32:14+09:00",
             "url": "https://x.com/LynAldenContact/status/2116236751907778842",
             "kind": "quote_post",
@@ -9032,35 +8588,22 @@
             "kind": "post",
             "preview": "Sometimes social trends gain steam, but if you're a serious person you just analyze them individual…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-02T14:15:51+09:00",
+            "url": "https://x.com/LynAldenContact/status/2117123499235975522",
+            "kind": "quote_post",
+            "preview": "Anakin is indeed the worst looser possible to emulate. Some people on this app say he just wanted a…",
+            "quoted_author": "brianmccoppin",
+            "noise_hint": false
           }
         ]
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 32,
-        "non_noise": 32,
+        "count": 29,
+        "non_noise": 29,
         "items": [
-          {
-            "at": "2026-10-30T11:26:38+09:00",
-            "url": "https://x.com/RyanDetrick/status/2115993753496572105",
-            "kind": "post",
-            "preview": "Bookmark this and read it a few times. Amazing work from @sonusvarghese and Blake Anderson (aka lit…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T12:27:27+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116009055995257032",
-            "kind": "post",
-            "preview": "$TSLA breaking out of a year-long downtrend Nice one in @scottcharts note today",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T13:04:03+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116018269975121953",
-            "kind": "post",
-            "preview": "The S&P 500 has been lower the past two Fridays. Hasn't been down three in a row since six in a row…",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-30T21:49:54+09:00",
             "url": "https://x.com/RyanDetrick/status/2116150604137742599",
@@ -9270,20 +8813,6 @@
             "url": "https://x.com/RyanDetrick/status/2117043267573547031",
             "kind": "post",
             "preview": "The neoclouds in at the center of the AI worries. We discussed it on Facts vs Feelings this week",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Warren Pies": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-10-30T20:52:09+09:00",
-            "url": "https://x.com/WarrenPies/status/2116136067787260232",
-            "kind": "post",
-            "preview": "Over the past month, the 10y has become much more correlated to the Nasdaq than oil. This is a more…",
             "noise_hint": false
           }
         ]
