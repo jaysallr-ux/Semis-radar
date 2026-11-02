@@ -1,28 +1,364 @@
 {
   "schema": "guru-manifest/v1",
-  "built_at": "2026-11-01T14:32:46+09:00",
+  "built_at": "2026-11-02T10:40:28+09:00",
   "note": "rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a source number [n] (several rids may share one [n] when they are the same appearance), or listed as noise by rid. auto_excluded records are games and bare reactions removed by code; they have no rid and need no handling. expected_records is the count to print; never recount.",
   "window": {
     "x": {
       "lower_exclusive": "2026-11-01T10:15:33+09:00",
-      "upper": "2026-11-01T10:15:33+09:00",
+      "upper": "2026-11-02T10:15:30+09:00",
       "feed_regenerated_today": true
     },
     "yt": {
       "lower_exclusive": "2026-11-01T10:10:28+09:00",
-      "upper": "2026-11-01T10:10:28+09:00",
+      "upper": "2026-11-02T10:11:00+09:00",
       "feed_regenerated_today": true
     },
     "web": {
       "lower_exclusive": "2026-11-01T10:05:24+09:00",
-      "upper": "2026-11-01T10:05:24+09:00",
+      "upper": "2026-11-02T10:05:30+09:00",
       "feed_regenerated_today": true
     }
   },
-  "expected_records": 0,
-  "rids": [],
-  "by_person": {},
-  "records": [],
-  "auto_excluded_count": 0,
-  "auto_excluded": []
+  "expected_records": 23,
+  "rids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R006",
+    "R007",
+    "R008",
+    "R009",
+    "R010",
+    "R011",
+    "R012",
+    "R013",
+    "R014",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019",
+    "R020",
+    "R021",
+    "R022",
+    "R023"
+  ],
+  "by_person": {
+    "Cem Karsan": [
+      "R001",
+      "R002"
+    ],
+    "Ryan Detrick": [
+      "R003",
+      "R004",
+      "R005",
+      "R006",
+      "R007",
+      "R008",
+      "R009",
+      "R010",
+      "R011",
+      "R012"
+    ],
+    "Bob Elliott": [
+      "R013",
+      "R014"
+    ],
+    "Jim Bianco": [
+      "R015",
+      "R016"
+    ],
+    "Lyn Alden": [
+      "R017",
+      "R018",
+      "R019",
+      "R020",
+      "R021"
+    ],
+    "Joseph Wang": [
+      "R022"
+    ],
+    "Mike Wilson": [
+      "R023"
+    ]
+  },
+  "records": [
+    {
+      "rid": "R001",
+      "feed": "X",
+      "person": "Cem Karsan",
+      "role": "core",
+      "tier": 1,
+      "at": "2026-11-02T02:20:26+09:00",
+      "url": "https://x.com/jam_croissant/status/2116943460565766477",
+      "kind": "quote_post",
+      "preview": "Incentives drive outcomes… & there is only one way out. 🖨️ 💵;➕📈 State run capitalism imminent.",
+      "quoted_author": "MilkRoadAI"
+    },
+    {
+      "rid": "R002",
+      "feed": "X",
+      "person": "Cem Karsan",
+      "role": "core",
+      "tier": 1,
+      "at": "2026-11-02T02:28:26+09:00",
+      "url": "https://x.com/jam_croissant/status/2116945475370950855",
+      "kind": "quote_post",
+      "quoted_author": "DeItaone"
+    },
+    {
+      "rid": "R003",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T00:40:51+09:00",
+      "url": "https://x.com/RyanDetrick/status/2116918400832393530",
+      "kind": "post",
+      "preview": "Mag 7 Q3 YoY EPS is only 22.6% (note only five have reported, no $AAPL or $NVDA yet). The 493 is 32.6%. Could be the first time since Q4 '2…"
+    },
+    {
+      "rid": "R004",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T01:02:43+09:00",
+      "url": "https://x.com/RyanDetrick/status/2116923903759077490",
+      "kind": "post",
+      "preview": "Bitcoin averages 37% in November according to this chart from @scottcharts 😲"
+    },
+    {
+      "rid": "R005",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T01:26:22+09:00",
+      "url": "https://x.com/RyanDetrick/status/2116929853266034855",
+      "kind": "post",
+      "preview": "November is the best month of the year on average since 1950, second best the past 20 years, the best past 10 years, and the second best in…"
+    },
+    {
+      "rid": "R006",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T02:06:21+09:00",
+      "url": "https://x.com/RyanDetrick/status/2116939914629570642",
+      "kind": "post",
+      "preview": "Value beat growth by more than 10% in October, the most since early 2001/late 2000."
+    },
+    {
+      "rid": "R007",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T07:51:47+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117026847871381507",
+      "kind": "post",
+      "preview": "S&P 500 equal-weight beat the S&P 500 cap-weight by 5.9% in October. That is the second largest outperformance ever, with only April 2009 l…"
+    },
+    {
+      "rid": "R008",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T08:06:08+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117030459175546970",
+      "kind": "post",
+      "preview": "No month in a midterm year is more likely to be higher than November at 78.9% of the time."
+    },
+    {
+      "rid": "R009",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T08:10:38+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117031590438359067",
+      "kind": "post",
+      "preview": "October and November have never both been lower in a midterm year. The five times October was lower, November bounced back in the green eac…"
+    },
+    {
+      "rid": "R010",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T08:45:08+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117040274064933126",
+      "kind": "post",
+      "preview": "We are leaving the historically worst six months and the next six months are the historically best for the S&P 500."
+    },
+    {
+      "rid": "R011",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T08:47:06+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117040770217853295",
+      "kind": "post",
+      "preview": "These next six months are historically the best of the year, but they are even better in a midterm year. In fact, 19 for 19 times we've see…"
+    },
+    {
+      "rid": "R012",
+      "feed": "X",
+      "person": "Ryan Detrick",
+      "role": "core",
+      "tier": 2,
+      "at": "2026-11-02T08:57:02+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117043267573547031",
+      "kind": "post",
+      "preview": "The neoclouds in at the center of the AI worries. We discussed it on Facts vs Feelings this week"
+    },
+    {
+      "rid": "R013",
+      "feed": "X",
+      "person": "Bob Elliott",
+      "role": "core",
+      "tier": 3,
+      "at": "2026-11-01T21:15:00+09:00",
+      "url": "https://x.com/BobEUnlimited/status/2116866595163406840",
+      "kind": "quote_post",
+      "preview": "Much of the AI investment boom today is driven by promises to receive trillions of cash in the future. Any whiff that won't come and the ho…",
+      "quoted_author": "BobEUnlimited"
+    },
+    {
+      "rid": "R014",
+      "feed": "web",
+      "person": "Bob Elliott",
+      "role": "core",
+      "tier": 3,
+      "at": "2026-11-02T10:05:30+09:00",
+      "published_at": "2026-11-01T12:20:14+00:00",
+      "url": "https://tradersunion.com/news/market-voices/show/4051492-ai-investment-boom-risk/",
+      "kind": "news_article",
+      "outlet": "Traders Union",
+      "grade": "제목·설명만 확인",
+      "preview": "Bob Elliott: AI investment surge relies on future cash promises"
+    },
+    {
+      "rid": "R015",
+      "feed": "X",
+      "person": "Jim Bianco",
+      "role": "core",
+      "tier": 3,
+      "at": "2026-11-01T22:39:13+09:00",
+      "url": "https://x.com/BiancoResearch/status/2116887789790982346",
+      "kind": "post",
+      "preview": "Where the stock market stands after Friday."
+    },
+    {
+      "rid": "R016",
+      "feed": "X",
+      "person": "Jim Bianco",
+      "role": "core",
+      "tier": 3,
+      "at": "2026-11-02T01:43:42+09:00",
+      "url": "https://x.com/BiancoResearch/status/2116934214335520777",
+      "kind": "quote_post",
+      "preview": "Where AI stands after Friday. The 7th-largest sell-off in the last two years, after rallying over 500% since ChatGPT's November 2022 releas…",
+      "quoted_author": "biancoresearch"
+    },
+    {
+      "rid": "R017",
+      "feed": "X",
+      "person": "Lyn Alden",
+      "role": "core",
+      "tier": 3,
+      "at": "2026-11-02T08:49:12+09:00",
+      "url": "https://x.com/LynAldenContact/status/2117041295785136408",
+      "kind": "quote_post",
+      "preview": "Extreme fascism tends to dismantle itself, with occasional isolated exceptions. People imagine it winning if only the leaders weren’t impul…",
+      "quoted_author": "TopMontagnard"
+    },
+    {
+      "rid": "R018",
+      "feed": "X",
+      "person": "Lyn Alden",
+      "role": "core",
+      "tier": 3,
+      "at": "2026-11-02T09:06:46+09:00",
+      "url": "https://x.com/LynAldenContact/status/2117045718120796341",
+      "kind": "quote_post",
+      "preview": "To this day, Andor has one of the best monologues on freedom vs authoritarianism ever written.",
+      "quoted_author": "paulcerro"
+    },
+    {
+      "rid": "R019",
+      "feed": "X",
+      "person": "Lyn Alden",
+      "role": "core",
+      "tier": 3,
+      "at": "2026-11-02T09:24:34+09:00",
+      "url": "https://x.com/LynAldenContact/status/2117050198824280138",
+      "kind": "quote_post",
+      "preview": "Luke was strong. Anakin was weak. Notice that benevolence and virtue need not be passive. There is no weak glory here. Luke rekt Vader in t…",
+      "quoted_author": "GODFOE_UNIVERSE"
+    },
+    {
+      "rid": "R020",
+      "feed": "X",
+      "person": "Lyn Alden",
+      "role": "core",
+      "tier": 3,
+      "at": "2026-11-02T09:47:00+09:00",
+      "url": "https://x.com/LynAldenContact/status/2117055843560530183",
+      "kind": "quote_post",
+      "preview": "Amid these pro-Anakin memes, there is this. Imagine a person who would directly kill children. Not accidentally, not in a blast radius, but…",
+      "quoted_author": "STC_BTC"
+    },
+    {
+      "rid": "R021",
+      "feed": "X",
+      "person": "Lyn Alden",
+      "role": "core",
+      "tier": 3,
+      "at": "2026-11-02T09:59:27+09:00",
+      "url": "https://x.com/LynAldenContact/status/2117058974361026608",
+      "kind": "post",
+      "preview": "Sometimes social trends gain steam, but if you're a serious person you just analyze them individually and swat them down if they're not goo…"
+    },
+    {
+      "rid": "R022",
+      "feed": "X",
+      "person": "Joseph Wang",
+      "role": "shadow",
+      "tier": 4,
+      "at": "2026-11-01T10:39:19+09:00",
+      "url": "https://x.com/josephwang/status/2116706622391325050",
+      "kind": "post",
+      "preview": "Markets Weekly October 31, 2026 Spooky markets Mid-term implications"
+    },
+    {
+      "rid": "R023",
+      "feed": "web",
+      "person": "Mike Wilson",
+      "role": "observer",
+      "tier": 4,
+      "at": "2026-11-02T10:05:30+09:00",
+      "published_at": "2026-11-01T14:00:00+00:00",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-01/mike-wilson-says-buy-stock-dip-regardless-of-who-wins-midterms",
+      "kind": "news_article",
+      "outlet": "Bloomberg.com",
+      "grade": "제목·설명만 확인",
+      "preview": "Mike Wilson Says Buy Stock Dip Regardless of Who Wins Midterms"
+    }
+  ],
+  "auto_excluded_count": 1,
+  "auto_excluded": [
+    {
+      "person": "Andy Constan",
+      "at": "2026-11-01T18:38:39+09:00",
+      "url": "https://x.com/dampedspring/status/2116827246828929381",
+      "preview": "Wordle 1,961 4/6* ⬜🟨⬜🟨🟨 🟨⬜⬜🟩🟩 ⬜⬜🟩🟩🟩 🟩🟩🟩🟩🟩"
+    }
+  ]
 }
