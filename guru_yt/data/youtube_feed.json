@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-01T21:10:33+09:00",
+  "generated_at": "2026-11-02T10:11:00+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-01T10:10:28+09:00",
+    "last_discovery_at": "2026-11-01T21:10:33+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -47,7 +47,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-16T23:00:02+09:00",
+      "oldest_rss": "2026-10-17T00:00:09+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -69,7 +69,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-12T21:31:59+09:00",
+      "oldest_rss": "2026-10-13T22:11:12+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -80,7 +80,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-23T21:53:59+09:00",
+      "oldest_rss": "2026-09-25T02:29:31+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -102,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-30T23:28:50+09:00",
+      "oldest_rss": "2026-10-31T02:11:31+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -152,8 +152,8 @@
     }
   ],
   "quota": {
-    "yta_used_today": 1,
-    "yta_server_remaining": 9,
+    "yta_used_today": 0,
+    "yta_server_remaining": null,
     "yta_daily_cap": 7,
     "yta_reserve_for_manual": 3,
     "supadata_used_total": 9,
@@ -162,8 +162,8 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 2,
-    "gemini_est_video_hours_today": 0.32,
+    "gemini_calls_today": 0,
+    "gemini_est_video_hours_today": 0.0,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "ok"
   },
@@ -2617,18 +2617,9 @@
     "people": {
       "Darius Dale": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-10-30T10:10:28+09:00",
-            "url": "https://www.youtube.com/watch?v=KN6MzXQgG-Y",
-            "kind": "video",
-            "preview": "Will Today’s AI Frenzy Create Tomorrow’s Biggest Market Risk?",
-            "grade": "1차-A",
-            "published_at": "2026-10-29T19:58:20Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-31T10:10:32+09:00",
             "url": "https://www.youtube.com/watch?v=6YZy5vn1eys",
@@ -2667,35 +2658,9 @@
       },
       "Mark Newton": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-10-30T10:10:28+09:00",
-            "url": "https://www.youtube.com/watch?v=a1BrYVWnyY8",
-            "kind": "video",
-            "preview": "\"This market cycle will not survive contact with the 2028 general election\" | Market Hang",
-            "grade": "1차-A",
-            "published_at": "2026-10-29T22:00:16Z",
-            "same_interview_as": [
-              "jKmxb7VTxdU"
-            ],
-            "earliest_published_at": "2026-10-28T11:26:54Z",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T10:10:28+09:00",
-            "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU",
-            "kind": "video",
-            "preview": "A 2028 reckoning, data centers as a luxury belief, and the liberal arts comeback | Market Hang",
-            "grade": "1차-A",
-            "published_at": "2026-10-28T11:26:54Z",
-            "same_interview_as": [
-              "a1BrYVWnyY8"
-            ],
-            "earliest_published_at": "2026-10-28T11:26:54Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-01T10:10:28+09:00",
             "url": "https://www.youtube.com/watch?v=Af6z99MC8Wc",
