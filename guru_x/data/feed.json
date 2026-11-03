@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-02T21:15:31+09:00",
+  "generated_at": "2026-11-03T10:15:30+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (82 entries)",
+    "list": "ok (71 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 92,
-    "already_known": 33,
+    "urls_found": 99,
+    "already_known": 20,
     "too_old": 55,
-    "verified_syndication": 3,
+    "verified_syndication": 23,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-10-31T00:00:31.000Z",
+    "list_oldest": "2026-11-01T13:39:13.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,8 +34,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "new_originals_this_run": 3,
       "error": null
     },
     {
@@ -56,8 +56,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -67,7 +67,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "last_success_at": "2026-11-03T10:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "new_originals_this_run": 7,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "new_originals_this_run": 6,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "last_success_at": "2026-11-03T10:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "last_success_at": "2026-11-03T10:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "new_originals_this_run": 5,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-02T21:15:31+09:00",
+      "last_success_at": "2026-11-03T10:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -156,14 +156,966 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 2,
+    "described": 15,
     "pending": 0,
     "errors": 0,
-    "calls_today": 17,
+    "calls_today": 15,
     "daily_cap": 40,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2117422849925480590",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-03T01:05:21.000Z",
+      "url": "https://x.com/LynAldenContact/status/2117422849925480590",
+      "text": "More Aragon, less Anakin.",
+      "quoted_post_id": "2117406077507768561",
+      "quoted_post": {
+        "id": "2117406077507768561",
+        "author": "ericyakes",
+        "created_at": "2026-11-02T23:58:43.000Z",
+        "url": "https://x.com/ericyakes/status/2117406077507768561",
+        "text": "Aragorn is the leader that Anakin would have been if he chose to make decisions based on courage rather than fear https://t.co/zJU6a52HK7",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWKJmzsbcAAJZGb.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWKJmzsbcAAJZGb.jpg",
+            "image_text": "",
+            "what_it_shows": "This image shows a portrait of the fictional character Aragorn from The Lord of the Rings.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117418086139670696",
+      "person": "Mark Newton",
+      "handle": "MarkNewtonCMT",
+      "tier": 1,
+      "role": "core",
+      "author_id": "253168011",
+      "created_at": "2026-11-03T00:46:26.000Z",
+      "url": "https://x.com/MarkNewtonCMT/status/2117418086139670696",
+      "text": "$AAPL a bit wobbly near-term and momentum gave some much needed warnings for those short-term oriented over the last month   #IBD charts from @Marketsurge \n\nHowever, larger trends remain quite robust and no meaningful deterioration.  Thus, near-term weakness for AAPL likely https://t.co/vwA36sQCX8",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWKTkPPX0AARVhr.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWKTkPPX0AARVhr.jpg",
+            "image_text": "Apple Inc. Telecom-Consumer Prods (28/145) Designs, manufactures smartphones, personal computers, tablets, wearables and accessories www.apple.com IPO Date: 12/12/1980 50 Days Avg Vol: 48,617,133 Market Cap: $5.60T EPS Due Date: 11/02/2020 50 Day Avg $ Vol: $13,383,363,144 21 Day ATR %: 1.86% HQ: Cupertino, CA Off 52-Week High: -3.81% -2% from pivot in 30 days $324.02 (-$14.38) -4.23% After Hours ",
+            "what_it_shows": "This stock chart shows Apple Inc. (AAPL) price action, volume, and moving averages on a daily timeframe spanning multiple years from mid-2019 to late 2020/2026. The price is plotted alongside trendlines and a volume histogram at the bottom.",
+            "chart_credit": "Marketsurge"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117404339534778521",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-02T23:51:48.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117404339534778521",
+      "text": "My Mom would have been 73 today. 😇 \n\nIf you are lucky enough to still have your Mom still, give her a call tonight. Trust me, someday you'll really wish you could do it. https://t.co/AA8u8whAYk",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWKIBpcXYAA6Rqn.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWKIBpcXYAA6Rqn.jpg",
+            "image_text": "OHIO STATE",
+            "what_it_shows": "A man wearing an Ohio State t-shirt sitting next to a woman in a restaurant setting.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117384009973940675",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-02T22:31:01.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117384009973940675",
+      "text": "Great discussion with @AGraylin on our latest Facts vs Feelings Social Hour\n\n@sonusvarghese",
+      "quoted_post_id": "2117374312692994205",
+      "quoted_post": {
+        "id": "2117374312692994205",
+        "author": "AGraylin",
+        "created_at": "2026-11-02T21:52:29.000Z",
+        "url": "https://x.com/AGraylin/status/2117374312692994205",
+        "text": "Nobody can tell you today who is liable when an AI chatbot or agent causes harm in the real world.🚨\n\nThat gap shapes behavior. If the AI labs keep all the winnings and your losses get socialized, you bet bigger. Every hand by AI labs becomes an all-in hand. 🃏 When there is no https://t.co/C0P1xVNIsS",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2117373893073858560/img/QeExncPxdHwLP61t.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2117373893073858560/img/QeExncPxdHwLP61t.jpg",
+            "image_text": "Who's liable if AI chatbots or agents do harm in the real world?",
+            "what_it_shows": "A video call screenshot showing three participants discussing AI liability, with text overlaid at the top asking who is liable if AI chatbots or agents do harm.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117381999585267970",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "role": "core",
+      "author_id": "199170156",
+      "created_at": "2026-11-02T22:23:02.000Z",
+      "url": "https://x.com/jam_croissant/status/2117381999585267970",
+      "text": "ICYMI - Here's todays Tasty Crumbs on @tastyliveshow \n🐻⬇️ \n\nhttps://t.co/FK1BGyBvly",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://www.youtube.com/watch?v=IpOYPk0q2Vw"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117358403312136424",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-02T20:49:16.000Z",
+      "url": "https://x.com/dampedspring/status/2117358403312136424",
+      "text": "1BN TGA in Q1 and a 150BN build\n800 BN net funding need.  Those are big numbers.   Will @SecScottBessent double down and add to the funding needs by maintaining buybacks and cut duration when the financing need is growing and massive.  Only if he is an idiot",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117358334403580015",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "role": "core",
+      "author_id": "199170156",
+      "created_at": "2026-11-02T20:49:00.000Z",
+      "url": "https://x.com/jam_croissant/status/2117358334403580015",
+      "text": "Tasty Crumbs goes live in 10 minutes with @JermalChandler on @tastyliveshow 🍒🥐\n\nJoin us at 3pm CT (4pm ET) as we preview the flows into Election Day.\n\nhttps://t.co/ppHJMnDPML",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://www.youtube.com/live/G-eqJenVnrU"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117353412119400777",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-02T20:29:26.000Z",
+      "url": "https://x.com/LynAldenContact/status/2117353412119400777",
+      "text": "Deciding whether to post more Anakin memes for focus on bond markets now. https://t.co/wnxFXFVGUy",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "video_frame",
+          "url": "https://pbs.twimg.com/tweet_video_thumb/HWJZtG1XwAA5j7u.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/tweet_video_thumb/HWJZtG1XwAA5j7u.jpg",
+            "image_text": "gifbin.com",
+            "what_it_shows": "This is a meme image featuring actor and comedian Larry David making an uncertain, hesitant facial expression while wearing a black jacket and sweater.",
+            "chart_credit": "gifbin.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117350925484585194",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-02T20:19:33.000Z",
+      "url": "https://x.com/LynAldenContact/status/2117350925484585194",
+      "text": "That weird feeling where you're a structural bond bear for 8 years, and then things shift and you're not quite as bearish on them anymore. https://t.co/2SidTx3Msc",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWJXRAAWMAAZpst.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWJXRAAWMAAZpst.png",
+            "image_text": "IS THIS WHAT BEING A BOND BULL FEELS LIKE?",
+            "what_it_shows": "This image is a meme showing an anime character gesturing towards a butterfly with the text asking if this is what being a bond bull feels like.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117348763354485097",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-02T20:10:58.000Z",
+      "url": "https://x.com/LynAldenContact/status/2117348763354485097",
+      "text": "https://t.co/PTloQy40tI",
+      "quoted_post_id": "2117333988922597587",
+      "quoted_post": {
+        "id": "2117333988922597587",
+        "author": "Geiger_Capital",
+        "created_at": "2026-11-02T19:12:15.000Z",
+        "url": "https://x.com/Geiger_Capital/status/2117333988922597587",
+        "text": "I don’t want to be dramatic but…\n\nIf $AAPL misses earnings today the market is literally going to zero.",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "video_frame",
+          "url": "https://pbs.twimg.com/tweet_video_thumb/HWJVecKX0AAzKeF.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/tweet_video_thumb/HWJVecKX0AAzKeF.jpg",
+            "image_text": "",
+            "what_it_shows": "This image shows a still shot of an actor looking up and sideways outdoors with trees in the background.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117337721337508098",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-02T19:27:05.000Z",
+      "url": "https://x.com/LynAldenContact/status/2117337721337508098",
+      "text": "https://t.co/2c9f4jgPWr",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWJLXOMWUAAFm4E.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWJLXOMWUAAFm4E.png",
+            "image_text": "MAYBE ANAKIN WAS RIGHT, ACTUALLY? JUST KIDDING, BUT NOT REALLY. ;)",
+            "what_it_shows": "This image is a two-panel meme featuring two women in a conversation setting, with overlaid text referencing Anakin Skywalker.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117327290329976945",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-02T18:45:38.000Z",
+      "url": "https://x.com/dampedspring/status/2117327290329976945",
+      "text": "Cue my \"Everybody lies\" substack",
+      "quoted_post_id": "2117327024763367560",
+      "quoted_post": {
+        "id": "2117327024763367560",
+        "author": "financialjuice",
+        "created_at": "2026-11-02T18:44:35.000Z",
+        "url": "https://x.com/financialjuice/status/2117327024763367560",
+        "text": "Oracle Is Said to Draw Excess Demand for $10 Billion Share Sale $ORCL",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117323878884106350",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-02T18:32:05.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117323878884106350",
+      "text": "Maybe all those 'we need better breadth' arguments we heard all summer long were a tad outside?",
+      "quoted_post_id": "2117312728947704249",
+      "quoted_post": {
+        "id": "2117312728947704249",
+        "author": "sonusvarghese",
+        "created_at": "2026-11-02T17:47:47.000Z",
+        "url": "https://x.com/sonusvarghese/status/2117312728947704249",
+        "text": "Fun fact: the equal-weight S&P 500 outperformed the market-cap weighted S&P 500 for 12 straight months between July 2000 and June 2001\n\nFrom 2000-2002, the equal-weight index outperformed the S&P 500 in 24 out of 36 months! https://t.co/jOW0V3FuPI",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWI0am5WYAASziF.png"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWI0am5WYAASziF.png",
+            "image_text": "Spread between S&P 500 Equal Weight Index and S&P 500 (Monthly Data)\nSpread 5.83\nHigh on 04/30/09 9.17\nAverage 0.06\nLow on 03/31/20 -5.68\n1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026\nCopyright© 2026 Bloomberg Finance L.P.",
+            "what_it_shows": "This chart displays the monthly spread between the S&P 500 Equal Weight Index and the S&P 500 from 1997 to 2026. The latest displayed reading is 5.83.",
+            "chart_credit": "Bloomberg Finance L.P."
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117315081058832749",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "role": "core",
+      "author_id": "199170156",
+      "created_at": "2026-11-02T17:57:07.000Z",
+      "url": "https://x.com/jam_croissant/status/2117315081058832749",
+      "text": "Tasty Crumbs is back today with @JermalChandler at @tastyliveshow 🍒🥐\n\nWe’ll preview the market flows heading into Election Day at 3pm CT (4pm ET).\n\nhttps://t.co/ppHJMnDPML",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://www.youtube.com/live/G-eqJenVnrU"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117267569853800546",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-02T14:48:20.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117267569853800546",
+      "text": "Be sure to catch @sonusvarghese on @BizBriefing with @janetonthemoney in about 10 minutes!\n\nYou can 🎧 to it all on @SXMBusiness channel 132. ⌛ ⏳ https://t.co/STd3eFTEbR",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWILolKWIAAEMpU.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWILolKWIAAEMpU.jpg",
+            "image_text": "THE BUSINESS BRIEFING SiriusXM",
+            "what_it_shows": "This image shows the logo for 'The Business Briefing' broadcast on SiriusXM.",
+            "chart_credit": "SiriusXM"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117266826518286674",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-02T14:45:23.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117266826518286674",
+      "text": "Reminder number 2,863 not to share bank research on here or be very careful if you do 👇 👇 👇 \n\n@neilsethinew @MikeZaccardi\n\nhttps://t.co/JBAr51vQJ5",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://www.bloomberg.com/news/features/2026-11-02/wall-street-escalates-fintwit-crackdown-as-ai-copycat-fears-grow?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc5MzYyNDY5MCwiZXhwIjoxNzk0MjI5NDkwLCJhcnRpY2xlSWQiOiJUTlZMRzRSS1YyVUwwMCIsImJjb25uZWN0SWQiOiJDMEEyOEEwREI1OEQ0N0ZBOUI2MkYxREQxN0U1MThBMiJ9.QkZ34VM2ycv9P-i5uOWV_iDch9XE7T0mpk-Yo6WNbS8"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117265584131862648",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-02T14:40:26.000Z",
+      "url": "https://x.com/dampedspring/status/2117265584131862648",
+      "text": "Fwiw the ICE News was good news.  The Druck tweet was old news.  The idiots on here chasing was stupid. \n\nI am a buyer of $PURR for a degen lunch money trade at 9 ish.  \n\nHyperliquid?",
+      "quoted_post_id": "2116224257567125821",
+      "quoted_post": {
+        "id": "2116224257567125821",
+        "author": "dampedspring",
+        "created_at": "2026-10-30T17:42:35.000Z",
+        "url": "https://x.com/dampedspring/status/2116224257567125821",
+        "text": "Open mindedly share my views on $PURR and HYPE and suggest maybe shorting it on a rip and get nothing but cult nonsense back in the comments.  You guys deserve what you get $PURR down 12%",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117260867297333734",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-02T14:21:42.000Z",
+      "url": "https://x.com/dampedspring/status/2117260867297333734",
+      "text": "We got the DS team together for our monthly roundtable.  Big week this week and strong views expressed.  See pinned tweet for joining our services. \n\nhttps://t.co/6W2nYDfGPD",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://youtu.be/bEpDZP6kFzo?is=--UUH3EmbjxqFoeK"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117259659195158998",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-02T14:16:54.000Z",
+      "url": "https://x.com/dampedspring/status/2117259659195158998",
+      "text": "There is a difference between market not liking the deal fundamentally and the likelihood it will go through.  On the latter point the deal spread is 191.3*4.5/803=1.072 or a 7.2% return for a deal that may take six months to a year to close.  Vs 4.5% cash the pricing shows that",
+      "quoted_post_id": "2117247043156500496",
+      "quoted_post": {
+        "id": "2117247043156500496",
+        "author": "stevehou",
+        "created_at": "2026-11-02T13:26:46.000Z",
+        "url": "https://x.com/stevehou/status/2117247043156500496",
+        "text": "Market doesn’t believe this transaction will go through? https://t.co/72SsU4s876",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWH49uWWEAALdfc.jpg"
+          },
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWH49uRXoAAlnS9.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWH49uWWEAALdfc.jpg",
+            "image_text": "LITE Lumentum $796.00 -╢$44.70 (5.32%) Pre-market 24 Hour Market 1D 1W 1M 3M YTD 1Y 5Y Advanced",
+            "what_it_shows": "The image shows a stock price chart for Lumentum (LITE) at $796.00, down $44.70 (5.32%) in pre-market trading within a 24-hour market view.",
+            "chart_credit": "unknown"
+          },
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWH49uRXoAAlnS9.jpg",
+            "image_text": "MRVL Marvell Technology $190.81 -╢$5.59 (2.85%) Pre-market 24 Hour Market 1D 1W 1M 3M YTD 1Y 5Y Advanced",
+            "what_it_shows": "The image shows a stock price chart for Marvell Technology (MRVL) at $190.81, down $5.59 (2.85%) in pre-market trading within a 24-hour market view.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117259630686707951",
+      "person": "Warren Pies",
+      "handle": "WarrenPies",
+      "tier": 1,
+      "role": "core",
+      "author_id": "2326980139",
+      "created_at": "2026-11-02T14:16:47.000Z",
+      "url": "https://x.com/WarrenPies/status/2117259630686707951",
+      "text": "Despite the (deserved) nervousness in the market, the S&P 500's three-month trading range has compressed to ~3.5% (closing basis - historic average range ~10%). \n\nThis is below the 1st percentile historically (i.e. extremely narrow range). https://t.co/BUckatFOcO",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWIEJ9PWkAAJ8mL.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWIEJ9PWkAAJ8mL.jpg",
+            "image_text": "S&P 500 63-Day Closing Range Distribution. Share of historical windows. 63-trading-day closing range: (highest close / lowest close - 1). Historical windows since 1950 (19,265 observations). Latest actual: 4.40% - percentile 2.78. Historical median: 9.71%. Nov 03 scenario: 3.54% - percentile 0.71, No new closing highs or lows. S&P 500 RANGE NARROWER THAN 99% OF HISTORY. Actual data through Oct 28,",
+            "what_it_shows": "This histogram displays the distribution of S&P 500 63-trading-day closing ranges since 1950, totaling 19,265 observations. It highlights the latest actual range of 4.40% (2.78th percentile) compared to a historical median of 9.71%.",
+            "chart_credit": "3FOURTEEN RESEARCH"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117254089851514957",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-02T13:54:46.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117254089851514957",
+      "text": "Hyperscaler free cash flow turned negative for the first time ever in Q3. \n\nMeaning that debt and financial engineering are now paying for the buildout per @sonusvarghese 😳 https://t.co/gUnKomPW2X",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWH_X6EXIAI7iCP.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWH_X6EXIAI7iCP.jpg",
+            "image_text": "Quarterly FCF: Semis vs. Hyperscalers (2022 Q4 - 2027 Q4) Semis (NVDA, MU, AVGO, AMAT) 174.6700 Hyperscalers (META, AMZN, GOOGL, MSFT, ORCL) -46.6600 Hyperscalers estimates begin Q4 Q1 Q2 Q3 Q4 Q1 Q2 Q3 Q4 Q1 Q2 Q3 Q4 Q1 Q2 Q3 Q4 Q1 Q2 Q3 Q4 2023 2024 2025 2026 2027 180.00 160.00 140.00 120.00 100.00 80.00 60.00 40.00 20.00 0.00 -20.00 -40.00 -60.00 FCF (USD Billions)",
+            "what_it_shows": "The chart compares the quarterly free cash flow (FCF) in USD billions from Q4 2022 to Q4 2027 for Semis (NVDA, MU, AVGO, AMAT) and Hyperscalers (META, AMZN, GOOGL, MSFT, ORCL). Semis show a rising FCF trend to 174.6700, while Hyperscalers show a decline into negative territory at -46.6600.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117253256149651963",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-02T13:51:27.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117253256149651963",
+      "text": "\"I'm willing to go bankrupt rather than lose this race.\" Google co-founder Larry Page on the AI race\n\nCapex spending is expected to reach $1.4 trillion next year, up 60% from '26 levels. That is 4.0% of GDP. \n\n$SPCX $GOOGL $ORCL $META $AMZN $MSFT https://t.co/KGqWFJ2ow2",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWH-nZlWoAAGGhC.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWH-nZlWoAAGGhC.jpg",
+            "image_text": "SpaceX joins the capex spending party, but the pace of growth is expected to ease up by 2028 (for now)\nBig Tech Capital Expenditures (Billions of USD)\nMicrosoft\nAlphabet\nAmazon\nMeta\nOracle\nSpaceX\n$1,800\n$1,600\n$1,400\n$1,200\n$1,000\n$800\n$600\n$400\n$200\n$0\n2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 2027 2028\n$26 $33 $43 $68 $71 $97 $131 $158 $159 $250 $432 $879 $1,406 $1,528\n+73% +10",
+            "what_it_shows": "This stacked bar chart shows Big Tech capital expenditures from 2015 through 2028 estimates, broken down by companies including Microsoft, Alphabet, Amazon, Meta, Oracle, and SpaceX. Total capex rises from $26 billion in 2015 to a projected peak of $1,528 billion in 2028.",
+            "chart_credit": "Carson Investment Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117238870873960862",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-02T12:54:17.000Z",
+      "url": "https://x.com/dampedspring/status/2117238870873960862",
+      "text": "GooG and Orcl today. https://t.co/1GUOB92h4a",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWHxiHVXkAAMgGH.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T01:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWHxiHVXkAAMgGH.jpg",
+            "image_text": "Who's next",
+            "what_it_shows": "This is the album cover for Who's Next by The Who, showing the four band members standing next to a large concrete monolith in a desolate landscape under a cloudy sky.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
     {
       "id": "2117228982206648756",
       "person": "Bob Elliott",
@@ -7530,701 +8482,6 @@
         ],
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
       }
-    },
-    {
-      "id": "2114882009579339998",
-      "person": "Lyn Alden",
-      "handle": "LynAldenContact",
-      "tier": 3,
-      "role": "core",
-      "author_id": "823766058909761536",
-      "created_at": "2026-10-27T00:48:58.000Z",
-      "url": "https://x.com/LynAldenContact/status/2114882009579339998",
-      "text": "https://t.co/ijJEbZXS6k",
-      "quoted_post_id": "2114855159826456688",
-      "quoted_post": {
-        "id": "2114855159826456688",
-        "author": "_Checkmatey_",
-        "created_at": "2026-10-26T23:02:16.000Z",
-        "url": "https://x.com/_Checkmatey_/status/2114855159826456688",
-        "text": "@LynAldenContact I'm 80% of the way through Stolguard, and I can't put it down.\n\nMy favourite part so far is how the historical storyline literally crashed into the contemporary one. I felt the momentum of that in your writing.\n\nTop shelf stuff Lyn!",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVmR7VfWMAAh9wL.png"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVmR7VfWMAAh9wL.png",
-            "image_text": "LYN ALDEN? THE SCI FI AUTHOR? TEAM COCO PODCASTS",
-            "what_it_shows": "A meme image featuring a man wearing headphones and glasses, with the overlaid text 'LYN ALDEN?' at the top and 'THE SCI FI AUTHOR?' at the bottom, and a 'TEAM COCO PODCASTS' logo in the lower right corner.",
-            "chart_credit": "Team Coco Podcasts"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114849809265758313",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-26T22:41:01.000Z",
-      "url": "https://x.com/RyanDetrick/status/2114849809265758313",
-      "text": "Octoberphobia is real. @AlmanacTrader joined @calebsilver on the @Investopedia Express to discuss 👏 👻🎃",
-      "quoted_post_id": "2114718375683199466",
-      "quoted_post": {
-        "id": "2114718375683199466",
-        "author": "Investopedia",
-        "created_at": "2026-10-26T13:58:44.000Z",
-        "url": "https://x.com/Investopedia/status/2114718375683199466",
-        "text": "SCARY SEASONALITY AND THE POWER OF ADVICE W/ @LAZETTABRAXTON & @AlmanacTrader https://t.co/yKp8GHPdZl",
-        "available": true,
-        "has_media": false
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114836957683503141",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-26T21:49:57.000Z",
-      "url": "https://x.com/dampedspring/status/2114836957683503141",
-      "text": "Talked to Luigi for an hour today.  Always a treat.  You should follow if you don't already.",
-      "quoted_post_id": "2114736249793618145",
-      "quoted_post": {
-        "id": "2114736249793618145",
-        "author": "LButtiglione_",
-        "created_at": "2026-10-26T15:09:46.000Z",
-        "url": "https://x.com/LButtiglione_/status/2114736249793618145",
-        "text": "The Nasdaq is down almost -6% since 10 October and the OAT-Bund spread hit 175bps, its highest since 2012.\nMarkets now price fewer hikes. \nWe think that’s premature: financial conditions have barely tightened and inflation keeps rising.\n\nWe see Fed, ECB and BoJ hikes in December. https://t.co/Pn0TTKZVbM",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVkFw3mXAAA5DbH.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVkFw3mXAAA5DbH.jpg",
-            "image_text": "LB MACRO G4 PMI Point to Activity Still Robust Composite PMI US EMU UK Japan LB Macro G4 22 23 24 25 26 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 And Inflation Climbing towards 4% G4 CPI % y/y (lhs) G4 Composite PMI Output Prices PMI Leads CPI by 4 months Correl=0.94 G4 Inflation Target 18 19 20 21 22 23 24 25 26 9 8 7 6 5 4 3 2 1 0 -1 -2 70 68 66 64 62 60 58 56 54 52 50 48 46 44",
-            "what_it_shows": "The image contains two charts by LB Macro. The left chart shows Composite PMI for the US, EMU, UK, Japan, and LB Macro G4 from 2022 to 2026. The right chart compares G4 CPI % y/y and G4 Composite PMI Output Prices from 2018 to 2026.",
-            "chart_credit": "LB Macro"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114833933737042087",
-      "person": "Warren Pies",
-      "handle": "WarrenPies",
-      "tier": 1,
-      "role": "core",
-      "author_id": "2326980139",
-      "created_at": "2026-10-26T21:37:56.000Z",
-      "url": "https://x.com/WarrenPies/status/2114833933737042087",
-      "text": "Microsoft offering 60k employees buyouts...\n\nAI's impact on the labor market is going to be a big topic next year.\n\nCrazy that the Fed's September SEP forecasts steady (4.1%) unemployment through 2028.",
-      "quoted_post_id": "2106422426670395713",
-      "quoted_post": {
-        "id": "2106422426670395713",
-        "author": "WarrenPies",
-        "created_at": "2026-10-03T16:33:36.000Z",
-        "url": "https://x.com/WarrenPies/status/2106422426670395713",
-        "text": "It is becoming obvious that AI is impacting the labor market.\n\nGoing back to mid-2025:\n-Finance + Tech industries -246k jobs.\n-All other industries +812k jobs.\n\nThis dynamic will most likely intensify next year and expand into other industries. https://t.co/6S7dU3yhP8",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HTuCs3DWMAAbO-n.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HTuCs3DWMAAbO-n.jpg",
-            "image_text": "IS AI IMPACTING THE JOB MARKET? FINANCE + TECH PAYROLLS CONTRACTING SINCE MID-2025\nInformation and Financial Payrolls: 3-Month Change\nMonthly Frequency 2023-10-31 to 2026-08-31\nSeasonally adjusted\nInformation (Latest: -37k) Financial Activities (Latest: -20k)\nFINANCIALS & TECH PAYROLLS SHRINKING SINCE MID-2025\nThousands of jobs\n3FOURTEEN RESEARCH\n3FOURTEENRESEARCH.COM | @3F_RESEARCH\n33\nSee disclos",
-            "what_it_shows": "The bar chart displays the 3-month change in Information and Financial Activities payrolls from October 2023 to August 2026. A highlighted section indicates that financials and tech payrolls have been shrinking since mid-2025, with the latest readings at -37k for Information and -20k for Financial A",
-            "chart_credit": "3fourteen Research"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114819037909966999",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-26T20:38:44.000Z",
-      "url": "https://x.com/DariusDale42/status/2114819037909966999",
-      "text": "What happened to investors in Brazil $EWZ today is a preview of what the transition to Paradigm E—i.e., the Fourth Turning climax—will likely feel like. Significant redistributive policies are coming, whether you agree with them or not.",
-      "quoted_post_id": "2114703607019004178",
-      "quoted_post": {
-        "id": "2114703607019004178",
-        "author": "42Macro",
-        "created_at": "2026-10-26T13:00:03.000Z",
-        "url": "https://x.com/42Macro/status/2114703607019004178",
-        "text": "Are We Already in Inning One of a Secular Bear Market?\n\nEnjoy these clips from our October 24, 2026, weekly Around the Horn webcast in which we unpack the growing risk that the current risk-off INFLATION Market Regime represents inning one of the secular bear market we believe is https://t.co/UjFrH0aVwS",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/media/HVpFTghWEAAwT23.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/media/HVpFTghWEAAwT23.jpg",
-            "image_text": "42 Macro ARE WE ALREADY IN INNING ONE OF A SECULAR BEAR MARKET? Around the Horn October 24, 2026 DARIUS DALE FOUNDER & CEO 42 MACRO",
-            "what_it_shows": "This promotional graphic features a portrait of Darius Dale, Founder & CEO of 42 Macro, alongside the title \"ARE WE ALREADY IN INNING ONE OF A SECULAR BEAR MARKET?\" and the date October 24, 2026.",
-            "chart_credit": "42 Macro"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114819021958963699",
-      "person": "Marko Papic",
-      "handle": "Geo_papic",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1502354421421785088",
-      "created_at": "2026-10-26T20:38:40.000Z",
-      "url": "https://x.com/Geo_papic/status/2114819021958963699",
-      "text": "The new Geopolitical Cousins dropped... This one was recorded on Friday, so no real mention of Brazil, Israel, Serbia elections... \n\nhttps://t.co/l6fVIDqsEn",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://geopolitical-cousins.captivate.fm/episode/deep-dish-france"
-      ],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114806519904809014",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-26T19:49:00.000Z",
-      "url": "https://x.com/jam_croissant/status/2114806519904809014",
-      "text": "Live in 10 minutes for Tasty Crumbs with @JermalChandler on @tastyliveshow. See you at 3pm CT (4pm ET) 🍒🥐\n\nhttps://t.co/CcI5qeM89r",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://www.youtube.com/live/WGpHZ9zMyvM"
-      ],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114776054053134495",
-      "person": "Marko Papic",
-      "handle": "Geo_papic",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1502354421421785088",
-      "created_at": "2026-10-26T17:47:56.000Z",
-      "url": "https://x.com/Geo_papic/status/2114776054053134495",
-      "text": "What is the significance of Serbian election? I have been asked this by a lot of folks, so here is an unusually long post from me. \n\nThe significance is... \n\n1. ...That this happened before…\n\n2. ...That you have no idea that it happened before…\n\n3. ...And that the West messed",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114762677339742711",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-26T16:54:47.000Z",
-      "url": "https://x.com/RyanDetrick/status/2114762677339742711",
-      "text": "Could software really rally another 31%? \n\n@FrankCappelleri with a potentially very bullish chart in his note today. \n\n$IGV https://t.co/QGlr8cenZO",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVklcpMXoAAOdJM.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:18:47+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVklcpMXoAAOdJM.jpg",
-            "image_text": "IGV iShares Expanded Tech-Software Sector ETF (unadjusted) NYSE StockCharts.com 23-Oct-2026 Open 105.50 High 110.76 Low 104.96 Close 110.59 Volume 34.5M Chg +6.25 (+5.99%) -On Balance Vol 146 _IGV (Weekly) 110.59 115 110 105 100 95 90 85 80 75 70 65 60 55 50 23 Apr Jul Oct 24 Apr Jul Oct 25 Apr Jul Oct 26 Apr Jul Oct CAPPTHESIS",
-            "what_it_shows": "This is a weekly price chart of the iShares Expanded Tech-Software Sector ETF (IGV) spanning from 2023 through October 2026. The chart features technical analysis annotations displaying an inverse head and shoulders pattern with a measured move target of 146.",
-            "chart_credit": "StockCharts.com / CAPPTHESIS"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114759035169702014",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-26T16:40:18.000Z",
-      "url": "https://x.com/jam_croissant/status/2114759035169702014",
-      "text": "New #TastyCrumbs live today at 3pm CT (4pm ET). 🍒🥐",
-      "quoted_post_id": "2114756302626766898",
-      "quoted_post": {
-        "id": "2114756302626766898",
-        "author": "tastyliveshow",
-        "created_at": "2026-10-26T16:29:27.000Z",
-        "url": "https://x.com/tastyliveshow/status/2114756302626766898",
-        "text": "It's Monday and that means it's time for #tastycrumbs with @JermalChandler  and @jam_croissant ! \n\nJoin us at 3pm CT LIVE! \n\nRSVP below so you don't miss it 🍒🥐👇\n\nhttps://t.co/iPWUPbvzSv",
-        "available": true,
-        "has_media": false
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114718932980334641",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-26T14:00:57.000Z",
-      "url": "https://x.com/dampedspring/status/2114718932980334641",
-      "text": "Increased my bid back up to 69,420 from 42,069 https://t.co/ZFN3Ja7DcD",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVj9qUvXAAENYGO.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:18:47+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVj9qUvXAAENYGO.jpg",
-            "image_text": "HOW DO YOU DO, FELLOW KIDS WHEN ANDY BUYS 1% OF HIS AUM IN BTC AT 69,420",
-            "what_it_shows": "This image is a meme featuring a selfie of a man holding a skateboard, mimicking the Steve Buscemi 'How do you do, fellow kids' meme format.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114716961359704423",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-26T13:53:07.000Z",
-      "url": "https://x.com/RyanDetrick/status/2114716961359704423",
-      "text": "I can't join @janetonthemoney today, but @sonusvarghese will be filling in for me!\n\n@SXMBusiness Chanel 132 in about 10 minutes at 10am ET.",
-      "quoted_post_id": "2112181000247636423",
-      "quoted_post": {
-        "id": "2112181000247636423",
-        "author": "RyanDetrick",
-        "created_at": "2026-10-19T13:56:07.000Z",
-        "url": "https://x.com/RyanDetrick/status/2112181000247636423",
-        "text": "It is Monday, so I'm set to join @janetonthemoney on @BizBriefing today at 10am ET.\n\nYou can 🎧 to it all on @SXMBusiness channel 132! https://t.co/zwzhKdiOdE",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HU_5QtpX0AA0ytM.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:18:47+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HU_5QtpX0AA0ytM.jpg",
-            "image_text": "I'll be on with Janet Alvarez today at 10am ET! Listen on SiriusXM Channel 132 Janet Alvarez & Ryan Detrick THE BUSINESS BRIEFING",
-            "what_it_shows": "An announcement graphic featuring portraits of Janet Alvarez and Ryan Detrick with text promoting an appearance on SiriusXM Channel 132 at 10am ET.",
-            "chart_credit": "The Business Briefing"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114716718261998047",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-26T13:52:09.000Z",
-      "url": "https://x.com/jam_croissant/status/2114716718261998047",
-      "text": "Suspeito…\n\nComing to a midterm near you.",
-      "quoted_post_id": "2114518806370599401",
-      "quoted_post": {
-        "id": "2114518806370599401",
-        "author": "KobeissiLetter",
-        "created_at": "2026-10-26T00:45:43.000Z",
-        "url": "https://x.com/KobeissiLetter/status/2114518806370599401",
-        "text": "BREAKING: In an unprecedented comeback, Brazil's President Lula da Silva has defeated Flavio Bolsonaro, securing a 4th term in office.\n\nLula is officially the first presidential candidate in Brazil's modern democratic history to lose the first round of voting and go on to win the https://t.co/iCDGbPata0",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVhHkL2XkAE4Dmg.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVhHkL2XkAE4Dmg.jpg",
-            "image_text": "",
-            "what_it_shows": "A photo of Luiz Inácio Lula da Silva waving while wearing a presidential sash.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114711266799349902",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-26T13:30:30.000Z",
-      "url": "https://x.com/dampedspring/status/2114711266799349902",
-      "text": "Yes this is as big a risk as whether AI is useful or not short term. From $ANT filing https://t.co/lTrdvyWvNs",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVj2sKdXsAA3-uN.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:18:47+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVj2sKdXsAA3-uN.jpg",
-            "image_text": "We may require additional capital to meet our substantial ongoing obligations and support our business growth, and our ability to generate sufficient revenue and secure additional capital on acceptable terms is critical to our continued operations and competitive position. Our business model requires substantial and increasing capital to support our ability to remain competitive and to stay at the",
-            "what_it_shows": "This image shows an excerpt from a corporate filing discussing capital requirements, financing arrangements with CSPs, and risks related to funding AI infrastructure growth.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114710114124943415",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-26T13:25:55.000Z",
-      "url": "https://x.com/DariusDale42/status/2114710114124943415",
-      "text": "ANSWER: Probably not, as we still believe this secular bull market peaks in 2H27 or 1H28. But, as detailed in this complimentary public service announcement, the risk that we’re wrong on this fundamental research view is not inconsequential. Thus, you’d better have a plan to",
-      "quoted_post_id": "2114703607019004178",
-      "quoted_post": {
-        "id": "2114703607019004178",
-        "author": "42Macro",
-        "created_at": "2026-10-26T13:00:03.000Z",
-        "url": "https://x.com/42Macro/status/2114703607019004178",
-        "text": "Are We Already in Inning One of a Secular Bear Market?\n\nEnjoy these clips from our October 24, 2026, weekly Around the Horn webcast in which we unpack the growing risk that the current risk-off INFLATION Market Regime represents inning one of the secular bear market we believe is https://t.co/UjFrH0aVwS",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/media/HVpFTghWEAAwT23.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/media/HVpFTghWEAAwT23.jpg",
-            "image_text": "42 Macro\nARE WE ALREADY IN\nINNING ONE OF A\nSECULAR BEAR MARKET?\nAround the Horn\nOctober 24, 2026\nDARIUS DALE\nFOUNDER & CEO\n42 MACRO",
-            "what_it_shows": "This is a title slide from a presentation featuring a portrait of Darius Dale, Founder & CEO of 42 Macro, with the title ARE WE ALREADY IN INNING ONE OF A SECULAR BEAR MARKET? and the date October 24, 2026.",
-            "chart_credit": "42 Macro"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2114707628110602628",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-26T13:16:02.000Z",
-      "url": "https://x.com/dampedspring/status/2114707628110602628",
-      "text": "Anthropic filing\n\nhttps://t.co/hkGqY6YW1z https://t.co/28Y8ifh7Ej",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
-      ],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVjzYaiXEAAeNKy.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:18:47+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVjzYaiXEAAeNKy.jpg",
-            "image_text": "Who's next",
-            "what_it_shows": "This is the album cover for The Who's 'Who's Next', showing four men standing near a large concrete monolith in a barren landscape against a cloudy sky.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
     }
   ],
   "person_index": {
@@ -8234,96 +8491,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 16,
-        "non_noise": 13,
+        "count": 10,
+        "non_noise": 7,
         "items": [
-          {
-            "at": "2026-10-31T00:23:57+09:00",
-            "url": "https://x.com/dampedspring/status/2116189370336084256",
-            "kind": "post",
-            "preview": "Growth trend 101. Two of the most basic tools one needs to trade macro are growth estimates. They c…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T02:07:04+09:00",
-            "url": "https://x.com/dampedspring/status/2116215322705531345",
-            "kind": "post",
-            "preview": "Seems cheap? Where do you buy this? 14.35 NTM P/E. certainly 12? It's the greatest company in the w…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T02:33:27+09:00",
-            "url": "https://x.com/dampedspring/status/2116221960665309601",
-            "kind": "post",
-            "preview": "$SOXL down 28% today. They have a lot of stock to sell by the close",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T02:42:35+09:00",
-            "url": "https://x.com/dampedspring/status/2116224257567125821",
-            "kind": "quote_post",
-            "preview": "Open mindedly share my views on $PURR and HYPE and suggest maybe shorting it on a rip and get nothi…",
-            "quoted_author": "dampedspring",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T02:50:08+09:00",
-            "url": "https://x.com/dampedspring/status/2116226158555750861",
-            "kind": "quote_post",
-            "preview": "Excellent questions!",
-            "quoted_author": "drwconvexity",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T02:52:29+09:00",
-            "url": "https://x.com/dampedspring/status/2116226748509814948",
-            "kind": "quote_post",
-            "preview": "A reminder. Hyperliquid",
-            "quoted_author": "dampedspring",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T03:26:52+09:00",
-            "url": "https://x.com/dampedspring/status/2116235402357202953",
-            "kind": "post",
-            "preview": "Perhaps this matters",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T03:32:17+09:00",
-            "url": "https://x.com/dampedspring/status/2116236766625599860",
-            "kind": "post",
-            "preview": "Which way is the pain trade?",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T05:18:33+09:00",
-            "url": "https://x.com/dampedspring/status/2116263508396695657",
-            "kind": "post",
-            "preview": "Bonds are the best tm Ironically Gold is the worst tm",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T05:57:32+09:00",
-            "url": "https://x.com/dampedspring/status/2116273319314158051",
-            "kind": "post",
-            "preview": "So those $GME warrants expired worthless I guess.",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T06:16:11+09:00",
-            "url": "https://x.com/dampedspring/status/2116278011393724502",
-            "kind": "post",
-            "preview": "14% annualized 10 day realized. The pain trade has been buying index puts and index calls at 15-20 …",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T07:14:18+09:00",
-            "url": "https://x.com/dampedspring/status/2116292637548331094",
-            "kind": "post",
-            "preview": "It would be great if we at least visit one of the two $JHEQX strikes over the next two months. If n…",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-31T18:47:09+09:00",
             "url": "https://x.com/dampedspring/status/2116466999916220728",
@@ -8351,21 +8521,59 @@
             "kind": "post",
             "preview": "Wordle 1,962 3/6* 🟩⬜⬜⬜⬜ 🟩🟩🟩⬜🟩 🟩🟩🟩🟩🟩",
             "noise_hint": true
+          },
+          {
+            "at": "2026-11-02T21:54:17+09:00",
+            "url": "https://x.com/dampedspring/status/2117238870873960862",
+            "kind": "post",
+            "preview": "GooG and Orcl today.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-02T23:16:54+09:00",
+            "url": "https://x.com/dampedspring/status/2117259659195158998",
+            "kind": "quote_post",
+            "preview": "There is a difference between market not liking the deal fundamentally and the likelihood it will g…",
+            "quoted_author": "stevehou",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-02T23:21:42+09:00",
+            "url": "https://x.com/dampedspring/status/2117260867297333734",
+            "kind": "post",
+            "preview": "We got the DS team together for our monthly roundtable. Big week this week and strong views express…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-02T23:40:26+09:00",
+            "url": "https://x.com/dampedspring/status/2117265584131862648",
+            "kind": "quote_post",
+            "preview": "Fwiw the ICE News was good news. The Druck tweet was old news. The idiots on here chasing was stupi…",
+            "quoted_author": "dampedspring",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T03:45:38+09:00",
+            "url": "https://x.com/dampedspring/status/2117327290329976945",
+            "kind": "quote_post",
+            "preview": "Cue my \"Everybody lies\" substack",
+            "quoted_author": "financialjuice",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T05:49:16+09:00",
+            "url": "https://x.com/dampedspring/status/2117358403312136424",
+            "kind": "post",
+            "preview": "1BN TGA in Q1 and a 150BN build 800 BN net funding need. Those are big numbers. Will @SecScottBesse…",
+            "noise_hint": false
           }
         ]
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-10-30T22:11:57+09:00",
-            "url": "https://x.com/BobEUnlimited/status/2116156150282354983",
-            "kind": "post",
-            "preview": "Benchmark ECI wage data at cycle lows. In line with what we have seen with monthly AHE. Suggests li…",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-31T19:15:00+09:00",
             "url": "https://x.com/BobEUnlimited/status/2116474007612498294",
@@ -8396,27 +8604,6 @@
         "non_noise": 5,
         "items": [
           {
-            "at": "2026-10-30T21:56:58+09:00",
-            "url": "https://x.com/jam_croissant/status/2116152380928757961",
-            "kind": "post",
-            "preview": "I’ll be on @tastyliveshow early today, at 9:40am CT (10:40am ET) 🍒🥐",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T23:29:46+09:00",
-            "url": "https://x.com/jam_croissant/status/2116175734695960630",
-            "kind": "post",
-            "preview": "Live in 10 minutes on @tastyliveshow 🍒🥐",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T02:37:26+09:00",
-            "url": "https://x.com/jam_croissant/status/2116222963812835641",
-            "kind": "quote_post",
-            "quoted_author": "ChrisMurphyCT",
-            "noise_hint": false
-          },
-          {
             "at": "2026-11-02T02:20:26+09:00",
             "url": "https://x.com/jam_croissant/status/2116943460565766477",
             "kind": "quote_post",
@@ -8430,45 +8617,35 @@
             "kind": "quote_post",
             "quoted_author": "DeItaone",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T02:57:07+09:00",
+            "url": "https://x.com/jam_croissant/status/2117315081058832749",
+            "kind": "post",
+            "preview": "Tasty Crumbs is back today with @JermalChandler at @tastyliveshow 🍒🥐 We’ll preview the market flows…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T05:49:00+09:00",
+            "url": "https://x.com/jam_croissant/status/2117358334403580015",
+            "kind": "post",
+            "preview": "Tasty Crumbs goes live in 10 minutes with @JermalChandler on @tastyliveshow 🍒🥐 Join us at 3pm CT (4…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T07:23:02+09:00",
+            "url": "https://x.com/jam_croissant/status/2117381999585267970",
+            "kind": "post",
+            "preview": "ICYMI - Here's todays Tasty Crumbs on @tastyliveshow 🐻⬇️",
+            "noise_hint": false
           }
         ]
       },
       "Darius Dale": {
         "role": "core",
-        "count": 7,
-        "non_noise": 7,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-10-30T21:33:22+09:00",
-            "url": "https://x.com/DariusDale42/status/2116146442393833708",
-            "kind": "quote_post",
-            "quoted_author": "John_J_Ahearn",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T21:42:26+09:00",
-            "url": "https://x.com/DariusDale42/status/2116148724204183958",
-            "kind": "quote_post",
-            "preview": "ANSWER: Obviously managing risk is better in tax-advantaged accounts, but even in taxable accounts,…",
-            "quoted_author": "thepalmandres",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T01:18:35+09:00",
-            "url": "https://x.com/DariusDale42/status/2116203121227534464",
-            "kind": "quote_post",
-            "preview": "ANSWER: If you think this is about data centers, you’re dead wrong. It’s about signaling a potentia…",
-            "quoted_author": "42Macro",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T03:00:32+09:00",
-            "url": "https://x.com/DariusDale42/status/2116228776669454514",
-            "kind": "quote_post",
-            "preview": "ANSWER: You can make plenty of money buying the dip in a risk-off Market Regime. This requires gett…",
-            "quoted_author": "42Macro",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-31T13:39:34+09:00",
             "url": "https://x.com/DariusDale42/status/2116389594832793807",
@@ -8496,16 +8673,9 @@
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-10-31T06:41:32+09:00",
-            "url": "https://x.com/BiancoResearch/status/2116284394621001997",
-            "kind": "post",
-            "preview": "What Being in the Market Means Rational Dissent Episode 015 This week's episode unpacks what it rea…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-01T22:39:13+09:00",
             "url": "https://x.com/BiancoResearch/status/2116887789790982346",
@@ -8539,17 +8709,9 @@
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 7,
-        "non_noise": 7,
+        "count": 11,
+        "non_noise": 10,
         "items": [
-          {
-            "at": "2026-10-31T03:32:14+09:00",
-            "url": "https://x.com/LynAldenContact/status/2116236751907778842",
-            "kind": "quote_post",
-            "preview": "My latest in-person interview. 🙂 NYC with Natalie:",
-            "quoted_author": "natbrunell",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-02T08:49:12+09:00",
             "url": "https://x.com/LynAldenContact/status/2117041295785136408",
@@ -8596,101 +8758,63 @@
             "preview": "Anakin is indeed the worst looser possible to emulate. Some people on this app say he just wanted a…",
             "quoted_author": "brianmccoppin",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T04:27:05+09:00",
+            "url": "https://x.com/LynAldenContact/status/2117337721337508098",
+            "kind": "post",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-11-03T05:10:58+09:00",
+            "url": "https://x.com/LynAldenContact/status/2117348763354485097",
+            "kind": "quote_post",
+            "quoted_author": "Geiger_Capital",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T05:19:33+09:00",
+            "url": "https://x.com/LynAldenContact/status/2117350925484585194",
+            "kind": "post",
+            "preview": "That weird feeling where you're a structural bond bear for 8 years, and then things shift and you'r…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T05:29:26+09:00",
+            "url": "https://x.com/LynAldenContact/status/2117353412119400777",
+            "kind": "post",
+            "preview": "Deciding whether to post more Anakin memes for focus on bond markets now.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T10:05:21+09:00",
+            "url": "https://x.com/LynAldenContact/status/2117422849925480590",
+            "kind": "quote_post",
+            "preview": "More Aragon, less Anakin.",
+            "quoted_author": "ericyakes",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Mark Newton": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-03T09:46:26+09:00",
+            "url": "https://x.com/MarkNewtonCMT/status/2117418086139670696",
+            "kind": "post",
+            "preview": "$AAPL a bit wobbly near-term and momentum gave some much needed warnings for those short-term orien…",
+            "noise_hint": false
           }
         ]
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 29,
-        "non_noise": 29,
+        "count": 24,
+        "non_noise": 24,
         "items": [
-          {
-            "at": "2026-10-30T21:49:54+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116150604137742599",
-            "kind": "post",
-            "preview": "With a day to go in October, 9 of 11 sectors are higher and an incredible 4 up more than 9%, 6 up m…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T22:28:21+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116160277003825346",
-            "kind": "post",
-            "preview": "What a great day to have @AGraylin joining us for our latest Social Hour! 🍻🥂 We will be all about A…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T22:30:01+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116160699869053078",
-            "kind": "post",
-            "preview": "S&P 500 advance/decline line broke out above resistance yesterday.",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T22:32:53+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116161420882858489",
-            "kind": "post",
-            "preview": "More than 75% of the S&P 500 is above the 20-day MA, the most since April. In late September only 2…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-30T23:01:32+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116168628106076377",
-            "kind": "post",
-            "preview": "Since 2000, there have been 911 days that saw more than 400 advancers for the S&P 500. Yesterday wa…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T01:38:31+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116208135874494968",
-            "kind": "quote_post",
-            "preview": "👀",
-            "quoted_author": "awealthofcs",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T03:53:54+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116242207900680458",
-            "kind": "post",
-            "preview": "This could be the worst last day of the month in October since 2009 when it fell 2.81%. That was al…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T04:00:15+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116243805783658597",
-            "kind": "post",
-            "preview": "Facts vs Feelings Social Hour with Alvin Wang Graylin (Ep. 6)",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T04:03:59+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116244743994651113",
-            "kind": "quote_post",
-            "preview": "We are live with @AGraylin on Social Hour! 🥂 🍻 Join us now! @sonusvarghese @CarsonResearch",
-            "quoted_author": "RyanDetrick",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T04:24:23+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116249875796963682",
-            "kind": "quote_post",
-            "preview": "So many amazing takes on AI and what is happening with CAPEX from @AGraylin on Social Hour 🥂 🍻 Join…",
-            "quoted_author": "RyanDetrick",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T05:18:12+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116263422342160385",
-            "kind": "post",
-            "preview": "Intel down a record 28.5% today. Intel up 67.0% for the year. $INTC",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-10-31T05:25:53+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116265354016215261",
-            "kind": "post",
-            "preview": "S&P 500 down half a percent two weeks in a row. Sure feels worse.",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-31T22:17:36+09:00",
             "url": "https://x.com/RyanDetrick/status/2116519960155423032",
@@ -8813,6 +8937,71 @@
             "url": "https://x.com/RyanDetrick/status/2117043267573547031",
             "kind": "post",
             "preview": "The neoclouds in at the center of the AI worries. We discussed it on Facts vs Feelings this week",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-02T22:51:27+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117253256149651963",
+            "kind": "post",
+            "preview": "\"I'm willing to go bankrupt rather than lose this race.\" Google co-founder Larry Page on the AI rac…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-02T22:54:46+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117254089851514957",
+            "kind": "post",
+            "preview": "Hyperscaler free cash flow turned negative for the first time ever in Q3. Meaning that debt and fin…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-02T23:45:23+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117266826518286674",
+            "kind": "post",
+            "preview": "Reminder number 2,863 not to share bank research on here or be very careful if you do 👇 👇 👇 @neilse…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-02T23:48:20+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117267569853800546",
+            "kind": "post",
+            "preview": "Be sure to catch @sonusvarghese on @BizBriefing with @janetonthemoney in about 10 minutes! You can …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T03:32:05+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117323878884106350",
+            "kind": "quote_post",
+            "preview": "Maybe all those 'we need better breadth' arguments we heard all summer long were a tad outside?",
+            "quoted_author": "sonusvarghese",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T07:31:01+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117384009973940675",
+            "kind": "quote_post",
+            "preview": "Great discussion with @AGraylin on our latest Facts vs Feelings Social Hour @sonusvarghese",
+            "quoted_author": "AGraylin",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T08:51:48+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117404339534778521",
+            "kind": "post",
+            "preview": "My Mom would have been 73 today. 😇 If you are lucky enough to still have your Mom still, give her a…",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Warren Pies": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-02T23:16:47+09:00",
+            "url": "https://x.com/WarrenPies/status/2117259630686707951",
+            "kind": "post",
+            "preview": "Despite the (deserved) nervousness in the market, the S&P 500's three-month trading range has compr…",
             "noise_hint": false
           }
         ]
