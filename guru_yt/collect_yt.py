@@ -907,7 +907,21 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
     modes = {c.get("channel_id") or state["channel_ids"].get(c["label"]): c["mode"] for c in cfg["channels"]}
     seen_extra = set(state.get("extra_checked", []))
     web_cands = load_json(ROOT.parent / "guru_web" / "data" / "yt_candidates.json", {"videos": []}).get("videos", [])
-    extra_in = list(cfg.get("extra_videos", [])) + list(queue.get("extra_videos", [])) + list(web_cands)
+    # a tracked person's own X post linking a YouTube video (usually their own show or appearance)
+    x_cands = []
+    x_feed = load_json(ROOT.parent / "guru_x" / "data" / "feed.json", {"posts": []})
+    for post in x_feed.get("posts", []):
+        try:
+            if now - parse_ts(post["created_at"]) > timedelta(days=3):
+                continue
+        except Exception:
+            continue
+        for link in post.get("links") or []:
+            m = re.search(r"(?:youtube\.com/(?:watch\?v=|live/|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})", link)
+            if m:
+                x_cands.append({"video_id": m.group(1), "person": post.get("person"), "source": "x_self_link",
+                                "post_url": post.get("url"), "post_at": post.get("created_at")})
+    extra_in = list(cfg.get("extra_videos", [])) + list(queue.get("extra_videos", [])) + list(web_cands) + x_cands
     extra_stats = {"accepted": 0, "rejected": 0}
     for ex in extra_in:
         vid, person = ex.get("video_id"), ex.get("person")
@@ -926,6 +940,10 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         if not cid and ex.get("source") == "web_discovery" and ex.get("article_date") \
                 and meta["channel_name"].strip().lower() in handoff:
             cid = meta.get("channel_id") or ("handoff:" + meta["channel_name"].strip())
+            allowed[cid] = meta["channel_name"].strip()
+        # the person linked the video from their own X account: any channel is fine, the speaker check still applies
+        if not cid and ex.get("source") == "x_self_link":
+            cid = meta.get("channel_id") or ("xlink:" + meta["channel_name"].strip())
             allowed[cid] = meta["channel_name"].strip()
         if not cid:
             reason = f"channel {meta.get('channel_name')} not allowlisted"
