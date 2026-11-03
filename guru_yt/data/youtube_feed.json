@@ -1,24 +1,24 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-03T13:08:40+09:00",
+  "generated_at": "2026-11-03T13:12:11+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-03T10:10:34+09:00",
+    "last_discovery_at": "2026-11-03T13:08:40+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 1,
-      "rejected": 0,
+      "accepted": 2,
+      "rejected": 1,
       "retry_next_run": [
         "G-eqJenVnrU",
-        "G-eqJenVnrU",
-        "bEpDZP6kFzo",
-        "MaZyXEU5XAg",
-        "2QHbaBseK18"
-      ]
+        "G-eqJenVnrU"
+      ],
+      "reasons": {
+        "MaZyXEU5XAg": "older than window"
+      }
     }
   },
   "quote_verify_threshold": 90,
@@ -159,8 +159,8 @@
     }
   ],
   "quota": {
-    "yta_used_today": 1,
-    "yta_server_remaining": 9,
+    "yta_used_today": 3,
+    "yta_server_remaining": 7,
     "yta_daily_cap": 7,
     "yta_reserve_for_manual": 3,
     "supadata_used_total": 9,
@@ -169,18 +169,18 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 1,
-    "gemini_est_video_hours_today": 0.113,
+    "gemini_calls_today": 2,
+    "gemini_est_video_hours_today": 0.871,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 1,
+    "attempted": 2,
     "ready": 1,
     "unavailable": 0,
-    "errors": 0,
+    "errors": 1,
     "skipped_short": 0,
-    "expired": 0,
+    "expired": 1,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
@@ -348,6 +348,198 @@
       "gemini_prompt_tokens": 15415,
       "quotes_grade_count": {
         "1차-A": 3,
+        "1차-B": 1,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "bEpDZP6kFzo",
+      "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo",
+      "channel": "Damped Spring",
+      "channel_id": "xlink:Damped Spring",
+      "channel_mode": "filter",
+      "person": "Andy Constan",
+      "tier": 2,
+      "role": "core",
+      "match": "x_self_link",
+      "title": "Why We’re Fading the Election Week Rally (Midterms + QRA)",
+      "description": "In Roundtable #8, Andy, Nik and Jimmy break down what the market is pricing, where the real risk is, and how each of them is positioned.\n\nIN THIS EPISODE\n• Why Andy thinks the midterms matter less than the market does\n• The $5,000 check problem and why he doesn't want to own bonds when the question gets asked\n• Iran, Ukraine, and what crude and heating oil are actually saying\n• The quarterly refunding announcement: three ways Bessent can go, and how stocks, gold, bonds and the dollar react to each\n• Whether Trump wants stocks up after a Democratic win\n• The Fed, Warsh, and the AI trade\n• Andy's case for a coming growth scare vs. Nik's dip-buying framework\n\nTIMESTAMPS\n00:00 Intro\n00:25 Midterms: what's priced in and what isn't\n09:40 Iran and Ukraine\n16:30 The Treasury refunding announcement (QRA)\n25:10 What does the administration want after a Dem win?\n33:20 The Fed and the AI trade\n44:50 Andy's bearish case\n53:50 How everyone is positioned\n\nTHE ROUNDTABLE\nAndy Constan, founder of Damped Spring Advisors\nNik Lentz: x.com/@niklentz\nJimmy Jude: x.com/@jimmyjude13\n\n\nSUBSCRIBE for the monthly Roundtable and more macro research from Damped Spring: damapedspring.com\n\nFollow Andy: x.com/dampedspring\n\nRecorded before the election and the Wednesday announcement, so some of this will have already played out by the time you watch.\n\nDISCLAIMER: This is a discussion of market views for informational and entertainment purposes only. It is not investment advice, and participants may hold posi",
+      "published_at": "2026-11-02T00:00:00+00:00",
+      "first_seen_at": "2026-11-03T13:12:11+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-03T13:12:11+09:00",
+      "transcript_language": null,
+      "transcript_chars": 50747,
+      "transcript_url": null,
+      "name_mentions": 4,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "[0:00] All right, welcome to the eighth iteration of the Damp Spring Roundtable. We have Nick, Andy, Jimmy, and myself. We're going to go over a bunch of different topics, and Andy has a whole slew of ideas that are important for the next week and then the ",
+      "error_count": 1,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-03T13:12:11+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Andy Constan (top-left panel) speaks throughout the video, outlining his macro views on the U.S. election, Treasury Quarterly Refunding Announcement (QRA), interest rates, and his strongly bearish stance on U.S. equities due to an impending growth slowdown.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Andy Constan is strongly bearish on U.S. equities, expecting a growth slowdown brought on by sustained tight interest rates, unrealistic bottom-up corporate earnings growth expectations, and significant global sovereign debt issuance overhang. He is positioned short equities (long anti-growth) and long bonds.",
+        "invalidation": "A Republican election sweep accompanied by the U.S. Treasury cutting long-duration bond issuance during the Quarterly Refunding Announcement.",
+        "targets": [],
+        "timeframe": "Next few months"
+      },
+      "quotes": [
+        {
+          "t": "32:34",
+          "t_sec": 1954,
+          "speaker": "Andy Constan",
+          "topic": "Treasury Refunding & Asset Impact",
+          "text": "If he reduces total net supply from 258 to 158, cancels the 20-year auction and doesn't replace it with 10s and 30s, gold's going to rip, stocks are going to rip, and it's worth buying.",
+          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=1954s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 93.9,
+          "caption_sec": 1945,
+          "caption_checked": true
+        },
+        {
+          "t": "44:54",
+          "t_sec": 2694,
+          "speaker": "Andy Constan",
+          "topic": "US Equities Stance",
+          "text": "I'm fucking bearish as a motherfucker right now, and I haven't been - I've been pretty neutral for about six months.",
+          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=2694s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 50.9,
+          "caption_sec": 2870,
+          "caption_conflict": true,
+          "caption_checked": true
+        },
+        {
+          "t": "50:23",
+          "t_sec": 3023,
+          "speaker": "Andy Constan",
+          "topic": "Economic Growth & Asset Allocation",
+          "text": "I feel strongly that a growth scare is coming, and that makes me favor bonds over stocks, which is the way I'm positioned at the moment",
+          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=3023s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 3022,
+          "caption_checked": true
+        },
+        {
+          "t": "50:41",
+          "t_sec": 3041,
+          "speaker": "Andy Constan",
+          "topic": "Thesis Invalidation",
+          "text": "What throws that thesis out the window? A red sweep and Bessent cutting Treasury issuance.",
+          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=3041s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.7,
+          "caption_sec": 3022,
+          "caption_checked": true
+        },
+        {
+          "t": "50:58",
+          "t_sec": 3058,
+          "speaker": "Andy Constan",
+          "topic": "Positioning Strategy",
+          "text": "If it doesn't happen, I think I'm going to get pretty aggressive. So, that's where I'm at. And currently I'm positioned modestly aggressively anti-growth.",
+          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=3058s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.0,
+          "caption_sec": 3052,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-03T13:12:11+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "00:54",
+          "point": "U.S. elections rarely impact broader financial markets significantly, and a status quo outcome will keep legislation largely unchanged.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short-term"
+        },
+        {
+          "t": "02:08",
+          "point": "Previous fiscal stimulus programs have exhausted their impact and are now turning into an economic drag.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium-term"
+        },
+        {
+          "t": "16:42",
+          "point": "The U.S. Treasury could attempt to suppress long-term interest rates through buybacks or by curtailing long-duration bond issuance in the QRA.",
+          "condition": "",
+          "conviction": "hypothetical",
+          "horizon": "near-term"
+        },
+        {
+          "t": "20:10",
+          "point": "Artificially suppressing long-term interest rates stimulates growth and inflation, benefiting equities, commodities, and gold while depressing the U.S. dollar.",
+          "condition": "if Treasury suppresses long-term yields",
+          "conviction": "hypothetical",
+          "horizon": "medium-term"
+        },
+        {
+          "t": "32:34",
+          "point": "If Treasury significantly reduces net long-term bond supply, equities and gold will experience a substantial rally worth buying.",
+          "condition": "if Treasury aggressively cuts long-term debt issuance",
+          "conviction": "hypothetical",
+          "horizon": "near-term"
+        },
+        {
+          "t": "45:07",
+          "point": "Bottom-up earnings growth expectations across the S&P 500 and tech megacaps are unrealistically high, creating an earnings bubble vulnerability.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium-term"
+        },
+        {
+          "t": "47:11",
+          "point": "High global government fiscal deficits create an immense sovereign bond supply overhang that exerts downward pressure on risk assets.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium-term"
+        },
+        {
+          "t": "48:02",
+          "point": "Elevated real interest rates must remain high for long enough to slow economic growth, making an upcoming growth scare inevitable.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium-term"
+        },
+        {
+          "t": "50:23",
+          "point": "An imminent growth scare favors holding U.S. Treasuries over U.S. equities, justifying a short equity and long bond position.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "near-term"
+        },
+        {
+          "t": "50:41",
+          "point": "A red sweep coupled with Treasury issuance cuts would force a pivot away from shorting equities toward a long beta stance.",
+          "condition": "if a Republican election sweep occurs alongside Treasury issuance cuts",
+          "conviction": "risk_scenario",
+          "horizon": "short-term"
+        }
+      ],
+      "gemini_prompt_tokens": 103745,
+      "quotes_grade_count": {
+        "1차-A": 4,
         "1차-B": 1,
         "excluded_speaker_mismatch": 0
       }
@@ -1042,6 +1234,52 @@
       "quotes_grade_count": {
         "1차-A": 6,
         "1차-B": 1,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "2QHbaBseK18",
+      "url": "https://www.youtube.com/watch?v=2QHbaBseK18",
+      "channel": "Bob Elliott",
+      "channel_id": "xlink:Bob Elliott",
+      "channel_mode": "filter",
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "match": "x_self_link",
+      "title": "MacroTalk 2026.10.30",
+      "description": "A recording from Bob Elliott and Prometheus Research's live video\n\nhttps://bobeunlimited.substack.com/p/macrotalk-20261030?utm_source=youtube",
+      "published_at": "2026-10-30T00:00:00+00:00",
+      "first_seen_at": "2026-11-03T13:12:11+09:00",
+      "is_short": false,
+      "transcript_status": "skipped_old",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
     },
@@ -2174,6 +2412,22 @@
     "lookback_hours": 72,
     "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
     "people": {
+      "Andy Constan": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-03T13:12:11+09:00",
+            "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo",
+            "kind": "video",
+            "preview": "Why We’re Fading the Election Week Rally (Midterms + QRA)",
+            "grade": "1차-A",
+            "published_at": "2026-11-02T00:00:00+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
       "Cem Karsan": {
         "role": "core",
         "count": 1,
