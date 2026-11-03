@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-03T10:15:30+09:00",
+  "generated_at": "2026-11-03T21:15:43+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (71 entries)",
+    "list": "ok (73 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 99,
-    "already_known": 20,
+    "urls_found": 95,
+    "already_known": 34,
     "too_old": 55,
-    "verified_syndication": 23,
+    "verified_syndication": 5,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 1,
     "verify_failed": 0,
-    "list_oldest": "2026-11-01T13:39:13.000Z",
+    "list_oldest": "2026-11-01T22:51:47.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,8 +34,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-03T21:15:43+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-11-03T21:15:43+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -56,8 +56,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-03T21:15:43+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -67,7 +67,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "last_success_at": "2026-11-03T21:15:43+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
-      "new_originals_this_run": 7,
+      "last_success_at": "2026-11-03T21:15:43+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
-      "new_originals_this_run": 6,
+      "last_success_at": "2026-11-03T21:15:43+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "last_success_at": "2026-11-03T21:15:43+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "last_success_at": "2026-11-03T21:15:43+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-03T21:15:43+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
-      "new_originals_this_run": 5,
+      "last_success_at": "2026-11-03T21:15:43+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-03T10:15:30+09:00",
+      "last_success_at": "2026-11-03T21:15:43+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -156,14 +156,242 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 15,
+    "described": 4,
     "pending": 0,
     "errors": 0,
-    "calls_today": 15,
+    "calls_today": 19,
     "daily_cap": 40,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2117591370147991849",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-11-03T12:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2117591370147991849",
+      "text": "The Shitload of Treasury Issuance Coming\n\nThe first QRA release shows far more marketable borrowing coming in the first quarter than in recent years, making it increasingly difficult for The House to manipulate the curve.\n\nhttps://t.co/CqRo70NRWy https://t.co/tOIwlC3IZv",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/the-shitload-of-treasury-issuance"
+      ],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWMoVHPW8AAYwOp.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T12:15:43+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWMoVHPW8AAYwOp.png",
+            "image_text": "Treasury 1Q Marketable Borrowing, Blns 900 800 700 600 500 400 300 200 100 0 2025 2026 2027",
+            "what_it_shows": "The chart shows Treasury 1Q marketable borrowing in billions for the years 2025, 2026, and 2027. Values increase across the period, with 2025 around 370, 2026 around 580, and 2027 around 800.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117548491899838472",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-03T09:24:37.000Z",
+      "url": "https://x.com/dampedspring/status/2117548491899838472",
+      "text": "Wordle 1,963 4/6*\n\n⬜🟨⬜⬜⬜\n🟩⬜⬜🟨⬜\n🟩🟨🟨⬜⬜\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117484172042555805",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "role": "core",
+      "author_id": "199170156",
+      "created_at": "2026-11-03T05:09:02.000Z",
+      "url": "https://x.com/jam_croissant/status/2117484172042555805",
+      "text": "On a mission from God… https://t.co/6cZs5Yt7ht",
+      "quoted_post_id": "2117437285041930359",
+      "quoted_post": {
+        "id": "2117437285041930359",
+        "author": "windycitysp0rts",
+        "created_at": "2026-11-03T02:02:43.000Z",
+        "url": "https://x.com/windycitysp0rts/status/2117437285041930359",
+        "text": "Literally every single Bears fan right now: https://t.co/aoCiAxFzfI",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2117437253723017216/img/kl2VL8-ef0hgZVI9.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWLQn_IakAAAzAy.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T12:15:43+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWLQn_IakAAAzAy.jpg",
+            "image_text": "",
+            "what_it_shows": "Three men posing together, two dressed in black suits and fedoras reminiscent of the Blues Brothers flanking a man wearing Chicago Bears winter gear and a bear-head hat.",
+            "chart_credit": "unknown"
+          },
+          {
+            "of": "quoted_post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2117437253723017216/img/kl2VL8-ef0hgZVI9.jpg",
+            "image_text": "99, GSH, WILLIAMS, 18, SONY",
+            "what_it_shows": "A football sideline view showing players in Chicago Bears white jerseys with numbers 99 and 18, along with coaching staff.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117467773676683623",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-03T04:03:52.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117467773676683623",
+      "text": "South Korean exports are surging again. Nice chart from @DualityResearch. https://t.co/0yLxorkcdB",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWLBt7vWMAAtoTg.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T12:15:43+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWLBt7vWMAAtoTg.jpg",
+            "image_text": "South Korea Exports vs S&P 500 Semiconductor Earnings\nTotal Exports YoY | Semiconductor Exports YoY | S&P 500 Semiconductor Earnings YoY\n+100%\n+83%\n+67%\n+50%\n+33%\n+17%\n+0%\n-17%\n2018 2019 2020 2021 2022 2023 2024 2025 2026 2027 2028 2029\nLatest readings as of the end of October!\n94%\n+259%\n+160%\nSource: Duality Research, Bloomberg",
+            "what_it_shows": "The chart compares South Korea's total and semiconductor exports year-over-year growth with S&P 500 semiconductor earnings year-over-year growth from 2018 through 2029. It highlights a sharp upward surge in all three series towards the end of the period, with latest readings showing +94%, +259%, and",
+            "chart_credit": "Duality Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117460752965509341",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-03T03:35:58.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117460752965509341",
+      "text": "Real GDP averaged 2.3% annualized over the past seven quarters, with IT equipment and software investment contributing 0.91 per quarter, almost 40% of total growth. https://t.co/tEkDDkkK1p",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWK7VTwWAAAHlB7.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-03T12:15:43+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWK7VTwWAAAHlB7.jpg",
+            "image_text": "AI-related investment provided a massive boost to the economy recently\nContributions to Real GDP Growth (Basis Points)\nInvestment: Information Processing Equipment\nIP Investment - Software\n140\n120\n100\n80\n60\n40\n20\n0\n-20\n1996 - 2000\nAverage: +71 bps\n2001 - 2024\nAverage: +27 bps\n2025 - 2026 Q3\nAverage: +91 bps",
+            "what_it_shows": "This bar chart displays the contributions to Real GDP growth from information processing equipment and software investment in basis points across different periods, highlighting a recent average of +91 bps for 2025 through 2026 Q3.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
     {
       "id": "2117422849925480590",
       "person": "Lyn Alden",
@@ -8282,206 +8510,6 @@
         ],
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
       }
-    },
-    {
-      "id": "2115041202114297929",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-27T11:21:32.000Z",
-      "url": "https://x.com/dampedspring/status/2115041202114297929",
-      "text": "I will gladly pay you Tuesday for a hamburger today",
-      "quoted_post_id": "2115039556596605227",
-      "quoted_post": {
-        "id": "2115039556596605227",
-        "author": "BobEUnlimited",
-        "created_at": "2026-10-27T11:15:00.000Z",
-        "url": "https://x.com/BobEUnlimited/status/2115039556596605227",
-        "text": "That Giant Sucking Noise\n\nThe latest news of AI-related equity & debt financing highlights just how much asset supply is required to finance surging investment and the challenging environment for asset prices that comes with it.\n\nhttps://t.co/rkhS8LgMxQ https://t.co/VYZujvswFH",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVoXyToXAAAc9Dl.png"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVoXyToXAAAc9Dl.png",
-            "image_text": "Financial Assets @ 10% vol vs. Cash, 25%, 20%, 15%, 10%, 5%, 0%, -5%, Jan-25, Apr-25, Jul-25, Oct-25, Jan-26, Apr-26, Jul-26, Oct-26",
-            "what_it_shows": "This line chart displays the performance of Financial Assets at 10% volatility versus cash from January 2025 to October 2026. The series rises from around 0% to peak near 24% in early 2026 before declining and ending around 12% in late 2026.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115039973942378907",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-27T11:16:39.000Z",
-      "url": "https://x.com/dampedspring/status/2115039973942378907",
-      "text": "Three solid services imho if your interested",
-      "quoted_post_id": "1995851306859180460",
-      "quoted_post": {
-        "id": "1995851306859180460",
-        "author": "dampedspring",
-        "created_at": "2025-12-02T13:43:27.000Z",
-        "url": "https://x.com/dampedspring/status/1995851306859180460",
-        "text": "https://t.co/Jbx6VGncmd offers three products that our clients value.  Happy to discuss which product is best for you. Discounts available for multiple product packages. \n\nDS Read/Alpha. Our flagship macro economic research and trading strategy offering.  We are excited to be",
-        "available": true,
-        "has_media": false
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115039556596605227",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-10-27T11:15:00.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2115039556596605227",
-      "text": "That Giant Sucking Noise\n\nThe latest news of AI-related equity & debt financing highlights just how much asset supply is required to finance surging investment and the challenging environment for asset prices that comes with it.\n\nhttps://t.co/rkhS8LgMxQ https://t.co/VYZujvswFH",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://bobeunlimited.substack.com/p/that-giant-sucking-noise"
-      ],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVoXyToXAAAc9Dl.png"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVoXyToXAAAc9Dl.png",
-            "image_text": "Financial Assets @ 10% vol vs. Cash, 25%, 20%, 15%, 10%, 5%, 0%, -5%, Jan-25, Apr-25, Jul-25, Oct-25, Jan-26, Apr-26, Jul-26, Oct-26",
-            "what_it_shows": "The chart shows the performance of Financial Assets at 10% volatility versus cash from January 2025 to October 2026, with values ranging from -5% to 25%. The latest reading at the end of the period is approximately 12%.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115015373254971827",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-27T09:38:54.000Z",
-      "url": "https://x.com/dampedspring/status/2115015373254971827",
-      "text": "Wordle 1,956 4/6*\n\n⬜⬜⬜⬜⬜\n⬜🟨⬜🟨⬜\n🟩⬜🟨⬜⬜\n🟩🟩🟩🟩🟩",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 3,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2114928594854023460",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-27T03:54:05.000Z",
-      "url": "https://x.com/RyanDetrick/status/2114928594854023460",
-      "text": "Nice chart from @scottcharts in his report today that shows software could continue to outperform semiconductors. https://t.co/C5LXnkgtt5",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVm8I5tWoAAqHWR.png"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:16:08+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVm8I5tWoAAqHWR.png",
-            "image_text": "IGV is back above $108 and holding its relative breakout. It looks especially attractive as an overweight relative to semiconductors within technology IGV/SOXX Software vs. Semiconductors Optuma closed last week at six-month highs 14 Period RSI 12/26/19/MACD-C 754 Period Rate Of Change 10 Period Linear Regression Slope of 200 Period Simple Moving Average 14 Period RSI 75.54 100.00 60.00 40.00 20.0",
-            "what_it_shows": "This chart shows the ratio of Software (IGV) versus Semiconductors (SOXX) from approximately 2015 to 2027, accompanied by a 14-period RSI indicator at the bottom. An annotation states that the price closed last week at six-month highs.",
-            "chart_credit": "scottcharts"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
     }
   ],
   "person_index": {
@@ -8494,13 +8522,6 @@
         "count": 10,
         "non_noise": 7,
         "items": [
-          {
-            "at": "2026-10-31T18:47:09+09:00",
-            "url": "https://x.com/dampedspring/status/2116466999916220728",
-            "kind": "post",
-            "preview": "Wordle 1,960 4/6* ⬜⬜🟨⬜⬜ ⬜🟩⬜⬜⬜ ⬜🟩⬜⬜🟨 🟩🟩🟩🟩🟩",
-            "noise_hint": true
-          },
           {
             "at": "2026-11-01T02:35:26+09:00",
             "url": "https://x.com/dampedspring/status/2116584846084730984",
@@ -8566,6 +8587,13 @@
             "kind": "post",
             "preview": "1BN TGA in Q1 and a 150BN build 800 BN net funding need. Those are big numbers. Will @SecScottBesse…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T18:24:37+09:00",
+            "url": "https://x.com/dampedspring/status/2117548491899838472",
+            "kind": "post",
+            "preview": "Wordle 1,963 4/6* ⬜🟨⬜⬜⬜ 🟩⬜⬜🟨⬜ 🟩🟨🟨⬜⬜ 🟩🟩🟩🟩🟩",
+            "noise_hint": true
           }
         ]
       },
@@ -8574,13 +8602,6 @@
         "count": 3,
         "non_noise": 3,
         "items": [
-          {
-            "at": "2026-10-31T19:15:00+09:00",
-            "url": "https://x.com/BobEUnlimited/status/2116474007612498294",
-            "kind": "post",
-            "preview": "A spooooky MacroTalk this week with @AahanPrometheus . At least if you are an AI manic. Check it ou…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-01T21:15:00+09:00",
             "url": "https://x.com/BobEUnlimited/status/2116866595163406840",
@@ -8595,13 +8616,20 @@
             "kind": "post",
             "preview": "Underestimating the RBA’s Resolve Despite 100bps of hikes in the bag and another coming today, the …",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T21:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2117591370147991849",
+            "kind": "post",
+            "preview": "The Shitload of Treasury Issuance Coming The first QRA release shows far more marketable borrowing …",
+            "noise_hint": false
           }
         ]
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 6,
+        "non_noise": 6,
         "items": [
           {
             "at": "2026-11-02T02:20:26+09:00",
@@ -8638,22 +8666,22 @@
             "kind": "post",
             "preview": "ICYMI - Here's todays Tasty Crumbs on @tastyliveshow 🐻⬇️",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T14:09:02+09:00",
+            "url": "https://x.com/jam_croissant/status/2117484172042555805",
+            "kind": "quote_post",
+            "preview": "On a mission from God…",
+            "quoted_author": "windycitysp0rts",
+            "noise_hint": false
           }
         ]
       },
       "Darius Dale": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-10-31T13:39:34+09:00",
-            "url": "https://x.com/DariusDale42/status/2116389594832793807",
-            "kind": "quote_post",
-            "preview": "Darius Dale the human is still quite bullish. As consistently stated here and elsewhere, we don’t t…",
-            "quoted_author": "chuhakey",
-            "noise_hint": false
-          },
           {
             "at": "2026-10-31T22:20:58+09:00",
             "url": "https://x.com/DariusDale42/status/2116520809254605196",
@@ -8812,8 +8840,8 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 24,
-        "non_noise": 24,
+        "count": 26,
+        "non_noise": 26,
         "items": [
           {
             "at": "2026-10-31T22:17:36+09:00",
@@ -8988,6 +9016,20 @@
             "url": "https://x.com/RyanDetrick/status/2117404339534778521",
             "kind": "post",
             "preview": "My Mom would have been 73 today. 😇 If you are lucky enough to still have your Mom still, give her a…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T12:35:58+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117460752965509341",
+            "kind": "post",
+            "preview": "Real GDP averaged 2.3% annualized over the past seven quarters, with IT equipment and software inve…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-03T13:03:52+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117467773676683623",
+            "kind": "post",
+            "preview": "South Korean exports are surging again. Nice chart from @DualityResearch.",
             "noise_hint": false
           }
         ]
