@@ -1,16 +1,16 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-04T10:10:34+09:00",
+  "generated_at": "2026-11-04T21:10:35+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-04T06:10:09+09:00",
-    "merged_from_discovery": 2,
+    "last_discovery_at": "2026-11-04T10:10:34+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 1,
+      "accepted": 0,
       "rejected": 0
     }
   },
@@ -103,7 +103,7 @@
       "rss_count": 15,
       "list_source": "data_api",
       "oldest_rss": "2026-11-04T00:03:06+09:00",
-      "gap_possible": true,
+      "gap_possible": false,
       "matched": 0
     },
     {
@@ -168,18 +168,18 @@
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 1,
-    "expired": 1,
+    "skipped_short": 0,
+    "expired": 0,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 0,
+    "ready": 0,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
@@ -2346,173 +2346,6 @@
       "quotes_grade_count": {
         "1차-A": 3,
         "1차-B": 1,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "jKmxb7VTxdU",
-      "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU",
-      "channel": "Yahoo Finance",
-      "channel_id": "UCEAZeUIeJs0IjQiqTCdVSIg",
-      "channel_mode": "filter",
-      "person": "Mark Newton",
-      "tier": 1,
-      "role": "core",
-      "match": "description",
-      "title": "A 2028 reckoning, data centers as a luxury belief, and the liberal arts comeback | Market Hang",
-      "description": "Nancy Tengler hosts a panel that starts on big tech earnings and ends on what your children should study. Darius Dale, Founder and CEO of 42 Macro, says this market cycle will not survive contact with the 2028 general election, and explains why he thinks labor versus capital is at an extreme last seen before the New Deal. Mark Newton, Managing Director and Global Head of Technical Strategy at Fundstrat Global Advisors, is overweight healthcare and arrives at the same year by a different route.\n\nMarket Hang is live weekdays 12:30-1:30pm ET on Yahoo Finance.\n\nTimestamps\n0:00 Welcome, and two contrary signals from big tech\n2:23 The strongest GDP data he has ever seen\n3:59 Capital allocation is the whole question now\n6:15 The existential question hanging over search\n11:54 Oracle, and what has to clear before momentum returns\n14:46 Every company is incentivized to overbuild\n17:28 \"This market cycle will not survive 2028\"\n18:53 Labor versus capital at a historic extreme\n20:45 Why healthcare is the overweight right now\n23:24 The post-midterm cycle, and where it breaks\n25:52 Who actually pays for a data center\n27:09 \"Being anti data center is a luxury belief\"\n28:58 Elevated rates, high crude, and a market still up\n30:51 Three Mile Island, and what the backlash cost\n31:58 The part of AI nobody is pricing\n34:51 GLP-1s, Lilly, and the mid cap nobody could name\n39:06 A risk-off inflation regime\n41:19 ServiceNow, and the question hanging over SaaS\n46:51 The elephant in the room: Warsh and",
-      "published_at": "2026-10-28T11:26:54Z",
-      "first_seen_at": "2026-10-30T04:20:27+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-10-30T10:10:28+09:00",
-      "transcript_language": null,
-      "transcript_chars": 63634,
-      "transcript_url": null,
-      "name_mentions": 2,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "ew crowd today. Dinner party crowd. Um, joining me in studio is Michael, Darius, and Julie, whom you all know. And then Mark Newton and I are remote. Uh, [music] I'm sad to say I had to leave New York. It was a It was a great time. Uh, made my I made it to New York in 30 [music] minutes, so I feel like I might get a >>",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-10-30T10:10:28+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Mark Newton speaks extensively throughout the panel discussion starting from 12:25, providing technical analysis and market outlooks on tech, healthcare, Oracle, and the broader US equity market.",
-      "stance": {
-        "us_equities": "bullish",
-        "summary": "Mark Newton is bullish on US equities, noting that technology dips should be bought and healthcare is an ideal overweight position. He highlights that market sentiment remains defensive and historical post-election seasonality strongly favors further upside.",
-        "timeframe": "End of year to 6 months post-election"
-      },
-      "quotes": [
-        {
-          "t": "21:07",
-          "t_sec": 1267,
-          "speaker": "Mark Newton",
-          "topic": "",
-          "text": "Look, I think recently, it's really proper to be overweight healthcare, probably more than any other sector. We've really started to turn the corner on many of these companies that were affected by, you know, the drug pricing issues.",
-          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1267s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.9,
-          "caption_sec": 1256,
-          "caption_checked": true
-        },
-        {
-          "t": "21:58",
-          "t_sec": 1318,
-          "speaker": "Mark Newton",
-          "topic": "",
-          "text": "Technology is right to buy the dips. We've not really seen sufficient evidence of tech really breaking down.",
-          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1318s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.2,
-          "caption_sec": 1317,
-          "caption_checked": true
-        },
-        {
-          "t": "22:45",
-          "t_sec": 1365,
-          "speaker": "Mark Newton",
-          "topic": "",
-          "text": "I expect tech to re-emerge, and we've seen some evidence of that with the AI infrastructure stocks in recent days, as well as, you know, various parts of software, memory, semiconductors.",
-          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1365s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.7,
-          "caption_sec": 1347,
-          "caption_checked": true
-        },
-        {
-          "t": "23:28",
-          "t_sec": 1408,
-          "speaker": "Mark Newton",
-          "topic": "",
-          "text": "After the midterm election, it's normally the best time in the entire four-year cycle, that it's been literally 19 for 19 with an average gain of 15% in the six months to come.",
-          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1408s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.8,
-          "caption_sec": 1408,
-          "caption_checked": true
-        },
-        {
-          "t": "29:43",
-          "t_sec": 1783,
-          "speaker": "Mark Newton",
-          "topic": "",
-          "text": "Sentiment is nowhere near where we need to see to see a long-term market top. Everybody is on the sidelines.",
-          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1783s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 1778,
-          "caption_checked": true
-        },
-        {
-          "t": "30:09",
-          "t_sec": 1809,
-          "speaker": "Mark Newton",
-          "topic": "",
-          "text": "We could certainly have a 3% to 5% pullback in November, but that would be a very good buying opportunity as part of this cycle.",
-          "url": "https://www.youtube.com/watch?v=jKmxb7VTxdU&t=1809s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 1778,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-10-30T10:10:28+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "21:07",
-          "point": "Healthcare is currently the best sector to be overweight as companies recover from drug pricing pressures and show technical strength.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "21:58",
-          "point": "Technology stocks should be bought on pullbacks because there is no technical evidence of a broader structural breakdown.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "23:28",
-          "point": "Historically, the six months following a midterm election represent the strongest seasonal period of the four-year election cycle, averaging 15% gains.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "29:43",
-          "point": "Market sentiment remains overly cautious with high cash on the sidelines, signaling that the equity market is far from a major cyclical top.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "30:09",
-          "point": "A potential 3% to 5% market pullback in November would serve as an attractive buying opportunity rather than a trend reversal.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 113901,
-      "quotes_grade_count": {
-        "1차-A": 6,
-        "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
     }
