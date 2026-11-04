@@ -1,21 +1,17 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-03T21:10:33+09:00",
+  "generated_at": "2026-11-04T10:10:34+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-03T13:12:11+09:00",
-    "merged_from_discovery": 0,
+    "last_discovery_at": "2026-11-04T06:10:09+09:00",
+    "merged_from_discovery": 2,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 0,
-      "rejected": 0,
-      "retry_next_run": [
-        "G-eqJenVnrU",
-        "G-eqJenVnrU"
-      ]
+      "accepted": 1,
+      "rejected": 0
     }
   },
   "quote_verify_threshold": 90,
@@ -29,7 +25,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-14T05:00:32+09:00",
+      "oldest_rss": "2026-10-15T05:00:04+09:00",
       "gap_possible": false,
       "matched": 6
     },
@@ -40,7 +36,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-23T22:06:10+09:00",
+      "oldest_rss": "2026-10-24T03:38:22+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -51,7 +47,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-17T23:00:31+09:00",
+      "oldest_rss": "2026-10-18T23:00:37+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -62,7 +58,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-22T00:00:01+09:00",
+      "oldest_rss": "2026-10-23T04:00:35+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -73,7 +69,7 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-15T02:07:09+09:00",
+      "oldest_rss": "2026-10-15T23:00:26+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -106,8 +102,8 @@
       "rss_ok": true,
       "rss_count": 15,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-03T03:22:39+09:00",
-      "gap_possible": false,
+      "oldest_rss": "2026-11-04T00:03:06+09:00",
+      "gap_possible": true,
       "matched": 0
     },
     {
@@ -156,8 +152,8 @@
     }
   ],
   "quota": {
-    "yta_used_today": 3,
-    "yta_server_remaining": 7,
+    "yta_used_today": 1,
+    "yta_server_remaining": 9,
     "yta_daily_cap": 7,
     "yta_reserve_for_manual": 3,
     "supadata_used_total": 9,
@@ -166,24 +162,24 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 2,
-    "gemini_est_video_hours_today": 0.871,
+    "gemini_calls_today": 1,
+    "gemini_est_video_hours_today": 0.088,
     "gemini_daily_video_hours_cap": 7.5,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 1,
+    "ready": 1,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 0,
-    "expired": 0,
+    "skipped_short": 1,
+    "expired": 1,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 1,
+    "ready": 1,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
@@ -194,6 +190,215 @@
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "kR5PD2T4pag",
+      "url": "https://www.youtube.com/watch?v=kR5PD2T4pag",
+      "channel": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "channel_mode": "dedicated",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "dedicated_channel",
+      "title": "The Macro Minute: Could the Midterms Trigger a Politically Induced Data-Center Slowdown?",
+      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
+      "published_at": "2026-11-03T21:00:12Z",
+      "first_seen_at": "2026-11-04T06:10:09+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-04T10:10:34+09:00",
+      "transcript_language": null,
+      "transcript_chars": 7202,
+      "transcript_url": null,
+      "name_mentions": 1,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "[0:00] Happy Tuesday out there, team 42. It's your skipper here, Darius Dell to present our macro minute for Tuesday, November 3rd, 2026. Big day out there today, US midterm elections. We got a lot to cover, so let's dive right in. As always, we'll start with the e",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-04T10:10:34+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Darius Dale appears on camera and presents the entire macro minute segment.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Darius Dale views the market as currently in a durable and severe risk-off inflation regime. He warns against buying dips in equities ('catching falling knives'), pointing to heavy debt supply, rising cost of capital, widening credit spreads, and market punishment for companies missing lofty earnings expectations.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": ""
+      },
+      "quotes": [
+        {
+          "t": "00:15",
+          "t_sec": 15,
+          "speaker": "Darius Dale",
+          "topic": "market regime and midterm elections",
+          "text": "What did we learn today that will likely have the greatest impact on your portfolio is historically robust turnout and spending ahead of the US midterm elections supported the durability and severity of the current risk-off inflation market regime.",
+          "url": "https://www.youtube.com/watch?v=kR5PD2T4pag&t=15s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.4,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "02:27",
+          "t_sec": 147,
+          "speaker": "Darius Dale",
+          "topic": "stock valuations and earnings expectations",
+          "text": "We may have entered the part of the market cycle whereby great companies deliver great results on an absolute basis, but see their stock prices punished for failing to appease lofty consensus expectations.",
+          "url": "https://www.youtube.com/watch?v=kR5PD2T4pag&t=147s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 124,
+          "caption_checked": true
+        },
+        {
+          "t": "03:56",
+          "t_sec": 236,
+          "speaker": "Darius Dale",
+          "topic": "debt supply and cost of capital",
+          "text": "So, we're still early innings in terms of the amount of supply we're going to see from an equity and debt perspective, and that's something that could continue to weigh on markets as well in the context of widening credit spreads, lower equity valuations, which obviously just means the higher the cost of capital is being raised because it is, in fact, a buyer's market.",
+          "url": "https://www.youtube.com/watch?v=kR5PD2T4pag&t=236s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 95.9,
+          "caption_sec": 218,
+          "caption_checked": true
+        },
+        {
+          "t": "04:50",
+          "t_sec": 290,
+          "speaker": "Darius Dale",
+          "topic": "investing strategy in risk-off regimes",
+          "text": "Do not be out there catching falling knives. I mean, you can make money catching falling knives, but the probability suggests that if you try to do this catch falling knives over a long enough period of time, you're going to destroy your financial well-being.",
+          "url": "https://www.youtube.com/watch?v=kR5PD2T4pag&t=290s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 92.5,
+          "caption_sec": 279,
+          "caption_checked": true
+        },
+        {
+          "t": "05:12",
+          "t_sec": 312,
+          "speaker": "Darius Dale",
+          "topic": "risk management and market regime signals",
+          "text": "The same systems that we use to de-gross, help our buy-side clients tighten their nets, help them to lower their betas, go up in quality, up in size, the types of things you need to do to protect and preserve capital in a risk-off market regime are the exact same signals that will tell them, hey, it's a risk-on market regime.",
+          "url": "https://www.youtube.com/watch?v=kR5PD2T4pag&t=312s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.8,
+          "caption_sec": 309,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-04T10:10:34+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "00:15",
+          "point": "Record spending and high voter turnout in the US midterms reflect political friction that supports the continuation of a risk-off inflation market regime.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "02:08",
+          "point": "The 2030s are highly likely to feature significant wealth redistribution policies, such as wealth taxes and trust-busting.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "2030s"
+        },
+        {
+          "t": "02:27",
+          "point": "Markets have shifted into a phase where even strong corporate earnings results are punished if they fail to meet elevated consensus expectations.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "03:33",
+          "point": "An estimated $1 trillion in incremental debt to fund AI capex over the next one to two years will increase market supply, widen credit spreads, and pressure equity valuations.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": "1-2 years"
+        },
+        {
+          "t": "04:50",
+          "point": "Attempting to catch falling knives during a risk-off market regime carries a high probability of destroying long-term capital.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "05:12",
+          "point": "Investors should rely on systematic macro signals to determine when to shift between defensive risk-off positioning and aggressive risk-on exposure.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 12099,
+      "quotes_grade_count": {
+        "1차-A": 5,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "YtFw8tBT2fs",
+      "url": "https://www.youtube.com/watch?v=YtFw8tBT2fs",
+      "channel": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "channel_mode": "dedicated",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "dedicated_channel",
+      "title": "Will the Midterm Elections Trigger a Q4 2018-style Market Regime?",
+      "description": "Darius Dale joined Natalie Brunell to discuss why 42 he remains bullish over the medium term, even 42 Macro's quantitative systems signal a risk-off Market Regime in the near term.\n\nDarius explained how a politically induced slowdown in data-center construction could trigger broader de-risking, while an eventual shift toward monetary debasement could support the longer-term outlook for gold and Bitcoin.\n\nDownload a complimentary sample of our industry-leading research today:\nhttps://42macro.com/42-macro-sample-r...\n\n#Team42 #investing #finance #stockmarket #trading #marketupdates #macroeconomics #marketinsights #globalmarkets #economictrends #marketoutlook #stocks #federalreserve #inflation #liquidity #bitcoin #riskmanagement #assetmarkets #macroeconomics #macroinvesting #fourthturning \n\nSubscribe to the 42 Macro channel for tips about enhancing your risk management processes and preparing your portfolio for the changing market! \n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
+      "published_at": "2026-11-03T17:56:23Z",
+      "first_seen_at": "2026-11-04T03:21:08+09:00",
+      "is_short": true,
+      "transcript_status": "skipped_short",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": true,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "short (skipped)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": "dedicated_channel",
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "IpOYPk0q2Vw",
       "url": "https://www.youtube.com/watch?v=IpOYPk0q2Vw",
@@ -538,6 +743,52 @@
       "quotes_grade_count": {
         "1차-A": 4,
         "1차-B": 1,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "G-eqJenVnrU",
+      "url": "https://www.youtube.com/watch?v=G-eqJenVnrU",
+      "channel": "tastylive",
+      "channel_id": "xlink:tastylive",
+      "channel_mode": "filter",
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "match": "x_self_link",
+      "title": "MIDTERMS TOMORROW: Cem Karsan PREVIEWS Flows Into Election Day | Monday Nov 2 Live Trading",
+      "description": "Monday November 2nd 2026\n\nTasty Crumbs with Jermal Chandler and Cem Karsan\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, and over 25 personalities, we’ll help you take your trading to the next level, whether you are new to trading or a seasoned veteran.  \n\ntastylive content is created, produced, and provided solely by tastylive, Inc. (“tastylive”) and is for informational and educational purposes only. It is not, nor is it intended to be, trading or investment advice or a recommendation that any security, futures contract, digital asset, other product, transaction, or investment strategy is suitable for any person. Trading securities, futures products, and digital assets involve risk and may result in a loss greater than the original amount invested. Investment information provided may not be appropriate for all investors and is provided without respect to individual investor financial sophistication, financial situation, investing time horizon or risk tolerance. Options, futures, and futures options are not suitable for all investors. Prior to trading securities, options, futures, or futures options, please read all applicable risk disclosures, including, but not limited to, the Characteristics and Risks of Standardized Options Disclosure and the Futures and Exchange Traded Options Risk Di",
+      "published_at": "2026-11-02T00:00:00+00:00",
+      "first_seen_at": "2026-11-04T10:10:34+09:00",
+      "is_short": false,
+      "transcript_status": "skipped_old",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
     },
@@ -2264,144 +2515,6 @@
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "3YXNPOEPZms",
-      "url": "https://www.youtube.com/watch?v=3YXNPOEPZms",
-      "channel": "42 Macro",
-      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
-      "channel_mode": "dedicated",
-      "person": "Darius Dale",
-      "tier": 1,
-      "role": "core",
-      "match": "dedicated_channel",
-      "title": "The Macro Minute: Are Markets Underpricing the Coming Wave of Redistributive Policies?",
-      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
-      "published_at": "2026-10-27T20:00:20Z",
-      "first_seen_at": "2026-10-28T05:20:30+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-10-28T10:10:28+09:00",
-      "transcript_language": null,
-      "transcript_chars": 9354,
-      "transcript_url": null,
-      "name_mentions": 3,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "[0:00] Happy Tuesday out there, team 42. It's your skipper here at Darius Dale to present our macro minute for Tuesday, October 27th, 2026. As always, we'll start with the executive summary from today's leadoff morning note. So, let's dive right in. What do we learn ",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-10-28T12:31:33+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Darius Dale presents the 42 Macro Minute video, discussing macro market regimes, tech earnings, AI capex, redistributive policies, and equity market risks.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Darius Dale views the market as operating under a durable risk-off inflation regime and considers a secular bear market on the other side of the AI capex bubble to be a very high-probability outcome.",
-        "invalidation": "",
-        "targets": [],
-        "timeframe": "secular"
-      },
-      "quotes": [
-        {
-          "t": "00:13",
-          "t_sec": 13,
-          "speaker": "Darius Dale",
-          "topic": "market regime",
-          "text": "The reaction of President Lula's reelection in Brazilian financial markets supported the durability and severity of the current risk off inflation market regime.",
-          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=13s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "02:11",
-          "t_sec": 131,
-          "speaker": "Darius Dale",
-          "topic": "tech earnings and AI spending",
-          "text": "Although Microsoft earnings tomorrow will test whether AI spending continues to pay off in the form of incrementally booming revenue and earnings growth, it probably will, but we're not so sure backward looking results and make believe capex guidance will matter until markets see the whites of the eyes of any politically induced slowdown in data center construction",
-          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=131s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "03:04",
-          "t_sec": 184,
-          "speaker": "Darius Dale",
-          "topic": "AI bubble",
-          "text": "All told, we view Anthropic's and OpenAI's, the world's two largest closed source LLM providers, as the most likely poster children of the eventual AI burst.",
-          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=184s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "07:22",
-          "t_sec": 442,
-          "speaker": "Darius Dale",
-          "topic": "secular bear market",
-          "text": "And so if you see more and more and more of this stuff, then you're going to ultimately have a real issue from a secular bear market standpoint, which is in our thing a very high probability outcome anyway on the other side of this AI capex bubble.",
-          "url": "https://www.youtube.com/watch?v=3YXNPOEPZms&t=442s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-10-28T10:10:28+09:00",
-      "evidence_grade": "1차-B",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "gemini_prompt_tokens": 15406,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 4,
-        "excluded_speaker_mismatch": 0
-      },
-      "key_points": [
-        {
-          "t": "00:13",
-          "point": "Market reactions to political events in emerging markets support the ongoing durability and severity of a risk-off inflation regime.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "00:36",
-          "point": "Failure of near-term wealth tax ballot initiatives will only increase the likelihood of massive redistributive tax policies by 2028 due to rising populist sentiment.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "02:11",
-          "point": "Backward-looking tech earnings and capex guidance will matter less to markets as investors focus on potential politically induced slowdowns in data center construction.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "03:04",
-          "point": "Leading closed-source AI LLM providers are the most vulnerable poster children for an eventual burst of the AI spending bubble.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "03:14",
-          "point": "China's lower-cost compute and abundant open-source LLMs make it highly likely to win the AI race unless governments intervene.",
-          "condition": "absent government intervention",
-          "conviction": "base_case",
-          "horizon": "long_term"
-        },
-        {
-          "t": "07:02",
-          "point": "Enactment of state wealth taxes could force high-net-worth individuals to liquidate stocks or bonds to cover tax bills, draining market liquidity and triggering a secular bear market.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": "long_term"
-        }
-      ]
     }
   ],
   "person_index": {
@@ -2441,34 +2554,27 @@
           }
         ]
       },
-      "Joseph Wang": {
-        "role": "shadow",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-01T10:10:28+09:00",
-            "url": "https://www.youtube.com/watch?v=5RwaOFdZQXM",
-            "kind": "video",
-            "preview": "Markets Weekly October 31, 2026",
-            "grade": "1차-B",
-            "published_at": "2026-10-31T16:24:29Z",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Mark Newton": {
+      "Darius Dale": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
-            "at": "2026-11-01T10:10:28+09:00",
-            "url": "https://www.youtube.com/watch?v=Af6z99MC8Wc",
+            "at": "2026-11-04T03:21:08+09:00",
+            "url": "https://www.youtube.com/watch?v=YtFw8tBT2fs",
             "kind": "video",
-            "preview": "You cannot outsource your creativity to the models | Market Hang",
+            "preview": "Will the Midterm Elections Trigger a Q4 2018-style Market Regime?",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-03T17:56:23Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T10:10:34+09:00",
+            "url": "https://www.youtube.com/watch?v=kR5PD2T4pag",
+            "kind": "video",
+            "preview": "The Macro Minute: Could the Midterms Trigger a Politically Induced Data-Center Slowdown?",
             "grade": "1차-A",
-            "published_at": "2026-10-31T14:00:38Z",
+            "published_at": "2026-11-03T21:00:12Z",
             "noise_hint": false
           }
         ]
