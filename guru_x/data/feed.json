@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-04T10:15:33+09:00",
+  "generated_at": "2026-11-04T21:15:32+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (69 entries)",
+    "list": "ok (71 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 93,
-    "already_known": 26,
+    "urls_found": 96,
+    "already_known": 24,
     "too_old": 55,
-    "verified_syndication": 12,
+    "verified_syndication": 17,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-11-02T13:08:09.000Z",
+    "list_oldest": "2026-11-02T20:29:26.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,8 +34,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
+      "last_success_at": "2026-11-04T21:15:32+09:00",
       "new_originals_this_run": 1,
       "error": null
     },
@@ -56,8 +56,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
-      "new_originals_this_run": 7,
+      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "new_originals_this_run": 5,
       "error": null
     },
     {
@@ -100,8 +100,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "new_originals_this_run": 4,
       "error": null
     },
     {
@@ -111,8 +111,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
+      "last_success_at": "2026-11-04T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T10:15:33+09:00",
+      "last_success_at": "2026-11-04T21:15:32+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -156,14 +156,637 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 7,
+    "described": 8,
     "pending": 0,
     "errors": 0,
-    "calls_today": 7,
+    "calls_today": 15,
     "daily_cap": 40,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2117953757896159558",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-11-04T12:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2117953757896159558",
+      "text": "Acceptance & Obstruction\n\nThe market bounce came as the administration accepted the election results, but the longer-term question is how the AI boom will meet expectations with so many governors now opposed.\n\nhttps://t.co/tGMdOBfUhD https://t.co/y2dNUxjgLE",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/acceptance-and-obstruction"
+      ],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWR1hppWwAA89Ml.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-04T12:15:32+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWR1hppWwAA89Ml.png",
+            "image_text": "Share of Future Datacenter Supply (GW) In States With A Democratic Governor 100% 90% 80% 70% 60% 50% 40% 30% 20% 10% 0% Pre-Election Post-Election",
+            "what_it_shows": "A bar chart comparing the share of future datacenter supply in states with a Democratic governor before and after the election. The pre-election bar is near 35 percent, while the post-election bar is near 79 percent.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117949197487939665",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-11-04T11:56:52.000Z",
+      "url": "https://x.com/DariusDale42/status/2117949197487939665",
+      "text": "MIDTERMS: I've been trying to tell you guys for my entire career on global Wall Street that these trends are not sustainable. The folks at my church call this an \"affordability crisis.\" Wall Street calls this \"booming corporate profits\" and \"margin expansion.\" Prepare for 2028.📉 https://t.co/5sntHxRvtj",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWR3O_-XIAAahPM.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-04T12:15:32+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWR3O_-XIAAahPM.jpg",
+            "image_text": "The K-Shaped Economy Crisis (KEC) is not an accident. Wall Street has been cheering on expanding corporate margins, booming corporate earnings, and soaring stock prices for decades. All these incremental profits had to come from somewhere—i.e., people in the W-2 class. Labor's Share of Gross Domestic Income (Nominal Employee Compensation) (R1) 49.9 High on 03/31/70 58.7 - Average 55.2 Low on 06/30",
+            "what_it_shows": "The chart displays Labor's Share of Gross Domestic Income and Capital's Share of Gross Domestic Income over time, with labor's share declining and capital's share rising to a high of 14.4 percent.",
+            "chart_credit": "42 Macro"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117944985437811077",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T11:40:08.000Z",
+      "url": "https://x.com/dampedspring/status/2117944985437811077",
+      "text": "The Three Poisons shifting the Karmic Winds\n\n1. Higher real rates stay higher for longer\n2. Massive issuance to fund deficits and AI (still going to be massive even if Date Centers slow a touch) - Hamburgers\n3. Equity market Growth expectations are impossible to achieve without",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117931961503158578",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T10:48:23.000Z",
+      "url": "https://x.com/dampedspring/status/2117931961503158578",
+      "text": "If you are an American and regardless of your political party you are not feeling deeply proud and patriotic this morning you are NOT a patriot. Elections are awesome!",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117930037156700518",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T10:40:44.000Z",
+      "url": "https://x.com/dampedspring/status/2117930037156700518",
+      "text": "Anyone who is confidently explaining the last 12 hours of market moves in any asset or currency  should not be trusted.\n\nIt reminds me of 2016.  So funny.  Also fwiw this is NOT an analog to 1994",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117929051906101674",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T10:36:49.000Z",
+      "url": "https://x.com/dampedspring/status/2117929051906101674",
+      "text": "Good morning.   Sold what I bought just now. 170pts ish.  On to QRA.",
+      "quoted_post_id": "2117812990179475633",
+      "quoted_post": {
+        "id": "2117812990179475633",
+        "author": "dampedspring",
+        "created_at": "2026-11-04T02:55:38.000Z",
+        "url": "https://x.com/dampedspring/status/2117812990179475633",
+        "text": "Covering some of my short here on ES still quite short.",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117901475116421186",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-04T08:47:15.000Z",
+      "url": "https://x.com/Geo_papic/status/2117901475116421186",
+      "text": "2028 does not get any easier for GOP. Defending Murkowski's seat in AK, Young in IN, Grassley in IA, Moran in KS, Budd in NC, Scott in SC, and Ron Johnson in WI. \n\nThat's SEVEN potential GOP Senators who will look to cross the aisle a LOT in next 24 months.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117899916399763532",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-04T08:41:03.000Z",
+      "url": "https://x.com/Geo_papic/status/2117899916399763532",
+      "text": "Tactical mismanagement has cost the Democrats an IND seat in Montana and a potentially robust win in Mississippi (although I still think that Scott Colom will make history).",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117898462230397050",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-04T08:35:16.000Z",
+      "url": "https://x.com/Geo_papic/status/2117898462230397050",
+      "text": "Way-too-early take on the election... \n\n1. Farm states voted against tariffs. \n2. Hispanics in Texas against immigration enforcement. \n3. Everybody against the war in Iran. \n\nThe median voter is the ULTIMATE constraint.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117896814925930968",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-04T08:28:43.000Z",
+      "url": "https://x.com/Geo_papic/status/2117896814925930968",
+      "text": "I love listening to @BillSimmons Over-Under pods like 10-15 games into the season. It's always fun to see what forecasts worked and what did not.\n\nIf you want to do the same with the midterms, here is last week's Geopolitical Cousin pod. \n\nhttps://t.co/uxd6Nl6tzg",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://geopolitical-cousins.captivate.fm/episode/election-year"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117840971035554120",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T04:46:49.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117840971035554120",
+      "text": "This is now five consecutive midterms to see the makeup of Congress change power. \n\nYou have to go back 20 years the last time there was no change in power. https://t.co/YFvFSTbixp",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWQUinQWAAA0oBE.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-04T12:15:32+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWQUinQWAAA0oBE.png",
+            "image_text": "20 Years Since There Were No Changes In The Midterms\nMidterm Year Changes (Past 20 Years)\nYear House House Next Year Senate Senate Next Year\n2006 Republican Democrat Republican Democrat\n2010 Democrat Republican Democrat Democrat\n2014 Republican Republican Democrat Republican\n2018 Republican Democrat Republican Republican\n2022 Democrat Republican Democrat Democrat\n2026 Republican Democrat Republica",
+            "what_it_shows": "This table lists midterm years from 2006 to 2026, showing the political party controlling the House and Senate before and after each election. It displays party control transitions for both chambers across the past five midterm cycles.",
+            "chart_credit": "Carson Investment Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117840352614711619",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "role": "core",
+      "author_id": "188369814",
+      "created_at": "2026-11-04T04:44:22.000Z",
+      "url": "https://x.com/BiancoResearch/status/2117840352614711619",
+      "text": "Nationwide, 30 ballot measures sought to restrict data center construction. Restrict is leading 29 to 1.\n\nThese are non-binding measures, but given the size of the Democrats' victory, adding Texas governorship, and a 29 to 1 lead to restrict data centers, politicians that want to https://t.co/mGSBuSmx3V",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWQTcpwWAAEqDv-.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-04T12:15:32+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWQTcpwWAAEqDv-.jpg",
+            "image_text": "UNOFFICIAL RESULTS NOV 3, 2026 Who is winning the data center ballot measures 30 of the 45 measures have results, with 173 of 220 precincts in. Complete counts so far: Restrict won 14, Allow won 0. Still open: 16 partly counted and 15 with no results posted. Restrict won Restrict leading Too close Allow leading Allow won No results posted 29 RESTRICT AHEAD 14 won 15 leading 1 ALLOW AHEAD 0 won 1 l",
+            "what_it_shows": "The chart displays unofficial results for data center ballot measures as of November 3, 2026, showing 29 ahead for restricting data centers and 1 ahead for allowing them.",
+            "chart_credit": "Data Centers on the Ballot"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117834824220057883",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "role": "core",
+      "author_id": "188369814",
+      "created_at": "2026-11-04T04:22:24.000Z",
+      "url": "https://x.com/BiancoResearch/status/2117834824220057883",
+      "text": "What I think is the biggest news from election night for markets:\n\n* A Democrat won the Texas governorship for the first time in decades. But Republicans still control the Texas House and Senate.\n\n* Texas will host 25% of all data centers coming online between now and 2030.\n\n* https://t.co/O0u00BLzWL",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWQPDL7XAAA5s-2.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-04T12:15:32+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWQPDL7XAAA5s-2.png",
+            "image_text": "Texas' Data Center Pipeline Dominated by First-Time Developers\nData center pipeline by project stage and developer experience\nLive, experienced\nUnder construction, experienced\nUnder construction, inexperienced\nCommitted, experienced\nCommitted, inexperienced\nEarly stage, experienced\nEarly stage, inexperienced\nTexas\nGeorgia\nVirginia\nOhio\nPennsylvania\nIllinois\nArizona\nUtah\nWyoming\n0 10 20 30 40 50 60",
+            "what_it_shows": "This horizontal bar chart compares the data center pipeline across various U.S. states by project stage and developer experience, measured in gigawatts of IT capacity. Texas leads all listed states with the largest total capacity in its pipeline.",
+            "chart_credit": "BloombergNEF"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117820002984161628",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T03:23:30.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117820002984161628",
+      "text": "The worst possible combination is a Republican President and a Democratic Congress. Futures seem to agree so far. https://t.co/W0UwasOIj3",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWQCD85XoAA7Dll.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWQCETxWQAAwrPZ.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-04T12:15:32+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWQCD85XoAA7Dll.jpg",
+            "image_text": "Stock Performance Based On Congress Makeup Average S&P 500 Annual Return (1951 - 2025) 20% 15% 10% 5% 0% Democrat President Republican President 8.6% 16.3% 17.0% 7.6% 4.9% 13.7% Dem Rep Split Rep Dem Split Make Up of Congress Source: Carson Investment Research, FactSet 10/05/2026 Starts in 1951 with 82nd Congress @ryandetrick CARSON",
+            "what_it_shows": "This bar chart displays the average S&P 500 annual return from 1951 to 2025 broken down by the combination of the president's political party and the makeup of Congress. Returns range from 4.9% for a Republican president with a Democratic Congress to 17.0% for a Democratic president with a split Con",
+            "chart_credit": "Carson Investment Research"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWQCETxWQAAwrPZ.jpg",
+            "image_text": "Majors Indices Futures Americas Euro US 30 51,387.3 22:21:22 US30 -398.8 (-0.77%) US 500 7,482.7 22:22:10 US500 -86.3 (-1.14%) US Tech 100 27,606.0 22:22:18 USTECH -574.3 (-2.04%) Small Cap 2000 2,794.2 22:22:23 US2000 -18.3 (-0.65%)",
+            "what_it_shows": "This table lists indices futures including US 30, US 500, US Tech 100, and Small Cap 2000 with negative changes across all four metrics.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117819519540584832",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "role": "core",
+      "author_id": "199170156",
+      "created_at": "2026-11-04T03:21:35.000Z",
+      "url": "https://x.com/jam_croissant/status/2117819519540584832",
+      "text": "https://t.co/kCOXfVF6V7",
+      "quoted_post_id": "1895368751127667191",
+      "quoted_post": {
+        "id": "1895368751127667191",
+        "author": "jam_croissant",
+        "created_at": "2025-02-28T07:01:39.000Z",
+        "url": "https://x.com/jam_croissant/status/1895368751127667191",
+        "text": "🔥 🔥 It  Down…🔥 🔥 \nAngry mob w/ Pitchforks 🔱 coming for a new presidency near you in 1…2…3… https://t.co/SI9NX77C76",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/tweet_video_thumb/Gk2z1O-W4AAztCW.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "video_frame",
+          "url": "https://pbs.twimg.com/tweet_video_thumb/HWQBoDgW4AAwPYz.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-04T12:15:32+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/tweet_video_thumb/HWQBoDgW4AAwPYz.jpg",
+            "image_text": "PRECISELY ON SCHEDULE",
+            "what_it_shows": "A meme image of Doc Brown from Back to the Future wearing yellow glasses with black and white eyes.",
+            "chart_credit": "unknown"
+          },
+          {
+            "of": "quoted_post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/tweet_video_thumb/Gk2z1O-W4AAztCW.jpg",
+            "image_text": "makeaegif.com",
+            "what_it_shows": "A low-resolution animated GIF showing a large crowd of cartoon characters (the Simpsons) running forward with a background of fire.",
+            "chart_credit": "makeaegif.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117816575281819888",
+      "person": "Warren Pies",
+      "handle": "WarrenPies",
+      "tier": 1,
+      "role": "core",
+      "author_id": "2326980139",
+      "created_at": "2026-11-04T03:09:53.000Z",
+      "url": "https://x.com/WarrenPies/status/2117816575281819888",
+      "text": "Ignore the consensus opinion on midterm seasonality for now.\n\n“Bluenami” is not an immediate buy.\n\nExcerpt from 10/26 @3F_Research report… https://t.co/NjqsHHSxqO",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWP-813WEAAQK5k.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-04T12:15:32+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWP-813WEAAQK5k.jpg",
+            "image_text": "3FOURTEEN RESEARCH MANAGE RISK. EXPLOIT OPPORTUNITY. For his part, Warsh seems intent on stretching the hike cycle out as long as possible to allow the data to buckle (lap bad comps). This is possible and opens a narrow path to improving inflation data without dinging the AI buildout. Still, Warsh was careful to say that he was \"unwilling and unable to call\" financial conditions \"tight.\" Translati",
+            "what_it_shows": "A text excerpt from a research report discussing monetary policy, inflation data, midterm elections, and market impacts on the technology sector.",
+            "chart_credit": "3FOURTEEN RESEARCH"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117812990179475633",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T02:55:38.000Z",
+      "url": "https://x.com/dampedspring/status/2117812990179475633",
+      "text": "Covering some of my short here on ES still quite short.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2117782176104120378",
       "person": "Andy Constan",
@@ -7523,235 +8146,6 @@
       "discovered_via": [
         "list_embed"
       ]
-    },
-    {
-      "id": "2115415539245871427",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T12:09:01.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115415539245871427",
-      "text": "I'm set to join Premarket Prep in about 25 minutes at 8:35am ET! You can watch it all 👇👇👇 \n\nAlways fun to chat with my friends @Spus and @TripleDTrader 🎙️",
-      "quoted_post_id": "2115413311449948626",
-      "quoted_post": {
-        "id": "2115413311449948626",
-        "author": "Spus",
-        "created_at": "2026-10-28T12:00:10.000Z",
-        "url": "https://x.com/Spus/status/2115413311449948626",
-        "text": "Unprecedented Divergence | Blu Putnam, Chief Economist | Oct 28, 2026 https://t.co/LfxAxm8XvW",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115401943397044498",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-10-28T11:15:00.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2115401943397044498",
-      "text": "The Glacial Hiking Cycle\n\nWhile most developed economies face headline inflation of 3-4% these days, central bankers are taking their sweet time to respond, suggesting a far different reaction function than in the past. h/t @IFM_Economist \n\nhttps://t.co/XPQaPLx9Ft https://t.co/hsSsbafIpK",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://bobeunlimited.substack.com/p/the-glacial-hiking-cycle"
-      ],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVtjs0JWcAAKY6J.png"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVtjs0JWcAAKY6J.png",
-            "image_text": "Selected country 'core' inflation* yoy% 4.5 4.0 3.5 3.0 2.5 2.0 1.5 1.0 0.5 0.0 -0.5 -1.0 -1.5 Food & energy Core* inflation *latest available observation, 'core' defined as excluding food & energy Australia New Zealand South Korea UK World Ex-US US Germany Euro Area G7 Japan Canada Italy France China Source: IFM Investors, ABS, various national statistics agencies, World Bank IFM",
-            "what_it_shows": "A bar chart displaying selected country core inflation on a year-over-year percentage basis, broken down into core inflation and food & energy components. Australia has the highest total inflation rate shown at around 4.3%, while China shows the lowest at approximately 1.0%.",
-            "chart_credit": "IFM Investors"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115399562739527778",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-28T11:05:32.000Z",
-      "url": "https://x.com/dampedspring/status/2115399562739527778",
-      "text": "Wordle 1,957 5/6*\n\n🟨⬜⬜🟨⬜\n🟨⬜⬜🟩🟩\n⬜🟨🟨🟩🟩\n⬜🟩🟩🟩🟩\n🟩🟩🟩🟩🟩",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115266794596229550",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T02:17:58.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115266794596229550",
-      "text": "@LibbyCantrill @PIMCO @sonusvarghese 📺 \n\nhttps://t.co/2QF6MPqwlU",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://youtu.be/G6M56ukDLs8?is=5zcIKVdYaG3X98zx"
-      ],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": true,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115266756369404028",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T02:17:49.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115266756369404028",
-      "text": "Could Texas really flip? @LibbyCantrill of @PIMCO weighs in https://t.co/UTvdeBuT1z",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/amplify_video_thumb/2115266590929293313/img/T_LTyYGCyp7kJHk7.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2115266590929293313/img/T_LTyYGCyp7kJHk7.jpg",
-            "image_text": "PIMCO WHAT I FIND MOST",
-            "what_it_shows": "A video call or broadcast screenshot showing three participants, with a woman in the center foreground and two men in the upper panels. The text \"WHAT I FIND MOST\" appears as closed captions at the bottom.",
-            "chart_credit": "PIMCO"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115263390025429195",
-      "person": "Lyn Alden",
-      "handle": "LynAldenContact",
-      "tier": 3,
-      "role": "core",
-      "author_id": "823766058909761536",
-      "created_at": "2026-10-28T02:04:26.000Z",
-      "url": "https://x.com/LynAldenContact/status/2115263390025429195",
-      "text": "Sometimes in war scenes, it is pretended that massive battles can happen without casualties. Just a bunch of people being conveniently knocked around.\n\nThe Stolguard Incident explores the ethics of when a protagonist is confronted with fatal situations and does kill, to win.",
-      "quoted_post_id": "2114834529546358848",
-      "quoted_post": {
-        "id": "2114834529546358848",
-        "author": "Qualite4Real",
-        "created_at": "2026-10-26T21:40:18.000Z",
-        "url": "https://x.com/Qualite4Real/status/2114834529546358848",
-        "text": "I'll just never fully get over this Avatar sequence. Several of the Earth King's elite guards and soldiers easily and systematically dismantled by actual children. https://t.co/P2w3QrLXe1",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2114834419194179585/img/ehzmrAzZjuWWJPLz.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-28T02:18:47+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2114834419194179585/img/ehzmrAzZjuWWJPLz.jpg",
-            "image_text": "",
-            "what_it_shows": "This screenshot from an animated series shows a bald young character with an arrow tattoo on his head and a winged lemur perched on his shoulder while holding a staff.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
     }
   ],
   "person_index": {
@@ -7761,16 +8155,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 11,
-        "non_noise": 8,
+        "count": 15,
+        "non_noise": 13,
         "items": [
-          {
-            "at": "2026-11-01T18:38:39+09:00",
-            "url": "https://x.com/dampedspring/status/2116827246828929381",
-            "kind": "post",
-            "preview": "Wordle 1,961 4/6* ⬜🟨⬜🟨🟨 🟨⬜⬜🟩🟩 ⬜⬜🟩🟩🟩 🟩🟩🟩🟩🟩",
-            "noise_hint": true
-          },
           {
             "at": "2026-11-02T16:52:35+09:00",
             "url": "https://x.com/dampedspring/status/2117162944274239997",
@@ -7844,6 +8231,42 @@
             "kind": "post",
             "preview": "So Jarek Walter is Hannibal Lecter so far?",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T11:55:38+09:00",
+            "url": "https://x.com/dampedspring/status/2117812990179475633",
+            "kind": "post",
+            "preview": "Covering some of my short here on ES still quite short.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T19:36:49+09:00",
+            "url": "https://x.com/dampedspring/status/2117929051906101674",
+            "kind": "quote_post",
+            "preview": "Good morning. Sold what I bought just now. 170pts ish. On to QRA.",
+            "quoted_author": "dampedspring",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T19:40:44+09:00",
+            "url": "https://x.com/dampedspring/status/2117930037156700518",
+            "kind": "post",
+            "preview": "Anyone who is confidently explaining the last 12 hours of market moves in any asset or currency sho…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T19:48:23+09:00",
+            "url": "https://x.com/dampedspring/status/2117931961503158578",
+            "kind": "post",
+            "preview": "If you are an American and regardless of your political party you are not feeling deeply proud and …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T20:40:08+09:00",
+            "url": "https://x.com/dampedspring/status/2117944985437811077",
+            "kind": "post",
+            "preview": "The Three Poisons shifting the Karmic Winds 1. Higher real rates stay higher for longer 2. Massive …",
+            "noise_hint": false
           }
         ]
       },
@@ -7852,14 +8275,6 @@
         "count": 3,
         "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-01T21:15:00+09:00",
-            "url": "https://x.com/BobEUnlimited/status/2116866595163406840",
-            "kind": "quote_post",
-            "preview": "Much of the AI investment boom today is driven by promises to receive trillions of cash in the futu…",
-            "quoted_author": "BobEUnlimited",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-02T21:15:00+09:00",
             "url": "https://x.com/BobEUnlimited/status/2117228982206648756",
@@ -7873,13 +8288,20 @@
             "kind": "post",
             "preview": "The Shitload of Treasury Issuance Coming The first QRA release shows far more marketable borrowing …",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T21:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2117953757896159558",
+            "kind": "post",
+            "preview": "Acceptance & Obstruction The market bounce came as the administration accepted the election results…",
+            "noise_hint": false
           }
         ]
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 7,
-        "non_noise": 7,
+        "count": 8,
+        "non_noise": 8,
         "items": [
           {
             "at": "2026-11-02T02:20:26+09:00",
@@ -7932,13 +8354,34 @@
             "preview": "👂 to the admin… With election event vol, flows are positive. If they want to squeeze it higher into…",
             "quoted_author": "financialjuice",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T12:21:35+09:00",
+            "url": "https://x.com/jam_croissant/status/2117819519540584832",
+            "kind": "quote_post",
+            "quoted_author": "jam_croissant",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Darius Dale": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-04T20:56:52+09:00",
+            "url": "https://x.com/DariusDale42/status/2117949197487939665",
+            "kind": "post",
+            "preview": "MIDTERMS: I've been trying to tell you guys for my entire career on global Wall Street that these t…",
+            "noise_hint": false
           }
         ]
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 5,
+        "non_noise": 5,
         "items": [
           {
             "at": "2026-11-01T22:39:13+09:00",
@@ -7962,19 +8405,19 @@
             "preview": "This is JP Morgan’s view is Wall Street consensus. It assumes there is one Democratic Party. My vie…",
             "quoted_author": "zerohedge",
             "noise_hint": false
-          }
-        ]
-      },
-      "Joseph Wang": {
-        "role": "shadow",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
+          },
           {
-            "at": "2026-11-01T10:39:19+09:00",
-            "url": "https://x.com/josephwang/status/2116706622391325050",
+            "at": "2026-11-04T13:22:24+09:00",
+            "url": "https://x.com/BiancoResearch/status/2117834824220057883",
             "kind": "post",
-            "preview": "Markets Weekly October 31, 2026 Spooky markets Mid-term implications",
+            "preview": "What I think is the biggest news from election night for markets: * A Democrat won the Texas govern…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T13:44:22+09:00",
+            "url": "https://x.com/BiancoResearch/status/2117840352614711619",
+            "kind": "post",
+            "preview": "Nationwide, 30 ballot measures sought to restrict data center construction. Restrict is leading 29 …",
             "noise_hint": false
           }
         ]
@@ -8089,10 +8532,45 @@
           }
         ]
       },
+      "Marko Papic": {
+        "role": "core",
+        "count": 4,
+        "non_noise": 4,
+        "items": [
+          {
+            "at": "2026-11-04T17:28:43+09:00",
+            "url": "https://x.com/Geo_papic/status/2117896814925930968",
+            "kind": "post",
+            "preview": "I love listening to @BillSimmons Over-Under pods like 10-15 games into the season. It's always fun …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T17:35:16+09:00",
+            "url": "https://x.com/Geo_papic/status/2117898462230397050",
+            "kind": "post",
+            "preview": "Way-too-early take on the election... 1. Farm states voted against tariffs. 2. Hispanics in Texas a…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T17:41:03+09:00",
+            "url": "https://x.com/Geo_papic/status/2117899916399763532",
+            "kind": "post",
+            "preview": "Tactical mismanagement has cost the Democrats an IND seat in Montana and a potentially robust win i…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T17:47:15+09:00",
+            "url": "https://x.com/Geo_papic/status/2117901475116421186",
+            "kind": "post",
+            "preview": "2028 does not get any easier for GOP. Defending Murkowski's seat in AK, Young in IN, Grassley in IA…",
+            "noise_hint": false
+          }
+        ]
+      },
       "Ryan Detrick": {
         "role": "core",
-        "count": 26,
-        "non_noise": 26,
+        "count": 28,
+        "non_noise": 28,
         "items": [
           {
             "at": "2026-11-02T00:40:51+09:00",
@@ -8278,19 +8756,40 @@
             "kind": "post",
             "preview": "Good reminder that the best scenario for stocks is a split Congress. A Democrat controlled Congress…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T12:23:30+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117820002984161628",
+            "kind": "post",
+            "preview": "The worst possible combination is a Republican President and a Democratic Congress. Futures seem to…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T13:46:49+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117840971035554120",
+            "kind": "post",
+            "preview": "This is now five consecutive midterms to see the makeup of Congress change power. You have to go ba…",
+            "noise_hint": false
           }
         ]
       },
       "Warren Pies": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-02T23:16:47+09:00",
             "url": "https://x.com/WarrenPies/status/2117259630686707951",
             "kind": "post",
             "preview": "Despite the (deserved) nervousness in the market, the S&P 500's three-month trading range has compr…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T12:09:53+09:00",
+            "url": "https://x.com/WarrenPies/status/2117816575281819888",
+            "kind": "post",
+            "preview": "Ignore the consensus opinion on midterm seasonality for now. “Bluenami” is not an immediate buy. Ex…",
             "noise_hint": false
           }
         ]
