@@ -1,25 +1,25 @@
 {
   "schema": "guru-manifest/v1",
-  "built_at": "2026-11-03T10:40:29+09:00",
+  "built_at": "2026-11-04T10:40:31+09:00",
   "note": "rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a source number [n] (several rids may share one [n] when they are the same appearance), or listed as noise by rid. auto_excluded records are games and bare reactions removed by code; they have no rid and need no handling. expected_records is the count to print; never recount.",
   "window": {
     "x": {
-      "lower_exclusive": "2026-11-02T10:15:30+09:00",
-      "upper": "2026-11-03T10:15:30+09:00",
+      "lower_exclusive": "2026-11-03T10:15:30+09:00",
+      "upper": "2026-11-04T10:15:33+09:00",
       "feed_regenerated_today": true
     },
     "yt": {
-      "lower_exclusive": "2026-11-02T10:11:00+09:00",
-      "upper": "2026-11-03T10:10:34+09:00",
+      "lower_exclusive": "2026-11-03T10:10:34+09:00",
+      "upper": "2026-11-04T10:10:34+09:00",
       "feed_regenerated_today": true
     },
     "web": {
-      "lower_exclusive": "2026-11-02T10:05:30+09:00",
-      "upper": "2026-11-03T10:05:27+09:00",
+      "lower_exclusive": "2026-11-03T10:05:27+09:00",
+      "upper": "2026-11-04T10:05:26+09:00",
       "feed_regenerated_today": true
     }
   },
-  "expected_records": 30,
+  "expected_records": 24,
   "rids": [
     "R001",
     "R002",
@@ -44,36 +44,30 @@
     "R021",
     "R022",
     "R023",
-    "R024",
-    "R025",
-    "R026",
-    "R027",
-    "R028",
-    "R029",
-    "R030"
+    "R024"
   ],
   "by_person": {
     "Cem Karsan": [
       "R001",
       "R002",
-      "R003"
-    ],
-    "Mark Newton": [
+      "R003",
       "R004"
     ],
-    "Warren Pies": [
-      "R005"
+    "Darius Dale": [
+      "R005",
+      "R006"
+    ],
+    "Mark Newton": [
+      "R007"
     ],
     "Andy Constan": [
-      "R006",
-      "R007",
       "R008",
       "R009",
-      "R010",
-      "R011",
-      "R012"
+      "R010"
     ],
     "Ryan Detrick": [
+      "R011",
+      "R012",
       "R013",
       "R014",
       "R015",
@@ -83,19 +77,13 @@
       "R019",
       "R020",
       "R021",
-      "R022",
-      "R023"
+      "R022"
     ],
     "Bob Elliott": [
-      "R024"
+      "R023"
     ],
-    "Lyn Alden": [
-      "R025",
-      "R026",
-      "R027",
-      "R028",
-      "R029",
-      "R030"
+    "Jim Bianco": [
+      "R024"
     ]
   },
   "records": [
@@ -105,10 +93,11 @@
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-03T02:57:07+09:00",
-      "url": "https://x.com/jam_croissant/status/2117315081058832749",
-      "kind": "post",
-      "preview": "Tasty Crumbs is back today with @JermalChandler at @tastyliveshow 🍒🥐 We’ll preview the market flows heading into Election Day at 3pm CT (4p…"
+      "at": "2026-11-03T14:09:02+09:00",
+      "url": "https://x.com/jam_croissant/status/2117484172042555805",
+      "kind": "quote_post",
+      "preview": "On a mission from God…",
+      "quoted_author": "windycitysp0rts"
     },
     {
       "rid": "R002",
@@ -116,66 +105,78 @@
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-03T05:49:00+09:00",
-      "url": "https://x.com/jam_croissant/status/2117358334403580015",
-      "kind": "post",
-      "preview": "Tasty Crumbs goes live in 10 minutes with @JermalChandler on @tastyliveshow 🍒🥐 Join us at 3pm CT (4pm ET) as we preview the flows into Elec…"
+      "at": "2026-11-04T03:38:33+09:00",
+      "url": "https://x.com/jam_croissant/status/2117687892877381919",
+      "kind": "quote_post",
+      "preview": "👂 to the admin… With election event vol, flows are positive. If they want to squeeze it higher into EOY they definitely can. Remember, the …",
+      "quoted_author": "financialjuice"
     },
     {
       "rid": "R003",
-      "feed": "X",
+      "feed": "YouTube",
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-03T07:23:02+09:00",
-      "url": "https://x.com/jam_croissant/status/2117381999585267970",
-      "kind": "post",
-      "preview": "ICYMI - Here's todays Tasty Crumbs on @tastyliveshow 🐻⬇️"
+      "at": "2026-11-03T13:08:40+09:00",
+      "published_at": "2026-11-02T00:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=IpOYPk0q2Vw",
+      "kind": "video",
+      "channel": "tastylive",
+      "grade": "1차-A",
+      "preview": "Cem Karsan Warned This Was Coming. He Says the Unwind Is Just Starting."
     },
     {
       "rid": "R004",
-      "feed": "X",
-      "person": "Mark Newton",
+      "feed": "web",
+      "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-03T09:46:26+09:00",
-      "url": "https://x.com/MarkNewtonCMT/status/2117418086139670696",
-      "kind": "post",
-      "preview": "$AAPL a bit wobbly near-term and momentum gave some much needed warnings for those short-term oriented over the last month #IBD charts from…"
+      "at": "2026-11-03T21:05:28+09:00",
+      "published_at": "2026-11-02T22:31:58+00:00",
+      "url": "https://www.tastylive.com/shows/tasty-crumbs-with-cem-karsan/episodes/tasty-crumbs-with-cem-karsan-11-02-2026",
+      "kind": "news_article",
+      "outlet": "tastylive",
+      "grade": "제목·설명만 확인",
+      "preview": "tasty Crumbs with Cem Karsan"
     },
     {
       "rid": "R005",
-      "feed": "X",
-      "person": "Warren Pies",
+      "feed": "YouTube",
+      "person": "Darius Dale",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-02T23:16:47+09:00",
-      "url": "https://x.com/WarrenPies/status/2117259630686707951",
-      "kind": "post",
-      "preview": "Despite the (deserved) nervousness in the market, the S&P 500's three-month trading range has compressed to ~3.5% (closing basis - historic…"
+      "at": "2026-11-04T03:21:08+09:00",
+      "published_at": "2026-11-03T17:56:23Z",
+      "url": "https://www.youtube.com/watch?v=YtFw8tBT2fs",
+      "kind": "video",
+      "channel": "42 Macro",
+      "grade": "제목·설명만 확인",
+      "preview": "Will the Midterm Elections Trigger a Q4 2018-style Market Regime?"
     },
     {
       "rid": "R006",
-      "feed": "X",
-      "person": "Andy Constan",
+      "feed": "YouTube",
+      "person": "Darius Dale",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-02T21:54:17+09:00",
-      "url": "https://x.com/dampedspring/status/2117238870873960862",
-      "kind": "post",
-      "preview": "GooG and Orcl today."
+      "tier": 1,
+      "at": "2026-11-04T10:10:34+09:00",
+      "published_at": "2026-11-03T21:00:12Z",
+      "url": "https://www.youtube.com/watch?v=kR5PD2T4pag",
+      "kind": "video",
+      "channel": "42 Macro",
+      "grade": "1차-A",
+      "preview": "The Macro Minute: Could the Midterms Trigger a Politically Induced Data-Center Slowdown?"
     },
     {
       "rid": "R007",
       "feed": "X",
-      "person": "Andy Constan",
+      "person": "Mark Newton",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-02T23:16:54+09:00",
-      "url": "https://x.com/dampedspring/status/2117259659195158998",
-      "kind": "quote_post",
-      "preview": "There is a difference between market not liking the deal fundamentally and the likelihood it will go through. On the latter point the deal …",
-      "quoted_author": "stevehou"
+      "tier": 1,
+      "at": "2026-11-04T08:58:05+09:00",
+      "url": "https://x.com/MarkNewtonCMT/status/2117768307285606441",
+      "kind": "post",
+      "preview": "$KYMR Kymera Therapeutics- I continue to find many HC stocks far more attractive than many within Tech these days, and scanning #IBD \"Break…"
     },
     {
       "rid": "R008",
@@ -183,10 +184,11 @@
       "person": "Andy Constan",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-02T23:21:42+09:00",
-      "url": "https://x.com/dampedspring/status/2117260867297333734",
-      "kind": "post",
-      "preview": "We got the DS team together for our monthly roundtable. Big week this week and strong views expressed. See pinned tweet for joining our ser…"
+      "at": "2026-11-04T05:39:40+09:00",
+      "url": "https://x.com/dampedspring/status/2117718376323666401",
+      "kind": "quote_post",
+      "preview": "Word",
+      "quoted_author": "DeepDishEnjoyer"
     },
     {
       "rid": "R009",
@@ -194,48 +196,46 @@
       "person": "Andy Constan",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-02T23:40:26+09:00",
-      "url": "https://x.com/dampedspring/status/2117265584131862648",
-      "kind": "quote_post",
-      "preview": "Fwiw the ICE News was good news. The Druck tweet was old news. The idiots on here chasing was stupid. I am a buyer of $PURR for a degen lun…",
-      "quoted_author": "dampedspring"
+      "at": "2026-11-04T09:53:11+09:00",
+      "url": "https://x.com/dampedspring/status/2117782176104120378",
+      "kind": "post",
+      "preview": "So Jarek Walter is Hannibal Lecter so far?"
     },
     {
       "rid": "R010",
-      "feed": "X",
+      "feed": "YouTube",
       "person": "Andy Constan",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-03T03:45:38+09:00",
-      "url": "https://x.com/dampedspring/status/2117327290329976945",
-      "kind": "quote_post",
-      "preview": "Cue my \"Everybody lies\" substack",
-      "quoted_author": "financialjuice"
+      "at": "2026-11-03T13:12:11+09:00",
+      "published_at": "2026-11-02T00:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo",
+      "kind": "video",
+      "channel": "Damped Spring",
+      "grade": "1차-A",
+      "preview": "Why We’re Fading the Election Week Rally (Midterms + QRA)"
     },
     {
       "rid": "R011",
       "feed": "X",
-      "person": "Andy Constan",
+      "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-03T05:49:16+09:00",
-      "url": "https://x.com/dampedspring/status/2117358403312136424",
+      "at": "2026-11-03T12:35:58+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117460752965509341",
       "kind": "post",
-      "preview": "1BN TGA in Q1 and a 150BN build 800 BN net funding need. Those are big numbers. Will @SecScottBessent double down and add to the funding ne…"
+      "preview": "Real GDP averaged 2.3% annualized over the past seven quarters, with IT equipment and software investment contributing 0.91 per quarter, al…"
     },
     {
       "rid": "R012",
-      "feed": "web",
-      "person": "Andy Constan",
+      "feed": "X",
+      "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-03T10:05:27+09:00",
-      "published_at": "2026-11-02T14:20:32+00:00",
-      "url": "https://tradersunion.com/news/market-voices/show/4062067-deal-spread-return-cash/",
-      "kind": "news_article",
-      "outlet": "Traders Union",
-      "grade": "제목·설명만 확인",
-      "preview": "Andy Constan: Deal spread implies 7.2% potential return versus 4.5% cash"
+      "at": "2026-11-03T13:03:52+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117467773676683623",
+      "kind": "post",
+      "preview": "South Korean exports are surging again. Nice chart from @DualityResearch."
     },
     {
       "rid": "R013",
@@ -243,10 +243,10 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-02T22:51:27+09:00",
-      "url": "https://x.com/RyanDetrick/status/2117253256149651963",
+      "at": "2026-11-04T00:37:37+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117642360603423108",
       "kind": "post",
-      "preview": "\"I'm willing to go bankrupt rather than lose this race.\" Google co-founder Larry Page on the AI race Capex spending is expected to reach $1…"
+      "preview": "The Social Hour is back. 🥂🍻 @sonusvarghese and I sat down with Alvin Graylin (@AGraylin), a 35-year AI and semiconductor veteran, on one of…"
     },
     {
       "rid": "R014",
@@ -254,10 +254,10 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-02T22:54:46+09:00",
-      "url": "https://x.com/RyanDetrick/status/2117254089851514957",
+      "at": "2026-11-04T03:30:15+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117685807297204473",
       "kind": "post",
-      "preview": "Hyperscaler free cash flow turned negative for the first time ever in Q3. Meaning that debt and financial engineering are now paying for th…"
+      "preview": "Four years ago there was no such thing as a single stock ETF. Today there are nearly 600 of them."
     },
     {
       "rid": "R015",
@@ -265,10 +265,10 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-02T23:45:23+09:00",
-      "url": "https://x.com/RyanDetrick/status/2117266826518286674",
+      "at": "2026-11-04T03:32:42+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117686422962422205",
       "kind": "post",
-      "preview": "Reminder number 2,863 not to share bank research on here or be very careful if you do 👇 👇 👇 @neilsethinew @MikeZaccardi"
+      "preview": "CCC spreads continue to widen, but overall, high yield spreads remains contained. At least for now."
     },
     {
       "rid": "R016",
@@ -276,10 +276,10 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-02T23:48:20+09:00",
-      "url": "https://x.com/RyanDetrick/status/2117267569853800546",
+      "at": "2026-11-04T04:18:17+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117697895793414580",
       "kind": "post",
-      "preview": "Be sure to catch @sonusvarghese on @BizBriefing with @janetonthemoney in about 10 minutes! You can 🎧 to it all on @SXMBusiness channel 132.…"
+      "preview": "What happens if Congress goes from red to blue? Three other times Congress flipped and the S&P 500 was up each time the following year. Sma…"
     },
     {
       "rid": "R017",
@@ -287,11 +287,10 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-03T03:32:05+09:00",
-      "url": "https://x.com/RyanDetrick/status/2117323878884106350",
-      "kind": "quote_post",
-      "preview": "Maybe all those 'we need better breadth' arguments we heard all summer long were a tad outside?",
-      "quoted_author": "sonusvarghese"
+      "at": "2026-11-04T04:45:30+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117704745120846243",
+      "kind": "post",
+      "preview": "Here's a new blog I wrote on three things to watch heading into midterms"
     },
     {
       "rid": "R018",
@@ -299,11 +298,11 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-03T07:31:01+09:00",
-      "url": "https://x.com/RyanDetrick/status/2117384009973940675",
+      "at": "2026-11-04T07:59:31+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117753570317512823",
       "kind": "quote_post",
-      "preview": "Great discussion with @AGraylin on our latest Facts vs Feelings Social Hour @sonusvarghese",
-      "quoted_author": "AGraylin"
+      "preview": "The man who literally wrote the book on seasonality with some knowledge here. @AlmanacTrader",
+      "quoted_author": "AlmanacTrader"
     },
     {
       "rid": "R019",
@@ -311,10 +310,10 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-03T08:51:48+09:00",
-      "url": "https://x.com/RyanDetrick/status/2117404339534778521",
+      "at": "2026-11-04T08:05:47+09:00",
+      "url": "https://x.com/RyanDetrick/status/2117755146398482715",
       "kind": "post",
-      "preview": "My Mom would have been 73 today. 😇 If you are lucky enough to still have your Mom still, give her a call tonight. Trust me, someday you'll …"
+      "preview": "Good reminder that the best scenario for stocks is a split Congress. A Democrat controlled Congress is the worst scenario historically."
     },
     {
       "rid": "R020",
@@ -322,13 +321,13 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-02T21:05:29+09:00",
-      "published_at": "2026-11-02T07:32:00+00:00",
-      "url": "https://www.tradingview.com/news/benzinga:f8e895ed0094b:0-s-p-500-is-up-19-for-19-times-in-midterm-november-april-window-according-to-ryan-detrick/",
-      "kind": "news_article",
-      "outlet": "TradingView",
-      "grade": "1차-인용",
-      "preview": "S&P 500 Is Up '19 For 19 Times' In Midterm November-April Window, According To Ryan Detrick"
+      "at": "2026-11-04T10:05:26+09:00",
+      "published_at": "2026-11-03T18:00:39+00:00",
+      "url": "https://www.carsongroup.com/insights/blog/three-things-to-watch-heading-into-midterm-elections/",
+      "kind": "official_blog",
+      "outlet": "Carson Group",
+      "grade": "1차",
+      "preview": "Three Things To Watch Heading Into Midterm Elections"
     },
     {
       "rid": "R021",
@@ -336,13 +335,13 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-03T10:05:27+09:00",
-      "published_at": "2026-11-02T18:35:28+00:00",
-      "url": "https://tradersunion.com/news/market-voices/show/4066640-summer-market-breadth-concerns/",
-      "kind": "news_article",
-      "outlet": "Traders Union",
+      "at": "2026-11-04T10:05:26+09:00",
+      "published_at": "2026-11-03T14:00:44+00:00",
+      "url": "https://www.carsongroup.com/insights/blog/social-hour-with-alvin-graylin-fvf/",
+      "kind": "official_blog",
+      "outlet": "Carson Group",
       "grade": "제목·설명만 확인",
-      "preview": "Ryan Detrick: Summer market breadth concerns may have been overstated"
+      "preview": "Social Hour With Alvin Graylin (FvF)"
     },
     {
       "rid": "R022",
@@ -350,123 +349,45 @@
       "person": "Ryan Detrick",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-03T10:05:27+09:00",
-      "published_at": "2026-10-30T16:49:31+00:00",
-      "url": "https://www.carsongroup.com/insights/blog/live-from-excell-fvf/",
-      "kind": "official_blog",
-      "outlet": "Carson Group",
+      "at": "2026-11-04T10:05:26+09:00",
+      "published_at": "2026-10-31T14:36:40+00:00",
+      "url": "https://tradersunion.com/news/market-voices/show/4046998-excell-panel-economy-fed/",
+      "kind": "news_article",
+      "outlet": "Traders Union",
       "grade": "제목·설명만 확인",
-      "preview": "Live From Excell 2026 (FvF)"
+      "preview": "Ryan Detrick: Experts discuss rates, Fed, and economy at Excell conference panel"
     },
     {
       "rid": "R023",
-      "feed": "web",
-      "person": "Ryan Detrick",
-      "role": "core",
-      "tier": 2,
-      "at": "2026-11-03T10:05:27+09:00",
-      "published_at": "2026-10-28T13:00:57+00:00",
-      "url": "https://www.carsongroup.com/insights/blog/be-careful-what-you-wish-for-fvf-ep-211/",
-      "kind": "official_blog",
-      "outlet": "Carson Group",
-      "grade": "제목·설명만 확인",
-      "preview": "Be Careful What You Wish For (FvF Ep. 211)"
-    },
-    {
-      "rid": "R024",
       "feed": "X",
       "person": "Bob Elliott",
       "role": "core",
       "tier": 3,
-      "at": "2026-11-02T21:15:00+09:00",
-      "url": "https://x.com/BobEUnlimited/status/2117228982206648756",
+      "at": "2026-11-03T21:15:00+09:00",
+      "url": "https://x.com/BobEUnlimited/status/2117591370147991849",
       "kind": "post",
-      "preview": "Underestimating the RBA’s Resolve Despite 100bps of hikes in the bag and another coming today, the economy is far from cooling enough for t…"
+      "preview": "The Shitload of Treasury Issuance Coming The first QRA release shows far more marketable borrowing coming in the first quarter than in rece…"
     },
     {
-      "rid": "R025",
+      "rid": "R024",
       "feed": "X",
-      "person": "Lyn Alden",
+      "person": "Jim Bianco",
       "role": "core",
       "tier": 3,
-      "at": "2026-11-02T14:15:51+09:00",
-      "url": "https://x.com/LynAldenContact/status/2117123499235975522",
+      "at": "2026-11-04T01:43:49+09:00",
+      "url": "https://x.com/BiancoResearch/status/2117659021108728095",
       "kind": "quote_post",
-      "preview": "Anakin is indeed the worst looser possible to emulate. Some people on this app say he just wanted a family. In reality, he ignored his fami…",
-      "quoted_author": "brianmccoppin"
-    },
-    {
-      "rid": "R026",
-      "feed": "X",
-      "person": "Lyn Alden",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-03T05:10:58+09:00",
-      "url": "https://x.com/LynAldenContact/status/2117348763354485097",
-      "kind": "quote_post",
-      "quoted_author": "Geiger_Capital"
-    },
-    {
-      "rid": "R027",
-      "feed": "X",
-      "person": "Lyn Alden",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-03T05:19:33+09:00",
-      "url": "https://x.com/LynAldenContact/status/2117350925484585194",
-      "kind": "post",
-      "preview": "That weird feeling where you're a structural bond bear for 8 years, and then things shift and you're not quite as bearish on them anymore."
-    },
-    {
-      "rid": "R028",
-      "feed": "X",
-      "person": "Lyn Alden",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-03T05:29:26+09:00",
-      "url": "https://x.com/LynAldenContact/status/2117353412119400777",
-      "kind": "post",
-      "preview": "Deciding whether to post more Anakin memes for focus on bond markets now."
-    },
-    {
-      "rid": "R029",
-      "feed": "X",
-      "person": "Lyn Alden",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-03T10:05:21+09:00",
-      "url": "https://x.com/LynAldenContact/status/2117422849925480590",
-      "kind": "quote_post",
-      "preview": "More Aragon, less Anakin.",
-      "quoted_author": "ericyakes"
-    },
-    {
-      "rid": "R030",
-      "feed": "web",
-      "person": "Lyn Alden",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-03T10:05:27+09:00",
-      "published_at": "2026-11-02T14:34:52+00:00",
-      "url": "https://www.cnbc.com/video/2026/11/02/lyn-alden-im-still-bullish-on-the-semiconductor-space.html",
-      "kind": "video_page",
-      "outlet": "CNBC",
-      "grade": "제목·설명만 확인",
-      "preview": "Lyn Alden: I'm still bullish on the semiconductor space"
+      "preview": "This is JP Morgan’s view is Wall Street consensus. It assumes there is one Democratic Party. My view aligns more with Democrat Strategist J…",
+      "quoted_author": "zerohedge"
     }
   ],
-  "auto_excluded_count": 2,
+  "auto_excluded_count": 1,
   "auto_excluded": [
     {
-      "person": "Lyn Alden",
-      "at": "2026-11-03T04:27:05+09:00",
-      "url": "https://x.com/LynAldenContact/status/2117337721337508098"
-    },
-    {
       "person": "Andy Constan",
-      "at": "2026-11-02T16:52:35+09:00",
-      "url": "https://x.com/dampedspring/status/2117162944274239997",
-      "preview": "Wordle 1,962 3/6* 🟩⬜⬜⬜⬜ 🟩🟩🟩⬜🟩 🟩🟩🟩🟩🟩"
+      "at": "2026-11-03T18:24:37+09:00",
+      "url": "https://x.com/dampedspring/status/2117548491899838472",
+      "preview": "Wordle 1,963 4/6* ⬜🟨⬜⬜⬜ 🟩⬜⬜🟨⬜ 🟩🟨🟨⬜⬜ 🟩🟩🟩🟩🟩"
     }
   ]
 }
