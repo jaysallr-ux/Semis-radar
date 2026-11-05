@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-04T21:05:28+09:00",
+  "generated_at": "2026-11-05T10:05:30+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -14,7 +14,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
+      "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -54,7 +54,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 5,
+      "items_in_window": 4,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -105,7 +105,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 4,
+      "items_in_window": 5,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -116,7 +116,7 @@
       "discovery_ok": true,
       "error": null,
       "items_in_window": 7,
-      "scoring_items": 1,
+      "scoring_items": 0,
       "pending_items": 0
     },
     {
@@ -125,7 +125,7 @@
       "role": "shadow",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 0,
+      "items_in_window": 1,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -136,7 +136,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 1,
+      "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -146,19 +146,19 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 0,
-      "scoring_items": 0,
+      "items_in_window": 1,
+      "scoring_items": 1,
       "pending_items": 0
     }
   ],
   "stats": {
-    "discovered": 133,
-    "new_items": 6,
-    "decoded": 8,
-    "bodies": 0,
-    "quotes_verified": 0,
+    "discovered": 131,
+    "new_items": 9,
+    "decoded": 11,
+    "bodies": 2,
+    "quotes_verified": 3,
     "video_candidates": 0,
-    "gemini_calls": 0,
+    "gemini_calls": 2,
     "gemini_skipped_cap": 0
   },
   "gemini": {
@@ -172,6 +172,122 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Ryan Detrick: Stocks surge as bullish sentiment returns",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-04T18:40:10+00:00",
+      "discovered_at": "2026-11-05T10:05:30+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4100732-stocks-surge-bullish-returns/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4100732-stocks-surge-bullish-returns/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Scott Rubner",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "Citadel Securities’ Rubner Says Stocks Are Set Up for Year-End Gains After Vote",
+      "outlet": "Yahoo Finance UK",
+      "published_at": "2026-11-04T17:14:22+00:00",
+      "discovered_at": "2026-11-05T10:05:30+09:00",
+      "article_url": "https://uk.finance.yahoo.com/news/citadel-securities-rubner-says-stocks-171422637.html",
+      "canonical_url": "https://uk.finance.yahoo.com/news/citadel-securities-rubner-says-stocks-171422637.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "With the election behind us and volatility potentially normalizing, there is considerable capacity for investors to rebuild risk",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "wrote Rubner"
+        },
+        {
+          "text": "With uncertainty fading and several of the market's largest buyers returning, we believe the path of least resistance for U.S. equities is higher into year-end.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Rubner wrote"
+        },
+        {
+          "text": "breathing a sigh of relief",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Rubner wrote"
+        }
+      ],
+      "direction_hint": "bullish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-05T10:05:30+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "official_blog",
+      "title": "When Will the Madness End? (FvF Ep. 212)",
+      "outlet": "Carson Group",
+      "published_at": "2026-11-04T14:00:30+00:00",
+      "discovered_at": "2026-11-05T10:05:30+09:00",
+      "article_url": "https://www.carsongroup.com/insights/blog/when-will-the-madness-end-fvf-ep-212/",
+      "canonical_url": "https://www.carsongroup.com/insights/blog/when-will-the-madness-end-fvf-ep-212/",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Jim Bianco",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Jim Bianco Calls Gina Hinojosa’s Texas Win ‘Biggest News’ From Elections, Flags Risk to AI Data Center Ex",
+      "outlet": "Benzinga",
+      "published_at": "2026-11-04T13:46:43+00:00",
+      "discovered_at": "2026-11-05T10:05:30+09:00",
+      "article_url": "https://www.benzinga.com/markets/tech/26/11/62863642/jim-bianco-calls-gina-hinojosas-texas-win-biggest-news-from-elections-flags-risk-to-ai-data-center-expansion-as-state-set-to-host-25-of-new-capacity",
+      "canonical_url": "https://www.benzinga.com/markets/tech/26/11/62863642/jim-bianco-calls-gina-hinojosas-texas-win-biggest-news-from-elections-flags-risk-to-ai-data-center-expansion-as-state-set-to-host-25-of-new-capacity",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Joseph Wang",
+      "tier": 4,
+      "role": "shadow",
+      "source_kind": "news_article",
+      "title": "Joseph Wang: Treasury did not reduce long end issuance as expected",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-04T13:37:07+00:00",
+      "discovered_at": "2026-11-05T10:05:30+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4094153-treasury-long-end-issuance/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4094153-treasury-long-end-issuance/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Andy Constan",
       "tier": 2,
@@ -274,6 +390,25 @@
       "evidence_grade": "제목·설명만 확인",
       "evidence_ready_at": null,
       "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Outlook on bonds has shifted after eight years of bearishness, Lyn Alden notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-02T20:20:33+00:00",
+      "discovered_at": "2026-11-05T10:05:30+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4067753-alden-bond-bearish-shift/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4067753-alden-bond-bearish-shift/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
       "gemini_error_count": 0
     },
     {
@@ -390,6 +525,25 @@
       "gemini_status": "ready",
       "gemini_error_count": 0,
       "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Mike Wilson",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "Market Outlook: Mike Wilson Sees Opportunities Amidst Potential Declines",
+      "outlet": "GuruFocus",
+      "published_at": "2026-11-02T01:12:28+00:00",
+      "discovered_at": "2026-11-05T10:05:30+09:00",
+      "article_url": "https://www.gurufocus.com/news/9161385/market-outlook-mike-wilson-sees-opportunities-amidst-potential-declines?utm_source",
+      "canonical_url": "https://www.gurufocus.com/news/9161385/market-outlook-mike-wilson-sees-opportunities-amidst-potential-declines?utm_source",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
     },
     {
       "person": "Mike Wilson",
@@ -782,117 +936,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_direct_quotes",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Lyn Alden",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Bitcoin Could Steal AI’s Spotlight as ‘Fast Money Is Long Gone,’ Lyn Alden Says",
-      "outlet": "TradingView",
-      "published_at": "2026-10-28T20:31:23+00:00",
-      "discovered_at": "2026-10-29T10:05:25+09:00",
-      "article_url": "https://www.tradingview.com/news/benzinga:16c33c36c094b:0-bitcoin-could-steal-ai-s-spotlight-as-fast-money-is-long-gone-lyn-alden-says/",
-      "canonical_url": "https://www.tradingview.com/news/benzinga:16c33c36c094b:0-bitcoin-could-steal-ai-s-spotlight-as-fast-money-is-long-gone-lyn-alden-says/",
-      "body_fetch_status": 200,
-      "direct_quotes": [
-        {
-          "text": "It doesn’t have to be that AI rolls over",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "she said"
-        },
-        {
-          "text": "It just has to stop being the fastest horse.",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "she said"
-        }
-      ],
-      "direction_hint": "not_stated",
-      "evidence_grade": "1차-인용",
-      "evidence_ready_at": "2026-10-29T10:05:25+09:00",
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Andy Constan",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Warsh’s comment on interest rates prompts debate, Andy Constan notes",
-      "outlet": "Traders Union",
-      "published_at": "2026-10-28T19:20:28+00:00",
-      "discovered_at": "2026-10-29T10:05:25+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4003991-interest-rate-comment-questioned/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4003991-interest-rate-comment-questioned/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "source_kind": "video_page",
-      "title": "Nothing has changed to make Fed Chair Warsh more hawkish or dovish, says Kai Wealth’s Cem Karsan",
-      "outlet": "CNBC",
-      "published_at": "2026-10-28T18:12:47+00:00",
-      "discovered_at": "2026-10-29T10:05:25+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/10/28/nothing-has-changed-to-make-fed-chair-warsh-more-hawkish-or-dovish-says-kai-wealthas-cem-karsan.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/10/28/nothing-has-changed-to-make-fed-chair-warsh-more-hawkish-or-dovish-says-kai-wealthas-cem-karsan.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
-    },
-    {
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Ryan Detrick: Bull market conditions persist with unexpected breadth and rising sentiment",
-      "outlet": "Traders Union",
-      "published_at": "2026-10-28T13:50:26+00:00",
-      "discovered_at": "2026-10-29T10:05:25+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/3998132-bull-market-breadth-sentiment/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/3998132-bull-market-breadth-sentiment/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "official_blog",
-      "title": "Be Careful What You Wish For (FvF Ep. 211)",
-      "outlet": "Carson Group",
-      "published_at": "2026-10-28T13:00:57+00:00",
-      "discovered_at": "2026-11-03T10:05:27+09:00",
-      "article_url": "https://www.carsongroup.com/insights/blog/be-careful-what-you-wish-for-fvf-ep-211/",
-      "canonical_url": "https://www.carsongroup.com/insights/blog/be-careful-what-you-wish-for-fvf-ep-211/",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
     }
   ],
   "person_index": {
@@ -957,10 +1000,42 @@
           }
         ]
       },
-      "Lyn Alden": {
+      "Jim Bianco": {
         "role": "core",
         "count": 1,
         "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-05T10:05:30+09:00",
+            "url": "https://www.benzinga.com/markets/tech/26/11/62863642/jim-bianco-calls-gina-hinojosas-texas-win-biggest-news-from-elections-flags-risk-to-ai-data-center-expansion-as-state-set-to-host-25-of-new-capacity",
+            "kind": "news_article",
+            "preview": "Jim Bianco Calls Gina Hinojosa’s Texas Win ‘Biggest News’ From Elections, Flags Risk to AI Data Cen…",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-04T13:46:43+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Joseph Wang": {
+        "role": "shadow",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-05T10:05:30+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4094153-treasury-long-end-issuance/",
+            "kind": "news_article",
+            "preview": "Joseph Wang: Treasury did not reduce long end issuance as expected",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-04T13:37:07+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Lyn Alden": {
+        "role": "core",
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-03T10:05:27+09:00",
@@ -969,6 +1044,15 @@
             "preview": "Lyn Alden: I'm still bullish on the semiconductor space",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-02T14:34:52+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T10:05:30+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4067753-alden-bond-bearish-shift/",
+            "kind": "news_article",
+            "preview": "Outlook on bonds has shifted after eight years of bearishness, Lyn Alden notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-02T20:20:33+00:00",
             "noise_hint": false
           }
         ]
@@ -991,8 +1075,8 @@
       },
       "Mike Wilson": {
         "role": "observer",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-02T10:05:30+09:00",
@@ -1002,13 +1086,22 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-01T14:00:00+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T10:05:30+09:00",
+            "url": "https://www.gurufocus.com/news/9161385/market-outlook-mike-wilson-sees-opportunities-amidst-potential-declines?utm_source",
+            "kind": "news_article",
+            "preview": "Market Outlook: Mike Wilson Sees Opportunities Amidst Potential Declines",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-02T01:12:28+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 7,
-        "non_noise": 7,
+        "count": 8,
+        "non_noise": 8,
         "items": [
           {
             "at": "2026-11-02T21:05:29+09:00",
@@ -1038,15 +1131,6 @@
             "noise_hint": false
           },
           {
-            "at": "2026-11-03T10:05:27+09:00",
-            "url": "https://www.carsongroup.com/insights/blog/be-careful-what-you-wish-for-fvf-ep-211/",
-            "kind": "official_blog",
-            "preview": "Be Careful What You Wish For (FvF Ep. 211)",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-28T13:00:57+00:00",
-            "noise_hint": false
-          },
-          {
             "at": "2026-11-04T10:05:26+09:00",
             "url": "https://www.carsongroup.com/insights/blog/three-things-to-watch-heading-into-midterm-elections/",
             "kind": "official_blog",
@@ -1071,6 +1155,40 @@
             "preview": "Ryan Detrick: Experts discuss rates, Fed, and economy at Excell conference panel",
             "grade": "제목·설명만 확인",
             "published_at": "2026-10-31T14:36:40+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T10:05:30+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4100732-stocks-surge-bullish-returns/",
+            "kind": "news_article",
+            "preview": "Ryan Detrick: Stocks surge as bullish sentiment returns",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-04T18:40:10+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T10:05:30+09:00",
+            "url": "https://www.carsongroup.com/insights/blog/when-will-the-madness-end-fvf-ep-212/",
+            "kind": "official_blog",
+            "preview": "When Will the Madness End? (FvF Ep. 212)",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-04T14:00:30+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Scott Rubner": {
+        "role": "observer",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-05T10:05:30+09:00",
+            "url": "https://uk.finance.yahoo.com/news/citadel-securities-rubner-says-stocks-171422637.html",
+            "kind": "news_article",
+            "preview": "Citadel Securities’ Rubner Says Stocks Are Set Up for Year-End Gains After Vote",
+            "grade": "1차-인용",
+            "published_at": "2026-11-04T17:14:22+00:00",
             "noise_hint": false
           }
         ]
