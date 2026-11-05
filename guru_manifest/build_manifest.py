@@ -32,10 +32,13 @@ FEEDS = {
 }
 # First build only: the checkpoints the 11/01 11:00 run stored.
 SEED_LOWER = {"x": "2026-11-01T10:15:33+09:00", "yt": "2026-11-01T10:10:28+09:00", "web": "2026-11-01T10:05:24+09:00"}
+PEOPLE = REPO / "guru_yt" / "channels.json"
 FIELDS_NOTE = ("rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a "
                "source number [n] (several rids may share one [n] when they are the same appearance), or listed "
                "as noise by rid. auto_excluded records are games and bare reactions removed by code; they have no "
-               "rid and need no handling. expected_records is the count to print; never recount.")
+               "rid and need no handling. watch_only records (people flagged watch_only, e.g. Ryan Detrick) have no rid either: "
+               "they are not shown in the reading section and are checked only for their T2 trigger. "
+               "expected_records is the count to print; never recount.")
 
 
 def kst(dt: datetime) -> str:
@@ -110,6 +113,9 @@ def build(now: datetime) -> dict:
             records += yt_records(f, lo, hi)
         else:
             records += web_records(f, lo, hi)
+    watch = {p["person"] for p in load(PEOPLE).get("people", []) if p.get("watch_only")}
+    watch_only = [r for r in records if r["person"] in watch]
+    records = [r for r in records if r["person"] not in watch]
     order = {"core": 0, "shadow": 1, "observer": 2}
     records.sort(key=lambda r: (order.get(r["role"], 3), str(r.get("tier") or 9), r["person"] or "", r["feed"], r["at"]))
     vid_rid = {}
@@ -135,6 +141,8 @@ def build(now: datetime) -> dict:
         "rids": [r["rid"] for r in records],
         "by_person": by_person,
         "records": [{"rid": r["rid"], **{k: v for k, v in r.items() if k != "rid"}} for r in records],
+        "watch_only_count": len(watch_only),
+        "watch_only": [{k: w[k] for k in ("person", "at", "url", "preview") if w.get(k)} for w in watch_only],
         "auto_excluded_count": len(auto),
         "auto_excluded": [{k: a[k] for k in ("person", "at", "url", "preview") if a.get(k)} for a in auto],
     }
