@@ -43,8 +43,12 @@ def main():
                 out.append({"code": r.code, "corp_code": r.corp_code, "pblntf_ty": ty, "rcept_no": x["rcept_no"],
                             "rcept_dt": x["rcept_dt"], "report_nm": x["report_nm"].strip(),
                             "corp_name": x.get("corp_name", ""), "why": r.why})
-    pd.DataFrame(out).to_csv(os.path.join(OUT, "filings.csv"), index=False, encoding="utf-8-sig")
-    pd.DataFrame(log).to_csv(os.path.join(OUT, "status.csv"), index=False, encoding="utf-8-sig")
+    # 누적 저장: 이전 요청 결과를 지우지 않고 합침(분류 근거 추적용)
+    fp, sp = os.path.join(OUT, "filings.csv"), os.path.join(OUT, "status.csv")
+    old = pd.read_csv(fp, dtype=str) if os.path.exists(fp) else pd.DataFrame()
+    olds = pd.read_csv(sp, dtype=str) if os.path.exists(sp) else pd.DataFrame()
+    pd.concat([old, pd.DataFrame(out)]).drop_duplicates(["code", "corp_code", "rcept_no"]).to_csv(fp, index=False, encoding="utf-8-sig")
+    pd.concat([olds, pd.DataFrame(log)]).to_csv(sp, index=False, encoding="utf-8-sig")
     print("목록", len(out), "| 조회", len(log), "| 오류", sum(1 for x in log if x["status"] not in ("000", "013")))
 
 
