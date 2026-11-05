@@ -1,0 +1,139 @@
+{
+  "eval": [
+    "2016-01-04",
+    "2026-11-03"
+  ],
+  "metrics": {
+    "A·①매일": {
+      "cagr_net_pct": 31.4,
+      "cagr_gross_pct": 31.4,
+      "sharpe_net": 0.84,
+      "mdd_pct": -48.4,
+      "peak": "2026-06-12",
+      "trough": "2026-07-30",
+      "recovered": "2026-10-06",
+      "turnover_per_year": 0.0,
+      "cost_drag_pct_per_year": 0.0,
+      "invested_share": 1.0
+    },
+    "B·①매일": {
+      "cagr_net_pct": 27.4,
+      "cagr_gross_pct": 31.4,
+      "sharpe_net": 0.89,
+      "mdd_pct": -29.7,
+      "peak": "2017-11-24",
+      "trough": "2019-01-22",
+      "recovered": "2020-02-14",
+      "turnover_per_year": 12.6,
+      "cost_drag_pct_per_year": 4.1,
+      "invested_share": 0.659
+    },
+    "D·①매일": {
+      "cagr_net_pct": 52.8,
+      "cagr_gross_pct": 55.8,
+      "sharpe_net": 1.06,
+      "mdd_pct": -68.8,
+      "peak": "2017-07-19",
+      "trough": "2020-03-19",
+      "recovered": "2021-01-21",
+      "turnover_per_year": 8.0,
+      "cost_drag_pct_per_year": 3.1,
+      "invested_share": 1.0
+    },
+    "D+B·①매일": {
+      "cagr_net_pct": 39.2,
+      "cagr_gross_pct": 45.3,
+      "sharpe_net": 0.99,
+      "mdd_pct": -55.7,
+      "peak": "2017-07-19",
+      "trough": "2020-03-10",
+      "recovered": "2021-12-23",
+      "turnover_per_year": 17.0,
+      "cost_drag_pct_per_year": 6.0,
+      "invested_share": 0.659
+    },
+    "A·②월재조정": {
+      "cagr_net_pct": 30.3,
+      "cagr_gross_pct": 30.7,
+      "sharpe_net": 0.82,
+      "mdd_pct": -48.3,
+      "peak": "2026-06-12",
+      "trough": "2026-07-30",
+      "recovered": "미회복",
+      "turnover_per_year": 1.0,
+      "cost_drag_pct_per_year": 0.3,
+      "invested_share": 1.0
+    },
+    "B·②월재조정": {
+      "cagr_net_pct": 26.0,
+      "cagr_gross_pct": 30.3,
+      "sharpe_net": 0.85,
+      "mdd_pct": -29.2,
+      "peak": "2017-11-24",
+      "trough": "2019-01-22",
+      "recovered": "2020-02-14",
+      "turnover_per_year": 13.2,
+      "cost_drag_pct_per_year": 4.2,
+      "invested_share": 0.656
+    },
+    "D·②월재조정": {
+      "cagr_net_pct": 50.5,
+      "cagr_gross_pct": 53.9,
+      "sharpe_net": 1.03,
+      "mdd_pct": -63.2,
+      "peak": "2017-07-24",
+      "trough": "2020-03-19",
+      "recovered": "2021-01-04",
+      "turnover_per_year": 9.0,
+      "cost_drag_pct_per_year": 3.4,
+      "invested_share": 1.0
+    },
+    "D+B·②월재조정": {
+      "cagr_net_pct": 35.7,
+      "cagr_gross_pct": 41.9,
+      "sharpe_net": 0.92,
+      "mdd_pct": -53.9,
+      "peak": "2017-07-24",
+      "trough": "2019-09-10",
+      "recovered": "2021-04-19",
+      "turnover_per_year": 17.8,
+      "cost_drag_pct_per_year": 6.2,
+      "invested_share": 0.656
+    }
+  },
+  "bootstrap": {
+    "A·② vs B·②": {
+      "sharpe_diff": -0.03,
+      "p_gt0": 0.397,
+      "ci90": [
+        -0.34,
+        0.23
+      ]
+    },
+    "D·② vs B·②": {
+      "sharpe_diff": 0.18,
+      "p_gt0": 0.765,
+      "ci90": [
+        -0.22,
+        0.56
+      ]
+    },
+    "D+B·② vs B·②": {
+      "sharpe_diff": 0.07,
+      "p_gt0": 0.634,
+      "ci90": [
+        -0.32,
+        0.43
+      ]
+    }
+  },
+  "d_holdings_monthly": {
+    "기판": 0.216,
+    "대형": 0.163,
+    "부품": 0.147,
+    "후공정": 0.138,
+    "테스트": 0.13,
+    "소재": 0.107,
+    "전공정": 0.099
+  }
+}
