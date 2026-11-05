@@ -1,0 +1,53 @@
+name: semis-radar-dart-scan
+
+# DART 거름망 스캔. .github/dart-scan-trigger.txt 첫 줄에 sample 또는 full 을 적어 푸시하면 실행
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - ".github/dart-scan-trigger.txt"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: semis-radar-dart-scan
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas requests
+      - name: Scan
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          PYTHONUNBUFFERED: "1"
+        run: |
+          MODE=$(head -n1 .github/dart-scan-trigger.txt | tr -d '[:space:]')
+          echo "mode=$MODE"
+          echo "MODE=$MODE" >> "$GITHUB_ENV"
+          python research/pit/dart_scan.py --mode "$MODE" 2>&1 | tee research/pit/classification/scan_log_${MODE}.txt
+      - name: Upload raw documents
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dart-raw-${{ env.MODE }}-${{ github.run_id }}
+          path: |
+            research/pit/classification/scan_${{ env.MODE }}/raw/
+            research/pit/classification/scan_${{ env.MODE }}/text/
+          retention-days: 90
+      - name: Commit tables
+        if: always()
+        run: |
+          git config user.name "semis-radar-bot"
+          git config user.email "semis-radar-bot@users.noreply.github.com"
+          git add research/pit/classification/
+          git commit -m "dart scan ${MODE} $(date +'%Y-%m-%d %H:%M') run ${GITHUB_RUN_ID}" || echo "변경 없음"
+          git pull --rebase
+          git push
