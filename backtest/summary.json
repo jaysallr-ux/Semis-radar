@@ -56,24 +56,185 @@
       "ongoing": false
     }
   ],
+  "leader_validation": {
+    "fwd20": {
+      "part_leader": {
+        "n": 1169,
+        "mean_excess_pct": 1.45,
+        "hit_rate": 0.535,
+        "n_nonoverlap": 59,
+        "t_nonoverlap": 0.64
+      },
+      "part_leader_start_events": {
+        "n": 102,
+        "mean_excess_pct": 1.32,
+        "hit_rate": 0.52,
+        "n_nonoverlap": 102,
+        "t_nonoverlap": 1.6
+      },
+      "naive_top_rs_part": {
+        "n": 2862,
+        "mean_excess_pct": 1.06,
+        "hit_rate": 0.52,
+        "n_nonoverlap": 144,
+        "t_nonoverlap": 1.61
+      },
+      "hynix_lead": {
+        "n": 449,
+        "mean_excess_pct": 1.15,
+        "hit_rate": 0.443,
+        "n_nonoverlap": 23,
+        "t_nonoverlap": 0.89
+      },
+      "hynix_defensive": {
+        "n": 29,
+        "mean_excess_pct": -9.29,
+        "hit_rate": 0.241,
+        "n_nonoverlap": 2,
+        "t_nonoverlap": null
+      }
+    },
+    "fwd60": {
+      "part_leader": {
+        "n": 1160,
+        "mean_excess_pct": 2.88,
+        "hit_rate": 0.559,
+        "n_nonoverlap": 20,
+        "t_nonoverlap": 1.07
+      },
+      "part_leader_start_events": {
+        "n": 98,
+        "mean_excess_pct": 2.63,
+        "hit_rate": 0.49,
+        "n_nonoverlap": 98,
+        "t_nonoverlap": 1.45
+      },
+      "naive_top_rs_part": {
+        "n": 2822,
+        "mean_excess_pct": 2.5,
+        "hit_rate": 0.528,
+        "n_nonoverlap": 48,
+        "t_nonoverlap": 1.28
+      },
+      "hynix_lead": {
+        "n": 444,
+        "mean_excess_pct": 1.04,
+        "hit_rate": 0.491,
+        "n_nonoverlap": 8,
+        "t_nonoverlap": 0.26
+      },
+      "hynix_defensive": {
+        "n": 29,
+        "mean_excess_pct": -20.56,
+        "hit_rate": 0.241,
+        "n_nonoverlap": 1,
+        "t_nonoverlap": null
+      }
+    }
+  },
+  "state_conditional": {
+    "fwd60": {
+      "NORMAL": {
+        "n": 1653,
+        "mean_pct": 7.6,
+        "pos_rate": 0.621
+      },
+      "EARLY": {
+        "n": 411,
+        "mean_pct": 7.9,
+        "pos_rate": 0.742
+      },
+      "CONFIRMED": {
+        "n": 758,
+        "mean_pct": 10.2,
+        "pos_rate": 0.678
+      },
+      "ALL": {
+        "n": 2822,
+        "mean_pct": 8.3,
+        "pos_rate": 0.654
+      },
+      "CONFIRMED·없음": {
+        "n": 376,
+        "mean_pct": 7.5,
+        "pos_rate": 0.625
+      },
+      "CONFIRMED·주의": {
+        "n": 243,
+        "mean_pct": 11.6,
+        "pos_rate": 0.716
+      },
+      "CONFIRMED·후반경고": {
+        "n": 120,
+        "mean_pct": 14.6,
+        "pos_rate": 0.742
+      },
+      "CONFIRMED·강한 후반경고": {
+        "n": 19,
+        "mean_pct": 18.7,
+        "pos_rate": 0.842
+      }
+    },
+    "fwd120": {
+      "NORMAL": {
+        "n": 1597,
+        "mean_pct": 16.6,
+        "pos_rate": 0.694
+      },
+      "EARLY": {
+        "n": 411,
+        "mean_pct": 19.1,
+        "pos_rate": 0.771
+      },
+      "CONFIRMED": {
+        "n": 754,
+        "mean_pct": 19.7,
+        "pos_rate": 0.736
+      },
+      "ALL": {
+        "n": 2762,
+        "mean_pct": 17.8,
+        "pos_rate": 0.717
+      },
+      "CONFIRMED·없음": {
+        "n": 372,
+        "mean_pct": 25.7,
+        "pos_rate": 0.809
+      },
+      "CONFIRMED·주의": {
+        "n": 243,
+        "mean_pct": 13.2,
+        "pos_rate": 0.658
+      },
+      "CONFIRMED·후반경고": {
+        "n": 120,
+        "mean_pct": 15.7,
+        "pos_rate": 0.683
+      },
+      "CONFIRMED·강한 후반경고": {
+        "n": 19,
+        "mean_pct": 11.5,
+        "pos_rate": 0.632
+      }
+    }
+  },
   "auto": {
     "baseline": {
-      "n_days": 2741,
-      "fwd120_median_pct": 14.0,
-      "fwd120_mean_pct": 17.9,
-      "mae60_mean_pct": -8.6,
+      "n_days": 2762,
+      "fwd120_median_pct": 13.8,
+      "fwd120_mean_pct": 17.8,
+      "mae60_mean_pct": -8.7,
       "quality_pass_rate": 0.416
     },
     "signals": {
       "n": 61,
-      "quality_pass_rate": 0.448,
+      "quality_pass_rate": 0.458,
       "labels": {
         "진입 성공": 19,
-        "후반 재진입": 16,
+        "후반 재진입": 17,
         "진입 실패": 13,
         "헛방": 9,
-        "너무 이름": 3,
-        "판정대기(기간부족)": 1
+        "너무 이름": 3
       }
     },
     "cycles": [
@@ -135,32 +296,32 @@
     ],
     "random_test": {
       "signal_in_cycle_share": 0.852,
-      "random_in_cycle_share_mean": 0.831,
-      "in_cycle_percentile": 66.8,
-      "signal_fwd120_mean_pct": 18.6,
+      "random_in_cycle_share_mean": 0.832,
+      "in_cycle_percentile": 68.2,
+      "signal_fwd120_mean_pct": 18.7,
       "random_fwd120_mean_pct": 17.9,
-      "fwd120_percentile": 57.2
+      "fwd120_percentile": 58.6
     }
   },
   "manual": {
     "baseline": {
-      "n_days": 2741,
-      "fwd120_median_pct": 14.0,
-      "fwd120_mean_pct": 17.9,
-      "mae60_mean_pct": -8.6,
+      "n_days": 2762,
+      "fwd120_median_pct": 13.8,
+      "fwd120_mean_pct": 17.8,
+      "mae60_mean_pct": -8.7,
       "quality_pass_rate": 0.416
     },
     "signals": {
       "n": 61,
-      "quality_pass_rate": 0.448,
+      "quality_pass_rate": 0.458,
       "labels": {
-        "진입 성공": 21,
+        "진입 성공": 22,
         "후반 재진입": 13,
         "진입 실패": 11,
         "헛방": 9,
-        "판정대기(기간부족)": 3,
         "선행 진입 성공": 2,
-        "너무 이름": 2
+        "너무 이름": 2,
+        "판정대기(기간부족)": 2
       }
     },
     "cycles": [
@@ -211,11 +372,11 @@
     ],
     "random_test": {
       "signal_in_cycle_share": 0.852,
-      "random_in_cycle_share_mean": 0.82,
-      "in_cycle_percentile": 74.1,
-      "signal_fwd120_mean_pct": 18.6,
-      "random_fwd120_mean_pct": 17.8,
-      "fwd120_percentile": 58.2
+      "random_in_cycle_share_mean": 0.821,
+      "in_cycle_percentile": 75.5,
+      "signal_fwd120_mean_pct": 18.7,
+      "random_fwd120_mean_pct": 17.7,
+      "fwd120_percentile": 59.9
     }
   }
 }
