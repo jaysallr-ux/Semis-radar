@@ -1,0 +1,26 @@
+name: semis-radar-dart-check
+
+# OpenDART 키 동작 확인 (키 값 출력 안 함). .github/dart-check-trigger.txt 를 바꿔 푸시하면 실행
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - ".github/dart-check-trigger.txt"
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Check
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+        run: python research/pit/dart_check.py
