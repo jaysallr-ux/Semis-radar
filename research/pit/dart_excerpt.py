@@ -24,6 +24,7 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "classification",
 SUB = re.compile(r'<TITLE[^>]*>([^<]*)</TITLE>', re.I)
 OVERVIEW_CHARS = 2500
 PRODUCT_CHARS = 6000
+SALES_CHARS = 5000
 
 
 def clean(x):
@@ -60,6 +61,13 @@ def business_parts(xml):
         m = re.search(r"(주요\s*제품\s*(등의)?\s*(현황|매출)|사업부문별\s*매출|제품별\s*매출|매출\s*실적|부문별\s*매출)", full)
         if m:
             pr = "[본문 검색: " + m.group(0) + "]\n" + full[m.start():m.start() + PRODUCT_CHARS]
+    sa = sect(r"매출\s*(및|에\s*관한)")
+    if sa is None:
+        m2 = re.search(r"(매출\s*및\s*수주\s*상황|매출에\s*관한\s*사항|매출실적|용도별\s*매출|제품별\s*매출)", full[OVERVIEW_CHARS:])
+        if m2:
+            st2 = OVERVIEW_CHARS + m2.start()
+            sa = "[본문 검색: " + m2.group(0) + "]\n" + full[st2:st2 + SALES_CHARS]
+    business_parts.sales = sa
     if ov is None and pr is None:
         return full[:OVERVIEW_CHARS + PRODUCT_CHARS], None, True
     return ov if ov is not None else full[:OVERVIEW_CHARS], pr, True
@@ -84,6 +92,7 @@ def main():
         main_f = next((n for n in names if os.path.basename(n) == f"{r.rcept_no}.xml"), None) or \
             max(names, key=lambda n: z.getinfo(n).file_size)
         xml, enc = decode(z.read(main_f))
+        business_parts.sales = None
         ov, pr, found = business_parts(xml)
         with open(fn, "w", encoding="utf-8") as f:
             f.write(f"code={r.code} rcept_no={r.rcept_no} rcept_dt={r.rcept_dt} report={r.report_nm}\n")
@@ -92,6 +101,8 @@ def main():
             f.write((ov or "(없음)")[:OVERVIEW_CHARS] + "\n")
             f.write("=== 주요 제품 ===\n")
             f.write((pr or "(없음)")[:PRODUCT_CHARS] + "\n")
+            f.write("=== 매출 및 수주상황 ===\n")
+            f.write((getattr(business_parts, "sales", None) or "(없음)")[:SALES_CHARS] + "\n")
         print("저장", fn)
 
 
