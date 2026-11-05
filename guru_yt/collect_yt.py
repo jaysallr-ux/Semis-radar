@@ -263,7 +263,7 @@ def video_meta(http: Http, vid: str, supadata_key: str | None, state: dict) -> d
     return out
 
 
-EXTRA_MATCHES = ("web_discovery", "extra")  # videos accepted one by one: exempt from the 48h backfill limit
+EXTRA_MATCHES = ("web_discovery", "extra", "x_self_link")  # videos accepted one by one: exempt from the 48h backfill limit
 
 
 def watch_meta(http: Http, vid: str) -> dict:
