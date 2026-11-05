@@ -1,10 +1,9 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-05T23:41:05+09:00",
+  "generated_at": "2026-11-05T23:42:26+09:00",
   "data_ok": false,
   "errors": {
-    "Carson Group feed": "carson /feed:403 /feed/:403 /insights/blog/feed/:403 /author/ryan-detrick/feed/:403 /feed/:403",
-    "Fairlead Substack": "substack 403"
+    "Carson Group feed": "carson /feed:403 /feed/:403 /insights/blog/feed/:403 /author/ryan-detrick/feed/:403 /feed/:403"
   },
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
   "new_statement_clock": "evidence_ready_at",
@@ -148,7 +147,6 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "official_source_ok": false,
       "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
@@ -176,7 +174,7 @@
     }
   ],
   "stats": {
-    "discovered": 143,
+    "discovered": 144,
     "new_items": 4,
     "decoded": 6,
     "bodies": 0,
