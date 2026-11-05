@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-05T23:43:16+09:00",
+  "generated_at": "2026-11-06T00:10:26+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -75,7 +75,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 9,
+      "items_in_window": 10,
       "scoring_items": 2,
       "pending_items": 0
     },
@@ -172,9 +172,9 @@
     }
   ],
   "stats": {
-    "discovered": 144,
-    "new_items": 4,
-    "decoded": 6,
+    "discovered": 145,
+    "new_items": 8,
+    "decoded": 10,
     "bodies": 0,
     "quotes_verified": 0,
     "video_candidates": 0,
@@ -183,7 +183,7 @@
   },
   "gemini": {
     "calls_today": 2,
-    "daily_cap": 10,
+    "daily_cap": 60,
     "models": [
       "models/gemini-3.5-flash-lite",
       "models/gemini-flash-lite-latest",
@@ -357,6 +357,25 @@
       "discovered_at": "2026-11-04T21:05:28+09:00",
       "article_url": "https://saywhomedia.com/people/mark-newton/",
       "canonical_url": "https://saywhomedia.com/people/mark-newton/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Number of single stock ETFs rises from zero to nearly 600 in four years, Ryan Detrick notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-03T18:35:34+00:00",
+      "discovered_at": "2026-11-06T00:10:26+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4082044-single-stock-etf-growth/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4082044-single-stock-etf-growth/",
       "body_fetch_status": 403,
       "direct_quotes": [],
       "direction_hint": null,
@@ -1130,8 +1149,8 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 7,
-        "non_noise": 7,
+        "count": 8,
+        "non_noise": 8,
         "items": [
           {
             "at": "2026-11-03T10:05:27+09:00",
@@ -1194,6 +1213,15 @@
             "preview": "When Will the Madness End? (FvF Ep. 212)",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-04T14:00:30+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-06T00:10:26+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4082044-single-stock-etf-growth/",
+            "kind": "news_article",
+            "preview": "Number of single stock ETFs rises from zero to nearly 600 in four years, Ryan Detrick notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-03T18:35:34+00:00",
             "noise_hint": false
           }
         ]
