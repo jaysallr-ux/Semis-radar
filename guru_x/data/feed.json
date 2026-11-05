@@ -1,6 +1,6 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-05T23:36:38+09:00",
+  "generated_at": "2026-11-05T23:47:06+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
@@ -11,9 +11,9 @@
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
     "urls_found": 110,
-    "already_known": 53,
+    "already_known": 55,
     "too_old": 55,
-    "verified_syndication": 2,
+    "verified_syndication": 0,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 0,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,7 +67,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -78,7 +78,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -89,7 +89,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-05T23:47:06+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -155,8 +155,8 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-05T23:47:06+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -166,7 +166,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T23:36:38+09:00",
+      "last_success_at": "2026-11-05T23:47:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -178,7 +178,7 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 2,
+    "described": 0,
     "pending": 0,
     "errors": 0,
     "calls_today": 39,
@@ -8971,17 +8971,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 20,
-        "non_noise": 17,
+        "count": 19,
+        "non_noise": 16,
         "items": [
-          {
-            "at": "2026-11-02T23:40:26+09:00",
-            "url": "https://x.com/dampedspring/status/2117265584131862648",
-            "kind": "quote_post",
-            "preview": "Fwiw the ICE News was good news. The Druck tweet was old news. The idiots on here chasing was stupi…",
-            "quoted_author": "dampedspring",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-03T03:45:38+09:00",
             "url": "https://x.com/dampedspring/status/2117327290329976945",
@@ -9515,16 +9507,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 40,
-        "non_noise": 40,
+        "count": 39,
+        "non_noise": 39,
         "items": [
-          {
-            "at": "2026-11-02T23:45:23+09:00",
-            "url": "https://x.com/RyanDetrick/status/2117266826518286674",
-            "kind": "post",
-            "preview": "Reminder number 2,863 not to share bank research on here or be very careful if you do 👇 👇 👇 @neilse…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-02T23:48:20+09:00",
             "url": "https://x.com/RyanDetrick/status/2117267569853800546",
