@@ -1,6 +1,8 @@
 name: semis-radar-backtest
 
 # 수동 실행 전용. Actions 탭 → semis-radar-backtest → Run workflow → 브랜치 선택.
+# (Run workflow 버튼은 이 파일이 main 에 있어야 뜸. main 머지 전 브랜치에서는
+#  .github/backtest-trigger.txt 내용을 바꿔 푸시하면 그 브랜치에서 실행됨, grid 없이)
 # 결과(backtest/*.csv, summary.json, report.txt)를 실행한 브랜치에 커밋한다.
 on:
   workflow_dispatch:
@@ -9,6 +11,9 @@ on:
         description: "그리드 + LOCO 도 돌릴지 (오래 걸림)"
         type: boolean
         default: false
+  push:
+    paths:
+      - ".github/backtest-trigger.txt"
 
 permissions:
   contents: write
