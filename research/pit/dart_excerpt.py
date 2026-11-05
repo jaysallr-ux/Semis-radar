@@ -5,7 +5,8 @@
 를 뽑아 research/pit/classification/excerpts/<code>_<rcept_no>.txt 로 저장. 원문 SHA-256 을 머리에 적는다.
 
   python research/pit/dart_excerpt.py --list research/pit/classification/excerpt_request.csv
-  excerpt_request.csv: code,rcept_no,rcept_dt,report_nm,reason
+  excerpt_request.csv: code,rcept_no,rcept_dt,report_nm,reason[,grep]
+  grep(선택): 정규식. 주면 원문 전체에서 일치 위치마다 앞 300자·뒤 1500자를 <code>_<rcept_no>_grep.txt 로 저장
 """
 import argparse
 import hashlib
@@ -81,7 +82,9 @@ def main():
     req = pd.read_csv(a.list, dtype=str)
     for r in req.itertuples():
         fn = os.path.join(OUT, f"{r.code}_{r.rcept_no}.txt")
-        if os.path.exists(fn) and "재추출" not in str(r.reason):
+        gp = str(getattr(r, "grep", "") or "")
+        gp = "" if gp == "nan" else gp
+        if os.path.exists(fn) and "재추출" not in str(r.reason) and not gp:
             continue
         b = call("document.xml", {"rcept_no": r.rcept_no}, binary=True)
         if b is None:
@@ -103,6 +106,19 @@ def main():
             f.write((pr or "(없음)")[:PRODUCT_CHARS] + "\n")
             f.write("=== 매출 및 수주상황 ===\n")
             f.write((getattr(business_parts, "sales", None) or "(없음)")[:SALES_CHARS] + "\n")
+        if gp:
+            full = clean(xml)
+            gfn = os.path.join(OUT, f"{r.code}_{r.rcept_no}_grep.txt")
+            with open(gfn, "w", encoding="utf-8") as g:
+                g.write(f"code={r.code} rcept_no={r.rcept_no} rcept_dt={r.rcept_dt} report={r.report_nm}\n")
+                g.write(f"sha256={hashlib.sha256(b).hexdigest()} grep={gp}\n")
+                last = -10**9
+                for mm in re.finditer(gp, full):
+                    if mm.start() - last < 1500:
+                        continue
+                    last = mm.start()
+                    g.write(f"--- @{mm.start()} ---\n" + full[max(0, mm.start() - 300):mm.start() + 1500] + "\n")
+            print("grep 저장", gfn)
         print("저장", fn)
 
 
