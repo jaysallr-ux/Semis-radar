@@ -1,8 +1,10 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-05T10:05:30+09:00",
-  "data_ok": true,
-  "errors": {},
+  "generated_at": "2026-11-05T16:46:16+09:00",
+  "data_ok": false,
+  "errors": {
+    "Carson Group feed": "carson /feed:403 /feed/:403 /insights/blog/feed/:403 /author/ryan-detrick/feed/:403 /feed/:403"
+  },
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
   "new_statement_clock": "evidence_ready_at",
   "discovery_complete": true,
@@ -84,7 +86,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "official_source_ok": true,
+      "official_source_ok": false,
       "items_in_window": 9,
       "scoring_items": 2,
       "pending_items": 0
@@ -115,7 +117,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 7,
+      "items_in_window": 6,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -153,12 +155,12 @@
   ],
   "stats": {
     "discovered": 131,
-    "new_items": 9,
-    "decoded": 11,
-    "bodies": 2,
-    "quotes_verified": 3,
+    "new_items": 3,
+    "decoded": 5,
+    "bodies": 0,
+    "quotes_verified": 0,
     "video_candidates": 0,
-    "gemini_calls": 2,
+    "gemini_calls": 0,
     "gemini_skipped_cap": 0
   },
   "gemini": {
@@ -536,7 +538,7 @@
       "published_at": "2026-11-02T01:12:28+00:00",
       "discovered_at": "2026-11-05T10:05:30+09:00",
       "article_url": "https://www.gurufocus.com/news/9161385/market-outlook-mike-wilson-sees-opportunities-amidst-potential-declines?utm_source",
-      "canonical_url": "https://www.gurufocus.com/news/9161385/market-outlook-mike-wilson-sees-opportunities-amidst-potential-declines?utm_source",
+      "canonical_url": "https://www.gurufocus.com/news/9161385/market-outlook-mike-wilson-sees-opportunities-amidst-potential-declines",
       "body_fetch_status": 403,
       "direct_quotes": [],
       "direction_hint": null,
@@ -917,25 +919,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_direct_quotes",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Lyn Alden",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Lyn Alden Says Bitcoin's Cycle Low May Be Behind It After Leverage Flush",
-      "outlet": "www.tokenpost.com",
-      "published_at": "2026-10-29T06:52:40+00:00",
-      "discovered_at": "2026-10-29T20:25:40+09:00",
-      "article_url": "https://www.tokenpost.com/news/insights/43275",
-      "canonical_url": "https://www.tokenpost.com/news/insights/43275",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0
     }
   ],
   "person_index": {
@@ -964,22 +947,6 @@
             "preview": "Confident commentary on past 12 hours of market moves is unreliable, Andy Constan says",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-04T10:50:18+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Bob Elliott": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-02T10:05:30+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4051492-ai-investment-boom-risk/",
-            "kind": "news_article",
-            "preview": "Bob Elliott: AI investment surge relies on future cash promises",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-01T12:20:14+00:00",
             "noise_hint": false
           }
         ]
@@ -1075,21 +1042,12 @@
       },
       "Mike Wilson": {
         "role": "observer",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
           {
-            "at": "2026-11-02T10:05:30+09:00",
-            "url": "https://www.bloomberg.com/news/articles/2026-11-01/mike-wilson-says-buy-stock-dip-regardless-of-who-wins-midterms",
-            "kind": "news_article",
-            "preview": "Mike Wilson Says Buy Stock Dip Regardless of Who Wins Midterms",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-01T14:00:00+00:00",
-            "noise_hint": false
-          },
-          {
             "at": "2026-11-05T10:05:30+09:00",
-            "url": "https://www.gurufocus.com/news/9161385/market-outlook-mike-wilson-sees-opportunities-amidst-potential-declines?utm_source",
+            "url": "https://www.gurufocus.com/news/9161385/market-outlook-mike-wilson-sees-opportunities-amidst-potential-declines",
             "kind": "news_article",
             "preview": "Market Outlook: Mike Wilson Sees Opportunities Amidst Potential Declines",
             "grade": "제목·설명만 확인",
