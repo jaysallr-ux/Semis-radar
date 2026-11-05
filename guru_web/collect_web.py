@@ -119,6 +119,17 @@ def name_hit(person: dict, text: str) -> bool:
     return any(re.search(r"\b" + re.escape(n.lower()) + r"\b", low) for n in full)
 
 
+TRACKING_PARAMS = ("utm_", "fbclid", "gclid", "mc_cid", "mc_eid", "cmpid", "guccounter")
+
+
+def clean_url(url: str) -> str:
+    """Drop tracking query parameters (also bare or truncated ones such as '?utm_source') and the fragment."""
+    u = urllib.parse.urlsplit(url.split("#")[0])
+    keep = [(k, v) for k, v in urllib.parse.parse_qsl(u.query, keep_blank_values=True)
+            if not k.lower().startswith(TRACKING_PARAMS)]
+    return urllib.parse.urlunsplit((u.scheme, u.netloc, u.path, urllib.parse.urlencode(keep), ""))
+
+
 def context_hit(person: dict, text: str) -> bool:
     """For common names: the page must also name the person's firm or show (context_terms in channels.json)."""
     terms = person.get("context_terms") or []
@@ -399,6 +410,8 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
     fetched_at = iso_kst(now)
     state = load_json(STATE_PATH, {})
     old = load_json(FEED_PATH, {})
+    for i in old.get("items", []):
+        i["canonical_url"] = clean_url(i["canonical_url"])
     items = {i["canonical_url"]: i for i in old.get("items", [])
              # drop news items whose headline no longer passes the full-name filter (e.g. 'Karsan Otomotiv')
              if i.get("source_kind") not in ("news_article", "video_page")
@@ -421,7 +434,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
     def new_item(person: dict, kind: str, title: str, outlet: str, url: str, pub: str) -> dict:
         return {"person": person["person"], "tier": person["tier"], "role": person.get("role", "core"),
                 "source_kind": kind, "title": title[:300], "outlet": outlet, "published_at": pub,
-                "discovered_at": fetched_at, "article_url": url, "canonical_url": url.split("#")[0],
+                "discovered_at": fetched_at, "article_url": url, "canonical_url": clean_url(url),
                 "body_fetch_status": None, "direct_quotes": [], "direction_hint": None,
                 "evidence_grade": "제목·설명만 확인", "evidence_ready_at": None, "gemini_status": "pending",
                 "gemini_error_count": 0}
@@ -463,6 +476,7 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
             seen_titles[key] = url
             continue
         url = gnews_decode(http, f["gnews_link"])
+        url = clean_url(url) if url else url
         sleep(1)
         if not url:
             continue
