@@ -22,10 +22,12 @@ jobs:
       - name: Install
         run: pip install -r requirements.txt finance-datareader
       - name: Probe
+        continue-on-error: true
         env:
           TZ: Asia/Seoul
         run: python research/probe_sources.py | tee research/probe/probe_log.txt
       - name: Commit
+        if: always()
         run: |
           git config user.name "semis-radar-bot"
           git config user.email "semis-radar-bot@users.noreply.github.com"

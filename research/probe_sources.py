@@ -38,6 +38,10 @@ def listed():
     mine = df[df[code_col].isin(codes)][[code_col, "Name"] + [c for c in ["Sector", "Industry"] if c in df.columns]]
     out = {"rows": len(df), "columns": list(df.columns), "industry_col": ind_col,
            "universe28_classification": mine.to_dict("records")}
+    if "Products" in df.columns:
+        prod = df["Products"].astype(str)
+        out["count_products_반도체"] = int(prod.str.contains("반도체").sum())
+        out["universe28_products"] = df[df[code_col].isin(codes)][["Name", "Products"]].to_dict("records")
     if ind_col:
         for k in KEYS:
             out[f"count_{k}"] = int(df[ind_col].astype(str).str.contains(k).sum())
@@ -82,5 +86,8 @@ def delisted_price():
 step("listed_KRX-DESC", listed)
 step("delisted_list", delisted)
 step("delisted_price", delisted_price)
-with open(os.path.join(OUT, "probe_summary.json"), "w", encoding="utf-8") as f:
-    json.dump(report, f, ensure_ascii=False, indent=1, default=str)
+try:
+    with open(os.path.join(OUT, "probe_summary.json"), "w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=1, default=str)
+except Exception as e:
+    print("summary 저장 실패:", repr(e))
