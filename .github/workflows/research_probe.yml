@@ -1,0 +1,35 @@
+name: semis-radar-research-probe
+
+# v3 데이터 소스 조사. 브랜치에서 .github/probe-trigger.txt 내용을 바꿔 푸시하면 실행
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - ".github/probe-trigger.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: pip install -r requirements.txt finance-datareader
+      - name: Probe
+        env:
+          TZ: Asia/Seoul
+        run: python research/probe_sources.py | tee research/probe/probe_log.txt
+      - name: Commit
+        run: |
+          git config user.name "semis-radar-bot"
+          git config user.email "semis-radar-bot@users.noreply.github.com"
+          git add research/probe/
+          git commit -m "research probe $(date +'%Y-%m-%d %H:%M')" || echo "변경 없음"
+          git pull --rebase
+          git push
