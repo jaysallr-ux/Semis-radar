@@ -42,6 +42,13 @@ PERIODIC = re.compile(r"^(사업보고서|반기보고서|분기보고서)")
 ANNUAL = re.compile(r"^사업보고서")
 KEY = os.environ.get("DART_API_KEY", "").strip()
 _TL = threading.local()
+STATS = {"calls": 0, "limit_020": 0, "sys_800_900": 0, "exceptions": 0, "wait_seconds": 0.0}
+_SL = threading.Lock()
+
+
+def stat(k, v=1):
+    with _SL:
+        STATS[k] += v
 
 
 def sess() -> requests.Session:
@@ -59,6 +66,7 @@ def call(path, params, binary=False, tries=6):
     p = dict(params, crtfc_key=KEY)
     for k in range(tries):
         try:
+            stat("calls")
             r = sess().get(f"{API}/{path}", params=p, timeout=180)
             if binary:
                 if r.content[:2] == b"PK":
@@ -66,15 +74,18 @@ def call(path, params, binary=False, tries=6):
                 # 오류는 JSON/XML 텍스트로 옴
                 txt = r.content[:300].decode("utf-8", "ignore")
                 if "020" in txt:  # 요청 제한
+                    stat("limit_020"); stat("wait_seconds", 30 * (k + 1))
                     time.sleep(30 * (k + 1))
                     continue
                 return None
             j = r.json()
             if j.get("status") in ("020", "800", "900"):  # 요청 제한 / 시스템 점검 / 기타 오류 → 대기 후 재시도
+                stat("limit_020" if j.get("status") == "020" else "sys_800_900"); stat("wait_seconds", 20 * (k + 1))
                 time.sleep(20 * (k + 1))
                 continue
             return j
         except Exception:
+            stat("exceptions"); stat("wait_seconds", 10 * (k + 1))
             time.sleep(10 * (k + 1))
     return None
 
@@ -231,6 +242,7 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--max-minutes", type=float, default=330)
+    ap.add_argument("--push-every-min", type=float, default=0, help=">0 이면 중간 결과를 git commit/push (Actions 전용)")
     a = ap.parse_args()
     if not KEY:
         sys.exit("DART_API_KEY 없음")
@@ -322,10 +334,28 @@ def main():
             res["filter"] = "통과" if best >= PASS_MIN else "탈락"
         return res, fls, mans
 
-    def save():
+    last_push = [time.time()]
+    n_start = len(res_rows)
+
+    def save(push=False):
         pd.DataFrame(fl_rows).to_csv(os.path.join(out, "filings.csv"), index=False, encoding="utf-8-sig")
         pd.DataFrame(man_rows).to_csv(os.path.join(out, "dart_manifest.csv"), index=False, encoding="utf-8-sig")
         pd.DataFrame(res_rows).to_csv(os.path.join(out, "filter_result.csv"), index=False, encoding="utf-8-sig")
+        el = time.time() - t0
+        done_now = len(res_rows) - n_start
+        rate = done_now / el * 60 if el > 0 else 0
+        prog = {"updated_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "total": len(cmap),
+                "done": len(res_rows), "remaining": len(cmap) - len(res_rows), "this_run_done": done_now,
+                "this_run_minutes": round(el / 60, 1), "companies_per_min": round(rate, 1),
+                "eta_minutes": round((len(cmap) - len(res_rows)) / rate, 0) if rate > 0 else None,
+                "filter_counts": pd.Series([r["filter"] for r in res_rows]).value_counts().to_dict(),
+                "api": {k: (round(v) if isinstance(v, float) else v) for k, v in STATS.items()}}
+        with open(os.path.join(out, "progress.json"), "w", encoding="utf-8") as f:
+            json.dump(prog, f, ensure_ascii=False, indent=1)
+        if push and a.push_every_min > 0:
+            os.system(f'cd "{os.path.dirname(os.path.dirname(os.path.dirname(HERE)))}" && git add research/pit/classification/scan_{a.mode} '
+                      f'&& git commit -q -m "dart scan progress {prog["done"]}/{prog["total"]}" '
+                      f'&& (git pull -q --rebase || true) && git push -q || true')
 
     n_done = 0
     with ThreadPoolExecutor(max_workers=a.workers) as ex:
@@ -341,8 +371,11 @@ def main():
                 man_rows.extend(mans)
                 n_done += 1
                 if n_done % 25 == 0:
-                    print(f"  {n_done}/{len(todo)} {time.time() - t0:.0f}s", flush=True)
-                    save()
+                    print(f"  {n_done}/{len(todo)} {time.time() - t0:.0f}s api={STATS}", flush=True)
+                    do_push = a.push_every_min > 0 and time.time() - last_push[0] > a.push_every_min * 60
+                    save(push=do_push)
+                    if do_push:
+                        last_push[0] = time.time()
     save()
     rr = pd.DataFrame(res_rows)
     print("거름망:", rr["filter"].value_counts().to_dict(), f"이번 실행 {time.time() - t0:.0f}s, 남음 {len(cmap) - len(rr)}")
