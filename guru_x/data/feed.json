@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-04T21:15:32+09:00",
+  "generated_at": "2026-11-05T10:15:34+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (71 entries)",
+    "list": "ok (72 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 96,
-    "already_known": 24,
+    "urls_found": 108,
+    "already_known": 20,
     "too_old": 55,
-    "verified_syndication": 17,
+    "verified_syndication": 33,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-11-02T20:29:26.000Z",
+    "list_oldest": "2026-11-03T20:39:40.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,8 +34,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-05T10:15:34+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-05T10:15:34+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "last_success_at": "2026-11-05T10:15:34+09:00",
       "new_originals_this_run": 1,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-05T10:15:34+09:00",
+      "new_originals_this_run": 3,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-05T10:15:34+09:00",
+      "new_originals_this_run": 12,
       "error": null
     },
     {
@@ -89,7 +89,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "last_success_at": "2026-11-05T10:15:34+09:00",
       "new_originals_this_run": 5,
       "error": null
     },
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "last_success_at": "2026-11-05T10:15:34+09:00",
       "new_originals_this_run": 4,
       "error": null
     },
@@ -111,8 +111,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-05T10:15:34+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-05T10:15:34+09:00",
+      "new_originals_this_run": 3,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
+      "last_success_at": "2026-11-05T10:15:34+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -144,8 +144,8 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-04T21:15:32+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-05T10:15:34+09:00",
+      "new_originals_this_run": 2,
       "error": null
     }
   ],
@@ -156,14 +156,1426 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 8,
+    "described": 21,
     "pending": 0,
     "errors": 0,
-    "calls_today": 15,
+    "calls_today": 21,
     "daily_cap": 40,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2118147577749131603",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-05T01:05:10.000Z",
+      "url": "https://x.com/RyanDetrick/status/2118147577749131603",
+      "text": "More details to come soon, but Friday the 13th just got a lot better!\n\nOur next Social Hour livestream is all set and we are excited to be joined by @sonalibasak and @RealMikeLarson of @MoneyShow 🥂🍻 https://t.co/DxAaqJtD9d",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWUr_wIWoAAgP6j.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWUr_wIWoAAgP6j.jpg",
+            "image_text": "FACTS VS feelings LIVE SOCIAL HOUR WITH MIKE LARSON AND SONALI BASAK NOV 13 2 PM CT",
+            "what_it_shows": "This promotional image announces a live Social Hour event featuring guests Mike Larson and Sonali Basak, scheduled for November 13 at 2 PM CT.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118133285582692499",
+      "person": "Mark Newton",
+      "handle": "MarkNewtonCMT",
+      "tier": 1,
+      "role": "core",
+      "author_id": "253168011",
+      "created_at": "2026-11-05T00:08:22.000Z",
+      "url": "https://x.com/MarkNewtonCMT/status/2118133285582692499",
+      "text": "Still a tricky time for most of Tech despite bigwigs like $MSFT & $AAPL pushing back to new all-time highs.\nhttps://t.co/vmgJqlzgJC\n\nNot many of us can claim +7.5% returns since October 1 like what Equal-weighted $SPX has achieved and yes, TODAY, Equal-weighed SPX is back at new https://t.co/v5Iy1glImc",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bit.ly/3zhabe3"
+      ],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWUdnd8XIAA30jp.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWUdnd8XIAA30jp.jpg",
+            "image_text": "Microsoft Corp. Comp Sifter - Enterprise (23/146) Set Alert Add to List Develops, manufactures and distributes software products www.microsoft.com IPO Date 03/13/1986 50 Days Avg Vol. 22,121,269 Market Cap. $3.87T $555.58 ($0.22) -0.04% After Hours MSFT(+34.61) +6.68% EPS Due Date 01/26/2027 50 Day Avg $ $11,100,171,509 21 Day ATR % 2.34% Vol. 50,528,061+131.55% HQ Redmond, WA Off 52-Week High -0.",
+            "what_it_shows": "This stock chart shows the daily price movement and volume for Microsoft Corp. (MSFT) spanning from late 2023 through late 2026, including moving average lines and recent price levels around $555.58.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118123714839445646",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T23:30:21.000Z",
+      "url": "https://x.com/RyanDetrick/status/2118123714839445646",
+      "text": "When Will The Madness End? \n\nIn our latest Glass Half Full video, we ask the question on everyone's mind. \n\n@sonusvarghese\n@CarsonResearch\nhttps://t.co/R76FCeRdd3",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://youtu.be/d3nKjpM-cFk?is=zfqf5d2DSIwL-joE"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118119306483401183",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T23:12:50.000Z",
+      "url": "https://x.com/dampedspring/status/2118119306483401183",
+      "text": "Replay.  Man can I drone on.",
+      "quoted_post_id": "2118086026673487909",
+      "quoted_post": {
+        "id": "2118086026673487909",
+        "author": "JackFarley96",
+        "created_at": "2026-11-04T21:00:35.000Z",
+        "url": "https://x.com/JackFarley96/status/2118086026673487909",
+        "text": "Breaking Down the Markets Massive Post-Midterm Moves with Andy Constan https://t.co/whibSmMoHv",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118097307132723482",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-04T21:45:25.000Z",
+      "url": "https://x.com/Geo_papic/status/2118097307132723482",
+      "text": "As my colleague @mgertken has said, American institutions WORK. \n\n1. The Fed remains independent. \n2. SCOTUS has checked the executive numerous times.\n3. And now voters revolted... democratically.\n\nRemember all the talk of stealing the midterms? Nothing happened.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118092443744621042",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-04T21:26:05.000Z",
+      "url": "https://x.com/Geo_papic/status/2118092443744621042",
+      "text": "This came in first in the Geopolsketball Internet today. \n\nYou won!",
+      "quoted_post_id": "2117836690182086958",
+      "quoted_post": {
+        "id": "2117836690182086958",
+        "author": "buck4orlife",
+        "created_at": "2026-11-04T04:29:49.000Z",
+        "url": "https://x.com/buck4orlife/status/2117836690182086958",
+        "text": "Time to sub in Bronny",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118092205348774320",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-04T21:25:08.000Z",
+      "url": "https://x.com/Geo_papic/status/2118092205348774320",
+      "text": "This came in second place in the Geopolsketball Internet space. Well done.",
+      "quoted_post_id": "2117964883799208155",
+      "quoted_post": {
+        "id": "2117964883799208155",
+        "author": "irisketball",
+        "created_at": "2026-11-04T12:59:12.000Z",
+        "url": "https://x.com/irisketball/status/2117964883799208155",
+        "text": "do republicans know you can't tank for picks anymore with the new lottery rules?",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118091276650418383",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-04T21:21:27.000Z",
+      "url": "https://x.com/Geo_papic/status/2118091276650418383",
+      "text": "The GeoMacro Alpha report dropped... yesterday. Just for some shameless back-slapping, the conclusion was to short Brent and BWET. https://t.co/9gO1uodQJI",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWT4th0WEAAiNqq.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWT4th0WEAAiNqq.jpg",
+            "image_text": "GeoMacro | N | BCQ\nCapitulation... You On Stocks\nOr Trump On Iran\nGeoMacro Alpha Report\nNovember 2026, Volume I\nMARKO PAPIC\nChief Investment Strategist & Head Of GeoMacro\nmarko@bcaresearch.com",
+            "what_it_shows": "This is the cover page for the GeoMacro Alpha Report titled 'Capitulation... You On Stocks Or Trump On Iran' dated November 2026, Volume I, authored by Marko Papic.",
+            "chart_credit": "GeoMacro / BCA Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118089923748303340",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-11-04T21:16:04.000Z",
+      "url": "https://x.com/DariusDale42/status/2118089923748303340",
+      "text": "Question: Should you trust today’s positive response to the midterm election results and data center and state tax ballot measures? Answer:",
+      "quoted_post_id": "2118085878442496387",
+      "quoted_post": {
+        "id": "2118085878442496387",
+        "author": "42Macro",
+        "created_at": "2026-11-04T21:00:00.000Z",
+        "url": "https://x.com/42Macro/status/2118085878442496387",
+        "text": "The Macro Minute | Nov 4, 2026: What Do the Midterm Results Mean for Investors?\n\nFor daily updates, follow The Macro Minute on your favorite podcast platform. https://t.co/ai9cMWtqwT",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2118078508110938112/img/qCgDh16XjaOJ4FzK.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2118078508110938112/img/qCgDh16XjaOJ4FzK.jpg",
+            "image_text": "42 Macro",
+            "what_it_shows": "A person wearing a white collared shirt standing in front of a blue background featuring repeated 42 Macro logos.",
+            "chart_credit": "42 Macro"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118086802691023211",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T21:03:40.000Z",
+      "url": "https://x.com/dampedspring/status/2118086802691023211",
+      "text": "Come listen live!",
+      "quoted_post_id": "2118086342475497759",
+      "quoted_post": {
+        "id": "2118086342475497759",
+        "author": "JackFarley96",
+        "created_at": "2026-11-04T21:01:50.000Z",
+        "url": "https://x.com/JackFarley96/status/2118086342475497759",
+        "text": "LIVE NOW W/ @dampedspring COVERING MARKET CONSEQUENCES OF ELECTIONS AND TREASURY REFUNDING ANNOUNCEMENT (QRA)\n\nhttps://t.co/4XvWOCZwUD",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118083110130885084",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "role": "core",
+      "author_id": "199170156",
+      "created_at": "2026-11-04T20:49:00.000Z",
+      "url": "https://x.com/jam_croissant/status/2118083110130885084",
+      "text": "Live in 10 minutes on @tastyliveshow 🍒🥐\n\nJoin us at 3pm CT (4pm ET) as we dig into how the election results could shape the market landscape.\n\nhttps://t.co/CeUGdEgX35",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://www.youtube.com/live/FosAKU4raoY"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118074554438627403",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-11-04T20:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2118074554438627403",
+      "text": "October a pretty tough month across the HF industry and looks like that's bled into the start of this month too.\nhttps://t.co/Ks6xMbK3Ir",
+      "quoted_post_id": "2117583358914117915",
+      "quoted_post": {
+        "id": "2117583358914117915",
+        "author": "nishantkumar07",
+        "created_at": "2026-11-03T11:43:10.000Z",
+        "url": "https://x.com/nishantkumar07/status/2117583358914117915",
+        "text": "Major Hedge Funds Mostly Lose in ‘Nowhere to Hide’ October https://t.co/WbJzEr0cAT",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWMqxK7XwAAo3FA.png"
+          }
+        ]
+      },
+      "links": [
+        "https://x.com/nishantkumar07/status/2117583358914117915?a=zW6q61QxL0Vd3BnAolM&s=20"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWMqxK7XwAAo3FA.png",
+            "image_text": "Fund Strategy Billion) October (%) YTD (%) Quantedge Quant 8.2 7.2 60 Soroban Opportunities Equity Long/Short - 3.1 12.5 Soroban Long Only Equity Equity - 2.9 13.8 ION Long Short Fund Equity 1.3 2.8 15.4 Winton Diversified Macro Macro - 0.7 17.9 Broad Reach Master EM Macro 4.2# 0.5 11 Coatue Equity - 0.2 13 Glazer Enhanced Event Driven 2.7 0.2 6.7 Graham Quant Macro Quant Macro 23# -0.2 21.6 Keyst",
+            "what_it_shows": "A table detailing the October and year-to-date performance percentages, asset sizes, and strategies for various hedge funds, ranging from Quantedge up to Arini.",
+            "chart_credit": "Bloomberg reporting"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118047279781175581",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T18:26:37.000Z",
+      "url": "https://x.com/RyanDetrick/status/2118047279781175581",
+      "text": "Stocks are up huge and it looks like the 🐂 is back. I'm set to join @RobHartWBBM on @WBBMNewsradio to discuss it all. \n\nWe start in about 5 minutes 🎧 \n\n@Giersh https://t.co/WIVGlIx0Dl",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWTQxqSWIAAesKZ.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWTQxqSWIAAesKZ.jpg",
+            "image_text": "WBBM NEWSRADIO 780AM 105.9FM",
+            "what_it_shows": "This image displays the logo for WBBM Newsradio featuring its call letters and broadcast frequencies.",
+            "chart_credit": "WBBM Newsradio"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118035546937442477",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "role": "core",
+      "author_id": "199170156",
+      "created_at": "2026-11-04T17:40:00.000Z",
+      "url": "https://x.com/jam_croissant/status/2118035546937442477",
+      "text": "I’ll be on @tastyliveshow today at 3pm CT (4pm ET) 🍒🥐\nJoin us as we break down what the decisive election results could mean for markets from here. \n\nhttps://t.co/CeUGdEgX35",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://www.youtube.com/live/FosAKU4raoY"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118029286523232613",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-11-04T17:15:07.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2118029286523232613",
+      "text": "If your revenue goes up 50% and your operating income falls, your business model sucks. https://t.co/dLQSPCjmK2",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWTAaYRWoAAx-LK.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWTAaYRWoAAx-LK.jpg",
+            "image_text": "Revenue ($M) 10,000 0 376 787 1,382 2,040 4,731 11,555 16,960 Operating income ($M) 10,000 0 -935 -1,200 -3,089 -2,836 -1,667 974 -567 Q1 2025 Q3 2026",
+            "what_it_shows": "The charts display quarterly revenue and operating income in millions of dollars from Q1 2025 to Q3 2026. Revenue shows continuous growth up to 16,960, while operating income remains mostly negative, ending at -567 in Q3 2026.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118027978521354538",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T17:09:55.000Z",
+      "url": "https://x.com/dampedspring/status/2118027978521354538",
+      "text": "Cheap Trick - Surrender (Official Audio) https://t.co/wSMyi0I6u9 via @YouTube",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://youtu.be/T_Km11HNzUY?is=fRndDFnrR1eYSZaj"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118015214008352779",
+      "person": "Joseph Wang",
+      "handle": "josephwang",
+      "tier": 4,
+      "role": "shadow",
+      "author_id": "718702333",
+      "created_at": "2026-11-04T16:19:12.000Z",
+      "url": "https://x.com/josephwang/status/2118015214008352779",
+      "text": "Oil down sharply as Vance attributes electoral outcome to unpopular Iran war. https://t.co/Y18mBf4KSD",
+      "quoted_post_id": "2118004988433641835",
+      "quoted_post": {
+        "id": "2118004988433641835",
+        "author": "JDVance",
+        "created_at": "2026-11-04T15:38:34.000Z",
+        "url": "https://x.com/JDVance/status/2118004988433641835",
+        "text": "One of the things the data analysts on our side obsessed over was \"composition\"—whether the electorate looked close enough to 2024 for Republicans to win. And despite polls that showed a Democrat blowout, the data kept on telling us the same story: in some states turnout was",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSzgr_WsAErhlS.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSzgr_WsAErhlS.jpg",
+            "image_text": "C01 98.90 -4.70 98.88 / 98.90 8 x 2 Prev 103.60 At 11:07d Vol 314509 Op 104.23 Hi 104.96 Lo 98.66 OpenInt 504491 Intraday Price Chart C01 Comdty Suggested Charts Actions Edit Range 1 11/04/2026 - 11/04/2026 20:00 - 18:00 Lst Trd/Lst P: Local CCY Key Events 1D 3D 1M 6M YTD 1Y 5Y Max Tick Related Data Add Data Edit Chart Track Annotate News Zoom Last Price 98.90 Close on 11/03 103.60 High on 11/03 2",
+            "what_it_shows": "This Bloomberg intraday price chart shows the C01 Comdty contract on November 4, 2026, experiencing a sharp decline down to 98.90, representing a drop of -4.70 (-4.54%) from the previous close of 103.60.",
+            "chart_credit": "Bloomberg"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118008425799930101",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T15:52:14.000Z",
+      "url": "https://x.com/RyanDetrick/status/2118008425799930101",
+      "text": "Seven times a Republican President faced a Democratic Congress. \n\nUp 17.5% on average six months later and never lower for the S&P 500. In fact, strong returns across the board. https://t.co/zacgbF8Koh",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWStcAqWAAAmkms.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWStcAqWAAAmkms.jpg",
+            "image_text": "S&P 500 Returns Following Midterms That Left a Republican President Facing a Democratic Congress\nS&P 500 Price Return 1, 3, 6 and 12 Months After Election Day, 1954-2006\nOnly 1954 and 2006 Saw Democrats Flip Both Chambers of Congress\n■ 1 Month ■ 3 Months ■ 6 Months ■ 1 Year\n50%\n40%\n30%\n20%\n10%\n0%\n-10%\n-20%\n-30%\n1954 Eisenhower | 1958 Eisenhower | 1970 Nixon | 1974 Ford | 1986 Reagan | 1990 G.H.W. ",
+            "what_it_shows": "This bar chart displays S&P 500 price returns at 1, 3, 6, and 12 months after midterm elections from 1954 to 2006 that resulted in a Republican president facing a Democratic Congress. It details individual midterm years such as 1954, 1958, 1970, 1974, 1986, 1990, and 2006 alongside an average of all",
+            "chart_credit": "Carson Investment Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117996291049590824",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T15:04:00.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117996291049590824",
+      "text": "The number of stocks in the S&P 500 above their 50- and 200-day MAs have been surging for going on five weeks now.\n\nHard to have a major crash when that is happening. Of course, it doesn't mean things have to soar either when 46% of the index (tech/comms) are imploding. https://t.co/JUyWPgOf4y",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSh7SqWQAERfQK.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSh7SqWQAERfQK.png",
+            "image_text": "$SPX S&P 500 Large Cap Index INDX 4-Nov-2026 10:01am StockCharts.com $SPX (Daily) 7705.08 MA(50) 7693.30 MA(200) 7320.43 Open 7635.81 High 7705.89 Low 7635.81 Last 7705.08 Chg +136.16 (+1.80%) Dec 2026 Feb Mar Apr May Jun Jul Aug Sep Oct Nov 6300 6400 6500 6600 6700 6800 6900 7000 7100 7200 7300 7400 7500 7600 7700 7800 -- $SPXA20R 72.60 -- $SPXA50R 69.20 -- $SPXA200R 66.80",
+            "what_it_shows": "The chart shows the daily price movement of the S&P 500 index alongside its 50-day and 200-day moving averages, as well as three lower indicator panels showing the percentages of stocks above their 20-, 50-, and 200-day moving averages from late 2025 through November 2026.",
+            "chart_credit": "StockCharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117995622804468104",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T15:01:21.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117995622804468104",
+      "text": "77% of NYSE advancing currently.\n\nJust another day with most stocks going higher, similar to what we saw in October. https://t.co/qixEBbUj9R",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWShki9WkAAM_W_.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWShki9WkAAM_W_.png",
+            "image_text": "$NYADV:$NYTOT NYSE - Issues Advancing/NYSE - Total Active Symbols INDX\n4-Nov-2026 10:00am\nOpen 0.74 High 0.77 Low 0.74 Last 0.77 Chg +0.40 (+109.35%)\n- $NYADV:$NYTOT (Daily) 0.77\nD 24 F M A M J J A S O N 25 F M A M J J A S O N 26 F M A M J J A S O N",
+            "what_it_shows": "This daily line chart shows the ratio of NYSE advancing issues to total active symbols from December 2023 through November 2026. The latest reading displays a last value of 0.77.",
+            "chart_credit": "StockCharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117994807566258414",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T14:58:07.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117994807566258414",
+      "text": "CNN Fear & Greed was 19 at the close yesterday, but I'm guessing it was -72 about 12 hours ago. https://t.co/kSnLJzt22d",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSg8kpWMAACI0X.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSg8kpWMAACI0X.jpg",
+            "image_text": "EXTREME FEAR FEAR NEUTRAL GREED EXTREME GREED 0 25 50 75 100 19 Last updated Nov 4 at 9:52:02 AM ET",
+            "what_it_shows": "The screenshot shows the CNN Fear & Greed Index gauge pointing to 19, which is in the Extreme Fear zone. The update timestamp is listed as Nov 4 at 9:52:02 AM ET.",
+            "chart_credit": "CNN"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117992877573697934",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T14:50:27.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117992877573697934",
+      "text": "We just had one of the largest hedge fund de-grossing events in history, right as the S&P 500 consolidated in one of the tightest 3 month ranges ever and right near strong support from the summer peak and 20-week MA.\n\nYes, we've remained bullish (and it hasn't always been fun) https://t.co/2K8TAGuvcl",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSel8NW4AAP5nO.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSel8NW4AAP5nO.png",
+            "image_text": "$SPX S&P 500 Large Cap Index INDX 4-Nov-2026 9:47 am Open 7610.83 High 7704.42 Low 7539.38 Last 7704.20 Volume 6.7B Chg +124.13 (+1.64%) © StockCharts.com RSI(14) 58.45 $SPX (Weekly) 7704.20 - MA(20) 7628.63",
+            "what_it_shows": "This chart displays the weekly S&P 500 Large Cap Index along with a 20-period moving average and a 14-period Relative Strength Index (RSI). The index level is shown at 7704.20 with an RSI reading of 58.45.",
+            "chart_credit": "StockCharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117991143191589198",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T14:43:33.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117991143191589198",
+      "text": "Today is first 1,000 point Dow gain since August 4 and the 28th in history.\n\n26 of these took place under President Trump.\n\n(And yes, I understand points vs % and I also share this when it is down 1,000) https://t.co/Xkcsox4cHj",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSdMZZWwAAxolT.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSdMZZWwAAxolT.png",
+            "image_text": "The Largest Intraday Dow Point Gains Ever\n1,000 Point Advances For The Dow (1896 - Current)\nDate\tDow Point Gain (Intraday)\tPresident\n12/26/2018\t1086.72\tTrump\n3/2/2020\t1296.81\tTrump\n3/4/2020\t1184.93\tTrump\n3/10/2020\t1169.97\tTrump\n3/13/2020\t1989.14\tTrump\n3/17/2020\t1190.83\tTrump\n3/24/2020\t2145.77\tTrump\n3/25/2020\t1315.02\tTrump\n3/26/2020\t1394.51\tTrump\n4/6/2020\t1730.92\tTrump\n5/18/2020\t1023.12\tTrump\n6/5/2",
+            "what_it_shows": "This table displays the largest intraday point gains of 1,000 points or more for the Dow from 1896 to the current period, listing the date, intraday point gain, and the sitting president.",
+            "chart_credit": "Carson Group"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117988762911154347",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T14:34:06.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117988762911154347",
+      "text": "Starting with the 82nd Congress in 1951, a Democratic Congress and Republican President is the most likely combo at 22 years (out of 75).\n\nBut the two worst years ever (1974 and 2008) happened these years, along with the 5th and 6th worst (1957 and 1973). Of course, all of those https://t.co/L7oXN8UZCY",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSao09W0AAyG_c.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSao09W0AAyG_c.png",
+            "image_text": "Some Of The Worst Years Ever Had a Democratic Congress and Republican President\nS&P 500 Performance Under a Democratic Congress and Republican President (1951 - Current)\nYear Congress President S&P 500 Return Rank Past 75 Years (Worst To Best)\n1955 Democrat Eisenhower 26.4% 65\n1956 Democrat Eisenhower 2.6% 25\n1957 Democrat Eisenhower -14.3% 6\n1958 Democrat Eisenhower 38.1% 74\n1959 Democrat Eisenho",
+            "what_it_shows": "This table displays the S&P 500 performance, return, and rank for years featuring a Democratic Congress and a Republican President from 1951 to the present, listing specific years alongside summary statistics including an average return of 4.9%.",
+            "chart_credit": "Carson Investment Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117986432107086323",
+      "person": "Warren Pies",
+      "handle": "WarrenPies",
+      "tier": 1,
+      "role": "core",
+      "author_id": "2326980139",
+      "created_at": "2026-11-04T14:24:50.000Z",
+      "url": "https://x.com/WarrenPies/status/2117986432107086323",
+      "text": "Enjoyed the conversation.\n\nOf note, we discuss why a \"bluenami\" is positive for hyperscalers (once the dust settles).",
+      "quoted_post_id": "2117973662104195332",
+      "quoted_post": {
+        "id": "2117973662104195332",
+        "author": "fejau_inc",
+        "created_at": "2026-11-04T13:34:05.000Z",
+        "url": "https://x.com/fejau_inc/status/2117973662104195332",
+        "text": "New episode recorded yesterday with @WarrenPies ! His base case was a blue tsunami so this conversation aged very well. Enjoy\n\nhttps://t.co/I3oUsUJPyo",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117986214502707350",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-11-04T14:23:58.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2117986214502707350",
+      "text": "Stable supply for now, but the increases in issuance needed ahead may come with a twist. https://t.co/moV6E4S8ha",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSY3YtWcAE9B97.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSY3YtWcAE9B97.png",
+            "image_text": "Finally, the Committee turned to its financing recommendation for the current quarter and unanimously recommended that Treasury maintain nominal coupon, FRN, and TIPS auction sizes at current levels but also consider adjusting its forward guidance language. The Committee agreed that in light of projected borrowing needs, increases in coupon auction sizes would likely be appropriate in the second h",
+            "what_it_shows": "A text excerpt discussing Treasury financing recommendations, auction sizes, projected borrowing needs, and potential future issuance adjustments.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117982887375163568",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T14:10:45.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117982887375163568",
+      "text": "Six midterms in a row now with a change in power in Congress. You have to go all the way back to 2002 the last time things stayed the same. https://t.co/gUycqJFBjg",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSWGDaXMAAJYUd.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSWGDaXMAAJYUd.png",
+            "image_text": "Changes In Power At Midterms Are Common\nMidterm Year Congress Changes (Past Seven Midterms)\nYear | Change In Power? | House | House Next Year | Senate | Senate Next Year\n2002 | No | Republican | Republican | Republican | Republican\n2006 | Yes | Republican | Democrat | Republican | Democrat\n2010 | Yes | Democrat | Republican | Democrat | Democrat\n2014 | Yes | Republican | Republican | Democrat | Re",
+            "what_it_shows": "This table displays congressional power changes during past midterm election years from 2002 through 2026, listing the party control for the House and Senate before and after each election.",
+            "chart_credit": "Carson Investment Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117978731851522062",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-11-04T13:54:14.000Z",
+      "url": "https://x.com/DariusDale42/status/2117978731851522062",
+      "text": "Hi @Jason, @friedberg, @chamath, and @DavidSacks,\n\nPlease watch this 5-min clip. If you find it interesting, please watch the entire discussion.\n\nThe ONLY way we can save our wonderful country from the scourge of communism is by having folks like you stop spewing hot takes about https://t.co/DJGJeuKGwL",
+      "quoted_post_id": "2117974159015698694",
+      "quoted_post": {
+        "id": "2117974159015698694",
+        "author": "natbrunell",
+        "created_at": "2026-11-04T13:36:04.000Z",
+        "url": "https://x.com/natbrunell/status/2117974159015698694",
+        "text": "“I’m going to sit up for this one.”\n\nThis is a powerful 5 minutes to watch and listen. \n\nDon’t miss my full show with @DariusDale42 streaming now on all platforms. https://t.co/wzY78eoj7U",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2117973959563980800/img/99uW9wHmd1oLRzQr.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSR9rIW8AAMc4U.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSR9rQXsAAceIf.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSR9rHWcAARhv3.png"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSR9rMXMAAmJ95.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSR9rIW8AAMc4U.jpg",
+            "image_text": "The K-Shaped Economy Crisis (KEC) is not an accident. Wall Street has been cheering on expanding corporate margins, booming corporate earnings, and soaring stock prices for decades. All these incremental profits had to come from somewhere—i.e., people in the W-2 class.\nLabor's Share of Gross Domestic Income (Nominal Employee Compensation) (R1)\nCapital's Share of Gross Domestic Income (NIPA Corpora",
+            "what_it_shows": "This chart compares Labor's Share of Gross Domestic Income against Capital's Share of Gross Domestic Income from the 1960s to 2026, highlighting divergent trends between employee compensation and corporate profits over time.",
+            "chart_credit": "42 Macro"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSR9rQXsAAceIf.jpg",
+            "image_text": "While the US Median Household Income has grown sevenfold in nominal terms over the past 50 years (12.2% p.a.), it has increased only 24% on a real basis (0.5% p.a.). Worse, it has declined 42% in real terms when deflated by Nonfarm Productivity, -59% when deflated by Gross Domestic Income, -74% when deflated by Corporate Profits, and -76% when deflated by Asset Prices. This means the median US hou",
+            "what_it_shows": "This chart panel displays various measures of US median household income and top 5 percent household income in nominal and real terms, adjusted by different economic deflators from the 1970s to 2024.",
+            "chart_credit": "42 Macro"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSR9rHWcAARhv3.png",
+            "image_text": "The bipartisan 'Wealth Pump'/'Reverse Robin Hood effect' is not an accident or mere 'byproduct of capitalism,' as the rapidly growing cohort of Democratic Socialists mistakenly suggests. Rather, it is the result of very explicit lobbying and campaign finance efforts by those in the K-1/capital class who view people in the W-2/working class as mere tools for wealth accumulation.\nBuckley v. Valeo (1",
+            "what_it_shows": "This slide text outlines three landmark Supreme Court campaign finance cases—Buckley v. Valeo, Citizens United v. FEC, and McCutcheon v. FEC—alongside political branches at the time and key economic takeaways.",
+            "chart_credit": "42 Macro"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSR9rMXMAAmJ95.png",
+            "image_text": "The historical track record of societies that share the US's 'Wealth Pump,' a.k.a. 'Reverse Robin Hood effect,' dynamics is extremely poor, to say the least.\nHistorical Probability of Select Outcomes (n = 100)\nSystemic Violence Against Elites: 17%\nRecurrent Civil Wars Lasting for >= 100 Years: 20%\nAssassination of Rulers: 40%\nSubstantial Population Decline: 50%\nState Collapse via Conquest or Disin",
+            "what_it_shows": "This bar chart displays the historical probability of seven select societal outcomes based on a sample size of 100 societies experiencing wealth concentration dynamics, ranging from 17% for systemic violence against elites to 75% for revolution, civil war, or both.",
+            "chart_credit": "42 Macro"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117973420696805422",
+      "person": "Joseph Wang",
+      "handle": "josephwang",
+      "tier": 4,
+      "role": "shadow",
+      "author_id": "718702333",
+      "created_at": "2026-11-04T13:33:08.000Z",
+      "url": "https://x.com/josephwang/status/2117973420696805422",
+      "text": "Treasury didn't cut long end issuance. Long end briefly selling off on the news. https://t.co/0sjI66Inx3",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWSNfPmXMAAeZOh.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSNfPmXMAAeZOh.jpg",
+            "image_text": "TBAC RECOMMENDED US TREASURY FINANCING SCHEDULE FOR NOVEMBER 2026-JANUARY 2027 QUARTER * BILLIONS OF DOLLARS Auction Month 2-Year Notes 3-Year Notes 5-Year Notes 7-Year Notes 10-Year Notes 20-Year Bonds 30-Year Bonds 5-Year TIPS 10-Year TIPS 30-Year TIPS 2-Year FRN Historical Reference May-26 69 58 70 44 42 16 25 19 28 Jun-26 69 58 70 44 39 13 22 24 28 Jul-26 69 58 70 44 39 13 22 21 30 Aug-26 69 5",
+            "what_it_shows": "A table displaying the TBAC recommended US Treasury financing schedule in billions of dollars from May 2026 through April 2027, categorized by auction month and security type.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117967062723145837",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-04T13:07:52.000Z",
+      "url": "https://x.com/RyanDetrick/status/2117967062723145837",
+      "text": "🥈",
+      "quoted_post_id": "2117966771051483646",
+      "quoted_post": {
+        "id": "2117966771051483646",
+        "author": "JC_ParetsX",
+        "created_at": "2026-11-04T13:06:42.000Z",
+        "url": "https://x.com/JC_ParetsX/status/2117966771051483646",
+        "text": "With Silver as the butt of so many jokes these days, is this where you buy it? Right at the same $50 level that stopped it 15 years ago? https://t.co/JhUCTT4Aji",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSHEYmXUAE78Eg.png"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWSHEYmXUAE78Eg.png",
+            "image_text": "Silver Futures 2008 2010 2012 2014 2016 2018 2020 2022 2024 2026 2028 2030 150.00 140.00 130.00 120.00 110.00 100.00 90.00 80.00 70.00 65.00 60.00 54.00 50.00 46.00 43.00 40.00 36.00 33.00 30.00 26.00 24.00 22.00 20.00 17.00 15.00 14.00 13.00 12.00 11.00 10.00 9.00",
+            "what_it_shows": "The chart shows a candlestick price chart for Silver Futures from 2008 to 2030, highlighting a rounded bottom pattern with a horizontal resistance zone near the 50.00 level.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2117961166550925780",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T12:44:26.000Z",
+      "url": "https://x.com/dampedspring/status/2117961166550925780",
+      "text": "Yes we get it.  Sell picks and shovels and buy those overspending on picks and shovels.  Man the bots get us to get excited at the most obvious trades.  Don't be exit liquidity jeez.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117959452200517721",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-04T12:37:37.000Z",
+      "url": "https://x.com/dampedspring/status/2117959452200517721",
+      "text": "Wordle 1,964 4/6*\n\n⬜⬜⬜⬜⬜\n⬜⬜🟨⬜🟨\n🟨🟨🟩⬜⬜\n🟩🟩🟩🟩🟩\n\nHahaha so true",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2117957506525778222",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-11-04T12:29:53.000Z",
+      "url": "https://x.com/DariusDale42/status/2117957506525778222",
+      "text": "2028 ELECTION RISK: The worst secular bear market in stocks in US history is the one that priced in the New Deal. If the midterm election results prove prescient, lots of families will have their lives ruined by Wall Street's self-serving \"buy-and-hold\" BS over the next decade. https://t.co/zz88Zi0dDJ",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWR_H5bWUAIcAtG.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWR_H5iWcAAKVHH.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWR_H5iWMAEIJF2.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWR_H5jWoAAzOJ3.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T01:15:34+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWR_H5bWUAIcAtG.jpg",
+            "image_text": "A secular bear market is highly likely to follow the AI capex bubble, akin to the canal, railroad, consumer durable goods, and IT capex bubbles. New general-purpose technologies disrupt legacy industries and catalyze frenzied overbuilding that is increasingly funded by complex financing structures that rely upon overly optimistic ROIC expectations. US Stocks Since 1802: Total Return and Drawdown f",
+            "what_it_shows": "The chart shows US stock market total returns and drawdowns from prior peaks on a log scale from approximately 1802 to the present, highlighting major historical crashes and drawdowns of 30% or more. Red shaded areas indicate periods associated with major panics, crashes, and bear markets with annot",
+            "chart_credit": "42 Macro"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWR_H5iWcAAKVHH.jpg",
+            "image_text": "Reminder: The NASDAQ 100 collapsed 83% during the Dot-Com Bust and took nearly 16 years to recover its previous high. NASDAQ 100 4593. High on 11/03/15 4719. Average 2244. Low on 10/07/02 805. Drawdown (%) (NDX) -2.6654. NDX Index (Nasdaq 100 Index) 2000-02 NASDAQ Drawdown Daily 01JAN1999-31DEC2015. Copyright 2026 Bloomberg Finance L.P. 42 Macro. 95",
+            "what_it_shows": "The chart tracks the NASDAQ 100 index level and corresponding percentage drawdowns from 1999 through 2015, highlighting the 83% collapse during the Dot-Com Bust. It shows the index dropping to a low of 805 in October 2002 and taking until late 2015 to reach new highs.",
+            "chart_credit": "42 Macro"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWR_H5iWMAEIJF2.jpg",
+            "image_text": "When the next secular bear market arrives, do you want your portfolio to look like the red lines or the blue lines in these charts? S&P 500 Hypothetical Performance of a $100,000 Portfolio Since January 1, 2007 | SPY Equity Total Return. Global Equities ex-US $ACWX Hypothetical Performance of a $100,000 Portfolio Since January 1, 2007 | MXWDU Index Total Return. Dr. Mo = $751,011 ... SPY = $761,71",
+            "what_it_shows": "The two charts compare hypothetical portfolio performance starting from January 1, 2007, contrasting risk-managed strategies against standard equity index buy-and-hold returns for both the S&P 500 and global equities ex-US. The series display diverging paths in terminal portfolio values and drawdown",
+            "chart_credit": "42 Macro"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWR_H5jWoAAzOJ3.jpg",
+            "image_text": "Even if you have ample time to recover from a secular bear market, the math overwhelmingly favors Adaptive Risk Management over Wall Street's self-serving buy-and-hold investment strategies (read: marketing): S&P 500 Total Return Index, trailing 30 years. S&P 500 Total Return: Hypothetical Growth of a $100,000 Portfolio over the Trailing 30 Years with the Best and Worst Days Excluded. 42 Macro LLC",
+            "what_it_shows": "The chart illustrates hypothetical growth of a $100,000 portfolio invested in the S&P 500 over a trailing 30-year period under different backtested scenarios, including various combinations of excluding specific top and bottom days. The multiple curves show divergent terminal values ranging from $1.",
+            "chart_credit": "42 Macro"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
     {
       "id": "2117953757896159558",
       "person": "Bob Elliott",
@@ -6916,1236 +8328,6 @@
         ],
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
       }
-    },
-    {
-      "id": "2115613229997023606",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-29T01:14:34.000Z",
-      "url": "https://x.com/jam_croissant/status/2115613229997023606",
-      "text": "This Fed is SO ‘independent’ that the Fed Chairman dutifully uses Dear Leader’s new made up terminology...\n\n“It’s not AI… it’s SI.” 🙄 \n\nWarsh is indeed ‘central casting’ for the role of Fed Chair in this theater 🎭…\n\nBut it is a role. Do not confuse theater for reality. https://t.co/CLa0R57xi4",
-      "quoted_post_id": "2115521458508066851",
-      "quoted_post": {
-        "id": "2115521458508066851",
-        "author": "PeterSchiff",
-        "created_at": "2026-10-28T19:09:54.000Z",
-        "url": "https://x.com/PeterSchiff/status/2115521458508066851",
-        "text": "Warsh just referred to artificial intelligence as \"superintelligence.\" This suggests that when it comes to language, Warsh is following Trump's directives. This also suggests that he may have bowed to political pressure from Trump not to hike rates a week before the midterms.",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVwrBJKWQAEIV2w.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVwrBJKWQAEIV2w.jpg",
-            "image_text": "ALL THE WORLD'S A STAGE!",
-            "what_it_shows": "A still image from a video showing several people in a room, with a caption reading 'ALL THE WORLD'S A STAGE!' and an IFC logo in the bottom corner.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115592201627398188",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-28T23:51:01.000Z",
-      "url": "https://x.com/jam_croissant/status/2115592201627398188",
-      "text": "🎭 https://t.co/UoYDupeHox",
-      "quoted_post_id": "2115543166065549786",
-      "quoted_post": {
-        "id": "2115543166065549786",
-        "author": "BobEUnlimited",
-        "created_at": "2026-10-28T20:36:10.000Z",
-        "url": "https://x.com/BobEUnlimited/status/2115543166065549786",
-        "text": "All Hat, No Cattle. https://t.co/T8E3ftEcZq",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVvq0-TW4AADjeC.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVwX5GnXoAACkRx.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVwX5GnXoAACkRx.jpg",
-            "image_text": "KABUKI",
-            "what_it_shows": "An artistic illustration featuring a stylized red outline of a face with the word 'KABUKI' underneath against a black background.",
-            "chart_credit": "unknown"
-          },
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVvq0-TW4AADjeC.jpg",
-            "image_text": "FEDERAL RESERVE",
-            "what_it_shows": "A man wearing a large cowboy hat, vest, and neck scarf on horseback in front of the Federal Reserve building with US flags flying in the background.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115569599177805917",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-28T22:21:12.000Z",
-      "url": "https://x.com/jam_croissant/status/2115569599177805917",
-      "text": "Kabuki https://t.co/VTu5p6rClt",
-      "quoted_post_id": "2115566118672949713",
-      "quoted_post": {
-        "id": "2115566118672949713",
-        "author": "perfiliev",
-        "created_at": "2026-10-28T22:07:22.000Z",
-        "url": "https://x.com/perfiliev/status/2115566118672949713",
-        "text": "I was trying to focus on Warsh's answers during the presser but really couldn't string together a coherent picture...\n\nLike, he's saying words that individually make sense but overall there's nothing of substance or clarity...",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVwDVr5WcAA4Ih1.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVwDVr5WcAA4Ih1.jpg",
-            "image_text": "",
-            "what_it_shows": "This image shows a person with white face paint and dark hair, screaming with hands raised in a dramatic or theatrical gesture against a dark background.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115568954903314939",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-28T22:18:38.000Z",
-      "url": "https://x.com/jam_croissant/status/2115568954903314939",
-      "text": "Kabuki https://t.co/r4ScQLfji8",
-      "quoted_post_id": "2115514273833095659",
-      "quoted_post": {
-        "id": "2115514273833095659",
-        "author": "darioperkins",
-        "created_at": "2026-10-28T18:41:21.000Z",
-        "url": "https://x.com/darioperkins/status/2115514273833095659",
-        "text": "Warsh talks an awful lot without saying anything. By the time he stops, @colbyLsmith will have forgotten her question.....",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVwCv9NWMAANylO.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVwCv9NWMAANylO.jpg",
-            "image_text": "",
-            "what_it_shows": "This image shows a performer in traditional Kabuki theater attire with white face makeup and elaborate white hair.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115558976347611603",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T21:38:59.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115558976347611603",
-      "text": "💥💥",
-      "quoted_post_id": "2115558487266660380",
-      "quoted_post": {
-        "id": "2115558487266660380",
-        "author": "philrosenn",
-        "created_at": "2026-10-28T21:37:03.000Z",
-        "url": "https://x.com/philrosenn/status/2115558487266660380",
-        "text": "The Fed can do whatever it wants but AI is still the most powerful force driving markets right now.\n\nAI is the macro and a few basis points of interest rate moves won't change that.\n\nMy discussion with @jd_durkin at @NYSE (and a shoutout to @RyanDetrick!) https://t.co/PP9NeKr83F",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2115558267115982848/img/hTNrWyxAfTIi5n8d.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2115558267115982848/img/hTNrWyxAfTIi5n8d.jpg",
-            "image_text": "HYATT LISTED N... NEW YORK STOCK EXCHANGE TAKING STOCK TS PHIL ROSEN CHIEF MARKET STRATEGIST, SILVIA INC FINTECH TV CLOSING BELL FOLLOW US FOR MORE @NYSE @FINTECHTVGLOBAL",
-            "what_it_shows": "A television broadcast or video segment featuring Phil Rosen, Chief Market Strategist at Silvia Inc, being interviewed at the New York Stock Exchange.",
-            "chart_credit": "FINTECH TV"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115547289997521149",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-28T20:52:33.000Z",
-      "url": "https://x.com/DariusDale42/status/2115547289997521149",
-      "text": "Question: Everyone has seen the “miss the 10 best days of the market” marketing fluff. Statistically speaking, volatility clusters, so this is MATHEMATICALLY IMPOSSIBLE. Thus, the only sound question to ask is: What happens when you miss the 10 best and 10 worst days? Answer:",
-      "quoted_post_id": "2115534063901544884",
-      "quoted_post": {
-        "id": "2115534063901544884",
-        "author": "42Macro",
-        "created_at": "2026-10-28T20:00:00.000Z",
-        "url": "https://x.com/42Macro/status/2115534063901544884",
-        "text": "The Macro Minute | Oct 28, 2026: SK Hynix’s Booming Profits Signal Medium-Term Strength & Long-Term Deflation Risk\n\nFor daily updates, follow The Macro Minute on your favorite podcast platform. https://t.co/zrsNoOe9Jt",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/media/HVwiq25XoAAindh.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/media/HVwiq25XoAAindh.jpg",
-            "image_text": "THE MACRO MINUTE SK Hynix's Booming Profits Signal Medium-Term Strength and Long-Term Compute Risk",
-            "what_it_shows": "This is an introductory title card for a video or report titled 'The Macro Minute', focusing on SK Hynix's profits, medium-term strength, and long-term compute risk, with an SK corporate sign in the background.",
-            "chart_credit": "42 Macro"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115543166065549786",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-10-28T20:36:10.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2115543166065549786",
-      "text": "All Hat, No Cattle. https://t.co/T8E3ftEcZq",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVvq0-TW4AADjeC.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVvq0-TW4AADjeC.jpg",
-            "image_text": "FEDERAL RESERVE",
-            "what_it_shows": "An AI-generated or edited image showing a man wearing an oversized cowboy hat, a red bandana, a vest, and holding horse reins, with the Federal Reserve building and American flags in the background.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115538752559022392",
-      "person": "Joseph Wang",
-      "handle": "josephwang",
-      "tier": 4,
-      "role": "shadow",
-      "author_id": "718702333",
-      "created_at": "2026-10-28T20:18:38.000Z",
-      "url": "https://x.com/josephwang/status/2115538752559022392",
-      "text": "October 2026 FOMC Debrief\n\nhttps://t.co/4j3kFgOvg5",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://youtu.be/lfuYwR7XA1A"
-      ],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115537753429381629",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-28T20:14:39.000Z",
-      "url": "https://x.com/dampedspring/status/2115537753429381629",
-      "text": "Definely GOOG is finding it difficult to get its slice of pie.",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115537474285969550",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-28T20:13:33.000Z",
-      "url": "https://x.com/dampedspring/status/2115537474285969550",
-      "text": "Well that was fun",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115534488805491052",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T20:01:41.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115534488805491052",
-      "text": "Even the Fed couldn't ruin the historically most bullish day of the year 🐂 💪",
-      "quoted_post_id": "2115175681302880762",
-      "quoted_post": {
-        "id": "2115175681302880762",
-        "author": "RyanDetrick",
-        "created_at": "2026-10-27T20:15:55.000Z",
-        "url": "https://x.com/RyanDetrick/status/2115175681302880762",
-        "text": "We made it, my favorite stat is finally here.\n\nOctober 28th is the best day of the year for the S&P 500 and it is also my birthday. No way the Fed would ruin my day, would they?  🎂 https://t.co/CyXQwZ5TVz",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVqct6tX0AAiJ8K.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVqct6tX0AAiJ8K.jpg",
-            "image_text": "The Best Day of The Year Is October 28th S&P 500 Average Performance Per Day (1950 - 2025) January February March April May June July August September October November December 1 0.19% 0.31% 0.27% 0.20% 0.18% 0.27% -0.10% 0.11% 0.21% 0.18% 0.04% 2 0.26% 0.18% 0.14% 0.07% 0.19% 0.17% 0.07% 0.05% 0.22% 0.16% 0.30% 0.08% 3 0.17% 0.13% 0.03% -0.09% 0.09% 0.03% 0.32% 0.08% -0.02% -0.05% 0.39% -0.14% 4 ",
-            "what_it_shows": "This is a heatmap table showing the S&P 500 average performance per day from 1950 to 2025 across all months and calendar days, with October 28 highlighted as having an average performance of 0.50%.",
-            "chart_credit": "Carson Investment Research"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115533367706059146",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T19:57:14.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115533367706059146",
-      "text": "Careful what you wish for with market breadth. @sonusvarghese and I explain on Facts vs Feelings Ep. 211 💥 \n\n📉 On Oct. 22, 2026, 324 of 500 S&P 500 stocks rose and the median stock gained 1.1%, yet the index fell 1.4% as tech dropped 3.3%. Tech has been a top-three sector in",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115532258165543258",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T19:52:49.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115532258165543258",
-      "text": "Oh my. @Adam_Parker_Tri just now on @CNBCClosingBell. 👏 https://t.co/yek8pQUDCL",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVvhXzfXgAAMUbI.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVvhXzfXgAAMUbI.jpg",
-            "image_text": "",
-            "what_it_shows": "This image is a GIF showing a man with white hair and a suit eagerly eating popcorn from a yellow tub, reacting with excitement.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115531547315212315",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-28T19:50:00.000Z",
-      "url": "https://x.com/jam_croissant/status/2115531547315212315",
-      "text": "Live in 10 minutes: I’m back with @tastyliveshow at 3pm CT (4pm ET). Join us live. 🍒🥐\n\nhttps://t.co/HP4No0QwQP",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://www.youtube.com/watch?v=k8fzbP3XqnI"
-      ],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115523666322624734",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-28T19:18:41.000Z",
-      "url": "https://x.com/dampedspring/status/2115523666322624734",
-      "text": "We as DS call bragging about markets a \"mook\" others call it a goucher or a jinx.  Anyway what was Warsh thinking with \"interest rates have rolled over\" https://t.co/5ZrAw6Xifp",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVvZj4HXwAAuvCr.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVvZj4HXwAAuvCr.jpg",
-            "image_text": "",
-            "what_it_shows": "An artistic illustration of a person with a large afro hairstyle and sunglasses against a yellow and brown background.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115513047158866156",
-      "person": "Jim Bianco",
-      "handle": "BiancoResearch",
-      "tier": 3,
-      "role": "core",
-      "author_id": "188369814",
-      "created_at": "2026-10-28T18:36:29.000Z",
-      "url": "https://x.com/BiancoResearch/status/2115513047158866156",
-      "text": "You could argue that the only signal in this markup is the change from \"solid\" to \"strong.\"\n\n\"Strong\" implies a greater growth pace than \"solid.\" What are they trying to signal by saying that the economy is moving faster?\n\nYet they didn't hike.",
-      "quoted_post_id": "2115503892905730129",
-      "quoted_post": {
-        "id": "2115503892905730129",
-        "author": "NickTimiraos",
-        "created_at": "2026-10-28T18:00:06.000Z",
-        "url": "https://x.com/NickTimiraos/status/2115503892905730129",
-        "text": "The Fed holds steady.\n\nThe decision is 10-2.\n\nLisa Cook and Beth Hammack voted for an increase. https://t.co/nUKDM6n8Zp",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVvHkHGXQAAaRIi.png"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVvHkHGXQAAaRIi.png",
-            "image_text": "The Federal Open Market Committee approved the following statement for release by a 12-010-2 vote:\nThe Committee decided to raisemaintain the target range for the federal funds rate by 1/4 percentage point toat 3-3/4 to 4 percent... Economic activity is expanding at a solidstrong pace... The accumulation of more information will supporthelp the Committee determine the policy stance appropriate to ",
-            "what_it_shows": "The image shows a marked-up draft of a Federal Open Market Committee statement with proposed insertions and deletions highlighted in red text.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115512654702018611",
-      "person": "Joseph Wang",
-      "handle": "josephwang",
-      "tier": 4,
-      "role": "shadow",
-      "author_id": "718702333",
-      "created_at": "2026-10-28T18:34:55.000Z",
-      "url": "https://x.com/josephwang/status/2115512654702018611",
-      "text": "Warsh \"unwilling and unable to call financial conditions tight.\"",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115511703450304809",
-      "person": "Warren Pies",
-      "handle": "WarrenPies",
-      "tier": 1,
-      "role": "core",
-      "author_id": "2326980139",
-      "created_at": "2026-10-28T18:31:09.000Z",
-      "url": "https://x.com/WarrenPies/status/2115511703450304809",
-      "text": "FED\n\nBased on SOFR, the Fed's focus has gone from oil to QQQ...The risk is Warsh hinting that the current AI credit wobble is not sufficient to slow the cycle.",
-      "quoted_post_id": "2115084762700251451",
-      "quoted_post": {
-        "id": "2115084762700251451",
-        "author": "WarrenPies",
-        "created_at": "2026-10-27T14:14:38.000Z",
-        "url": "https://x.com/WarrenPies/status/2115084762700251451",
-        "text": "@CapitalObserver So far, yields have fallen when tech weakens (Fed hikes priced out). This allows for defensives/non-AI basket to rally (broadening) and translates into S&P 500 chop.\n\nOne negative way this all breaks is if the Fed signals that nasdaq weakness is not enough to stop the tightening",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115508532086968511",
-      "person": "Jim Bianco",
-      "handle": "BiancoResearch",
-      "tier": 3,
-      "role": "core",
-      "author_id": "188369814",
-      "created_at": "2026-10-28T18:18:32.000Z",
-      "url": "https://x.com/BiancoResearch/status/2115508532086968511",
-      "text": "With Cook dissenting, four different voters have voted to hike rates against the majority between this meeting and July.\n\nThe Fed hiked rates in September. The vote was 12-0 to hike rates.\n\nTells you their direction of travel.",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115505464817623239",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-28T18:06:21.000Z",
-      "url": "https://x.com/dampedspring/status/2115505464817623239",
-      "text": "Is strong hawkier than solid?   What has become of our life😂",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115502606663778568",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-28T17:55:00.000Z",
-      "url": "https://x.com/jam_croissant/status/2115502606663778568",
-      "text": "GOING LIVE in just a few minutes on @CNBC. We’ll be setting the table for Fed Chair Warsh’s remarks and the market’s next read on policy.\n\nLooking forward to the conversation with @steveliesman, @SullyCNBC and @KellyCNBC.",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115490778730664029",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-28T17:08:00.000Z",
-      "url": "https://x.com/jam_croissant/status/2115490778730664029",
-      "text": "Reminder: I’ll be on @CNBCTheExchange LIVE at 1pm CT (2pm ET) as the Fed takes center stage. \n\nI’m looking forward to joining @steveliesman, @SullyCNBC and @KellyCNBC. https://t.co/NsxWwKhmv3",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVurEd0WwAAbN_z.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVurEd0WwAAbN_z.jpg",
-            "image_text": "",
-            "what_it_shows": "This image shows a scene from the movie The Wolf of Wall Street featuring a character in a suit with outstretched arms in front of glass block windows while people applaud.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115473918584553620",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-28T16:01:00.000Z",
-      "url": "https://x.com/jam_croissant/status/2115473918584553620",
-      "text": "BIG DAY!!  I’ll join @CNBC LIVE at 1pm CT (2pm ET) for a panel on one of the most consequential Fed meetings in years, alongside @steveliesman, @SullyCNBC and @KellyCNBC.\n\nHonored to step into a seat Rick Santelli made essential. Tune in. https://t.co/av9tcVUkgu",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVuqPCUWIAA0IhN.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVuqPCUWIAA0IhN.jpg",
-            "image_text": "#WalkerTexasRanger WATCH ME",
-            "what_it_shows": "This image is a GIF featuring a close-up of Chuck Norris with the text 'WATCH ME' at the bottom and a hashtag watermark '#WalkerTexasRanger' at the top right.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115469900877857004",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-28T15:45:02.000Z",
-      "url": "https://x.com/jam_croissant/status/2115469900877857004",
-      "text": "🍒🥐 I’ll be joining @tastyliveshow today at 3pm CT (4pm ET). Tune in for the conversation live. We will be talking Fed!\n\nhttps://t.co/HP4No0QwQP",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://www.youtube.com/watch?v=k8fzbP3XqnI"
-      ],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115469785341235259",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T15:44:35.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115469785341235259",
-      "text": "Thanks @stocktradernet for have me back!\n\n34 charts in 35 minutes with @Spus and @TripleDTrader 🔥🔥",
-      "quoted_post_id": "2115466931549389083",
-      "quoted_post": {
-        "id": "2115466931549389083",
-        "author": "stocktradernet",
-        "created_at": "2026-10-28T15:33:14.000Z",
-        "url": "https://x.com/stocktradernet/status/2115466931549389083",
-        "text": "Why Ryan Detrick, CMT Says This Bull Market Isn't Over\n\nCarson Group Chief Market Strategist, Ryan Detrick, CMT joined us on PreMarket Prep on FOMC day to break down his stock market outlook for Q4, the midterms, and beyond.  \n\nRyan covers why he thinks the four-year bull market https://t.co/dM1IG6f7g3",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2115457496915628032/img/07js7jVTyK_QKW0c.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2115457496915628032/img/07js7jVTyK_QKW0c.jpg",
-            "image_text": "INTRODUCING",
-            "what_it_shows": "This image shows a stylized banner with the word 'INTRODUCING' in a retro, glitchy font against a dark blue background.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115467456072286609",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T15:35:19.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115467456072286609",
-      "text": "Equal weight software is breaking out. \n\nHard to get super bearish when you see this happening. \n\nNice one from @TheChartReport https://t.co/wpBBEWIOw2",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVumcFhWEAAPQ6u.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVumcFhWEAAPQ6u.jpg",
-            "image_text": "Equal Weight Software ETF - XSW 2025 Jul 2026 Jul 400.00 360.00 320.00 280.00 240.00 214.89 190.00 170.00 150.00 134.00 118.00 106.00 The Chart Report Djack38 created with TradingView.com, Oct 28, 2026 12:20 UTC TradingView",
-            "what_it_shows": "The chart shows the price of the Equal Weight Software ETF (XSW) from early 2025 to late 2026, featuring a curved handle pattern with a resistance line near 210.00 and a final price of 214.89.",
-            "chart_credit": "The Chart Report"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115442443432968593",
-      "person": "Marko Papic",
-      "handle": "Geo_papic",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1502354421421785088",
-      "created_at": "2026-10-28T13:55:56.000Z",
-      "url": "https://x.com/Geo_papic/status/2115442443432968593",
-      "text": "Just a simple chart... both for everyone to \"settle down a bit,\" and also as a reminder of how bad it get still get. https://t.co/pwKNqvHyIE",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVuPqWeXcAAY6KV.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVuPqWeXcAAY6KV.jpg",
-            "image_text": "BPs 800 700 600 500 400 300 200 100 0 -100 2008 2010 2012 2014 2016 2018 2020 2022 2024 2026 BPs 800 700 600 500 400 300 200 100 0 -100 2-YEAR GOVERNMENT BOND SPREADS vs GERMAN BUNDS: - FRANCE: 65 BPs - ITALY: 50 BPs - SPAIN: 16 BPs (C) BCA Research SOURCE: MACROBOND. LAST DATA POINT: October 27, 2026.",
-            "what_it_shows": "This line chart displays 2-year government bond spreads versus German bunds for France, Italy, and Spain from 2008 to late 2026. The latest data point from October 27, 2026, lists France at 65 BPs, Italy at 50 BPs, and Spain at 16 BPs.",
-            "chart_credit": "BCA Research"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115440762569535726",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T13:49:15.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115440762569535726",
-      "text": "Had such a great time joining  my friend @APompliano talking about why this is still a bull market, breadth might not be what you think, sentiment is getting extreme, and better times are coming soon. 📈📈📊💹\n\nhttps://t.co/wvANWjqb4j",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://www.youtube.com/watch?v=SJM8g3XV03w"
-      ],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115435786753687745",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-28T13:29:29.000Z",
-      "url": "https://x.com/DariusDale42/status/2115435786753687745",
-      "text": "I highly recommend that you watch this short video and read the brief prose in the post below if you are a head of a household or a fiduciary of other people's wealth.",
-      "quoted_post_id": "2115428379700703493",
-      "quoted_post": {
-        "id": "2115428379700703493",
-        "author": "42Macro",
-        "created_at": "2026-10-28T13:00:03.000Z",
-        "url": "https://x.com/42Macro/status/2115428379700703493",
-        "text": "The Second-Largest Risk to Asset Markets Is an AI Capex Bust… What Is the Largest?\n\nEnjoy these clips from our Oct-26 monthly Macro Scouting Report webcast in which we detail a small-but-robust portion of the analysis that we performed to conclude the following:\n\n1. The historic https://t.co/IbB0qIBSn1",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/media/HVu6NXMWkAAjLJh.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-29T01:15:35+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/media/HVu6NXMWkAAjLJh.jpg",
-            "image_text": "42 Macro, THE SECOND-LARGEST RISK TO ASSET MARKETS IS AN AI CAPEX BUST... WHAT IS THE LARGEST?, Macro Scouting Report, October 2026, DARIUS DALE FOUNDER & CEO 42 MACRO",
-            "what_it_shows": "The image features a portrait of Darius Dale alongside text asking what the largest risk to asset markets is, given that the second-largest is an AI capex bust. It also includes the title Macro Scouting Report for October 2026.",
-            "chart_credit": "42 Macro"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115430949198418207",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-10-28T13:10:15.000Z",
-      "url": "https://x.com/dampedspring/status/2115430949198418207",
-      "text": "It really is quite amazing that the @SecScottBessent treasury thinks it's a good idea to issue 444BN of 20 and 30 year nominals annually AND buyback 192BN of off the runs 20 and 30 year debt for a net new issuance of 252BN when the deficit is growing and running at 1800BN per",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115421209571610652",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-28T12:31:33.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115421209571610652",
-      "text": "Starting in five minutes with @Spus and @TripleDTrader \n\nI have a record 34 slides to discuss ;)",
-      "quoted_post_id": "2115415539245871427",
-      "quoted_post": {
-        "id": "2115415539245871427",
-        "author": "RyanDetrick",
-        "created_at": "2026-10-28T12:09:01.000Z",
-        "url": "https://x.com/RyanDetrick/status/2115415539245871427",
-        "text": "I'm set to join Premarket Prep in about 25 minutes at 8:35am ET! You can watch it all 👇👇👇 \n\nAlways fun to chat with my friends @Spus and @TripleDTrader 🎙️",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
     }
   ],
   "person_index": {
@@ -8155,8 +8337,8 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 15,
-        "non_noise": 13,
+        "count": 20,
+        "non_noise": 17,
         "items": [
           {
             "at": "2026-11-02T16:52:35+09:00",
@@ -8267,13 +8449,50 @@
             "kind": "post",
             "preview": "The Three Poisons shifting the Karmic Winds 1. Higher real rates stay higher for longer 2. Massive …",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T21:37:37+09:00",
+            "url": "https://x.com/dampedspring/status/2117959452200517721",
+            "kind": "post",
+            "preview": "Wordle 1,964 4/6* ⬜⬜⬜⬜⬜ ⬜⬜🟨⬜🟨 🟨🟨🟩⬜⬜ 🟩🟩🟩🟩🟩 Hahaha so true",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-11-04T21:44:26+09:00",
+            "url": "https://x.com/dampedspring/status/2117961166550925780",
+            "kind": "post",
+            "preview": "Yes we get it. Sell picks and shovels and buy those overspending on picks and shovels. Man the bots…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T02:09:55+09:00",
+            "url": "https://x.com/dampedspring/status/2118027978521354538",
+            "kind": "post",
+            "preview": "Cheap Trick - Surrender (Official Audio) via @YouTube",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T06:03:40+09:00",
+            "url": "https://x.com/dampedspring/status/2118086802691023211",
+            "kind": "quote_post",
+            "preview": "Come listen live!",
+            "quoted_author": "JackFarley96",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T08:12:50+09:00",
+            "url": "https://x.com/dampedspring/status/2118119306483401183",
+            "kind": "quote_post",
+            "preview": "Replay. Man can I drone on.",
+            "quoted_author": "JackFarley96",
+            "noise_hint": false
           }
         ]
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 6,
+        "non_noise": 6,
         "items": [
           {
             "at": "2026-11-02T21:15:00+09:00",
@@ -8295,6 +8514,28 @@
             "kind": "post",
             "preview": "Acceptance & Obstruction The market bounce came as the administration accepted the election results…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T23:23:58+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2117986214502707350",
+            "kind": "post",
+            "preview": "Stable supply for now, but the increases in issuance needed ahead may come with a twist.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T02:15:07+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2118029286523232613",
+            "kind": "post",
+            "preview": "If your revenue goes up 50% and your operating income falls, your business model sucks.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T05:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2118074554438627403",
+            "kind": "quote_post",
+            "preview": "October a pretty tough month across the HF industry and looks like that's bled into the start of th…",
+            "quoted_author": "nishantkumar07",
+            "noise_hint": false
           }
         ]
       },
@@ -8303,21 +8544,6 @@
         "count": 8,
         "non_noise": 8,
         "items": [
-          {
-            "at": "2026-11-02T02:20:26+09:00",
-            "url": "https://x.com/jam_croissant/status/2116943460565766477",
-            "kind": "quote_post",
-            "preview": "Incentives drive outcomes… & there is only one way out. 🖨️ 💵;➕📈 State run capitalism imminent.",
-            "quoted_author": "MilkRoadAI",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T02:28:26+09:00",
-            "url": "https://x.com/jam_croissant/status/2116945475370950855",
-            "kind": "quote_post",
-            "quoted_author": "DeItaone",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-03T02:57:07+09:00",
             "url": "https://x.com/jam_croissant/status/2117315081058832749",
@@ -8361,13 +8587,27 @@
             "kind": "quote_post",
             "quoted_author": "jam_croissant",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T02:40:00+09:00",
+            "url": "https://x.com/jam_croissant/status/2118035546937442477",
+            "kind": "post",
+            "preview": "I’ll be on @tastyliveshow today at 3pm CT (4pm ET) 🍒🥐 Join us as we break down what the decisive el…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T05:49:00+09:00",
+            "url": "https://x.com/jam_croissant/status/2118083110130885084",
+            "kind": "post",
+            "preview": "Live in 10 minutes on @tastyliveshow 🍒🥐 Join us at 3pm CT (4pm ET) as we dig into how the election …",
+            "noise_hint": false
           }
         ]
       },
       "Darius Dale": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-04T20:56:52+09:00",
@@ -8375,29 +8615,37 @@
             "kind": "post",
             "preview": "MIDTERMS: I've been trying to tell you guys for my entire career on global Wall Street that these t…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T21:29:53+09:00",
+            "url": "https://x.com/DariusDale42/status/2117957506525778222",
+            "kind": "post",
+            "preview": "2028 ELECTION RISK: The worst secular bear market in stocks in US history is the one that priced in…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T22:54:14+09:00",
+            "url": "https://x.com/DariusDale42/status/2117978731851522062",
+            "kind": "quote_post",
+            "preview": "Hi @Jason, @friedberg, @chamath, and @DavidSacks, Please watch this 5-min clip. If you find it inte…",
+            "quoted_author": "natbrunell",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T06:16:04+09:00",
+            "url": "https://x.com/DariusDale42/status/2118089923748303340",
+            "kind": "quote_post",
+            "preview": "Question: Should you trust today’s positive response to the midterm election results and data cente…",
+            "quoted_author": "42Macro",
+            "noise_hint": false
           }
         ]
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-01T22:39:13+09:00",
-            "url": "https://x.com/BiancoResearch/status/2116887789790982346",
-            "kind": "post",
-            "preview": "Where the stock market stands after Friday.",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T01:43:42+09:00",
-            "url": "https://x.com/BiancoResearch/status/2116934214335520777",
-            "kind": "quote_post",
-            "preview": "Where AI stands after Friday. The 7th-largest sell-off in the last two years, after rallying over 5…",
-            "quoted_author": "biancoresearch",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-04T01:43:49+09:00",
             "url": "https://x.com/BiancoResearch/status/2117659021108728095",
@@ -8422,50 +8670,33 @@
           }
         ]
       },
-      "Lyn Alden": {
-        "role": "core",
-        "count": 11,
-        "non_noise": 10,
+      "Joseph Wang": {
+        "role": "shadow",
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
-            "at": "2026-11-02T08:49:12+09:00",
-            "url": "https://x.com/LynAldenContact/status/2117041295785136408",
-            "kind": "quote_post",
-            "preview": "Extreme fascism tends to dismantle itself, with occasional isolated exceptions. People imagine it w…",
-            "quoted_author": "TopMontagnard",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T09:06:46+09:00",
-            "url": "https://x.com/LynAldenContact/status/2117045718120796341",
-            "kind": "quote_post",
-            "preview": "To this day, Andor has one of the best monologues on freedom vs authoritarianism ever written.",
-            "quoted_author": "paulcerro",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T09:24:34+09:00",
-            "url": "https://x.com/LynAldenContact/status/2117050198824280138",
-            "kind": "quote_post",
-            "preview": "Luke was strong. Anakin was weak. Notice that benevolence and virtue need not be passive. There is …",
-            "quoted_author": "GODFOE_UNIVERSE",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T09:47:00+09:00",
-            "url": "https://x.com/LynAldenContact/status/2117055843560530183",
-            "kind": "quote_post",
-            "preview": "Amid these pro-Anakin memes, there is this. Imagine a person who would directly kill children. Not …",
-            "quoted_author": "STC_BTC",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T09:59:27+09:00",
-            "url": "https://x.com/LynAldenContact/status/2117058974361026608",
+            "at": "2026-11-04T22:33:08+09:00",
+            "url": "https://x.com/josephwang/status/2117973420696805422",
             "kind": "post",
-            "preview": "Sometimes social trends gain steam, but if you're a serious person you just analyze them individual…",
+            "preview": "Treasury didn't cut long end issuance. Long end briefly selling off on the news.",
             "noise_hint": false
           },
+          {
+            "at": "2026-11-05T01:19:12+09:00",
+            "url": "https://x.com/josephwang/status/2118015214008352779",
+            "kind": "quote_post",
+            "preview": "Oil down sharply as Vance attributes electoral outcome to unpopular Iran war.",
+            "quoted_author": "JDVance",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Lyn Alden": {
+        "role": "core",
+        "count": 6,
+        "non_noise": 5,
+        "items": [
           {
             "at": "2026-11-02T14:15:51+09:00",
             "url": "https://x.com/LynAldenContact/status/2117123499235975522",
@@ -8513,8 +8744,8 @@
       },
       "Mark Newton": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-03T09:46:26+09:00",
@@ -8529,13 +8760,20 @@
             "kind": "post",
             "preview": "$KYMR Kymera Therapeutics- I continue to find many HC stocks far more attractive than many within T…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T09:08:22+09:00",
+            "url": "https://x.com/MarkNewtonCMT/status/2118133285582692499",
+            "kind": "post",
+            "preview": "Still a tricky time for most of Tech despite bigwigs like $MSFT & $AAPL pushing back to new all-tim…",
+            "noise_hint": false
           }
         ]
       },
       "Marko Papic": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 8,
+        "non_noise": 8,
         "items": [
           {
             "at": "2026-11-04T17:28:43+09:00",
@@ -8564,84 +8802,44 @@
             "kind": "post",
             "preview": "2028 does not get any easier for GOP. Defending Murkowski's seat in AK, Young in IN, Grassley in IA…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T06:21:27+09:00",
+            "url": "https://x.com/Geo_papic/status/2118091276650418383",
+            "kind": "post",
+            "preview": "The GeoMacro Alpha report dropped... yesterday. Just for some shameless back-slapping, the conclusi…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T06:25:08+09:00",
+            "url": "https://x.com/Geo_papic/status/2118092205348774320",
+            "kind": "quote_post",
+            "preview": "This came in second place in the Geopolsketball Internet space. Well done.",
+            "quoted_author": "irisketball",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T06:26:05+09:00",
+            "url": "https://x.com/Geo_papic/status/2118092443744621042",
+            "kind": "quote_post",
+            "preview": "This came in first in the Geopolsketball Internet today. You won!",
+            "quoted_author": "buck4orlife",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T06:45:25+09:00",
+            "url": "https://x.com/Geo_papic/status/2118097307132723482",
+            "kind": "post",
+            "preview": "As my colleague @mgertken has said, American institutions WORK. 1. The Fed remains independent. 2. …",
+            "noise_hint": false
           }
         ]
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 28,
-        "non_noise": 28,
+        "count": 30,
+        "non_noise": 30,
         "items": [
-          {
-            "at": "2026-11-02T00:40:51+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116918400832393530",
-            "kind": "post",
-            "preview": "Mag 7 Q3 YoY EPS is only 22.6% (note only five have reported, no $AAPL or $NVDA yet). The 493 is 32…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T01:02:43+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116923903759077490",
-            "kind": "post",
-            "preview": "Bitcoin averages 37% in November according to this chart from @scottcharts 😲",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T01:26:22+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116929853266034855",
-            "kind": "post",
-            "preview": "November is the best month of the year on average since 1950, second best the past 20 years, the be…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T02:06:21+09:00",
-            "url": "https://x.com/RyanDetrick/status/2116939914629570642",
-            "kind": "post",
-            "preview": "Value beat growth by more than 10% in October, the most since early 2001/late 2000.",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T07:51:47+09:00",
-            "url": "https://x.com/RyanDetrick/status/2117026847871381507",
-            "kind": "post",
-            "preview": "S&P 500 equal-weight beat the S&P 500 cap-weight by 5.9% in October. That is the second largest out…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T08:06:08+09:00",
-            "url": "https://x.com/RyanDetrick/status/2117030459175546970",
-            "kind": "post",
-            "preview": "No month in a midterm year is more likely to be higher than November at 78.9% of the time.",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T08:10:38+09:00",
-            "url": "https://x.com/RyanDetrick/status/2117031590438359067",
-            "kind": "post",
-            "preview": "October and November have never both been lower in a midterm year. The five times October was lower…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T08:45:08+09:00",
-            "url": "https://x.com/RyanDetrick/status/2117040274064933126",
-            "kind": "post",
-            "preview": "We are leaving the historically worst six months and the next six months are the historically best …",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T08:47:06+09:00",
-            "url": "https://x.com/RyanDetrick/status/2117040770217853295",
-            "kind": "post",
-            "preview": "These next six months are historically the best of the year, but they are even better in a midterm …",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T08:57:02+09:00",
-            "url": "https://x.com/RyanDetrick/status/2117043267573547031",
-            "kind": "post",
-            "preview": "The neoclouds in at the center of the AI worries. We discussed it on Facts vs Feelings this week",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-02T22:51:27+09:00",
             "url": "https://x.com/RyanDetrick/status/2117253256149651963",
@@ -8770,13 +8968,98 @@
             "kind": "post",
             "preview": "This is now five consecutive midterms to see the makeup of Congress change power. You have to go ba…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T22:07:52+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117967062723145837",
+            "kind": "quote_post",
+            "preview": "🥈",
+            "quoted_author": "JC_ParetsX",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T23:10:45+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117982887375163568",
+            "kind": "post",
+            "preview": "Six midterms in a row now with a change in power in Congress. You have to go all the way back to 20…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T23:34:06+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117988762911154347",
+            "kind": "post",
+            "preview": "Starting with the 82nd Congress in 1951, a Democratic Congress and Republican President is the most…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T23:43:33+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117991143191589198",
+            "kind": "post",
+            "preview": "Today is first 1,000 point Dow gain since August 4 and the 28th in history. 26 of these took place …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T23:50:27+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117992877573697934",
+            "kind": "post",
+            "preview": "We just had one of the largest hedge fund de-grossing events in history, right as the S&P 500 conso…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T23:58:07+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117994807566258414",
+            "kind": "post",
+            "preview": "CNN Fear & Greed was 19 at the close yesterday, but I'm guessing it was -72 about 12 hours ago.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T00:01:21+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117995622804468104",
+            "kind": "post",
+            "preview": "77% of NYSE advancing currently. Just another day with most stocks going higher, similar to what we…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T00:04:00+09:00",
+            "url": "https://x.com/RyanDetrick/status/2117996291049590824",
+            "kind": "post",
+            "preview": "The number of stocks in the S&P 500 above their 50- and 200-day MAs have been surging for going on …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T00:52:14+09:00",
+            "url": "https://x.com/RyanDetrick/status/2118008425799930101",
+            "kind": "post",
+            "preview": "Seven times a Republican President faced a Democratic Congress. Up 17.5% on average six months late…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T03:26:37+09:00",
+            "url": "https://x.com/RyanDetrick/status/2118047279781175581",
+            "kind": "post",
+            "preview": "Stocks are up huge and it looks like the 🐂 is back. I'm set to join @RobHartWBBM on @WBBMNewsradio …",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T08:30:21+09:00",
+            "url": "https://x.com/RyanDetrick/status/2118123714839445646",
+            "kind": "post",
+            "preview": "When Will The Madness End? In our latest Glass Half Full video, we ask the question on everyone's m…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T10:05:10+09:00",
+            "url": "https://x.com/RyanDetrick/status/2118147577749131603",
+            "kind": "post",
+            "preview": "More details to come soon, but Friday the 13th just got a lot better! Our next Social Hour livestre…",
+            "noise_hint": false
           }
         ]
       },
       "Warren Pies": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-02T23:16:47+09:00",
@@ -8790,6 +9073,14 @@
             "url": "https://x.com/WarrenPies/status/2117816575281819888",
             "kind": "post",
             "preview": "Ignore the consensus opinion on midterm seasonality for now. “Bluenami” is not an immediate buy. Ex…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-04T23:24:50+09:00",
+            "url": "https://x.com/WarrenPies/status/2117986432107086323",
+            "kind": "quote_post",
+            "preview": "Enjoyed the conversation. Of note, we discuss why a \"bluenami\" is positive for hyperscalers (once t…",
+            "quoted_author": "fejau_inc",
             "noise_hint": false
           }
         ]
