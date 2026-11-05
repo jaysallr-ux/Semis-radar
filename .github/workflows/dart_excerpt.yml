@@ -1,0 +1,36 @@
+name: semis-radar-dart-excerpt
+
+# 검토용 발췌. classification/excerpt_request.csv 의 문서를 받아 excerpts/ 에 커밋.
+# .github/dart-excerpt-trigger.txt 를 바꿔 푸시하면 실행
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - ".github/dart-excerpt-trigger.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas requests
+      - name: Excerpt
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+        run: python research/pit/dart_excerpt.py --list research/pit/classification/excerpt_request.csv
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "semis-radar-bot"
+          git config user.email "semis-radar-bot@users.noreply.github.com"
+          git add research/pit/classification/excerpts/
+          git commit -m "dart excerpts $(date +'%Y-%m-%d %H:%M')" || echo "변경 없음"
+          git pull --rebase
+          git push
