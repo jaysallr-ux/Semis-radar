@@ -28,6 +28,14 @@ a = ap.parse_args()
 
 fr = pd.read_csv(os.path.join(a.scan, "filter_result.csv"), dtype=str)
 cand = fr[fr["filter"].isin(["통과", "문서없음", "미매핑"])].copy()
+# 3차 누락 점검(중간 연도 사업보고서)에서 다시 걸린 회사 추가
+rc = os.path.join(CLS, "scan_recheck", "recheck_result.csv")
+if os.path.exists(rc):
+    rr = pd.read_csv(rc, dtype=str)
+    add = fr[fr.code.isin(rr[rr.recheck == "재통과"].code)].copy()
+    add["filter"] = "재통과(3차)"
+    add["max_t1"] = add.code.map(dict(zip(rr.code, rr.max_t1)))
+    cand = pd.concat([cand, add[~add.code.isin(cand.code)]], ignore_index=True)
 excl = set()
 if os.path.exists(a.excluded):
     excl = set(pd.read_csv(a.excluded, dtype=str).code)

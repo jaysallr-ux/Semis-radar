@@ -54,9 +54,15 @@ def business_parts(xml):
         return None
     ov = sect(r"사업의\s*개요")
     pr = sect(r"주요\s*제품")
+    full = clean(body)
+    if pr is None:
+        # 옛 서식(2015~2020년대 초)은 소제목 TITLE 없이 본문에 '주요 제품', '매출실적' 등이 들어 있음
+        m = re.search(r"(주요\s*제품\s*(등의)?\s*(현황|매출)|사업부문별\s*매출|제품별\s*매출|매출\s*실적|부문별\s*매출)", full)
+        if m:
+            pr = "[본문 검색: " + m.group(0) + "]\n" + full[m.start():m.start() + PRODUCT_CHARS]
     if ov is None and pr is None:
-        return clean(body)[:OVERVIEW_CHARS + PRODUCT_CHARS], None, True
-    return ov, pr, True
+        return full[:OVERVIEW_CHARS + PRODUCT_CHARS], None, True
+    return ov if ov is not None else full[:OVERVIEW_CHARS], pr, True
 
 
 def main():
@@ -67,7 +73,7 @@ def main():
     req = pd.read_csv(a.list, dtype=str)
     for r in req.itertuples():
         fn = os.path.join(OUT, f"{r.code}_{r.rcept_no}.txt")
-        if os.path.exists(fn):
+        if os.path.exists(fn) and "재추출" not in str(r.reason):
             continue
         b = call("document.xml", {"rcept_no": r.rcept_no}, binary=True)
         if b is None:
