@@ -1063,6 +1063,10 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
                 v["transcript_status"] = "not_needed"
                 v["last_error"] = f"{v['role']}: captions are reserved for the core 11"
                 continue
+            if int(v.get("tier") or 9) not in cfg.get("caption_tiers", [1, 2, 3]):
+                v["transcript_status"] = "not_needed"
+                v["last_error"] = f"tier {v.get('tier')}: captions are kept for the tiers that drive judgments"
+                continue
             if needs_gemini_first(v):
                 if first_pass:
                     stats["waiting_for_gemini"] += 1
