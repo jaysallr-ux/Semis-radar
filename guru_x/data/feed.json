@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-05T21:15:43+09:00",
+  "generated_at": "2026-11-05T23:31:05+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (80 entries)",
+    "list": "ok (75 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 114,
-    "already_known": 43,
+    "urls_found": 112,
+    "already_known": 52,
     "too_old": 55,
-    "verified_syndication": 16,
+    "verified_syndication": 5,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-11-04T04:44:22.000Z",
+    "list_oldest": "2026-11-04T10:40:44.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
+      "last_success_at": "2026-11-05T23:31:05+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-11-05T23:31:05+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
+      "last_success_at": "2026-11-05T23:31:05+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-05T23:31:05+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
-      "new_originals_this_run": 9,
+      "last_success_at": "2026-11-05T23:31:05+09:00",
+      "new_originals_this_run": 3,
       "error": null
     },
     {
@@ -89,18 +89,18 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-11-05T23:31:05+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
       "person": "Marko Papic",
       "handle": "Geo_papic",
-      "tier": 2,
+      "tier": 3,
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
+      "last_success_at": "2026-11-05T23:31:05+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
+      "last_success_at": "2026-11-05T23:31:05+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-05T23:31:05+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
+      "last_success_at": "2026-11-05T23:31:05+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-05T21:15:43+09:00",
+      "last_success_at": "2026-11-05T23:31:05+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -157,13 +157,226 @@
   "media_vision": {
     "status": "ok",
     "described": 8,
-    "pending": 5,
+    "pending": 0,
     "errors": 0,
-    "calls_today": 29,
+    "calls_today": 37,
     "daily_cap": 40,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2118347383268417970",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-05T14:19:07.000Z",
+      "url": "https://x.com/RyanDetrick/status/2118347383268417970",
+      "text": "Good reminder from @FrankCappelleri in his note today that big surges near Election Days are perfectly normal. https://t.co/oXErKtlVqR",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWXht9XWkAAdNLK.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.1-flash-lite",
+        "at": "2026-11-05T14:31:05+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWXht9XWkAAdNLK.jpg",
+            "image_text": "$INDU Dow Jones Industrial Average INDX 4-Nov-2026 Op 52410.23 Hi 53492.40 Lo 52410.23 Cl 53356.12 Vol 711.2M Chg +1569.40 (+3.03%) StockCharts.com DJIA - Single day gains of at least 2.9% within five days of Election Day since 2020 11/9/20 11/10/22 11/6/24 11/4/26 20 A J O 21 A J O 22 A J O 23 A J O 24 A J O 25 A J O 26 A J O 27 - ROC(1) 3.03% 2.85 3.70 -3.94 7.87 -5.50 -12.93 -6.90 CAPPTHESIS",
+            "what_it_shows": "The chart displays the Dow Jones Industrial Average (DJIA) from 2020 to 2027, highlighting single-day gains of at least 2.9% occurring within five days of Election Day. The bottom panel shows the Rate of Change (ROC) indicator, with specific data points labeled for dates surrounding elections in 202",
+            "chart_credit": "CAPPTHESIS"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118340152174981194",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-11-05T13:50:23.000Z",
+      "url": "https://x.com/DariusDale42/status/2118340152174981194",
+      "text": "If I’ve told you once that \"at all times my entire liquid net worth reflects the KISS Model Portfolio™️ allocations,\" I’ve told you two million times. For those who can't quite seem to grasp this basic concept, allow me to repeat it: \n\nWE DO NOT INVEST ON THE BASIS OF MY",
+      "quoted_post_id": "2118332401093087288",
+      "quoted_post": {
+        "id": "2118332401093087288",
+        "author": "mimwizard805",
+        "created_at": "2026-11-05T13:19:35.000Z",
+        "url": "https://x.com/mimwizard805/status/2118332401093087288",
+        "text": "@DariusDale42 Dale, you are flip flopping daily. I remember you saying something about Santa Clause rally in September. You pump out bullobearish content 24/7 so you will always be technically right. Amaright",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2118329074347303308",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-05T13:06:22.000Z",
+      "url": "https://x.com/RyanDetrick/status/2118329074347303308",
+      "text": "Largest hedge fund de-grossing event in 10 years and CTAs equity positioning lowest since March. \n\nIf we rally hard into year-end, can't say there weren't signs. https://t.co/JSxa5mNl9R",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWXQuIbXoAAXJRk.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWXQzIaXoAI5zdW.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.1-flash-lite",
+        "at": "2026-11-05T14:31:05+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWXQuIbXoAAXJRk.jpg",
+            "image_text": "The de-grossing of every levered bet.. the largest since the data began Equity long/short gross flow, drawdown from running peak as % of total global gross exposure, 2016-2026 (recreated).. bigger than 2021, 2020 and 2016 0% -2% -4% -6% -8% 2016 2018 2020 2022 2024 2026 October 2026: -7.8%, the largest de-grossing since the data began in 2016 Source: Steno Research, recreated from Morgan Stanley P",
+            "what_it_shows": "This chart displays the equity long/short gross flow drawdown from its running peak as a percentage of total global gross exposure from 2016 to 2026. It highlights a reading of -7.8% in October 2026, which is labeled as the largest de-grossing event since the data began in 2016.",
+            "chart_credit": "Steno Research, recreated from Morgan Stanley Prime Brokerage"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWXQzIaXoAI5zdW.jpg",
+            "image_text": "CTA Positioning: US Equity Total Z-Score of Net Positioning, Since January 2018 4 3 2 1 0 -1 -2 -3 -4 Dec Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Percentile (1Y): 1.9% -3.3σ Source: Bloomberg as compiled by Citadel Securities as of November 3, 2026. Figures are for illustrative purposes only. Past performance figures do not guarantee future results.",
+            "what_it_shows": "This chart shows the Z-score of net CTA positioning in US equities since January 2018. The latest data point as of November 3, 2026, is at -3.3σ, with a 1-year percentile of 1.9%.",
+            "chart_credit": "Bloomberg as compiled by Citadel Securities"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118327490301112433",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-05T13:00:04.000Z",
+      "url": "https://x.com/RyanDetrick/status/2118327490301112433",
+      "text": "The S&P 500 equal-weight hit the highest level ever yesterday. \n\nYes, if tech collapses it will be hard for cap weight to gain significantly, but the flipside is you can't have a crash in cap weight if the other 49% of the S&P 500 is soaring. https://t.co/bZCDZ1chtq",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWXPLceXwAEHxoK.png"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-flash-lite-latest",
+        "at": "2026-11-05T14:31:05+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWXPLceXwAEHxoK.png",
+            "image_text": "$SPXEW S&P 500 Equal Weighted Index INDX 4-Nov-2026 Open 8879.43 High 9050.25 Low 8879.43 Close 9044.98 Chg +165.55 (+1.88%) - $SPXEW (Daily) 9044.98 D 24 F M A M J J A S O N 25 F M A M J J A S O N 26 F M A M J J A S O N 9044.98 8800 8600 8400 8200 8000 7800 7600 7400 7200 7000 6800 6600 6400 6200 6000 5800 StockCharts.com",
+            "what_it_shows": "The chart shows the daily price movement of the S&P 500 Equal Weighted Index ($SPXEW) from late 2023 through November 4, 2026. The index reached a closing level of 9044.98 on November 4, 2026, marking a daily gain of 1.88%.",
+            "chart_credit": "StockCharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2118316330688356656",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-05T12:15:44.000Z",
+      "url": "https://x.com/dampedspring/status/2118316330688356656",
+      "text": "So after doing my thing with Jack Farley and stewing a bit here's some thoughts about dc's \n\nLet's presume that the narrative is correct and a marked slowdown in data center build has occured.  One could say it had occured anyway and without the political catalyst we had reached",
+      "quoted_post_id": "2118086026673487909",
+      "quoted_post": {
+        "id": "2118086026673487909",
+        "author": "JackFarley96",
+        "created_at": "2026-11-04T21:00:35.000Z",
+        "url": "https://x.com/JackFarley96/status/2118086026673487909",
+        "text": "Breaking Down the Markets Massive Post-Midterm Moves with Andy Constan https://t.co/whibSmMoHv",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2118316146340291065",
       "person": "Bob Elliott",
@@ -193,7 +406,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.1-flash-lite",
+        "at": "2026-11-05T14:31:05+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWW7ebjXAAAeAQR.png",
+            "image_text": "2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 3 6 9 United Kingdom Inflation Rate (%) Value United Kingdom Core Inflation Rate (%) Value",
+            "what_it_shows": "The chart displays the United Kingdom Inflation Rate and United Kingdom Core Inflation Rate from 2017 through 2026. Both series show a significant peak around 2022-2023 followed by a decline.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2118309309373133226",
@@ -638,7 +867,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T14:31:05+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWVFGfhXkAAhb1C.png",
+            "image_text": "$SPX S&P 500 Large Cap Index INDX\n4-Nov-2026\nOpen 7635.81 High 7715.57 Low 7635.81 Close 7688.62 Volume 4.6B Chg +119.70 (+1.58%)\n$SPX (Daily) 7688.62\n- MA(50) 7692.97\n- MA(200) 7320.35\nINEWHISPX 67.00\nINEWLOSPX 3.00\nStockCharts.com",
+            "what_it_shows": "This stock chart shows the daily price action of the S&P 500 Large Cap Index along with its 50-day and 200-day moving averages from late 2025 through November 2026. Below the main chart, separate panels display the number of new highs ($INEWHISPX at 67.00) and new lows ($INEWLOSPX at 3.00).",
+            "chart_credit": "StockCharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2118174649900990960",
@@ -667,7 +912,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.1-flash-lite",
+        "at": "2026-11-05T14:31:05+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWVEKfGXYAAPJXR.png",
+            "image_text": "$SPX S&P 500 Large Cap Index INDX 4-Nov-2026 Open 7635.81 High 7715.57 Low 7635.81 Close 7688.62 Volume 4.8B Chg +119.70 (+1.58%) $SPX (Daily) 7688.62 MA(50) 7692.97 MA(200) 7320.35 $SPXA20R 75.20 $SPXA50R 71.80 $SPXA200R 69.00 StockCharts.com",
+            "what_it_shows": "The chart displays the daily price movement of the S&P 500 index alongside its 50-day and 200-day moving averages from late 2025 to early November 2026. Below the price chart are three indicators showing the percentage of S&P 500 stocks above their 20-day, 50-day, and 200-day moving averages, with l",
+            "chart_credit": "StockCharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2118173925691822271",
@@ -696,7 +957,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.1-flash-lite",
+        "at": "2026-11-05T14:31:05+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWVDjI1XIAAaSB2.png",
+            "image_text": "$SPX S&P 500 Large Cap Index INDX 4-Nov-2026 Open 7635.81 High 7715.57 Low 7635.81 Close 7688.62 Volume 4.6B Chg +119.70 (+1.58%) StockCharts.com $SPX (Daily) 7688.62 MA(50) 7692.97 MA(200) 7320.35 INEWHINYA 150.00 INEWHISPX 67.00",
+            "what_it_shows": "The chart displays the daily price movement of the S&P 500 index alongside two indicators: the number of new highs on the NYSE (INEWHINYA) at 150.00 and the number of new highs on the S&P 500 (INEWHISPX) at 67.00 as of November 4, 2026.",
+            "chart_credit": "StockCharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2118173285515223427",
@@ -725,7 +1002,23 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
-      ]
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-05T14:31:05+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWVDI6-WMAA3XOa.png",
+            "image_text": "!ADLINESPX SPX Advance-Decline Line INDX\n4-Nov-2026\nStockCharts.com\nOpen 9280.90 High 9280.90 Low 9280.90 Close 9280.90 Chg +24.60 (+0.27%)\n- !ADLINESPX (Daily) 9280.90\n- $SPX 7688.62\nDec 2026 Feb Mar Apr May Jun Jul Aug Sep Oct Nov",
+            "what_it_shows": "The chart shows the SPX Advance-Decline Line (!ADLINESPX) and the S&P 500 ($SPX) index from December 2025 through November 2026. The top panel displays the daily A/D line reaching 9280.90 on November 4, 2026, while the bottom panel shows the S&P 500 at 7688.62.",
+            "chart_credit": "StockCharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2118167449979830704",
@@ -8555,220 +8848,6 @@
         ],
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
       }
-    },
-    {
-      "id": "2115805258819481662",
-      "person": "Darius Dale",
-      "handle": "DariusDale42",
-      "tier": 1,
-      "role": "core",
-      "author_id": "1374003455195545601",
-      "created_at": "2026-10-29T13:57:38.000Z",
-      "url": "https://x.com/DariusDale42/status/2115805258819481662",
-      "text": "Zoom into the Paradigm C prose in my profile picture from Apr-25, when everyone was freaking out about tariffs. CC @cvpayne @tomkeene https://t.co/lRE2PSzR6e",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVzZceJXoAA531Q.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-30T01:15:30+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVzZceJXoAA531Q.jpg",
-            "image_text": "Nominal GDP ex-Net Exports is currently growing 2.4x its pre-COVID trend and has grown above trend in every quarter since we introduced our Paradigm C, a.k.a. Run It Hot, theme. US Nominal GDP SAAR - Last Price 33010.0 +447.0 QOQ SAAR (GDP CURS) 5.5 2QY SAAR (GDP CURS) 6.9 YoY (GDP CURS) 5.9 US Nominal GDP ex-Net Exports SAAR - Last Price 34227.1 +783.8 QOQ SAAR (.NGDPXNX U) 9.4 2QY SAAR (.NGDPXNX",
-            "what_it_shows": "The image shows three charts depicting US Nominal GDP metrics from 2023 through 2029, displaying bar and line indicators alongside numerical data boxes. The title states that nominal GDP ex-net exports is growing at 2.4 times its pre-COVID trend.",
-            "chart_credit": "42 Macro"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115801194010448372",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-10-29T13:41:28.000Z",
-      "url": "https://x.com/jam_croissant/status/2115801194010448372",
-      "text": "https://t.co/nc59dWQhCc",
-      "quoted_post_id": "2115658062698516957",
-      "quoted_post": {
-        "id": "2115658062698516957",
-        "author": "FinanceLancelot",
-        "created_at": "2026-10-29T04:12:43.000Z",
-        "url": "https://x.com/FinanceLancelot/status/2115658062698516957",
-        "text": "Later in the segment Mike Wilson explains why he believes the Federal Reserve will increase liquidity into year end.\n\nHis thesis is there simply isn't enough liquidity to cover the debts of the AI buildout & the global bond market.\n\nThis is the 2026 / 2027 debt wall that myself, https://t.co/ApEYIj7yaB",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2115656889501364224/img/CKju0RHoZXWboxOi.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "video_frame",
-          "url": "https://pbs.twimg.com/tweet_video_thumb/HVzV9-MXgAE_2Ex.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-30T01:15:30+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/tweet_video_thumb/HVzV9-MXgAE_2Ex.jpg",
-            "image_text": "Exactly",
-            "what_it_shows": "A man wearing a black hoodie sitting in a car with the text \"Exactly\" overlaid at the bottom.",
-            "chart_credit": "unknown"
-          },
-          {
-            "of": "quoted_post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2115656889501364224/img/CKju0RHoZXWboxOi.jpg",
-            "image_text": "Bloomberg Surveillance IMPACT OF MIDTERM ELECTIONS ON AI OUTLOOK",
-            "what_it_shows": "A broadcast news segment showing a man speaking in front of a blue background with the show title and topic banner at the bottom.",
-            "chart_credit": "Bloomberg Surveillance"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115798868327555232",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-10-29T13:32:14.000Z",
-      "url": "https://x.com/RyanDetrick/status/2115798868327555232",
-      "text": "Records are made to be broken. Amazing list from @sonusvarghese on major AI financing announcements in '26. 🥇🥇\n\nThe largest ever IPO: SpaceX $SPCX  ($75 billion)\nThe largest ever equity raise by a public company: Alphabet $GOOGL  ($84.75 billion)\nThe largest ever equity raise",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2115795187125403896",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-10-29T13:17:36.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2115795187125403896",
-      "text": "The dissaving driven economy. https://t.co/zGnlK25uWz",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HVzQgtfXQAAP4MX.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-10-30T01:15:30+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVzQgtfXQAAP4MX.jpg",
-            "image_text": "FRED. - Personal Consumption Expenditures - Compensation of Employees, Received: Wage and Salary Disbursements. 10 9 8 7 6 5 4 3 Percent Change from Year Ago. Jan 2023 Jul 2023 Jan 2024 Jul 2024 Jan 2025 Jul 2025 Jan 2026 Jul 2026. Source: U.S. Bureau of Economic Analysis via FRED®. Shaded areas indicate U.S. recessions. fred.stlouisfed.org Fullscreen",
-            "what_it_shows": "This line chart from FRED displays the percent change from a year ago for Personal Consumption Expenditures and Compensation of Employees (Wage and Salary Disbursements) from late 2022 through 2026. The series show personal consumption expenditures tracking above wage and salary disbursements for mo",
-            "chart_credit": "FRED"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2115784908052324652",
-      "person": "Mark Newton",
-      "handle": "MarkNewtonCMT",
-      "tier": 1,
-      "role": "core",
-      "author_id": "253168011",
-      "created_at": "2026-10-29T12:36:46.000Z",
-      "url": "https://x.com/MarkNewtonCMT/status/2115784908052324652",
-      "text": "I think this is a great quote from RR-   \"In some ways, the Fed is operating a house with one thermostat, but very different temperatures in every room. Turning it down further may make the rooms that are already cool even colder, without doing much to cool those that remain hot\"",
-      "quoted_post_id": "2115554728327164184",
-      "quoted_post": {
-        "id": "2115554728327164184",
-        "author": "RickRieder",
-        "created_at": "2026-10-28T21:22:06.000Z",
-        "url": "https://x.com/RickRieder/status/2115554728327164184",
-        "text": "The Federal Reserve held interest rates steady today, and we think patience is the right approach. Inflation remains high, but the question isn't simply whether rates should go higher. It's whether higher rates would actually address the inflation that remains.\n \nThe challenge is",
-        "available": true,
-        "has_media": false,
-        "media": []
-      },
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
     }
   ],
   "person_index": {
@@ -8778,31 +8857,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 22,
-        "non_noise": 19,
+        "count": 20,
+        "non_noise": 17,
         "items": [
-          {
-            "at": "2026-11-02T21:54:17+09:00",
-            "url": "https://x.com/dampedspring/status/2117238870873960862",
-            "kind": "post",
-            "preview": "GooG and Orcl today.",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T23:16:54+09:00",
-            "url": "https://x.com/dampedspring/status/2117259659195158998",
-            "kind": "quote_post",
-            "preview": "There is a difference between market not liking the deal fundamentally and the likelihood it will g…",
-            "quoted_author": "stevehou",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T23:21:42+09:00",
-            "url": "https://x.com/dampedspring/status/2117260867297333734",
-            "kind": "post",
-            "preview": "We got the DS team together for our monthly roundtable. Big week this week and strong views express…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-02T23:40:26+09:00",
             "url": "https://x.com/dampedspring/status/2117265584131862648",
@@ -8941,6 +8998,14 @@
             "kind": "quote_post",
             "preview": "Closed out the max long bond portion of this trade last night at 109 ish on ZB. Long bonds short st…",
             "quoted_author": "dampedspring",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T21:15:44+09:00",
+            "url": "https://x.com/dampedspring/status/2118316330688356656",
+            "kind": "quote_post",
+            "preview": "So after doing my thing with Jack Farley and stewing a bit here's some thoughts about dc's Let's pr…",
+            "quoted_author": "JackFarley96",
             "noise_hint": false
           }
         ]
@@ -9084,8 +9149,8 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 5,
+        "non_noise": 5,
         "items": [
           {
             "at": "2026-11-04T20:56:52+09:00",
@@ -9115,6 +9180,14 @@
             "kind": "quote_post",
             "preview": "Question: Should you trust today’s positive response to the midterm election results and data cente…",
             "quoted_author": "42Macro",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T22:50:23+09:00",
+            "url": "https://x.com/DariusDale42/status/2118340152174981194",
+            "kind": "quote_post",
+            "preview": "If I’ve told you once that \"at all times my entire liquid net worth reflects the KISS Model Portfol…",
+            "quoted_author": "mimwizard805",
             "noise_hint": false
           }
         ]
@@ -9307,23 +9380,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 39,
-        "non_noise": 39,
+        "count": 40,
+        "non_noise": 40,
         "items": [
-          {
-            "at": "2026-11-02T22:51:27+09:00",
-            "url": "https://x.com/RyanDetrick/status/2117253256149651963",
-            "kind": "post",
-            "preview": "\"I'm willing to go bankrupt rather than lose this race.\" Google co-founder Larry Page on the AI rac…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-02T22:54:46+09:00",
-            "url": "https://x.com/RyanDetrick/status/2117254089851514957",
-            "kind": "post",
-            "preview": "Hyperscaler free cash flow turned negative for the first time ever in Q3. Meaning that debt and fin…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-02T23:45:23+09:00",
             "url": "https://x.com/RyanDetrick/status/2117266826518286674",
@@ -9587,21 +9646,35 @@
             "kind": "post",
             "preview": "One of the more important things to remember is bear markets don't just start and pull everything l…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T22:00:04+09:00",
+            "url": "https://x.com/RyanDetrick/status/2118327490301112433",
+            "kind": "post",
+            "preview": "The S&P 500 equal-weight hit the highest level ever yesterday. Yes, if tech collapses it will be ha…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T22:06:22+09:00",
+            "url": "https://x.com/RyanDetrick/status/2118329074347303308",
+            "kind": "post",
+            "preview": "Largest hedge fund de-grossing event in 10 years and CTAs equity positioning lowest since March. If…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-05T23:19:07+09:00",
+            "url": "https://x.com/RyanDetrick/status/2118347383268417970",
+            "kind": "post",
+            "preview": "Good reminder from @FrankCappelleri in his note today that big surges near Election Days are perfec…",
+            "noise_hint": false
           }
         ]
       },
       "Warren Pies": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-02T23:16:47+09:00",
-            "url": "https://x.com/WarrenPies/status/2117259630686707951",
-            "kind": "post",
-            "preview": "Despite the (deserved) nervousness in the market, the S&P 500's three-month trading range has compr…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-04T12:09:53+09:00",
             "url": "https://x.com/WarrenPies/status/2117816575281819888",
