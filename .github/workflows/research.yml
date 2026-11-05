@@ -1,0 +1,46 @@
+name: semis-radar-research
+
+# v3 연구 백테스트. 운영(daily)과 무관. 결과를 실행한 브랜치의 research/results/ 에 커밋.
+# 브랜치에서 실행: .github/research-trigger.txt 내용을 바꿔 푸시
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - ".github/research-trigger.txt"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: semis-radar-research-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Strategy comparison (v3 step 1)
+        env:
+          TZ: Asia/Seoul
+        run: |
+          set -o pipefail
+          python research/strategy_compare.py --provider naver | tee research/results/report.txt
+
+      - name: Commit results
+        run: |
+          git config user.name "semis-radar-bot"
+          git config user.email "semis-radar-bot@users.noreply.github.com"
+          git add research/results/
+          git commit -m "research v3 step1 $(date +'%Y-%m-%d %H:%M') (${GITHUB_REF_NAME})" || echo "변경 없음"
+          git pull --rebase
+          git push
