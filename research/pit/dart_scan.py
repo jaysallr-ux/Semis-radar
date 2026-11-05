@@ -22,7 +22,9 @@ import json
 import os
 import re
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET
 import zipfile
 from datetime import date
@@ -39,7 +41,13 @@ PASS_MIN = 3
 PERIODIC = re.compile(r"^(사업보고서|반기보고서|분기보고서)")
 ANNUAL = re.compile(r"^사업보고서")
 KEY = os.environ.get("DART_API_KEY", "").strip()
-S = requests.Session()
+_TL = threading.local()
+
+
+def sess() -> requests.Session:
+    if not hasattr(_TL, "s"):
+        _TL.s = requests.Session()
+    return _TL.s
 
 
 def norm_name(s: str) -> str:
@@ -51,7 +59,7 @@ def call(path, params, binary=False, tries=5):
     p = dict(params, crtfc_key=KEY)
     for k in range(tries):
         try:
-            r = S.get(f"{API}/{path}", params=p, timeout=120)
+            r = sess().get(f"{API}/{path}", params=p, timeout=180)
             if binary:
                 if r.content[:2] == b"PK":
                     return r.content
@@ -144,17 +152,30 @@ TAG = re.compile(r"<[^>]+>")
 SEC_TITLE = re.compile(r"<TITLE[^>]*>\s*([^<]*)</TITLE>", re.I)
 
 
-def decode(b: bytes) -> str:
-    for enc in ("utf-8", "cp949", "euc-kr"):
-        try:
-            return b.decode(enc)
-        except UnicodeDecodeError:
-            continue
-    return b.decode("utf-8", "ignore")
+def decode(b: bytes) -> tuple[str, str]:
+    """(텍스트, 사용한 인코딩). 2015~2020년대 초 문서는 utf-8 선언이지만 실제로는 EUC-KR(cp949)인 경우가 있음"""
+    try:
+        return b.decode("utf-8"), "utf-8"
+    except UnicodeDecodeError:
+        pass
+    try:
+        return b.decode("cp949"), "cp949"
+    except UnicodeDecodeError:
+        return b.decode("cp949", "replace"), "cp949-replace"
+
+
+ASSOC = re.compile(r'<TITLE[^>]*AASSOCNOTE="(D-0-\d+)-0-0"[^>]*>', re.I)
 
 
 def extract_business(xml: str):
-    """「사업의 내용」 장 텍스트. (text, found)"""
+    """「사업의 내용」 장 텍스트. (text, found)
+    1순위: DART 표준 구조 코드 AASSOCNOTE="D-0-2-0-0"(II. 사업의 내용) ~ 다음 대분류 D-0-3/4-0-0
+    2순위: TITLE 글자 '사업의 내용' ~ 다음 로마숫자 대분류"""
+    marks = [(m.start(), m.group(1)) for m in ASSOC.finditer(xml)]
+    st = next((pos for pos, c in marks if c == "D-0-2"), None)
+    if st is not None:
+        en = next((pos for pos, c in marks if pos > st and c != "D-0-2"), len(xml))
+        return TAG.sub(" ", xml[st:en]), True
     titles = [(m.start(), m.group(1).strip()) for m in SEC_TITLE.finditer(xml)]
     start = None
     for k, (pos, t) in enumerate(titles):
@@ -186,14 +207,15 @@ def fetch_doc(rcept_no: str, raw_dir: str, text_dir: str):
         f.write(b)
     z = zipfile.ZipFile(io.BytesIO(b))
     names = z.namelist()
-    main = next((n for n in names if n.startswith(rcept_no) and n.endswith(".xml")), None) or \
+    # 본문 = 파일명이 정확히 <rcept_no>.xml (앞에 '/' 붙는 경우 있음). _00760 등은 첨부 감사보고서
+    main = next((n for n in names if os.path.basename(n) == f"{rcept_no}.xml"), None) or \
         max(names, key=lambda n: z.getinfo(n).file_size)
-    xml = decode(z.read(main))
+    xml, enc = decode(z.read(main))
     text, found = extract_business(xml)
     text = re.sub(r"\s+", " ", text)
     with open(os.path.join(text_dir, f"{rcept_no}.txt"), "w", encoding="utf-8") as f:
         f.write(text)
-    return {"sha256": sha, "bytes": len(b), "main_file": main, "section_found": int(found),
+    return {"sha256": sha, "bytes": len(b), "main_file": main, "encoding": enc, "section_found": int(found),
             "section_fallback": int(not found), "text_chars": len(text), **{f"kw_{k}": v for k, v in count_terms(text).items()}}
 
 
@@ -201,6 +223,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=["sample", "full"], required=True)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--max-minutes", type=float, default=330)
     a = ap.parse_args()
     if not KEY:
         sys.exit("DART_API_KEY 없음")
@@ -223,32 +247,39 @@ def main():
     cmap.to_csv(os.path.join(out, "corp_map.csv"), index=False, encoding="utf-8-sig")
     print("매핑:", cmap.method.value_counts().to_dict())
 
-    fl_rows, man_rows, res_rows = [], [], []
-    done_corp: dict = {}
+    # 이어하기: 이미 끝난 회사는 건너뜀
+    def load(name):
+        f = os.path.join(out, name)
+        return pd.read_csv(f, dtype=str).to_dict("records") if os.path.exists(f) else []
+    fl_rows, man_rows, res_rows = load("filings.csv"), load("dart_manifest.csv"), load("filter_result.csv")
+    done_codes = {r["code"] for r in res_rows}
+    todo = [r for r in cmap.itertuples() if r.code not in done_codes]
+    print(f"이어하기: 완료 {len(done_codes)}, 남음 {len(todo)}")
     t0 = time.time()
-    for k, r in enumerate(cmap.itertuples(), 1):
+    deadline = t0 + a.max_minutes * 60
+    lock = threading.Lock()
+
+    def work(r):
+        if time.time() > deadline:
+            return None
         res = {"code": r.code, "names": r.names, "corp_code": r.corp_code, "map_method": r.method,
                "n_periodic": 0, "n_docs": 0, "max_t1": "", "any_fallback": 0, "filter": ""}
+        fls, mans = [], []
         if not r.corp_code:
             res["filter"] = "미매핑"
-            res_rows.append(res)
-            continue
-        if r.corp_code in done_corp:  # 같은 회사에 코드가 여러 개 (재상장 등)
-            res.update({kk: vv for kk, vv in done_corp[r.corp_code].items() if kk not in ("code", "names", "map_method")})
-            res["note"] = "같은 corp_code 결과 재사용"
-            res_rows.append(res)
-            continue
+            return res, fls, mans
         fl = filings(r.corp_code)
         for f in fl:
-            fl_rows.append({"code": r.code, "corp_code": r.corp_code, "rcept_no": f["rcept_no"], "rcept_dt": f["rcept_dt"],
-                            "report_nm": f["report_nm"].strip(), "corp_name": f.get("corp_name", "")})
+            fls.append({"code": r.code, "corp_code": r.corp_code, "rcept_no": f["rcept_no"], "rcept_dt": f["rcept_dt"],
+                        "report_nm": f["report_nm"].strip(), "corp_name": f.get("corp_name", "")})
         res["n_periodic"] = len(fl)
         docs = pick_sample_docs(fl)
         best, fb = None, 0
         for f in docs:
+            t1s = time.time()
             m = fetch_doc(f["rcept_no"], raw_dir, text_dir)
             row = {"code": r.code, "corp_code": r.corp_code, "rcept_no": f["rcept_no"], "rcept_dt": f["rcept_dt"],
-                   "report_nm": f["report_nm"].strip(), "purpose": "filter_sample"}
+                   "report_nm": f["report_nm"].strip(), "purpose": "filter_sample", "seconds": round(time.time() - t1s, 1)}
             if m is None:
                 row["error"] = "download_failed"
             else:
@@ -257,7 +288,7 @@ def main():
                 row["t1_total"] = t1
                 best = t1 if best is None else max(best, t1)
                 fb |= m["section_fallback"]
-            man_rows.append(row)
+            mans.append(row)
         res["n_docs"] = len(docs)
         res["any_fallback"] = fb
         if best is None:
@@ -265,20 +296,36 @@ def main():
         else:
             res["max_t1"] = best
             res["filter"] = "통과" if best >= PASS_MIN else "탈락"
-        done_corp[r.corp_code] = dict(res)
-        res_rows.append(res)
-        if k % 25 == 0:
-            print(f"  {k}/{len(cmap)} {time.time() - t0:.0f}s", flush=True)
-            pd.DataFrame(man_rows).to_csv(os.path.join(out, "dart_manifest.csv"), index=False, encoding="utf-8-sig")
+        return res, fls, mans
 
-    pd.DataFrame(fl_rows).to_csv(os.path.join(out, "filings.csv"), index=False, encoding="utf-8-sig")
-    pd.DataFrame(man_rows).to_csv(os.path.join(out, "dart_manifest.csv"), index=False, encoding="utf-8-sig")
+    def save():
+        pd.DataFrame(fl_rows).to_csv(os.path.join(out, "filings.csv"), index=False, encoding="utf-8-sig")
+        pd.DataFrame(man_rows).to_csv(os.path.join(out, "dart_manifest.csv"), index=False, encoding="utf-8-sig")
+        pd.DataFrame(res_rows).to_csv(os.path.join(out, "filter_result.csv"), index=False, encoding="utf-8-sig")
+
+    n_done = 0
+    with ThreadPoolExecutor(max_workers=a.workers) as ex:
+        futs = [ex.submit(work, r) for r in todo]
+        for fu in as_completed(futs):
+            got = fu.result()
+            if got is None:
+                continue
+            res, fls, mans = got
+            with lock:
+                res_rows.append(res)
+                fl_rows.extend(fls)
+                man_rows.extend(mans)
+                n_done += 1
+                if n_done % 25 == 0:
+                    print(f"  {n_done}/{len(todo)} {time.time() - t0:.0f}s", flush=True)
+                    save()
+    save()
     rr = pd.DataFrame(res_rows)
-    rr.to_csv(os.path.join(out, "filter_result.csv"), index=False, encoding="utf-8-sig")
-    print("거름망:", rr["filter"].value_counts().to_dict(), f"{time.time() - t0:.0f}s")
+    print("거름망:", rr["filter"].value_counts().to_dict(), f"이번 실행 {time.time() - t0:.0f}s, 남음 {len(cmap) - len(rr)}")
     with open(os.path.join(out, "scan_meta.json"), "w", encoding="utf-8") as f:
         json.dump({"mode": a.mode, "bgn": BGN, "end": END, "T1": T1, "pass_min": PASS_MIN,
-                   "n_companies": len(cmap), "seconds": round(time.time() - t0)}, f, ensure_ascii=False, indent=1)
+                   "n_companies": len(cmap), "n_done": len(rr), "complete": len(rr) >= len(cmap)},
+                  f, ensure_ascii=False, indent=1)
 
 
 if __name__ == "__main__":

@@ -30,9 +30,11 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: |
           MODE=$(head -n1 .github/dart-scan-trigger.txt | tr -d '[:space:]')
+          WORKERS=$(sed -n 2p .github/dart-scan-trigger.txt | tr -d "[:space:]")
+          MAXMIN=$(sed -n 3p .github/dart-scan-trigger.txt | tr -d "[:space:]")
           echo "mode=$MODE"
           echo "MODE=$MODE" >> "$GITHUB_ENV"
-          python research/pit/dart_scan.py --mode "$MODE" 2>&1 | tee research/pit/classification/scan_log_${MODE}.txt
+          python research/pit/dart_scan.py --mode "$MODE" --workers "${WORKERS:-8}" --max-minutes "${MAXMIN:-330}" 2>&1 | tee research/pit/classification/scan_log_${MODE}.txt
       - name: Upload raw documents
         if: always()
         uses: actions/upload-artifact@v4
