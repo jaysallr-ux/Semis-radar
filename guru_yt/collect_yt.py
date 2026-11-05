@@ -173,7 +173,7 @@ def read_uploads_api(http: Http, channel_id: str, key: str) -> list[dict]:
     try:
         status, text, _ = http.get("https://www.googleapis.com/youtube/v3/playlistItems",
                                    params={"part": "snippet,contentDetails", "playlistId": "UU" + channel_id[2:],
-                                           "maxResults": 15},
+                                           "maxResults": 50},
                                    headers={"X-Goog-Api-Key": key})
     except Exception as e:
         raise RuntimeError(f"api {type(e).__name__}")
@@ -785,7 +785,7 @@ def discover(http: Http, cfg: dict, state: dict, people: list, by_person: dict, 
         if entries:
             oldest = min(parse_ts(x["published_at"]) for x in entries if x["published_at"])
             info["oldest_rss"] = iso_kst(oldest)
-            info["gap_possible"] = bool(prev_gen) and oldest > parse_ts(prev_gen) and len(entries) >= 15
+            info["gap_possible"] = bool(prev_gen) and oldest > parse_ts(prev_gen) and len(entries) >= (50 if source == "data_api" else 15)
         matched = 0
         for e in entries:
             if not e["published_at"] or now - parse_ts(e["published_at"]) > window:
