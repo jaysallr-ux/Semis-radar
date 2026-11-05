@@ -1,0 +1,31 @@
+name: dart-listing
+on:
+  push:
+    branches: [v3-research]
+    paths: [".github/dart-listing-trigger.txt"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas requests
+      - name: List
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+        run: python research/pit/dart_listing.py
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "semis-radar-bot"
+          git config user.email "semis-radar-bot@users.noreply.github.com"
+          git add research/pit/classification/listing/
+          git commit -m "dart listing $(date +'%Y-%m-%d %H:%M')" || echo "변경 없음"
+          git pull --rebase
+          git push
