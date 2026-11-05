@@ -24,7 +24,19 @@ jobs:
       - name: Excerpt
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
-        run: python research/pit/dart_excerpt.py --list research/pit/classification/excerpt_request.csv --workers 4
+        run: |
+          git config user.name "semis-radar-bot"
+          git config user.email "semis-radar-bot@users.noreply.github.com"
+          python research/pit/dart_excerpt.py --list research/pit/classification/excerpt_request.csv --workers 4 > excerpt.log 2>&1 &
+          PID=$!
+          # 10분마다 중간 커밋: 끊겨도 저장된 문서는 남고, 재실행 때 이미 있는 파일은 건너뜀
+          while kill -0 $PID 2>/dev/null; do
+            for i in $(seq 1 60); do kill -0 $PID 2>/dev/null || break; sleep 10; done
+            git add research/pit/classification/excerpts/
+            git commit -q -m "dart excerpts 중간 저장 $(date +'%H:%M')" || true
+            git pull -q --rebase && git push -q || true
+          done
+          wait $PID; tail -5 excerpt.log
       - name: Commit
         if: always()
         run: |

@@ -73,15 +73,41 @@ def business_parts(xml):
     return ov if ov is not None else full[:OVERVIEW_CHARS], pr, True, sa
 
 
+import threading, json, time
+_LOCK = threading.Lock()
+PROG = {"total": 0, "saved": 0, "skipped": 0, "failed": [], "started": "", "updated": ""}
+
+
+def _prog(key, val=None):
+    with _LOCK:
+        if key == "failed":
+            PROG["failed"].append(val)
+        else:
+            PROG[key] += 1
+        PROG["updated"] = time.strftime("%Y-%m-%d %H:%M:%S")
+        with open(os.path.join(OUT, "_progress.json"), "w", encoding="utf-8") as f:
+            json.dump(PROG, f, ensure_ascii=False, indent=1)
+
+
 def one(r):
+    try:
+        _one(r)
+    except Exception as e:  # 한 문서 실패가 전체를 멈추지 않게
+        print("예외", r.code, r.rcept_no, repr(e)[:200])
+        _prog("failed", {"code": r.code, "rcept_no": r.rcept_no, "why": repr(e)[:200]})
+
+
+def _one(r):
     fn = os.path.join(OUT, f"{r.code}_{r.rcept_no}.txt")
     gp = str(getattr(r, "grep", "") or "")
     gp = "" if gp == "nan" else gp
     if os.path.exists(fn) and "재추출" not in str(r.reason) and not gp:
+        _prog("skipped")
         return
     b = call("document.xml", {"rcept_no": r.rcept_no}, binary=True)
     if b is None:
         print("실패", r.code, r.rcept_no)
+        _prog("failed", {"code": r.code, "rcept_no": r.rcept_no, "why": "document.xml 응답 없음"})
         return
     z = zipfile.ZipFile(io.BytesIO(b))
     names = z.namelist()
@@ -107,11 +133,12 @@ def one(r):
             last = -10**9
             for mm in re.finditer(gp, full):
                 if mm.start() - last < 1500:
-                    return
+                    continue
                 last = mm.start()
                 g.write(f"--- @{mm.start()} ---\n" + full[max(0, mm.start() - 300):mm.start() + 1500] + "\n")
         print("grep 저장", gfn)
     print("저장", fn)
+    _prog("saved")
 
 
 def main():
@@ -121,6 +148,8 @@ def main():
     a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
     req = pd.read_csv(a.list, dtype=str)
+    PROG["total"] = len(req)
+    PROG["started"] = time.strftime("%Y-%m-%d %H:%M:%S")
     import concurrent.futures as cf
     with cf.ThreadPoolExecutor(a.workers) as ex:
         list(ex.map(one, list(req.itertuples())))
