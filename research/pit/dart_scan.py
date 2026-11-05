@@ -55,7 +55,7 @@ def norm_name(s: str) -> str:
     return s.upper()
 
 
-def call(path, params, binary=False, tries=5):
+def call(path, params, binary=False, tries=6):
     p = dict(params, crtfc_key=KEY)
     for k in range(tries):
         try:
@@ -70,12 +70,12 @@ def call(path, params, binary=False, tries=5):
                     continue
                 return None
             j = r.json()
-            if j.get("status") == "020":
-                time.sleep(30 * (k + 1))
+            if j.get("status") in ("020", "800", "900"):  # 요청 제한 / 시스템 점검 / 기타 오류 → 대기 후 재시도
+                time.sleep(20 * (k + 1))
                 continue
             return j
         except Exception:
-            time.sleep(3 * (k + 1))
+            time.sleep(10 * (k + 1))
     return None
 
 
@@ -112,19 +112,25 @@ def map_companies(comp: pd.DataFrame, cc: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(out)
 
 
-def filings(corp_code: str) -> list[dict]:
-    rows, page = [], 1
+def filings(corp_code: str):
+    """(정기보고서 목록, 상태). 상태: '000' 정상 / '013' 조회 결과 없음(진짜 공시 없음) / 그 밖 = 조회 오류"""
+    rows, page, status = [], 1, None
     while True:
         j = call("list.json", {"corp_code": corp_code, "bgn_de": BGN, "end_de": END, "pblntf_ty": "A",
                                "page_no": page, "page_count": 100})
-        if not j or j.get("status") not in ("000",):
+        status = (j or {}).get("status", "no_response")
+        if status != "000":
             break
         rows += j.get("list", [])
         if page >= int(j.get("total_page", 1)):
             break
         page += 1
+    if rows and status != "000":
+        status = "partial_" + status
+    elif rows:
+        status = "000"
     return [r for r in rows if PERIODIC.match(r.get("report_nm", "").strip())
-            and "[기재정정]" not in r.get("report_nm", "") and "[첨부" not in r.get("report_nm", "")]
+            and "[기재정정]" not in r.get("report_nm", "") and "[첨부" not in r.get("report_nm", "")], status
 
 
 def pick_sample_docs(fl: list[dict]) -> list[dict]:
@@ -252,7 +258,20 @@ def main():
         f = os.path.join(out, name)
         return pd.read_csv(f, dtype=str).to_dict("records") if os.path.exists(f) else []
     fl_rows, man_rows, res_rows = load("filings.csv"), load("dart_manifest.csv"), load("filter_result.csv")
+    # 재시도 대상: 목록 조회 오류, 문서 다운로드 실패, 상태 기록이 없는 옛 '문서없음'(조회 오류였을 수 있음)
+    def needs_retry(r):
+        st = str(r.get("list_status", ""))
+        if r.get("filter") == "목록오류" or st.startswith("partial"):
+            return True
+        if r.get("filter") == "문서없음" and st in ("", "nan"):
+            return True
+        return False
+    retry = {r["code"] for r in res_rows if needs_retry(r)}
+    res_rows = [r for r in res_rows if r["code"] not in retry]
+    fl_rows = [r for r in fl_rows if r["code"] not in retry]
+    man_rows = [r for r in man_rows if r["code"] not in retry]
     done_codes = {r["code"] for r in res_rows}
+    print(f"재시도 대상 {len(retry)}")
     todo = [r for r in cmap.itertuples() if r.code not in done_codes]
     print(f"이어하기: 완료 {len(done_codes)}, 남음 {len(todo)}")
     t0 = time.time()
@@ -268,7 +287,11 @@ def main():
         if not r.corp_code:
             res["filter"] = "미매핑"
             return res, fls, mans
-        fl = filings(r.corp_code)
+        fl, lst = filings(r.corp_code)
+        res["list_status"] = lst
+        if lst not in ("000", "013"):
+            res["filter"] = "목록오류"
+            return res, fls, mans
         for f in fl:
             fls.append({"code": r.code, "corp_code": r.corp_code, "rcept_no": f["rcept_no"], "rcept_dt": f["rcept_dt"],
                         "report_nm": f["report_nm"].strip(), "corp_name": f.get("corp_name", "")})
@@ -292,7 +315,8 @@ def main():
         res["n_docs"] = len(docs)
         res["any_fallback"] = fb
         if best is None:
-            res["filter"] = "문서없음"
+            # 공시는 있는데 문서를 하나도 못 받았으면 다운로드 오류 → 재시도 대상
+            res["filter"] = "문서없음" if not docs else "목록오류"
         else:
             res["max_t1"] = best
             res["filter"] = "통과" if best >= PASS_MIN else "탈락"
@@ -322,6 +346,8 @@ def main():
     save()
     rr = pd.DataFrame(res_rows)
     print("거름망:", rr["filter"].value_counts().to_dict(), f"이번 실행 {time.time() - t0:.0f}s, 남음 {len(cmap) - len(rr)}")
+    if "list_status" in rr:
+        print("목록 조회 상태:", rr["list_status"].astype(str).value_counts().to_dict())
     with open(os.path.join(out, "scan_meta.json"), "w", encoding="utf-8") as f:
         json.dump({"mode": a.mode, "bgn": BGN, "end": END, "T1": T1, "pass_min": PASS_MIN,
                    "n_companies": len(cmap), "n_done": len(rr), "complete": len(rr) >= len(cmap)},
