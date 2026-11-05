@@ -88,3 +88,11 @@
     CONFIRMED·주의: n=243 평균 13.2% 플러스비율 0.658
     CONFIRMED·후반경고: n=120 평균 15.7% 플러스비율 0.683
     CONFIRMED·강한 후반경고: n=19 평균 11.5% 플러스비율 0.632
+
+==== 알림 이벤트 검증 (OOS v2 채점 규칙 그대로, 기준률 = 아무 날에 같은 규칙 적용) ====
+  basket_bear 적중 = 60거래일 뒤 바스켓 실제 하락. z는 이벤트 독립 가정이라 과대
+  late_change|basket_bear: n=93 적중 0.301 vs 기준 0.346 (z≈-0.91), basket_fwd60_pct 평균 13.45
+  leader_end|rel_underperform: n=134 적중 0.478 vs 기준 0.542 (z≈-1.49), rel_fwd60_pct 평균 3.04
+  leader_start|rel_outperform: n=133 적중 0.504 vs 기준 0.458 (z≈1.05), rel_fwd60_pct 평균 3.3
+  phase_change|basket_bear: n=61 적중 0.328 vs 기준 0.346 (z≈-0.3), basket_fwd60_pct 평균 8.29
+  phase_change|basket_bull: n=80 적중 0.487 vs 기준 0.415 (z≈1.32), basket_fwd60_pct 평균 8.71
