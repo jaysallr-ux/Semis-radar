@@ -330,6 +330,29 @@ CARSON_FEEDS = [
 ]
 
 
+FAIRLEAD_FEED = "https://fairleadstrategies.substack.com/feed"
+
+
+def substack_posts(http: Http, url: str, since: datetime) -> list[dict]:
+    """A person's own Substack (RSS). Free posts carry full text; paid posts only a teaser (graded on what is there)."""
+    status, body, _ = http.get(url, headers={"Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.8"})
+    if status != 200 or "<rss" not in body[:500].lower():
+        raise RuntimeError(f"substack {status}")
+    root = ET.fromstring(body.encode())
+    out = []
+    for it in root.findall(".//item"):
+        try:
+            pub = parsedate_to_datetime(it.findtext("pubDate") or "").astimezone(timezone.utc)
+        except Exception:
+            continue
+        if pub < since:
+            continue
+        text = it.findtext("{http://purl.org/rss/1.0/modules/content/}encoded") or it.findtext("description") or ""
+        out.append({"title": (it.findtext("title") or "").strip(), "url": clean_url(it.findtext("link") or ""),
+                    "published_at": pub.isoformat(), "text": html_text(text)})
+    return out
+
+
 def carson_detrick(http: Http, since: datetime) -> list[dict]:
     """Carson Group RSS. The main feed URL started answering 403 to Actions on 10/26; try the other public
     feed URLs WordPress serves before giving up. Records every attempt's status in the error."""
@@ -516,6 +539,20 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
         except Exception as e:
             errors["Morgan Stanley podcast"] = str(e)[:120]
             pstat["Mike Wilson"]["official_source_ok"] = False
+
+    if "Katie Stockton" in by_name:
+        try:
+            for post in substack_posts(http, FAIRLEAD_FEED, since):
+                if post["url"] not in items:
+                    it = new_item(by_name["Katie Stockton"], "official_blog", post["title"], "Fairlead Strategies", post["url"], post["published_at"])
+                    it["_text"] = post["text"]
+                    items[post["url"]] = it
+                elif items[post["url"]]["gemini_status"] in ("pending", "error"):
+                    items[post["url"]]["_text"] = post["text"]
+            pstat["Katie Stockton"]["official_source_ok"] = True
+        except Exception as e:
+            errors["Fairlead Substack"] = str(e)[:120]
+            pstat["Katie Stockton"]["official_source_ok"] = False
 
     # 3) process: video bridge, then bodies + quotes (T1 first, newest first, capped)
     todo = [i for i in items.values() if i["gemini_status"] in ("pending", "error")
