@@ -32,7 +32,7 @@ HIST_FIELDS = [
 ]
 EV_FIELDS = [
     "asof", "engine", "kind", "scoring", "subject", "msg", "status",
-    "basket_mae60_pct", "basket_fwd120_pct", "subject_fwd_pct", "basket_fwd_pct", "rel_fwd_pct",
+    "basket_mae60_pct", "basket_fwd60_pct", "basket_fwd120_pct", "subject_fwd_pct", "basket_fwd_pct", "rel_fwd_pct",
     "pass", "maturity_asof",
 ]
 
@@ -123,6 +123,44 @@ def merge_events(ev_rows: list[dict], latest: dict, policy: dict):
         seen.add(key)
 
 
+MATURITY = {"basket_bull": 120, "basket_bear": 60, "rel_outperform": 60, "rel_underperform": 60}
+
+
+def event_outcome(x: np.ndarray, i: int, scoring: str, floor_pct: float, si: np.ndarray | None = None):
+    """
+    이벤트 하나 채점. OOS 채점기와 백테스트가 같은 함수를 쓴다.
+    반환: (passed, 기록용 dict) / 성숙 전·데이터 없음이면 (None, 사유 dict)
+      basket_bull     : MAE60 >= -10% AND fwd120 >= floor
+      basket_bear     : fwd60 <= 0  (60거래일 뒤 바스켓이 실제로 내려가 있어야 경고 적중)
+                        ※ v2 초안의 '매수 품질 불통과'는 +10% 올라도 적중으로 세서 폐기
+      rel_outperform  : 주체 fwd60 - 바스켓 fwd60 > 0
+      rel_underperform: 주체 fwd60 - 바스켓 fwd60 < 0
+    """
+    w = MATURITY[scoring]
+    if i + w >= len(x):
+        return None, {"status": "pending"}
+    rec = {}
+    if scoring in ("basket_bull", "basket_bear"):
+        mae60 = float(np.min(x[i + 1:i + 61] / x[i] - 1)) * 100
+        fwd60 = float(x[i + 60] / x[i] - 1) * 100
+        rec.update(basket_mae60_pct=round(mae60, 2), basket_fwd60_pct=round(fwd60, 2))
+        if i + 120 < len(x):
+            rec["basket_fwd120_pct"] = round(float(x[i + 120] / x[i] - 1) * 100, 2)
+        if scoring == "basket_bull":
+            passed = mae60 >= -10.0 and rec["basket_fwd120_pct"] >= floor_pct
+        else:
+            passed = fwd60 <= 0
+    else:
+        if si is None or np.isnan(si[i]) or np.isnan(si[i + w]):
+            return None, {"status": "subject_data_missing"}
+        sf = float(si[i + w] / si[i] - 1) * 100
+        bf = float(x[i + w] / x[i] - 1) * 100
+        rel = sf - bf
+        passed = rel > 0 if scoring == "rel_outperform" else rel < 0
+        rec.update(subject_fwd_pct=round(sf, 2), basket_fwd_pct=round(bf, 2), rel_fwd_pct=round(rel, 2))
+    return bool(passed), rec
+
+
 def score_events(ev_rows: list[dict], policy: dict, provider_name: str):
     pending = [r for r in ev_rows if r.get("status") == "pending"]
     if not pending:
@@ -152,29 +190,17 @@ def score_events(ev_rows: list[dict], policy: dict, provider_name: str):
         if i is None:
             r["status"] = "date_not_found"
             continue
-        rule = sr.get(r["scoring"])
-        if rule is None:
+        if r["scoring"] not in MATURITY:
             r["status"] = "unknown_scoring"
             continue
-        w = int(rule["maturity_trading_days"])
-        if i + w >= len(x):
-            continue  # 아직 성숙 전
-        if r["scoring"] in ("basket_bull", "basket_bear"):
-            mae60 = float(np.min(x[i + 1:i + 61] / x[i] - 1)) * 100
-            fwd120 = float(x[i + 120] / x[i] - 1) * 100
-            bull_pass = mae60 >= -10.0 and fwd120 >= floor
-            passed = bull_pass if r["scoring"] == "basket_bull" else not bull_pass
-            r.update(basket_mae60_pct=f"{mae60:.2f}", basket_fwd120_pct=f"{fwd120:.2f}")
-        else:
-            si = subject_index(prep, r["subject"])
-            if si is None or np.isnan(si[i]) or np.isnan(si[i + w]):
-                r["status"] = "subject_data_missing"
-                continue
-            sf = float(si[i + w] / si[i] - 1) * 100
-            bf = float(x[i + w] / x[i] - 1) * 100
-            rel = sf - bf
-            passed = rel > 0 if r["scoring"] == "rel_outperform" else rel < 0
-            r.update(subject_fwd_pct=f"{sf:.2f}", basket_fwd_pct=f"{bf:.2f}", rel_fwd_pct=f"{rel:.2f}")
+        si = subject_index(prep, r["subject"]) if r["scoring"].startswith("rel_") else None
+        passed, rec = event_outcome(x, i, r["scoring"], floor, si)
+        if passed is None:
+            if rec["status"] != "pending":
+                r["status"] = rec["status"]
+            continue
+        w = MATURITY[r["scoring"]]
+        r.update({k: str(v) for k, v in rec.items()})
         r.update(status="scored", **{"pass": str(bool(passed))},
                  maturity_asof=dates[i + w].date().isoformat())
         print(f"OOS v2 채점 {r['asof']} {r['kind']}({r['subject']}) {r['scoring']}: pass={passed}")

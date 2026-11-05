@@ -1,6 +1,6 @@
 {
   "status": "FROZEN_OOS_POLICY_V2",
-  "frozen_at": "2026-11-05",
+  "frozen_at": "2026-11-05 (basket_bear 정의 수정 반영, OOS 이벤트 발생 전)",
   "engine": "v2",
   "oos_start_date": "2026-11-06",
   "supersedes": "oos_evaluation_policy.json (V1). V1은 하락 방향 알림까지 매수 품질 기준으로 채점하는 결함이 있어 2026-11-05 폐기. V1 대기 행은 history.csv 에 v1_retired 로 남기고 채점하지 않는다.",
@@ -8,7 +8,7 @@
   "frozen_operating_params": {
     "early_enter_breadth": 0.25,
     "new_turn_window": 10,
-    "confirm_enter_on_share": 0.60,
+    "confirm_enter_on_share": 0.6,
     "confirm_min_parts": 5,
     "confirm_exit_on_share": 0.45,
     "part_lead_exit_on_share": 0.25,
@@ -27,8 +27,10 @@
     },
     "basket_bear": {
       "applies_to": "단계 하락, 후반 경고 상승",
-      "pass_rule": "basket_bull 기준 불통과 (MAE60 < -10.0% OR fwd120 < 13.97%) = 경고가 맞음",
-      "maturity_trading_days": 120
+      "pass_rule": "basket fwd60 <= 0 (60거래일 뒤 바스켓이 실제로 내려가 있어야 경고 적중)",
+      "maturity_trading_days": 60,
+      "also_recorded": "basket MAE60, fwd120(가능할 때). 통과 판정에는 안 씀",
+      "revision_note": "초안의 '매수 품질 불통과 = 적중'은 +13.97% 미만 상승도 적중으로 세서 적중률을 부풀림. OOS 이벤트가 하나도 채점되기 전(2026-11-05)에 수정."
     },
     "rel_outperform": {
       "applies_to": "하닉 본체 주도 시작, 주도 파트 시작",
@@ -40,10 +42,19 @@
       "pass_rule": "주체 60거래일 수익률 - basket 60거래일 수익률 < 0",
       "maturity_trading_days": 60
     },
-    "not_scored": ["chain_change", "late_change 하락", "data_error", "data_recovery", "engine_switch", "HOLD 관련 단계 전환"],
+    "not_scored": [
+      "chain_change",
+      "late_change 하락",
+      "data_error",
+      "data_recovery",
+      "engine_switch",
+      "HOLD 관련 단계 전환"
+    ],
     "basket": "동일가중 반도체 바스켓 ew_index",
     "fwd120_floor_pct": 13.97,
-    "fwd120_floor_note": "V1과 동일. 2026-10-06 실데이터 전체 판정 가능일 120거래일 수익률 중앙값으로 동결"
+    "fwd120_floor_note": "V1과 동일. 2026-10-06 실데이터 전체 판정 가능일 120거래일 수익률 중앙값으로 동결",
+    "evaluation_note": "적중률은 50%가 아니라 backtest summary.json event_validation._base_rates(같은 규칙을 아무 날에 적용한 통과율)와 비교한다.",
+    "late_warning_use": "후반 경고는 매도 신호가 아니라 참고 지표. 백테스트에서 경고가 셀수록 60일 수익률이 높게 나와 매도 신호 근거 없음."
   },
   "retune_gate": {
     "logic": "OR",
@@ -54,5 +65,9 @@
     "before_gate": "NO_RETUNE",
     "rule": "위 조건 충족 전에는 운영 임계값과 채점 기준을 수정하지 않는다. 논리 버그 수정은 엔진 버전을 올리고 정책을 새로 동결한다."
   },
-  "auto_cycle_rule_frozen_reference": {"reversal": 0.25, "min_gain": 0.50, "min_td": 120}
+  "auto_cycle_rule_frozen_reference": {
+    "reversal": 0.25,
+    "min_gain": 0.5,
+    "min_td": 120
+  }
 }

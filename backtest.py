@@ -35,7 +35,8 @@ import numpy as np
 import pandas as pd
 
 from data_provider import check_coverage, get_provider
-from regime import prepare, run_engine, subject_index
+from oos_tracker import event_outcome
+from regime import describe_change, prepare, run_engine, subject_index
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -363,6 +364,68 @@ def state_conditional(prep, days) -> dict:
     return out
 
 
+STATE_KEYS = ["phase", "hynix_lead", "hynix_defensive", "part_leader", "active_chains", "late_level"]
+
+
+def event_validation(prep, days, floor_pct: float) -> dict:
+    """
+    과거 전 구간에서 실제로 났을 알림 이벤트(describe_change)를 OOS v2 채점 규칙 그대로 채점.
+    기준률(base) = 같은 규칙을 '아무 날'에 적용했을 때 통과율. 이벤트 적중률이 기준률보다 높아야 의미 있음.
+    z 는 이벤트 독립 가정 → 몰려서 나는 이벤트 때문에 실제보다 과대. 참고만.
+    """
+    x = prep["ew_index"]
+    T = len(days)
+    sidx = {pn: subject_index(prep, pn) for pn in prep["part_order"]}
+    sidx["hynix"] = subject_index(prep, "hynix")
+    groups: dict = {}
+    for t in range(1, T):
+        a, b = days[t - 1], days[t]
+        if "HOLD" in (a["phase"], b["phase"]):
+            continue
+        _, _, evs = describe_change({k: a.get(k) for k in STATE_KEYS}, {k: b.get(k) for k in STATE_KEYS})
+        for e in evs:
+            if not e["scoring"]:
+                continue
+            passed, rec = event_outcome(x, t, e["scoring"], floor_pct, sidx.get(e["subject"]))
+            if passed is None:
+                continue
+            g = groups.setdefault((e["kind"], e["scoring"]), {"pass": [], "metric": []})
+            g["pass"].append(passed)
+            g["metric"].append(rec.get("basket_fwd60_pct", rec.get("rel_fwd_pct")))
+
+    base = {}
+    pool = [t for t in range(T) if days[t]["phase"] != "HOLD"]
+    for sc in ("basket_bull", "basket_bear"):
+        res = [event_outcome(x, t, sc, floor_pct)[0] for t in pool]
+        res = [r for r in res if r is not None]
+        base[sc] = float(np.mean(res))
+    rel = [event_outcome(x, t, "rel_outperform", floor_pct, sidx[s])[0] for t in pool for s in sidx]
+    rel = [r for r in rel if r is not None]
+    base["rel_outperform"] = float(np.mean(rel))
+    base["rel_underperform"] = 1 - base["rel_outperform"]
+
+    out = {}
+    for (kind, sc), g in sorted(groups.items()):
+        n, hit, b0 = len(g["pass"]), float(np.mean(g["pass"])), base[sc]
+        z = (hit - b0) / np.sqrt(b0 * (1 - b0) / n) if 0 < b0 < 1 else None
+        out[f"{kind}|{sc}"] = {"n": n, "hit_rate": round(hit, 3), "base_rate": round(b0, 3),
+                               "z_naive": None if z is None else round(float(z), 2),
+                               "metric_mean": round(float(np.nanmean(g["metric"])), 2),
+                               "metric": "basket_fwd60_pct" if sc.startswith("basket") else "rel_fwd60_pct"}
+    out["_base_rates"] = {k: round(v, 3) for k, v in base.items()}
+    return out
+
+
+def print_event_report(ev):
+    print("\n==== 알림 이벤트 검증 (OOS v2 채점 규칙 그대로, 기준률 = 아무 날에 같은 규칙 적용) ====")
+    print("  basket_bear 적중 = 60거래일 뒤 바스켓 실제 하락. z는 이벤트 독립 가정이라 과대")
+    for k, v in ev.items():
+        if k.startswith("_"):
+            continue
+        print(f"  {k}: n={v['n']} 적중 {v['hit_rate']} vs 기준 {v['base_rate']} (z≈{v['z_naive']}), "
+              f"{v['metric']} 평균 {v['metric_mean']}")
+
+
 def print_lead_report(lv, sc):
     print("\n==== 주도 판정 검증 (초과수익 = 이후 k일, 파트는 전체 파트 평균 대비 / 하닉은 바스켓 대비) ====")
     names = {"part_leader": "주도 파트(매일)", "part_leader_start_events": "주도 파트 시작일",
@@ -523,8 +586,11 @@ def main():
     lv = leader_validation(prep, days)
     sc = state_conditional(prep, days)
     print_lead_report(lv, sc)
+    pol = load(os.path.join(HERE, "oos_evaluation_policy_v2.json"))
+    ev = event_validation(prep, days, float(pol["scoring_rules"]["fwd120_floor_pct"]))
+    print_event_report(ev)
     summary = {"quality_rule": QUALITY, "auto_cycle_rule": AUTO_CYCLE, "auto_cycles": ac,
-               "leader_validation": lv, "state_conditional": sc,
+               "leader_validation": lv, "state_conditional": sc, "event_validation": ev,
                "auto": {k: v for k, v in res_auto.items() if k != "entries"},
                "manual": {k: v for k, v in res_man.items() if k != "entries"}}
     with open(os.path.join(outdir, "summary.json"), "w", encoding="utf-8") as f:
