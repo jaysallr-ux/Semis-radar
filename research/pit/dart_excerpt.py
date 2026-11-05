@@ -41,7 +41,7 @@ def business_parts(xml):
     if not st:
         m = re.search(r"<TITLE[^>]*>\s*(II|Ⅱ)\s*[\.．]\s*사업의\s*내용", xml)
         if not m:
-            return None, None, False
+            return None, None, False, None
         s0 = m.start()
     else:
         s0 = st.start()
@@ -68,58 +68,62 @@ def business_parts(xml):
         if m2:
             st2 = OVERVIEW_CHARS + m2.start()
             sa = "[본문 검색: " + m2.group(0) + "]\n" + full[st2:st2 + SALES_CHARS]
-    business_parts.sales = sa
     if ov is None and pr is None:
-        return full[:OVERVIEW_CHARS + PRODUCT_CHARS], None, True
-    return ov if ov is not None else full[:OVERVIEW_CHARS], pr, True
+        return full[:OVERVIEW_CHARS + PRODUCT_CHARS], None, True, sa
+    return ov if ov is not None else full[:OVERVIEW_CHARS], pr, True, sa
+
+
+def one(r):
+    fn = os.path.join(OUT, f"{r.code}_{r.rcept_no}.txt")
+    gp = str(getattr(r, "grep", "") or "")
+    gp = "" if gp == "nan" else gp
+    if os.path.exists(fn) and "재추출" not in str(r.reason) and not gp:
+        return
+    b = call("document.xml", {"rcept_no": r.rcept_no}, binary=True)
+    if b is None:
+        print("실패", r.code, r.rcept_no)
+        return
+    z = zipfile.ZipFile(io.BytesIO(b))
+    names = z.namelist()
+    main_f = next((n for n in names if os.path.basename(n) == f"{r.rcept_no}.xml"), None) or \
+        max(names, key=lambda n: z.getinfo(n).file_size)
+    xml, enc = decode(z.read(main_f))
+    ov, pr, found, sales = business_parts(xml)
+    with open(fn, "w", encoding="utf-8") as f:
+        f.write(f"code={r.code} rcept_no={r.rcept_no} rcept_dt={r.rcept_dt} report={r.report_nm}\n")
+        f.write(f"sha256={hashlib.sha256(b).hexdigest()} encoding={enc} section_found={int(found)} reason={r.reason}\n")
+        f.write("=== 사업의 개요 (앞부분) ===\n")
+        f.write((ov or "(없음)")[:OVERVIEW_CHARS] + "\n")
+        f.write("=== 주요 제품 ===\n")
+        f.write((pr or "(없음)")[:PRODUCT_CHARS] + "\n")
+        f.write("=== 매출 및 수주상황 ===\n")
+        f.write((sales or "(없음)")[:SALES_CHARS] + "\n")
+    if gp:
+        full = clean(xml)
+        gfn = os.path.join(OUT, f"{r.code}_{r.rcept_no}_grep.txt")
+        with open(gfn, "w", encoding="utf-8") as g:
+            g.write(f"code={r.code} rcept_no={r.rcept_no} rcept_dt={r.rcept_dt} report={r.report_nm}\n")
+            g.write(f"sha256={hashlib.sha256(b).hexdigest()} grep={gp}\n")
+            last = -10**9
+            for mm in re.finditer(gp, full):
+                if mm.start() - last < 1500:
+                    return
+                last = mm.start()
+                g.write(f"--- @{mm.start()} ---\n" + full[max(0, mm.start() - 300):mm.start() + 1500] + "\n")
+        print("grep 저장", gfn)
+    print("저장", fn)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", required=True)
+    ap.add_argument("--workers", type=int, default=4)
     a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
     req = pd.read_csv(a.list, dtype=str)
-    for r in req.itertuples():
-        fn = os.path.join(OUT, f"{r.code}_{r.rcept_no}.txt")
-        gp = str(getattr(r, "grep", "") or "")
-        gp = "" if gp == "nan" else gp
-        if os.path.exists(fn) and "재추출" not in str(r.reason) and not gp:
-            continue
-        b = call("document.xml", {"rcept_no": r.rcept_no}, binary=True)
-        if b is None:
-            print("실패", r.code, r.rcept_no)
-            continue
-        z = zipfile.ZipFile(io.BytesIO(b))
-        names = z.namelist()
-        main_f = next((n for n in names if os.path.basename(n) == f"{r.rcept_no}.xml"), None) or \
-            max(names, key=lambda n: z.getinfo(n).file_size)
-        xml, enc = decode(z.read(main_f))
-        business_parts.sales = None
-        ov, pr, found = business_parts(xml)
-        with open(fn, "w", encoding="utf-8") as f:
-            f.write(f"code={r.code} rcept_no={r.rcept_no} rcept_dt={r.rcept_dt} report={r.report_nm}\n")
-            f.write(f"sha256={hashlib.sha256(b).hexdigest()} encoding={enc} section_found={int(found)} reason={r.reason}\n")
-            f.write("=== 사업의 개요 (앞부분) ===\n")
-            f.write((ov or "(없음)")[:OVERVIEW_CHARS] + "\n")
-            f.write("=== 주요 제품 ===\n")
-            f.write((pr or "(없음)")[:PRODUCT_CHARS] + "\n")
-            f.write("=== 매출 및 수주상황 ===\n")
-            f.write((getattr(business_parts, "sales", None) or "(없음)")[:SALES_CHARS] + "\n")
-        if gp:
-            full = clean(xml)
-            gfn = os.path.join(OUT, f"{r.code}_{r.rcept_no}_grep.txt")
-            with open(gfn, "w", encoding="utf-8") as g:
-                g.write(f"code={r.code} rcept_no={r.rcept_no} rcept_dt={r.rcept_dt} report={r.report_nm}\n")
-                g.write(f"sha256={hashlib.sha256(b).hexdigest()} grep={gp}\n")
-                last = -10**9
-                for mm in re.finditer(gp, full):
-                    if mm.start() - last < 1500:
-                        continue
-                    last = mm.start()
-                    g.write(f"--- @{mm.start()} ---\n" + full[max(0, mm.start() - 300):mm.start() + 1500] + "\n")
-            print("grep 저장", gfn)
-        print("저장", fn)
+    import concurrent.futures as cf
+    with cf.ThreadPoolExecutor(a.workers) as ex:
+        list(ex.map(one, list(req.itertuples())))
 
 
 if __name__ == "__main__":
