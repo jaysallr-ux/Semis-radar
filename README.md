@@ -15,8 +15,10 @@
 | indicators.py | 종목별 지표 + 추세 ON/OFF 상태머신 |
 | regime.py | 폭, peer RS, 주도 파트/하닉, 체인, 후반 경고 판정 |
 | run_daily.py | 매일 실행 → output/latest.json |
-| oos_tracker.py | 표본 밖 알림 종류 기록 + 120거래일 성숙 시 자동 채점 |
-| oos_evaluation_policy.json | 표본 밖 평가 기준 동결본 |
+| oos_tracker.py | history.csv 단독 기록 + oos_events.csv 이벤트별 방향 채점 (v2) |
+| oos_evaluation_policy_v2.json | 표본 밖 평가 기준 동결본 v2 (현행) |
+| oos_evaluation_policy.json | V1 동결본. 2026-11-05 폐기, 기록용 |
+| .github/workflows/backtest.yml | 백테스트 수동 실행 (Actions 탭에서 브랜치 골라 Run) |
 | backtest.py | 자동 사이클 + 진입 품질 + 랜덤 기준 + LOCO 백테스트 |
 | universe.json | 28종목, 공정 분류, 고객사 태그, list_date/valid_from |
 | params.json | 모든 임계값 |
@@ -38,11 +40,33 @@
 - 초입후보: 최근 `new_turn_window` 거래일 신규전환 폭 + 참여 파트 수 + 거래량 1.3배 종목 비율
 - KOSPI 대비 RS: 참고지표 전용. 어떤 상태 발동/해제 조건에도 사용하지 않음
 - 사이클확인: 추세 ON 비율 + 과반 ON 파트 수 + 하닉 추세 ON
-- 하닉 본체 주도: 하닉 peer RS 발동 +10%p / 해제 +5%p 미만
+- 하닉 본체 주도: 하닉 peer RS 발동 +10%p / 해제 +5%p 미만 **AND 하닉 추세 ON** (v2)
+  - 추세 OFF인데 RS만 발동선 이상이면 `hynix_defensive`(상대 방어)로만 기록, 알림 없음
 - 주도 파트: 파트 peer RS 중앙값 발동 +8%p / 해제 +4%p 미만, 과반 ON, 과반 거래량 증가
+  - v2: 파트 추세 ON 비율이 25% 미만으로 떨어져도 해제 (`part_lead_exit_on_share`)
   - 다른 파트가 진입조건을 만족하면서 현 리더보다 +5%p 이상 강한 상태가 2거래일 연속이면 교체
 - 체인: 태그된 고객사 체인별 ON 비율 발동 60% / 해제 40%
 - 후반 경고: 후행파트 확산, 주도 RS 고점하락, 대장 신고가 실패, 하닉 추세 OFF, 메모리가격 둔화 중 2개 주의 / 3개 경고 / 4개 이상 강한 경고
+  - v2: 사이클확인이 아니면 `해당없음` (평시의 `없음`=경고 해제가 아님)
+  - v2: 주도 RS 고점하락은 현재 리더의 최근 20일 RS를 데이터에서 직접 계산. 리더가 바뀌어도 리셋 없음, 리더가 사라지면 사이클확인 구간의 마지막 리더로 평가
+  - 메모리가격 입력이 없으면 4항목만으로 같은 임계값 적용 → 사실상 더 빡빡해짐
+
+## 엔진 v2 (2026-11-05)
+
+v1 논리 버그 수정. **단계(phase) 판정은 v1과 동일**하므로 아래 동결 파라미터와 백테스트 v3의 단계 신호 결과는 그대로 유효하다.
+
+| 버그 | v1 증상 | v2 수정 |
+|---|---|---|
+| 하닉 본체 주도 | 동일가중 소형주 바스켓 대비 RS만 봐서 하락장에서 덜 빠진 하닉이 '주도'로 켜짐. 백테스트에서 평시·사이클확인 켜짐 비율이 19.6%·19.4%로 같음. 2026-11-05 peer -36% 급락 중 추세 OFF 하닉에 '본체 주도 시작' 알림 | 하닉 추세 ON 필수. 추세 OFF면 `hynix_defensive` |
+| 주도 파트 유지 | RS만 4%p 넘으면 유지 → 2026-10-16~26 전체 추세 ON 0%인데 '소재' 리더 유지 | 파트 추세 ON 25% 미만이면 해제 |
+| 후반 경고 소멸 ① | 사이클확인 이탈 시 항목이 비어 `→ 없음` 알림 (백테스트 14회) | 사이클확인 밖은 `해당없음`, 이 전환은 별도 알림 안 함 |
+| 후반 경고 소멸 ② | 리더가 바뀌면 RS 기록이 리셋돼 5일간 RS 고점하락·신고가 실패 계산 불가 → 2026-10-15 '주의 → 없음' 다음 날 평시로 붕괴 | 리더 RS를 데이터에서 직접 계산, 리더 상실 시 마지막 리더 유지 |
+| OOS 채점 방향 | '사이클확인→평시', '후반 경고 상승' 같은 하락 쪽 알림도 매수 품질 기준으로 채점 → 경고가 맞으면 실패로 셈 | 이벤트별 방향 채점 (`oos_evaluation_policy_v2.json`) |
+| 운영 | freshness guard가 오늘 생성+정상만 봐서 소스가 늦게 갱신되면 그날 판정 누락 / history.csv 를 두 스크립트가 다른 열 구성으로 씀 | guard에 asof==오늘 조건 / history는 oos_tracker 단독 |
+
+v2 전환 첫 실행은 `[엔진 v2 전환] 기준선 재설정` 알림 1회만 보내고 v1 상태와 비교하지 않는다.
+
+**머지 전 확인할 것:** 후반 경고는 v1에서 리셋 버그 때문에 RS 고점하락 항목이 거의 계산되지 않았다. v2에서는 매일 계산되므로 경고 빈도가 늘 수 있다. `semis-radar-backtest` 워크플로를 이 브랜치에서 돌려 `단계별·후반경고별 이후 바스켓 수익률`에서 경고가 셀수록 이후 수익률이 낮아지는지, 빈도가 감당 가능한지 먼저 본다.
 
 ## 운영 파라미터 동결 (2026-10-06)
 
@@ -84,9 +108,22 @@
 
 결과 파일: `backtest/summary.json`, `signals_auto.csv`, `signals_manual.csv`, `grid.csv`, `loco.csv`
 
-## 실전 표본 밖(OOS) 평가 동결
+## 실전 표본 밖(OOS) 평가 v2 (현행)
 
-`oos_evaluation_policy.json`을 유일한 사전등록 기준으로 사용한다. 동결일은 2026-10-06, 실제 OOS 시작일은 2026-10-07이다.
+`oos_evaluation_policy_v2.json`이 유일한 기준. 시작일 2026-11-06, 엔진 v2가 만든 이벤트만 채점한다.
+
+- `latest.json.alert.events`의 이벤트마다 `output/oos_events.csv` 에 한 줄
+- `basket_bull` (단계 상승): MAE60 >= -10% AND fwd120 >= 13.97% 이면 통과
+- `basket_bear` (단계 하락, 후반 경고 상승): 위 기준 **불통과**면 통과 = 경고가 맞음
+- `rel_outperform` (하닉 주도·주도 파트 시작): 주체 60거래일 수익률 > 바스켓이면 통과
+- `rel_underperform` (주도 해제): 주체 60거래일 수익률 < 바스켓이면 통과
+- 체인, 후반 경고 하락, 데이터, 엔진 전환 이벤트는 기록만
+- 재튜닝 게이트: 새 자동 사이클 1개 확정 OR 채점 이벤트 10개 이상(방향별 최소 3개)
+
+## (폐기) 실전 표본 밖(OOS) 평가 V1
+
+아래는 기록용. V1 대기 행은 `history.csv`에 `v1_retired`로 남고 채점하지 않는다.
+`oos_evaluation_policy.json`을 유일한 사전등록 기준으로 사용했다. 동결일은 2026-10-06, 실제 OOS 시작일은 2026-10-07이었다.
 
 - 모든 시장상태 알림은 `output/history.csv`에 날짜·종류·원문을 누적
 - 알림 종류: `phase_change`, `leader_change`, `late_change`, `chain_change`, `data_recovery`, `data_error`
@@ -119,9 +156,10 @@
 1. 공개 저장소 사용
 2. Actions workflow에 `contents: write` 권한 부여
 3. 평일 **16:50 KST** `semis-radar-daily` 실행 (`cron: 50 7 * * 1-5`)
-4. `run_daily.py` 뒤 `oos_tracker.py`가 history 기록/성숙 채점을 갱신
-5. `output/latest.json`, `output/history.csv`를 커밋
-6. GPT는 평일 **17:40 KST** raw JSON만 읽음
+4. `run_daily.py` 뒤 `oos_tracker.py`가 history 기록 + 이벤트 성숙 채점을 갱신
+5. `output/latest.json`, `output/history.csv`, `output/oos_events.csv`를 커밋
+6. 백테스트는 `semis-radar-backtest` 워크플로 수동 실행 (`grid` 체크 시 그리드+LOCO)
+7. GPT는 평일 **17:40 KST** raw JSON만 읽음
 
 ## GPT 예약 작업 프롬프트 템플릿
 
@@ -136,6 +174,8 @@
        market.breadth_early, market.on_share 값을 JSON에 적힌 숫자 그대로 덧붙여라.
     4. alert.changed 가 false 면 아무것도 보내지 마라.
     5. 숫자를 직접 계산하거나 추정하지 마라. JSON에 없는 값은 "없음"이라고 써라.
+    6. state.late_level 이 "해당없음"이면 사이클확인 단계가 아니라는 뜻이다. 경고 해제로 표현하지 마라.
+    7. state.hynix_defensive 가 true 면 "하닉 상대 방어(주도 아님)"라고 한 줄 덧붙여라.
 
 ## 고객사 태그
 

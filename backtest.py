@@ -5,6 +5,7 @@
   1) 사이클 탐지   : 사이클 근처에서 신호가 켜졌는가
   2) 진입 품질     : 그 신호를 따라 샀을 때 바로 처맞지 않았는가 (MAE/MFE, 이후 수익률)
   3) 랜덤 기준선   : 아무 날이나 찍었을 때보다 나은가
+  4) 주도 판정 검증 (v2) : 주도 파트/하닉 주도 판정 뒤 실제로 상대 초과수익이 났는가, 단계별 이후 수익률
 
 사이클 라벨은 두 벌을 같이 본다.
   - auto   : 동일가중 지수(ew_index)에서 규칙으로 자동 정의 (사람 판단 개입 없음) ← 메인
@@ -28,12 +29,13 @@ import datetime as dt
 import itertools
 import json
 import os
+import warnings
 
 import numpy as np
 import pandas as pd
 
 from data_provider import check_coverage, get_provider
-from regime import prepare, run_engine
+from regime import prepare, run_engine, subject_index
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -265,6 +267,122 @@ def print_report(title, res):
               f" / 첫 진입성공 신호 {c['first_usable_date']}({c['first_usable_lag_td']})")
 
 
+# ---------------- 주도 판정 검증 (v2 추가) ----------------
+LEAD_WINDOWS = (20, 60)
+
+
+def _fwd(idx: np.ndarray, k: int) -> np.ndarray:
+    out = np.full(len(idx), np.nan)
+    out[:-k] = idx[k:] / idx[:-k] - 1
+    return out
+
+
+def _excess_stats(ex: np.ndarray, k: int) -> dict:
+    """ex: 판정일별 초과수익(소수). 겹치는 구간 때문에 t값은 k일 간격 비중첩 표본으로만 계산"""
+    ex = ex[~np.isnan(ex)]
+    if len(ex) == 0:
+        return {"n": 0}
+    sub = ex[::k]
+    t = float(np.mean(sub) / (np.std(sub, ddof=1) / np.sqrt(len(sub)))) if len(sub) > 2 and np.std(sub) > 0 else None
+    return {"n": int(len(ex)), "mean_excess_pct": round(float(np.mean(ex)) * 100, 2),
+            "hit_rate": round(float(np.mean(ex > 0)), 3),
+            "n_nonoverlap": int(len(sub)), "t_nonoverlap": None if t is None else round(t, 2)}
+
+
+def leader_validation(prep, days) -> dict:
+    """
+    주도 판정이 실제로 앞으로 더 잘 갔는가.
+      - 주도 파트: 리더 파트 k일 수익률 - 전체 파트 k일 수익률 평균 (파트 중립 기준)
+      - 비교군: 그날 파트 RS 중앙값 1등 파트 (진입조건·히스테리시스 없이 단순 1등)
+      - 하닉 본체 주도: 하닉 k일 수익률 - 동일가중 바스켓 k일 수익률
+      - 하닉 상대 방어(v2, 추세 OFF + RS 발동선 이상): 같은 방식. 주도와 다르게 움직이는지 확인용
+      - 리더 시작일(이벤트) 기준도 따로
+    """
+    T = len(days)
+    parts = prep["part_order"]
+    pidx = {pn: subject_index(prep, pn) for pn in parts}
+    hy = subject_index(prep, "hynix")
+    x = prep["ew_index"]
+    res = {}
+    for k in LEAD_WINDOWS:
+        pf = {pn: _fwd(pidx[pn], k) for pn in parts}
+        allp = np.vstack([pf[pn] for pn in parts])
+        with np.errstate(all="ignore"), warnings.catch_warnings():
+            warnings.simplefilter("ignore", RuntimeWarning)
+            part_mean = np.nanmean(allp, axis=0)
+        lead_ex, top_ex, start_ex = np.full(T, np.nan), np.full(T, np.nan), []
+        prev_leader = None
+        for t, d in enumerate(days):
+            if d["phase"] == "HOLD":
+                prev_leader = None
+                continue
+            L = d.get("part_leader")
+            if L:
+                lead_ex[t] = pf[L][t] - part_mean[t]
+                if L != prev_leader and not np.isnan(lead_ex[t]):
+                    start_ex.append(lead_ex[t])
+            prev_leader = L
+            ps = d.get("parts") or {}
+            if ps:
+                top = max(ps, key=lambda pn: ps[pn]["median_rs20"])
+                top_ex[t] = pf[top][t] - part_mean[t]
+        hf, xf = _fwd(hy, k), _fwd(x, k)
+        hl = np.array([bool(d.get("hynix_lead")) for d in days])
+        hd = np.array([bool(d.get("hynix_defensive")) for d in days])
+        res[f"fwd{k}"] = {
+            "part_leader": _excess_stats(lead_ex, k),
+            "part_leader_start_events": _excess_stats(np.array(start_ex), 1),
+            "naive_top_rs_part": _excess_stats(top_ex, k),
+            "hynix_lead": _excess_stats(np.where(hl, hf - xf, np.nan), k),
+            "hynix_defensive": _excess_stats(np.where(hd, hf - xf, np.nan), k),
+        }
+    return res
+
+
+def state_conditional(prep, days) -> dict:
+    """단계별로 그날 이후 바스켓 수익률 평균. 단계가 '설명'을 넘어 앞으로의 수익률을 가르는지 확인"""
+    x = prep["ew_index"]
+    out = {}
+    for k in (60, 120):
+        f = _fwd(x, k)
+        row = {}
+        for ph in ("NORMAL", "EARLY", "CONFIRMED"):
+            m = np.array([d["phase"] == ph for d in days]) & ~np.isnan(f)
+            row[ph] = {"n": int(m.sum()), "mean_pct": round(float(np.mean(f[m])) * 100, 1) if m.any() else None,
+                       "pos_rate": round(float(np.mean(f[m] > 0)), 3) if m.any() else None}
+        m = np.array([d["phase"] != "HOLD" for d in days]) & ~np.isnan(f)
+        row["ALL"] = {"n": int(m.sum()), "mean_pct": round(float(np.mean(f[m])) * 100, 1),
+                      "pos_rate": round(float(np.mean(f[m] > 0)), 3)}
+        # 사이클확인 안에서 후반 경고 단계별 (경고가 셀수록 이후 수익률이 낮아야 정상)
+        for lv in ("없음", "주의", "후반경고", "강한 후반경고"):
+            m = np.array([d["phase"] == "CONFIRMED" and d.get("late_level") == lv for d in days]) & ~np.isnan(f)
+            row[f"CONFIRMED·{lv}"] = {"n": int(m.sum()),
+                                     "mean_pct": round(float(np.mean(f[m])) * 100, 1) if m.any() else None,
+                                     "pos_rate": round(float(np.mean(f[m] > 0)), 3) if m.any() else None}
+        out[f"fwd{k}"] = row
+    return out
+
+
+def print_lead_report(lv, sc):
+    print("\n==== 주도 판정 검증 (초과수익 = 이후 k일, 파트는 전체 파트 평균 대비 / 하닉은 바스켓 대비) ====")
+    names = {"part_leader": "주도 파트(매일)", "part_leader_start_events": "주도 파트 시작일",
+             "naive_top_rs_part": "비교군: RS 1등 파트", "hynix_lead": "하닉 본체 주도",
+             "hynix_defensive": "하닉 상대 방어"}
+    for k, block in lv.items():
+        print(f"  [{k}]")
+        for key, st in block.items():
+            if not st.get("n"):
+                print(f"    {names[key]}: 표본 없음")
+                continue
+            print(f"    {names[key]}: n={st['n']} 평균 {st['mean_excess_pct']}%p, 적중 {st['hit_rate']}, "
+                  f"비중첩 t={st['t_nonoverlap']} (n={st['n_nonoverlap']})")
+    print("\n==== 단계별·후반경고별 이후 바스켓 수익률 ====")
+    for k, row in sc.items():
+        print(f"  [{k}]")
+        for ph, v in row.items():
+            print(f"    {ph}: n={v['n']} 평균 {v['mean_pct']}% 플러스비율 {v['pos_rate']}")
+
+
 # ---------------- 그리드 + 하나 빼고 검증 ----------------
 GRID = {
     "early_enter_breadth": [0.25, 0.30, 0.35, 0.40, 0.50],
@@ -383,7 +501,7 @@ def main():
     os.makedirs(outdir, exist_ok=True)
     prep = prepare(universe, prices, kospi, p, start=start)
     days = run_engine(prep, p)
-    pd.DataFrame([{k: d.get(k) for k in ["date", "phase", "hynix_lead", "part_leader", "late_level",
+    pd.DataFrame([{k: d.get(k) for k in ["date", "phase", "hynix_lead", "hynix_defensive", "part_leader", "late_level",
                                          "breadth_early", "parts_active", "on_share", "vol_share"]}
                   for d in days]).to_csv(os.path.join(outdir, "daily_states.csv"), index=False, encoding="utf-8-sig")
 
@@ -402,7 +520,11 @@ def main():
         os.path.join(outdir, "signals_auto.csv"), index=False, encoding="utf-8-sig")
     pd.DataFrame(res_man["entries"]).drop(columns=["i"]).to_csv(
         os.path.join(outdir, "signals_manual.csv"), index=False, encoding="utf-8-sig")
+    lv = leader_validation(prep, days)
+    sc = state_conditional(prep, days)
+    print_lead_report(lv, sc)
     summary = {"quality_rule": QUALITY, "auto_cycle_rule": AUTO_CYCLE, "auto_cycles": ac,
+               "leader_validation": lv, "state_conditional": sc,
                "auto": {k: v for k, v in res_auto.items() if k != "entries"},
                "manual": {k: v for k, v in res_man.items() if k != "entries"}}
     with open(os.path.join(outdir, "summary.json"), "w", encoding="utf-8") as f:

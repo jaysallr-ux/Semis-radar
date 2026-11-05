@@ -8,6 +8,16 @@
   - 하닉은 기준축이 아니라 '후보 주도주' → 바스켓 대비 RS로 하닉 본체 주도 여부 별도 판정
   - 모든 상태는 발동/해제 조건이 다른 히스테리시스
   - 상태는 매일 전체 기간을 처음부터 다시 돌려 계산 → 상태 파일이 없어도 결과가 재현됨
+
+v2 (2026-11-05) 논리 수정. 단계(phase) 판정은 v1과 동일 → 동결 파라미터·백테스트 v3 단계 결과 불변.
+  - 하닉 본체 주도: RS만으로 켜지던 것 → 하닉 추세 ON 필수. 추세 OFF + RS 발동선 이상은
+    '상대 방어'(hynix_defensive)로만 기록하고 알림 대상 아님 (하락장에서 덜 빠진 걸 주도로 오인하던 문제)
+  - 주도 파트: 해제 조건에 파트 추세 ON 비율 하한(part_lead_exit_on_share) 추가
+    (시장 전체가 죽었는데 RS만 남아 리더가 유지되던 문제)
+  - 후반 경고: 사이클확인이 아니면 '해당없음'(평시 '없음'과 구분 → 사이클 이탈이 경고 해제로 읽히지 않게)
+  - 주도 RS 고점하락: 리더가 바뀌어도 그 리더의 과거 20일 RS를 데이터에서 바로 계산 (리셋 없음)
+    리더가 사라지면 사이클확인 구간의 마지막 리더로 계속 평가
+  - describe_change 가 방향이 붙은 구조화 이벤트(events)를 같이 돌려줌 → OOS 채점은 이벤트 기준
 """
 from __future__ import annotations
 
@@ -19,8 +29,12 @@ import pandas as pd
 from data_provider import expected_from
 from indicators import compute_indicators
 
+ENGINE_VERSION = "v2"
 PHASE_KR = {"NORMAL": "평시", "EARLY": "초입후보", "CONFIRMED": "사이클확인", "HOLD": "판정보류"}
+PHASE_RANK = {"HOLD": -1, "NORMAL": 0, "EARLY": 1, "CONFIRMED": 2}
 LATE_KR = {0: "없음", 1: "없음", 2: "주의", 3: "후반경고"}
+LATE_NA = "해당없음"
+LATE_RANK = {"없음": 0, "주의": 1, "후반경고": 2, "강한 후반경고": 3}
 
 
 def _b(series) -> np.ndarray:
@@ -34,7 +48,7 @@ def late_level(score: int) -> str:
 def update_part_leader(st: dict, part_stats: dict, p: dict):
     """
     st: {"leader", "cand", "count"} 를 제자리 갱신하고 현재 주도 파트를 돌려준다.
-      - 현 리더 RS >= 해제선이면 유지
+      - 현 리더 RS >= 해제선 AND 파트 추세 ON 비율 >= part_lead_exit_on_share 이면 유지
       - 단, 진입조건을 다 만족하는 다른 후보가 현 리더보다 switch_margin 이상 강한 상태가
         switch_days 거래일 연속이면 교체
       - 현 리더가 해제선 밑이거나 데이터가 없으면 해제 후 최강 후보 선택
@@ -46,7 +60,9 @@ def update_part_leader(st: dict, part_stats: dict, p: dict):
 
     cands = sorted(((s["median_rs20"], pn) for pn, s in part_stats.items() if qualifies(s)), reverse=True)
     cur = st["leader"]
-    if cur and cur in part_stats and part_stats[cur]["median_rs20"] >= p["part_lead_exit_rs"]:
+    if (cur and cur in part_stats
+            and part_stats[cur]["median_rs20"] >= p["part_lead_exit_rs"]
+            and part_stats[cur]["on_share"] >= p["part_lead_exit_on_share"]):
         challengers = [(rs, pn) for rs, pn in cands if pn != cur]
         if challengers and challengers[0][0] >= part_stats[cur]["median_rs20"] + p["part_lead_switch_margin"]:
             best = challengers[0][1]
@@ -122,6 +138,17 @@ def prepare(universe: dict, prices: dict, kospi: pd.DataFrame | None, p: dict, s
         kospi20 = np.full(T, np.nan)
         kospi65 = np.full(T, np.nan)
 
+    rs20p = (arr["ret20"] - peer20[:, None]) * 100
+    parts_arr = np.array([s["part"] for s in stocks])
+    semi_arr = parts_arr != "대형"
+    part_order = list(dict.fromkeys(s["part"] for s in stocks if s["part"] != "대형"))
+    part_med_rs20 = {}
+    with np.errstate(all="ignore"), warnings.catch_warnings():
+        warnings.simplefilter("ignore", RuntimeWarning)
+        for pn in part_order:
+            m = valid & (semi_arr & (parts_arr == pn))[None, :]
+            part_med_rs20[pn] = np.nanmedian(np.where(m, rs20p, np.nan), axis=1)
+
     return {
         "dates": master, "tickers": tickers,
         "names": np.array([s["name"] for s in stocks]),
@@ -132,12 +159,27 @@ def prepare(universe: dict, prices: dict, kospi: pd.DataFrame | None, p: dict, s
         "arr": arr, "valid": valid, "expected": expected, "trend": trend, "new_turn": new_turn, "turn_on": turn_on,
         "peer20": peer20, "peer65": peer65, "ew_index": ew_index,
         "kospi20": kospi20, "kospi65": kospi65,
-        "rs20p": (arr["ret20"] - peer20[:, None]) * 100,
+        "rs20p": rs20p,
+        "part_med_rs20": part_med_rs20,
         "rs65p": (arr["ret65"] - peer65[:, None]) * 100,
         "rs20k": (arr["ret20"] - kospi20[:, None]) * 100,
         "last_date": last_date,
-        "part_order": list(dict.fromkeys(s["part"] for s in stocks if s["part"] != "대형")),
+        "part_order": part_order,
     }
+
+
+def subject_index(prep: dict, subject: str) -> np.ndarray | None:
+    """하닉 = 종가, 파트 = 유효 종목 일간수익률 동일가중 누적지수 (OOS 채점·주도 파트 검증 공용)"""
+    if subject == "hynix":
+        return prep["arr"]["close"][:, prep["idx_hynix"]]
+    m = prep["parts"] == subject
+    if not m.any():
+        return None
+    with np.errstate(all="ignore"), warnings.catch_warnings():
+        warnings.simplefilter("ignore", RuntimeWarning)
+        dr = np.where(prep["valid"][:, m], prep["arr"]["daily_ret"][:, m], np.nan)
+        daily = np.nan_to_num(np.nanmean(dr, axis=1))
+    return np.cumprod(1 + daily)
 
 
 def run_engine(prep: dict, p: dict, memory_down: bool | None = None, warmup_skip: int = 0) -> list[dict]:
@@ -158,8 +200,16 @@ def run_engine(prep: dict, p: dict, memory_down: bool | None = None, warmup_skip
     phase, hynix_lead, part_leader = "NORMAL", False, None
     leader_state = {"leader": None, "cand": None, "count": 0}
     active_chains: set = set()
-    leader_key, leader_hist = None, []
+    last_lead_key = None  # 사이클확인 구간에서 마지막으로 잡힌 리더 (리더가 사라져도 후반 경고 평가 유지)
+    L = p["late_rs_lookback"]
     out = []
+
+    def lead_series(key, t):
+        if key == "hynix":
+            s = prep["rs20p"][max(0, t - L + 1):t + 1, hy]
+        else:
+            s = prep["part_med_rs20"][key][max(0, t - L + 1):t + 1]
+        return s[~np.isnan(s)]
 
     for t in range(T):
         v = prep["valid"][t]
@@ -167,8 +217,8 @@ def run_engine(prep: dict, p: dict, memory_down: bool | None = None, warmup_skip
         n = int(vs.sum())
         rec = {"date": dates[t].date().isoformat(), "n_semis": n}
         if t < warmup_skip or n < p["min_semis_valid"] or not v[hy]:
-            rec.update({"phase": "HOLD", "hynix_lead": False, "part_leader": None,
-                        "active_chains": [], "late_score": 0, "late_level": "없음"})
+            rec.update({"phase": "HOLD", "hynix_lead": False, "hynix_defensive": False, "part_leader": None,
+                        "active_chains": [], "late_score": 0, "late_level": LATE_NA})
             out.append(rec)
             continue
 
@@ -228,8 +278,10 @@ def run_engine(prep: dict, p: dict, memory_down: bool | None = None, warmup_skip
         else:
             phase = "NORMAL"
 
-        # ---- 하닉 본체 주도 ----
-        hynix_lead = hy_rs20p >= (p["hynix_lead_exit_rs"] if hynix_lead else p["hynix_lead_enter_rs"])
+        # ---- 하닉 본체 주도 (v2: 추세 ON 필수) ----
+        rs_ok = hy_rs20p >= (p["hynix_lead_exit_rs"] if hynix_lead else p["hynix_lead_enter_rs"])
+        hynix_lead = bool(rs_ok and hy_trend)
+        hynix_defensive = bool(hy_rs20p >= p["hynix_lead_enter_rs"] and not hy_trend)
 
         # ---- 주도 파트 (해제 히스테리시스 + 새 강자 교체) ----
         part_leader = update_part_leader(leader_state, part_stats, p)
@@ -250,19 +302,18 @@ def run_engine(prep: dict, p: dict, memory_down: bool | None = None, warmup_skip
                 active_chains.add(ch)
 
         # ---- 후반 경고 스코어 ----
-        key = "hynix" if hynix_lead else part_leader
-        if key != leader_key:
-            leader_key, leader_hist = key, []
-        lead_metric = hy_rs20p if key == "hynix" else (part_stats[key]["median_rs20"] if key in part_stats else None)
-        if lead_metric is not None:
-            leader_hist = (leader_hist + [lead_metric])[-p["late_rs_lookback"]:]
-
         items = {}
         if phase == "CONFIRMED":
+            key = "hynix" if hynix_lead else part_leader
+            if key is not None:
+                last_lead_key = key
+            else:
+                key = last_lead_key  # 리더 상실 → 마지막 리더 기준으로 계속 평가
             lm = vs & late_mask
             items["후행파트_확산"] = bool(lm.sum() > 0 and (tr & lm).sum() / lm.sum() >= p["late_parts_on_share"])
-            if lead_metric is not None and len(leader_hist) >= 5:
-                items["주도_RS_고점하락"] = bool(lead_metric - max(leader_hist) <= -p["late_rs_drop"])
+            hist = lead_series(key, t) if key is not None else np.array([])
+            if len(hist) >= 5:
+                items["주도_RS_고점하락"] = bool(hist[-1] - hist.max() <= -p["late_rs_drop"])
                 gm = np.zeros(N, dtype=bool)
                 if key == "hynix":
                     gm[hy] = True
@@ -274,14 +325,18 @@ def run_engine(prep: dict, p: dict, memory_down: bool | None = None, warmup_skip
             items["하닉_약화"] = bool(not hy_trend)
             if memory_down is not None:
                 items["메모리가격_둔화"] = bool(memory_down)
+        else:
+            last_lead_key = None
         score = int(sum(items.values()))
+        level = late_level(score) if phase == "CONFIRMED" else LATE_NA
 
         rec.update({
             "phase": phase,
             "hynix_lead": bool(hynix_lead),
+            "hynix_defensive": hynix_defensive,
             "part_leader": part_leader,
             "active_chains": sorted(active_chains),
-            "late_score": score, "late_level": late_level(score), "late_items": items,
+            "late_score": score, "late_level": level, "late_items": items,
             "breadth_early": round(breadth_early, 3), "parts_active": parts_active,
             "on_share": round(on_share, 3), "parts_majority_on": parts_majority_on,
             "vol_share": round(vol_share, 3), "kospi_rs_pos_share": None if kospi_pos is None else round(kospi_pos, 3),
@@ -299,22 +354,43 @@ def state_key(r: dict) -> tuple:
     return (r["phase"], r["hynix_lead"], r["part_leader"], tuple(r["active_chains"]), r["late_level"])
 
 
-def describe_change(prev: dict | None, cur: dict) -> tuple[bool, list[str]]:
+def _ev(kind, msg, scoring=None, subject=None):
+    """scoring: basket_bull / basket_bear / rel_outperform / rel_underperform / None(채점 안 함)"""
+    return {"kind": kind, "msg": msg, "scoring": scoring, "subject": subject}
+
+
+def describe_change(prev: dict | None, cur: dict) -> tuple[bool, list[str], list[dict]]:
+    """상태 변화 → (changed, 메시지 목록, 구조화 이벤트 목록). 이벤트 방향은 OOS 채점에 쓴다."""
     if prev is None:
-        return False, []
-    msgs = []
-    if prev["phase"] != cur["phase"]:
-        msgs.append(f"단계: {PHASE_KR[prev['phase']]} → {PHASE_KR[cur['phase']]}")
-    if prev["hynix_lead"] != cur["hynix_lead"]:
-        msgs.append("SK하이닉스 본체 주도 " + ("시작" if cur["hynix_lead"] else "해제"))
-    if prev["part_leader"] != cur["part_leader"]:
-        msgs.append(f"주도 파트: {prev['part_leader'] or '없음'} → {cur['part_leader'] or '없음'}")
+        return False, [], []
+    ev = []
+    pp, cp = prev["phase"], cur["phase"]
+    if pp != cp:
+        up = PHASE_RANK.get(cp, -1) > PHASE_RANK.get(pp, -1)
+        scoring = None if "HOLD" in (pp, cp) else ("basket_bull" if up else "basket_bear")
+        ev.append(_ev("phase_change", f"단계: {PHASE_KR[pp]} → {PHASE_KR[cp]}", scoring))
+    if bool(prev.get("hynix_lead")) != bool(cur.get("hynix_lead")):
+        if cur.get("hynix_lead"):
+            ev.append(_ev("leader_start", "SK하이닉스 본체 주도 시작", "rel_outperform", "hynix"))
+        else:
+            ev.append(_ev("leader_end", "SK하이닉스 본체 주도 해제", "rel_underperform", "hynix"))
+    pl, cl = prev.get("part_leader"), cur.get("part_leader")
+    if pl != cl:
+        msg = f"주도 파트: {pl or '없음'} → {cl or '없음'}"
+        if pl:
+            ev.append(_ev("leader_end", msg, "rel_underperform", pl))
+        if cl:
+            ev.append(_ev("leader_start", msg, "rel_outperform", cl))
     added = set(cur["active_chains"]) - set(prev["active_chains"])
     removed = set(prev["active_chains"]) - set(cur["active_chains"])
     for ch in sorted(added):
-        msgs.append(f"{ch} 체인 활성화 (순환매 확산 후보)")
+        ev.append(_ev("chain_change", f"{ch} 체인 활성화 (순환매 확산 후보)", None, ch))
     for ch in sorted(removed):
-        msgs.append(f"{ch} 체인 비활성화")
-    if prev["late_level"] != cur["late_level"]:
-        msgs.append(f"후반 경고: {prev['late_level']} → {cur['late_level']}")
-    return bool(msgs), msgs
+        ev.append(_ev("chain_change", f"{ch} 체인 비활성화", None, ch))
+    plv, clv = prev.get("late_level"), cur.get("late_level")
+    # 사이클확인 진입/이탈로 생기는 '해당없음' 전환은 단계 메시지가 이미 설명 → 별도 알림 안 함
+    if plv != clv and LATE_NA not in (plv, clv) and plv in LATE_RANK and clv in LATE_RANK:
+        up = LATE_RANK[clv] > LATE_RANK[plv]
+        ev.append(_ev("late_change", f"후반 경고: {plv} → {clv}", "basket_bear" if up else None))
+    msgs = list(dict.fromkeys(e["msg"] for e in ev))
+    return bool(ev), msgs, ev

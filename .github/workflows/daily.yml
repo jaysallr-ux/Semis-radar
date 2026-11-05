@@ -23,6 +23,7 @@ on:
       - "params.json"
       - "universe.json"
       - "oos_evaluation_policy.json"
+      - "oos_evaluation_policy_v2.json"
       - "requirements.txt"
 
 permissions:
@@ -62,7 +63,11 @@ jobs:
                   if ts:
                       generated = datetime.fromisoformat(ts).astimezone(ZoneInfo("Asia/Seoul")).date()
                       today = datetime.now(ZoneInfo("Asia/Seoul")).date()
-                      if generated == today and d.get("data_ok") is True:
+                      # 오늘 생성 + 정상 + 오늘 봉(asof)까지 받은 경우만 스킵.
+                      # 소스 갱신이 늦어 어제 봉으로 저장된 날은 다음 슬롯에서 다시 시도한다.
+                      # (휴장 평일은 asof가 오늘이 될 수 없어 슬롯마다 돌지만 is_new_bar=False라 알림 없음)
+                      if (generated == today and d.get("data_ok") is True
+                              and d.get("asof") == today.isoformat()):
                           run = False
               except Exception:
                   run = True

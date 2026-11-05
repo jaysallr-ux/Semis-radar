@@ -1,12 +1,12 @@
-"""표본 밖(OOS) 알림 기록·성숙 채점기.
+"""표본 밖(OOS) 기록·성숙 채점기 v2.
 
 매일 run_daily.py 뒤에 실행한다.
-- output/history.csv 를 고정 스키마로 유지
-- latest.json 의 실제 알림 종류를 history.csv 에 명시
-- 동결일 이후 성과 채점 대상 알림이 120거래일 성숙하면
-  동일가중 바스켓 기준 MAE60 / 120일 수익률 / 고정 pass 여부를 자동 기록
+- output/history.csv : 일별 상태 기록. 이 스크립트가 단독으로 쓴다 (run_daily 는 안 씀)
+- output/oos_events.csv : latest.json alert.events 를 이벤트 단위로 기록하고, 성숙하면 방향별 규칙으로 채점
 
-판정 기준은 oos_evaluation_policy.json 이 유일한 authority다.
+판정 기준은 oos_evaluation_policy_v2.json 이 유일한 authority다.
+V1 정책(oos_evaluation_policy.json)은 하락 방향 알림까지 매수 품질로 채점하던 결함 때문에 폐기.
+V1 대기 행은 history.csv 에 v1_retired 로 남는다.
 """
 from __future__ import annotations
 
@@ -17,18 +17,23 @@ import json
 import os
 
 import numpy as np
-import pandas as pd
 
 from data_provider import check_coverage, get_provider
-from regime import prepare
+from regime import prepare, subject_index
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FIELDS = [
+POLICY_FILE = "oos_evaluation_policy_v2.json"
+HIST_FIELDS = [
     "asof", "phase", "leader", "active_chains", "late_level",
     "breadth_early", "on_share", "data_ok",
     "alert_changed", "alert_kinds", "oos_eligible",
     "score_status", "mae60_pct", "fwd120_pct", "quality_pass", "maturity_asof",
     "alert",
+]
+EV_FIELDS = [
+    "asof", "engine", "kind", "scoring", "subject", "msg", "status",
+    "basket_mae60_pct", "basket_fwd120_pct", "subject_fwd_pct", "basket_fwd_pct", "rel_fwd_pct",
+    "pass", "maturity_asof",
 ]
 
 
@@ -44,146 +49,144 @@ def b(v) -> bool:
     return str(v).strip().lower() in {"1", "true", "yes", "y"}
 
 
-def alert_kinds(message: str) -> list[str]:
-    m = message or ""
-    kinds = []
-    if "[데이터 오류]" in m:
-        kinds.append("data_error")
-    if "[데이터 정상화]" in m:
-        kinds.append("data_recovery")
-    if "단계:" in m:
-        kinds.append("phase_change")
-    if "SK하이닉스 본체 주도" in m or "주도 파트:" in m:
-        kinds.append("leader_change")
-    if "후반 경고:" in m:
-        kinds.append("late_change")
-    if "체인 활성화" in m or "체인 비활성화" in m:
-        kinds.append("chain_change")
-    return kinds
-
-
-def read_history(path: str) -> list[dict]:
+def read_csv(path: str) -> list[dict]:
     if not os.path.exists(path):
         return []
     with open(path, encoding="utf-8-sig", newline="") as f:
         return [dict(r) for r in csv.DictReader(f)]
 
 
-def write_history(path: str, rows: list[dict]):
+def write_csv(path: str, rows: list[dict], fields: list[str]):
     with open(path, "w", encoding="utf-8", newline="") as f:
-        wr = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore")
+        wr = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         wr.writeheader()
         for r in rows:
-            wr.writerow({k: r.get(k, "") for k in FIELDS})
+            wr.writerow({k: r.get(k, "") for k in fields})
 
 
-def normalize(rows: list[dict], policy: dict):
+# ---------------- history.csv (일별 기록) ----------------
+def retire_v1(rows: list[dict], policy: dict):
     start = policy["oos_start_date"]
-    scored_kinds = set(policy["alert_logging"]["performance_scored_kinds"])
     for r in rows:
-        msg = r.get("alert") or ""
-        raw_kinds = r.get("alert_kinds") or ""
-        kinds = [x for x in raw_kinds.split("|") if x] or alert_kinds(msg)
-        changed = b(r.get("alert_changed")) or bool(msg and "기준선 생성" not in msg)
-        r["alert_changed"] = str(bool(changed))
-        r["alert_kinds"] = "|".join(kinds)
-        eligible = bool(r.get("asof") and r["asof"] >= start and changed and scored_kinds.intersection(kinds))
-        r["oos_eligible"] = str(eligible)
-        if not eligible and not r.get("score_status"):
-            r["score_status"] = "not_eligible"
+        if r.get("asof", "") < start and r.get("score_status") == "pending_120td":
+            r["score_status"] = "v1_retired"
 
 
-def merge_latest(rows: list[dict], latest: dict, policy: dict):
+def merge_history(rows: list[dict], latest: dict):
     asof = latest.get("asof")
     if not asof:
         return
     state = latest.get("state") or {}
     market = latest.get("market") or {}
     alert = latest.get("alert") or {}
-    changed = bool(alert.get("changed"))
-    msg = alert.get("message") or ""
-    kinds = alert_kinds(msg)
-    scored_kinds = set(policy["alert_logging"]["performance_scored_kinds"])
-    eligible = bool(asof >= policy["oos_start_date"] and changed and scored_kinds.intersection(kinds))
-
+    events = alert.get("events") or []
     existing = next((r for r in reversed(rows) if r.get("asof") == asof), None)
     if existing is None:
         existing = {"asof": asof}
         rows.append(existing)
-
-    preserve_event = b(existing.get("alert_changed")) and not latest.get("is_new_bar", False)
     existing.update({
-        "phase": state.get("phase", existing.get("phase", "")),
-        "leader": state.get("leader", existing.get("leader", "")),
+        "phase": state.get("phase", ""),
+        "leader": state.get("leader", ""),
         "active_chains": "|".join(state.get("active_chains") or []),
-        "late_level": state.get("late_level", existing.get("late_level", "")),
-        "breadth_early": market.get("breadth_early", existing.get("breadth_early", "")),
-        "on_share": market.get("on_share", existing.get("on_share", "")),
+        "late_level": state.get("late_level", ""),
+        "breadth_early": market.get("breadth_early", ""),
+        "on_share": market.get("on_share", ""),
         "data_ok": str(bool(latest.get("data_ok"))),
     })
-    if not preserve_event:
-        existing["alert_changed"] = str(changed)
-        existing["alert_kinds"] = "|".join(kinds)
-        existing["oos_eligible"] = str(eligible)
-        existing["alert"] = msg
-        if eligible and existing.get("score_status") in ("", "not_eligible", None):
-            existing["score_status"] = "pending_120td"
-        elif not eligible and not existing.get("score_status"):
-            existing["score_status"] = "not_eligible"
+    # 같은 날 재실행(is_new_bar=False)이 그날 알림 기록을 지우지 않게
+    if latest.get("is_new_bar", False) or not b(existing.get("alert_changed")):
+        existing["alert_changed"] = str(bool(alert.get("changed")))
+        existing["alert_kinds"] = "|".join(dict.fromkeys(e["kind"] for e in events))
+        existing["oos_eligible"] = str(any(e.get("scoring") for e in events))
+        existing["score_status"] = "v2_see_oos_events" if any(e.get("scoring") for e in events) else "not_eligible"
+        existing["alert"] = alert.get("message", "")
 
 
-def score_matured(rows: list[dict], policy: dict, provider_name: str):
-    pending = [r for r in rows if b(r.get("oos_eligible")) and r.get("score_status") != "scored"]
-    if not pending:
-        print("OOS: 성숙 대기 신호 없음")
+# ---------------- oos_events.csv (이벤트 채점) ----------------
+def merge_events(ev_rows: list[dict], latest: dict, policy: dict):
+    asof = latest.get("asof")
+    alert = latest.get("alert") or {}
+    if not asof or asof < policy["oos_start_date"] or latest.get("engine") != policy["engine"]:
         return
+    if not alert.get("changed"):
+        return
+    seen = {(r["asof"], r["kind"], r.get("subject", ""), r["msg"]) for r in ev_rows}
+    for e in alert.get("events") or []:
+        key = (asof, e["kind"], e.get("subject") or "", e["msg"])
+        if key in seen:
+            continue
+        ev_rows.append({
+            "asof": asof, "engine": latest.get("engine"), "kind": e["kind"],
+            "scoring": e.get("scoring") or "", "subject": e.get("subject") or "", "msg": e["msg"],
+            "status": "pending" if e.get("scoring") else "not_scored",
+        })
+        seen.add(key)
 
+
+def score_events(ev_rows: list[dict], policy: dict, provider_name: str):
+    pending = [r for r in ev_rows if r.get("status") == "pending"]
+    if not pending:
+        print("OOS v2: 성숙 대기 이벤트 없음")
+        return
+    sr = policy["scoring_rules"]
     earliest = min(dt.date.fromisoformat(r["asof"]) for r in pending)
     start = earliest - dt.timedelta(days=450)
     end = dt.date.today()
     universe = load_json(os.path.join(HERE, "universe.json"))
     params = load_json(os.path.join(HERE, "params.json"))
     provider = get_provider(provider_name)
-
-    prices = {}
-    for s in universe["stocks"]:
-        prices[s["ticker"]] = provider.get_stock_ohlcv(s["ticker"], start, end)
+    prices = {s["ticker"]: provider.get_stock_ohlcv(s["ticker"], start, end) for s in universe["stocks"]}
     kospi = provider.get_index_ohlcv(universe["benchmark"]["index"], start, end)
     ok, bad, _, _ = check_coverage(prices, universe, start, require_all=True)
     if not ok:
-        print("OOS 채점 보류: coverage 문제: " + " / ".join(bad))
+        print("OOS v2 채점 보류: coverage 문제: " + " / ".join(bad))
         return
-
     prep = prepare(universe, prices, kospi, params, start=start)
     dates = prep["dates"]
     x = prep["ew_index"]
-    q = policy["quality_rule"]
-    mae_w = int(q["mae_window_trading_days"])
-    fwd_w = int(q["forward_window_trading_days"])
-    mae_floor = float(q["mae_floor_pct"])
-    fwd_floor = float(q["fwd120_floor_pct"])
+    d2i = {d.date().isoformat(): i for i, d in enumerate(dates)}
+    floor = float(sr["fwd120_floor_pct"])
 
-    date_to_i = {d.date().isoformat(): i for i, d in enumerate(dates)}
     for r in pending:
-        i = date_to_i.get(r["asof"])
+        i = d2i.get(r["asof"])
         if i is None:
-            r["score_status"] = "date_not_found"
+            r["status"] = "date_not_found"
             continue
-        if i + fwd_w >= len(x):
-            r["score_status"] = "pending_120td"
+        rule = sr.get(r["scoring"])
+        if rule is None:
+            r["status"] = "unknown_scoring"
             continue
-        seg60 = x[i + 1:i + mae_w + 1] / x[i] - 1
-        fwd120 = x[i + fwd_w] / x[i] - 1
-        mae60 = float(np.min(seg60))
-        passed = bool(mae60 * 100 >= mae_floor and fwd120 * 100 >= fwd_floor)
-        r.update({
-            "score_status": "scored",
-            "mae60_pct": f"{mae60 * 100:.2f}",
-            "fwd120_pct": f"{fwd120 * 100:.2f}",
-            "quality_pass": str(passed),
-            "maturity_asof": dates[i + fwd_w].date().isoformat(),
-        })
-        print(f"OOS 채점 {r['asof']} {r.get('alert_kinds')}: MAE60 {mae60*100:.2f}% / fwd120 {fwd120*100:.2f}% / pass={passed}")
+        w = int(rule["maturity_trading_days"])
+        if i + w >= len(x):
+            continue  # 아직 성숙 전
+        if r["scoring"] in ("basket_bull", "basket_bear"):
+            mae60 = float(np.min(x[i + 1:i + 61] / x[i] - 1)) * 100
+            fwd120 = float(x[i + 120] / x[i] - 1) * 100
+            bull_pass = mae60 >= -10.0 and fwd120 >= floor
+            passed = bull_pass if r["scoring"] == "basket_bull" else not bull_pass
+            r.update(basket_mae60_pct=f"{mae60:.2f}", basket_fwd120_pct=f"{fwd120:.2f}")
+        else:
+            si = subject_index(prep, r["subject"])
+            if si is None or np.isnan(si[i]) or np.isnan(si[i + w]):
+                r["status"] = "subject_data_missing"
+                continue
+            sf = float(si[i + w] / si[i] - 1) * 100
+            bf = float(x[i + w] / x[i] - 1) * 100
+            rel = sf - bf
+            passed = rel > 0 if r["scoring"] == "rel_outperform" else rel < 0
+            r.update(subject_fwd_pct=f"{sf:.2f}", basket_fwd_pct=f"{bf:.2f}", rel_fwd_pct=f"{rel:.2f}")
+        r.update(status="scored", **{"pass": str(bool(passed))},
+                 maturity_asof=dates[i + w].date().isoformat())
+        print(f"OOS v2 채점 {r['asof']} {r['kind']}({r['subject']}) {r['scoring']}: pass={passed}")
+
+
+def gate_status(ev_rows: list[dict]) -> str:
+    scored = [r for r in ev_rows if r.get("status") == "scored"]
+    by_dir = {}
+    for r in scored:
+        d = "bull" if r["scoring"] in ("basket_bull", "rel_outperform") else "bear"
+        by_dir[d] = by_dir.get(d, 0) + 1
+    return f"채점완료 {len(scored)}개 (상승측 {by_dir.get('bull', 0)} / 하락측 {by_dir.get('bear', 0)})"
 
 
 def main():
@@ -192,18 +195,26 @@ def main():
     ap.add_argument("--outdir", default=os.path.join(HERE, "output"))
     args = ap.parse_args()
 
-    policy = load_json(os.path.join(HERE, "oos_evaluation_policy.json"))
-    if not policy or policy.get("status") != "FROZEN_OOS_POLICY_V1":
-        raise SystemExit("OOS policy missing or not frozen")
+    policy = load_json(os.path.join(HERE, POLICY_FILE))
+    if not policy or policy.get("status") != "FROZEN_OOS_POLICY_V2":
+        raise SystemExit("OOS policy v2 missing or not frozen")
 
-    hist_path = os.path.join(args.outdir, "history.csv")
     latest = load_json(os.path.join(args.outdir, "latest.json"), {}) or {}
-    rows = read_history(hist_path)
-    normalize(rows, policy)
-    merge_latest(rows, latest, policy)
-    score_matured(rows, policy, args.provider)
+    hist_path = os.path.join(args.outdir, "history.csv")
+    ev_path = os.path.join(args.outdir, "oos_events.csv")
+
+    rows = read_csv(hist_path)
+    retire_v1(rows, policy)
+    merge_history(rows, latest)
     rows.sort(key=lambda r: r.get("asof", ""))
-    write_history(hist_path, rows)
+    write_csv(hist_path, rows, HIST_FIELDS)
+
+    ev_rows = read_csv(ev_path)
+    merge_events(ev_rows, latest, policy)
+    score_events(ev_rows, policy, args.provider)
+    ev_rows.sort(key=lambda r: (r.get("asof", ""), r.get("kind", "")))
+    write_csv(ev_path, ev_rows, EV_FIELDS)
+    print("OOS v2 게이트: " + gate_status(ev_rows))
 
 
 if __name__ == "__main__":

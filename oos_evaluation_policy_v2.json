@@ -1,0 +1,58 @@
+{
+  "status": "FROZEN_OOS_POLICY_V2",
+  "frozen_at": "2026-11-05",
+  "engine": "v2",
+  "oos_start_date": "2026-11-06",
+  "supersedes": "oos_evaluation_policy.json (V1). V1은 하락 방향 알림까지 매수 품질 기준으로 채점하는 결함이 있어 2026-11-05 폐기. V1 대기 행은 history.csv 에 v1_retired 로 남기고 채점하지 않는다.",
+  "purpose": "엔진 v2 이후 신규 실전 표본으로만 성능을 평가한다. 결과를 본 뒤 기준이나 임계값을 바꾸지 않는다.",
+  "frozen_operating_params": {
+    "early_enter_breadth": 0.25,
+    "new_turn_window": 10,
+    "confirm_enter_on_share": 0.60,
+    "confirm_min_parts": 5,
+    "confirm_exit_on_share": 0.45,
+    "part_lead_exit_on_share": 0.25,
+    "hynix_lead_requires_trend_on": true
+  },
+  "event_logging": {
+    "path": "output/oos_events.csv",
+    "source": "latest.json alert.events (alert.changed=true 인 날만)",
+    "unit": "알림 1건이 아니라 이벤트 1건 단위. 한 날 여러 이벤트면 각각 채점"
+  },
+  "scoring_rules": {
+    "basket_bull": {
+      "applies_to": "단계 상승 (평시→초입후보/사이클확인, 초입후보→사이클확인)",
+      "pass_rule": "basket MAE60 >= -10.0% AND basket fwd120 >= 13.97%",
+      "maturity_trading_days": 120
+    },
+    "basket_bear": {
+      "applies_to": "단계 하락, 후반 경고 상승",
+      "pass_rule": "basket_bull 기준 불통과 (MAE60 < -10.0% OR fwd120 < 13.97%) = 경고가 맞음",
+      "maturity_trading_days": 120
+    },
+    "rel_outperform": {
+      "applies_to": "하닉 본체 주도 시작, 주도 파트 시작",
+      "pass_rule": "주체(하닉 종가 또는 파트 동일가중 지수) 60거래일 수익률 - basket 60거래일 수익률 > 0",
+      "maturity_trading_days": 60
+    },
+    "rel_underperform": {
+      "applies_to": "하닉 본체 주도 해제, 주도 파트 해제",
+      "pass_rule": "주체 60거래일 수익률 - basket 60거래일 수익률 < 0",
+      "maturity_trading_days": 60
+    },
+    "not_scored": ["chain_change", "late_change 하락", "data_error", "data_recovery", "engine_switch", "HOLD 관련 단계 전환"],
+    "basket": "동일가중 반도체 바스켓 ew_index",
+    "fwd120_floor_pct": 13.97,
+    "fwd120_floor_note": "V1과 동일. 2026-10-06 실데이터 전체 판정 가능일 120거래일 수익률 중앙값으로 동결"
+  },
+  "retune_gate": {
+    "logic": "OR",
+    "conditions": [
+      "v2 시작일 이후 시작한 새 자동 사이클 1개가 AUTO_CYCLE 규칙에 따라 완전히 종료되어 확정됨",
+      "채점 대상 이벤트 10개 이상이 각자 성숙 후 채점 완료됨 (방향별 최소 3개)"
+    ],
+    "before_gate": "NO_RETUNE",
+    "rule": "위 조건 충족 전에는 운영 임계값과 채점 기준을 수정하지 않는다. 논리 버그 수정은 엔진 버전을 올리고 정책을 새로 동결한다."
+  },
+  "auto_cycle_rule_frozen_reference": {"reversal": 0.25, "min_gain": 0.50, "min_td": 120}
+}

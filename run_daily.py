@@ -3,12 +3,12 @@
   python run_daily.py --provider naver
   python run_daily.py --provider fake      # 네트워크 없이 동작 확인용
 
-결과: output/latest.json (GPT가 읽는 유일한 파일), output/history.csv (상태 변화 기록)
+결과: output/latest.json (GPT가 읽는 유일한 파일)
+일별 기록(output/history.csv)과 OOS 이벤트 채점(output/oos_events.csv)은 oos_tracker.py 가 단독으로 쓴다.
 """
 from __future__ import annotations
 
 import argparse
-import csv
 import datetime as dt
 import json
 import os
@@ -17,7 +17,7 @@ from zoneinfo import ZoneInfo
 import numpy as np
 
 from data_provider import check_coverage, get_provider
-from regime import PHASE_KR, describe_change, prepare, run_engine
+from regime import ENGINE_VERSION, LATE_NA, PHASE_KR, describe_change, prepare, run_engine
 
 KST = ZoneInfo("Asia/Seoul")
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -85,13 +85,14 @@ def main():
 
     result = {
         "schema": "semis-radar/v2",
+        "engine": ENGINE_VERSION,
         "generated_at": now.isoformat(timespec="seconds"),
         "provider": provider.name,
         "data_ok": False, "asof": None, "is_new_bar": False,
         "missing": [], "fetch_errors": errors,
         "coverage": {},
         "last_ok_state": prev_ok_state, "error_signature": None,
-        "alert": {"changed": False, "message": ""},
+        "alert": {"changed": False, "message": "", "events": []},
     }
 
     def write():
@@ -104,7 +105,8 @@ def main():
         result["error_signature"] = sig
         result["state"] = {"phase": "HOLD", "phase_kr": PHASE_KR["HOLD"]}
         changed = sig != prev_err_sig
-        result["alert"] = {"changed": changed, "message": "[데이터 오류] 판정 보류: " + " / ".join(sig)}
+        result["alert"] = {"changed": changed, "message": "[데이터 오류] 판정 보류: " + " / ".join(sig),
+                           "events": [{"kind": "data_error", "msg": " / ".join(sig), "scoring": None, "subject": None}]}
         write()
         print(f"판정 보류: {sig} / alert.changed={changed}")
 
@@ -142,7 +144,9 @@ def main():
     mem_down, mem_status = memory_flag(os.path.join(HERE, "memory_price.json"), p, today)
     days = run_engine(prep, p, memory_down=mem_down)
     cur = days[-1]
-    cur_state = {k: cur.get(k) for k in ["phase", "hynix_lead", "part_leader", "active_chains", "late_level"]}
+    cur_state = {k: cur.get(k) for k in ["phase", "hynix_lead", "hynix_defensive", "part_leader",
+                                         "active_chains", "late_level"]}
+    cur_state["engine"] = ENGINE_VERSION
 
     rows = []
     a = prep["arr"]
@@ -164,15 +168,22 @@ def main():
             "last_new_turn": prep["dates"][nt_idx[-1]].date().isoformat() if len(nt_idx) else None,
         })
 
-    if prev_err_sig:
-        _, diff = describe_change(prev_ok_state, cur_state) if prev_ok_state else (False, [])
-        changed, msgs = True, ["[데이터 정상화]"] + diff
+    engine_switched = bool(prev_ok_state) and prev_ok_state.get("engine") != ENGINE_VERSION
+    recovery = {"kind": "data_recovery", "msg": "[데이터 정상화]", "scoring": None, "subject": None}
+    if engine_switched:
+        # 엔진 논리가 바뀐 날은 이전 엔진 상태와 비교하지 않는다 (가짜 전환 알림 방지)
+        msg = f"[엔진 {ENGINE_VERSION} 전환] 기준선 재설정. 이전 엔진 상태와 비교하지 않음"
+        changed, msgs = True, [msg]
+        events = [{"kind": "engine_switch", "msg": msg, "scoring": None, "subject": None}]
+    elif prev_err_sig:
+        _, diff, ev = describe_change(prev_ok_state, cur_state) if prev_ok_state else (False, [], [])
+        changed, msgs, events = True, ["[데이터 정상화]"] + diff, [recovery] + ev
     elif not is_new_bar:
-        changed, msgs = False, []
+        changed, msgs, events = False, [], []
     elif prev_ok_state is None:
-        changed, msgs = False, ["[기준선 생성] 첫 정상 실행이라 알림 없음"]
+        changed, msgs, events = False, ["[기준선 생성] 첫 정상 실행이라 알림 없음"], []
     else:
-        changed, msgs = describe_change(prev_ok_state, cur_state)
+        changed, msgs, events = describe_change(prev_ok_state, cur_state)
     result["last_ok_state"] = cur_state
 
     leader_txt = ("SK하이닉스 본체" if cur.get("hynix_lead") else "") + \
@@ -183,8 +194,9 @@ def main():
             "phase": cur["phase"], "phase_kr": PHASE_KR[cur["phase"]],
             "leader": leader_txt or "없음",
             "hynix_lead": cur.get("hynix_lead"), "part_leader": cur.get("part_leader"),
+            "hynix_defensive": cur.get("hynix_defensive", False),
             "active_chains": cur.get("active_chains", []),
-            "late_score": cur.get("late_score", 0), "late_level": cur.get("late_level", "없음"),
+            "late_score": cur.get("late_score", 0), "late_level": cur.get("late_level", LATE_NA),
             "late_items": cur.get("late_items", {}),
             "memory_price_input": mem_status,
         },
@@ -194,21 +206,9 @@ def main():
         "parts": cur.get("parts", {}), "parts_excluded": cur.get("parts_excluded", []),
         "chains": cur.get("chains", {}),
         "stocks": rows,
-        "alert": {"changed": changed, "message": " / ".join(msgs)},
+        "alert": {"changed": changed, "message": " / ".join(msgs), "events": events},
     })
     write()
-
-    if is_new_bar:
-        hist_path = os.path.join(args.outdir, "history.csv")
-        new_file = not os.path.exists(hist_path)
-        with open(hist_path, "a", newline="", encoding="utf-8") as f:
-            wr = csv.writer(f)
-            if new_file:
-                wr.writerow(["asof", "phase", "leader", "active_chains", "late_level",
-                             "breadth_early", "on_share", "data_ok", "alert"])
-            wr.writerow([result["asof"], cur["phase"], leader_txt or "없음", "|".join(cur.get("active_chains", [])),
-                         cur.get("late_level"), cur.get("breadth_early"), cur.get("on_share"),
-                         result["data_ok"], result["alert"]["message"]])
 
     print(f"asof={result['asof']} data_ok={result['data_ok']} phase={cur['phase']} "
           f"leader={leader_txt or '없음'} late={cur.get('late_level')} alert={result['alert']}")
