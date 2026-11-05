@@ -353,7 +353,7 @@ def main():
         with open(os.path.join(out, "progress.json"), "w", encoding="utf-8") as f:
             json.dump(prog, f, ensure_ascii=False, indent=1)
         if push and a.push_every_min > 0:
-            os.system(f'cd "{os.path.dirname(os.path.dirname(os.path.dirname(HERE)))}" && git add research/pit/classification/scan_{a.mode} '
+            os.system(f'cd "{os.path.dirname(os.path.dirname(HERE))}" && git add research/pit/classification/scan_{a.mode} '
                       f'&& git commit -q -m "dart scan progress {prog["done"]}/{prog["total"]}" '
                       f'&& (git pull -q --rebase || true) && git push -q || true')
 
