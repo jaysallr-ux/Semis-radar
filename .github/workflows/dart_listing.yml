@@ -9,7 +9,7 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -19,7 +19,7 @@ jobs:
       - name: List
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
-        run: python research/pit/dart_listing.py
+        run: python research/pit/dart_listing.py $(cat research/pit/classification/listing_args.txt 2>/dev/null)
       - name: Commit
         if: always()
         run: |

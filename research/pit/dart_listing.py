@@ -32,19 +32,34 @@ def one(corp_code, bgn, end, ty):
 
 
 def main():
+    import argparse
+    import concurrent.futures as cf
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--req", default="listing_request.csv")
+    ap.add_argument("--out", default="filings.csv")
+    ap.add_argument("--workers", type=int, default=1)
+    a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
-    req = pd.read_csv(os.path.join(CLS, "listing_request.csv"), dtype=str)
+    req = pd.read_csv(os.path.join(CLS, a.req), dtype=str)
     out, log = [], []
-    for r in req.itertuples():
+
+    def job(r):
+        res = []
         for ty in r.types.split("|"):
             rows, st = one(r.corp_code, r.bgn, r.end, ty)
-            log.append({"code": r.code, "corp_code": r.corp_code, "type": ty, "status": st, "n": len(rows)})
-            for x in rows:
-                out.append({"code": r.code, "corp_code": r.corp_code, "pblntf_ty": ty, "rcept_no": x["rcept_no"],
-                            "rcept_dt": x["rcept_dt"], "report_nm": x["report_nm"].strip(),
-                            "corp_name": x.get("corp_name", ""), "why": r.why})
+            res.append(({"code": r.code, "corp_code": r.corp_code, "type": ty, "status": st, "n": len(rows)},
+                        [{"code": r.code, "corp_code": r.corp_code, "pblntf_ty": ty, "rcept_no": x["rcept_no"],
+                          "rcept_dt": x["rcept_dt"], "report_nm": x["report_nm"].strip(),
+                          "corp_name": x.get("corp_name", ""), "why": r.why} for x in rows]))
+        return res
+    with cf.ThreadPoolExecutor(a.workers) as ex:
+        for res in ex.map(job, list(req.itertuples())):
+            for lg, rows in res:
+                log.append(lg)
+                out += rows
     # 누적 저장: 이전 요청 결과를 지우지 않고 합침(분류 근거 추적용)
-    fp, sp = os.path.join(OUT, "filings.csv"), os.path.join(OUT, "status.csv")
+    fp = os.path.join(OUT, a.out)
+    sp = os.path.join(OUT, a.out.replace(".csv", "_status.csv") if a.out != "filings.csv" else "status.csv")
     old = pd.read_csv(fp, dtype=str) if os.path.exists(fp) else pd.DataFrame()
     olds = pd.read_csv(sp, dtype=str) if os.path.exists(sp) else pd.DataFrame()
     pd.concat([old, pd.DataFrame(out)]).drop_duplicates(["code", "corp_code", "rcept_no"]).to_csv(fp, index=False, encoding="utf-8-sig")
