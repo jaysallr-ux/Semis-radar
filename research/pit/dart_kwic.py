@@ -108,7 +108,9 @@ def main():
         sys.exit("DART_API_KEY 없음")
     os.makedirs(OUT, exist_ok=True)
     req = pd.read_csv(os.path.join(CLS, "kwic_request.csv"), dtype=str)
-    fl = pd.read_csv(os.path.join(CLS, "scan_full", "filings.csv"), dtype=str)
+    # 2026-11-06: 첨부추가 누락 수정 — 회사·회계연도별 최선 버전 1건(annual_master, FY2013~)을 사용
+    fl = pd.read_csv(os.path.join(CLS, "listing", "annual_master.csv"), dtype=str)
+    fl = fl[fl.fy.astype(int) >= 2013]
     fr = pd.read_csv(os.path.join(CLS, "scan_full", "filter_result.csv"), dtype=str)
     sm = os.path.join(OUT, "kwic_summary.csv")
     done = pd.read_csv(sm, dtype=str) if os.path.exists(sm) else pd.DataFrame(columns=["code"])
@@ -119,7 +121,7 @@ def main():
         futs = []
         for code in todo.code:
             f = fr[fr.code == code].iloc[0]
-            docs = fl[(fl.code == code) & fl.report_nm.str.startswith("사업보고서")].drop_duplicates("rcept_no")
+            docs = fl[fl.code == code].drop_duplicates("rcept_no")
             futs.append(ex.submit(work, code, f.corp_code, f.names, docs))
         for k, fu in enumerate(as_completed(futs), 1):
             with lock:
