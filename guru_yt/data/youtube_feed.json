@@ -1,13 +1,13 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-06T10:10:31+09:00",
+  "generated_at": "2026-11-06T21:10:33+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-06T06:20:28+09:00",
-    "merged_from_discovery": 3,
+    "last_discovery_at": "2026-11-06T10:10:31+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
@@ -58,7 +58,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-23T03:00:03+09:00",
+      "oldest_rss": "2026-09-24T00:00:24+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -91,7 +91,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-06-05T21:30:07+09:00",
+      "oldest_rss": "2026-06-08T22:00:38+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -157,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-03T02:30:05+09:00",
+      "oldest_rss": "2026-11-03T06:49:29+09:00",
       "gap_possible": false,
       "matched": 5
     },
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-05T15:30:37+09:00",
+      "oldest_rss": "2026-11-06T00:25:23+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-05T14:00:38+09:00",
+      "oldest_rss": "2026-11-05T22:00:29+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-05T01:30:38+09:00",
+      "oldest_rss": "2026-11-05T06:00:13+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,7 +234,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-03T02:00:08+09:00",
+      "oldest_rss": "2026-11-03T04:00:39+09:00",
       "gap_possible": false,
       "matched": 1
     }
@@ -250,29 +250,29 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 4,
-    "gemini_est_video_hours_today": 0.103,
+    "gemini_calls_today": 5,
+    "gemini_est_video_hours_today": 0.875,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 1,
+    "skipped_short": 0,
     "expired": 1,
     "left_pending": 0,
     "waiting_for_gemini": 0
   },
   "gemini_stats": {
-    "attempted": 4,
+    "attempted": 1,
     "ready": 1,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 1,
+    "budget_out": 0,
     "chunked": 0,
     "text_mode": 0,
     "quota_wait": 0
@@ -476,29 +476,233 @@
       "transcript_chars": null,
       "transcript_url": null,
       "name_mentions": null,
-      "appearance_confirmed": null,
+      "appearance_confirmed": true,
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": "tier 3: captions are kept for the tiers that drive judgments",
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-06T21:10:33+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Bob Elliott appears in the video starting at 00:59 and actively participates throughout the interview, giving detailed analysis on US equities, AI investment, nominal economic growth, central bank policy, and credit markets.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Bob Elliott believes US equities are priced for extraordinary outcomes and AI productivity acceleration that are unlikely to materialize at a macro level. With nominal growth fading and monetary and market conditions tightening, he views stocks as vulnerable and considers bonds more attractive than equities on a forward-looking basis.",
+        "invalidation": "If macro-level productivity accelerates dramatically and real-economy revenues from AI scale up to justify the trillions in expected capital investment.",
+        "targets": [],
+        "timeframe": "Medium-to-long term"
+      },
+      "quotes": [
+        {
+          "t": "07:26",
+          "t_sec": 446,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "we essentially we we have a mania in in the AI complex... basically what's happened is we've had very strong earnings growth and, you know, that's happened for a few quarters and then basically what's happened is people are extrapolating those that extraordinary earnings growth out into the future.",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=446s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "08:16",
+          "t_sec": 496,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "it's just when that extrapolation gets most extreme that it's subject to basically two main risks, which is one, just disappointing relative to very, very high expectations... and then on top of it, you know, you have tightening that is occurring... usually that sort of dynamic is bad for manias on a forward looking basis.",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=496s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "10:13",
+          "t_sec": 613,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "when I look at that and what I really mean is past peak pricing of nominal growth, which is that what we've had is we've had quite strong nominal growth and that extrapolation that nominal growth will continue to be extremely strong at a time when we're starting to see some fading in terms of nominal growth",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=613s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "14:21",
+          "t_sec": 861,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "as labor markets have softened and wage growth has moderated, we've transitioned from an income driven expansion where essentially spending was 6% annual growth and income was 6% annual growth to dis-savings driven expansion where spending is 6, 7, 8% nominal in part to keep up with the high prices",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=861s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "26:28",
+          "t_sec": 1588,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "bonds look more favorable to stocks on a forward looking basis from my perspective.",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=1588s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "26:35",
+          "t_sec": 1595,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "It's not necessarily that there's going to be terrible economic outcomes. It's just the idea that we're going to get the extraordinary outcomes that are priced in seems much lower than the pricing would suggest.",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=1595s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "34:07",
+          "t_sec": 2047,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "There's no evidence at a macro level that we've seen a meaningful increase in productivity associated with AI-related activities.",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2047s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "35:25",
+          "t_sec": 2125,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "The question is not, is it making you incrementally more productive? The question is, is it creating an acceleration in productivity? Because that's what's required in order to meet the extraordinary investment expectations",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2125s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "38:13",
+          "t_sec": 2293,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "by let's say 2030, there's something like $10 trillion of investment that needs to occur... In order to support that $10 trillion of investment and get a decent return, you have to basically... need 3 to 4 trillion of annualized revenue... we need 3 trillion of annualized revenue by 2030. That's a big gap in the market",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2293s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "44:28",
+          "t_sec": 2668,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "Are we at risk of a credit event now? No.",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2668s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "45:47",
+          "t_sec": 2747,
+          "speaker": "Bob Elliott",
+          "topic": "",
+          "text": "the debt environment of the US economy has totally changed. First of all banks went from 30x leverage to like 8x leverage today... a lot of credit that exists in the economy is now extended on an unleveraged basis",
+          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2747s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
+      "evidence_ready_at": "2026-11-06T21:10:33+09:00",
+      "evidence_grade": "1차-B",
+      "appearance_source": "gemini",
       "transcript_retained": false,
       "quotes_grade_count": {
         "1차-A": 0,
-        "1차-B": 0,
+        "1차-B": 11,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "03:46",
+          "point": "Democratic governor wins could increase executive restrictions on data center construction and energy usage, presenting an unexpected headwind for AI infrastructure.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "07:26",
+          "point": "The current equity mania in the AI complex is driven by market participants extrapolating short-term earnings growth too far into the future.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "08:16",
+          "point": "Extreme equity valuation extrapolation is vulnerable to earnings disappointments and tightening credit and monetary conditions.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "10:13",
+          "point": "Market pricing reflects past peak nominal growth expectations, while underlying economic nominal growth is actively fading.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "14:21",
+          "point": "The US economy has transitioned from an income-driven expansion to an unsustainable dis-savings-driven expansion as wage growth slows.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "16:01",
+          "point": "Dis-savings-driven consumer spending relies on rising asset prices, but equity, real estate, and bond prices have largely stalled.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "21:02",
+          "point": "Central banks are talking about fighting inflation but are failing to implement sufficient rate hikes, leaving monetary policy looser than conditions warrant.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "26:28",
+          "point": "Bonds present a more favorable risk-reward trade-off than equities because stock prices reflect unrealistically high growth expectations.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "34:07",
+          "point": "Macroeconomic data shows no evidence of a meaningful acceleration in labor productivity from AI.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "38:13",
+          "point": "The projected $10 trillion in AI infrastructure investment by 2030 requires $3-4 trillion in annualized revenue, creating a massive expectations gap.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "44:28",
+          "point": "A systemic credit crisis is unlikely because banking leverage has fallen from 30x to 8x and much private credit is extended on an unleveraged basis.",
+          "condition": "",
+          "conviction": "not_expected",
+          "horizon": ""
+        },
+        {
+          "t": "50:28",
+          "point": "Unfulfilled forward contractual commitments in AI could spark a negative feedback loop of reduced capex, lower earnings, and slowing consumer spending.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 105576
     },
     {
       "video_id": "FosAKU4raoY",
@@ -1665,6 +1869,52 @@
       "description": "Bianco Research President Jim Bianco discusses how artificial intelligence could reshape finance on 'Making Money.' #fox #foxbusiness #media #breakingnews #us #usa #new #news #breaking #makingmoney #artificialintelligence #ai #technology #tech #finance #wallstreet #investing #investors #stockmarket #stocks #markets #economy #business #innovation #money #banking #financial #future #automation #trading \n\nSubscribe to Fox Business: https://bit.ly/2D9Cdse\nWatch more Fox Business Video: https://video.foxbusiness.com\nWatch Fox Business Network Live: http://www.foxnewsgo.com/\n\nFOX Business Network (FBN) is a financial news channel delivering real-time information across all platforms that impact both Main Street and Wall Street. Headquartered in New York — the business capital of the world — FBN launched in October 2007 and is one of the leading business networks on television. In 2025 it opened the year posting double-digit advantages across business day, market hours and total day viewers in January. Additionally, the network continued to lead business news programming, with each business day program placing among the top 15 shows, while FBN delivered its highest-rated month since April 2023 with market hours.\n\nFollow Fox Business on Facebook: https://www.facebook.com/FoxBusiness\nFollow Fox Business on Twitter: https://twitter.com/foxbusiness\nFollow Fox Business on Instagram: https://www.instagram.com/foxbusiness",
       "published_at": "2026-11-03T02:00:11Z",
       "first_seen_at": "2026-11-06T00:05:37+09:00",
+      "is_short": null,
+      "transcript_status": "skipped_old",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "W-DK-AaNPZk",
+      "url": "https://www.youtube.com/watch?v=W-DK-AaNPZk",
+      "channel": "Morningstar",
+      "channel_id": "UChub1tZZuWn9YYHJZZYTbMg",
+      "channel_mode": "filter",
+      "person": "David Sekera",
+      "tier": 2,
+      "role": "core",
+      "match": "description",
+      "title": "3 Stocks to Sell and 3 Stocks to Buy for November I November 2, 2026",
+      "description": "#TheMorningFilter #StockstoBuy #StockstoSell \nPlus, whether Microsoft, Alphabet, or Amphenol look attractive after earnings. \n\nIn this new episode of The Morning Filter podcast, co-hosts Dave Sekera and Sarah Hansen discuss last week’s market activity and the major selloff in technology stocks. They also cover what investors need to know after the October Federal Reserve meeting. They unpack another busy week of earnings, including upcoming reports from Apple, Palantir, Clorox, and Arm Holdings.  \n\nTune in to hear Morningstar’s take on Alphabet’s post-earnings selloff, along with key considerations for investors after reports from Microsoft MSFT, Amazon AMZN, L3 Harris LHX, and more. \n\nSekera and Hansen also cover what investors need to about core holdings, including the qualities core stocks have in common and how to manage core positions in a portfolio. They wrap the show with three stocks to sell and three stocks to buy for November. \n\nEpisode Highlights  \n\n00:00:00 Welcome\n\n00:00:57  What to know after last week’s tech selloff.  \n\n00:05:58 What to watch when Apple AAPL, Palantir PLTR, Clorox CLX and Arm Holdings ARM report earnings this week. \n\n00:14:22 Why Alphabet GOOGL/GOOG dropped 12% after reporting its third quarter results. \n\n00:18:33 Is Amphenol APH still a buy after earnings? \n\n00:27:03 What to know about core holdings, and how to manage core positions in your portfolio. \n\n00:31:36 Stocks to buy and sell for the month ahead. \n\n \n\nRead about topics from this episo",
+      "published_at": "2026-11-02T14:49:24Z",
+      "first_seen_at": "2026-11-06T21:10:33+09:00",
       "is_short": null,
       "transcript_status": "skipped_old",
       "transcript_provider": null,
@@ -3026,36 +3276,27 @@
     "lookback_hours": 72,
     "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
     "people": {
-      "Andy Constan": {
+      "Bob Elliott": {
         "role": "core",
         "count": 1,
         "non_noise": 1,
         "items": [
           {
-            "at": "2026-11-03T13:12:11+09:00",
-            "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo",
+            "at": "2026-11-06T21:10:33+09:00",
+            "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg",
             "kind": "video",
-            "preview": "Why We’re Fading the Election Week Rally (Midterms + QRA)",
-            "grade": "1차-A",
-            "published_at": "2026-11-02T00:00:00+00:00",
+            "preview": "Tech is Selling Off. Spending Is Outrunning Wages. What Happens When the Wealth Effect Fades?",
+            "grade": "1차-B",
+            "published_at": "2026-11-05T16:18:48Z",
             "noise_hint": false
           }
         ]
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-03T13:08:40+09:00",
-            "url": "https://www.youtube.com/watch?v=IpOYPk0q2Vw",
-            "kind": "video",
-            "preview": "Cem Karsan Warned This Was Coming. He Says the Unwind Is Just Starting.",
-            "grade": "1차-A",
-            "published_at": "2026-11-02T00:00:00+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-05T13:05:01+09:00",
             "url": "https://www.youtube.com/watch?v=G-eqJenVnrU",
