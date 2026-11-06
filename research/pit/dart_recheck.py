@@ -54,14 +54,21 @@ def main():
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--max-minutes", type=float, default=300)
     ap.add_argument("--push-every-min", type=float, default=0)
+    ap.add_argument("--req", default="", help="대상 문서 목록 csv(classification/ 기준). 주면 targets() 대신 사용")
+    ap.add_argument("--out-sub", default="scan_recheck", help="출력 폴더명(classification/ 아래, scan_ 로 시작)")
     a = ap.parse_args()
     if not KEY:
         sys.exit("DART_API_KEY 없음")
-    out = os.path.join(CLS, "scan_recheck")
+    out = os.path.join(CLS, a.out_sub)
     raw, txt = os.path.join(out, "raw"), os.path.join(out, "text")
     for d in (out, raw, txt):
         os.makedirs(d, exist_ok=True)
-    t = targets()
+    if a.req:
+        t = pd.read_csv(os.path.join(CLS, a.req), dtype=str)
+        t["reason"] = t.get("why", "요청목록").fillna("요청목록") if "reason" not in t else t.reason
+        t = t[["code", "corp_code", "rcept_no", "rcept_dt", "report_nm", "reason"]].drop_duplicates("rcept_no")
+    else:
+        t = targets()
     mf = os.path.join(out, "recheck_manifest.csv")
     rows = pd.read_csv(mf, dtype=str).to_dict("records") if os.path.exists(mf) else []
     done = {r["rcept_no"] for r in rows if not (isinstance(r.get("error"), str) and r.get("error"))}
@@ -106,7 +113,7 @@ def main():
                 "api": {k: (round(v) if isinstance(v, float) else v) for k, v in STATS.items()}}
         json.dump(prog, open(os.path.join(out, "progress.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         if push and a.push_every_min > 0:
-            os.system(f'cd "{ROOT}" && git add research/pit/classification/scan_recheck && git commit -q -m "recheck progress {len(rows)}/{len(t)}" '
+            os.system(f'cd "{ROOT}" && git add research/pit/classification/{a.out_sub} && git commit -q -m "recheck progress {len(rows)}/{len(t)}" '
                       f'&& (git pull -q --rebase || true) && git push -q || true')
 
     n = 0

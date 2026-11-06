@@ -32,7 +32,7 @@ jobs:
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
           PYTHONUNBUFFERED: "1"
-        run: python research/pit/dart_recheck.py --workers 4 --max-minutes 300 --push-every-min 10 2>&1 | tee research/pit/classification/scan_recheck_log.txt
+        run: python research/pit/dart_recheck.py --workers 4 --max-minutes 300 --push-every-min 10 $(cat research/pit/classification/recheck_args.txt 2>/dev/null) 2>&1 | tee research/pit/classification/scan_recheck_log.txt
       - name: Commit
         if: always()
         run: |
