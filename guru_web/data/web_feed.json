@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-06T00:10:26+09:00",
+  "generated_at": "2026-11-06T10:05:30+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -54,7 +54,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 5,
+      "items_in_window": 4,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -75,7 +75,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 10,
+      "items_in_window": 11,
       "scoring_items": 2,
       "pending_items": 0
     },
@@ -85,7 +85,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 2,
+      "items_in_window": 3,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -95,8 +95,8 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 5,
-      "scoring_items": 1,
+      "items_in_window": 2,
+      "scoring_items": 0,
       "pending_items": 0
     },
     {
@@ -172,9 +172,9 @@
     }
   ],
   "stats": {
-    "discovered": 145,
-    "new_items": 8,
-    "decoded": 10,
+    "discovered": 144,
+    "new_items": 9,
+    "decoded": 11,
     "bodies": 0,
     "quotes_verified": 0,
     "video_candidates": 0,
@@ -182,7 +182,7 @@
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 2,
+    "calls_today": 0,
     "daily_cap": 60,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -192,6 +192,44 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Volatility is the toll for investing, Ryan Detrick notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-05T21:40:09+00:00",
+      "discovered_at": "2026-11-06T10:05:30+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4122581-market-2026-correction-volatility/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4122581-market-2026-correction-volatility/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Lyn Alden: Diversified value investors may feel better when Nasdaq falls sharply",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-05T20:55:18+00:00",
+      "discovered_at": "2026-11-06T10:05:30+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4121852-nasdaq-drop-value-investors/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4121852-nasdaq-drop-value-investors/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Andy Constan",
       "tier": 2,
@@ -222,6 +260,25 @@
       "discovered_at": "2026-11-05T10:05:30+09:00",
       "article_url": "https://tradersunion.com/news/market-voices/show/4100732-stocks-surge-bullish-returns/",
       "canonical_url": "https://tradersunion.com/news/market-voices/show/4100732-stocks-surge-bullish-returns/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Bob Elliott: Rising revenue with falling operating income signals flawed business model",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-04T17:25:17+00:00",
+      "discovered_at": "2026-11-06T10:05:30+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4099354-revenue-income-business-model/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4099354-revenue-income-business-model/",
       "body_fetch_status": 403,
       "direct_quotes": [],
       "direction_hint": null,
@@ -873,109 +930,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Lyn Alden",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Lyn Alden: Higher rates do not always resolve inflation issues",
-      "outlet": "Traders Union",
-      "published_at": "2026-10-29T22:35:18+00:00",
-      "discovered_at": "2026-10-30T10:05:27+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4023176-higher-rates-inflation-limits/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4023176-higher-rates-inflation-limits/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Jim Bianco",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "‘Who Are You Really Protecting?’ Jim Bianco on Banks Blocking Agents",
-      "outlet": "unchainedcrypto.com",
-      "published_at": "2026-10-29T22:00:00+00:00",
-      "discovered_at": "2026-10-30T21:05:26+09:00",
-      "article_url": "https://unchainedcrypto.com/who-are-you-really-protecting-jim-bianco-on-banks-blocking-agents/",
-      "canonical_url": "https://unchainedcrypto.com/who-are-you-really-protecting-jim-bianco-on-banks-blocking-agents/",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Jim Bianco",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Jim Bianco Calls for Overhaul of Fed’s Post-Crisis Guidance",
-      "outlet": "TOKENPOST",
-      "published_at": "2026-10-29T20:30:44+00:00",
-      "discovered_at": "2026-10-30T21:05:26+09:00",
-      "article_url": "https://www.tokenpost.com/news/regulation/43859",
-      "canonical_url": "https://www.tokenpost.com/news/regulation/43859",
-      "body_fetch_status": 200,
-      "direct_quotes": [
-        {
-          "text": "than the problems it has solved.",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "Bianco said"
-        }
-      ],
-      "direction_hint": "not_stated",
-      "evidence_grade": "1차-인용",
-      "evidence_ready_at": "2026-10-30T21:05:26+09:00",
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Andy Constan",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Andy Constan: Possible options for AMZN issuance include equity, ATM, or $25 billion bond deal",
-      "outlet": "Traders Union",
-      "published_at": "2026-10-29T20:20:15+00:00",
-      "discovered_at": "2026-10-30T10:05:27+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4021093-amzn-issuance-options-question/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4021093-amzn-issuance-options-question/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Jim Bianco",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "FOMC’s forward guidance has caused more problems than it has solved, says Jim Bianco",
-      "outlet": "Seeking Alpha",
-      "published_at": "2026-10-29T15:21:22+00:00",
-      "discovered_at": "2026-10-30T10:05:27+09:00",
-      "article_url": "https://seekingalpha.com/news/4660425-fomc-s-forward-guidance-has-caused-more-problems-than-it-has-solved-says-jim-bianco",
-      "canonical_url": "https://seekingalpha.com/news/4660425-fomc-s-forward-guidance-has-caused-more-problems-than-it-has-solved-says-jim-bianco",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
     }
   ],
   "person_index": {
@@ -985,18 +939,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-03T10:05:27+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4062067-deal-spread-return-cash/",
-            "kind": "news_article",
-            "preview": "Andy Constan: Deal spread implies 7.2% potential return versus 4.5% cash",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-02T14:20:32+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-04T21:05:28+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4091440-market-move-explanations-trust/",
@@ -1013,6 +958,22 @@
             "preview": "Andy Constan: Closed long bond position, remains short stocks with reduced exposure",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-05T11:55:12+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Bob Elliott": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-06T10:05:30+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4099354-revenue-income-business-model/",
+            "kind": "news_article",
+            "preview": "Bob Elliott: Rising revenue with falling operating income signals flawed business model",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-04T17:25:17+00:00",
             "noise_hint": false
           }
         ]
@@ -1096,21 +1057,21 @@
         "non_noise": 2,
         "items": [
           {
-            "at": "2026-11-03T10:05:27+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/02/lyn-alden-im-still-bullish-on-the-semiconductor-space.html",
-            "kind": "video_page",
-            "preview": "Lyn Alden: I'm still bullish on the semiconductor space",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-02T14:34:52+00:00",
-            "noise_hint": false
-          },
-          {
             "at": "2026-11-05T10:05:30+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4067753-alden-bond-bearish-shift/",
             "kind": "news_article",
             "preview": "Outlook on bonds has shifted after eight years of bearishness, Lyn Alden notes",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-02T20:20:33+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-06T10:05:30+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4121852-nasdaq-drop-value-investors/",
+            "kind": "news_article",
+            "preview": "Lyn Alden: Diversified value investors may feel better when Nasdaq falls sharply",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-05T20:55:18+00:00",
             "noise_hint": false
           }
         ]
@@ -1149,27 +1110,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 8,
-        "non_noise": 8,
+        "count": 7,
+        "non_noise": 7,
         "items": [
-          {
-            "at": "2026-11-03T10:05:27+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4066640-summer-market-breadth-concerns/",
-            "kind": "news_article",
-            "preview": "Ryan Detrick: Summer market breadth concerns may have been overstated",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-02T18:35:28+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-03T10:05:27+09:00",
-            "url": "https://www.carsongroup.com/insights/blog/live-from-excell-fvf/",
-            "kind": "official_blog",
-            "preview": "Live From Excell 2026 (FvF)",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-10-30T16:49:31+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-04T10:05:26+09:00",
             "url": "https://www.carsongroup.com/insights/blog/three-things-to-watch-heading-into-midterm-elections/",
@@ -1222,6 +1165,15 @@
             "preview": "Number of single stock ETFs rises from zero to nearly 600 in four years, Ryan Detrick notes",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-03T18:35:34+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-06T10:05:30+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4122581-market-2026-correction-volatility/",
+            "kind": "news_article",
+            "preview": "Volatility is the toll for investing, Ryan Detrick notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-05T21:40:09+00:00",
             "noise_hint": false
           }
         ]
