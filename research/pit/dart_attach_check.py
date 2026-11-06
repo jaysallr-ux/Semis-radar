@@ -11,6 +11,8 @@
 - 본문 수정시각 날짜 <= 접수번호 날짜 → "본문 원 제출 시점"
 - 본문 수정시각이 원 제출일보다 늦음 → "본문 시각 늦음(가용일 재검토)"
 - zip 시각이 전부 같은 날(패키징 시각) → "zip 시각 무의미" (표지 날짜로만 판단)
+실행 결과(2026-11-06): zip 내부 시각은 1980-01-01 기본값이거나 2021-07-15 DART 재포장 시각뿐이라 증거로 못 씀.
+아래 verdict 열은 버리고, 표지 제출일(cover_dates 세 번째 값)과 원 접수일 비교로 body_check 를 다시 매김(커밋된 csv 참조).
 출력: classification/listing/attach_check.csv
   python research/pit/dart_attach_check.py --workers 4
 """
