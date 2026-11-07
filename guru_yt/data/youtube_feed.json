@@ -1,17 +1,22 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-07T10:10:30+09:00",
+  "generated_at": "2026-11-07T21:10:32+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-07T09:20:27+09:00",
-    "merged_from_discovery": 3,
+    "last_discovery_at": "2026-11-07T10:10:30+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 1,
-      "rejected": 0
+      "accepted": 0,
+      "rejected": 0,
+      "retry_next_run": [
+        "yNTHAc7IauQ",
+        "7nXujKkj_jA",
+        "7nXujKkj_jA"
+      ]
     }
   },
   "quote_verify_threshold": 90,
@@ -157,7 +162,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-03T12:00:29+09:00",
+      "oldest_rss": "2026-11-03T20:00:11+09:00",
       "gap_possible": false,
       "matched": 4
     },
@@ -201,7 +206,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-06T20:06:47+09:00",
+      "oldest_rss": "2026-11-06T20:28:44+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,8 +217,8 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-07T01:28:57+09:00",
-      "gap_possible": true,
+      "oldest_rss": "2026-11-07T02:05:12+09:00",
+      "gap_possible": false,
       "matched": 0
     },
     {
@@ -223,7 +228,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-06T00:00:14+09:00",
+      "oldest_rss": "2026-11-06T02:22:48+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,7 +239,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-04T02:30:31+09:00",
+      "oldest_rss": "2026-11-04T03:30:40+09:00",
       "gap_possible": false,
       "matched": 0
     }
@@ -250,14 +255,14 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 4,
+    "gemini_calls_today": 5,
     "gemini_est_video_hours_today": 0.322,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 2,
-    "ready": 2,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -266,8 +271,8 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 4,
-    "ready": 3,
+    "attempted": 1,
+    "ready": 0,
     "not_speaking": 0,
     "busy": 0,
     "errors": 1,
@@ -664,7 +669,7 @@
       "gemini_evidence": null,
       "stance": null,
       "quotes": [],
-      "gemini_error_count": 1,
+      "gemini_error_count": 2,
       "gemini_last_error": "error 403 video not accessible to Gemini",
       "evidence_ready_at": null,
       "evidence_grade": "제목·설명만 확인",
@@ -3514,18 +3519,9 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-04T10:10:34+09:00",
-            "url": "https://www.youtube.com/watch?v=kR5PD2T4pag",
-            "kind": "video",
-            "preview": "The Macro Minute: Could the Midterms Trigger a Politically Induced Data-Center Slowdown?",
-            "grade": "1차-A",
-            "published_at": "2026-11-03T21:00:12Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-05T10:10:33+09:00",
             "url": "https://www.youtube.com/watch?v=CyAXszRnwWU",
