@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-08T10:15:31+09:00",
+  "generated_at": "2026-11-08T21:15:30+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (80 entries)",
+    "list": "ok (75 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 108,
-    "already_known": 33,
+    "urls_found": 107,
+    "already_known": 48,
     "too_old": 55,
-    "verified_syndication": 20,
+    "verified_syndication": 4,
     "verified_oembed": 0,
     "rejected_author": 0,
     "reply_other": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-11-06T01:53:14.000Z",
+    "list_oldest": "2026-11-06T11:49:38.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
+      "last_success_at": "2026-11-08T21:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
+      "last_success_at": "2026-11-08T21:15:30+09:00",
       "new_originals_this_run": 1,
       "error": null
     },
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
+      "last_success_at": "2026-11-08T21:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-08T21:15:30+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
-      "new_originals_this_run": 13,
+      "last_success_at": "2026-11-08T21:15:30+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-08T21:15:30+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
+      "last_success_at": "2026-11-08T21:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -111,8 +111,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-08T21:15:30+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-08T21:15:30+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
+      "last_success_at": "2026-11-08T21:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -144,8 +144,8 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-08T21:15:30+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -155,7 +155,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
+      "last_success_at": "2026-11-08T21:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -166,7 +166,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-08T10:15:31+09:00",
+      "last_success_at": "2026-11-08T21:15:30+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -178,14 +178,178 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 17,
+    "described": 1,
     "pending": 0,
     "errors": 0,
-    "calls_today": 17,
+    "calls_today": 18,
     "daily_cap": 100,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2119371790665339051",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-08T10:09:45.000Z",
+      "url": "https://x.com/dampedspring/status/2119371790665339051",
+      "text": "Wordle 1,968 3/6*\n\n🟨⬜⬜🟨⬜\n🟨⬜⬜🟩🟩\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2119294479748489315",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "role": "core",
+      "author_id": "199170156",
+      "created_at": "2026-11-08T05:02:33.000Z",
+      "url": "https://x.com/jam_croissant/status/2119294479748489315",
+      "text": "https://t.co/tj3nFRsywd",
+      "quoted_post_id": "2118737421802295302",
+      "quoted_post": {
+        "id": "2118737421802295302",
+        "author": "fejau_inc",
+        "created_at": "2026-11-06T16:09:00.000Z",
+        "url": "https://x.com/fejau_inc/status/2118737421802295302",
+        "text": "It's really interesting how quiet Bessent has been the last couple weeks",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [
+        "https://x.com/jam_croissant/status/2119294365034217896/video/1"
+      ],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2119251963695300995",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-08T02:13:36.000Z",
+      "url": "https://x.com/dampedspring/status/2119251963695300995",
+      "text": "Struggling to willingly suspend disbelief that Helen Webb can walk around London with zero security in \"Black Doves\"",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2119249786880573487",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-08T02:04:57.000Z",
+      "url": "https://x.com/RyanDetrick/status/2119249786880573487",
+      "text": "19 🎂 🎈 \n\nIt sure happens fast https://t.co/hj3RfwehMC",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWkWbrAX0AAsDbK.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWkWb_WXgAAujca.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWkWcQPXsAAlNwi.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWkWckJXgAAp6SL.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-08T12:15:30+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWkWbrAX0AAsDbK.jpg",
+            "image_text": "19",
+            "what_it_shows": "A young girl is standing in front of a wooden door holding pink number 19 balloons and wearing a pink top, black cardigan, and patterned pants.",
+            "chart_credit": "unknown"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWkWb_WXgAAujca.jpg",
+            "image_text": "",
+            "what_it_shows": "A young woman stands smiling next to a large stone cougar statue outdoors amidst leafy green trees and foliage.",
+            "chart_credit": "unknown"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWkWcQPXsAAlNwi.jpg",
+            "image_text": "",
+            "what_it_shows": "A smiling man in a blue t-shirt lies on a couch holding an infant wearing a patterned onesie.",
+            "chart_credit": "unknown"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWkWckJXgAAp6SL.jpg",
+            "image_text": "RENT",
+            "what_it_shows": "A young woman and a man are seated together at a booth inside a restaurant, smiling toward the camera with a vase of decorative branches between them.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
     {
       "id": "2119237096863150554",
       "person": "Ryan Detrick",
@@ -9618,112 +9782,6 @@
         ],
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
       }
-    },
-    {
-      "id": "2116866595163406840",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-11-01T12:15:00.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2116866595163406840",
-      "text": "Much of the AI investment boom today is driven by promises to receive trillions of cash in the future. Any whiff that won't come and the house of cards falls apart. Free on the blog app this week.\n\nhttps://t.co/JvjXb3Gesv",
-      "quoted_post_id": "2115764331480858674",
-      "quoted_post": {
-        "id": "2115764331480858674",
-        "author": "BobEUnlimited",
-        "created_at": "2026-10-29T11:15:00.000Z",
-        "url": "https://x.com/BobEUnlimited/status/2115764331480858674",
-        "text": "The $6tln House of Cards\n\nGoogle’s announcement of nearly $1tln in forward commitments alone once again highlights how much of the AI boom today is being greased by all those involved committing to deliver future cash.\n\nhttps://t.co/AjLluMuRLA https://t.co/gSkHnnKRTc",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVyuKlcWIAAIR9H.jpg"
-          }
-        ]
-      },
-      "links": [
-        "https://x.com/BobEUnlimited/status/2115764331480858674?a=4zGZp0OvlyLKaZG0xgI&s=20"
-      ],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-01T12:15:32+00:00",
-        "images": [
-          {
-            "of": "quoted_post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HVyuKlcWIAAIR9H.jpg",
-            "image_text": "Hyperscalers, NVDA, AVGO and SpaceX now disclose $3.59tn of off-balance-sheet commitments\nLatest filings as of 21 Oct 2026 (META on 3Q26, provisional; SpaceX added). USD bn, undiscounted; $3.81tn incl. news-based items vs MS $3.29tn in August\nGOOGL | $707 | $91 | $75 | $895bn\nMETA | $349 | $342 | $41 | $747bn\nMSFT | $229 | $329 | $559bn\nAMZN | $130 | $137 | $48 | $301bn (+ $48bn news-based)\nORCL |",
-            "what_it_shows": "The horizontal bar chart displays off-balance-sheet commitments by company, totaling $3.59tn as of October 2026, broken down into categories such as purchases, leases, and guarantees. GOOGL reports the highest total at $895bn, followed by META at $747bn and MSFT at $559bn.",
-            "chart_credit": "ZeroHedge"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2116827246828929381",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-11-01T09:38:39.000Z",
-      "url": "https://x.com/dampedspring/status/2116827246828929381",
-      "text": "Wordle 1,961 4/6*\n\n⬜🟨⬜🟨🟨\n🟨⬜⬜🟩🟩\n⬜⬜🟩🟩🟩\n🟩🟩🟩🟩🟩",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2116706622391325050",
-      "person": "Joseph Wang",
-      "handle": "josephwang",
-      "tier": 4,
-      "role": "shadow",
-      "author_id": "718702333",
-      "created_at": "2026-11-01T01:39:19.000Z",
-      "url": "https://x.com/josephwang/status/2116706622391325050",
-      "text": "Markets Weekly October 31, 2026\n\nSpooky markets\nMid-term implications\n\nhttps://t.co/C1ILo8BERD",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://youtu.be/5RwaOFdZQXM"
-      ],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
     }
   ],
   "person_index": {
@@ -9733,31 +9791,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 23,
-        "non_noise": 19,
+        "count": 22,
+        "non_noise": 18,
         "items": [
-          {
-            "at": "2026-11-05T16:13:31+09:00",
-            "url": "https://x.com/dampedspring/status/2118240275512352993",
-            "kind": "post",
-            "preview": "Out of max long bond position. Flat bonds for DS alpha.",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T17:07:20+09:00",
-            "url": "https://x.com/dampedspring/status/2118253817640935878",
-            "kind": "post",
-            "preview": "Wordle 1,965 4/6* ⬜🟨🟨🟨⬜ 🟩🟩⬜⬜🟨 🟩🟩🟩⬜⬜ 🟩🟩🟩🟩🟩",
-            "noise_hint": true
-          },
-          {
-            "at": "2026-11-05T20:47:50+09:00",
-            "url": "https://x.com/dampedspring/status/2118309309373133226",
-            "kind": "quote_post",
-            "preview": "Closed out the max long bond portion of this trade last night at 109 ish on ZB. Long bonds short st…",
-            "quoted_author": "dampedspring",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-05T21:15:44+09:00",
             "url": "https://x.com/dampedspring/status/2118316330688356656",
@@ -9907,21 +9943,28 @@
             "kind": "post",
             "preview": "GM.",
             "noise_hint": true
+          },
+          {
+            "at": "2026-11-08T11:13:36+09:00",
+            "url": "https://x.com/dampedspring/status/2119251963695300995",
+            "kind": "post",
+            "preview": "Struggling to willingly suspend disbelief that Helen Webb can walk around London with zero security…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-08T19:09:45+09:00",
+            "url": "https://x.com/dampedspring/status/2119371790665339051",
+            "kind": "post",
+            "preview": "Wordle 1,968 3/6* 🟨⬜⬜🟨⬜ 🟨⬜⬜🟩🟩 🟩🟩🟩🟩🟩",
+            "noise_hint": true
           }
         ]
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 11,
-        "non_noise": 11,
+        "count": 10,
+        "non_noise": 10,
         "items": [
-          {
-            "at": "2026-11-05T21:15:00+09:00",
-            "url": "https://x.com/BobEUnlimited/status/2118316146340291065",
-            "kind": "post",
-            "preview": "Bailey’s Transitory Delusions BoE finally lifts rates today after Bailey has spent months explainin…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-05T23:31:24+09:00",
             "url": "https://x.com/BobEUnlimited/status/2118350474629791778",
@@ -9997,31 +10040,9 @@
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 11,
-        "non_noise": 11,
+        "count": 9,
+        "non_noise": 9,
         "items": [
-          {
-            "at": "2026-11-05T11:24:08+09:00",
-            "url": "https://x.com/jam_croissant/status/2118167449979830704",
-            "kind": "quote_post",
-            "preview": "🎈 Pop-ulism",
-            "quoted_author": "EamonJavers",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T12:01:42+09:00",
-            "url": "https://x.com/jam_croissant/status/2118176904670830766",
-            "kind": "post",
-            "preview": "The blue 🌊 likely just lowered the Trump/Fed put. The admin’s 🖨️ 💵;➕📈 playbook is likely still inta…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T12:06:27+09:00",
-            "url": "https://x.com/jam_croissant/status/2118178099279908997",
-            "kind": "quote_post",
-            "quoted_author": "HQNewsNow",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-06T09:51:02+09:00",
             "url": "https://x.com/jam_croissant/status/2118506409989980548",
@@ -10078,6 +10099,13 @@
             "url": "https://x.com/jam_croissant/status/2119164458027176304",
             "kind": "quote_post",
             "quoted_author": "Rory_Johnston",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-08T14:02:33+09:00",
+            "url": "https://x.com/jam_croissant/status/2119294479748489315",
+            "kind": "quote_post",
+            "quoted_author": "fejau_inc",
             "noise_hint": false
           }
         ]
@@ -10303,73 +10331,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 40,
-        "non_noise": 40,
+        "count": 32,
+        "non_noise": 32,
         "items": [
-          {
-            "at": "2026-11-05T10:19:19+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118151138352451841",
-            "kind": "post",
-            "preview": "What does last night mean? @gilbert3142 on our team takes a look at midterms, along with potential …",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T11:47:19+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118173285515223427",
-            "kind": "post",
-            "preview": "Another very strong breadth day today, similar to what we've seen since October started. It is craz…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T11:49:52+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118173925691822271",
-            "kind": "post",
-            "preview": "150 new highs on the NYSE, most since early August. 67 new highs on the S&P 500, most since Februar…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T11:52:44+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118174649900990960",
-            "kind": "post",
-            "preview": "Only 20% of the stocks in the S&P 500 were above their 50-day moving average at the start of Octobe…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T11:55:20+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118175302144737573",
-            "kind": "post",
-            "preview": "67 new 52-week highs on the S&P 500 today versus only three new lows.",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T12:02:04+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118176995766907301",
-            "kind": "post",
-            "preview": "Maybe you can name a more important chart, but for me it is banks. As long as $KBE stays above the …",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T12:21:29+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118181885037920354",
-            "kind": "quote_post",
-            "preview": "Institutional clients sold A LOT in October.",
-            "quoted_author": "BlakeMillardCFA",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T12:25:28+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118182885899313375",
-            "kind": "post",
-            "preview": "Forward EPS is up 33.2% from the start of the year ($308 to $411). Wouldn't it be something if next…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T12:31:32+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118184412844048577",
-            "kind": "post",
-            "preview": "One of the more important things to remember is bear markets don't just start and pull everything l…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-05T22:00:04+09:00",
             "url": "https://x.com/RyanDetrick/status/2118327490301112433",
@@ -10591,6 +10555,13 @@
             "url": "https://x.com/RyanDetrick/status/2119237096863150554",
             "kind": "post",
             "preview": "Love seeing my friend @VIXandMore getting some pub in @barronsonline. He is one of the good ones an…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-08T11:04:57+09:00",
+            "url": "https://x.com/RyanDetrick/status/2119249786880573487",
+            "kind": "post",
+            "preview": "19 🎂 🎈 It sure happens fast",
             "noise_hint": false
           }
         ]
