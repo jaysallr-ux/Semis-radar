@@ -1,16 +1,16 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-08T10:10:33+09:00",
+  "generated_at": "2026-11-08T21:10:30+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-08T05:20:30+09:00",
-    "merged_from_discovery": 1,
+    "last_discovery_at": "2026-11-08T10:10:33+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 2,
+      "accepted": 0,
       "rejected": 0,
       "retry_next_run": [
         "yNTHAc7IauQ"
@@ -160,7 +160,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-04T09:36:35+09:00",
+      "oldest_rss": "2026-11-04T09:43:28+09:00",
       "gap_possible": false,
       "matched": 3
     },
@@ -215,7 +215,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-07T05:12:43+09:00",
+      "oldest_rss": "2026-11-07T05:17:17+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -226,7 +226,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-06T09:00:32+09:00",
+      "oldest_rss": "2026-11-06T10:00:34+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -237,7 +237,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-04T07:00:33+09:00",
+      "oldest_rss": "2026-11-04T08:00:03+09:00",
       "gap_possible": false,
       "matched": 0
     }
@@ -253,14 +253,14 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 11,
-    "gemini_est_video_hours_today": 5.988,
+    "gemini_calls_today": 14,
+    "gemini_est_video_hours_today": 7.103,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -269,14 +269,14 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 11,
-    "ready": 1,
+    "attempted": 3,
+    "ready": 2,
     "not_speaking": 0,
     "busy": 0,
-    "errors": 0,
+    "errors": 1,
     "left_pending": 0,
-    "budget_out": 3,
-    "chunked": 1,
+    "budget_out": 0,
+    "chunked": 0,
     "text_mode": 0,
     "quota_wait": 0
   },
@@ -307,25 +307,148 @@
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": "shadow: captions are reserved for the core 11",
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-08T21:10:30+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Joseph Wang appears on camera speaking throughout the entire video presenting Market Weekly.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Expects risk assets and US equities to trend gradually lower as the AI boom unwinds and tax policies weigh on corporate profits, though a sharp crash is unlikely near-term due to positive year-end seasonality.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": "Medium-term"
+      },
+      "quotes": [
+        {
+          "t": "11:38",
+          "t_sec": 698,
+          "speaker": "Joseph Wang",
+          "topic": "us_equities",
+          "text": "Doesn't mean we're going to crash. I continue to believe that this will be kind of a process, right?",
+          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=698s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "11:57",
+          "t_sec": 717,
+          "speaker": "Joseph Wang",
+          "topic": "us_equities",
+          "text": "We are heading into a seasonally positive time of the year into Christmas, so, you know, don't think we're going to crash, but it does seem like the trend has changed as the AI trade implodes, so the market is going to have to sift through this and find a new narrative.",
+          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=717s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "14:58",
+          "t_sec": 898,
+          "speaker": "Joseph Wang",
+          "topic": "bonds_and_inflation",
+          "text": "I think this is all very bullish for bonds, and inflation to me, it will come down.",
+          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=898s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "16:38",
+          "t_sec": 998,
+          "speaker": "Joseph Wang",
+          "topic": "asset_prices",
+          "text": "It could be a better social model for the median person, but it doesn't seem like it's going to be good for asset prices, and that's something that we have to think about going forward.",
+          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=998s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "17:53",
+          "t_sec": 1073,
+          "speaker": "Joseph Wang",
+          "topic": "us_equities_and_bonds",
+          "text": "Going forward, though, I continue to think just grinding down lower in risk assets, rally in bond markets, with a potential flare-up in the Middle East.",
+          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=1073s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": "dedicated_channel",
+      "evidence_ready_at": "2026-11-08T21:10:30+09:00",
+      "evidence_grade": "1차-B",
+      "appearance_source": "gemini",
       "transcript_retained": false,
       "quotes_grade_count": {
         "1차-A": 0,
-        "1차-B": 0,
+        "1차-B": 5,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "01:14",
+          "point": "Strong productivity data indicates that AI adoption is starting to show up in tech sector revenue and head-count metrics.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "02:51",
+          "point": "Strong employment and non-farm payroll numbers demonstrate that the US labor market remains solid.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "03:20",
+          "point": "The Federal Reserve remains on track for a December rate hike due to persistent inflation pressures.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "10:32",
+          "point": "The expansion of AI data centers will likely slow down due to increased regulatory delays and environmental scrutinies.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "11:57",
+          "point": "Equities are unlikely to crash into year-end due to positive seasonal tailwinds, but the overall market trend has shifted lower as AI stocks unwind.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "12:21",
+          "point": "Oil prices are expected to decline as political pressure mounts to resolve Middle East conflicts and lower energy costs.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "14:30",
+          "point": "Political priority on affordability gives the Fed scope to maintain higher interest rates, which is bullish for fixed income.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "15:26",
+          "point": "Potential increases in corporate and capital gains taxes under new political leadership will negatively impact financial asset valuation.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "17:18",
+          "point": "A geopolitical escalation involving Iran remains a key downside risk for global markets through year-end.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 34900
     },
     {
       "video_id": "8EOdcmxxvMQ",
@@ -705,7 +828,7 @@
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "error",
+      "gemini_status": "unavailable",
       "gemini_model": null,
       "gemini_at": null,
       "gemini_mode": null,
@@ -713,7 +836,7 @@
       "gemini_evidence": null,
       "stance": null,
       "quotes": [],
-      "gemini_error_count": 2,
+      "gemini_error_count": 3,
       "gemini_last_error": "error 403 video not accessible to Gemini",
       "evidence_ready_at": null,
       "evidence_grade": "제목·설명만 확인",
@@ -943,29 +1066,145 @@
       "transcript_chars": null,
       "transcript_url": null,
       "name_mentions": null,
-      "appearance_confirmed": null,
+      "appearance_confirmed": true,
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": "tier 3: captions are kept for the tiers that drive judgments",
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-08T21:10:30+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Bob Elliott appears on screen and speaks throughout the episode, providing analysis on US equities, macro trends, inflation, bond markets, and economic data.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Bob Elliott views US equities as vulnerable, noting that market expectations for 20% earnings growth are priced for perfection while macro conditions point to slowing nominal growth, persistent inflation, and potential constraints in AI CapEx and demand, creating a clear downside skew.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": ""
+      },
+      "quotes": [
+        {
+          "t": "03:50",
+          "t_sec": 230,
+          "speaker": "Bob Elliott",
+          "topic": "US Equities",
+          "text": "Look, we're like 5% off highs in the broad stock market. Like this is not, you know, obviously yesterday felt like going to a late night boxing event at your gym where you don't wear a helmet. But it really is, the moves aren't that big.",
+          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=230s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "08:00",
+          "t_sec": 480,
+          "speaker": "Bob Elliott",
+          "topic": "Macro / Nominal Growth",
+          "text": "Are we going to see reinforcement in either earnings or macro stats, or are we going to see something that's sort of real versus like changes in expectations that affirm a weaker nominal growth environment ahead?",
+          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=480s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "25:20",
+          "t_sec": 1520,
+          "speaker": "Bob Elliott",
+          "topic": "US Equities / Earnings",
+          "text": "Whether it's the demand or the supply, or a little bit of both, if those things come down meaningfully around this AI mania, then there's just no way we're going to get 20% earnings growth that is being expected in the market.",
+          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=1520s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "35:10",
+          "t_sec": 2110,
+          "speaker": "Bob Elliott",
+          "topic": "US Equities / Market Risks",
+          "text": "We are somewhat on a knife's edge here, it seems, in terms of exactly how this is going to play out, both from expectation disappointment to asset prices starting to fall to a hiking cycle that seems a bit persistent.",
+          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=2110s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "36:00",
+          "t_sec": 2160,
+          "speaker": "Bob Elliott",
+          "topic": "US Equities",
+          "text": "If everything is in the not good camp, you have quite a heightened risk of a self-reinforcing dynamic, right at a time when expectations are still very high. So if you think about sort of the skew, that's, it does seem like there's a downside skew.",
+          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=2160s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
+      "evidence_ready_at": "2026-11-08T21:10:30+09:00",
+      "evidence_grade": "1차-B",
+      "appearance_source": "gemini",
       "transcript_retained": false,
       "quotes_grade_count": {
         "1차-A": 0,
-        "1차-B": 0,
+        "1차-B": 5,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "03:50",
+          "point": "The recent stock market decline is modest and represents a normalization from extreme hype rather than a major market collapse.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "07:38",
+          "point": "Markets previously priced in aggressive nominal growth, and the key upcoming catalyst is whether macro data and corporate earnings confirm a slowdown.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "10:11",
+          "point": "Inflation is likely to remain persistent in the 3% to 4% range in the near future.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "12:12",
+          "point": "US employment and wage data indicate modest growth around 3%, which supports a mediocre growth environment rather than an acceleration in nominal spending.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "25:20",
+          "point": "If AI infrastructure CapEx or end-user demand slows down, consensus expectations of 20% earnings growth in equities will fail to materialize.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "35:10",
+          "point": "High equity market valuations combined with persistent interest rate pressures create a downside skew and heightened risk of a self-reinforcing market decline.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "45:48",
+          "point": "Driving continued economic growth requires credit and spending to continuously accelerate rather than simply remain at high static levels.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "50:50",
+          "point": "Medium to long-term Treasury yields are heavily influenced by how monetary policy evolves relative to market expectations rather than the rate-hiking cycle alone.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 117673
     },
     {
       "video_id": "7nXujKkj_jA",
@@ -3562,8 +3801,8 @@
     "people": {
       "Bob Elliott": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-06T21:10:33+09:00",
@@ -3573,23 +3812,23 @@
             "grade": "1차-B",
             "published_at": "2026-11-05T16:18:48Z",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-08T21:10:30+09:00",
+            "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI",
+            "kind": "video",
+            "preview": "Macro Talk 2026.11.06",
+            "grade": "1차-B",
+            "published_at": "2026-11-06T00:00:00+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 4,
+        "non_noise": 4,
         "items": [
-          {
-            "at": "2026-11-05T13:05:01+09:00",
-            "url": "https://www.youtube.com/watch?v=G-eqJenVnrU",
-            "kind": "video",
-            "preview": "MIDTERMS TOMORROW: Cem Karsan PREVIEWS Flows Into Election Day | Monday Nov 2 Live Trading",
-            "grade": "1차-A",
-            "published_at": "2026-11-02T00:00:00+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-05T23:50:26+09:00",
             "url": "https://www.youtube.com/watch?v=FosAKU4raoY",
@@ -3646,18 +3885,9 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-05T10:10:33+09:00",
-            "url": "https://www.youtube.com/watch?v=CyAXszRnwWU",
-            "kind": "video",
-            "preview": "The Macro Minute: What Do the Midterm Results Mean for Investors?",
-            "grade": "1차-A",
-            "published_at": "2026-11-04T21:00:33Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-06T10:10:31+09:00",
             "url": "https://www.youtube.com/watch?v=vf8R_JQeXLk",
@@ -3684,11 +3914,11 @@
         "non_noise": 1,
         "items": [
           {
-            "at": "2026-11-08T05:20:30+09:00",
+            "at": "2026-11-08T21:10:30+09:00",
             "url": "https://www.youtube.com/watch?v=KGM9O05H1-o",
             "kind": "video",
             "preview": "Markets Weekly November 7, 2026",
-            "grade": "제목·설명만 확인",
+            "grade": "1차-B",
             "published_at": "2026-11-07T20:00:44Z",
             "noise_hint": false
           }
@@ -3706,22 +3936,6 @@
             "preview": "Fairlead's Katie Stockton on market selloff: Don't sell weakness, sell the strength",
             "grade": "1차-B",
             "published_at": "2026-11-06T00:00:00+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Ryan Detrick": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-05T13:05:01+09:00",
-            "url": "https://www.youtube.com/watch?v=d3nKjpM-cFk",
-            "kind": "video",
-            "preview": "The Glass Half Full: When Will the Madness End? (Ep. 34)",
-            "grade": "1차-A",
-            "published_at": "2026-11-04T00:00:00+00:00",
             "noise_hint": false
           }
         ]
