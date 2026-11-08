@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-08T10:05:23+09:00",
+  "generated_at": "2026-11-08T21:05:23+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -14,8 +14,8 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 2,
-      "scoring_items": 1,
+      "items_in_window": 3,
+      "scoring_items": 2,
       "pending_items": 0
     },
     {
@@ -34,8 +34,8 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
-      "scoring_items": 0,
+      "items_in_window": 2,
+      "scoring_items": 1,
       "pending_items": 0
     },
     {
@@ -172,17 +172,17 @@
     }
   ],
   "stats": {
-    "discovered": 141,
-    "new_items": 9,
-    "decoded": 9,
-    "bodies": 1,
-    "quotes_verified": 3,
+    "discovered": 145,
+    "new_items": 8,
+    "decoded": 8,
+    "bodies": 2,
+    "quotes_verified": 6,
     "video_candidates": 0,
-    "gemini_calls": 1,
+    "gemini_calls": 2,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 1,
+    "calls_today": 3,
     "daily_cap": 60,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -192,6 +192,51 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Cem Karsan Says the Crisis Comes Before June 2027 — and It's the Good News",
+      "outlet": "BigGo Finance",
+      "published_at": "2026-11-07T19:08:00+00:00",
+      "discovered_at": "2026-11-08T21:05:23+09:00",
+      "article_url": "https://finance.biggo.com/news/e031d8b349701e45",
+      "canonical_url": "https://finance.biggo.com/news/e031d8b349701e45",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "The answer is the US dollar. So once you are back on your heels and all of this stress is building and coming on you, you go to your greatest point of strength.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he says"
+        },
+        {
+          "text": "We have entered World War II. This is World War II. It just looks different than we're used to",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he says"
+        },
+        {
+          "text": "This is an economic war with the US dollar at the center of it.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he says"
+        },
+        {
+          "text": "None of this on either side has happened at the extent that we've seen outside of a crisis",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he says"
+        }
+      ],
+      "direction_hint": "bullish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-08T21:05:23+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
     {
       "person": "Cem Karsan",
       "tier": 1,
@@ -268,6 +313,39 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
+    },
+    {
+      "person": "Mark Newton",
+      "tier": 1,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "NVDA Stock Hits A New 2026 High Ahead Of Q4 Print — But Fundstrat’s Mark Newton Warns ‘False Breakout’ Could Be Next",
+      "outlet": "Stocktwits",
+      "published_at": "2026-11-07T12:51:31+00:00",
+      "discovered_at": "2026-11-08T21:05:23+09:00",
+      "article_url": "https://stocktwits.com/news-articles/markets/equity/nvda-stock-new-2026-high-ahead-of-q4-fundstrat-mark-newton-warns-false-breakout/cZRUtEWR467",
+      "canonical_url": "https://stocktwits.com/news-articles/markets/equity/nvda-stock-new-2026-high-ahead-of-q4-fundstrat-mark-newton-warns-false-breakout/cZRUtEWR467",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "DID make its highest close of 2026",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Mark Newton, head of technical strategy, Mark Newton, said on X that"
+        },
+        {
+          "text": "false Breakout post close",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "adding he would not be surprised to see a"
+        }
+      ],
+      "direction_hint": "bearish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-08T21:05:23+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
     },
     {
       "person": "Bob Elliott",
@@ -985,8 +1063,8 @@
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-08T10:05:23+09:00",
@@ -996,37 +1074,14 @@
             "grade": "1차-인용",
             "published_at": "2026-11-07T18:20:12+00:00",
             "noise_hint": false
-          }
-        ]
-      },
-      "Jim Bianco": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
+          },
           {
-            "at": "2026-11-05T10:05:30+09:00",
-            "url": "https://www.benzinga.com/markets/tech/26/11/62863642/jim-bianco-calls-gina-hinojosas-texas-win-biggest-news-from-elections-flags-risk-to-ai-data-center-expansion-as-state-set-to-host-25-of-new-capacity",
+            "at": "2026-11-08T21:05:23+09:00",
+            "url": "https://finance.biggo.com/news/e031d8b349701e45",
             "kind": "news_article",
-            "preview": "Jim Bianco Calls Gina Hinojosa’s Texas Win ‘Biggest News’ From Elections, Flags Risk to AI Data Cen…",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-04T13:46:43+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Joseph Wang": {
-        "role": "shadow",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-05T10:05:30+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4094153-treasury-long-end-issuance/",
-            "kind": "news_article",
-            "preview": "Joseph Wang: Treasury did not reduce long end issuance as expected",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-04T13:37:07+00:00",
+            "preview": "Cem Karsan Says the Crisis Comes Before June 2027 — and It's the Good News",
+            "grade": "1차-인용",
+            "published_at": "2026-11-07T19:08:00+00:00",
             "noise_hint": false
           }
         ]
@@ -1076,18 +1131,9 @@
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-05T10:05:30+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4067753-alden-bond-bearish-shift/",
-            "kind": "news_article",
-            "preview": "Outlook on bonds has shifted after eight years of bearishness, Lyn Alden notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-02T20:20:33+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-06T10:05:30+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4121852-nasdaq-drop-value-investors/",
@@ -1099,45 +1145,27 @@
           }
         ]
       },
-      "Mike Wilson": {
-        "role": "observer",
+      "Mark Newton": {
+        "role": "core",
         "count": 1,
         "non_noise": 1,
         "items": [
           {
-            "at": "2026-11-05T10:05:30+09:00",
-            "url": "https://www.gurufocus.com/news/9161385/market-outlook-mike-wilson-sees-opportunities-amidst-potential-declines",
+            "at": "2026-11-08T21:05:23+09:00",
+            "url": "https://stocktwits.com/news-articles/markets/equity/nvda-stock-new-2026-high-ahead-of-q4-fundstrat-mark-newton-warns-false-breakout/cZRUtEWR467",
             "kind": "news_article",
-            "preview": "Market Outlook: Mike Wilson Sees Opportunities Amidst Potential Declines",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-02T01:12:28+00:00",
+            "preview": "NVDA Stock Hits A New 2026 High Ahead Of Q4 Print — But Fundstrat’s Mark Newton Warns ‘False Breako…",
+            "grade": "1차-인용",
+            "published_at": "2026-11-07T12:51:31+00:00",
             "noise_hint": false
           }
         ]
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-05T10:05:30+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4100732-stocks-surge-bullish-returns/",
-            "kind": "news_article",
-            "preview": "Ryan Detrick: Stocks surge as bullish sentiment returns",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-04T18:40:10+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T10:05:30+09:00",
-            "url": "https://www.carsongroup.com/insights/blog/when-will-the-madness-end-fvf-ep-212/",
-            "kind": "official_blog",
-            "preview": "When Will the Madness End? (FvF Ep. 212)",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-04T14:00:30+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-06T00:10:26+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4082044-single-stock-etf-growth/",
@@ -1163,22 +1191,6 @@
             "preview": "Ryan Detrick: Stock Trader's Almanac recommended for year-round reference",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-07T13:25:11+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Scott Rubner": {
-        "role": "observer",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-05T10:05:30+09:00",
-            "url": "https://uk.finance.yahoo.com/news/citadel-securities-rubner-says-stocks-171422637.html",
-            "kind": "news_article",
-            "preview": "Citadel Securities’ Rubner Says Stocks Are Set Up for Year-End Gains After Vote",
-            "grade": "1차-인용",
-            "published_at": "2026-11-04T17:14:22+00:00",
             "noise_hint": false
           }
         ]
