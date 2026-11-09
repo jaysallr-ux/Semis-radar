@@ -1,25 +1,25 @@
 {
   "schema": "guru-manifest/v1",
-  "built_at": "2026-11-08T10:40:28+09:00",
+  "built_at": "2026-11-09T10:40:31+09:00",
   "note": "rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a source number [n] (several rids may share one [n] when they are the same appearance), or listed as noise by rid. auto_excluded records are games and bare reactions removed by code; they have no rid and need no handling. watch_only records (people flagged watch_only, e.g. Ryan Detrick) have no rid either: they are not shown in the reading section and are checked only for their T2 trigger. expected_records is the count to print; never recount.",
   "window": {
     "x": {
-      "lower_exclusive": "2026-11-07T10:15:29+09:00",
-      "upper": "2026-11-08T10:15:31+09:00",
+      "lower_exclusive": "2026-11-08T10:15:31+09:00",
+      "upper": "2026-11-09T10:15:30+09:00",
       "feed_regenerated_today": true
     },
     "yt": {
-      "lower_exclusive": "2026-11-07T10:10:30+09:00",
-      "upper": "2026-11-08T10:10:33+09:00",
+      "lower_exclusive": "2026-11-08T10:10:33+09:00",
+      "upper": "2026-11-09T10:10:31+09:00",
       "feed_regenerated_today": true
     },
     "web": {
-      "lower_exclusive": "2026-11-07T10:05:30+09:00",
-      "upper": "2026-11-08T10:05:23+09:00",
+      "lower_exclusive": "2026-11-08T10:05:23+09:00",
+      "upper": "2026-11-09T10:05:27+09:00",
       "feed_regenerated_today": true
     }
   },
-  "expected_records": 13,
+  "expected_records": 11,
   "rids": [
     "R001",
     "R002",
@@ -31,33 +31,31 @@
     "R008",
     "R009",
     "R010",
-    "R011",
-    "R012",
-    "R013"
+    "R011"
   ],
   "by_person": {
     "Cem Karsan": [
       "R001",
       "R002",
-      "R003",
+      "R003"
+    ],
+    "Mark Newton": [
       "R004"
     ],
-    "Darius Dale": [
+    "Andy Constan": [
       "R005",
       "R006"
     ],
     "Bob Elliott": [
       "R007",
       "R008",
-      "R009",
+      "R009"
+    ],
+    "Lyn Alden": [
       "R010"
     ],
-    "Jim Bianco": [
-      "R011"
-    ],
     "Joseph Wang": [
-      "R012",
-      "R013"
+      "R011"
     ]
   },
   "records": [
@@ -67,11 +65,10 @@
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-07T14:00:54+09:00",
-      "url": "https://x.com/jam_croissant/status/2118931678924280314",
+      "at": "2026-11-08T14:02:33+09:00",
+      "url": "https://x.com/jam_croissant/status/2119294479748489315",
       "kind": "quote_post",
-      "preview": "It’s happening… We called for this 8 months ago. 👂 They are now saying the quiet part out loud.",
-      "quoted_author": "FinanceLancelot"
+      "quoted_author": "fejau_inc"
     },
     {
       "rid": "R002",
@@ -79,62 +76,60 @@
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-08T05:25:53+09:00",
-      "url": "https://x.com/jam_croissant/status/2119164458027176304",
-      "kind": "quote_post",
-      "quoted_author": "Rory_Johnston"
+      "at": "2026-11-09T07:50:00+09:00",
+      "url": "https://x.com/jam_croissant/status/2119563112521097370",
+      "kind": "post",
+      "preview": "SOON..."
     },
     {
       "rid": "R003",
-      "feed": "YouTube",
-      "person": "Cem Karsan",
-      "role": "core",
-      "tier": 1,
-      "at": "2026-11-08T10:10:33+09:00",
-      "published_at": "2026-11-06T00:00:00+00:00",
-      "url": "https://www.youtube.com/watch?v=7nXujKkj_jA",
-      "kind": "video",
-      "channel": "tastylive",
-      "grade": "1차-A",
-      "preview": "Wall Street's $3 Trillion Wipeout Puts the Bulls on the Brink | Friday Nov 06 Live Trading"
-    },
-    {
-      "rid": "R004",
       "feed": "web",
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-08T10:05:23+09:00",
-      "published_at": "2026-11-07T18:20:12+00:00",
-      "url": "https://finance.biggo.com/podcast/e031d8b349701e45",
+      "at": "2026-11-08T21:05:23+09:00",
+      "published_at": "2026-11-07T19:08:00+00:00",
+      "url": "https://finance.biggo.com/news/e031d8b349701e45",
       "kind": "news_article",
-      "outlet": "finance.biggo.com",
+      "outlet": "BigGo Finance",
       "grade": "1차-인용",
-      "preview": "Why It May Take a Crisis to Change the System feat. Cem Karsan | Systematic Investor | Ep.425"
+      "preview": "Cem Karsan Says the Crisis Comes Before June 2027 — and It's the Good News"
+    },
+    {
+      "rid": "R004",
+      "feed": "web",
+      "person": "Mark Newton",
+      "role": "core",
+      "tier": 1,
+      "at": "2026-11-08T21:05:23+09:00",
+      "published_at": "2026-11-07T12:51:31+00:00",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nvda-stock-new-2026-high-ahead-of-q4-fundstrat-mark-newton-warns-false-breakout/cZRUtEWR467",
+      "kind": "news_article",
+      "outlet": "Stocktwits",
+      "grade": "1차-인용",
+      "preview": "NVDA Stock Hits A New 2026 High Ahead Of Q4 Print — But Fundstrat’s Mark Newton Warns ‘False Breakout’ Could Be Next"
     },
     {
       "rid": "R005",
       "feed": "X",
-      "person": "Darius Dale",
+      "person": "Andy Constan",
       "role": "core",
-      "tier": 1,
-      "at": "2026-11-07T22:57:15+09:00",
-      "url": "https://x.com/DariusDale42/status/2119066654474711517",
-      "kind": "quote_post",
-      "preview": "ICYMI… don’t. 🐐 interview. ❤️+🤍+💙=💜",
-      "quoted_author": "natbrunell"
+      "tier": 2,
+      "at": "2026-11-08T11:13:36+09:00",
+      "url": "https://x.com/dampedspring/status/2119251963695300995",
+      "kind": "post",
+      "preview": "Struggling to willingly suspend disbelief that Helen Webb can walk around London with zero security in \"Black Doves\""
     },
     {
       "rid": "R006",
       "feed": "X",
-      "person": "Darius Dale",
+      "person": "Andy Constan",
       "role": "core",
-      "tier": 1,
-      "at": "2026-11-07T22:59:30+09:00",
-      "url": "https://x.com/DariusDale42/status/2119067221142155293",
-      "kind": "quote_post",
-      "preview": "If you don’t have time to watch the entire interview, then I encourage you to watch this 5min clip. It may positively alter the way you liv…",
-      "quoted_author": "natbrunell"
+      "tier": 2,
+      "at": "2026-11-09T07:52:47+09:00",
+      "url": "https://x.com/dampedspring/status/2119563815260135497",
+      "kind": "post",
+      "preview": "$HYPE acts great. 🤦🏻‍♂️😜"
     },
     {
       "rid": "R007",
@@ -142,10 +137,10 @@
       "person": "Bob Elliott",
       "role": "core",
       "tier": 3,
-      "at": "2026-11-07T20:15:00+09:00",
-      "url": "https://x.com/BobEUnlimited/status/2119025821952463150",
+      "at": "2026-11-08T23:15:00+09:00",
+      "url": "https://x.com/BobEUnlimited/status/2119433508641034561",
       "kind": "post",
-      "preview": "Another great MacroTalk with @AahanPrometheus where we discussed: - Supply *and* demand challenges for the AI mania - How a correction turn…"
+      "preview": "The week @CultishCreative turned the tables on @AahanPrometheus and I for the Excess Returns pod. Talked through some little longer-term pe…"
     },
     {
       "rid": "R008",
@@ -153,173 +148,91 @@
       "person": "Bob Elliott",
       "role": "core",
       "tier": 3,
-      "at": "2026-11-07T23:15:09+09:00",
-      "url": "https://x.com/BobEUnlimited/status/2119071159731794336",
+      "at": "2026-11-09T02:15:09+09:00",
+      "url": "https://x.com/BobEUnlimited/status/2119478845426327953",
       "kind": "post",
-      "preview": "Bloomberg: \"Anthropic IPO Buyers See Valuation as Low as $1.1 Trillion\" What happened to the $2tln valuation? Oh yeah, a dose of reality. A…"
+      "preview": "The big risk is not that AI underwhelms vs. elevated expectations, its that asset price weakness kicks off a spending pullback by household…"
     },
     {
       "rid": "R009",
-      "feed": "X",
+      "feed": "YouTube",
       "person": "Bob Elliott",
       "role": "core",
       "tier": 3,
-      "at": "2026-11-08T02:15:00+09:00",
-      "url": "https://x.com/BobEUnlimited/status/2119116419145343456",
-      "kind": "post",
-      "preview": "Constrained CAPEX in the near-term is the biggest risk to the overall market, far more so than disappointment of not eventually getting eno…"
+      "at": "2026-11-08T21:10:30+09:00",
+      "published_at": "2026-11-06T00:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI",
+      "kind": "video",
+      "channel": "Bob Elliott",
+      "grade": "1차-B",
+      "preview": "Macro Talk 2026.11.06"
     },
     {
       "rid": "R010",
-      "feed": "web",
-      "person": "Bob Elliott",
+      "feed": "X",
+      "person": "Lyn Alden",
       "role": "core",
       "tier": 3,
-      "at": "2026-11-08T10:05:23+09:00",
-      "published_at": "2026-11-07T14:25:18+00:00",
-      "url": "https://tradersunion.com/news/market-voices/show/4146602-anthropic-ipo-valuation-revised/",
-      "kind": "news_article",
-      "outlet": "Traders Union",
-      "grade": "제목·설명만 확인",
-      "preview": "Bob Elliott: Anthropic IPO buyers now see valuation as low as $1.1 trillion"
+      "at": "2026-11-09T07:29:13+09:00",
+      "url": "https://x.com/LynAldenContact/status/2119557882114916662",
+      "kind": "post",
+      "preview": "Realistically, if a mega cap company has too much single-man risk, it's not really worth what it is. Investors pay up in large part because…"
     },
     {
       "rid": "R011",
-      "feed": "X",
-      "person": "Jim Bianco",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-08T02:53:08+09:00",
-      "url": "https://x.com/BiancoResearch/status/2119126016123662399",
-      "kind": "post",
-      "preview": "The net revisions of the previous two months to the nonfarm payroll report are a popular metric in gauging the labor market's trend. - *US …"
-    },
-    {
-      "rid": "R012",
-      "feed": "X",
-      "person": "Joseph Wang",
-      "role": "shadow",
-      "tier": 4,
-      "at": "2026-11-08T07:44:04+09:00",
-      "url": "https://x.com/josephwang/status/2119199230921257233",
-      "kind": "post",
-      "preview": "Markets Weekly November 7, 2026 Blue Revolution and markets"
-    },
-    {
-      "rid": "R013",
       "feed": "YouTube",
       "person": "Joseph Wang",
       "role": "shadow",
       "tier": 4,
-      "at": "2026-11-08T05:20:30+09:00",
+      "at": "2026-11-08T21:10:30+09:00",
       "published_at": "2026-11-07T20:00:44Z",
       "url": "https://www.youtube.com/watch?v=KGM9O05H1-o",
       "kind": "video",
       "channel": "Joseph Wang",
-      "grade": "제목·설명만 확인",
+      "grade": "1차-B",
       "preview": "Markets Weekly November 7, 2026"
     }
   ],
-  "watch_only_count": 14,
+  "watch_only_count": 5,
   "watch_only": [
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-08T10:14:32+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119237096863150554",
-      "preview": "Love seeing my friend @VIXandMore getting some pub in @barronsonline. He is one of the good ones and I've learned a lot from him over the y…"
+      "at": "2026-11-09T10:07:11+09:00",
+      "url": "https://x.com/RyanDetrick/status/2119597638555443638",
+      "preview": "China had a huge week after the election, but is India another potential winner if we slow down AI? Speaking of which, Happy Diwali to ever…"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-08T05:11:39+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119160875193889133",
-      "preview": "First things first, the OG @StovallCFRA has shared this for years, so shout out to him for this one. It took 23 trading days for the S&P 50…"
+      "at": "2026-11-09T07:15:44+09:00",
+      "url": "https://x.com/RyanDetrick/status/2119554488742694976",
+      "preview": "Wanted to say thank you to this community. I have never looked at it like us vs them, or old vs new Wall Street. This is one big community …"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-08T05:02:13+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119158500555104596",
-      "preview": "Great, next week is Friday the 13th."
+      "at": "2026-11-09T03:19:47+09:00",
+      "url": "https://x.com/RyanDetrick/status/2119495111436325001",
+      "preview": "👇@talmonsmith has a new 📚 out soon!"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-08T03:09:24+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119130111278530593",
-      "preview": "A lot happened this week. How are we thinking about it all? Another great take from @sonusvarghese on our team."
+      "at": "2026-11-09T02:34:53+09:00",
+      "url": "https://x.com/RyanDetrick/status/2119483812807692673",
+      "preview": "👀. Nice one from @bespokeinvest"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-08T01:07:18+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119099383098544435",
-      "preview": "More of the same last week, as most stocks did ok overall, all things considered. Per @DualityResearch, avg stock down just over 1% and 351…"
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-08T00:56:56+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119096774610591860",
-      "preview": "The 10 largest stocks in the S&P 500 make up 39% of the index vs 25% in 1999. The bigger issue could be 8 of the 10 are all from the tech s…"
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-08T00:40:09+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119092552099844211",
-      "preview": "Tech and comm services make up 46% of the S&P 500 now versus 37% in 1999."
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-08T00:31:46+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119090440070717920",
-      "preview": "Another solid Saturday AM note from @scottcharts today This was interesting, 4% crashes that happened above the 200-day AM (like Thursday) …"
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-08T00:23:37+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119088387969687613",
-      "preview": "86k jobs created a month in 2026. One of our more contrarian calls has been the labor market would improve in H2 '26 and we continue to thi…"
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-08T00:16:24+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119086571643122070",
-      "preview": "If it is related to AI, then it has been a historic drop. We know that, but this chart from @sonusvarghese on AI vs non-AI really tells the…"
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-07T23:46:47+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119079120847958323",
-      "preview": "Very cool visual"
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-07T22:11:51+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119055227483537827",
-      "preview": "Thanks @AlmanacTrader for the 60th edition of The Stock Trader's Almanac! 📖 This is the only book that sits on my desk all year. Highly sug…"
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-07T21:43:22+09:00",
-      "url": "https://x.com/RyanDetrick/status/2119048063352197378",
-      "preview": "I didn't have $HYG up this week, but it was. Small positive sign?"
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-08T10:05:23+09:00",
-      "url": "https://tradersunion.com/news/market-voices/show/4146190-stock-traders-almanac-advice/",
-      "preview": "Ryan Detrick: Stock Trader's Almanac recommended for year-round reference"
+      "at": "2026-11-08T11:04:57+09:00",
+      "url": "https://x.com/RyanDetrick/status/2119249786880573487",
+      "preview": "19 🎂 🎈 It sure happens fast"
     }
   ],
-  "auto_excluded_count": 2,
+  "auto_excluded_count": 1,
   "auto_excluded": [
     {
       "person": "Andy Constan",
-      "at": "2026-11-07T20:24:38+09:00",
-      "url": "https://x.com/dampedspring/status/2119028247954702803",
-      "preview": "GM."
-    },
-    {
-      "person": "Andy Constan",
-      "at": "2026-11-07T19:21:49+09:00",
-      "url": "https://x.com/dampedspring/status/2119012440847577270",
-      "preview": "Wordle 1,967 3/6* ⬜🟨🟩🟨🟩 ⬜🟩🟩🟨🟩 🟩🟩🟩🟩🟩"
+      "at": "2026-11-08T19:09:45+09:00",
+      "url": "https://x.com/dampedspring/status/2119371790665339051",
+      "preview": "Wordle 1,968 3/6* 🟨⬜⬜🟨⬜ 🟨⬜⬜🟩🟩 🟩🟩🟩🟩🟩"
     }
   ]
 }
