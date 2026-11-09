@@ -17,7 +17,7 @@ semis-radar 와 같은 역할 분담을 따른다.
 free 경로 원칙
 - Grok 이 쓴 문장은 저장하지 않는다. 출처 URL 만 뽑는다
 - 원문, 작성자, 시각은 X 서버가 돌려준 값만 쓴다. 작성자가 추적 대상 핸들과 다르면 버린다
-- 남에게 단 답글은 버리고, 본인 스레드 이어쓰기는 `is_self_reply: true` 인 개별 post 로 넣는다
+- 남에게 단 답글도 넣는다(`is_reply_to_other: true`). 본인 스레드 이어쓰기는 `is_self_reply: true`. 둘 다 `reply_context` 에 답한 글(부모, 조부모)을 syndication 원문으로 붙인다
 - `discovery_complete` 는 리스트 임베드의 가장 오래된 글이 지난 성공 수집 시점보다 이전일 때만 true. false 면 피드에 없다고 그 사람이 글을 안 쓴 게 아니다
 - 2026-10-22 확인: 프로필 임베드는 Actions·가정용 IP 모두 429. 공개 리스트 임베드는 Actions 에서 정상(78개). 리스트를 비공개로 바꾸면 비어서 나온다
 
