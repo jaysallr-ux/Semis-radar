@@ -1,6 +1,6 @@
 {
   "schema": "guru-manifest/v1",
-  "built_at": "2026-11-09T10:40:31+09:00",
+  "built_at": "2026-11-09T11:44:46+09:00",
   "note": "rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a source number [n] (several rids may share one [n] when they are the same appearance), or listed as noise by rid. auto_excluded records are games and bare reactions removed by code; they have no rid and need no handling. watch_only records (people flagged watch_only, e.g. Ryan Detrick) have no rid either: they are not shown in the reading section and are checked only for their T2 trigger. expected_records is the count to print; never recount.",
   "window": {
     "x": {
@@ -233,6 +233,18 @@
       "at": "2026-11-08T19:09:45+09:00",
       "url": "https://x.com/dampedspring/status/2119371790665339051",
       "preview": "Wordle 1,968 3/6* 🟨⬜⬜🟨⬜ 🟨⬜⬜🟩🟩 🟩🟩🟩🟩🟩"
+    }
+  ],
+  "base_lowers": [
+    {
+      "x": "2026-11-08T10:15:31+09:00",
+      "yt": "2026-11-08T10:10:33+09:00",
+      "web": "2026-11-08T10:05:23+09:00"
+    },
+    {
+      "x": "2026-11-07T10:15:29+09:00",
+      "yt": "2026-11-07T10:10:30+09:00",
+      "web": "2026-11-07T10:05:30+09:00"
     }
   ]
 }

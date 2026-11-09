@@ -25,6 +25,8 @@ import person_index as pi  # noqa: E402
 
 KST = ZoneInfo("Asia/Seoul")
 OUT = REPO / "guru_manifest" / "data" / "manifest.json"
+CATCHUP = REPO / "guru_manifest" / "data" / "manifest_catchup.json"
+MAX_BASES = 3   # main manifest + up to 2 catch-up sets (1-2 missed or unsaved morning runs)
 FEEDS = {
     "x": REPO / "guru_x" / "data" / "feed.json",
     "yt": REPO / "guru_yt" / "data" / "youtube_feed.json",
@@ -39,6 +41,10 @@ FIELDS_NOTE = ("rid is fixed for this manifest. Every rid in records must be res
                "rid and need no handling. watch_only records (people flagged watch_only, e.g. Ryan Detrick) have no rid either: "
                "they are not shown in the reading section and are checked only for their T2 trigger. "
                "expected_records is the count to print; never recount.")
+CATCHUP_NOTE = ("Use only when manifest.json's window lower_exclusive values differ from the stored 11:00 checkpoints "
+                "(an earlier 11:00 run was missed or not saved). Pick the one set whose window.x/yt/web.lower_exclusive "
+                "equal the checkpoints AO/AQ/AS exactly and use it exactly like manifest.json (its own rids and "
+                "expected_records); write set=<id> in the COVERAGE row. If no set matches, the manifest check fails.")
 
 
 def kst(dt: datetime) -> str:
@@ -95,12 +101,27 @@ def web_records(feed: dict, lo: datetime, hi: datetime) -> list[dict]:
     return recs
 
 
-def build(now: datetime) -> dict:
-    prev = load(OUT) if OUT.exists() else {}
-    feeds = {k: load(p) for k, p in FEEDS.items()}
+def base_lowers(prev: dict, now: datetime) -> list[dict]:
+    """Candidate lower bounds, newest first. [0] is the normal one (previous morning's upper); the rest are older
+    morning boundaries, kept so a missed or unsaved 11:00 run can still be matched to its stored checkpoints."""
+    if not prev:
+        return [dict(SEED_LOWER)]
+    prev_lower = {k: (prev["window"].get(k) or {}).get("lower_exclusive") for k in FEEDS}
+    prev_upper = {k: (prev["window"].get(k) or {}).get("upper") for k in FEEDS}
+    older = prev.get("base_lowers") or [prev_lower]
+    rebuilt_today = pi._parse(prev["built_at"]).astimezone(KST).date() == now.date()
+    chain = older if rebuilt_today else [prev_upper] + older
+    out = []
+    for c in chain:
+        if c not in out:
+            out.append(c)
+    return out[:MAX_BASES]
+
+
+def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:
     window, records, auto = {}, [], []
     for k, f in feeds.items():
-        lo_s = (prev.get("window", {}).get(k) or {}).get("upper") or SEED_LOWER[k]
+        lo_s = lower.get(k) or SEED_LOWER[k]
         hi_s = f["generated_at"]
         lo, hi = pi._parse(lo_s), pi._parse(hi_s)
         window[k] = {"lower_exclusive": lo_s, "upper": hi_s,
@@ -113,7 +134,6 @@ def build(now: datetime) -> dict:
             records += yt_records(f, lo, hi)
         else:
             records += web_records(f, lo, hi)
-    watch = {p["person"] for p in load(PEOPLE).get("people", []) if p.get("watch_only")}
     watch_only = [r for r in records if r["person"] in watch]
     records = [r for r in records if r["person"] not in watch]
     order = {"core": 0, "shadow": 1, "observer": 2}
@@ -133,9 +153,6 @@ def build(now: datetime) -> dict:
     for r in records:
         by_person.setdefault(r["person"], []).append(r["rid"])
     return {
-        "schema": "guru-manifest/v1",
-        "built_at": kst(now),
-        "note": FIELDS_NOTE,
         "window": window,
         "expected_records": len(records),
         "rids": [r["rid"] for r in records],
@@ -148,6 +165,20 @@ def build(now: datetime) -> dict:
     }
 
 
+def build(now: datetime) -> tuple[dict, dict]:
+    prev = load(OUT) if OUT.exists() else {}
+    feeds = {k: load(p) for k, p in FEEDS.items()}
+    watch = {p["person"] for p in load(PEOPLE).get("people", []) if p.get("watch_only")}
+    lowers = base_lowers(prev, now)
+    main = {"schema": "guru-manifest/v1", "built_at": kst(now), "note": FIELDS_NOTE,
+            **build_one(feeds, lowers[0], now, watch), "base_lowers": lowers}
+    sets = []
+    for i, lo in enumerate(lowers[1:], 2):
+        sets.append({"set": f"C{i}", **build_one(feeds, lo, now, watch)})
+    catchup = {"schema": "guru-manifest-catchup/v1", "built_at": main["built_at"], "note": CATCHUP_NOTE, "sets": sets}
+    return main, catchup
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true")
@@ -156,13 +187,16 @@ def main() -> int:
     if not args.force and now.hour != 10:
         print("not the morning slot; skipped")
         return 0
-    m = build(now)
+    m, c = build(now)
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    tmp = OUT.with_suffix(".tmp")
-    tmp.write_text(json.dumps(m, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    tmp.replace(OUT)
+    for path, obj in ((CATCHUP, c), (OUT, m)):
+        tmp = path.with_suffix(".tmp")
+        tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        tmp.replace(path)
     print(json.dumps({k: m[k] for k in ("built_at", "window", "expected_records", "auto_excluded_count")},
                      ensure_ascii=False, indent=2))
+    for st in c["sets"]:
+        print(st["set"], {k: v["lower_exclusive"] for k, v in st["window"].items()}, st["expected_records"])
     return 0
 
 
