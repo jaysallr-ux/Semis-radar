@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-08T21:10:30+09:00",
+  "generated_at": "2026-11-09T10:10:31+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-08T10:10:33+09:00",
+    "last_discovery_at": "2026-11-08T21:10:30+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -72,7 +72,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-05T22:04:09+09:00",
+      "oldest_rss": "2026-09-06T23:08:11+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -83,7 +83,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-06-30T02:39:06+09:00",
+      "oldest_rss": "2026-07-01T02:13:42+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -105,7 +105,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-05T00:19:50+09:00",
+      "oldest_rss": "2026-11-05T01:51:47+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -160,7 +160,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-04T09:43:28+09:00",
+      "oldest_rss": "2026-11-05T01:01:58+09:00",
       "gap_possible": false,
       "matched": 3
     },
@@ -204,7 +204,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-07T03:32:09+09:00",
+      "oldest_rss": "2026-11-07T06:08:09+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -215,7 +215,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-07T05:17:17+09:00",
+      "oldest_rss": "2026-11-07T08:27:15+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -226,7 +226,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-06T10:00:34+09:00",
+      "oldest_rss": "2026-11-07T00:00:13+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -237,14 +237,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-04T08:00:03+09:00",
+      "oldest_rss": "2026-11-04T11:00:02+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 1,
-    "yta_server_remaining": 9,
+    "yta_used_today": 0,
+    "yta_server_remaining": null,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -253,8 +253,8 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 14,
-    "gemini_est_video_hours_today": 7.103,
+    "gemini_calls_today": 0,
+    "gemini_est_video_hours_today": 0.0,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
@@ -269,11 +269,11 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 3,
-    "ready": 2,
+    "attempted": 0,
+    "ready": 0,
     "not_speaking": 0,
     "busy": 0,
-    "errors": 1,
+    "errors": 0,
     "left_pending": 0,
     "budget_out": 0,
     "chunked": 0,
@@ -1680,7 +1680,7 @@
       "tier": 3,
       "role": "core",
       "match": "description",
-      "title": "Tech is Selling Off. Spending Is Outrunning Wages. What Happens When the Wealth Effect Fades?",
+      "title": "AI Sell-Off: Can Consumers Keep Spending When Stocks Stop Rising?",
       "description": "Bob Elliott and Aahan Menon examine how stock-market wealth is helping consumers spend faster than their paychecks grow—and what that means for corporate profits if stocks stop rising.\n\nElliott, co-founder of Unlimited, and Menon, founder of Prometheus Research, join Matt Zeigler to connect household spending, AI investment, and the earnings expectations built into markets. They discuss where their growth outlooks differ, why persistent inflation complicates the Fed's choices, and how bonds can look attractive against stocks while still looking unattractive against cash.\n\nThe conversation also explores whether AI is producing the economy-wide gains needed to justify its investment boom, how forward spending commitments could reverse, and why both guests distinguish those risks from a repeat of the 2008 credit crisis.\n\nTopics covered:\n- What the midterm election could change for fiscal policy and data-center construction\n- Oil and AI as the competing forces behind inflation and growth expectations\n- Bob Elliott's distinction between peak growth and peak pricing of growth\n- How household wealth and drawing down savings support consumer spending\n- Aahan Menon on wages, workforce participation, immigration, and demographics\n- Why both guests think central banks are reluctant to deliver tighter policy\n- Bonds versus stocks, bonds versus cash, and Aahan Menon's inflation-nowcast rule\n- Bob Elliott's test for AI: accelerating productivity and revenue beyond the technology sector\n- H",
       "published_at": "2026-11-05T16:18:48Z",
       "first_seen_at": "2026-11-06T01:20:38+09:00",
@@ -3162,636 +3162,6 @@
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "IpOYPk0q2Vw",
-      "url": "https://www.youtube.com/watch?v=IpOYPk0q2Vw",
-      "channel": "tastylive",
-      "channel_id": "xlink:tastylive",
-      "channel_mode": "filter",
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "match": "x_self_link",
-      "title": "Cem Karsan Warned This Was Coming. He Says the Unwind Is Just Starting.",
-      "description": "The tech market has hit a major reversal, with the Nasdaq 100 sliding into correction territory. Learn what this means for your portfolio as we analyze current trends.\n\nWe examine the recent performance of the tech sector, specifically looking at how the Nasdaq 100 has dropped 10% from its October record. This breakdown is designed for traders monitoring how AI companies are shifting their debt issuance strategies compared to the U.S. Treasury, providing a clearer picture of current market health.\n\nBeyond the tech sector, we look at historical seasonal trends for November and December across major stock indices. Understanding these cycles is critical for managing risk as we head into the end of the year. We also compare the current appetite for corporate debt against broader economic indicators to help you refine your market analysis approach.\n\nSubscribe for daily trading insights and market updates, and let us know in the comments how you are adjusting your positions for the end of the year.\n\n📊 tastylive: https://www.tastylive.com/\n📰 Get Tom Preston's trade idea every morning: https://www.tastylive.com/newsletters\n📘 FREE Options Strategy Guide: https://tinyurl.com/bp9ms763\n📱 Follow tastylive on X: https://x.com/tastyliveshow\n\n#options #trading #investing #finance #stocks #stockmarket #marketanalysis #tradereducation #financialeducation #tastylive\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the ma",
-      "published_at": "2026-11-02T00:00:00+00:00",
-      "first_seen_at": "2026-11-03T13:08:40+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-03T13:08:40+09:00",
-      "transcript_language": null,
-      "transcript_chars": 8072,
-      "transcript_url": null,
-      "name_mentions": 0,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-03T13:08:40+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Cem Karsan appears live via video call on tastytrade (labeled KAI WEALTH and CEM on screen) starting at 0:28 and discusses market volatility, hedge fund deleveraging, AI borrowing vs Treasury issuance, and November seasonal flows.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Cem Karsan is bearish on US equities, expecting continued market downside as long-short equity hedge fund deleveraging persists and heavy AI corporate debt issuance crowds out Treasury borrowing and pushes yields higher.",
-        "timeframe": "near to medium term"
-      },
-      "quotes": [
-        {
-          "t": "2:21",
-          "t_sec": 141,
-          "speaker": "Cem Karsan",
-          "topic": "us_equities",
-          "text": "so I would expect more pain, you know, to come here.",
-          "url": "https://www.youtube.com/watch?v=IpOYPk0q2Vw&t=141s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 93.9,
-          "caption_sec": 124,
-          "caption_checked": true
-        },
-        {
-          "t": "3:05",
-          "t_sec": 185,
-          "speaker": "Cem Karsan",
-          "topic": "deleveraging",
-          "text": "I just want to, you know, make it very clear that it's, you know, this deleveraging is not something that I would think that would end anytime soon, right?",
-          "url": "https://www.youtube.com/watch?v=IpOYPk0q2Vw&t=185s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 89.9,
-          "caption_sec": 184,
-          "caption_checked": true
-        },
-        {
-          "t": "3:25",
-          "t_sec": 205,
-          "speaker": "Cem Karsan",
-          "topic": "ai_trade",
-          "text": "It has just become from a macro perspective unsustainable to keep borrowing at the level that needs to be borrowed to keep this AI trade going without, this is the whole thesis, government intervention.",
-          "url": "https://www.youtube.com/watch?v=IpOYPk0q2Vw&t=205s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 184,
-          "caption_checked": true
-        },
-        {
-          "t": "5:35",
-          "t_sec": 335,
-          "speaker": "Cem Karsan",
-          "topic": "seasonality",
-          "text": "a lot of big drawdowns in November when October ends negative, and I think that's an important distinction here.",
-          "url": "https://www.youtube.com/watch?v=IpOYPk0q2Vw&t=335s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 99.1,
-          "caption_sec": 305,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-03T13:08:40+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "0:36",
-          "point": "Index-level volatility compression is driving significant market dispersion across equities.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "0:54",
-          "point": "Long-short equity hedge funds are undergoing a record de-grossing and deleveraging process.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "2:21",
-          "point": "Stock markets are likely to experience further pain as the hedge fund unwind has only recently begun.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "3:25",
-          "point": "Corporate borrowing required for the AI trade is macroeconomically unsustainable without government intervention.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "3:56",
-          "point": "AI corporate debt crowding out Treasury financing pushed the long end of the yield curve higher and triggered a broader risk-off selloff.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "5:35",
-          "point": "When October ends in negative territory, November historically sees large market drawdowns rather than standard positive seasonality.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "7:23",
-          "point": "Positive seasonal flows during November will primarily act as exit liquidity for trapped long-short equity funds looking to sell into rallies.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 15415,
-      "quotes_grade_count": {
-        "1차-A": 3,
-        "1차-B": 1,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "bEpDZP6kFzo",
-      "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo",
-      "channel": "Damped Spring",
-      "channel_id": "xlink:Damped Spring",
-      "channel_mode": "filter",
-      "person": "Andy Constan",
-      "tier": 2,
-      "role": "core",
-      "match": "x_self_link",
-      "title": "Why We’re Fading the Election Week Rally (Midterms + QRA)",
-      "description": "In Roundtable #8, Andy, Nik and Jimmy break down what the market is pricing, where the real risk is, and how each of them is positioned.\n\nIN THIS EPISODE\n• Why Andy thinks the midterms matter less than the market does\n• The $5,000 check problem and why he doesn't want to own bonds when the question gets asked\n• Iran, Ukraine, and what crude and heating oil are actually saying\n• The quarterly refunding announcement: three ways Bessent can go, and how stocks, gold, bonds and the dollar react to each\n• Whether Trump wants stocks up after a Democratic win\n• The Fed, Warsh, and the AI trade\n• Andy's case for a coming growth scare vs. Nik's dip-buying framework\n\nTIMESTAMPS\n00:00 Intro\n00:25 Midterms: what's priced in and what isn't\n09:40 Iran and Ukraine\n16:30 The Treasury refunding announcement (QRA)\n25:10 What does the administration want after a Dem win?\n33:20 The Fed and the AI trade\n44:50 Andy's bearish case\n53:50 How everyone is positioned\n\nTHE ROUNDTABLE\nAndy Constan, founder of Damped Spring Advisors\nNik Lentz: x.com/@niklentz\nJimmy Jude: x.com/@jimmyjude13\n\n\nSUBSCRIBE for the monthly Roundtable and more macro research from Damped Spring: damapedspring.com\n\nFollow Andy: x.com/dampedspring\n\nRecorded before the election and the Wednesday announcement, so some of this will have already played out by the time you watch.\n\nDISCLAIMER: This is a discussion of market views for informational and entertainment purposes only. It is not investment advice, and participants may hold posi",
-      "published_at": "2026-11-02T00:00:00+00:00",
-      "first_seen_at": "2026-11-03T13:12:11+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-03T13:12:11+09:00",
-      "transcript_language": null,
-      "transcript_chars": 50747,
-      "transcript_url": null,
-      "name_mentions": 4,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "[0:00] All right, welcome to the eighth iteration of the Damp Spring Roundtable. We have Nick, Andy, Jimmy, and myself. We're going to go over a bunch of different topics, and Andy has a whole slew of ideas that are important for the next week and then the ",
-      "error_count": 1,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-03T13:12:11+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Andy Constan (top-left panel) speaks throughout the video, outlining his macro views on the U.S. election, Treasury Quarterly Refunding Announcement (QRA), interest rates, and his strongly bearish stance on U.S. equities due to an impending growth slowdown.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Andy Constan is strongly bearish on U.S. equities, expecting a growth slowdown brought on by sustained tight interest rates, unrealistic bottom-up corporate earnings growth expectations, and significant global sovereign debt issuance overhang. He is positioned short equities (long anti-growth) and long bonds.",
-        "invalidation": "A Republican election sweep accompanied by the U.S. Treasury cutting long-duration bond issuance during the Quarterly Refunding Announcement.",
-        "targets": [],
-        "timeframe": "Next few months"
-      },
-      "quotes": [
-        {
-          "t": "32:34",
-          "t_sec": 1954,
-          "speaker": "Andy Constan",
-          "topic": "Treasury Refunding & Asset Impact",
-          "text": "If he reduces total net supply from 258 to 158, cancels the 20-year auction and doesn't replace it with 10s and 30s, gold's going to rip, stocks are going to rip, and it's worth buying.",
-          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=1954s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 93.9,
-          "caption_sec": 1945,
-          "caption_checked": true
-        },
-        {
-          "t": "44:54",
-          "t_sec": 2694,
-          "speaker": "Andy Constan",
-          "topic": "US Equities Stance",
-          "text": "I'm fucking bearish as a motherfucker right now, and I haven't been - I've been pretty neutral for about six months.",
-          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=2694s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 50.9,
-          "caption_sec": 2870,
-          "caption_conflict": true,
-          "caption_checked": true
-        },
-        {
-          "t": "50:23",
-          "t_sec": 3023,
-          "speaker": "Andy Constan",
-          "topic": "Economic Growth & Asset Allocation",
-          "text": "I feel strongly that a growth scare is coming, and that makes me favor bonds over stocks, which is the way I'm positioned at the moment",
-          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=3023s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 3022,
-          "caption_checked": true
-        },
-        {
-          "t": "50:41",
-          "t_sec": 3041,
-          "speaker": "Andy Constan",
-          "topic": "Thesis Invalidation",
-          "text": "What throws that thesis out the window? A red sweep and Bessent cutting Treasury issuance.",
-          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=3041s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.7,
-          "caption_sec": 3022,
-          "caption_checked": true
-        },
-        {
-          "t": "50:58",
-          "t_sec": 3058,
-          "speaker": "Andy Constan",
-          "topic": "Positioning Strategy",
-          "text": "If it doesn't happen, I think I'm going to get pretty aggressive. So, that's where I'm at. And currently I'm positioned modestly aggressively anti-growth.",
-          "url": "https://www.youtube.com/watch?v=bEpDZP6kFzo&t=3058s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 94.0,
-          "caption_sec": 3052,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-03T13:12:11+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "00:54",
-          "point": "U.S. elections rarely impact broader financial markets significantly, and a status quo outcome will keep legislation largely unchanged.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short-term"
-        },
-        {
-          "t": "02:08",
-          "point": "Previous fiscal stimulus programs have exhausted their impact and are now turning into an economic drag.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium-term"
-        },
-        {
-          "t": "16:42",
-          "point": "The U.S. Treasury could attempt to suppress long-term interest rates through buybacks or by curtailing long-duration bond issuance in the QRA.",
-          "condition": "",
-          "conviction": "hypothetical",
-          "horizon": "near-term"
-        },
-        {
-          "t": "20:10",
-          "point": "Artificially suppressing long-term interest rates stimulates growth and inflation, benefiting equities, commodities, and gold while depressing the U.S. dollar.",
-          "condition": "if Treasury suppresses long-term yields",
-          "conviction": "hypothetical",
-          "horizon": "medium-term"
-        },
-        {
-          "t": "32:34",
-          "point": "If Treasury significantly reduces net long-term bond supply, equities and gold will experience a substantial rally worth buying.",
-          "condition": "if Treasury aggressively cuts long-term debt issuance",
-          "conviction": "hypothetical",
-          "horizon": "near-term"
-        },
-        {
-          "t": "45:07",
-          "point": "Bottom-up earnings growth expectations across the S&P 500 and tech megacaps are unrealistically high, creating an earnings bubble vulnerability.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium-term"
-        },
-        {
-          "t": "47:11",
-          "point": "High global government fiscal deficits create an immense sovereign bond supply overhang that exerts downward pressure on risk assets.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium-term"
-        },
-        {
-          "t": "48:02",
-          "point": "Elevated real interest rates must remain high for long enough to slow economic growth, making an upcoming growth scare inevitable.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium-term"
-        },
-        {
-          "t": "50:23",
-          "point": "An imminent growth scare favors holding U.S. Treasuries over U.S. equities, justifying a short equity and long bond position.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "near-term"
-        },
-        {
-          "t": "50:41",
-          "point": "A red sweep coupled with Treasury issuance cuts would force a pivot away from shorting equities toward a long beta stance.",
-          "condition": "if a Republican election sweep occurs alongside Treasury issuance cuts",
-          "conviction": "risk_scenario",
-          "horizon": "short-term"
-        }
-      ],
-      "gemini_prompt_tokens": 103745,
-      "quotes_grade_count": {
-        "1차-A": 4,
-        "1차-B": 1,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "G-eqJenVnrU",
-      "url": "https://www.youtube.com/watch?v=G-eqJenVnrU",
-      "channel": "tastylive",
-      "channel_id": "xlink:tastylive",
-      "channel_mode": "filter",
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "match": "x_self_link",
-      "title": "MIDTERMS TOMORROW: Cem Karsan PREVIEWS Flows Into Election Day | Monday Nov 2 Live Trading",
-      "description": "Monday November 2nd 2026\n\nTasty Crumbs with Jermal Chandler and Cem Karsan\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, and over 25 personalities, we’ll help you take your trading to the next level, whether you are new to trading or a seasoned veteran.  \n\ntastylive content is created, produced, and provided solely by tastylive, Inc. (“tastylive”) and is for informational and educational purposes only. It is not, nor is it intended to be, trading or investment advice or a recommendation that any security, futures contract, digital asset, other product, transaction, or investment strategy is suitable for any person. Trading securities, futures products, and digital assets involve risk and may result in a loss greater than the original amount invested. Investment information provided may not be appropriate for all investors and is provided without respect to individual investor financial sophistication, financial situation, investing time horizon or risk tolerance. Options, futures, and futures options are not suitable for all investors. Prior to trading securities, options, futures, or futures options, please read all applicable risk disclosures, including, but not limited to, the Characteristics and Risks of Standardized Options Disclosure and the Futures and Exchange Traded Options Risk Di",
-      "published_at": "2026-11-02T00:00:00+00:00",
-      "first_seen_at": "2026-11-04T10:10:34+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-05T13:05:01+09:00",
-      "transcript_language": null,
-      "transcript_chars": 59101,
-      "transcript_url": null,
-      "name_mentions": 0,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-05T13:05:01+09:00",
-      "gemini_mode": "video_chunks_2",
-      "person_speaks": true,
-      "gemini_evidence": "Cem Karsan appears on camera starting around 17:50 for the 'Tasty Crumbs' segment with Jermal Chandler, wearing a bear hat and speaking on macro, vol, hedge fund deleveraging, AI debt, and market posi / Cem Karsan appears on the right wearing a bear hat and discusses his outlook for bonds, market stress, risk-off behavior, stocks, and eventual government intervention.",
-      "stance": {
-        "us_equities": "mixed",
-        "summary": "Cem Karsan expects continued downside risk and pain in US equities through at least Q1, driven by a record unwind/deleveraging in long-short equity hedge funds and unsustainable corporate AI debt issuance competing with US Treasuries. While year-end Vanna and Charm flows create temporary counter-trend bounces into November/December, he expects macro deterioration to dominate once flows drop off around January OPEX. | Cem Karsan anticipates near-term risk-off stress where both stocks and bonds could decline together, but notes that this market downturn will not be a multi-year crisis like 2008 because the government is prepared to intervene and support asset prices when severe stress arises."
-      },
-      "quotes": [
-        {
-          "t": "19:47",
-          "t_sec": 1187,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "In October alone, the deleveraging was about 7.8% of all books. That is an enormous level, and we are seeing a record unwind among these hedge funds.",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=1187s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 74.3,
-          "caption_sec": 1176,
-          "caption_checked": true
-        },
-        {
-          "t": "20:47",
-          "t_sec": 1247,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "I think it'll continue for some time. Once this stuff starts going, it can be a freight train. It usually doesn't stop after just four weeks.",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=1247s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 88.3,
-          "caption_sec": 1238,
-          "caption_checked": true
-        },
-        {
-          "t": "21:43",
-          "t_sec": 1303,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "This deleveraging is not something that I would think would end anytime soon. The reality is AI debt through 2027 equals 29% of the Treasury new notes and bonds. It has just become from a macro perspective unsustainable to keep borrowing at the level that needs to be borrowed.",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=1303s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 86.4,
-          "caption_sec": 1298,
-          "caption_checked": true
-        },
-        {
-          "t": "28:55",
-          "t_sec": 1735,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "Through Q1 at the very least, I would be incredibly cautious. It doesn't mean you're not going to get counter-trend moves here, it doesn't mean the flows aren't positive, but particularly the next two months, it's a push-pull. It is macro versus flows.",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=1735s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.3,
-          "caption_sec": 1729,
-          "caption_checked": true
-        },
-        {
-          "t": "29:13",
-          "t_sec": 1753,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "Come Dec, Jan OPEX, flows come off the table, particularly by January, and I would be even more—if we haven't declined or begun a decline by then, be much more careful.",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=1753s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.1,
-          "caption_sec": 1729,
-          "caption_checked": true
-        },
-        {
-          "t": "37:18",
-          "t_sec": 2238,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "I think the better play is healthcare, candidly. I think there's some real interesting plays in healthcare. Energy, I really like energy a lot.",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=2238s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 93.5,
-          "caption_sec": 2226,
-          "caption_checked": true
-        },
-        {
-          "t": "40:24",
-          "t_sec": 2424,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "My view is if anything I think people are starting to get, you know, bullish in bonds, and I think there's it's going to be a little bit trickier than that.",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=2424s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 92.8,
-          "caption_sec": 2410,
-          "caption_checked": true
-        },
-        {
-          "t": "41:04",
-          "t_sec": 2464,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "and wouldn't a worst case be if if if bonds and stocks declined, you know, at the same time at first, and so I think that would be a really, really awful situation",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=2464s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 2441,
-          "caption_checked": true
-        },
-        {
-          "t": "42:18",
-          "t_sec": 2538,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "I mean look, my view is that whatever this is is not going to be a multi-year outcome. This is not 2008.",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=2538s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 2533,
-          "caption_checked": true
-        },
-        {
-          "t": "42:27",
-          "t_sec": 2547,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "but the government is ready to intervene. They have are prepared and and when they do, they're going to lean all over the the long end of the curve and they are going to get it create a, you know, a virtuous cycle where their equ- pro-equities, pro-bonds as well",
-          "url": "https://www.youtube.com/watch?v=G-eqJenVnrU&t=2547s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 62.5,
-          "caption_sec": 2533,
-          "caption_conflict": true,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-05T13:05:01+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 6,
-        "1차-B": 4,
-        "excluded_speaker_mismatch": 0
-      },
-      "backfilled_at": "2026-11-05T13:05:01+09:00",
-      "key_points": [
-        {
-          "t": "19:30",
-          "point": "Long-short equity hedge funds are conducting a record unwinding of leverage, reducing exposure at historic rates.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "20:47",
-          "point": "The current hedge fund deleveraging trend is momentum-driven and unlikely to stop quickly, signaling more pain ahead for equities.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "21:55",
-          "point": "AI-related debt expansion is macro-unsustainable without government intervention due to massive borrowing competing with Treasury issuance.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "24:40",
-          "point": "Short-term morning equity bounces are structural Vanna and Charm option flows rather than reactions to positive fundamental news.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "25:40",
-          "point": "Flow-driven rallies provide selling opportunities for trapped hedge funds rather than sustainable market bottoms.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "28:55",
-          "point": "Investors should remain defensive through Q1 as macro head-winds push against temporary year-end positive index flows.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "29:13",
-          "point": "Downside risks intensify heading into January OPEX when supportive seasonal flows expire.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "37:18",
-          "point": "Healthcare and energy offer strong relative value and growth potential compared to vulnerable mega-cap tech stocks.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "40:24",
-          "point": "Investors are becoming overly bullish on bonds as a hedge, but the market dynamics will prove trickier than expected.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "40:38",
-          "point": "Geopolitical tensions involving Iran and the Strait of Hormuz could push oil prices higher and create renewed market stress.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "41:04",
-          "point": "A major risk scenario is a simultaneous decline in both stocks and bonds, creating a difficult environment for investors.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "41:24",
-          "point": "A year-end cash crunch in December could trigger a sudden reversal in bond yields and worsen the stock market decline.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "42:18",
-          "point": "The expected market weakness will not be a prolonged multi-year downturn similar to the 2008 financial crisis.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "42:27",
-          "point": "Government intervention will step in if market conditions break, driving a virtuous cycle supporting both equities and bonds.",
-          "condition": "if market stress forces government intervention",
-          "conviction": "base_case",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 111506
     }
   ],
   "person_index": {
@@ -3808,7 +3178,7 @@
             "at": "2026-11-06T21:10:33+09:00",
             "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg",
             "kind": "video",
-            "preview": "Tech is Selling Off. Spending Is Outrunning Wages. What Happens When the Wealth Effect Fades?",
+            "preview": "AI Sell-Off: Can Consumers Keep Spending When Stocks Stop Rising?",
             "grade": "1차-B",
             "published_at": "2026-11-05T16:18:48Z",
             "noise_hint": false
@@ -3826,35 +3196,9 @@
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-05T23:50:26+09:00",
-            "url": "https://www.youtube.com/watch?v=FosAKU4raoY",
-            "kind": "video",
-            "preview": "GRIDLOCK TRADE: Cem Karsan Breaks Down the Sweep as Gold Jumps 3% | Wednesday Nov 4 Live Trading",
-            "grade": "1차-A",
-            "published_at": "2026-11-05T09:46:30Z",
-            "same_interview_as": [
-              "YalqJQR6mMw"
-            ],
-            "earliest_published_at": "2026-11-05T00:00:12Z",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-05T23:50:26+09:00",
-            "url": "https://www.youtube.com/watch?v=YalqJQR6mMw",
-            "kind": "video",
-            "preview": "Why Markets Always Rally Once the Event Is Behind Them",
-            "grade": "1차-A",
-            "published_at": "2026-11-05T00:00:12Z",
-            "same_interview_as": [
-              "FosAKU4raoY"
-            ],
-            "earliest_published_at": "2026-11-05T00:00:12Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-07T10:10:30+09:00",
             "url": "https://www.youtube.com/watch?v=8EOdcmxxvMQ",
