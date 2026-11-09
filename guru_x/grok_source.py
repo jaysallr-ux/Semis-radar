@@ -241,8 +241,33 @@ def usage_cost(resp: dict, prices: dict) -> dict:
             "usd_estimate": round(usd, 4)}
 
 
+def reply_context(client: GrokOembed, syn: dict, depth: int = 2) -> list[dict]:
+    """The posts this reply answers, nearest first (parent, then grandparent). Each is fetched from X syndication,
+    so author and text are verbatim. A reply's own text often makes no sense without them (e.g. "12/31 for 6ish")."""
+    chain, cur = [], syn
+    for _ in range(depth):
+        pid = cur.get("in_reply_to_status_id_str")
+        if not pid:
+            break
+        par = client.syndication(pid)
+        if not par:
+            chain.append({"id": pid, "author": cur.get("in_reply_to_screen_name"), "available": False,
+                          "url": f"https://x.com/{cur.get('in_reply_to_screen_name') or 'i'}/status/{pid}"})
+            break
+        note = (((par.get("note_tweet") or {}).get("note_tweet_results") or {}).get("result") or {}).get("text")
+        author = (par.get("user") or {}).get("screen_name")
+        chain.append({"id": pid, "author": author, "created_at": par.get("created_at") or snowflake_time(pid),
+                      "url": f"https://x.com/{author or 'i'}/status/{pid}",
+                      "text": htmllib.unescape(note or par.get("text") or "").strip(), "available": True,
+                      "has_media": bool(par.get("photos") or par.get("mediaDetails") or par.get("video"))})
+        cur = par
+    return chain
+
+
 def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) -> tuple[dict | None, str]:
-    """Returns (record or None, outcome). outcome: syndication / oembed / rejected_author / reply_other / failed."""
+    """Returns (record or None, outcome). outcome: syndication / reply_other / oembed / rejected_author / failed.
+    Replies to other accounts are kept (outcome reply_other) with the answered posts in reply_context: tracked
+    people disclose trades and views in replies."""
     syn = client.syndication(post_id)
     if syn:
         h = (syn.get("user") or {}).get("screen_name") or ""
@@ -250,8 +275,7 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
         if not acc:
             return None, "rejected_author"
         reply_to = syn.get("in_reply_to_screen_name")
-        if reply_to and reply_to.lower() != h.lower():
-            return None, "reply_other"
+        reply_other = bool(reply_to) and reply_to.lower() != h.lower()
         note = (((syn.get("note_tweet") or {}).get("note_tweet_results") or {}).get("result") or {}).get("text")
         text = htmllib.unescape(note or syn.get("text") or "").strip()
         qt = syn.get("quoted_tweet") or {}
@@ -280,11 +304,13 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
             "text": text, "quoted_post_id": quoted, "quoted_post": quoted_post, "links": links,
             "has_media": bool(syn.get("photos") or syn.get("mediaDetails") or syn.get("video")), "thread": [],
             "media": media_list(syn),
-            "is_self_reply": bool(reply_to),
+            "is_self_reply": bool(reply_to) and not reply_other,
+            "is_reply_to_other": reply_other,
+            "reply_context": reply_context(client, syn) if reply_to else [],
             "verification": "syndication",
             "rev": 4,
             "possibly_truncated": (not note) and (text.endswith("…") or text.endswith("...")),
-        }, "syndication"
+        }, ("reply_other" if reply_other else "syndication")
     emb = client.oembed(post_id, hint)
     if not emb:
         return None, "failed"
@@ -313,7 +339,7 @@ def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, 
     by_handle = {a["handle"].lower(): a for a in accounts}
     window = timedelta(days=cfg.get("window_days", 7))
     stats = {"list": None, "timeline": {}, "grok": None, "manual": len(manual_ids or {}), "urls_found": 0, "already_known": 0, "too_old": 0,
-             "verified_syndication": 0, "verified_oembed": 0, "rejected_author": 0, "reply_other": 0, "verify_failed": 0}
+             "verified_syndication": 0, "verified_oembed": 0, "rejected_author": 0, "reply_other_kept": 0, "verify_failed": 0}
     found: dict[str, str | None] = {}
     sources: dict[str, set] = {}
 
@@ -380,7 +406,7 @@ def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, 
             continue
         rec, outcome = verify(client, pid, hint, by_handle)
         key = {"syndication": "verified_syndication", "oembed": "verified_oembed", "rejected_author": "rejected_author",
-               "reply_other": "reply_other", "failed": "verify_failed"}[outcome]
+               "reply_other": "reply_other_kept", "failed": "verify_failed"}[outcome]
         stats[key] += 1
         if rec:
             rec["discovered_via"] = sorted(sources.get(pid, []))

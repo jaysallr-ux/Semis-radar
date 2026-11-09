@@ -78,7 +78,7 @@ def for_x(posts: list[dict], generated_at: str) -> dict:
         q = p.get("quoted_post") or {}
         entries.append({
             "person": p.get("person"), "role": p.get("role"), "at": p.get("created_at"), "url": p.get("url"),
-            "kind": "quote_post" if q else ("reply" if p.get("is_self_reply") else "post"),
+            "kind": "quote_post" if q else ("reply" if (p.get("is_self_reply") or p.get("is_reply_to_other")) else "post"),
             "preview": _preview(p.get("text")),
             "quoted_author": q.get("author") if q else None,
             "noise_hint": x_noise(p),

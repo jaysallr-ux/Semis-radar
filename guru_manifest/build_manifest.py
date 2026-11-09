@@ -62,9 +62,12 @@ def x_records(feed: dict, lo: datetime, hi: datetime) -> tuple[list[dict], list[
         if not at or not (lo < at <= hi):
             continue
         q = p.get("quoted_post") or {}
+        rc = p.get("reply_context") or []
+        kind = "quote_post" if q else ("reply" if rc else "post")
         r = {"feed": "X", "person": p.get("person"), "role": p.get("role") or "core", "tier": p.get("tier"),
-             "at": kst(at), "url": p.get("url"), "kind": "quote_post" if q else "post",
-             "preview": pi._preview(p.get("text"), 140), "quoted_author": q.get("author") if q else None}
+             "at": kst(at), "url": p.get("url"), "kind": kind,
+             "preview": pi._preview(p.get("text"), 140), "quoted_author": q.get("author") if q else None,
+             "in_reply_to": [f"@{c.get('author')}: {pi._preview(c.get('text'), 100)}" for c in rc] or None}
         (auto if pi.x_noise(p) else recs).append(r)
     return recs, auto
 
