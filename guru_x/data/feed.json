@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-09T21:15:30+09:00",
+  "generated_at": "2026-11-09T23:09:06+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (72 entries)",
+    "list": "ok (71 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 102,
-    "already_known": 36,
+    "urls_found": 103,
+    "already_known": 47,
     "too_old": 55,
-    "verified_syndication": 11,
+    "verified_syndication": 1,
     "verified_oembed": 0,
     "rejected_author": 0,
-    "reply_other": 0,
+    "reply_other_kept": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-11-07T05:08:19.000Z",
+    "list_oldest": "2026-11-07T05:56:10.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,7 +34,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
+      "last_success_at": "2026-11-09T23:09:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -45,7 +45,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
+      "last_success_at": "2026-11-09T23:09:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
+      "last_success_at": "2026-11-09T23:09:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,7 +67,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
+      "last_success_at": "2026-11-09T23:09:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
-      "new_originals_this_run": 4,
+      "last_success_at": "2026-11-09T23:09:06+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-09T23:09:06+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -100,8 +100,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-09T23:09:06+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -111,7 +111,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
+      "last_success_at": "2026-11-09T23:09:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -122,8 +122,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-09T23:09:06+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -133,8 +133,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-11-09T23:09:06+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
+      "last_success_at": "2026-11-09T23:09:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -155,7 +155,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
+      "last_success_at": "2026-11-09T23:09:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -166,7 +166,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-09T21:15:30+09:00",
+      "last_success_at": "2026-11-09T23:09:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -178,14 +178,61 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 5,
+    "described": 1,
     "pending": 0,
     "errors": 0,
-    "calls_today": 11,
+    "calls_today": 12,
     "daily_cap": 100,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2119792961810792937",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-09T14:03:20.000Z",
+      "url": "https://x.com/dampedspring/status/2119792961810792937",
+      "text": "Perhaps the smartest decision made by the government of Canada in its history.   Fantastic hire and congratulations to KKT https://t.co/KLnVpzR5BL",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWsEdsUWcAAYais.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-09T14:09:06+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWsEdsUWcAAYais.jpg",
+            "image_text": "Carney Hires Bridgewater's Karniol-Tambour to Run Sovereign Fund. Summary by Bloomberg AI. Karen Karniol-Tambour is leaving her role as co-chief investment officer of Bridgewater Associates to run Canada's new sovereign wealth fund. The Canada Strong Fund will invest only in Canadian companies and projects with an initial injection of C$25 billion in federal funds. Karniol-Tambour has been at Brid",
+            "what_it_shows": "This screenshot of a news article reports that Karen Karniol-Tambour is leaving Bridgewater Associates to run Canada's new sovereign wealth fund, the Canada Strong Fund.",
+            "chart_credit": "Bloomberg"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
     {
       "id": "2119765698473861591",
       "person": "Bob Elliott",
@@ -9516,141 +9563,6 @@
         ],
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
       }
-    },
-    {
-      "id": "2117254089851514957",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-11-02T13:54:46.000Z",
-      "url": "https://x.com/RyanDetrick/status/2117254089851514957",
-      "text": "Hyperscaler free cash flow turned negative for the first time ever in Q3. \n\nMeaning that debt and financial engineering are now paying for the buildout per @sonusvarghese 😳 https://t.co/gUnKomPW2X",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HWH_X6EXIAI7iCP.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-03T01:15:30+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HWH_X6EXIAI7iCP.jpg",
-            "image_text": "Quarterly FCF: Semis vs. Hyperscalers (2022 Q4 - 2027 Q4) Semis (NVDA, MU, AVGO, AMAT) 174.6700 Hyperscalers (META, AMZN, GOOGL, MSFT, ORCL) -46.6600 Hyperscalers estimates begin Q4 Q1 Q2 Q3 Q4 Q1 Q2 Q3 Q4 Q1 Q2 Q3 Q4 Q1 Q2 Q3 Q4 Q1 Q2 Q3 Q4 2023 2024 2025 2026 2027 180.00 160.00 140.00 120.00 100.00 80.00 60.00 40.00 20.00 0.00 -20.00 -40.00 -60.00 FCF (USD Billions)",
-            "what_it_shows": "The chart compares the quarterly free cash flow (FCF) in USD billions from Q4 2022 to Q4 2027 for Semis (NVDA, MU, AVGO, AMAT) and Hyperscalers (META, AMZN, GOOGL, MSFT, ORCL). Semis show a rising FCF trend to 174.6700, while Hyperscalers show a decline into negative territory at -46.6600.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2117253256149651963",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-11-02T13:51:27.000Z",
-      "url": "https://x.com/RyanDetrick/status/2117253256149651963",
-      "text": "\"I'm willing to go bankrupt rather than lose this race.\" Google co-founder Larry Page on the AI race\n\nCapex spending is expected to reach $1.4 trillion next year, up 60% from '26 levels. That is 4.0% of GDP. \n\n$SPCX $GOOGL $ORCL $META $AMZN $MSFT https://t.co/KGqWFJ2ow2",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HWH-nZlWoAAGGhC.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-03T01:15:30+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HWH-nZlWoAAGGhC.jpg",
-            "image_text": "SpaceX joins the capex spending party, but the pace of growth is expected to ease up by 2028 (for now)\nBig Tech Capital Expenditures (Billions of USD)\nMicrosoft\nAlphabet\nAmazon\nMeta\nOracle\nSpaceX\n$1,800\n$1,600\n$1,400\n$1,200\n$1,000\n$800\n$600\n$400\n$200\n$0\n2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 2027 2028\n$26 $33 $43 $68 $71 $97 $131 $158 $159 $250 $432 $879 $1,406 $1,528\n+73% +10",
-            "what_it_shows": "This stacked bar chart shows Big Tech capital expenditures from 2015 through 2028 estimates, broken down by companies including Microsoft, Alphabet, Amazon, Meta, Oracle, and SpaceX. Total capex rises from $26 billion in 2015 to a projected peak of $1,528 billion in 2028.",
-            "chart_credit": "Carson Investment Research"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2117238870873960862",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-11-02T12:54:17.000Z",
-      "url": "https://x.com/dampedspring/status/2117238870873960862",
-      "text": "GooG and Orcl today. https://t.co/1GUOB92h4a",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HWHxiHVXkAAMgGH.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-03T01:15:30+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HWHxiHVXkAAMgGH.jpg",
-            "image_text": "Who's next",
-            "what_it_shows": "This is the album cover for Who's Next by The Who, showing the four band members standing next to a large concrete monolith in a desolate landscape under a cloudy sky.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
     }
   ],
   "person_index": {
@@ -9660,8 +9572,8 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 9,
-        "non_noise": 5,
+        "count": 10,
+        "non_noise": 6,
         "items": [
           {
             "at": "2026-11-07T06:20:13+09:00",
@@ -9726,6 +9638,13 @@
             "kind": "quote_post",
             "preview": "I was a dick for a tick and missed shorting $PURR and $HYPE But now that Purr is down 30% and HYPE …",
             "quoted_author": "dampedspring",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-09T23:03:20+09:00",
+            "url": "https://x.com/dampedspring/status/2119792961810792937",
+            "kind": "post",
+            "preview": "Perhaps the smartest decision made by the government of Canada in its history. Fantastic hire and c…",
             "noise_hint": false
           }
         ]
@@ -9852,17 +9771,9 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 6,
-        "non_noise": 6,
+        "count": 5,
+        "non_noise": 5,
         "items": [
-          {
-            "at": "2026-11-06T22:11:31+09:00",
-            "url": "https://x.com/DariusDale42/status/2118692756738474196",
-            "kind": "quote_post",
-            "preview": "Before you buy the dip today, please watch this. It won't tell you whether you should or should not…",
-            "quoted_author": "42Macro",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-07T05:02:58+09:00",
             "url": "https://x.com/DariusDale42/status/2118796300451807482",
@@ -10014,31 +9925,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 30,
-        "non_noise": 30,
+        "count": 27,
+        "non_noise": 27,
         "items": [
-          {
-            "at": "2026-11-06T21:44:22+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118685924955390224",
-            "kind": "post",
-            "preview": "Since the election, China is up close to 5% and the S&P 500 is down nearly 3%. $FXI $SPY",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-06T22:28:06+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118696930909819052",
-            "kind": "quote_post",
-            "preview": "Worth a read. @MacroCharts with some interesting takes here 👇",
-            "quoted_author": "MacroCharts",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-06T23:02:55+09:00",
-            "url": "https://x.com/RyanDetrick/status/2118705691162533994",
-            "kind": "post",
-            "preview": "It was an honor to join @LesliePicker on @CNBCMorningCall today ☕ ⏰ Fun panel with RaeAnn Mitrione …",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-06T23:29:13+09:00",
             "url": "https://x.com/RyanDetrick/status/2118712309728096568",
