@@ -59,7 +59,10 @@ def x_records(feed: dict, lo: datetime, hi: datetime) -> tuple[list[dict], list[
     recs, auto = [], []
     for p in feed.get("posts", []):
         at = pi._parse(p.get("created_at"))
-        if not at or not (lo < at <= hi):
+        vt = p.get("video_transcript") or {}
+        vt_at = pi._parse(vt.get("at")) if vt.get("status") == "ready" else None
+        late_video = bool(at and vt_at and at <= lo < vt_at <= hi)
+        if not at or not ((lo < at <= hi) or late_video):
             continue
         q = p.get("quoted_post") or {}
         rc = p.get("reply_context") or []
@@ -67,7 +70,9 @@ def x_records(feed: dict, lo: datetime, hi: datetime) -> tuple[list[dict], list[
         r = {"feed": "X", "person": p.get("person"), "role": p.get("role") or "core", "tier": p.get("tier"),
              "at": kst(at), "url": p.get("url"), "kind": kind,
              "preview": pi._preview(p.get("text"), 140), "quoted_author": q.get("author") if q else None,
-             "in_reply_to": [f"@{c.get('author')}: {pi._preview(c.get('text'), 100)}" for c in rc] or None}
+             "in_reply_to": [f"@{c.get('author')}: {pi._preview(c.get('text'), 100)}" for c in rc] or None,
+             "video": (f"{vt.get('evidence_grade')} · 검증 인용 {sum(1 for x in vt.get('quotes') or [] if x.get('speaker_verified'))}개"
+                       + (" · 전사가 이번 창에 완료" if late_video else "")) if vt.get("status") == "ready" else None}
         (auto if pi.x_noise(p) else recs).append(r)
     return recs, auto
 

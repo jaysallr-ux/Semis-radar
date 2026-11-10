@@ -117,6 +117,25 @@ def media_list(syn: dict) -> list[dict]:
     return out[:4]
 
 
+def video_list(syn: dict) -> list[dict]:
+    """Public mp4 of an attached video (lowest bitrate, enough for audio and still frames) with its duration."""
+    out = []
+    for md in syn.get("mediaDetails") or []:
+        if md.get("type") not in ("video", "animated_gif"):
+            continue
+        vi = md.get("video_info") or {}
+        mp4 = [v for v in vi.get("variants") or [] if v.get("content_type") == "video/mp4" and v.get("url")]
+        if mp4 and md.get("type") == "video":
+            best = min(mp4, key=lambda v: v.get("bitrate") or 10**9)
+            out.append({"mp4": best["url"], "duration_ms": vi.get("duration_millis") or 0})
+    if not out:
+        v = syn.get("video") or {}
+        mp4 = [x for x in v.get("variants") or [] if (x.get("type") or "") == "video/mp4" and x.get("src")]
+        if mp4:
+            out.append({"mp4": mp4[0]["src"], "duration_ms": v.get("durationMs") or 0})
+    return out[:1]
+
+
 def handle_from_author_url(url: str) -> str | None:
     m = re.search(r"(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})/?$", url or "")
     return m.group(1) if m else None
@@ -294,6 +313,7 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
                 "available": bool(qtext),
                 "has_media": bool(qt.get("photos") or qt.get("mediaDetails") or qt.get("video")),
                 "media": media_list(qt),
+                "videos": video_list(qt),
             }
         links = [u.get("expanded_url") for u in ((syn.get("entities") or {}).get("urls") or []) if u.get("expanded_url")]
         return {
@@ -304,11 +324,12 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
             "text": text, "quoted_post_id": quoted, "quoted_post": quoted_post, "links": links,
             "has_media": bool(syn.get("photos") or syn.get("mediaDetails") or syn.get("video")), "thread": [],
             "media": media_list(syn),
+            "videos": video_list(syn),
             "is_self_reply": bool(reply_to) and not reply_other,
             "is_reply_to_other": reply_other,
             "reply_context": reply_context(client, syn) if reply_to else [],
             "verification": "syndication",
-            "rev": 4,
+            "rev": 5,
             "possibly_truncated": (not note) and (text.endswith("…") or text.endswith("...")),
         }, ("reply_other" if reply_other else "syndication")
     emb = client.oembed(post_id, hint)

@@ -46,7 +46,9 @@ def x_noise(post: dict) -> bool:
     if WORDLE_RE.search(text):
         return True
     core = NONWORD_RE.sub("", URL_RE.sub("", text))
-    if len(core) < 4 and not post.get("quoted_post"):
+    has_video = bool(post.get("videos") or (post.get("quoted_post") or {}).get("videos")
+                     or (post.get("video_transcript") or {}).get("status") == "ready")
+    if len(core) < 4 and not post.get("quoted_post") and not has_video:
         return True
     return False
 

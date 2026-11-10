@@ -27,10 +27,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import person_index  # noqa: E402
 
 try:
-    from guru_x import grok_source, media_vision
+    from guru_x import grok_source, media_vision, video_audio
 except ImportError:  # 직접 실행 시
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-    from guru_x import grok_source, media_vision
+    from guru_x import grok_source, media_vision, video_audio
 
 BASE = "https://api.x.com/2"
 KST = ZoneInfo("Asia/Seoul")
@@ -280,9 +280,12 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     if provider == "free":
         manual = {m["id"]: m.get("handle_hint") for m in load_json(MANUAL_PATH, {}).get("ids", [])
                   if str(m.get("id", "")).isdigit()}
-        # rev 4 added image URLs: re-verify (once) only the older media posts that lack them
+        # rev 4 added image URLs, rev 5 video mp4 URLs: re-verify (once) only older posts that lack them
+        def has_video_frame(r: dict) -> bool:
+            return any(m.get("kind") == "video_frame" for m in (r.get("media") or []) + ((r.get("quoted_post") or {}).get("media") or []))
         current = {pid for pid, r in posts.items()
-                   if r.get("verification") == "x_api" or r.get("rev", 1) >= 4
+                   if r.get("verification") == "x_api" or r.get("rev", 1) >= 5
+                   or (r.get("rev", 1) >= 4 and not has_video_frame(r))
                    or (r.get("rev", 1) >= 3 and not r.get("has_media") and not (r.get("quoted_post") or {}).get("has_media"))}
         refresh = {pid: r.get("handle") for pid, r in posts.items() if pid not in current}
         res = grok_source.collect(gclient, cfg, accounts, now, current, manual, refresh)
@@ -321,11 +324,19 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     kept = [p for p in posts.values() if p.get("created_at") and parse_ts(p["created_at"]) >= cutoff]
     # carry previous image descriptions forward, then describe new images (context only, never evidence)
     old_ms = {p["id"]: p.get("media_summary") for p in old_feed.get("posts", []) if p.get("media_summary")}
+    old_vt = {p["id"]: p.get("video_transcript") for p in old_feed.get("posts", []) if p.get("video_transcript")}
     for p in kept:
         if not p.get("media_summary") and p["id"] in old_ms:
             p["media_summary"] = old_ms[p["id"]]
+        if not p.get("video_transcript") and p["id"] in old_vt:
+            p["video_transcript"] = old_vt[p["id"]]
     vision_stats = media_vision.describe_posts(kept, state, now, os.environ.get("GEMINI_API_KEY") or None,
                                                cfg.get("media_vision", {}))
+    try:
+        video_stats = video_audio.transcribe_posts(kept, state, now, os.environ.get("GEMINI_API_KEY") or None,
+                                                   cfg.get("video_audio", {}))
+    except Exception as e:  # never let video work break the feed
+        video_stats = {"status": f"error: {str(e)[:80]}"}
     kept.sort(key=lambda p: p["created_at"], reverse=True)
 
     discovery_complete = provider == "x_api"
@@ -386,6 +397,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
         "accounts": acc_out,
         "cost_this_run": cost,
         "media_vision": vision_stats,
+        "video_audio": video_stats,
         "posts": kept,
     }
     feed["person_index"] = person_index.for_x(kept, fetched_at)
