@@ -51,7 +51,8 @@ SCHEMA = {
     "required": ["speakers", "tracked_person_speaks", "show", "recorded_hint", "quotes", "key_points", "direction_hint"],
 }
 PROMPT = (
-    "Attached: the audio track of a video posted on X by {person} (@{handle}), then up to four still frames from it.\n"
+    "Attached: the audio track of a video posted on X by {person} (@{handle}) (absent if the video has no sound), "
+    "then up to six still frames from it.\n"
     "Post text: \"{text}\"\n"
     "Return JSON:\n"
     "- speakers: everyone who speaks, with name (\"unknown\" if not identifiable) and basis: on_screen_name "
@@ -82,21 +83,35 @@ def _ffmpeg(args: list[str], timeout: int = 180) -> None:
                    stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
 
 
-def extract(mp4: bytes, duration: float) -> tuple[bytes, list[bytes]]:
+def extract(mp4: bytes, duration: float) -> tuple[bytes | None, list[bytes]]:
+    """Mono audio (None when the video has no audio track) and six frames; early frames catch name captions."""
     with tempfile.TemporaryDirectory() as d:
         src = os.path.join(d, "v.mp4")
         open(src, "wb").write(mp4)
         aud = os.path.join(d, "a.mp3")
-        _ffmpeg(["-i", src, "-vn", "-ac", "1", "-ar", "16000", "-b:a", "24k", aud])
+        try:
+            _ffmpeg(["-i", src, "-vn", "-ac", "1", "-ar", "16000", "-b:a", "24k", aud])
+            audio = open(aud, "rb").read() or None
+        except Exception:
+            audio = None
+        if not duration:
+            try:
+                out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", src],
+                                     capture_output=True, text=True, timeout=30).stdout.strip()
+                duration = float(out or 0)
+            except Exception:
+                duration = 0
         frames = []
-        for i, frac in enumerate((0.05, 0.3, 0.55, 0.8)):
+        for i, frac in enumerate((0.02, 0.1, 0.25, 0.45, 0.65, 0.85)):
             f = os.path.join(d, f"f{i}.jpg")
             try:
                 _ffmpeg(["-ss", f"{max(0.0, duration * frac):.1f}", "-i", src, "-frames:v", "1", "-vf", "scale=640:-2", f], 60)
                 frames.append(open(f, "rb").read())
             except Exception:
                 pass
-        return open(aud, "rb").read(), frames
+        if audio is None and not frames:
+            raise RuntimeError("no audio and no frames")
+        return audio, frames
 
 
 def _call(key: str, models: list[str], parts: list[dict], post: Callable, sleep: Callable) -> tuple[dict, str]:
@@ -172,8 +187,9 @@ def transcribe_posts(posts: list[dict], state: dict, now: datetime, key: str | N
                                      "error": str(e)[:80]}
             stats["errors"] += 1
             continue
-        parts = [{"text": PROMPT.format(person=p.get("person"), handle=p.get("handle"), text=(p.get("text") or "")[:600])},
-                 {"inline_data": {"mime_type": "audio/mp3", "data": base64.b64encode(audio).decode()}}]
+        parts = [{"text": PROMPT.format(person=p.get("person"), handle=p.get("handle"), text=(p.get("text") or "")[:600])}]
+        if audio:
+            parts.append({"inline_data": {"mime_type": "audio/mp3", "data": base64.b64encode(audio).decode()}})
         parts += [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(f).decode()}} for f in frames]
         try:
             usage["calls"] += 1
@@ -203,6 +219,7 @@ def transcribe_posts(posts: list[dict], state: dict, now: datetime, key: str | N
             "speakers": [{"name": (s.get("name") or "")[:60], "basis": s.get("basis")} for s in speakers][:6],
             "tracked_person_identified": identified,
             "show": (res.get("show") or "unknown")[:80], "recorded_hint": (res.get("recorded_hint") or "")[:40],
+            "has_audio": bool(audio),
             "evidence_grade": "1차-B" if nver else ("본인 발언 없음" if not identified else "인용 없음"),
             "quotes": quotes,
             "key_points": [{"point": (k.get("point") or "")[:300], "condition": (k.get("condition") or "")[:200],

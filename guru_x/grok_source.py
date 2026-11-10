@@ -130,7 +130,8 @@ def video_list(syn: dict) -> list[dict]:
             out.append({"mp4": best["url"], "duration_ms": vi.get("duration_millis") or 0})
     if not out:
         v = syn.get("video") or {}
-        mp4 = [x for x in v.get("variants") or [] if (x.get("type") or "") == "video/mp4" and x.get("src")]
+        mp4 = [x for x in v.get("variants") or [] if (x.get("type") or "") == "video/mp4" and x.get("src")
+               and "/tweet_video/" not in x["src"]]  # tweet_video = animated GIF: no audio, poster frame is enough
         if mp4:
             out.append({"mp4": mp4[0]["src"], "duration_ms": v.get("durationMs") or 0})
     return out[:1]
