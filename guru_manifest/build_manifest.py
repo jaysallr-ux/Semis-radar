@@ -127,7 +127,7 @@ def base_lowers(prev: dict, now: datetime) -> list[dict]:
     return out[:MAX_BASES]
 
 
-def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:
+def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:  # noqa: C901
     window, records, auto = {}, [], []
     for k, f in feeds.items():
         lo_s = lower.get(k) or SEED_LOWER[k]
@@ -137,6 +137,11 @@ def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:
                      "feed_regenerated_today": hi.astimezone(KST).date() == now.date()}
         if k == "x":
             r, a = x_records(f, lo, hi)
+            # an X clip of a YouTube appearance that an earlier report already covered is not new
+            yt_lo = pi._parse(lower.get("yt") or SEED_LOWER["yt"])
+            yt_at = {v.get("video_id"): pi._parse(v.get("evidence_ready_at") or v.get("first_seen_at"))
+                     for v in feeds["yt"].get("videos", [])}
+            r = [x for x in r if not (x.get("_same_yt") and yt_at.get(x["_same_yt"]) and yt_at[x["_same_yt"]] <= yt_lo)]
             records += r
             auto += a
         elif k == "yt":
