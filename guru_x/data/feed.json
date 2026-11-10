@@ -1,24 +1,24 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-10T10:15:45+09:00",
+  "generated_at": "2026-11-10T21:15:29+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (74 entries)",
+    "list": "ok (86 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
     "urls_found": 102,
-    "already_known": 25,
+    "already_known": 36,
     "too_old": 55,
-    "verified_syndication": 21,
+    "verified_syndication": 11,
     "verified_oembed": 0,
     "rejected_author": 0,
-    "reply_other_kept": 1,
+    "reply_other_kept": 0,
     "verify_failed": 0,
-    "list_oldest": "2026-11-08T02:13:36.000Z",
+    "list_oldest": "2026-11-09T00:00:10.000Z",
     "refreshed": 0
   },
   "discovery_complete": true,
@@ -34,8 +34,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-10T21:15:29+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -45,8 +45,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-11-10T21:15:29+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -56,7 +56,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
+      "last_success_at": "2026-11-10T21:15:29+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -67,8 +67,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-10T21:15:29+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -78,8 +78,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
-      "new_originals_this_run": 9,
+      "last_success_at": "2026-11-10T21:15:29+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -89,8 +89,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
-      "new_originals_this_run": 4,
+      "last_success_at": "2026-11-10T21:15:29+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -100,8 +100,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-10T21:15:29+09:00",
+      "new_originals_this_run": 3,
       "error": null
     },
     {
@@ -111,8 +111,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-10T21:15:29+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -122,7 +122,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
+      "last_success_at": "2026-11-10T21:15:29+09:00",
       "new_originals_this_run": 1,
       "error": null
     },
@@ -133,7 +133,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
+      "last_success_at": "2026-11-10T21:15:29+09:00",
       "new_originals_this_run": 2,
       "error": null
     },
@@ -144,8 +144,8 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-10T21:15:29+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -155,7 +155,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
+      "last_success_at": "2026-11-10T21:15:29+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -166,7 +166,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-10T10:15:45+09:00",
+      "last_success_at": "2026-11-10T21:15:29+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -178,14 +178,506 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 15,
+    "described": 8,
     "pending": 0,
     "errors": 0,
-    "calls_today": 15,
+    "calls_today": 23,
     "daily_cap": 100,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "posts": [
+    {
+      "id": "2120128086087761945",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-11-10T12:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2120128086087761945",
+      "text": "Asia’s US AI Bet\n\nTimely export data from Asian exporters benefitting from the US AI boom shows no signs of slowing, but the integration highlights just how swiftly any hiccup could drag down the global economy.\n\nhttps://t.co/RjLAe8VGXh https://t.co/Jc8cBTSXGY",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/asias-us-ai-bet"
+      ],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWwvxlCWYAES8OY.png"
+        }
+      ],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-10T12:15:29+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWwvxlCWYAES8OY.png",
+            "image_text": "China Exports YoY Summary Stats Consensus Calendar Alerts Download 2022 Jul 2023 Jul 2024 Jul 2025 Jul 2026 Jul 33 22 11 0 -11 General Administration of Customs Value Chg",
+            "what_it_shows": "This bar chart displays China Exports YoY percentage changes from 2022 through 2026, featuring monthly positive and negative growth bars sourced from the General Administration of Customs.",
+            "chart_credit": "General Administration of Customs"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2120105679687913568",
+      "person": "Joseph Wang",
+      "handle": "josephwang",
+      "tier": 4,
+      "role": "shadow",
+      "author_id": "718702333",
+      "created_at": "2026-11-10T10:45:58.000Z",
+      "url": "https://x.com/josephwang/status/2120105679687913568",
+      "text": "Waller supports 50bps hike in December if core CPI today is higher than 0.3 https://t.co/cA2notSKFk",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWwg1DaWQAABEJ9.png"
+        }
+      ],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-flash-lite-latest",
+        "at": "2026-11-10T12:15:29+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWwg1DaWQAABEJ9.png",
+            "image_text": "That's my plan if things proceed as I expect. But if the October CPI inflation data out later today are similar to the past two monthly readings—with core CPI inflation around 0.3 percent or even higher—then a stronger policy move may be needed. In that case, I believe a 50 basis point hike in the policy rate should be considered at the December meeting. Hiking only 25 basis points would put our c",
+            "what_it_shows": "The screenshot shows a statement discussing potential policy rate actions in December based on October CPI inflation data, specifically noting that a 50 basis point hike should be considered if core CPI is around 0.3 percent or higher.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2120096065714340324",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-10T10:07:46.000Z",
+      "url": "https://x.com/dampedspring/status/2120096065714340324",
+      "text": "Wordle 1,970 3/6*\n\n⬜⬜⬜🟨🟩\n🟨⬜🟩🟨🟩\n🟩🟩🟩🟩🟩",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2120049474244333878",
+      "person": "Cem Karsan",
+      "handle": "jam_croissant",
+      "tier": 1,
+      "role": "core",
+      "author_id": "199170156",
+      "created_at": "2026-11-10T07:02:37.000Z",
+      "url": "https://x.com/jam_croissant/status/2120049474244333878",
+      "text": "or\n\n4) 🖨️ 💵; ➕📈",
+      "quoted_post_id": "2119968922573434935",
+      "quoted_post": {
+        "id": "2119968922573434935",
+        "author": "RnaudBertrand",
+        "created_at": "2026-11-10T01:42:32.000Z",
+        "url": "https://x.com/RnaudBertrand/status/2119968922573434935",
+        "text": "Very thought-provoking argument by Louis-Vincent Gave @gave_vincent, co-founder and CEO of Gavekal (one of the most respected macro research firms on China).\n\nHis argument - which is correct - is that one of the The biggest problem for Western governments today (be it France, the https://t.co/gezpB3kqY5",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2119957624498315264/img/Mx7XsP2GF7d8qbjP.jpg"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-10T12:15:29+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/amplify_video_thumb/2119957624498315264/img/Mx7XsP2GF7d8qbjP.jpg",
+            "image_text": "Capital Thesis",
+            "what_it_shows": "This video still shows a man speaking in front of a bookshelf filled with books and decorative items.",
+            "chart_credit": "Capital Thesis"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2120045327835447510",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-10T06:46:09.000Z",
+      "url": "https://x.com/Geo_papic/status/2120045327835447510",
+      "text": "The 2020s are the first decade since... Maybe the Middle Ages (?!?!?)... that not a single corporate entity from the European continent was in the top-10 largest global corporations. https://t.co/uEZ9lpDxJA",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWvp5iKXwAAZVsF.jpg"
+        }
+      ],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-10T12:15:29+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWvp5iKXwAAZVsF.jpg",
+            "image_text": "TOP 10 COMPANIES BY REVENUE (BN USD) 1950S (FY1959) 1960S (FY1961) 1990S (FY1999) 2000S (FY2009) 1970S (FY1973) 1980S (FY1989) 2010S (FY2019) 2020S (FY2024) FOR ALL PANELS: US, EUROPE, JAPAN, CHINA, SAUDI ARABIA. NOTE: REVENUE IS IN NOMINAL TERMS. 1950S-1980S: FORTUNE RANKED INDUSTRIAL COMPANIES ONLY. SOURCES: FORTUNE GLOBAL 500, FORTUNE WORLD TOP 50 INDUSTRIALS, REPRINTED BY TIME (1974); 1960S&19",
+            "what_it_shows": "The charts display the top 10 global companies by revenue across eight different decades from 1950s to 2020s, color-coded by region such as the US, Europe, Japan, China, and Saudi Arabia. Each panel lists the top companies and their revenues in billion USD for a specific fiscal year.",
+            "chart_credit": "COX Research 2025"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2120041840875622487",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-10T06:32:17.000Z",
+      "url": "https://x.com/Geo_papic/status/2120041840875622487",
+      "text": "Things come at you fast in geopolitics... https://t.co/Tp1ZkwOWVW",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWvmyqyXgAAvvfv.png"
+        }
+      ],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-10T12:15:29+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWvmyqyXgAAvvfv.png",
+            "image_text": "% 80 70 60 50 40 30 20 10 % 80 70 60 50 40 30 20 10 US: OPINION POLL IN THE MIDDLE EAST, ARE YOUR SYMPATHIES WITH - ISRAELIS - PALESTINIANS 2005 2010 2015 2020 2025 SOURCE: GALLUP, FEBRUARY 2026. (c) BCA Research 2026",
+            "what_it_shows": "This line chart displays US opinion poll data regarding sympathies in the Middle East between Israelis and Palestinians from roughly 2002 to 2026. Sympathies with Israelis show a declining trend in recent years, while sympathies with Palestinians show an increasing trend.",
+            "chart_credit": "BCA Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2120041358790697200",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-10T06:30:23.000Z",
+      "url": "https://x.com/Geo_papic/status/2120041358790697200",
+      "text": "Great chart from my colleague and brother-from-another-mother @mgertken... Puts everything into a perspective... https://t.co/wz51lsUsHz",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWvmWn6XEAABnoI.png"
+        }
+      ],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-10T12:15:29+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWvmWn6XEAABnoI.png",
+            "image_text": "% 80 60 40 20 0 1950 1960 1970 1980 1990 2000 2010 2020 2030 % 80 60 40 20 0 US: PRESIDENTIAL DISAPPROVAL RATING - 4-YEAR MOVING AVERAGE Korea, scandal Vietnam, unrest Vietnam, Nixon Iraq, recession GFC Iran © BCA Research 2024 NOTE: DATA SHOWN SMOOTHED AS MONTHLY AVERAGES. SOURCE: THE AMERICAN PRESIDENCY PROJECT AND GALLUP.",
+            "what_it_shows": "The chart shows the US presidential disapproval rating and its 4-year moving average from roughly 1945 to 2026, with labeled historical events such as Korea/scandal, Vietnam, Iraq/recession, GFC, and Iran. The disapproval rate fluctuates significantly with peaks reaching up to nearly 70 percent.",
+            "chart_credit": "BCA Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2120026850202382615",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-10T05:32:43.000Z",
+      "url": "https://x.com/RyanDetrick/status/2120026850202382615",
+      "text": "Whoa",
+      "quoted_post_id": "2119977234081489050",
+      "quoted_post": {
+        "id": "2119977234081489050",
+        "author": "Barchart",
+        "created_at": "2026-11-10T02:15:34.000Z",
+        "url": "https://x.com/Barchart/status/2119977234081489050",
+        "text": "Goldman Sachs Panic Index had its largest 2-day spike IN HISTORY last week 👀 👻 https://t.co/dFdpSwzpkL",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWusD3tW0AA7Hub.png"
+          }
+        ]
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-10T12:15:29+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWusD3tW0AA7Hub.png",
+            "image_text": "2-day total move (index pts) 2010 2015 2020 2025 Prior record 7.87 (16 Apr 2013) 5 Nov: 8.55 (-3.59 then +4.96)",
+            "what_it_shows": "The chart shows a line graph of the 2-day total move in index points from approximately 2007 through 2026. A red dot highlights a new high on 5 Nov at 8.55, exceeding the prior record of 7.87 set on 16 Apr 2013.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2120017036864581669",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-10T04:53:44.000Z",
+      "url": "https://x.com/RyanDetrick/status/2120017036864581669",
+      "text": "420 advancers on the S&P 500 today, right off the upward sloping 200-day MA.\n\nBest breadth day since 11/25/2025. https://t.co/YoGB7qyZRR",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HWvQCqDWEAAx_fr.png"
+        }
+      ],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-10T12:15:29+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HWvQCqDWEAAx_fr.png",
+            "image_text": "$SPX S&P 500 Large Cap Index INDX\n9-Nov-2026\nOpen 7422.24 High 7577.39 Low 7422.24 Close 7549.94 Volume 3.5B Chg +173.08 (+2.35%)\n$SPX (Daily) 7549.94\n- MA(50) 7676.21\n- MA(200) 7328.23\nDec 2026 Feb Mar Apr May Jun Jul Aug Sep Oct Nov\nIADVSPX 420.00\nIDECLSPX 78.00\nStockCharts.com",
+            "what_it_shows": "This daily stock chart displays the S&P 500 Large Cap Index alongside its 50-day and 200-day moving averages from late 2025 through November 2026. Below the main price chart, indicator panels show advancers (IADVSPX) at 420.00 and decliners (IDECLSPX) at 78.00 for November 9, 2026.",
+            "chart_credit": "StockCharts.com"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2119985396276748451",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-10T02:48:00.000Z",
+      "url": "https://x.com/LynAldenContact/status/2119985396276748451",
+      "text": "Based egalitarianism:\n\n-Acknowledging that differences exist for multiple reasons, and not trying to force everything to be statistically equal.\n\n-But not being racist/sexist, either. Not dunking on sexes or ethnicities as a disqualifier. Treating people as individuals.",
+      "quoted_post_id": "2119981763459952894",
+      "quoted_post": {
+        "id": "2119981763459952894",
+        "author": "LynAldenContact",
+        "created_at": "2026-11-10T02:33:34.000Z",
+        "url": "https://x.com/LynAldenContact/status/2119981763459952894",
+        "text": "@Devon_Eriksen_ Putting your frequent sexism aside \"They're just not very good at introspection.\"🙄\n\n(Honestly, your wives should protest more on Twitter to this. That would be funnier and probably sell more books.)\n\nMen devour video porn and women devour written porn. Shocker. The romantasy",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
+    {
+      "id": "2119964731960103078",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-10T01:25:53.000Z",
+      "url": "https://x.com/LynAldenContact/status/2119964731960103078",
+      "text": "Tariffs.",
+      "quoted_post_id": "2119641107239969142",
+      "quoted_post": {
+        "id": "2119641107239969142",
+        "author": "RonNehring",
+        "created_at": "2026-11-09T03:59:55.000Z",
+        "url": "https://x.com/RonNehring/status/2119641107239969142",
+        "text": "I just bought a $1999 refrigerator. \n\nIt would have been about $1649 if not for the federal tariffs tax which I (not “South Korea”) paid. \n\nI also paid $155 in sales tax. \n\nTotal cost $2154. Of which 25% is tariff tax and sales tax. \n\nTo pay for it, I had to earn $3,420 in gross",
+        "available": true,
+        "has_media": false,
+        "media": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 4,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ]
+    },
     {
       "id": "2119961265099411681",
       "person": "Lyn Alden",
@@ -9600,234 +10092,6 @@
       "discovered_via": [
         "list_embed"
       ]
-    },
-    {
-      "id": "2117591370147991849",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-11-03T12:15:00.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2117591370147991849",
-      "text": "The Shitload of Treasury Issuance Coming\n\nThe first QRA release shows far more marketable borrowing coming in the first quarter than in recent years, making it increasingly difficult for The House to manipulate the curve.\n\nhttps://t.co/CqRo70NRWy https://t.co/tOIwlC3IZv",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://bobeunlimited.substack.com/p/the-shitload-of-treasury-issuance"
-      ],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HWMoVHPW8AAYwOp.png"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-03T12:15:43+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HWMoVHPW8AAYwOp.png",
-            "image_text": "Treasury 1Q Marketable Borrowing, Blns 900 800 700 600 500 400 300 200 100 0 2025 2026 2027",
-            "what_it_shows": "The chart shows Treasury 1Q marketable borrowing in billions for the years 2025, 2026, and 2027. Values increase across the period, with 2025 around 370, 2026 around 580, and 2027 around 800.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2117548491899838472",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-11-03T09:24:37.000Z",
-      "url": "https://x.com/dampedspring/status/2117548491899838472",
-      "text": "Wordle 1,963 4/6*\n\n⬜🟨⬜⬜⬜\n🟩⬜⬜🟨⬜\n🟩🟨🟨⬜⬜\n🟩🟩🟩🟩🟩",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ]
-    },
-    {
-      "id": "2117484172042555805",
-      "person": "Cem Karsan",
-      "handle": "jam_croissant",
-      "tier": 1,
-      "role": "core",
-      "author_id": "199170156",
-      "created_at": "2026-11-03T05:09:02.000Z",
-      "url": "https://x.com/jam_croissant/status/2117484172042555805",
-      "text": "On a mission from God… https://t.co/6cZs5Yt7ht",
-      "quoted_post_id": "2117437285041930359",
-      "quoted_post": {
-        "id": "2117437285041930359",
-        "author": "windycitysp0rts",
-        "created_at": "2026-11-03T02:02:43.000Z",
-        "url": "https://x.com/windycitysp0rts/status/2117437285041930359",
-        "text": "Literally every single Bears fan right now: https://t.co/aoCiAxFzfI",
-        "available": true,
-        "has_media": true,
-        "media": [
-          {
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2117437253723017216/img/kl2VL8-ef0hgZVI9.jpg"
-          }
-        ]
-      },
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HWLQn_IakAAAzAy.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-03T12:15:43+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HWLQn_IakAAAzAy.jpg",
-            "image_text": "",
-            "what_it_shows": "Three men posing together, two dressed in black suits and fedoras reminiscent of the Blues Brothers flanking a man wearing Chicago Bears winter gear and a bear-head hat.",
-            "chart_credit": "unknown"
-          },
-          {
-            "of": "quoted_post",
-            "kind": "video_frame",
-            "url": "https://pbs.twimg.com/amplify_video_thumb/2117437253723017216/img/kl2VL8-ef0hgZVI9.jpg",
-            "image_text": "99, GSH, WILLIAMS, 18, SONY",
-            "what_it_shows": "A football sideline view showing players in Chicago Bears white jerseys with numbers 99 and 18, along with coaching staff.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2117467773676683623",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-11-03T04:03:52.000Z",
-      "url": "https://x.com/RyanDetrick/status/2117467773676683623",
-      "text": "South Korean exports are surging again. Nice chart from @DualityResearch. https://t.co/0yLxorkcdB",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HWLBt7vWMAAtoTg.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-03T12:15:43+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HWLBt7vWMAAtoTg.jpg",
-            "image_text": "South Korea Exports vs S&P 500 Semiconductor Earnings\nTotal Exports YoY | Semiconductor Exports YoY | S&P 500 Semiconductor Earnings YoY\n+100%\n+83%\n+67%\n+50%\n+33%\n+17%\n+0%\n-17%\n2018 2019 2020 2021 2022 2023 2024 2025 2026 2027 2028 2029\nLatest readings as of the end of October!\n94%\n+259%\n+160%\nSource: Duality Research, Bloomberg",
-            "what_it_shows": "The chart compares South Korea's total and semiconductor exports year-over-year growth with S&P 500 semiconductor earnings year-over-year growth from 2018 through 2029. It highlights a sharp upward surge in all three series towards the end of the period, with latest readings showing +94%, +259%, and",
-            "chart_credit": "Duality Research"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
-    },
-    {
-      "id": "2117460752965509341",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-11-03T03:35:58.000Z",
-      "url": "https://x.com/RyanDetrick/status/2117460752965509341",
-      "text": "Real GDP averaged 2.3% annualized over the past seven quarters, with IT equipment and software investment contributing 0.91 per quarter, almost 40% of total growth. https://t.co/tEkDDkkK1p",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HWK7VTwWAAAHlB7.jpg"
-        }
-      ],
-      "is_self_reply": false,
-      "verification": "syndication",
-      "rev": 4,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-03T12:15:43+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HWK7VTwWAAAHlB7.jpg",
-            "image_text": "AI-related investment provided a massive boost to the economy recently\nContributions to Real GDP Growth (Basis Points)\nInvestment: Information Processing Equipment\nIP Investment - Software\n140\n120\n100\n80\n60\n40\n20\n0\n-20\n1996 - 2000\nAverage: +71 bps\n2001 - 2024\nAverage: +27 bps\n2025 - 2026 Q3\nAverage: +91 bps",
-            "what_it_shows": "This bar chart displays the contributions to Real GDP growth from information processing equipment and software investment in basis points across different periods, highlighting a recent average of +91 bps for 2025 through 2026 Q3.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      }
     }
   ],
   "person_index": {
@@ -9837,23 +10101,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 12,
+        "count": 11,
         "non_noise": 7,
         "items": [
-          {
-            "at": "2026-11-07T19:21:49+09:00",
-            "url": "https://x.com/dampedspring/status/2119012440847577270",
-            "kind": "post",
-            "preview": "Wordle 1,967 3/6* ⬜🟨🟩🟨🟩 ⬜🟩🟩🟨🟩 🟩🟩🟩🟩🟩",
-            "noise_hint": true
-          },
-          {
-            "at": "2026-11-07T20:24:38+09:00",
-            "url": "https://x.com/dampedspring/status/2119028247954702803",
-            "kind": "post",
-            "preview": "GM.",
-            "noise_hint": true
-          },
           {
             "at": "2026-11-08T11:13:36+09:00",
             "url": "https://x.com/dampedspring/status/2119251963695300995",
@@ -9926,6 +10176,13 @@
             "preview": "@Grok what was the enrichment amount in the JCPOA under Obama?",
             "quoted_author": "financialjuice",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T19:07:46+09:00",
+            "url": "https://x.com/dampedspring/status/2120096065714340324",
+            "kind": "post",
+            "preview": "Wordle 1,970 3/6* ⬜⬜⬜🟨🟩 🟨⬜🟩🟨🟩 🟩🟩🟩🟩🟩",
+            "noise_hint": true
           }
         ]
       },
@@ -9934,13 +10191,6 @@
         "count": 7,
         "non_noise": 7,
         "items": [
-          {
-            "at": "2026-11-07T20:15:00+09:00",
-            "url": "https://x.com/BobEUnlimited/status/2119025821952463150",
-            "kind": "post",
-            "preview": "Another great MacroTalk with @AahanPrometheus where we discussed: - Supply *and* demand challenges …",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-07T23:15:09+09:00",
             "url": "https://x.com/BobEUnlimited/status/2119071159731794336",
@@ -9982,6 +10232,13 @@
             "kind": "post",
             "preview": "Token usage at OpenAI and Anthropic slipping in the last couple weeks.",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T21:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2120128086087761945",
+            "kind": "post",
+            "preview": "Asia’s US AI Bet Timely export data from Asian exporters benefitting from the US AI boom shows no s…",
+            "noise_hint": false
           }
         ]
       },
@@ -9990,14 +10247,6 @@
         "count": 7,
         "non_noise": 7,
         "items": [
-          {
-            "at": "2026-11-07T14:00:54+09:00",
-            "url": "https://x.com/jam_croissant/status/2118931678924280314",
-            "kind": "quote_post",
-            "preview": "It’s happening… We called for this 8 months ago. 👂 They are now saying the quiet part out loud.",
-            "quoted_author": "FinanceLancelot",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-08T05:25:53+09:00",
             "url": "https://x.com/jam_croissant/status/2119164458027176304",
@@ -10038,6 +10287,14 @@
             "url": "https://x.com/jam_croissant/status/2119895049487987111",
             "kind": "post",
             "preview": "Tasty Crumbs goes live in 10 minutes with @JermalChandler on @tastyliveshow 🍒🥐",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T16:02:37+09:00",
+            "url": "https://x.com/jam_croissant/status/2120049474244333878",
+            "kind": "quote_post",
+            "preview": "or 4) 🖨️ 💵; ➕📈",
+            "quoted_author": "RnaudBertrand",
             "noise_hint": false
           }
         ]
@@ -10096,8 +10353,8 @@
       },
       "Joseph Wang": {
         "role": "shadow",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-08T07:44:04+09:00",
@@ -10105,13 +10362,20 @@
             "kind": "post",
             "preview": "Markets Weekly November 7, 2026 Blue Revolution and markets",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T19:45:58+09:00",
+            "url": "https://x.com/josephwang/status/2120105679687913568",
+            "kind": "post",
+            "preview": "Waller supports 50bps hike in December if core CPI today is higher than 0.3",
+            "noise_hint": false
           }
         ]
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 6,
-        "non_noise": 6,
+        "count": 8,
+        "non_noise": 8,
         "items": [
           {
             "at": "2026-11-09T07:29:13+09:00",
@@ -10159,6 +10423,22 @@
             "preview": "AI is getting better at nuance and micro-movements. Neutral/bearish on his CEO tenure. Bullish on 2…",
             "quoted_author": "Dogetothemoon",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T10:25:53+09:00",
+            "url": "https://x.com/LynAldenContact/status/2119964731960103078",
+            "kind": "quote_post",
+            "preview": "Tariffs.",
+            "quoted_author": "RonNehring",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T11:48:00+09:00",
+            "url": "https://x.com/LynAldenContact/status/2119985396276748451",
+            "kind": "quote_post",
+            "preview": "Based egalitarianism: -Acknowledging that differences exist for multiple reasons, and not trying to…",
+            "quoted_author": "LynAldenContact",
+            "noise_hint": false
           }
         ]
       },
@@ -10178,8 +10458,8 @@
       },
       "Marko Papic": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-09T17:55:33+09:00",
@@ -10187,13 +10467,34 @@
             "kind": "post",
             "preview": "You heard this on Geopolitical Cousins first! Many months before @wsj_com reported on it.",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T15:30:23+09:00",
+            "url": "https://x.com/Geo_papic/status/2120041358790697200",
+            "kind": "post",
+            "preview": "Great chart from my colleague and brother-from-another-mother @mgertken... Puts everything into a p…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T15:32:17+09:00",
+            "url": "https://x.com/Geo_papic/status/2120041840875622487",
+            "kind": "post",
+            "preview": "Things come at you fast in geopolitics...",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T15:46:09+09:00",
+            "url": "https://x.com/Geo_papic/status/2120045327835447510",
+            "kind": "post",
+            "preview": "The 2020s are the first decade since... Maybe the Middle Ages (?!?!?)... that not a single corporat…",
+            "noise_hint": false
           }
         ]
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 33,
-        "non_noise": 33,
+        "count": 35,
+        "non_noise": 35,
         "items": [
           {
             "at": "2026-11-07T21:43:22+09:00",
@@ -10434,6 +10735,21 @@
             "url": "https://x.com/RyanDetrick/status/2119898072398356922",
             "kind": "post",
             "preview": "Good reminder that historically the best days happen very close to the worst days. If you sell righ…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T13:53:44+09:00",
+            "url": "https://x.com/RyanDetrick/status/2120017036864581669",
+            "kind": "post",
+            "preview": "420 advancers on the S&P 500 today, right off the upward sloping 200-day MA. Best breadth day since…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T14:32:43+09:00",
+            "url": "https://x.com/RyanDetrick/status/2120026850202382615",
+            "kind": "quote_post",
+            "preview": "Whoa",
+            "quoted_author": "Barchart",
             "noise_hint": false
           }
         ]
