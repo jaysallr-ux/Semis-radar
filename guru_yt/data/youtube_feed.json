@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-10T18:25:30+09:00",
+  "generated_at": "2026-11-10T18:26:21+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-10T10:10:35+09:00",
+    "last_discovery_at": "2026-11-10T18:25:30+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -244,8 +244,8 @@
     }
   ],
   "quota": {
-    "yta_used_today": 3,
-    "yta_server_remaining": 7,
+    "yta_used_today": 5,
+    "yta_server_remaining": 5,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -254,30 +254,30 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 6,
-    "gemini_est_video_hours_today": 2.132,
+    "gemini_calls_today": 11,
+    "gemini_est_video_hours_today": 4.061,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 2,
+    "ready": 2,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
-    "expired": 5,
+    "expired": 0,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 5,
+    "ready": 2,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
     "budget_out": 0,
-    "chunked": 0,
+    "chunked": 2,
     "text_mode": 0,
     "quota_wait": 0
   },
@@ -2870,37 +2870,354 @@
       "description": "WORRIED ABOUT THE MARKET? SCHEDULE YOUR FREE PORTFOLIO REVIEW with Thoughtful Money's endorsed financial advisors at https://www.thoughtfulmoney.com/yt\n\nCem Karsan is a master of volatility and when it strikes.\n\nAnd he's now predicting a major market crisis that's only a few months away. Most likely in January.\n\nWhy? And what can investor do about it?\n\nFor a deep explanation on what may prove to be the most important investing event of 2027, watch this video.\n\n#marketcorrection #marketcrash #volatility \n\n0:00 — Introduction & Cold Open: Debt Crisis Warning\n1:09 — Cem Karsan & Noel Smith Join Forces At Kai\n2:32 — Noel's Path From The CBOE Floor To Co-CIO\n3:57 — How Flow Analysis Actually Works\n6:03 — Why Markets Reversed After The Midterms\n7:53 — High Skew, Vanna & Charm Drive Post-Election Flows\n10:05 — Market Makers Buy Back Stock As Vol Compresses\n14:24 — Year-End Structural Flows & The Santa Setup\n17:43 — Three Legs Of The Stool: Flows, Macro & Policy\n20:26 — Narratives Vs. Math: Why Noel Ignores Political Stories\n26:45 — Extreme Skew As A Warning Signal\n29:07 — COVID Lesson: Right On Macro, Early On Flows\n33:11 — Alpha At The Overlap Of Macro And Flows\n37:20 — Using Options For Precision & Asymmetry\n39:20 — Strait Of Hormuz, Petro-Dollar & Inelastic Inflation\n44:45 — The Maturity Debt Wall Hits\n45:31 — Hyperscaler Capex, Credit Spreads & Crowding Out\n49:08 — Hank Paulson's Trial Balloon For A Treasury Backstop\n51:26 — Why QE Without A Crisis Is Unlikely\n54:33 — What The C",
       "published_at": "2026-11-05T16:00:10Z",
       "first_seen_at": "2026-11-10T18:25:30+09:00",
-      "is_short": null,
-      "transcript_status": "skipped_old",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-10T18:26:21+09:00",
       "transcript_language": null,
-      "transcript_chars": null,
+      "transcript_chars": 89262,
       "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": null,
-      "appearance_excerpt": null,
+      "name_mentions": 4,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "ul Money. I'm Thoughtful Money founder and your host Adam Taggart welcoming you here for a very special discussion with Jim Carson, uh Jim Croissant as he's known on X and across social media, uh sometimes referred to as Mr.  [1:00] Volatility. Um we're here to talk about all sorts of things. Uh flows, macro, the reper",
       "error_count": 0,
-      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
-      "gemini_status": "skipped",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-10T18:26:21+09:00",
+      "gemini_mode": "video_chunks_3",
+      "person_speaks": true,
+      "gemini_evidence": "Cem Karsan appears in the video starting at timestamp 00:00 and engages in an in-depth conversation regarding market flows, volatility, macro trends, options positioning, and market outlook. / Cem Karsan discusses macro conditions, debt refinancing pressures, commodity inelasticity, and his expectation for a rapid market correction in early Q1/spring followed by policy intervention. / Cem Karsan a",
+      "stance": {
+        "us_equities": "mixed",
+        "summary": "Cem Karsan expects structurally positive capital flows, volatility compression following election resolution, and end-of-year releveraging to drive a robust rally in US equities into year-end and January, despite mounting longer-term macro and skew risks. | Expects a sharp, rapid market decline/crisis in Q1 or early spring driven by refinancing pressures and rising yields, which will ultimately force a major government or central bank policy intervention."
+      },
+      "quotes": [
+        {
+          "t": "00:20",
+          "t_sec": 20,
+          "speaker": "Cem Karsan",
+          "topic": "Debt and Market Flows",
+          "text": "my view... is that something's coming sooner rather than later... you want to be start getting prepared, but also looking for when the flows like we talked about are just right, which are probably starting in January.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=20s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.6,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "09:18",
+          "t_sec": 558,
+          "speaker": "Cem Karsan",
+          "topic": "Election Volatility & Market Flows",
+          "text": "as long as there is a resolution, as long as it isn't a contested election or something really unexpected happens, at the end of the day that event passes as Noel said and that leads to structurally positive buyback and Deltas as that vol compresses.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=558s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.0,
+          "caption_sec": 551,
+          "caption_checked": true
+        },
+        {
+          "t": "15:16",
+          "t_sec": 916,
+          "speaker": "Cem Karsan",
+          "topic": "Year-End Seasonality & Equities",
+          "text": "And then we get into big structural December positive flows followed by Christmas. So there's this very kind of... much a headwind if you're trying to... a tailwind for beta I would say, or a headwind if you're trying to fade this. That's structural.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=916s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 86.2,
+          "caption_sec": 891,
+          "caption_checked": true
+        },
+        {
+          "t": "16:20",
+          "t_sec": 980,
+          "speaker": "Cem Karsan",
+          "topic": "Santa Claus & January Effect",
+          "text": "And this, in my view, is the biggest driver of this Santa Claus and January effect that we've seen over 100 years of history, and if anything, it's increasing.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=980s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.7,
+          "caption_sec": 952,
+          "caption_checked": true
+        },
+        {
+          "t": "17:07",
+          "t_sec": 1027,
+          "speaker": "Cem Karsan",
+          "topic": "Market Flows Outlook",
+          "text": "flows are... I would characterize them as meaningfully positive.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=1027s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 86.7,
+          "caption_sec": 1012,
+          "caption_checked": true
+        },
+        {
+          "t": "27:23",
+          "t_sec": 1643,
+          "speaker": "Cem Karsan",
+          "topic": "Option Skew & Tail Risk",
+          "text": "historically, if we look at the last seven years of data... We've only seen skew this high broadly twice, and those two times were late 2019... and really starting in maybe about July or so of 2021.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=1643s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 66.1,
+          "caption_sec": 1623,
+          "caption_conflict": true,
+          "caption_checked": true
+        },
+        {
+          "t": "34:44",
+          "t_sec": 2084,
+          "speaker": "Cem Karsan",
+          "topic": "Macro Time Horizon",
+          "text": "So when we're looking at those, those need to be looked at on a quarterly, annual, sometimes multi-annual basis.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=2084s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 1410,
+          "caption_checked": true
+        },
+        {
+          "t": "39:21",
+          "t_sec": 2361,
+          "speaker": "Cem Karsan",
+          "topic": "Geopolitics & Oil",
+          "text": "I've said for now nine months that the Strait of Hormuz is not opening, and it's not opening anytime soon.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=2361s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.2,
+          "caption_sec": 2356,
+          "caption_checked": true
+        },
+        {
+          "t": "48:21",
+          "t_sec": 2901,
+          "speaker": "Cem Karsan",
+          "topic": "Debt and Valuations",
+          "text": "So we're in this catch 22 now. If you want to continue the growth, if you want to keep justifying these valuations and the growth that we need to see, there just has to be more of that debt.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=2901s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 53.8,
+          "caption_sec": 2971,
+          "caption_conflict": true,
+          "caption_checked": true
+        },
+        {
+          "t": "48:39",
+          "t_sec": 2919,
+          "speaker": "Cem Karsan",
+          "topic": "Market Cap and Backstop",
+          "text": "So there is a cap that is building on this market without -- and this is the big, the big kind of payoff here -- without a bigger entity coming in and backstopping it.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=2919s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.5,
+          "caption_sec": 2910,
+          "caption_checked": true
+        },
+        {
+          "t": "51:34",
+          "t_sec": 3094,
+          "speaker": "Cem Karsan",
+          "topic": "Resolution Timeline",
+          "text": "I would say from an incentive perspective they really, really want this to be resolved by June or September of this year.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=3094s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 95.8,
+          "caption_sec": 3305,
+          "caption_checked": true
+        },
+        {
+          "t": "58:30",
+          "t_sec": 3510,
+          "speaker": "Cem Karsan",
+          "topic": "Market Correction Nature",
+          "text": "It's going to be quick in my opinion. And they're going to want to similar to the last two kind of declines, but this is going to feel like a real crisis.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=3510s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 3488,
+          "caption_checked": true
+        },
+        {
+          "t": "79:26",
+          "t_sec": 4766,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "Yeah, to be clear, this is not just us positioning for ourselves, right? This is, we have a large book of clients as both a wealth advisor, we have KAIWealth.com, this is for high net worth, super high net worth, and family offices.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=4766s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.8,
+          "caption_sec": 4766,
+          "caption_checked": true
+        },
+        {
+          "t": "80:44",
+          "t_sec": 4844,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "Any RIA who's looking for help for their clients, or a family office or high net worth that's looking for broad asset allocation help and wealth advisory help, should go to KAIWealth.com.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=4844s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.5,
+          "caption_sec": 4828,
+          "caption_checked": true
+        },
+        {
+          "t": "80:53",
+          "t_sec": 4853,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "For anybody who's looking for a tool, just that long vol hedge, or wants to bet on that specific outcome alone, or needs those tools, should go to KAIAssetManagement.com.",
+          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=4853s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.2,
+          "caption_sec": 4828,
+          "caption_checked": true
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
+      "evidence_ready_at": "2026-11-10T18:26:21+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
       "transcript_retained": false,
       "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
+        "1차-A": 11,
+        "1차-B": 4,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "backfilled_at": "2026-11-10T18:26:21+09:00",
+      "key_points": [
+        {
+          "t": "00:20",
+          "point": "A credit or Treasury market backstop facility will likely be needed as debt pressures build sooner rather than later.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "09:03",
+          "point": "Election resolution unwinds downside hedging, driving volatility compression that forces dealer buybacks and bullish equity flows.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "14:26",
+          "point": "End-of-year flow dynamics create strong structural tailwinds for equity beta across November, December, and into Christmas.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "15:53",
+          "point": "Annual releveraging of portfolio gains and new capital allocation on January 1 act as the core drivers of the Santa Claus rally and January effect.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "18:34",
+          "point": "Analyzing markets requires evaluating three key legs: structural flows, core macro liquidity inputs, and proactive government intervention.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "27:21",
+          "point": "Extremely high options skew indicates deep underlying market anxiety, mirroring conditions before the 2020 and 2022 market downturns.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": "long_term"
+        },
+        {
+          "t": "34:44",
+          "point": "While near-term equity flows remain dominant and supportive, multi-quarter macro fundamentals continue to deteriorate.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "43:40",
+          "point": "Commodity price inelasticity and energy constraints present a major macro headwind that elevates inflation expectations and long-term borrowing costs.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "44:40",
+          "point": "A major wall of debt refinancing at higher rates creates an asymmetric supply-demand imbalance in sovereign and corporate debt markets.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "48:20",
+          "point": "Current equity market valuations require continued debt-fueled investment, which inherently pushes interest rates and credit default swaps higher.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "48:40",
+          "point": "The market faces a structural upside cap unless a official entity steps in to backstop debt and credit markets.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "51:35",
+          "point": "Political incentives favor allowing a market correction early in the year so that policy interventions can rescue markets well before the elections.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "58:30",
+          "point": "The expected market decline will be fast and intense, creating a sense of crisis necessary to justify aggressive liquidity measures and equity buying.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "62:40",
+          "point": "If market coordination fails or external geopolitical events escalate, the crisis could spill beyond the control of policymakers.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "79:26",
+          "point": "Kai Wealth provides wealth advisory and multi-family office services tailored for high-net-worth clients and institutions.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "80:44",
+          "point": "Financial advisors and family offices looking for comprehensive asset allocation guidance should access Kai Wealth, whereas those seeking standalone long volatility hedging tools should visit Kai Asset Management.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 162258
     },
     {
       "video_id": "FosAKU4raoY",
@@ -3678,37 +3995,326 @@
       "description": "Is the AI trade busting or is the market just catching its breath?\n\nThis week, Warren Pies of 3Fourteen Research joins us to explain why he took equity risk off while still believing the AI build-out has room to run.\n\nWe also explore financials vs. staples flashing caution, why Fed hikes are the biggest risk to AI, and how the Iran blockade and diesel cracks are reshaping oil. Enjoy!\n\n\nTIMESTAMPS:\n00:00 Warren Pies, Founder of 3Fourteen Research\n04:23 Financials vs. Staples Flash Caution\n08:35 Finding Signal in Noisy Markets\n12:32 Fidelity, DAS London\n13:43 Is the AI Trade Still Intact?\n20:04 Who Finances the AI Build-Out?\n26:18 Fidelity, DAS London\n27:35 The Fed vs. the Investment Boom\n32:04 Debt Issuance and CoreWeave's Bonds\n35:12 Will the Fed Protect the AI Race?\n37:51 How Fragile Is the Rest of the Economy?\n39:44 Iran, the Blockade and Oil\n44:55 Durable Changes to the Oil Landscape\n48:15 What Fixes Blown-Out Diesel Cracks?\n\n\nFOLLOW WARREN\n› Warren – https://x.com/WarrenPies\n› 3Fourteen – https://www.3fourteenresearch.com/\n\n\nFOLLOW THE SHOW\n› Forward Guidance – https://x.com/ForwardGuidance \n› Felix – https://x.com/fejau_inc \n› Telegram – https://t.me/+CAoZQpC-i6BjYTEx\n› Blockworks – https://x.com/Blockworks \n\n\nSPONSORS\n› Fidelity Crypto was built in-house with over a dozen years of crypto experience. So you can trade crypto and stocks in one place at Fidelity, backed by industry-leading security. Fidelity Crypto. We're here to help you feel good about investing in crypto",
       "published_at": "2026-11-04T11:00:32Z",
       "first_seen_at": "2026-11-10T18:25:30+09:00",
-      "is_short": null,
-      "transcript_status": "skipped_old",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-10T18:26:21+09:00",
       "transcript_language": null,
-      "transcript_chars": null,
+      "transcript_chars": 53770,
       "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": null,
-      "appearance_excerpt": null,
+      "name_mentions": 11,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "ll right, everybody. Welcome back to another episode of Forward Guidance and excited to be joined today by repeat guest Warren Pies, founder of 314 Research. Warren, always great to have you. What's going on, man? >> Yeah, man. Likewise, always enjoy our conversations. Really nothing's going on in the world, right? No ",
       "error_count": 0,
-      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
-      "gemini_status": "skipped",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-10T18:26:21+09:00",
+      "gemini_mode": "video_chunks_2",
+      "person_speaks": true,
+      "gemini_evidence": "Warren Pies appears on video and speaks extensively about his market outlook, explaining why 3Fourteen Research downgraded equities to neutral due to technical momentum loss and widening credit spread / Warren Pies is visible on screen on the right side and speaks throughout the video clip starting from 39:30.",
+      "stance": {
+        "us_equities": "neutral",
+        "summary": "Warren Pies recently downgraded US equities and neutralized risk due to technical consolidation, loss of market momentum, and widening hyperscaler credit spreads, though he remains fundamentally bullish on the multi-year AI buildout."
+      },
+      "quotes": [
+        {
+          "t": "01:52",
+          "t_sec": 112,
+          "speaker": "Warren Pies",
+          "topic": "",
+          "text": "Build conviction on fundamentals but manage risk with technicals.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=112s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 92,
+          "caption_checked": true
+        },
+        {
+          "t": "06:04",
+          "t_sec": 364,
+          "speaker": "Warren Pies",
+          "topic": "",
+          "text": "Those were the big picture things that we saw that got us to downgrade equities. So yeah, we really just took risk off.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=364s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 75.9,
+          "caption_sec": 338,
+          "caption_checked": true
+        },
+        {
+          "t": "19:56",
+          "t_sec": 1196,
+          "speaker": "Warren Pies",
+          "topic": "",
+          "text": "The objective facts tell me that the AI trade is still intact.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=1196s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 91.8,
+          "caption_sec": 1197,
+          "caption_checked": true
+        },
+        {
+          "t": "25:35",
+          "t_sec": 1535,
+          "speaker": "Warren Pies",
+          "topic": "",
+          "text": "There's absolutely no signs of an overbuild, and if we hit a supply shock, it's going to be an underbuild. So it looks like just a technical VAR shock.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=1535s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 82.3,
+          "caption_sec": 1538,
+          "caption_checked": true
+        },
+        {
+          "t": "38:50",
+          "t_sec": 2330,
+          "speaker": "Warren Pies",
+          "topic": "",
+          "text": "If the two-year is at 4.60%, I think the Fed has one more hike in it and basically they're done.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=2330s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 87.1,
+          "caption_sec": 2303,
+          "caption_checked": true
+        },
+        {
+          "t": "39:30",
+          "t_sec": 2370,
+          "speaker": "Warren Pies",
+          "topic": "macro",
+          "text": "between the deficits in the way the AI credit wobble would interact with interest rates, I have a hard time getting to like a true recessionary scenario in the current environment.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=2370s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.4,
+          "caption_sec": 2367,
+          "caption_checked": true
+        },
+        {
+          "t": "40:27",
+          "t_sec": 2427,
+          "speaker": "Warren Pies",
+          "topic": "positioning",
+          "text": "I think nobody has conviction to put any big trades on right now.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=2427s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 2428,
+          "caption_checked": true
+        },
+        {
+          "t": "40:43",
+          "t_sec": 2443,
+          "speaker": "Warren Pies",
+          "topic": "oil",
+          "text": "I really do think the next big move is going to get dictated by the geopolitics",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=2443s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.9,
+          "caption_sec": 2428,
+          "caption_checked": true
+        },
+        {
+          "t": "44:46",
+          "t_sec": 2686,
+          "speaker": "Warren Pies",
+          "topic": "positioning",
+          "text": "positioning wise I've always said you have to have an overweight energy within a balanced portfolio because it's just there's no other way to hedge the risk that this thing goes sideways.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=2686s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 2672,
+          "caption_checked": true
+        },
+        {
+          "t": "46:14",
+          "t_sec": 2774,
+          "speaker": "Warren Pies",
+          "topic": "energy",
+          "text": "it could accelerate I think the any transition, decarbonization transition that was already underway.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=2774s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 2764,
+          "caption_checked": true
+        },
+        {
+          "t": "47:47",
+          "t_sec": 2867,
+          "speaker": "Warren Pies",
+          "topic": "geopolitics",
+          "text": "this was a strategic miscalculation to do this from the US's perspective. So I think we've lost soft power, our hard power is in more question",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=2867s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 95.7,
+          "caption_sec": 2856,
+          "caption_checked": true
+        },
+        {
+          "t": "49:03",
+          "t_sec": 2943,
+          "speaker": "Warren Pies",
+          "topic": "oil",
+          "text": "Typically it resolves itself by refiners retooling to produce more of the product where you see these elevated crack spreads that then supply comes on and brings that down and you also have some level of demand destruction.",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=2943s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 92.3,
+          "caption_sec": 2918,
+          "caption_checked": true
+        },
+        {
+          "t": "51:39",
+          "t_sec": 3099,
+          "speaker": "Warren Pies",
+          "topic": "oil",
+          "text": "Don't get married to it, they're going to work themselves out, we're not going to be stuck with $100 crack spreads indefinitely",
+          "url": "https://www.youtube.com/watch?v=5aqAPkNvslg&t=3099s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 3074,
+          "caption_checked": true
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
+      "evidence_ready_at": "2026-11-10T18:26:21+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
       "transcript_retained": false,
       "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
+        "1차-A": 10,
+        "1차-B": 3,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "backfilled_at": "2026-11-10T18:26:21+09:00",
+      "key_points": [
+        {
+          "t": "01:52",
+          "point": "Investors should build conviction on fundamental drivers but use technical signals to manage portfolio risk.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "03:20",
+          "point": "3Fourteen Research downgraded US equities after the market entered a narrow consolidation range and lost upward momentum.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "04:25",
+          "point": "Financials underperforming Consumer Staples is an unhealthy market leadership signal that warrants risk reduction.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "05:25",
+          "point": "Hyperscaler credit spreads widening past previous highs signaled potential breakdown risk in equity markets.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "08:12",
+          "point": "Portfolio risk should remain neutral until equities either achieve a technical breakout or reach capitulatory fear levels.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "16:49",
+          "point": "Tight GPU availability and rising rental prices demonstrate that fundamental compute demand is not weakening.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "19:56",
+          "point": "Data from cloud revenue growth and AI model economics confirm that the underlying AI trade remains fully intact.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "25:35",
+          "point": "The pullback in AI stocks represents a technical liquidation and de-grossing rather than an fundamental overbuild.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "33:04",
+          "point": "Persistent Fed rate hikes pose a risk to the AI buildout as tech firms shift from internal cash flows to external debt financing.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "38:50",
+          "point": "The Fed likely has at most one rate hike remaining in this cycle, making a severe economic recession unlikely.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "39:30",
+          "point": "A true recessionary scenario is unlikely in the current environment due to the interaction of fiscal deficits, AI credit dynamics, and interest rates.",
+          "condition": "",
+          "conviction": "not_expected",
+          "horizon": ""
+        },
+        {
+          "t": "40:27",
+          "point": "Oil market participants currently lack conviction to put on large positions, as the next major price move will be determined by geopolitical developments.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "44:46",
+          "point": "Investors should maintain an overweight position in energy within a balanced portfolio to hedge against the risk of geopolitical escalations.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "46:14",
+          "point": "The current geopolitical tension will likely accelerate the ongoing global decarbonization transition and reduce US involvement in the Middle East.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "47:47",
+          "point": "The conflict has exposed limits in US hard and soft power, accelerating the global shift toward a multipolar order.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "49:03",
+          "point": "Blown-out diesel crack spreads will eventually normalize through refinery retooling, increased product supply, and demand destruction.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 101616
     },
     {
       "video_id": "d3nKjpM-cFk",
@@ -4224,8 +4830,8 @@
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-08T10:10:33+09:00",
@@ -4256,6 +4862,15 @@
             "preview": "Why Market Fragility is Building into a Crisis in 2027 | Cem Karsan & Noel Smith",
             "grade": "1차-A",
             "published_at": "2026-11-09T22:00:34Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-10T18:26:21+09:00",
+            "url": "https://www.youtube.com/watch?v=VMi5kby6YFA",
+            "kind": "video",
+            "preview": "Crisis Is Coming In Early 2027 | Cem Karsan",
+            "grade": "1차-A",
+            "published_at": "2026-11-05T16:00:10Z",
             "noise_hint": false
           }
         ]
@@ -4304,6 +4919,22 @@
             "preview": "Morgan Stanley CIO Mike Wilson: Market correction entering final phase",
             "grade": "1차-B",
             "published_at": "2026-11-09T00:00:00+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Warren Pies": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-10T18:26:21+09:00",
+            "url": "https://www.youtube.com/watch?v=5aqAPkNvslg",
+            "kind": "video",
+            "preview": "Is The AI Selloff A Buying Opportunity? | Warren Pies",
+            "grade": "1차-A",
+            "published_at": "2026-11-04T11:00:32Z",
             "noise_hint": false
           }
         ]
