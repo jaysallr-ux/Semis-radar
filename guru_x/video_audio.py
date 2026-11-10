@@ -137,6 +137,49 @@ def _call(key: str, models: list[str], parts: list[dict], post: Callable, sleep:
     raise RuntimeError(last)
 
 
+def link_youtube(posts: list[dict], yt_feed: dict, threshold: float = 0.8, hours: int = 48) -> int:
+    """Mark an X video as the same appearance as a YouTube feed video (same person, published within `hours`,
+    any quote pair with similarity >= threshold). The report must then cite them as one appearance."""
+    from difflib import SequenceMatcher
+    yt = [v for v in yt_feed.get("videos", []) if v.get("quotes")]
+    n = 0
+    for p in posts:
+        vt = p.get("video_transcript") or {}
+        if vt.get("status") != "ready" or not vt.get("quotes"):
+            continue
+        at = datetime.fromisoformat(p["created_at"].replace("Z", "+00:00"))
+        best = (0.0, None)
+        for v in yt:
+            if v.get("person") != p.get("person") or not v.get("published_at"):
+                continue
+            if abs((datetime.fromisoformat(v["published_at"].replace("Z", "+00:00")) - at).total_seconds()) > hours * 3600:
+                continue
+            for a in vt["quotes"]:
+                for b in v["quotes"]:
+                    r = SequenceMatcher(None, a["text"].lower(), (b.get("text") or b.get("quote") or "").lower()).ratio()
+                    if r > best[0]:
+                        best = (r, v["video_id"])
+        if best[0] < threshold:
+            # same show, same person, uploaded within 3 hours: the X clip is the YouTube episode re-posted
+            show = (vt.get("show") or "").lower()
+            for v in yt:
+                ch = (v.get("channel") or "").lower()
+                if (v.get("person") == p.get("person") and show not in ("", "unknown") and ch and (ch in show or show in ch)
+                        and v.get("published_at") and abs((datetime.fromisoformat(v["published_at"].replace("Z", "+00:00"))
+                                                          - at).total_seconds()) <= 3 * 3600):
+                    best = (threshold, v["video_id"])
+                    vt["same_as_youtube_basis"] = "same show within 3h"
+                    break
+        if best[0] >= threshold:
+            vt["same_as_youtube"] = best[1]
+            vt["same_as_youtube_score"] = round(best[0], 2)
+            n += 1
+        else:
+            for k in ("same_as_youtube", "same_as_youtube_score", "same_as_youtube_basis"):
+                vt.pop(k, None)
+    return n
+
+
 def _same_person(name: str, person: str) -> bool:
     n, last = (name or "").lower(), person.lower().split()[-1]
     return bool(n) and n != "unknown" and (person.lower() in n or last in n.split())

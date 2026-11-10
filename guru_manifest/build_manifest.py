@@ -71,6 +71,7 @@ def x_records(feed: dict, lo: datetime, hi: datetime) -> tuple[list[dict], list[
              "at": kst(at), "url": p.get("url"), "kind": kind,
              "preview": pi._preview(p.get("text"), 140), "quoted_author": q.get("author") if q else None,
              "in_reply_to": [f"@{c.get('author')}: {pi._preview(c.get('text'), 100)}" for c in rc] or None,
+             "_same_yt": vt.get("same_as_youtube"),
              "video": (f"{vt.get('evidence_grade')} · 검증 인용 {sum(1 for x in vt.get('quotes') or [] if x.get('speaker_verified'))}개"
                        + (" · 전사가 이번 창에 완료" if late_video else "")) if vt.get("status") == "ready" else None}
         (auto if pi.x_noise(p) else recs).append(r)
@@ -151,9 +152,16 @@ def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:
         r["rid"] = f"R{n:03d}"
         if r.get("_vid"):
             vid_rid[r["_vid"]] = r["rid"]
+    x_same: dict[str, list[str]] = {}
+    for r in records:
+        if r.get("_same_yt") in vid_rid:
+            x_same.setdefault(r["_same_yt"], []).append(r["rid"])
     for r in records:
         same = [vid_rid[v] for v in r.pop("_same", []) if v in vid_rid]
-        r.pop("_vid", None)
+        yt = r.pop("_same_yt", None)
+        if yt in vid_rid:
+            same.append(vid_rid[yt])
+        same += x_same.get(r.pop("_vid", None) or "", [])
         if same:
             r["same_interview_as"] = same
     records = [{k: v for k, v in r.items() if v not in (None, "", [])} for r in records]

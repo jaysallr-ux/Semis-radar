@@ -335,6 +335,8 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     try:
         video_stats = video_audio.transcribe_posts(kept, state, now, os.environ.get("GEMINI_API_KEY") or None,
                                                    cfg.get("video_audio", {}))
+        video_stats["linked_to_youtube"] = video_audio.link_youtube(
+            kept, load_json(ROOT.parent / "guru_yt" / "data" / "youtube_feed.json", {"videos": []}))
     except Exception as e:  # never let video work break the feed
         video_stats = {"status": f"error: {str(e)[:80]}"}
     kept.sort(key=lambda p: p["created_at"], reverse=True)
