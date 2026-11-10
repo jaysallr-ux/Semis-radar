@@ -23,7 +23,8 @@ from typing import Callable
 import requests
 
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta"
-DEFAULT_MODELS = ["models/gemini-3.5-flash", "models/gemini-flash-latest", "models/gemini-3.5-flash-lite"]
+# Flash-Lite only: Flash has a 20 requests/day free quota that the YouTube collector needs.
+DEFAULT_MODELS = ["models/gemini-3.5-flash-lite", "models/gemini-flash-lite-latest", "models/gemini-3.1-flash-lite"]
 UA = {"User-Agent": "Mozilla/5.0 (compatible; guru-video/1.0)"}
 NOTE = ("Gemini transcription of the video attached to the post. Quotes are machine-transcribed without a caption "
         "check: evidence at most 1차-B and only for quotes with speaker_verified=true. key_points and direction_hint "
