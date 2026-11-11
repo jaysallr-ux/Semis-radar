@@ -445,20 +445,46 @@ def run(gemini_key: str | None, http: Http | None = None, now: datetime | None =
                            "discovery_ok": True, "error": None} for p in order}
     complete = {"discovery": True, "processing": True}
     queue: list[tuple[dict, dict]] = []
-    for p in order:
-        q = " OR ".join(f'"{n}"' for n in [n for n in p["names"] if " " in n.strip()] + p.get("headline_names", [])) + (f" {p['web_query_extra']}" if p.get("web_query_extra") else "")
-        try:
-            found = gnews_search(http, q, days)
-        except Exception as e:
-            errors[p["person"]] = f"google news 실패 ({e})"
-            pstat[p["person"]].update(discovery_ok=False, error=f"google news 실패 ({str(e)[:80]})")
-            continue
-        stats["discovered"] += len(found)
-        for f in found[: cfg.get("max_items_per_person", 6)]:
-            if not name_hit(p, f["title"]):
-                continue  # noise filter: the person must be named in the headline
-            queue.append((p, f))
-        sleep(1)
+    # Google News answers 503/429 in bursts to datacenter IPs: retry each person with backoff, then give every
+    # still-failed person one more pass at the end (11/11 10:05 lost all 16 people to one 503 burst).
+    failed: list[dict] = []
+    streak = 0  # consecutive people that failed every attempt: Google is blocking, stop waiting per person
+    for pass_no, plist in ((1, order), (2, None)):
+        if pass_no == 2:
+            plist, failed = failed, []
+            if not plist:
+                break
+            sleep(cfg.get("gnews_second_pass_wait_sec", 90))
+            streak = 0
+        for p in plist:
+            q = " OR ".join(f'"{n}"' for n in [n for n in p["names"] if " " in n.strip()] + p.get("headline_names", [])) + (f" {p['web_query_extra']}" if p.get("web_query_extra") else "")
+            found, err = None, None
+            for attempt, wait in enumerate((0,) if streak >= 3 else (0, 10, 30)):
+                if wait:
+                    sleep(wait)
+                try:
+                    found = gnews_search(http, q, days)
+                    break
+                except Exception as e:
+                    err = e
+                    if not any(c in str(e) for c in ("429", "500", "502", "503", "504")):
+                        break
+            if found is None:
+                errors[p["person"]] = f"google news 실패 ({err})"
+                pstat[p["person"]].update(discovery_ok=False, error=f"google news 실패 ({str(err)[:80]})")
+                streak += 1
+                if pass_no == 1:
+                    failed.append(p)
+                continue
+            streak = 0
+            errors.pop(p["person"], None)
+            pstat[p["person"]].update(discovery_ok=True, error=None)
+            stats["discovered"] += len(found)
+            for f in found[: cfg.get("max_items_per_person", 6)]:
+                if not name_hit(p, f["title"]):
+                    continue  # noise filter: the person must be named in the headline
+                queue.append((p, f))
+            sleep(1)
 
     seen_titles: dict[str, str] = {}
     for p, f in queue:
