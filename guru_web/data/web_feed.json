@@ -1,25 +1,8 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-11T10:05:24+09:00",
-  "data_ok": false,
-  "errors": {
-    "Cem Karsan": "google news 실패 (gnews 503)",
-    "Darius Dale": "google news 실패 (gnews 503)",
-    "Mark Newton": "google news 실패 (gnews 503)",
-    "Warren Pies": "google news 실패 (gnews 503)",
-    "Andy Constan": "google news 실패 (gnews 503)",
-    "David Sekera": "google news 실패 (gnews 503)",
-    "Ryan Detrick": "google news 실패 (gnews 503)",
-    "Bob Elliott": "google news 실패 (gnews 503)",
-    "Jim Bianco": "google news 실패 (gnews 503)",
-    "Lyn Alden": "google news 실패 (gnews 503)",
-    "Marko Papic": "google news 실패 (gnews 503)",
-    "Jonathan Krinsky": "google news 실패 (gnews 503)",
-    "Joseph Wang": "google news 실패 (gnews 503)",
-    "Katie Stockton": "google news 실패 (gnews 503)",
-    "Mike Wilson": "google news 실패 (gnews 503)",
-    "Scott Rubner": "google news 실패 (gnews 503)"
-  },
+  "generated_at": "2026-11-11T12:27:25+09:00",
+  "data_ok": true,
+  "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
   "new_statement_clock": "evidence_ready_at",
   "discovery_complete": true,
@@ -29,8 +12,8 @@
       "person": "Cem Karsan",
       "tier": 1,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 3,
       "scoring_items": 2,
       "pending_items": 0
@@ -39,8 +22,8 @@
       "person": "Darius Dale",
       "tier": 1,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 0,
       "scoring_items": 0,
       "pending_items": 0
@@ -49,8 +32,8 @@
       "person": "Mark Newton",
       "tier": 1,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 1,
       "scoring_items": 1,
       "pending_items": 0
@@ -59,8 +42,8 @@
       "person": "Warren Pies",
       "tier": 1,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 0,
       "scoring_items": 0,
       "pending_items": 0
@@ -69,8 +52,8 @@
       "person": "Andy Constan",
       "tier": 2,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 3,
       "scoring_items": 0,
       "pending_items": 0
@@ -79,8 +62,8 @@
       "person": "David Sekera",
       "tier": 2,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 0,
       "scoring_items": 0,
       "pending_items": 0
@@ -89,10 +72,10 @@
       "person": "Ryan Detrick",
       "tier": 2,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "official_source_ok": true,
-      "items_in_window": 5,
+      "items_in_window": 6,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -100,8 +83,8 @@
       "person": "Bob Elliott",
       "tier": 3,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 4,
       "scoring_items": 0,
       "pending_items": 0
@@ -110,8 +93,8 @@
       "person": "Jim Bianco",
       "tier": 3,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 1,
       "scoring_items": 0,
       "pending_items": 0
@@ -120,8 +103,8 @@
       "person": "Lyn Alden",
       "tier": 3,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
@@ -130,8 +113,8 @@
       "person": "Marko Papic",
       "tier": 3,
       "role": "core",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 0,
       "scoring_items": 0,
       "pending_items": 0
@@ -140,8 +123,8 @@
       "person": "Jonathan Krinsky",
       "tier": 4,
       "role": "observer",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 0,
       "scoring_items": 0,
       "pending_items": 0
@@ -150,8 +133,8 @@
       "person": "Joseph Wang",
       "tier": 4,
       "role": "shadow",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 1,
       "scoring_items": 0,
       "pending_items": 0
@@ -160,9 +143,9 @@
       "person": "Katie Stockton",
       "tier": 4,
       "role": "observer",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
-      "items_in_window": 2,
+      "discovery_ok": true,
+      "error": null,
+      "items_in_window": 3,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -170,8 +153,8 @@
       "person": "Mike Wilson",
       "tier": 4,
       "role": "observer",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "official_source_ok": true,
       "items_in_window": 4,
       "scoring_items": 1,
@@ -181,18 +164,18 @@
       "person": "Scott Rubner",
       "tier": 4,
       "role": "observer",
-      "discovery_ok": false,
-      "error": "google news 실패 (gnews 503)",
+      "discovery_ok": true,
+      "error": null,
       "items_in_window": 1,
       "scoring_items": 1,
       "pending_items": 0
     }
   ],
   "stats": {
-    "discovered": 0,
-    "new_items": 0,
-    "decoded": 0,
-    "bodies": 0,
+    "discovered": 123,
+    "new_items": 8,
+    "decoded": 8,
+    "bodies": 2,
     "quotes_verified": 0,
     "video_candidates": 0,
     "gemini_calls": 0,
@@ -210,6 +193,25 @@
   },
   "items": [
     {
+      "person": "Katie Stockton",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "Gold has been in a bear market since January. Katie Stockton sees a comeback ahead",
+      "outlet": "CNBC",
+      "published_at": "2026-11-10T16:01:46+00:00",
+      "discovered_at": "2026-11-11T12:27:25+09:00",
+      "article_url": "https://www.cnbc.com/2026/11/10/gold-has-been-in-a-bear-market-since-january-katie-stockton-sees-a-comeback-ahead.html",
+      "canonical_url": "https://www.cnbc.com/2026/11/10/gold-has-been-in-a-bear-market-since-january-katie-stockton-sees-a-comeback-ahead.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0
+    },
+    {
       "person": "Mike Wilson",
       "tier": 4,
       "role": "observer",
@@ -220,6 +222,25 @@
       "discovered_at": "2026-11-10T21:05:25+09:00",
       "article_url": "https://www.benzinga.com/markets/equities/26/11/63079530/morgan-stanley-mike-wilson-market-done-most-work-correction",
       "canonical_url": "https://www.benzinga.com/markets/equities/26/11/63079530/morgan-stanley-mike-wilson-market-done-most-work-correction",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Ryan Detrick: S&P 500 posts best breadth day since November 25, 2025",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-10T04:56:34+00:00",
+      "discovered_at": "2026-11-11T12:27:25+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4171994-sp500-best-breadth-day/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4171994-sp500-best-breadth-day/",
       "body_fetch_status": 403,
       "direct_quotes": [],
       "direction_hint": null,
@@ -887,6 +908,22 @@
           }
         ]
       },
+      "Katie Stockton": {
+        "role": "observer",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-11T12:27:25+09:00",
+            "url": "https://www.cnbc.com/2026/11/10/gold-has-been-in-a-bear-market-since-january-katie-stockton-sees-a-comeback-ahead.html",
+            "kind": "news_article",
+            "preview": "Gold has been in a bear market since January. Katie Stockton sees a comeback ahead",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-10T16:01:46+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
       "Lyn Alden": {
         "role": "core",
         "count": 1,
@@ -964,8 +1001,8 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-10T21:05:25+09:00",
@@ -974,6 +1011,15 @@
             "preview": "Slowing AI buildouts plays key role in recent economic growth, Ryan Detrick states",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-09T01:55:17+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-11T12:27:25+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4171994-sp500-best-breadth-day/",
+            "kind": "news_article",
+            "preview": "Ryan Detrick: S&P 500 posts best breadth day since November 25, 2025",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-10T04:56:34+00:00",
             "noise_hint": false
           }
         ]
