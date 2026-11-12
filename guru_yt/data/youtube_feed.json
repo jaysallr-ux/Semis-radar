@@ -1,18 +1,20 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-12T10:10:35+09:00",
+  "generated_at": "2026-11-12T21:10:34+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-12T06:25:09+09:00",
-    "merged_from_discovery": 3,
+    "last_discovery_at": "2026-11-12T13:20:35+09:00",
+    "merged_from_discovery": 1,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
       "rejected": 0,
       "retry_next_run": [
+        "LBdOyp28RV8",
+        "LBdOyp28RV8",
         "P1w5CfH55nE",
         "P1w5CfH55nE"
       ]
@@ -106,7 +108,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-10T03:00:10+09:00",
+      "oldest_rss": "2026-11-10T03:47:57+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -161,7 +163,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-07T08:06:54+09:00",
+      "oldest_rss": "2026-11-07T11:42:58+09:00",
       "gap_possible": false,
       "matched": 3
     },
@@ -205,7 +207,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-11T17:18:36+09:00",
+      "oldest_rss": "2026-11-11T23:44:04+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -216,7 +218,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-11T12:52:46+09:00",
+      "oldest_rss": "2026-11-11T21:54:12+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -227,7 +229,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-11T01:45:25+09:00",
+      "oldest_rss": "2026-11-11T05:30:08+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -238,14 +240,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-07T08:00:37+09:00",
+      "oldest_rss": "2026-11-07T09:00:39+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 2,
-    "yta_server_remaining": 8,
+    "yta_used_today": 3,
+    "yta_server_remaining": 7,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -254,24 +256,24 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 2,
-    "gemini_est_video_hours_today": 0.304,
+    "gemini_calls_today": 3,
+    "gemini_est_video_hours_today": 0.551,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 2,
-    "ready": 2,
+    "attempted": 1,
+    "ready": 1,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 1,
+    "skipped_short": 0,
     "expired": 0,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 2,
-    "ready": 2,
+    "attempted": 1,
+    "ready": 1,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
@@ -282,6 +284,207 @@
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "79Vp2lfBpbI",
+      "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI",
+      "channel": "tastylive",
+      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
+      "channel_mode": "filter",
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "match": "title",
+      "title": "Cem Karsan Says You're Trading With One Arm Tied Behind You",
+      "description": "Cem Karsan of Kai Volatility has a blunt message: if you're trading this market without understanding the structural flows, you're playing with one arm strapped behind your back. Daily flows structurally sell volatility, December carries one of the largest options expirations ever, and skew sits among the three highest readings of the last decade. Every day that passes brings vol compression and delta buyback. He's equally clear the macro is bad and will get worse, but the flows keep pushing higher.\n\n📊 tastylive: https://www.tastylive.com/\n📰 Get Tom's pre-market analysis every morning: https://www.tastylive.com/newsletters\n📘 FREE Options Strategy Guide: https://tinyurl.com/bp9ms763\n📱 Follow tastylive on X: https://x.com/tastyliveshow\n\nChapters\n00:00 Up again, off the highs\n00:40 Why five days told different stories\n01:20 The structural flows nobody accounts for\n02:10 December's enormous open interest\n03:00 Why skew is so high right now\n03:40 What happens every day that passes\n04:30 The move after the event passed\n05:40 The macro is bad and gets worse\n06:30 How fast the calendar shortens\n07:40 The discrete events left this year\n\n#tastylive #overtime #cemkarsan #kaivolatility #structuralflows #volatility #opex #skew #optionstrading #stockmarket\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, an",
+      "published_at": "2026-11-12T03:54:13Z",
+      "first_seen_at": "2026-11-12T13:20:35+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-12T21:10:34+09:00",
+      "transcript_language": null,
+      "transcript_chars": 17191,
+      "transcript_url": null,
+      "name_mentions": 7,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "[0:00] I'm your host Chris Veia with Ilas Pivik and Jeb Carson from Kai volatility our typical Wednesday guest returning champion here to overtime Kai or Chem good to see you not going to call you Kai that's the name of your company Ilia uh yeah yeah 2 fee",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-12T21:10:34+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Cem Karsan appears on screen from Kai Volatility and speaks extensively about market option flows, volatility compression, macroeconomic risks, and holiday seasonality.",
+      "stance": {
+        "us_equities": "bullish",
+        "summary": "Cem Karsan expects U.S. equities to trend higher into the end of the year and mid-January due to massive structural option selling, volatility compression, and holiday seasonality, despite underlying macroeconomic fundamentals being poor and deteriorating long term.",
+        "timeframe": "End of year to mid-January"
+      },
+      "quotes": [
+        {
+          "t": "01:17",
+          "t_sec": 77,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "we have massive structural every day option flows come in that are net selling structurally just selling vol.",
+          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=77s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.1,
+          "caption_sec": 62,
+          "caption_checked": true
+        },
+        {
+          "t": "01:29",
+          "t_sec": 89,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "On top of that, we're getting to the end of the year here in December, which is the biggest options expiration ever.",
+          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=89s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 62,
+          "caption_checked": true
+        },
+        {
+          "t": "02:05",
+          "t_sec": 125,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "That means every day that goes by, there's vol compression, every day that goes by, there's mass amount of buyback of Deltas unless, unless we can activate that real convex little pocket of tinder that's sitting out in that Dec OPEX.",
+          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=125s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.8,
+          "caption_sec": 123,
+          "caption_checked": true
+        },
+        {
+          "t": "04:05",
+          "t_sec": 245,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "The macro is bad. It's bad, and it's only going to get worse, I'm telling you. Okay? But in the meantime, laissez les bons temps rouler, as they say in New Orleans, let the good times roll.",
+          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=245s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 88.3,
+          "caption_sec": 214,
+          "caption_checked": true
+        },
+        {
+          "t": "07:08",
+          "t_sec": 428,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "The holidays, Thanksgiving and Christmas, drive a November through December period, really till mid-January, that has the most what I call the lowest volume weighted time of any other period.",
+          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=428s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.9,
+          "caption_sec": 426,
+          "caption_checked": true
+        },
+        {
+          "t": "08:34",
+          "t_sec": 514,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "November expiration is positive flows right into Thanksgiving, right out of, now that we only have three weeks till December OPEX, all those biggest flows start really kicking off then into Dec OPEX.",
+          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=514s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.4,
+          "caption_sec": 487,
+          "caption_checked": true
+        },
+        {
+          "t": "14:41",
+          "t_sec": 881,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "And what you see when things get really cheap like this, even once the news stabilizes and we get kind of resolution, is I'm talking three to six months of of difficult sledding.",
+          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=881s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 852,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-12T21:10:34+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "01:17",
+          "point": "Daily structural option flows continue to net sell volatility, creating an ongoing bid for equities.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "01:29",
+          "point": "The upcoming December options expiration carries massive open interest and high skew, driving significant structural market dynamics.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "02:05",
+          "point": "Daily volatility compression forces dealers to continuously buy back deltas, supporting stock prices unless downside momentum triggers convex put positions.",
+          "condition": "Unless downside momentum activates convex put options in December OPEX",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "04:05",
+          "point": "Macroeconomic conditions are weak and will deteriorate, but positive structural option flows will keep equity prices supported near term.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "07:08",
+          "point": "The period from Thanksgiving through mid-January experiences the lowest volume-weighted trading of the year, amplifying volatility crush and supporting market rallies.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "08:34",
+          "point": "Structural flows following November expiration straight into December OPEX and year-end re-leveraging set a high barrier against deep market sell-offs.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "14:41",
+          "point": "Nvidia faces three to six months of sluggish price action due to loss of upside momentum and news overhang, despite remaining a strong business overall.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "17:09",
+          "point": "Credit contraction and Fed rate actions will eventually lead to a broader market rollover, though near-term positioning tailwinds dominate.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 33850,
+      "quotes_grade_count": {
+        "1차-A": 6,
+        "1차-B": 1,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "S3V9QHFGwRs",
       "url": "https://www.youtube.com/watch?v=S3V9QHFGwRs",
@@ -4029,272 +4232,6 @@
         }
       ],
       "gemini_prompt_tokens": 162258
-    },
-    {
-      "video_id": "FosAKU4raoY",
-      "url": "https://www.youtube.com/watch?v=FosAKU4raoY",
-      "channel": "tastylive",
-      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
-      "channel_mode": "filter",
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "match": "title",
-      "title": "GRIDLOCK TRADE: Cem Karsan Breaks Down the Sweep as Gold Jumps 3% | Wednesday Nov 4 Live Trading",
-      "description": "Wednesday November 4th 2026\n\nOvertime with Chris Vecchio, Ilya Spivak and Cem Karsan\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, and over 25 personalities, we’ll help you take your trading to the next level, whether you are new to trading or a seasoned veteran.  \n\ntastylive content is created, produced, and provided solely by tastylive, Inc. (“tastylive”) and is for informational and educational purposes only. It is not, nor is it intended to be, trading or investment advice or a recommendation that any security, futures contract, digital asset, other product, transaction, or investment strategy is suitable for any person. Trading securities, futures products, and digital assets involve risk and may result in a loss greater than the original amount invested. Investment information provided may not be appropriate for all investors and is provided without respect to individual investor financial sophistication, financial situation, investing time horizon or risk tolerance. Options, futures, and futures options are not suitable for all investors. Prior to trading securities, options, futures, or futures options, please read all applicable risk disclosures, including, but not limited to, the Characteristics and Risks of Standardized Options Disclosure and the Futures and Exchange Traded Optio",
-      "published_at": "2026-11-05T09:46:30Z",
-      "first_seen_at": "2026-11-05T23:50:26+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-05T23:50:26+09:00",
-      "transcript_language": null,
-      "transcript_chars": 59998,
-      "transcript_url": null,
-      "name_mentions": 12,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "ight now. I got to it a little bit late here, folks. Sorry about that. Um but we're going to be talking about this with Jem and Ilia.  [30:50] 2 days to expiration, $17.90. We are looking at a closing bell here today with an S&P 500 that's going to mark up 128 points, 1.7%. It's off the highs, of course. Same thing for",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-05T23:50:26+09:00",
-      "gemini_mode": "video_chunks_2",
-      "person_speaks": true,
-      "gemini_evidence": "Cem Karsan appears as a video guest alongside Ilya Spivak starting at 35:00 and speaks from 35:24 to 36:28 and from 38:43 to 39:59. / Cem Karsan appears on video at 39:30 and speaks throughout the segment, discussing equity flows, gold, yields, fiscal policy, populism, and macro market headwinds.",
-      "stance": {
-        "us_equities": "mixed",
-        "summary": "Cem Karsan attributes post-election market strength to structural flows and the unwinding of heavy pre-event volatility hedging rather than macro narratives. He expects market flows heading into year-end to remain incredibly positive as long as major short-term tail risks do not emerge. | Cem Karsan views short-term equity flows as incredibly positive into year-end as positioning decay resolves, but warns of structural headwinds for stocks over the medium-to-long term due to rising populist fiscal spending and demand-side debasement."
-      },
-      "quotes": [
-        {
-          "t": "35:24",
-          "t_sec": 2124,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "no, not no matter what. there could be a contested election there was legitimate reasons for fear. Trump could have come in and done something wild. So assuming that didn't happen the event passed.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2124s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.9,
-          "caption_sec": 2110,
-          "caption_checked": true
-        },
-        {
-          "t": "35:50",
-          "t_sec": 2150,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "We've seen this again and again and again. It's because there's massive skew in vol, hedging for the event. This happens on a smaller scale at Fed meetings, smaller scale at other things. You have structural positive flows coming once the event resolves itself one way or another.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2150s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.1,
-          "caption_sec": 2140,
-          "caption_checked": true
-        },
-        {
-          "t": "36:15",
-          "t_sec": 2175,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "These are flows. These are structural flows. This is not some macro, don't attribute some macro narrative to what just happened. Has nothing to do with a macro narrative, right? This has to do with structural flows.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2175s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 2171,
-          "caption_checked": true
-        },
-        {
-          "t": "38:43",
-          "t_sec": 2323,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "There's been a wall of worry, which is what that is, is a skew that I told you was a, you know, record highs, or near record highs. Uh there, you know, there's been a significant amount of of positioning of hedging, um and at the end of the day, the worst case...",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2323s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.8,
-          "caption_sec": 2296,
-          "caption_checked": true
-        },
-        {
-          "t": "39:15",
-          "t_sec": 2355,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "these things at least for now did not appear for this period. And regardless of the outcome of the midterms, which I do think has structural, real, macro effects, mind you, that we should talk about, right, and will affect the forward distribution of outcomes 110%, um I do think that for now that that allowed the the fear and the decay of the positioning to resolve itself.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2355s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 2327,
-          "caption_checked": true
-        },
-        {
-          "t": "39:40",
-          "t_sec": 2380,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "and there's still other meaningful flows, I want to highlight that, going forward, that this will now interact with into the end of the year, um but in the absence of these kind of tail issues or uh you know, something much bigger than short term, uh the flows are incredibly positive as we've highlighted.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2380s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.7,
-          "caption_sec": 2359,
-          "caption_checked": true
-        },
-        {
-          "t": "39:33",
-          "t_sec": 2373,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "I do think that for now that allow the the fear and the decay of the positioning to resolve itself.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2373s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 92.9,
-          "caption_sec": 2359,
-          "caption_checked": true
-        },
-        {
-          "t": "39:50",
-          "t_sec": 2390,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "in the absence of these kind of tail issues or, you know, something much bigger in the short-term, the flows are incredibly positive as we've highlighted in this period.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2390s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.4,
-          "caption_sec": 2359,
-          "caption_checked": true
-        },
-        {
-          "t": "41:23",
-          "t_sec": 2483,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "The debasement realities, the structural kind of set up, was incredibly is in continue to be incredibly medium to long-term macro positive, but there was a risk off element that got, you know, pushed into gold here.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2483s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 95.7,
-          "caption_sec": 2453,
-          "caption_checked": true
-        },
-        {
-          "t": "42:25",
-          "t_sec": 2545,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "a populist wave, which is what we saw, is going to likely lead to more populist things, not just right wing populism as we've talked about, but more spending.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=2545s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.0,
-          "caption_sec": 2515,
-          "caption_checked": true
-        },
-        {
-          "t": "50:00",
-          "t_sec": 3000,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "a return back to this broadly more populist left-wing spending issues which is a headwind for stocks, and broadly is a much more demand side policy which is going to lead to more and more debasement.",
-          "url": "https://www.youtube.com/watch?v=FosAKU4raoY&t=3000s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.5,
-          "caption_sec": 3293,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-05T23:50:26+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "35:24",
-          "point": "Post-event rallies occur when major election event risks pass without worst-case outcomes like contested results.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "35:50",
-          "point": "Heavy pre-event volatility hedging creates positive structural flows once the event risk resolves.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "36:15",
-          "point": "Post-election stock market rallies are driven primarily by structural positioning flows rather than shifts in macro narratives.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "38:43",
-          "point": "Record or near-record high volatility skew heading into events sets up rapid decay in hedges once worst-case scenarios fail to materialize.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "39:40",
-          "point": "Market flows into the end of the year remain incredibly positive in the absence of new short-term tail risk events.",
-          "condition": "Absence of major tail risk issues",
-          "conviction": "base_case",
-          "horizon": "year_end"
-        },
-        {
-          "t": "39:33",
-          "point": "Short-term equity flows remain incredibly positive into year-end as positioning decay and fear resolve, barring unexpected tail risks.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "41:04",
-          "point": "Gold's underlying medium-to-long-term outlook is structurally bullish due to currency debasement realities, despite short-term risk-off unwinding.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "42:25",
-          "point": "Political populist pressures will inevitably force higher government spending and lower fiscal conservatism across both parties.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "long_term"
-        },
-        {
-          "t": "47:08",
-          "point": "Massive debt issuance creates a supply-demand imbalance in treasury bonds that will eventually force central bank or government intervention following a market crisis.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "50:00",
-          "point": "A multi-year shift toward populist demand-side policies will act as a structural headwind for equities while increasing currency debasement.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "long_term"
-        }
-      ],
-      "gemini_prompt_tokens": 117345,
-      "quotes_grade_count": {
-        "1차-A": 11,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
     }
   ],
   "person_index": {
@@ -4320,8 +4257,8 @@
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-10T10:10:35+09:00",
@@ -4348,6 +4285,15 @@
             "preview": "Crisis Is Coming In Early 2027 | Cem Karsan",
             "grade": "1차-A",
             "published_at": "2026-11-05T16:00:10Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-12T21:10:34+09:00",
+            "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI",
+            "kind": "video",
+            "preview": "Cem Karsan Says You're Trading With One Arm Tied Behind You",
+            "grade": "1차-A",
+            "published_at": "2026-11-12T03:54:13Z",
             "noise_hint": false
           }
         ]
