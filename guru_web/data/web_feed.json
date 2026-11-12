@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-11T21:05:27+09:00",
+  "generated_at": "2026-11-12T10:05:23+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -44,7 +44,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 0,
+      "items_in_window": 1,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -95,7 +95,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
+      "items_in_window": 0,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -135,7 +135,7 @@
       "role": "shadow",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
+      "items_in_window": 0,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -166,23 +166,23 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
-      "scoring_items": 1,
+      "items_in_window": 0,
+      "scoring_items": 0,
       "pending_items": 0
     }
   ],
   "stats": {
-    "discovered": 128,
-    "new_items": 6,
-    "decoded": 7,
-    "bodies": 0,
+    "discovered": 126,
+    "new_items": 8,
+    "decoded": 9,
+    "bodies": 2,
     "quotes_verified": 0,
     "video_candidates": 0,
-    "gemini_calls": 0,
+    "gemini_calls": 1,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 0,
+    "calls_today": 1,
     "daily_cap": 60,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -192,6 +192,84 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "official_blog",
+      "title": "Blue Wave, Red Wave, Green Wave, And Timeless Lessons",
+      "outlet": "Carson Group",
+      "published_at": "2026-11-11T21:22:29+00:00",
+      "discovered_at": "2026-11-12T10:05:23+09:00",
+      "article_url": "https://www.carsongroup.com/insights/blog/blue-wave-red-wave-green-wave-and-timeless-lessons/",
+      "canonical_url": "https://www.carsongroup.com/insights/blog/blue-wave-red-wave-green-wave-and-timeless-lessons/",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-flash-lite-latest"
+    },
+    {
+      "person": "Warren Pies",
+      "tier": 1,
+      "role": "core",
+      "source_kind": "video_page",
+      "title": "The market is not priced for another two rate hikes, says 3Fourteen Research's Warren Pies",
+      "outlet": "CNBC",
+      "published_at": "2026-11-11T15:24:00+00:00",
+      "discovered_at": "2026-11-12T10:05:23+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/11/the-market-is-not-priced-for-another-two-rate-hikes-says-3fourteen-researchs-warren-pies.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/11/the-market-is-not-priced-for-another-two-rate-hikes-says-3fourteen-researchs-warren-pies.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "S&P 500 holds at key technical levels, Ryan Detrick notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-11T14:55:43+00:00",
+      "discovered_at": "2026-11-12T10:05:23+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4198931-sp500-200-day-support/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4198931-sp500-200-day-support/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "OpenAI posts $13.5 billion operating loss against $10 billion in revenue, Bob Elliott notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-11T14:25:21+00:00",
+      "discovered_at": "2026-11-12T10:05:23+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4198184-openai-losses-revenue-comment/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4198184-openai-losses-revenue-comment/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Andy Constan",
       "tier": 2,
@@ -725,141 +803,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Ryan Detrick: Stocks surge as bullish sentiment returns",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-04T18:40:10+00:00",
-      "discovered_at": "2026-11-05T10:05:30+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4100732-stocks-surge-bullish-returns/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4100732-stocks-surge-bullish-returns/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Bob Elliott",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Bob Elliott: Rising revenue with falling operating income signals flawed business model",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-04T17:25:17+00:00",
-      "discovered_at": "2026-11-06T10:05:30+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4099354-revenue-income-business-model/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4099354-revenue-income-business-model/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Scott Rubner",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "news_article",
-      "title": "Citadel Securities’ Rubner Says Stocks Are Set Up for Year-End Gains After Vote",
-      "outlet": "Yahoo Finance UK",
-      "published_at": "2026-11-04T17:14:22+00:00",
-      "discovered_at": "2026-11-05T10:05:30+09:00",
-      "article_url": "https://uk.finance.yahoo.com/news/citadel-securities-rubner-says-stocks-171422637.html",
-      "canonical_url": "https://uk.finance.yahoo.com/news/citadel-securities-rubner-says-stocks-171422637.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [
-        {
-          "text": "With the election behind us and volatility potentially normalizing, there is considerable capacity for investors to rebuild risk",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "wrote Rubner"
-        },
-        {
-          "text": "With uncertainty fading and several of the market's largest buyers returning, we believe the path of least resistance for U.S. equities is higher into year-end.",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "Rubner wrote"
-        },
-        {
-          "text": "breathing a sigh of relief",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "Rubner wrote"
-        }
-      ],
-      "direction_hint": "bullish",
-      "evidence_grade": "1차-인용",
-      "evidence_ready_at": "2026-11-05T10:05:30+09:00",
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "official_blog",
-      "title": "When Will the Madness End? (FvF Ep. 212)",
-      "outlet": "Carson Group",
-      "published_at": "2026-11-04T14:00:30+00:00",
-      "discovered_at": "2026-11-05T10:05:30+09:00",
-      "article_url": "https://www.carsongroup.com/insights/blog/when-will-the-madness-end-fvf-ep-212/",
-      "canonical_url": "https://www.carsongroup.com/insights/blog/when-will-the-madness-end-fvf-ep-212/",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Jim Bianco",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Jim Bianco Calls Gina Hinojosa’s Texas Win ‘Biggest News’ From Elections, Flags Risk to AI Data Center Ex",
-      "outlet": "Benzinga",
-      "published_at": "2026-11-04T13:46:43+00:00",
-      "discovered_at": "2026-11-05T10:05:30+09:00",
-      "article_url": "https://www.benzinga.com/markets/tech/26/11/62863642/jim-bianco-calls-gina-hinojosas-texas-win-biggest-news-from-elections-flags-risk-to-ai-data-center-expansion-as-state-set-to-host-25-of-new-capacity",
-      "canonical_url": "https://www.benzinga.com/markets/tech/26/11/62863642/jim-bianco-calls-gina-hinojosas-texas-win-biggest-news-from-elections-flags-risk-to-ai-data-center-expansion-as-state-set-to-host-25-of-new-capacity",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Joseph Wang",
-      "tier": 4,
-      "role": "shadow",
-      "source_kind": "news_article",
-      "title": "Joseph Wang: Treasury did not reduce long end issuance as expected",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-04T13:37:07+00:00",
-      "discovered_at": "2026-11-05T10:05:30+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4094153-treasury-long-end-issuance/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4094153-treasury-long-end-issuance/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
     }
   ],
   "person_index": {
@@ -885,8 +828,8 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-10T10:05:28+09:00",
@@ -895,6 +838,15 @@
             "preview": "Much of market remains priced for strong nominal growth as asset price rises fade, Bob Elliott writ…",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-06T12:25:15+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-12T10:05:23+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4198184-openai-losses-revenue-comment/",
+            "kind": "news_article",
+            "preview": "OpenAI posts $13.5 billion operating loss against $10 billion in revenue, Bob Elliott notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-11T14:25:21+00:00",
             "noise_hint": false
           }
         ]
@@ -992,8 +944,8 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-10T21:05:25+09:00",
@@ -1011,6 +963,40 @@
             "preview": "Ryan Detrick: S&P 500 posts best breadth day since November 25, 2025",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-10T04:56:34+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-12T10:05:23+09:00",
+            "url": "https://www.carsongroup.com/insights/blog/blue-wave-red-wave-green-wave-and-timeless-lessons/",
+            "kind": "official_blog",
+            "preview": "Blue Wave, Red Wave, Green Wave, And Timeless Lessons",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-11T21:22:29+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-12T10:05:23+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4198931-sp500-200-day-support/",
+            "kind": "news_article",
+            "preview": "S&P 500 holds at key technical levels, Ryan Detrick notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-11T14:55:43+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Warren Pies": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-12T10:05:23+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/11/the-market-is-not-priced-for-another-two-rate-hikes-says-3fourteen-researchs-warren-pies.html",
+            "kind": "video_page",
+            "preview": "The market is not priced for another two rate hikes, says 3Fourteen Research's Warren Pies",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-11T15:24:00+00:00",
             "noise_hint": false
           }
         ]
