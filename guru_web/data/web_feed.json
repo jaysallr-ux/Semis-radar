@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-13T10:05:29+09:00",
+  "generated_at": "2026-11-13T21:05:26+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -85,7 +85,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 4,
+      "items_in_window": 5,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -172,10 +172,10 @@
     }
   ],
   "stats": {
-    "discovered": 120,
-    "new_items": 8,
-    "decoded": 9,
-    "bodies": 0,
+    "discovered": 126,
+    "new_items": 7,
+    "decoded": 8,
+    "bodies": 1,
     "quotes_verified": 0,
     "video_candidates": 0,
     "gemini_calls": 0,
@@ -249,6 +249,26 @@
       "gemini_status": "ready",
       "gemini_error_count": 0,
       "gemini_model": "models/gemini-flash-lite-latest"
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "video_page",
+      "title": "Watch CNBC's full interview with Unlimited CEO Bob Elliott",
+      "outlet": "CNBC",
+      "published_at": "2026-11-11T17:11:00+00:00",
+      "discovered_at": "2026-11-13T21:05:26+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/11/watch-cnbcs-full-interview-with-unlimited-ceo-bob-elliot.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/11/watch-cnbcs-full-interview-with-unlimited-ceo-bob-elliot.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
     },
     {
       "person": "Warren Pies",
@@ -818,8 +838,8 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-12T10:05:23+09:00",
@@ -829,21 +849,14 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-11T14:25:21+00:00",
             "noise_hint": false
-          }
-        ]
-      },
-      "Cem Karsan": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
+          },
           {
-            "at": "2026-11-10T21:05:25+09:00",
-            "url": "https://www.tastylive.com/shows/tasty-crumbs-with-cem-karsan/episodes/tasty-crumbs-with-cem-karsan-11-09-2026",
-            "kind": "news_article",
-            "preview": "tasty Crumbs with Cem Karsan",
+            "at": "2026-11-13T21:05:26+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/11/watch-cnbcs-full-interview-with-unlimited-ceo-bob-elliot.html",
+            "kind": "video_page",
+            "preview": "Watch CNBC's full interview with Unlimited CEO Bob Elliott",
             "grade": "제목·설명만 확인",
-            "published_at": "2026-11-09T22:18:10+00:00",
+            "published_at": "2026-11-11T17:11:00+00:00",
             "noise_hint": false
           }
         ]
@@ -864,52 +877,11 @@
           }
         ]
       },
-      "Lyn Alden": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-10T21:05:25+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4153945-value-investors-japan-us/",
-            "kind": "news_article",
-            "preview": "Value investors target U.S. private equity and Japanese public equities, Lyn Alden says",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-09T02:10:07+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Mike Wilson": {
-        "role": "observer",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-10T21:05:25+09:00",
-            "url": "https://www.benzinga.com/markets/equities/26/11/63079530/morgan-stanley-mike-wilson-market-done-most-work-correction",
-            "kind": "news_article",
-            "preview": "Morgan Stanley's Mike Wilson Says Market Correction Near End - State Street SPDR S&P 500 ETF Trust …",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-10T08:35:58+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
       "Ryan Detrick": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 4,
+        "non_noise": 4,
         "items": [
-          {
-            "at": "2026-11-10T21:05:25+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4153835-ai-slowdown-economic-growth/",
-            "kind": "news_article",
-            "preview": "Slowing AI buildouts plays key role in recent economic growth, Ryan Detrick states",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-09T01:55:17+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-11T12:27:25+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4171994-sp500-best-breadth-day/",
