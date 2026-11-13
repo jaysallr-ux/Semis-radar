@@ -1,18 +1,20 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-13T10:10:30+09:00",
+  "generated_at": "2026-11-13T21:10:40+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-13T02:20:34+09:00",
-    "merged_from_discovery": 1,
+    "last_discovery_at": "2026-11-13T10:10:30+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
       "rejected": 0,
       "retry_next_run": [
+        "CvKRIVi51IM",
+        "yNTHAc7IauQ",
         "LBdOyp28RV8",
         "LBdOyp28RV8"
       ]
@@ -62,7 +64,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-30T03:00:18+09:00",
+      "oldest_rss": "2026-10-01T00:00:09+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -106,7 +108,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-11T07:00:54+09:00",
+      "oldest_rss": "2026-11-11T21:06:57+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -117,7 +119,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-08T03:53:39+09:00",
+      "oldest_rss": "2026-10-09T00:00:07+09:00",
       "gap_possible": false,
       "matched": 3
     },
@@ -161,7 +163,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-09T08:32:03+09:00",
+      "oldest_rss": "2026-11-09T11:50:24+09:00",
       "gap_possible": false,
       "matched": 4
     },
@@ -205,7 +207,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-12T09:09:02+09:00",
+      "oldest_rss": "2026-11-12T17:20:34+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -216,8 +218,8 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-12T22:05:23+09:00",
-      "gap_possible": true,
+      "oldest_rss": "2026-11-13T01:09:13+09:00",
+      "gap_possible": false,
       "matched": 0
     },
     {
@@ -227,7 +229,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-12T02:15:06+09:00",
+      "oldest_rss": "2026-11-12T05:15:14+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -238,7 +240,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-09T08:30:05+09:00",
+      "oldest_rss": "2026-11-09T11:30:12+09:00",
       "gap_possible": false,
       "matched": 0
     }
@@ -264,7 +266,7 @@
     "ready": 0,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 1,
+    "skipped_short": 0,
     "expired": 0,
     "left_pending": 0,
     "waiting_for_gemini": 1
@@ -2848,45 +2850,11 @@
     "lookback_hours": 72,
     "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
     "people": {
-      "Bob Elliott": {
+      "Cem Karsan": {
         "role": "core",
         "count": 1,
         "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-10T10:10:35+09:00",
-            "url": "https://www.youtube.com/watch?v=5_H7PCUWYVc",
-            "kind": "video",
-            "preview": "AI Stocks Cracked. Margins Could Be Peaking. So Why Is a Liquidity Expert Watching the Debt Wall?",
-            "grade": "1차-B",
-            "published_at": "2026-11-09T22:03:02Z",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Cem Karsan": {
-        "role": "core",
-        "count": 3,
-        "non_noise": 3,
-        "items": [
-          {
-            "at": "2026-11-10T10:10:35+09:00",
-            "url": "https://www.youtube.com/watch?v=_jP8KMckO5s",
-            "kind": "video",
-            "preview": "The Market Was Too Well Hedged to Actually Crash",
-            "grade": "1차-A",
-            "published_at": "2026-11-10T00:30:17Z",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-10T10:10:35+09:00",
-            "url": "https://www.youtube.com/watch?v=VUIv4gAsYqA",
-            "kind": "video",
-            "preview": "Why Market Fragility is Building into a Crisis in 2027 | Cem Karsan & Noel Smith",
-            "grade": "1차-A",
-            "published_at": "2026-11-09T22:00:34Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-12T21:10:34+09:00",
             "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI",
@@ -2900,18 +2868,9 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-10T10:10:35+09:00",
-            "url": "https://www.youtube.com/watch?v=fXow2r4JBkQ",
-            "kind": "video",
-            "preview": "The Macro Minute: Would Hegseth's Potential Impeachment Help End the War?",
-            "grade": "1차-A",
-            "published_at": "2026-11-09T21:00:34Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-11T10:10:33+09:00",
             "url": "https://www.youtube.com/watch?v=VL5FwQPNfnU",
@@ -2953,22 +2912,6 @@
             "preview": "A \"Perfect Storm\" For Markets Lies Ahead Should Japan Repatriate Its US Assets | Lyn Alden",
             "grade": "1차-B",
             "published_at": "2026-11-10T03:52:45Z",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Mike Wilson": {
-        "role": "observer",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-10T10:10:35+09:00",
-            "url": "https://www.youtube.com/watch?v=9iyI2LddOoE",
-            "kind": "video",
-            "preview": "Morgan Stanley CIO Mike Wilson: Market correction entering final phase",
-            "grade": "1차-B",
-            "published_at": "2026-11-09T00:00:00+00:00",
             "noise_hint": false
           }
         ]
