@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-12T21:10:34+09:00",
+  "generated_at": "2026-11-13T10:10:30+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-12T13:20:35+09:00",
+    "last_discovery_at": "2026-11-13T02:20:34+09:00",
     "merged_from_discovery": 1,
     "discovery_errors": {},
     "extra_videos": {
@@ -14,9 +14,7 @@
       "rejected": 0,
       "retry_next_run": [
         "LBdOyp28RV8",
-        "LBdOyp28RV8",
-        "P1w5CfH55nE",
-        "P1w5CfH55nE"
+        "LBdOyp28RV8"
       ]
     }
   },
@@ -33,7 +31,7 @@
       "list_source": "data_api",
       "oldest_rss": "2026-09-03T05:00:25+09:00",
       "gap_possible": false,
-      "matched": 6
+      "matched": 5
     },
     {
       "label": "Schwab Network",
@@ -42,7 +40,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-06T00:05:59+09:00",
+      "oldest_rss": "2026-10-06T07:17:10+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -53,7 +51,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-19T23:00:36+09:00",
+      "oldest_rss": "2026-09-20T23:00:14+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -64,7 +62,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-30T00:00:28+09:00",
+      "oldest_rss": "2026-09-30T03:00:18+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -75,9 +73,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-12T04:05:08+09:00",
+      "oldest_rss": "2026-09-13T04:32:59+09:00",
       "gap_possible": false,
-      "matched": 2
+      "matched": 1
     },
     {
       "label": "Monetary Matters",
@@ -108,7 +106,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-10T03:47:57+09:00",
+      "oldest_rss": "2026-11-11T07:00:54+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -119,9 +117,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-08T01:09:45+09:00",
+      "oldest_rss": "2026-10-08T03:53:39+09:00",
       "gap_possible": false,
-      "matched": 4
+      "matched": 3
     },
     {
       "label": "MacroVoices",
@@ -130,7 +128,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-07-17T05:40:46+09:00",
+      "oldest_rss": "2026-07-24T01:02:26+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -141,9 +139,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-22T05:43:04+09:00",
+      "oldest_rss": "2026-09-23T00:51:42+09:00",
       "gap_possible": false,
-      "matched": 2
+      "matched": 1
     },
     {
       "label": "Joseph Wang",
@@ -163,9 +161,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-07T11:42:58+09:00",
+      "oldest_rss": "2026-11-09T08:32:03+09:00",
       "gap_possible": false,
-      "matched": 3
+      "matched": 4
     },
     {
       "label": "Maggie Lake Talking Markets",
@@ -185,7 +183,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-25T06:42:48+09:00",
+      "oldest_rss": "2026-09-26T05:55:06+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -207,7 +205,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-11T23:44:04+09:00",
+      "oldest_rss": "2026-11-12T09:09:02+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -218,8 +216,8 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-11T21:54:12+09:00",
-      "gap_possible": false,
+      "oldest_rss": "2026-11-12T22:05:23+09:00",
+      "gap_possible": true,
       "matched": 0
     },
     {
@@ -229,7 +227,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-11T05:30:08+09:00",
+      "oldest_rss": "2026-11-12T02:15:06+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -240,14 +238,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-07T09:00:39+09:00",
+      "oldest_rss": "2026-11-09T08:30:05+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 3,
-    "yta_server_remaining": 7,
+    "yta_used_today": 0,
+    "yta_server_remaining": null,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -256,24 +254,24 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 3,
-    "gemini_est_video_hours_today": 0.551,
+    "gemini_calls_today": 0,
+    "gemini_est_video_hours_today": 0.0,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 0,
+    "skipped_short": 1,
     "expired": 0,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 0,
+    "ready": 0,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
@@ -284,6 +282,52 @@
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "0COAy4Ga8ro",
+      "url": "https://www.youtube.com/watch?v=0COAy4Ga8ro",
+      "channel": "tastylive",
+      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
+      "channel_mode": "filter",
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "match": "description",
+      "title": "The Holiday Effect That Almost Nobody Catches",
+      "description": "Cem Karsan points to something few traders account for: Thanksgiving and Christmas drive a stretch from November through to mid-January that carries the lowest volume-weighted period of the year. It isn’t just the market holidays themselves. It’s the weeks around Thanksgiving and the stretch over Christmas and New Year when people simply aren’t trading. Pair that compression with the open interest sitting in December and you get a powerful tailwind.\n\n#tastylive #cemkarsan #kaivolatility #seasonality #volatility #compression #holidays #optionstrading #stockmarket #markets\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, and over 25 personalities, we'll help you take your trading to the next level, whether you are new to trading or a seasoned veteran.\n\ntastylive content is created, produced, and provided solely by tastylive, Inc. (\"tastylive\") and is for informational and educational purposes only. It is not, nor is it intended to be, trading or investment advice or a recommendation that any security, futures contract, digital asset, other product, transaction, or investment strategy is suitable for any person. Trading securities, futures products, and digital assets involve risk and may result in a loss greater than the original amount invested. Investment information provided may not be approp",
+      "published_at": "2026-11-12T17:00:14Z",
+      "first_seen_at": "2026-11-13T02:20:34+09:00",
+      "is_short": true,
+      "transcript_status": "skipped_short",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "short (skipped)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "79Vp2lfBpbI",
       "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI",
@@ -2797,1441 +2841,6 @@
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "095_LCH0CQA",
-      "url": "https://www.youtube.com/watch?v=095_LCH0CQA",
-      "channel": "CNBC Television",
-      "channel_id": "UCvJJ_dzjViJCoLf5uKUTwoA",
-      "channel_mode": "filter",
-      "person": "Katie Stockton",
-      "tier": 4,
-      "role": "observer",
-      "match": "web_discovery",
-      "title": "Fairlead's Katie Stockton on market selloff: Don't sell weakness, sell the strength",
-      "description": "Katie Stockton, Fairlead Strategies founder and managing partner, joins 'Squawk Box' to discuss the latest market trends, what market technicals are indicating about yesterday's market selloff, and more.",
-      "published_at": "2026-11-06T00:00:00+00:00",
-      "first_seen_at": "2026-11-07T10:10:30+09:00",
-      "is_short": false,
-      "transcript_status": "not_needed",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "observer: captions are reserved for the core 11",
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-07T10:10:30+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Katie Stockton is introduced at 0:05 and speaks extensively throughout the segment analyzing market technicals, support levels, credit spreads, and market outlook.",
-      "stance": {
-        "us_equities": "mixed",
-        "summary": "Katie Stockton is constructively positioned short-term for a snap-back rally driven by oversold sentiment and positive year-end seasonality, but remains cautious for Q1 due to technical damage on monthly indicators and deteriorating credit spread signals.",
-        "invalidation": "",
-        "targets": [
-          "7250",
-          "7000",
-          "8000"
-        ],
-        "timeframe": "Short-term through Q1"
-      },
-      "quotes": [
-        {
-          "t": "0:27",
-          "t_sec": 27,
-          "speaker": "Katie Stockton",
-          "topic": "Market price action",
-          "text": "It's a little bit of both. And I wouldn't call price weird. I mean, it's really what matters most when it comes to investing.",
-          "url": "https://www.youtube.com/watch?v=095_LCH0CQA&t=27s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "1:18",
-          "t_sec": 78,
-          "speaker": "Katie Stockton",
-          "topic": "Monthly technical indicators and outlook",
-          "text": "but if we do close the month at current levels, there will be damage to the monthly indicators that we track, and that's maybe not problematic for year end, but for Q1, it kind of puts me back in the mindset of late last year.",
-          "url": "https://www.youtube.com/watch?v=095_LCH0CQA&t=78s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "2:23",
-          "t_sec": 143,
-          "speaker": "Katie Stockton",
-          "topic": "Credit spreads risk signal",
-          "text": "Just in the past couple of weeks, one of the metrics we track did break out, and that's one of those longer-term risk inputs that we track that does make it different this time, certainly different than the April 25 low.",
-          "url": "https://www.youtube.com/watch?v=095_LCH0CQA&t=143s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "3:40",
-          "t_sec": 220,
-          "speaker": "Katie Stockton",
-          "topic": "Trading strategy",
-          "text": "So what we've been recommending is don't sell weakness, sell strength, right? Especially for the names that do appear to have broken support levels.",
-          "url": "https://www.youtube.com/watch?v=095_LCH0CQA&t=220s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "4:18",
-          "t_sec": 258,
-          "speaker": "Katie Stockton",
-          "topic": "S&P 500 support levels",
-          "text": "the support level below about 7250, which is a Fibonacci retracement level, gets you back into that 7000 area. So it's really not that far away, maybe 5% or so.",
-          "url": "https://www.youtube.com/watch?v=095_LCH0CQA&t=258s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "4:38",
-          "t_sec": 278,
-          "speaker": "Katie Stockton",
-          "topic": "Short-term market outlook",
-          "text": "But for right now, we want to stay constructive short-term because these extremes are really unusual and they affect the market internals like market sentiment.",
-          "url": "https://www.youtube.com/watch?v=095_LCH0CQA&t=278s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "5:44",
-          "t_sec": 344,
-          "speaker": "Katie Stockton",
-          "topic": "Year-end rally possibility",
-          "text": "That's possible with the potential for the snap back in addition to the positive seasonal influences that are pretty real come into the end of November and December.",
-          "url": "https://www.youtube.com/watch?v=095_LCH0CQA&t=344s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "6:40",
-          "t_sec": 400,
-          "speaker": "Katie Stockton",
-          "topic": "Near-term bottoming",
-          "text": "I would expect more volatility in the next couple of days, but I think we're pretty close to a short-term low based on our metrics.",
-          "url": "https://www.youtube.com/watch?v=095_LCH0CQA&t=400s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-07T10:10:30+09:00",
-      "evidence_grade": "1차-B",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "0:34",
-          "point": "Recent market declines have broken several technical support levels across major equity indices, though large down days often create short-term seller exhaustion.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "1:18",
-          "point": "Closing the month near current levels would inflict technical damage on monthly indicators, creating headwinds for Q1 performance.",
-          "condition": "If major equity indices close the month near current depressed levels",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "2:23",
-          "point": "A recent breakout in tracked credit spread metrics signals elevated long-term systemic risk, differentiating this sell-off from prior market pullbacks.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "3:40",
-          "point": "Investors should refrain from selling into market weakness and instead sell into snap-back strength to trim broken chart names.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "4:18",
-          "point": "The S&P 500 has secondary technical support near 7250 to 7000, representing roughly 5% additional downside if monthly sell signals confirm.",
-          "condition": "If monthly sell signals confirm at month end",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "4:38",
-          "point": "Extreme oversold sentiment and spike in volatility indicators justify staying constructive on equities in the very short term.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "5:44",
-          "point": "Favorable year-end seasonal trends in late November and December could help push the S&P 500 higher toward 8000 after a daily reversal day.",
-          "condition": "",
-          "conviction": "hypothetical",
-          "horizon": ""
-        },
-        {
-          "t": "6:40",
-          "point": "Equities are close to a short-term bottom as key DeMark indicators begin to fire buy signals across individual tech and semiconductor stocks.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 13524,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 8,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "EMtTSXRR9aI",
-      "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI",
-      "channel": "Bob Elliott",
-      "channel_id": "xlink:Bob Elliott",
-      "channel_mode": "filter",
-      "person": "Bob Elliott",
-      "tier": 3,
-      "role": "core",
-      "match": "x_self_link",
-      "title": "Macro Talk 2026.11.06",
-      "description": "A recording from Bob Elliott and Prometheus Research's live video\n\nhttps://bobeunlimited.substack.com/p/macro-talk-20261106?utm_source=youtube",
-      "published_at": "2026-11-06T00:00:00+00:00",
-      "first_seen_at": "2026-11-08T10:10:33+09:00",
-      "is_short": false,
-      "transcript_status": "not_needed",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "tier 3: captions are kept for the tiers that drive judgments",
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-08T21:10:30+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Bob Elliott appears on screen and speaks throughout the episode, providing analysis on US equities, macro trends, inflation, bond markets, and economic data.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Bob Elliott views US equities as vulnerable, noting that market expectations for 20% earnings growth are priced for perfection while macro conditions point to slowing nominal growth, persistent inflation, and potential constraints in AI CapEx and demand, creating a clear downside skew.",
-        "invalidation": "",
-        "targets": [],
-        "timeframe": ""
-      },
-      "quotes": [
-        {
-          "t": "03:50",
-          "t_sec": 230,
-          "speaker": "Bob Elliott",
-          "topic": "US Equities",
-          "text": "Look, we're like 5% off highs in the broad stock market. Like this is not, you know, obviously yesterday felt like going to a late night boxing event at your gym where you don't wear a helmet. But it really is, the moves aren't that big.",
-          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=230s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "08:00",
-          "t_sec": 480,
-          "speaker": "Bob Elliott",
-          "topic": "Macro / Nominal Growth",
-          "text": "Are we going to see reinforcement in either earnings or macro stats, or are we going to see something that's sort of real versus like changes in expectations that affirm a weaker nominal growth environment ahead?",
-          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=480s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "25:20",
-          "t_sec": 1520,
-          "speaker": "Bob Elliott",
-          "topic": "US Equities / Earnings",
-          "text": "Whether it's the demand or the supply, or a little bit of both, if those things come down meaningfully around this AI mania, then there's just no way we're going to get 20% earnings growth that is being expected in the market.",
-          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=1520s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "35:10",
-          "t_sec": 2110,
-          "speaker": "Bob Elliott",
-          "topic": "US Equities / Market Risks",
-          "text": "We are somewhat on a knife's edge here, it seems, in terms of exactly how this is going to play out, both from expectation disappointment to asset prices starting to fall to a hiking cycle that seems a bit persistent.",
-          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=2110s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "36:00",
-          "t_sec": 2160,
-          "speaker": "Bob Elliott",
-          "topic": "US Equities",
-          "text": "If everything is in the not good camp, you have quite a heightened risk of a self-reinforcing dynamic, right at a time when expectations are still very high. So if you think about sort of the skew, that's, it does seem like there's a downside skew.",
-          "url": "https://www.youtube.com/watch?v=EMtTSXRR9aI&t=2160s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-08T21:10:30+09:00",
-      "evidence_grade": "1차-B",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 5,
-        "excluded_speaker_mismatch": 0
-      },
-      "key_points": [
-        {
-          "t": "03:50",
-          "point": "The recent stock market decline is modest and represents a normalization from extreme hype rather than a major market collapse.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "07:38",
-          "point": "Markets previously priced in aggressive nominal growth, and the key upcoming catalyst is whether macro data and corporate earnings confirm a slowdown.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "10:11",
-          "point": "Inflation is likely to remain persistent in the 3% to 4% range in the near future.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "12:12",
-          "point": "US employment and wage data indicate modest growth around 3%, which supports a mediocre growth environment rather than an acceleration in nominal spending.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "25:20",
-          "point": "If AI infrastructure CapEx or end-user demand slows down, consensus expectations of 20% earnings growth in equities will fail to materialize.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "35:10",
-          "point": "High equity market valuations combined with persistent interest rate pressures create a downside skew and heightened risk of a self-reinforcing market decline.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "45:48",
-          "point": "Driving continued economic growth requires credit and spending to continuously accelerate rather than simply remain at high static levels.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "50:50",
-          "point": "Medium to long-term Treasury yields are heavily influenced by how monetary policy evolves relative to market expectations rather than the rate-hiking cycle alone.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 117673
-    },
-    {
-      "video_id": "7nXujKkj_jA",
-      "url": "https://www.youtube.com/watch?v=7nXujKkj_jA",
-      "channel": "tastylive",
-      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
-      "channel_mode": "filter",
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "match": "x_self_link",
-      "title": "Wall Street's $3 Trillion Wipeout Puts the Bulls on the Brink | Friday Nov 06 Live Trading",
-      "description": "Friday, November 6, 2026\n\nAll times CT.\n\n- 8:00–8:14 AM — tastylive Pre-market | Jermal & Gus\n- 8:15–8:29 AM — Morning News | Jermal & Chris (R)\n- 8:29–8:44 AM — Opening Bell | Jermal & Mike\n- 8:45–8:59 AM — Scalping Check-In | Jermal & Mike | Guest: Errol (CBOE)\n- 9:00–9:19 AM — Tasty Guest | Jermal & Mike | Guest: Brent Kochuba (R)\n- 9:20–9:39 AM — Trading Charts | Jermal & Mike | Guest: Tim Knight (R)\n- 9:40–9:59 AM — Market Measures | Jermal & Mike | Guest: Julia (R)\n- 10:00–10:29 AM — Confirm and Send | Chris (R) & TP (R)\n- 10:30–10:59 AM — Risk and Reward | Gus & Errol\n- 11:00–11:14 AM — Live from the Trade Desk | Ilya | Guest: Marty\n- 11:15–11:29 AM — Live Trades with TP | TP (R)\n- 11:30–11:45 AM — Trade of the Day | Jermal (B)\n- 11:45 AM–12:00 PM — Trade of the Day | Mike (D)\n- 12:00–12:15 PM — Trade of the Day | Gus (B)\n- 12:15–12:30 PM — Trade of the Day | Errol (D)\n- 12:30–12:45 PM — Trade of the Day | Chris (R)\n- 12:45–1:00 PM — Trade of the Day | Ilya (R)\n- 1:00–1:29 PM — Live Trades | TP (R)\n- 1:30–1:59 PM — Back to the Futures | Chris (R) & Ilya (R)\n- 2:00–2:29 PM — Trading Charts | Tim Knight (R)\n- 2:30–3:01 PM — Last Call | Chris (R) & Ilya (R, 2:45) | Guest: Max Anthony (R)\n- 3:02–3:30 PM — Tasty Crumbs | Jermal & Cem\n- 3:30–3:40 PM — Earnings Coverage | Jermal & Chris (R)\n\nEnd of Show: 3:40 PM CT\n\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable tradin",
-      "published_at": "2026-11-06T00:00:00+00:00",
-      "first_seen_at": "2026-11-08T10:10:33+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-08T10:10:33+09:00",
-      "transcript_language": null,
-      "transcript_chars": 403733,
-      "transcript_url": null,
-      "name_mentions": 0,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-08T10:10:33+09:00",
-      "gemini_mode": "video_chunks_11",
-      "person_speaks": true,
-      "gemini_evidence": "Cem Karsan is mentioned on lower-third banners as an upcoming guest later in the show, but he does not appear or speak in this video clip. / Cem Karsan is mentioned on the on-screen banner, but does not appear or speak in this video clip. The guest speaking in this segment is Brent Kochuba alongside hosts Jermal Chandler and Mike Butler. / Cem Karsan appears on camera and speaks from 1:48:40 to 1:",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Cem Karsan views the market rally as a classic dead cat bounce driven purely by options flow dynamics and put decay amidst worsening macro fundamentals. While positive seasonal options flows provide temporary support through November, he expects a major market decline once these flows fade by December or sooner. | Cem Karsan views recent market strength as a dead-cat bounce, highlighting that heavy put open interest is concentrated in December options. If a sharp dealer-driven selloff is to materialize before year-end, it must start immediately; otherwise, volatility compression will likely push stocks back toward all-time highs before a larger macro decline takes hold in December or January."
-      },
-      "quotes": [
-        {
-          "t": "1:51:27",
-          "t_sec": 6687,
-          "speaker": "Cem Karsan",
-          "topic": "Market Bounce",
-          "text": "Now, to be clear, this is still very negative. And what are we seeing this morning with this bounce? This is again a classic, you know, market had a big move, vol expanded.",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=6687s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.2,
-          "caption_sec": 6665,
-          "caption_checked": true
-        },
-        {
-          "t": "1:52:17",
-          "t_sec": 6737,
-          "speaker": "Cem Karsan",
-          "topic": "Dead Cat Bounce Strategy",
-          "text": "If you have weakness, macro weakness, things are bad, yet you get a move up because of flows—that is what a dead cat bounce is. And the answer is: if it's weak into bad macro, sell into it, right?",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=6737s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.9,
-          "caption_sec": 6728,
-          "caption_checked": true
-        },
-        {
-          "t": "1:53:15",
-          "t_sec": 6795,
-          "speaker": "Cem Karsan",
-          "topic": "Market Forecast / Timeframe",
-          "text": "Once these flows, which are still quite reasonably positive, you're going to get these counter-trend moves, once those start to fade by December, this thing is a goner, and it could happen before then.",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=6795s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 87.7,
-          "caption_sec": 6790,
-          "caption_checked": true
-        },
-        {
-          "t": "118:30",
-          "t_sec": 7110,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "I've said this for some time in this November to December period, and it's going to be hard for us to overcome it unless the administration kind of like what we're watching right now is is kind of okay with it happening, and if anything, encouraging it, the decline to come sooner.",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=7110s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 92.4,
-          "caption_sec": 7096,
-          "caption_checked": true
-        },
-        {
-          "t": "119:07",
-          "t_sec": 7147,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "The majority of open interest on that skew and and the puts in the portfolio are in the December options contract.",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=7147s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.3,
-          "caption_sec": 7128,
-          "caption_checked": true
-        },
-        {
-          "t": "119:48",
-          "t_sec": 7188,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "unless you get a big enough move to activate that in which case it become it can become a very big move.",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=7188s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 95.1,
-          "caption_sec": 7159,
-          "caption_checked": true
-        },
-        {
-          "t": "120:11",
-          "t_sec": 7211,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "I'm telling you if that move is going to happen to activate that and make that a much more stressful move into the end of the year, which I don't think is likely, it would need to start right now.",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=7211s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 7192,
-          "caption_checked": true
-        },
-        {
-          "t": "120:56",
-          "t_sec": 7256,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "If not, right, in this very short window, if not, there is a high probability of that vol compression coming in and taking things back to highs and and this being a much more vol compressed outcome into the end of the year.",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=7256s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.2,
-          "caption_sec": 7255,
-          "caption_checked": true
-        },
-        {
-          "t": "122:51",
-          "t_sec": 7371,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "my best bet is still, and I've been saying this for some time, January, December is is really when the bigger decline comes",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=7371s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.5,
-          "caption_sec": 7348,
-          "caption_checked": true
-        },
-        {
-          "t": "124:00",
-          "t_sec": 7440,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "this is not exactly the setup to be long beta and pushing price at this point.",
-          "url": "https://www.youtube.com/watch?v=7nXujKkj_jA&t=7440s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 7440,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-08T10:10:33+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "1:49:24",
-          "point": "Post-event options flow dynamics and put monetization naturally trigger short-term counter-trend rallies.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "1:51:27",
-          "point": "The current bounce is a dead cat bounce where positive options flows temporarily elevate prices despite negative macro fundamentals.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "1:52:17",
-          "point": "Investors should sell into market strength when underlying macroeconomic conditions continue to deteriorate.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "1:53:15",
-          "point": "Supportive options flows are expected to wear off by December, after which the market will experience a severe decline.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "By December"
-        },
-        {
-          "t": "1:55:36",
-          "point": "Pervasive downside hedging and structured volatility products cushion the market, making an immediate rapid crash less likely.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "1:57:00",
-          "point": "Underlying market dispersion and weakness in semiconductor stocks could eventually build up enough internal pressure to break index stability.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "1:58:08",
-          "point": "Even if the market rallies back toward new highs over a few days, it would not invalidate the broader bearish outlook.",
-          "condition": "",
-          "conviction": "hypothetical",
-          "horizon": ""
-        },
-        {
-          "t": "118:30",
-          "point": "Seasonal headwinds in the November to December window create a difficult hurdle for equity markets.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "November to December"
-        },
-        {
-          "t": "119:07",
-          "point": "The majority of put open interest and downside skew is heavily concentrated in the December options contracts.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "December"
-        },
-        {
-          "t": "119:48",
-          "point": "Dealer short skew structure creates risk of a severe market decline if price moves enough to trigger downside charm and vanna flows.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": "short_term"
-        },
-        {
-          "t": "120:11",
-          "point": "For short skew to spark a major stressful move into year-end, the breakdown would need to begin immediately.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": "immediate"
-        },
-        {
-          "t": "120:56",
-          "point": "If a market breakdown does not happen in the immediate short window, volatility compression will likely push equities back to all-time highs into year-end.",
-          "condition": "if equities fail to break down over the next several days",
-          "conviction": "base_case",
-          "horizon": "year_end"
-        },
-        {
-          "t": "121:16",
-          "point": "Extremely elevated option skew historically serves as an early warning signal, expanding volatility and bringing market chop before broader declines occur months later.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "multi_month"
-        },
-        {
-          "t": "122:51",
-          "point": "The primary expected timeframe for a substantial macro market decline remains December through January.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "December to January"
-        },
-        {
-          "t": "124:00",
-          "point": "Fading administration fiscal support and decaying macro dynamics make current conditions unfavorable for maintaining long beta exposure.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "near_term"
-        }
-      ],
-      "gemini_prompt_tokens": 819165,
-      "quotes_grade_count": {
-        "1차-A": 9,
-        "1차-B": 1,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "vf8R_JQeXLk",
-      "url": "https://www.youtube.com/watch?v=vf8R_JQeXLk",
-      "channel": "42 Macro",
-      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
-      "channel_mode": "dedicated",
-      "person": "Darius Dale",
-      "tier": 1,
-      "role": "core",
-      "match": "dedicated_channel",
-      "title": "The Macro Minute: Q3 Nonfarm Productivity Data Challenges the Inflation Regime",
-      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\nTrack the trends on 42 Macro socials!\n\nTwitter: https://bit.ly/3GcrD2b\n \nLinkedIn: https://bit.ly/3m3h7lS\n\nFacebook: https://bit.ly/30TzWQn",
-      "published_at": "2026-11-05T21:00:04Z",
-      "first_seen_at": "2026-11-06T06:20:28+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-06T10:10:31+09:00",
-      "transcript_language": null,
-      "transcript_chars": 8446,
-      "transcript_url": null,
-      "name_mentions": 4,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "[0:00] Happy Thursday out there, team42. It's your skipper here, Darius Dell, to present our macro minute for Tuesday, November 5th, 2026. Or should I say unhappy Thursday for those who aren't paying attention to our signals and our memos. So, as always, we'll star",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-06T10:10:31+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Darius Dale appears on camera and speaks throughout the video, presenting his macro analysis.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Darius Dale emphasizes that their quantitative market signals have pivoted incrementally bearish despite recent market rallies. He warns that risk-off market regimes, secular bear markets, and crashes all begin looking like ordinary corrections, urging investors not to hold onto losses and to get on the right side of market risk.",
-        "invalidation": "",
-        "targets": [],
-        "timeframe": ""
-      },
-      "quotes": [
-        {
-          "t": "04:34",
-          "t_sec": 274,
-          "speaker": "Darius Dale",
-          "topic": "market_signals",
-          "text": "our market signals made... yesterday, it started off quite bearish and they got incrementally bearish yesterday despite the massive rally...",
-          "url": "https://www.youtube.com/watch?v=vf8R_JQeXLk&t=274s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 91.7,
-          "caption_sec": 275,
-          "caption_checked": true
-        },
-        {
-          "t": "05:27",
-          "t_sec": 327,
-          "speaker": "Darius Dale",
-          "topic": "risk_management",
-          "text": "Today is always the best day to get on the right side of market risk. You do not want to sit there hoddling losses because that is how you commit type two errors.",
-          "url": "https://www.youtube.com/watch?v=vf8R_JQeXLk&t=327s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 99.4,
-          "caption_sec": 305,
-          "caption_checked": true
-        },
-        {
-          "t": "06:15",
-          "t_sec": 375,
-          "speaker": "Darius Dale",
-          "topic": "bear_market",
-          "text": "Every secular bear market looks exactly the same at the outset. Every crash, with the exception of 1987, looks exactly the same at the outset. They all start off looking like corrections.",
-          "url": "https://www.youtube.com/watch?v=vf8R_JQeXLk&t=375s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.8,
-          "caption_sec": 367,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-06T10:10:31+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "00:18",
-          "point": "Q3 nonfarm productivity and unit labor costs data challenge the durability and severity of the current risk-off inflation market regime.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "02:10",
-          "point": "The risk of a politically induced slowdown in data center construction is high and not currently priced into equity markets.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "02:38",
-          "point": "The Bank of England delivered a rate hike and signaled more increases ahead, driven by elevated producer price index trends.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "04:34",
-          "point": "Quantitative market signals turned incrementally bearish despite recent equity rallies, which may just reflect dealer gamma squeezing and short covering.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "05:27",
-          "point": "Investors must respect market signals and cut losses early during risk-off regimes, as crashes and secular bear markets initially look indistinguishable from simple corrections.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 14144,
-      "quotes_grade_count": {
-        "1차-A": 3,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "7us01PXykN0",
-      "url": "https://www.youtube.com/watch?v=7us01PXykN0",
-      "channel": "Fundstrat",
-      "channel_id": "UCcBzKSM4A-pIHMJWSnxmi_g",
-      "channel_mode": "filter",
-      "person": "Mark Newton",
-      "tier": 1,
-      "role": "core",
-      "match": "description",
-      "title": "Tech stocks are cratering today",
-      "description": "Tech stocks are cratering today. But do these declines change their long-term trajectory?\n\nMark Newton went over this and more with our Washington Policy Strategist Tom Block in a special election edition webinar yesterday: https://research.fundstratdirect.com/mark-newton-technical-nov-replay/?utm_medium=social&utm_source=YT-short&utm_campaign=webinar&utm_term=20261105&utm_content=mn-ta",
-      "published_at": "2026-11-05T17:59:20Z",
-      "first_seen_at": "2026-11-06T03:07:30+09:00",
-      "is_short": true,
-      "transcript_status": "skipped_short",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": null,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "short (skipped)",
-      "gemini_status": "skipped",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "Cp5xnh4COXg",
-      "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg",
-      "channel": "Excess Returns",
-      "channel_id": "UCPYvx_y92dvI1PSdiho0ALw",
-      "channel_mode": "filter",
-      "person": "Bob Elliott",
-      "tier": 3,
-      "role": "core",
-      "match": "description",
-      "title": "AI Sell-Off: Can Consumers Keep Spending When Stocks Stop Rising?",
-      "description": "Bob Elliott and Aahan Menon examine how stock-market wealth is helping consumers spend faster than their paychecks grow—and what that means for corporate profits if stocks stop rising.\n\nElliott, co-founder of Unlimited, and Menon, founder of Prometheus Research, join Matt Zeigler to connect household spending, AI investment, and the earnings expectations built into markets. They discuss where their growth outlooks differ, why persistent inflation complicates the Fed's choices, and how bonds can look attractive against stocks while still looking unattractive against cash.\n\nThe conversation also explores whether AI is producing the economy-wide gains needed to justify its investment boom, how forward spending commitments could reverse, and why both guests distinguish those risks from a repeat of the 2008 credit crisis.\n\nTopics covered:\n- What the midterm election could change for fiscal policy and data-center construction\n- Oil and AI as the competing forces behind inflation and growth expectations\n- Bob Elliott's distinction between peak growth and peak pricing of growth\n- How household wealth and drawing down savings support consumer spending\n- Aahan Menon on wages, workforce participation, immigration, and demographics\n- Why both guests think central banks are reluctant to deliver tighter policy\n- Bonds versus stocks, bonds versus cash, and Aahan Menon's inflation-nowcast rule\n- Bob Elliott's test for AI: accelerating productivity and revenue beyond the technology sector\n- H",
-      "published_at": "2026-11-05T16:18:48Z",
-      "first_seen_at": "2026-11-06T01:20:38+09:00",
-      "is_short": false,
-      "transcript_status": "not_needed",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "tier 3: captions are kept for the tiers that drive judgments",
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-06T21:10:33+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Bob Elliott appears in the video starting at 00:59 and actively participates throughout the interview, giving detailed analysis on US equities, AI investment, nominal economic growth, central bank policy, and credit markets.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Bob Elliott believes US equities are priced for extraordinary outcomes and AI productivity acceleration that are unlikely to materialize at a macro level. With nominal growth fading and monetary and market conditions tightening, he views stocks as vulnerable and considers bonds more attractive than equities on a forward-looking basis.",
-        "invalidation": "If macro-level productivity accelerates dramatically and real-economy revenues from AI scale up to justify the trillions in expected capital investment.",
-        "targets": [],
-        "timeframe": "Medium-to-long term"
-      },
-      "quotes": [
-        {
-          "t": "07:26",
-          "t_sec": 446,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "we essentially we we have a mania in in the AI complex... basically what's happened is we've had very strong earnings growth and, you know, that's happened for a few quarters and then basically what's happened is people are extrapolating those that extraordinary earnings growth out into the future.",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=446s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "08:16",
-          "t_sec": 496,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "it's just when that extrapolation gets most extreme that it's subject to basically two main risks, which is one, just disappointing relative to very, very high expectations... and then on top of it, you know, you have tightening that is occurring... usually that sort of dynamic is bad for manias on a forward looking basis.",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=496s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "10:13",
-          "t_sec": 613,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "when I look at that and what I really mean is past peak pricing of nominal growth, which is that what we've had is we've had quite strong nominal growth and that extrapolation that nominal growth will continue to be extremely strong at a time when we're starting to see some fading in terms of nominal growth",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=613s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "14:21",
-          "t_sec": 861,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "as labor markets have softened and wage growth has moderated, we've transitioned from an income driven expansion where essentially spending was 6% annual growth and income was 6% annual growth to dis-savings driven expansion where spending is 6, 7, 8% nominal in part to keep up with the high prices",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=861s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "26:28",
-          "t_sec": 1588,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "bonds look more favorable to stocks on a forward looking basis from my perspective.",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=1588s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "26:35",
-          "t_sec": 1595,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "It's not necessarily that there's going to be terrible economic outcomes. It's just the idea that we're going to get the extraordinary outcomes that are priced in seems much lower than the pricing would suggest.",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=1595s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "34:07",
-          "t_sec": 2047,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "There's no evidence at a macro level that we've seen a meaningful increase in productivity associated with AI-related activities.",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2047s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "35:25",
-          "t_sec": 2125,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "The question is not, is it making you incrementally more productive? The question is, is it creating an acceleration in productivity? Because that's what's required in order to meet the extraordinary investment expectations",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2125s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "38:13",
-          "t_sec": 2293,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "by let's say 2030, there's something like $10 trillion of investment that needs to occur... In order to support that $10 trillion of investment and get a decent return, you have to basically... need 3 to 4 trillion of annualized revenue... we need 3 trillion of annualized revenue by 2030. That's a big gap in the market",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2293s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "44:28",
-          "t_sec": 2668,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "Are we at risk of a credit event now? No.",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2668s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "45:47",
-          "t_sec": 2747,
-          "speaker": "Bob Elliott",
-          "topic": "",
-          "text": "the debt environment of the US economy has totally changed. First of all banks went from 30x leverage to like 8x leverage today... a lot of credit that exists in the economy is now extended on an unleveraged basis",
-          "url": "https://www.youtube.com/watch?v=Cp5xnh4COXg&t=2747s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-06T21:10:33+09:00",
-      "evidence_grade": "1차-B",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 11,
-        "excluded_speaker_mismatch": 0
-      },
-      "key_points": [
-        {
-          "t": "03:46",
-          "point": "Democratic governor wins could increase executive restrictions on data center construction and energy usage, presenting an unexpected headwind for AI infrastructure.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "07:26",
-          "point": "The current equity mania in the AI complex is driven by market participants extrapolating short-term earnings growth too far into the future.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "08:16",
-          "point": "Extreme equity valuation extrapolation is vulnerable to earnings disappointments and tightening credit and monetary conditions.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "10:13",
-          "point": "Market pricing reflects past peak nominal growth expectations, while underlying economic nominal growth is actively fading.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "14:21",
-          "point": "The US economy has transitioned from an income-driven expansion to an unsustainable dis-savings-driven expansion as wage growth slows.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "16:01",
-          "point": "Dis-savings-driven consumer spending relies on rising asset prices, but equity, real estate, and bond prices have largely stalled.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "21:02",
-          "point": "Central banks are talking about fighting inflation but are failing to implement sufficient rate hikes, leaving monetary policy looser than conditions warrant.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "26:28",
-          "point": "Bonds present a more favorable risk-reward trade-off than equities because stock prices reflect unrealistically high growth expectations.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "34:07",
-          "point": "Macroeconomic data shows no evidence of a meaningful acceleration in labor productivity from AI.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "38:13",
-          "point": "The projected $10 trillion in AI infrastructure investment by 2030 requires $3-4 trillion in annualized revenue, creating a massive expectations gap.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "44:28",
-          "point": "A systemic credit crisis is unlikely because banking leverage has fallen from 30x to 8x and much private credit is extended on an unleveraged basis.",
-          "condition": "",
-          "conviction": "not_expected",
-          "horizon": ""
-        },
-        {
-          "t": "50:28",
-          "point": "Unfulfilled forward contractual commitments in AI could spark a negative feedback loop of reduced capex, lower earnings, and slowing consumer spending.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 105576
-    },
-    {
-      "video_id": "VMi5kby6YFA",
-      "url": "https://www.youtube.com/watch?v=VMi5kby6YFA",
-      "channel": "Thoughtful Money",
-      "channel_id": "UCjqe6xtZYTfvA4pHs0HgJsQ",
-      "channel_mode": "filter",
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "match": "title",
-      "title": "Crisis Is Coming In Early 2027 | Cem Karsan",
-      "description": "WORRIED ABOUT THE MARKET? SCHEDULE YOUR FREE PORTFOLIO REVIEW with Thoughtful Money's endorsed financial advisors at https://www.thoughtfulmoney.com/yt\n\nCem Karsan is a master of volatility and when it strikes.\n\nAnd he's now predicting a major market crisis that's only a few months away. Most likely in January.\n\nWhy? And what can investor do about it?\n\nFor a deep explanation on what may prove to be the most important investing event of 2027, watch this video.\n\n#marketcorrection #marketcrash #volatility \n\n0:00 — Introduction & Cold Open: Debt Crisis Warning\n1:09 — Cem Karsan & Noel Smith Join Forces At Kai\n2:32 — Noel's Path From The CBOE Floor To Co-CIO\n3:57 — How Flow Analysis Actually Works\n6:03 — Why Markets Reversed After The Midterms\n7:53 — High Skew, Vanna & Charm Drive Post-Election Flows\n10:05 — Market Makers Buy Back Stock As Vol Compresses\n14:24 — Year-End Structural Flows & The Santa Setup\n17:43 — Three Legs Of The Stool: Flows, Macro & Policy\n20:26 — Narratives Vs. Math: Why Noel Ignores Political Stories\n26:45 — Extreme Skew As A Warning Signal\n29:07 — COVID Lesson: Right On Macro, Early On Flows\n33:11 — Alpha At The Overlap Of Macro And Flows\n37:20 — Using Options For Precision & Asymmetry\n39:20 — Strait Of Hormuz, Petro-Dollar & Inelastic Inflation\n44:45 — The Maturity Debt Wall Hits\n45:31 — Hyperscaler Capex, Credit Spreads & Crowding Out\n49:08 — Hank Paulson's Trial Balloon For A Treasury Backstop\n51:26 — Why QE Without A Crisis Is Unlikely\n54:33 — What The C",
-      "published_at": "2026-11-05T16:00:10Z",
-      "first_seen_at": "2026-11-10T18:25:30+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-10T18:26:21+09:00",
-      "transcript_language": null,
-      "transcript_chars": 89262,
-      "transcript_url": null,
-      "name_mentions": 4,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "ul Money. I'm Thoughtful Money founder and your host Adam Taggart welcoming you here for a very special discussion with Jim Carson, uh Jim Croissant as he's known on X and across social media, uh sometimes referred to as Mr.  [1:00] Volatility. Um we're here to talk about all sorts of things. Uh flows, macro, the reper",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-10T18:26:21+09:00",
-      "gemini_mode": "video_chunks_3",
-      "person_speaks": true,
-      "gemini_evidence": "Cem Karsan appears in the video starting at timestamp 00:00 and engages in an in-depth conversation regarding market flows, volatility, macro trends, options positioning, and market outlook. / Cem Karsan discusses macro conditions, debt refinancing pressures, commodity inelasticity, and his expectation for a rapid market correction in early Q1/spring followed by policy intervention. / Cem Karsan a",
-      "stance": {
-        "us_equities": "mixed",
-        "summary": "Cem Karsan expects structurally positive capital flows, volatility compression following election resolution, and end-of-year releveraging to drive a robust rally in US equities into year-end and January, despite mounting longer-term macro and skew risks. | Expects a sharp, rapid market decline/crisis in Q1 or early spring driven by refinancing pressures and rising yields, which will ultimately force a major government or central bank policy intervention."
-      },
-      "quotes": [
-        {
-          "t": "00:20",
-          "t_sec": 20,
-          "speaker": "Cem Karsan",
-          "topic": "Debt and Market Flows",
-          "text": "my view... is that something's coming sooner rather than later... you want to be start getting prepared, but also looking for when the flows like we talked about are just right, which are probably starting in January.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=20s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.6,
-          "caption_sec": 0,
-          "caption_checked": true
-        },
-        {
-          "t": "09:18",
-          "t_sec": 558,
-          "speaker": "Cem Karsan",
-          "topic": "Election Volatility & Market Flows",
-          "text": "as long as there is a resolution, as long as it isn't a contested election or something really unexpected happens, at the end of the day that event passes as Noel said and that leads to structurally positive buyback and Deltas as that vol compresses.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=558s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.0,
-          "caption_sec": 551,
-          "caption_checked": true
-        },
-        {
-          "t": "15:16",
-          "t_sec": 916,
-          "speaker": "Cem Karsan",
-          "topic": "Year-End Seasonality & Equities",
-          "text": "And then we get into big structural December positive flows followed by Christmas. So there's this very kind of... much a headwind if you're trying to... a tailwind for beta I would say, or a headwind if you're trying to fade this. That's structural.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=916s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 86.2,
-          "caption_sec": 891,
-          "caption_checked": true
-        },
-        {
-          "t": "16:20",
-          "t_sec": 980,
-          "speaker": "Cem Karsan",
-          "topic": "Santa Claus & January Effect",
-          "text": "And this, in my view, is the biggest driver of this Santa Claus and January effect that we've seen over 100 years of history, and if anything, it's increasing.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=980s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.7,
-          "caption_sec": 952,
-          "caption_checked": true
-        },
-        {
-          "t": "17:07",
-          "t_sec": 1027,
-          "speaker": "Cem Karsan",
-          "topic": "Market Flows Outlook",
-          "text": "flows are... I would characterize them as meaningfully positive.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=1027s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 86.7,
-          "caption_sec": 1012,
-          "caption_checked": true
-        },
-        {
-          "t": "27:23",
-          "t_sec": 1643,
-          "speaker": "Cem Karsan",
-          "topic": "Option Skew & Tail Risk",
-          "text": "historically, if we look at the last seven years of data... We've only seen skew this high broadly twice, and those two times were late 2019... and really starting in maybe about July or so of 2021.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=1643s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 66.1,
-          "caption_sec": 1623,
-          "caption_conflict": true,
-          "caption_checked": true
-        },
-        {
-          "t": "34:44",
-          "t_sec": 2084,
-          "speaker": "Cem Karsan",
-          "topic": "Macro Time Horizon",
-          "text": "So when we're looking at those, those need to be looked at on a quarterly, annual, sometimes multi-annual basis.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=2084s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 1410,
-          "caption_checked": true
-        },
-        {
-          "t": "39:21",
-          "t_sec": 2361,
-          "speaker": "Cem Karsan",
-          "topic": "Geopolitics & Oil",
-          "text": "I've said for now nine months that the Strait of Hormuz is not opening, and it's not opening anytime soon.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=2361s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.2,
-          "caption_sec": 2356,
-          "caption_checked": true
-        },
-        {
-          "t": "48:21",
-          "t_sec": 2901,
-          "speaker": "Cem Karsan",
-          "topic": "Debt and Valuations",
-          "text": "So we're in this catch 22 now. If you want to continue the growth, if you want to keep justifying these valuations and the growth that we need to see, there just has to be more of that debt.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=2901s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 53.8,
-          "caption_sec": 2971,
-          "caption_conflict": true,
-          "caption_checked": true
-        },
-        {
-          "t": "48:39",
-          "t_sec": 2919,
-          "speaker": "Cem Karsan",
-          "topic": "Market Cap and Backstop",
-          "text": "So there is a cap that is building on this market without -- and this is the big, the big kind of payoff here -- without a bigger entity coming in and backstopping it.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=2919s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.5,
-          "caption_sec": 2910,
-          "caption_checked": true
-        },
-        {
-          "t": "51:34",
-          "t_sec": 3094,
-          "speaker": "Cem Karsan",
-          "topic": "Resolution Timeline",
-          "text": "I would say from an incentive perspective they really, really want this to be resolved by June or September of this year.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=3094s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 95.8,
-          "caption_sec": 3305,
-          "caption_checked": true
-        },
-        {
-          "t": "58:30",
-          "t_sec": 3510,
-          "speaker": "Cem Karsan",
-          "topic": "Market Correction Nature",
-          "text": "It's going to be quick in my opinion. And they're going to want to similar to the last two kind of declines, but this is going to feel like a real crisis.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=3510s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 3488,
-          "caption_checked": true
-        },
-        {
-          "t": "79:26",
-          "t_sec": 4766,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "Yeah, to be clear, this is not just us positioning for ourselves, right? This is, we have a large book of clients as both a wealth advisor, we have KAIWealth.com, this is for high net worth, super high net worth, and family offices.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=4766s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.8,
-          "caption_sec": 4766,
-          "caption_checked": true
-        },
-        {
-          "t": "80:44",
-          "t_sec": 4844,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "Any RIA who's looking for help for their clients, or a family office or high net worth that's looking for broad asset allocation help and wealth advisory help, should go to KAIWealth.com.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=4844s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 99.5,
-          "caption_sec": 4828,
-          "caption_checked": true
-        },
-        {
-          "t": "80:53",
-          "t_sec": 4853,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "For anybody who's looking for a tool, just that long vol hedge, or wants to bet on that specific outcome alone, or needs those tools, should go to KAIAssetManagement.com.",
-          "url": "https://www.youtube.com/watch?v=VMi5kby6YFA&t=4853s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.2,
-          "caption_sec": 4828,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-10T18:26:21+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 11,
-        "1차-B": 4,
-        "excluded_speaker_mismatch": 0
-      },
-      "backfilled_at": "2026-11-10T18:26:21+09:00",
-      "key_points": [
-        {
-          "t": "00:20",
-          "point": "A credit or Treasury market backstop facility will likely be needed as debt pressures build sooner rather than later.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "09:03",
-          "point": "Election resolution unwinds downside hedging, driving volatility compression that forces dealer buybacks and bullish equity flows.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "14:26",
-          "point": "End-of-year flow dynamics create strong structural tailwinds for equity beta across November, December, and into Christmas.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "15:53",
-          "point": "Annual releveraging of portfolio gains and new capital allocation on January 1 act as the core drivers of the Santa Claus rally and January effect.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "18:34",
-          "point": "Analyzing markets requires evaluating three key legs: structural flows, core macro liquidity inputs, and proactive government intervention.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "27:21",
-          "point": "Extremely high options skew indicates deep underlying market anxiety, mirroring conditions before the 2020 and 2022 market downturns.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": "long_term"
-        },
-        {
-          "t": "34:44",
-          "point": "While near-term equity flows remain dominant and supportive, multi-quarter macro fundamentals continue to deteriorate.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "long_term"
-        },
-        {
-          "t": "43:40",
-          "point": "Commodity price inelasticity and energy constraints present a major macro headwind that elevates inflation expectations and long-term borrowing costs.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "44:40",
-          "point": "A major wall of debt refinancing at higher rates creates an asymmetric supply-demand imbalance in sovereign and corporate debt markets.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "48:20",
-          "point": "Current equity market valuations require continued debt-fueled investment, which inherently pushes interest rates and credit default swaps higher.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "48:40",
-          "point": "The market faces a structural upside cap unless a official entity steps in to backstop debt and credit markets.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "51:35",
-          "point": "Political incentives favor allowing a market correction early in the year so that policy interventions can rescue markets well before the elections.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "58:30",
-          "point": "The expected market decline will be fast and intense, creating a sense of crisis necessary to justify aggressive liquidity measures and equity buying.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "62:40",
-          "point": "If market coordination fails or external geopolitical events escalate, the crisis could spill beyond the control of policymakers.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "79:26",
-          "point": "Kai Wealth provides wealth advisory and multi-family office services tailored for high-net-worth clients and institutions.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "80:44",
-          "point": "Financial advisors and family offices looking for comprehensive asset allocation guidance should access Kai Wealth, whereas those seeking standalone long volatility hedging tools should visit Kai Asset Management.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 162258
     }
   ],
   "person_index": {
@@ -4257,8 +2866,8 @@
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-10T10:10:35+09:00",
@@ -4276,15 +2885,6 @@
             "preview": "Why Market Fragility is Building into a Crisis in 2027 | Cem Karsan & Noel Smith",
             "grade": "1차-A",
             "published_at": "2026-11-09T22:00:34Z",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-10T18:26:21+09:00",
-            "url": "https://www.youtube.com/watch?v=VMi5kby6YFA",
-            "kind": "video",
-            "preview": "Crisis Is Coming In Early 2027 | Cem Karsan",
-            "grade": "1차-A",
-            "published_at": "2026-11-05T16:00:10Z",
             "noise_hint": false
           },
           {
