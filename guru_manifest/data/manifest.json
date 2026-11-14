@@ -1,25 +1,25 @@
 {
   "schema": "guru-manifest/v1",
-  "built_at": "2026-11-13T10:40:29+09:00",
+  "built_at": "2026-11-14T10:40:31+09:00",
   "note": "rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a source number [n] (several rids may share one [n] when they are the same appearance), or listed as noise by rid. auto_excluded records are games and bare reactions removed by code; they have no rid and need no handling. watch_only records (people flagged watch_only, e.g. Ryan Detrick) have no rid either: they are not shown in the reading section and are checked only for their T2 trigger. expected_records is the count to print; never recount.",
   "window": {
     "x": {
-      "lower_exclusive": "2026-11-12T10:16:16+09:00",
-      "upper": "2026-11-13T10:15:52+09:00",
+      "lower_exclusive": "2026-11-13T10:15:52+09:00",
+      "upper": "2026-11-14T10:16:18+09:00",
       "feed_regenerated_today": true
     },
     "yt": {
-      "lower_exclusive": "2026-11-12T10:10:35+09:00",
-      "upper": "2026-11-13T10:10:30+09:00",
+      "lower_exclusive": "2026-11-13T10:10:30+09:00",
+      "upper": "2026-11-14T10:10:32+09:00",
       "feed_regenerated_today": true
     },
     "web": {
-      "lower_exclusive": "2026-11-12T10:05:23+09:00",
-      "upper": "2026-11-13T10:05:29+09:00",
+      "lower_exclusive": "2026-11-13T10:05:29+09:00",
+      "upper": "2026-11-14T10:05:35+09:00",
       "feed_regenerated_today": true
     }
   },
-  "expected_records": 33,
+  "expected_records": 23,
   "rids": [
     "R001",
     "R002",
@@ -43,65 +43,47 @@
     "R020",
     "R021",
     "R022",
-    "R023",
-    "R024",
-    "R025",
-    "R026",
-    "R027",
-    "R028",
-    "R029",
-    "R030",
-    "R031",
-    "R032",
-    "R033"
+    "R023"
   ],
   "by_person": {
     "Cem Karsan": [
       "R001",
       "R002",
       "R003",
-      "R004"
+      "R004",
+      "R005",
+      "R006"
     ],
     "Darius Dale": [
-      "R005",
-      "R006",
-      "R007"
-    ],
-    "Mark Newton": [
+      "R007",
       "R008"
     ],
-    "Warren Pies": [
-      "R009",
-      "R010"
+    "Mark Newton": [
+      "R009"
     ],
     "Andy Constan": [
+      "R010",
       "R011",
       "R012",
-      "R013",
+      "R013"
+    ],
+    "Bob Elliott": [
       "R014",
       "R015",
       "R016",
-      "R017",
-      "R018",
-      "R019",
-      "R020",
-      "R021",
-      "R022",
-      "R023",
-      "R024",
-      "R025",
-      "R026"
-    ],
-    "Bob Elliott": [
-      "R027",
-      "R028",
-      "R029",
-      "R030"
+      "R017"
     ],
     "Jim Bianco": [
-      "R031",
-      "R032",
-      "R033"
+      "R018",
+      "R019",
+      "R020"
+    ],
+    "Lyn Alden": [
+      "R021"
+    ],
+    "Katie Stockton": [
+      "R022",
+      "R023"
     ]
   },
   "records": [
@@ -111,11 +93,10 @@
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-12T14:54:54+09:00",
-      "url": "https://x.com/jam_croissant/status/2120757208761659869",
+      "at": "2026-11-14T07:15:21+09:00",
+      "url": "https://x.com/jam_croissant/status/2121366334546248131",
       "kind": "quote_post",
-      "quoted_author": "FoxNews",
-      "video": "본인 발언 없음 · 검증 인용 0개"
+      "quoted_author": "FoxNews"
     },
     {
       "rid": "R002",
@@ -123,11 +104,10 @@
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-12T15:14:16+09:00",
-      "url": "https://x.com/jam_croissant/status/2120762081863401761",
+      "at": "2026-11-14T07:25:00+09:00",
+      "url": "https://x.com/jam_croissant/status/2121368760128799058",
       "kind": "quote_post",
-      "preview": "This is why you don’t go to a bank for VPF’s… The fact that guys like Masa & other large venture firms don’t know any better is embarrassin…",
-      "quoted_author": "zerohedge"
+      "quoted_author": "EoinHiggins_"
     },
     {
       "rid": "R003",
@@ -135,47 +115,46 @@
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-13T05:27:55+09:00",
-      "url": "https://x.com/jam_croissant/status/2120976908511019207",
-      "kind": "post",
-      "preview": "@NoelSmith and I joined @davidlin_TV for a chat on the David Lin Report. Check out the link below"
+      "at": "2026-11-14T08:07:01+09:00",
+      "url": "https://x.com/jam_croissant/status/2121379335160381666",
+      "kind": "quote_post",
+      "quoted_author": "HormuzReport"
     },
     {
       "rid": "R004",
-      "feed": "YouTube",
+      "feed": "X",
       "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-12T21:10:34+09:00",
-      "published_at": "2026-11-12T03:54:13Z",
-      "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI",
-      "kind": "video",
-      "channel": "tastylive",
-      "grade": "1차-A",
-      "preview": "Cem Karsan Says You're Trading With One Arm Tied Behind You"
+      "at": "2026-11-14T09:30:12+09:00",
+      "url": "https://x.com/jam_croissant/status/2121400268411543625",
+      "kind": "post",
+      "preview": "It seems that flights are being allowed to depart ONLY if they are NOT flying over the continental United States 🇺🇸 . The only domestic fli…"
     },
     {
       "rid": "R005",
       "feed": "X",
-      "person": "Darius Dale",
+      "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-13T05:38:41+09:00",
-      "url": "https://x.com/DariusDale42/status/2120979616747909387",
-      "kind": "post",
-      "preview": "RE: Microsoft $MSFT Outlook outage: Does anyone know if this outage is the result of an AI-powered hack? Setting Microsoft aside, I was jus…"
+      "at": "2026-11-14T09:40:16+09:00",
+      "url": "https://x.com/jam_croissant/status/2121402801976693077",
+      "kind": "quote_post",
+      "quoted_author": "TradeVolatility"
     },
     {
       "rid": "R006",
-      "feed": "X",
-      "person": "Darius Dale",
+      "feed": "YouTube",
+      "person": "Cem Karsan",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-13T06:11:19+09:00",
-      "url": "https://x.com/DariusDale42/status/2120987832559018160",
-      "kind": "quote_post",
-      "preview": "ANSWER: Our company exists to give you the confidence and clairvoyance required to invest well. \"Invest well\" = compounding returns from a …",
-      "quoted_author": "NovitskySc94827"
+      "at": "2026-11-14T10:10:32+09:00",
+      "published_at": "2026-11-13T23:16:48Z",
+      "url": "https://www.youtube.com/watch?v=i0dhEf5U-Ls",
+      "kind": "video",
+      "channel": "tastylive",
+      "grade": "1차-A",
+      "preview": "Cem Karsan Explains Why All That News Didn’t Move the Market"
     },
     {
       "rid": "R007",
@@ -183,47 +162,45 @@
       "person": "Darius Dale",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-13T07:52:00+09:00",
-      "url": "https://x.com/DariusDale42/status/2121013168394875105",
+      "at": "2026-11-13T22:01:42+09:00",
+      "url": "https://x.com/DariusDale42/status/2121227002774507926",
       "kind": "quote_post",
-      "preview": "Boy, this Jensen Woods, I mean, Huang scandal is wild. Has anyone ever met a man who cheated on his wife three times who only did it three …",
-      "quoted_author": "Polymarket"
+      "preview": "This is relevant in light of mounting speculation that the “honorable” @JensenHuang is about to get hired away from @nvidia to @SpaceX by @…",
+      "quoted_author": "natbrunell",
+      "video": "1차-B · 검증 인용 7개"
     },
     {
       "rid": "R008",
       "feed": "X",
-      "person": "Mark Newton",
+      "person": "Darius Dale",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-12T10:23:23+09:00",
-      "url": "https://x.com/MarkNewtonCMT/status/2120688878268850283",
-      "kind": "quote_post",
-      "preview": "Certainly still a volatile, whippy time, but I anticipate this ending around 11/20 at the latest... I like being long Tech with a 3-6 mth t…",
-      "quoted_author": "WOLF_Terminal",
-      "video": "본인 발언 없음 · 검증 인용 0개"
+      "at": "2026-11-13T23:21:17+09:00",
+      "url": "https://x.com/DariusDale42/status/2121247031901507715",
+      "kind": "post",
+      "preview": "Now you know why @RayDalio, @HoweGeneration, Dr. @Peter_Turchin, and I are the four most despondent optimists in the world. With great wisd…"
     },
     {
       "rid": "R009",
       "feed": "X",
-      "person": "Warren Pies",
+      "person": "Mark Newton",
       "role": "core",
       "tier": 1,
-      "at": "2026-11-12T23:06:42+09:00",
-      "url": "https://x.com/WarrenPies/status/2120880972204007901",
+      "at": "2026-11-13T10:19:19+09:00",
+      "url": "https://x.com/MarkNewtonCMT/status/2121050241289924858",
       "kind": "post",
-      "preview": "In my experience, CFOs are the least visionary members of the c-suite."
+      "preview": "$AMD has gained ground rapidly as NVDA has fallen & while i have no illusions about these being substitutes, it is worth paying attention t…"
     },
     {
       "rid": "R010",
       "feed": "X",
-      "person": "Warren Pies",
+      "person": "Andy Constan",
       "role": "core",
-      "tier": 1,
-      "at": "2026-11-13T04:05:57+09:00",
-      "url": "https://x.com/WarrenPies/status/2120956282660364788",
-      "kind": "quote_post",
-      "preview": "2y trying to get there by the end of the week...",
-      "quoted_author": "WarrenPies"
+      "tier": 2,
+      "at": "2026-11-13T22:00:15+09:00",
+      "url": "https://x.com/dampedspring/status/2121226635945169298",
+      "kind": "post",
+      "preview": "If you can't send an email how are you going to pay for a pizza with digital currency?"
     },
     {
       "rid": "R011",
@@ -231,10 +208,11 @@
       "person": "Andy Constan",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-12T20:58:38+09:00",
-      "url": "https://x.com/dampedspring/status/2120848745210204163",
-      "kind": "post",
-      "preview": "As my meme buy level gets closer I am cancelling because frankly why in the world would I buy a speculative asset which doesn't act like di…"
+      "at": "2026-11-13T22:47:59+09:00",
+      "url": "https://x.com/dampedspring/status/2121238651405508810",
+      "kind": "quote_post",
+      "preview": "Vibes reversed presumably. 50bp hike guys in shambles as PCE components drop consensus below .3 Anyhow. The dove guys are going to start vi…",
+      "quoted_author": "dampedspring"
     },
     {
       "rid": "R012",
@@ -242,11 +220,10 @@
       "person": "Andy Constan",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-12T21:18:57+09:00",
-      "url": "https://x.com/dampedspring/status/2120853857169256517",
-      "kind": "quote_post",
-      "preview": "Doomer. Bad for your money. Always own beta",
-      "quoted_author": "TheStalwart"
+      "at": "2026-11-14T00:22:29+09:00",
+      "url": "https://x.com/dampedspring/status/2121262430273827131",
+      "kind": "post",
+      "preview": "Got 2/3 of my max short equities on yesterday from flat position . Was greedy on today's open for the balance. 🤦🏻‍♂️"
     },
     {
       "rid": "R013",
@@ -254,338 +231,213 @@
       "person": "Andy Constan",
       "role": "core",
       "tier": 2,
-      "at": "2026-11-12T22:03:06+09:00",
-      "url": "https://x.com/dampedspring/status/2120864967000007045",
-      "kind": "quote_post",
-      "preview": "$HYPE may get a 69 handle. 😂 $PURR down 29% and HYPE down 27% since I challenged the cult. You guys get what you deserve",
-      "quoted_author": "dampedspring"
+      "at": "2026-11-14T06:34:41+09:00",
+      "url": "https://x.com/dampedspring/status/2121356100863750257",
+      "kind": "post",
+      "preview": "Too soon probs. But how fast did people ask if the U.S. airports use outlook and teams 🥁"
     },
     {
       "rid": "R014",
       "feed": "X",
-      "person": "Andy Constan",
+      "person": "Bob Elliott",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-12T22:13:21+09:00",
-      "url": "https://x.com/dampedspring/status/2120867544202629458",
+      "tier": 3,
+      "at": "2026-11-13T21:15:00+09:00",
+      "url": "https://x.com/BobEUnlimited/status/2121215248988295307",
       "kind": "post",
-      "preview": "Did the bond market sleep with a Chinese spy?"
+      "preview": "“There’s A Dragon in My Garage!” Every day we hear tales of extraordinary productivity growth from the AI revolution. But there is a much s…"
     },
     {
       "rid": "R015",
       "feed": "X",
-      "person": "Andy Constan",
+      "person": "Bob Elliott",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-12T22:32:19+09:00",
-      "url": "https://x.com/dampedspring/status/2120872318448906249",
+      "tier": 3,
+      "at": "2026-11-13T23:12:31+09:00",
+      "url": "https://x.com/BobEUnlimited/status/2121244824359616959",
       "kind": "post",
-      "preview": "Notable post deal performance for ipo, equity, and equity linked capital raises. Haven't checked the numbers from ChatGPT so may be slightl…"
+      "preview": "For all the earnings call anecdotes of CEOs claiming they are using AI to enhance productivity, there has been *zero improvement* in output…"
     },
     {
       "rid": "R016",
       "feed": "X",
-      "person": "Andy Constan",
+      "person": "Bob Elliott",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-12T22:53:30+09:00",
-      "url": "https://x.com/dampedspring/status/2120877651238019544",
-      "kind": "post",
-      "preview": "I'm long at 159 but without a doubt the \"CEO Transition\" first step playbook is to kitchen sink every bit of bad news this quarter $NVDA"
+      "tier": 3,
+      "at": "2026-11-14T05:15:00+09:00",
+      "url": "https://x.com/BobEUnlimited/status/2121336044494667819",
+      "kind": "quote_post",
+      "preview": "Just when everyone thought private debt markets were dead...",
+      "quoted_author": "UnlimitedFnds"
     },
     {
       "rid": "R017",
-      "feed": "X",
-      "person": "Andy Constan",
+      "feed": "web",
+      "person": "Bob Elliott",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-12T22:55:05+09:00",
-      "url": "https://x.com/dampedspring/status/2120878049633960312",
-      "kind": "post",
-      "preview": "The funny thing is it doesn't take much talent at all to engage in vendor financing. Like literally anyone can do it. The trick is getting …"
+      "tier": 3,
+      "at": "2026-11-13T21:05:26+09:00",
+      "published_at": "2026-11-11T17:11:00+00:00",
+      "url": "https://www.cnbc.com/video/2026/11/11/watch-cnbcs-full-interview-with-unlimited-ceo-bob-elliot.html",
+      "kind": "video_page",
+      "outlet": "CNBC",
+      "grade": "제목·설명만 확인",
+      "preview": "Watch CNBC's full interview with Unlimited CEO Bob Elliott"
     },
     {
       "rid": "R018",
       "feed": "X",
-      "person": "Andy Constan",
+      "person": "Jim Bianco",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-12T23:03:55+09:00",
-      "url": "https://x.com/dampedspring/status/2120880272598237339",
-      "kind": "quote_post",
-      "preview": "The definition of behind the curve is when the market curve has more hikes than the FOMC has pencilled out and Inflation is not back to tar…",
-      "quoted_author": "financialjuice"
+      "tier": 3,
+      "at": "2026-11-13T12:11:58+09:00",
+      "url": "https://x.com/BiancoResearch/status/2121078591731777540",
+      "kind": "post",
+      "preview": "The 10-year yield has risen over 25 bps in four days (this week). In recent years, only four other periods have seen larger moves. This yie…"
     },
     {
       "rid": "R019",
       "feed": "X",
-      "person": "Andy Constan",
+      "person": "Jim Bianco",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-12T23:06:42+09:00",
-      "url": "https://x.com/dampedspring/status/2120880970664640780",
+      "tier": 3,
+      "at": "2026-11-14T05:53:49+09:00",
+      "url": "https://x.com/BiancoResearch/status/2121345816040517966",
       "kind": "post",
-      "preview": "Gonna say this now"
+      "preview": "Leave the 25, Take the Cannoli Rational Dissent Episode 017 Hot inflation has turned a quarter-point Fed hike into the \"dovish\" option amid…",
+      "video": "1차-B · 검증 인용 12개"
     },
     {
       "rid": "R020",
       "feed": "X",
-      "person": "Andy Constan",
+      "person": "Jim Bianco",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-12T23:17:05+09:00",
-      "url": "https://x.com/dampedspring/status/2120883587025129844",
-      "kind": "post",
-      "preview": "The $NVDA IR and Press Release website section must not run on Blackwell chips"
+      "tier": 3,
+      "at": "2026-11-14T06:31:59+09:00",
+      "url": "https://x.com/BiancoResearch/status/2121355421017661502",
+      "kind": "quote_post",
+      "preview": "The nationwide ground stop is because the VHF frequencies used for voice communication between pilots and air traffic control have become u…",
+      "quoted_author": "sentdefender"
     },
     {
       "rid": "R021",
       "feed": "X",
-      "person": "Andy Constan",
+      "person": "Lyn Alden",
       "role": "core",
-      "tier": 2,
-      "at": "2026-11-12T23:38:20+09:00",
-      "url": "https://x.com/dampedspring/status/2120888931424055587",
+      "tier": 3,
+      "at": "2026-11-14T07:18:21+09:00",
+      "url": "https://x.com/LynAldenContact/status/2121367088669565260",
       "kind": "quote_post",
-      "preview": "Nope. Didn't double down🤦🏻‍♂️",
-      "quoted_author": "dampedspring"
+      "preview": "Every flight halted, nationwide. Best of luck as they get this back online.",
+      "quoted_author": "FAANews"
     },
     {
       "rid": "R022",
       "feed": "X",
-      "person": "Andy Constan",
-      "role": "core",
-      "tier": 2,
-      "at": "2026-11-13T00:27:59+09:00",
-      "url": "https://x.com/dampedspring/status/2120901429351289050",
-      "kind": "quote_post",
-      "preview": "$nvda",
-      "quoted_author": "dampedspring"
+      "person": "Katie Stockton",
+      "role": "observer",
+      "tier": 4,
+      "at": "2026-11-14T03:56:36+09:00",
+      "url": "https://x.com/StocktonKatie/status/2121316316560892300",
+      "kind": "post",
+      "preview": "For the first time since this bull cycle began, $NVDA is below weekly cloud support, with a breakdown pending confirmation next week. Signs…"
     },
     {
       "rid": "R023",
       "feed": "X",
-      "person": "Andy Constan",
-      "role": "core",
-      "tier": 2,
-      "at": "2026-11-13T01:10:52+09:00",
-      "url": "https://x.com/dampedspring/status/2120912218384482674",
-      "kind": "quote_post",
-      "preview": "Easy peasy",
-      "quoted_author": "dampedspring"
-    },
-    {
-      "rid": "R024",
-      "feed": "X",
-      "person": "Andy Constan",
-      "role": "core",
-      "tier": 2,
-      "at": "2026-11-13T03:02:37+09:00",
-      "url": "https://x.com/dampedspring/status/2120940342547783983",
+      "person": "Katie Stockton",
+      "role": "observer",
+      "tier": 4,
+      "at": "2026-11-14T06:26:10+09:00",
+      "url": "https://x.com/StocktonKatie/status/2121353955330367919",
       "kind": "post",
-      "preview": "D+ despite a sizeable concession. Yikes"
-    },
-    {
-      "rid": "R025",
-      "feed": "X",
-      "person": "Andy Constan",
-      "role": "core",
-      "tier": 2,
-      "at": "2026-11-13T06:16:55+09:00",
-      "url": "https://x.com/dampedspring/status/2120989238900457578",
-      "kind": "quote_post",
-      "preview": "Got lucky selling the top and buying the bottom of this anti growth trade. Got back in selling stocks and buying bonds at great levels toda…",
-      "quoted_author": "dampedspring"
-    },
-    {
-      "rid": "R026",
-      "feed": "web",
-      "person": "Andy Constan",
-      "role": "core",
-      "tier": 2,
-      "at": "2026-11-13T10:05:29+09:00",
-      "published_at": "2026-11-12T12:10:22+00:00",
-      "url": "https://tradersunion.com/news/market-voices/show/4212577-nvda-vs-volatile-assets/",
-      "kind": "news_article",
-      "outlet": "Traders Union",
-      "grade": "제목·설명만 확인",
-      "preview": "Andy Constan: Preference for NVDA over speculative assets due to high volatility and NDX correlation"
-    },
-    {
-      "rid": "R027",
-      "feed": "X",
-      "person": "Bob Elliott",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-12T20:46:53+09:00",
-      "url": "https://x.com/BobEUnlimited/status/2120845787194372435",
-      "kind": "post",
-      "preview": "Past Peak AI Capex Growth The AI buildout is set to shift from being a support to earnings growth to a drag in coming years, teeing up disa…"
-    },
-    {
-      "rid": "R028",
-      "feed": "X",
-      "person": "Bob Elliott",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-12T23:15:07+09:00",
-      "url": "https://x.com/BobEUnlimited/status/2120883089802985894",
-      "kind": "post",
-      "preview": "Probably worth reminding ourselves that expectations are for NVDA to sell $1tln in chips by 2028, up from the $400bln this year."
-    },
-    {
-      "rid": "R029",
-      "feed": "X",
-      "person": "Bob Elliott",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-13T02:15:07+09:00",
-      "url": "https://x.com/BobEUnlimited/status/2120928388793655319",
-      "kind": "post",
-      "preview": "The market reversal over the last 6wks has been painful across the hedge fund industry. Nice coverage from the Economist on how its played …"
-    },
-    {
-      "rid": "R030",
-      "feed": "X",
-      "person": "Bob Elliott",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-13T05:15:00+09:00",
-      "url": "https://x.com/BobEUnlimited/status/2120973657090543961",
-      "kind": "quote_post",
-      "preview": "Data centers in space are probably a pipedream, but there are a lot of other practical advantages of a microgravity environments like this …",
-      "quoted_author": "UnlimitedFnds"
-    },
-    {
-      "rid": "R031",
-      "feed": "X",
-      "person": "Jim Bianco",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-12T11:30:58+09:00",
-      "url": "https://x.com/BiancoResearch/status/2120705884552642993",
-      "kind": "post",
-      "preview": "NVDA has to weigh not only the risk of losing Jensen but also the prospect of competing with him."
-    },
-    {
-      "rid": "R032",
-      "feed": "X",
-      "person": "Jim Bianco",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-12T12:46:06+09:00",
-      "url": "https://x.com/BiancoResearch/status/2120724792365961370",
-      "kind": "post",
-      "preview": "Nvidia’s stock is down 31% in the last month. That amounts to about a $1.8 trillion loss in market cap—roughly Australia’s GDP."
-    },
-    {
-      "rid": "R033",
-      "feed": "X",
-      "person": "Jim Bianco",
-      "role": "core",
-      "tier": 3,
-      "at": "2026-11-13T06:02:24+09:00",
-      "url": "https://x.com/BiancoResearch/status/2120985585200582753",
-      "kind": "post",
-      "preview": "Maybe the AI bubble is NOT popping. *ANTHROPIC’S IPO IS SAID TO BE ABOUT SIX TIMES OVERSUBSCRIBED"
+      "preview": "Nvidia sell-off shows signs of capitulation, says Fairlead's Katie Stockton"
     }
   ],
-  "watch_only_count": 13,
+  "watch_only_count": 11,
   "watch_only": [
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T06:24:34+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120991164450922616",
-      "preview": "Turns out that November is the worst month for Friday the 13th returns. 😱💀"
+      "at": "2026-11-14T07:32:11+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121370567064334649",
+      "preview": "👀"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T05:53:26+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120983329243648234",
-      "preview": "Thanks @sam_vadas and @SchwabNetwork for having me back on to discuss $NVDA, rotation, volatility, and why this is still a 🐂 market. 📈"
+      "at": "2026-11-14T05:37:58+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121341823700410594",
+      "preview": "We are going strong and have another 20 minutes left 🎙️ 🍿 @sonusvarghese @sonalibasak @RealMikeLarson"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T05:34:14+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120978497430859794",
-      "preview": "There are a lot more questions than answers right now for $NVDA and the industry in general. Here's our team's take on it all in our latest…"
+      "at": "2026-11-14T05:10:52+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121335003812442504",
+      "preview": "We are live with @sonalibasak @RealMikeLarson and @sonusvarghese 🍻 🥂 Join us!"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T05:12:51+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120973118982254923",
-      "preview": "I'm set to join @SchwabNetwork in a couple minutes! Tune in."
+      "at": "2026-11-14T05:00:09+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121332310242898122",
+      "preview": "Facts vs Feelings Social Hour with Mike Larson and Sonali Basak (Ep. 7)"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T04:59:14+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120969691870937194",
-      "preview": "Tomorrow is Friday the 13th. Yeah, this is a scary day, but did you know the S&P 500 was up an annualized 21.5% on this day since 1928?"
+      "at": "2026-11-14T04:05:05+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121318451549708540",
+      "preview": "ONE HOUR AWAY ⌛⏳ Our latest Facts vs Feelings Social Hour livestream kicks off in one hour. Be sure to join us for a fun market conversatio…"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T04:22:35+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120960467753394353",
-      "preview": "Be honest, did you expect this? I sure didn't. $NVDA is down 12% for the week right now, but $SMH is up 8%. NVDA is 20% of the SMH. The lif…"
+      "at": "2026-11-14T03:49:19+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121314483305906457",
+      "preview": "Coming up on @CNBCExchange soon with @KellyCNBC! Tune in as we wrap up the week."
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T04:10:09+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120957337108107417",
-      "preview": "Buying thrust in the solana:5XqMbyZbtse5UQUzgrYMpeWLWLR6BWFqUm5H3VAWpump? Best 4-day rally since the Covid lows. Moves like this more often…"
+      "at": "2026-11-14T03:28:17+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121309189024731189",
+      "preview": "I'm on @WBBMNewsradio with @RobHartWBBM soon! Tune in if you are in the Windy City. @Giersh"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T03:50:06+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120952291817922999",
-      "preview": "They told us the world was about to end. A week later, the huge equity put/call ratio is looking like the others. A buying opportunity."
+      "at": "2026-11-13T23:44:52+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121252967026200818",
+      "preview": "Why should you remain overweight equities, but with a diversified portfolio? Look at this table from @sonusvarghese that shows just how bad…"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T02:57:20+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120939011808035232",
-      "preview": "Gee, hope we have something to discuss at our next Facts vs Feelings Social Hour 🍻 🥂 Pumped to learn from @sonalibasak and @RealMikeLarson!…"
+      "at": "2026-11-13T23:40:49+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121251945172082925",
+      "preview": "Our proprietary @CarsonResearch LEI continues to see a solid economy and minimal risks of a recession. Remember, this LEI correctly said no…"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T01:33:11+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120917836063261125",
-      "preview": "Yes, CCC spreads have blown out, but it hasn't moved to HY yet. In fact, not much stress at all in HY if you take a longer view of things. …"
+      "at": "2026-11-13T21:34:15+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121220094864798164",
+      "preview": "Agree"
     },
     {
       "person": "Ryan Detrick",
-      "at": "2026-11-13T01:00:17+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120909555152388435",
-      "preview": "Almost like we are in a bull market, with most stocks going higher."
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-12T11:37:53+09:00",
-      "url": "https://x.com/RyanDetrick/status/2120707627109826860",
-      "preview": "Since the last S&P 500 ATH on Oct 6 it is safe to say Tech has crashed, down close to 14% 📉 Yet, the index is only 2.5% away from new highs…"
-    },
-    {
-      "person": "Ryan Detrick",
-      "at": "2026-11-13T10:05:29+09:00",
-      "url": "https://tradersunion.com/news/market-voices/show/4218670-ccc-spreads-high-yield/",
-      "preview": "Ryan Detrick: CCC spreads widen but high-yield market shows little stress"
+      "at": "2026-11-13T13:06:03+09:00",
+      "url": "https://x.com/RyanDetrick/status/2121092200003956918",
+      "preview": "Rough year for some of the TIME persons of the year. 📉 The 2026 winner is announced soon. 👀"
     }
   ],
-  "auto_excluded_count": 2,
+  "auto_excluded_count": 1,
   "auto_excluded": [
     {
       "person": "Andy Constan",
-      "at": "2026-11-12T20:14:45+09:00",
-      "url": "https://x.com/dampedspring/status/2120837699565203672",
-      "preview": "Wordle 1,972 4/6* ⬜⬜🟨🟨⬜ 🟨⬜🟨🟩🟨 ⬜🟩🟩🟩🟩 🟩🟩🟩🟩🟩 Chose the wrong spelling"
-    },
-    {
-      "person": "Cem Karsan",
-      "at": "2026-11-12T11:26:03+09:00",
-      "url": "https://x.com/jam_croissant/status/2120704649158439194"
+      "at": "2026-11-13T19:25:06+09:00",
+      "url": "https://x.com/dampedspring/status/2121187594302259260",
+      "preview": "Wordle 1,973 4/6* ⬜⬜⬜⬜🟩 ⬜⬜🟨⬜🟩 🟩🟩⬜🟩🟩 🟩🟩🟩🟩🟩 Even I'm not this old"
     }
   ],
   "base_lowers": [
+    {
+      "x": "2026-11-13T10:15:52+09:00",
+      "yt": "2026-11-13T10:10:30+09:00",
+      "web": "2026-11-13T10:05:29+09:00"
+    },
     {
       "x": "2026-11-12T10:16:16+09:00",
       "yt": "2026-11-12T10:10:35+09:00",
@@ -595,11 +447,6 @@
       "x": "2026-11-11T10:20:07+09:00",
       "yt": "2026-11-11T10:10:33+09:00",
       "web": "2026-11-11T10:05:24+09:00"
-    },
-    {
-      "x": "2026-11-10T10:15:45+09:00",
-      "yt": "2026-11-10T10:10:35+09:00",
-      "web": "2026-11-10T10:05:28+09:00"
     }
   ]
 }
