@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-13T21:05:26+09:00",
+  "generated_at": "2026-11-14T10:05:35+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -54,7 +54,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
+      "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -85,7 +85,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 5,
+      "items_in_window": 3,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -145,8 +145,8 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
-      "scoring_items": 1,
+      "items_in_window": 1,
+      "scoring_items": 0,
       "pending_items": 0
     },
     {
@@ -172,10 +172,10 @@
     }
   ],
   "stats": {
-    "discovered": 126,
-    "new_items": 7,
-    "decoded": 8,
-    "bodies": 1,
+    "discovered": 132,
+    "new_items": 0,
+    "decoded": 0,
+    "bodies": 0,
     "quotes_verified": 0,
     "video_candidates": 0,
     "gemini_calls": 0,
@@ -681,129 +681,6 @@
       "gemini_status": "ready",
       "gemini_error_count": 0,
       "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Bob Elliott",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "video_page",
-      "title": "Market transitioning from recognizing the unsustainability of the AI trade: Unlimited's Bob Elliott",
-      "outlet": "CNBC",
-      "published_at": "2026-11-06T22:11:08+00:00",
-      "discovered_at": "2026-11-07T10:05:30+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/11/06/market-transitioning-from-recognizing-the-unsustainability-of-the-ai-trade-unlimiteds-bob-elliott.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/11/06/market-transitioning-from-recognizing-the-unsustainability-of-the-ai-trade-unlimiteds-bob-elliott.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
-    },
-    {
-      "person": "Katie Stockton",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "news_article",
-      "title": "If stocks end November at current levels, Q1 2027 could be challenging – Fairlead Strategies’ Katie Stockton",
-      "outlet": "TradingView",
-      "published_at": "2026-11-06T15:38:16+00:00",
-      "discovered_at": "2026-11-07T10:05:30+09:00",
-      "article_url": "https://www.tradingview.com/news/seekingalpha:430c8f710094b:0-if-stocks-end-november-at-current-levels-q1-2027-could-be-challenging-fairlead-strategies-katie-stockton/",
-      "canonical_url": "https://www.tradingview.com/news/seekingalpha:430c8f710094b:0-if-stocks-end-november-at-current-levels-q1-2027-could-be-challenging-fairlead-strategies-katie-stockton/",
-      "body_fetch_status": 200,
-      "direct_quotes": [
-        {
-          "text": "If we do close the month at current levels, there will be damage to the monthly indicators that we track",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "she said"
-        },
-        {
-          "text": "one of those longer-term risk inputs that we track that does make it different this time.",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "Stockton explained"
-        },
-        {
-          "text": "Don&#x27;t sell weakness, sell strength.",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "Stockton&#x27;s core advice remains tactical:"
-        },
-        {
-          "text": "Sell the rebound for stocks that look broken, of which many of the AI names do",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "she said"
-        }
-      ],
-      "direction_hint": "mixed",
-      "evidence_grade": "1차-인용",
-      "evidence_ready_at": "2026-11-07T10:05:30+09:00",
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Andy Constan",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Debates over economic data guesses overshadow real value for market participants, Andy Constan writes",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-06T14:40:07+00:00",
-      "discovered_at": "2026-11-07T10:05:30+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4135432-economic-data-predictions-value/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4135432-economic-data-predictions-value/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Katie Stockton",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "video_page",
-      "title": "Fairlead's Katie Stockton on market selloff: Don't sell weakness, sell the strength",
-      "outlet": "CNBC",
-      "published_at": "2026-11-06T13:20:00+00:00",
-      "discovered_at": "2026-11-07T10:05:30+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/11/06/fairleads-katie-stockton-on-market-selloff-dont-sell-weakness-sell-the-strength.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/11/06/fairleads-katie-stockton-on-market-selloff-dont-sell-weakness-sell-the-strength.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
-    },
-    {
-      "person": "Bob Elliott",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Much of market remains priced for strong nominal growth as asset price rises fade, Bob Elliott writes",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-06T12:25:15+00:00",
-      "discovered_at": "2026-11-10T10:05:28+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4132735-market-nominal-growth-pricing/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4132735-market-nominal-growth-pricing/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
     }
   ],
   "person_index": {
