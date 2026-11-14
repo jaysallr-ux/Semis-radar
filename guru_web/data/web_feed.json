@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-14T10:05:35+09:00",
+  "generated_at": "2026-11-14T21:05:27+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -54,7 +54,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 2,
+      "items_in_window": 3,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -75,7 +75,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 6,
+      "items_in_window": 8,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -85,7 +85,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
+      "items_in_window": 4,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -125,7 +125,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 0,
+      "items_in_window": 1,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -145,7 +145,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
+      "items_in_window": 3,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -172,12 +172,12 @@
     }
   ],
   "stats": {
-    "discovered": 132,
-    "new_items": 0,
-    "decoded": 0,
-    "bodies": 0,
+    "discovered": 129,
+    "new_items": 13,
+    "decoded": 14,
+    "bodies": 5,
     "quotes_verified": 0,
-    "video_candidates": 0,
+    "video_candidates": 1,
     "gemini_calls": 0,
     "gemini_skipped_cap": 0
   },
@@ -192,6 +192,124 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Jonathan Krinsky",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "video_page",
+      "title": "Market rebound hasn't cleared technical risks, says BTIG's Jonathan Krinsky",
+      "outlet": "CNBC",
+      "published_at": "2026-11-13T22:19:16+00:00",
+      "discovered_at": "2026-11-14T21:05:27+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/13/krinsky.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/13/krinsky.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Facts vs Feelings Social Hour livestream starts in one hour, Ryan Detrick announces",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-13T19:11:42+00:00",
+      "discovered_at": "2026-11-14T21:05:27+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4238414-market-livestream-hour-away/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4238414-market-livestream-hour-away/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "video_page",
+      "title": "Ryan Detrick: Rotation is the name of the game and it's healthy to see in a bull market",
+      "outlet": "CNBC",
+      "published_at": "2026-11-13T19:11:17+00:00",
+      "discovered_at": "2026-11-14T21:05:27+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/13/ryan-detrick-rotation-is-the-name-of-the-game-and-its-healthy-to-see-in-a-bull-market.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/13/ryan-detrick-rotation-is-the-name-of-the-game-and-its-healthy-to-see-in-a-bull-market.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Andy Constan",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Digital currency practicality questioned for daily use, Andy Constan notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-13T13:10:16+00:00",
+      "discovered_at": "2026-11-14T21:05:27+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4231325-digital-currency-daily-use-questioned/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4231325-digital-currency-daily-use-questioned/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Katie Stockton",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "video_page",
+      "title": "Watch CNBC's full interview with Katie Stockton of Fairlead Strategies",
+      "outlet": "CNBC",
+      "published_at": "2026-11-13T12:37:54+00:00",
+      "discovered_at": "2026-11-14T21:05:27+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/13/watch-cnbcs-full-interview-with-katie-stockton-of-fairlead-strategies.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/13/watch-cnbcs-full-interview-with-katie-stockton-of-fairlead-strategies.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Katie Stockton",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "video_page",
+      "title": "Nvidia sell-off shows signs of capitulation, says Fairlead's Katie Stockton",
+      "outlet": "CNBC",
+      "published_at": "2026-11-13T12:36:00+00:00",
+      "discovered_at": "2026-11-14T21:05:27+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/13/nvidia-sell-off-shows-signs-of-capitulation-says-fairleads-katie-stockton.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/13/nvidia-sell-off-shows-signs-of-capitulation-says-fairleads-katie-stockton.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
     {
       "person": "Ryan Detrick",
       "tier": 2,
@@ -261,6 +379,26 @@
       "discovered_at": "2026-11-13T21:05:26+09:00",
       "article_url": "https://www.cnbc.com/video/2026/11/11/watch-cnbcs-full-interview-with-unlimited-ceo-bob-elliot.html",
       "canonical_url": "https://www.cnbc.com/video/2026/11/11/watch-cnbcs-full-interview-with-unlimited-ceo-bob-elliot.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "video_page",
+      "title": "Unlimited CEO Bob Elliott weighs in on cutting equity risk, household spending dynamics",
+      "outlet": "CNBC",
+      "published_at": "2026-11-11T17:10:00+00:00",
+      "discovered_at": "2026-11-14T21:05:27+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/11/unlimited-ceo-bob-elliot-weighs-in-on-cutting-equity-risk-household-spending-dynamics.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/11/unlimited-ceo-bob-elliot-weighs-in-on-cutting-equity-risk-household-spending-dynamics.html",
       "body_fetch_status": 200,
       "direct_quotes": [],
       "direction_hint": null,
@@ -690,8 +828,8 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-11T21:05:27+09:00",
@@ -710,13 +848,22 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-12T12:10:22+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-14T21:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4231325-digital-currency-daily-use-questioned/",
+            "kind": "news_article",
+            "preview": "Digital currency practicality questioned for daily use, Andy Constan notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-13T13:10:16+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-12T10:05:23+09:00",
@@ -735,39 +882,64 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-11T17:11:00+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-14T21:05:27+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/11/unlimited-ceo-bob-elliot-weighs-in-on-cutting-equity-risk-household-spending-dynamics.html",
+            "kind": "video_page",
+            "preview": "Unlimited CEO Bob Elliott weighs in on cutting equity risk, household spending dynamics",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-11T17:10:00+00:00",
+            "noise_hint": false
           }
         ]
       },
-      "Katie Stockton": {
+      "Jonathan Krinsky": {
         "role": "observer",
         "count": 1,
         "non_noise": 1,
         "items": [
           {
-            "at": "2026-11-11T12:27:25+09:00",
-            "url": "https://www.cnbc.com/2026/11/10/gold-has-been-in-a-bear-market-since-january-katie-stockton-sees-a-comeback-ahead.html",
-            "kind": "news_article",
-            "preview": "Gold has been in a bear market since January. Katie Stockton sees a comeback ahead",
+            "at": "2026-11-14T21:05:27+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/13/krinsky.html",
+            "kind": "video_page",
+            "preview": "Market rebound hasn't cleared technical risks, says BTIG's Jonathan Krinsky",
             "grade": "제목·설명만 확인",
-            "published_at": "2026-11-10T16:01:46+00:00",
+            "published_at": "2026-11-13T22:19:16+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Katie Stockton": {
+        "role": "observer",
+        "count": 2,
+        "non_noise": 2,
+        "items": [
+          {
+            "at": "2026-11-14T21:05:27+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/13/watch-cnbcs-full-interview-with-katie-stockton-of-fairlead-strategies.html",
+            "kind": "video_page",
+            "preview": "Watch CNBC's full interview with Katie Stockton of Fairlead Strategies",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-13T12:37:54+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-14T21:05:27+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/13/nvidia-sell-off-shows-signs-of-capitulation-says-fairleads-katie-stockton.html",
+            "kind": "video_page",
+            "preview": "Nvidia sell-off shows signs of capitulation, says Fairlead's Katie Stockton",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-13T12:36:00+00:00",
             "noise_hint": false
           }
         ]
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 5,
+        "non_noise": 5,
         "items": [
-          {
-            "at": "2026-11-11T12:27:25+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4171994-sp500-best-breadth-day/",
-            "kind": "news_article",
-            "preview": "Ryan Detrick: S&P 500 posts best breadth day since November 25, 2025",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-10T04:56:34+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-12T10:05:23+09:00",
             "url": "https://www.carsongroup.com/insights/blog/blue-wave-red-wave-green-wave-and-timeless-lessons/",
@@ -793,6 +965,24 @@
             "preview": "Ryan Detrick: CCC spreads widen but high-yield market shows little stress",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-12T16:42:02+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-14T21:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4238414-market-livestream-hour-away/",
+            "kind": "news_article",
+            "preview": "Facts vs Feelings Social Hour livestream starts in one hour, Ryan Detrick announces",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-13T19:11:42+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-14T21:05:27+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/13/ryan-detrick-rotation-is-the-name-of-the-game-and-its-healthy-to-see-in-a-bull-market.html",
+            "kind": "video_page",
+            "preview": "Ryan Detrick: Rotation is the name of the game and it's healthy to see in a bull market",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-13T19:11:17+00:00",
             "noise_hint": false
           }
         ]
