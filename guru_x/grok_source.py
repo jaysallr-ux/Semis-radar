@@ -354,7 +354,8 @@ def verify(client: GrokOembed, post_id: str, hint: str | None, by_handle: dict) 
 
 def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, known_ids: set[str],
             manual_ids: dict[str, str | None] | None = None,
-            refresh_ids: dict[str, str | None] | None = None) -> dict:
+            refresh_ids: dict[str, str | None] | None = None,
+            inbox_ids: dict[str, str | None] | None = None) -> dict:
     """Free discovery (profile embed) + optional Grok discovery, then free verification.
     Returns {"records", "cost", "stats", "discovered_by_handle"}. Grok failure is recorded, not raised."""
     g = cfg.get("grok", {})
@@ -398,6 +399,12 @@ def collect(client: GrokOembed, cfg: dict, accounts: list[dict], now: datetime, 
         if pid not in found or (found[pid] is None and h):
             found[pid] = h
         sources.setdefault(pid, set()).add("manual_browser")
+    # post IDs from the Pickle agent (twstalker, sees replies the list embed drops); verified below like any other ID
+    for pid, h in (inbox_ids or {}).items():
+        if pid not in found or (found[pid] is None and h):
+            found[pid] = h
+        sources.setdefault(pid, set()).add("pickle_inbox")
+    stats["inbox"] = len(inbox_ids or {})
 
     cost = None
     if client.api_key:

@@ -41,6 +41,35 @@ STATE_PATH = DATA_DIR / "state.json"
 FEED_PATH = DATA_DIR / "feed.json"
 RUNS_PATH = DATA_DIR / "runs.csv"
 MANUAL_PATH = DATA_DIR / "manual_ids.json"
+INBOX_DIR = DATA_DIR / "inbox"  # pickle-YYYYMMDD-HHMM.json from the Pickle agent: post IDs only
+
+
+def read_inbox(now: datetime, keep_days: int = 3, delete_days: int = 7) -> tuple[dict, dict]:
+    """IDs from inbox files collected within keep_days; files older than delete_days are deleted.
+    Text is never taken from the file: every ID is re-read from X syndication by the normal verify path."""
+    ids, info = {}, {"files": 0, "ids": 0, "latest_collected_at": None, "blocked": [], "bad_files": []}
+    for f in sorted(INBOX_DIR.glob("*.json")) if INBOX_DIR.exists() else []:
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+            at = parse_ts(d["collected_at"])
+        except Exception:
+            info["bad_files"].append(f.name)
+            continue
+        if now - at > timedelta(days=delete_days):
+            f.unlink()
+            continue
+        if now - at > timedelta(days=keep_days):
+            continue
+        info["files"] += 1
+        if not info["latest_collected_at"] or at > parse_ts(info["latest_collected_at"]):
+            info["latest_collected_at"] = at.isoformat()
+            info["blocked"] = [str(b)[:40] for b in (d.get("blocked") or [])][:20]
+        for m in (d.get("ids") or [])[:500]:
+            pid = str((m or {}).get("id", "")) if isinstance(m, dict) else str(m)
+            if pid.isdigit() and 15 <= len(pid) <= 20:
+                ids.setdefault(pid, (m.get("handle_hint") if isinstance(m, dict) else None))
+    info["ids"] = len(ids)
+    return ids, info
 
 PRICE_PER_POST = 0.005
 PRICE_PER_USER = 0.010
@@ -276,6 +305,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
                         break
 
     grok_cost, grok_stats, selftest = None, None, None
+    inbox_info: dict = {}
     gclient = grok_client or (grok_source.GrokOembed(xai_key) if provider == "free" else None)
     if provider == "free":
         manual = {m["id"]: m.get("handle_hint") for m in load_json(MANUAL_PATH, {}).get("ids", [])
@@ -288,7 +318,8 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
                    or (r.get("rev", 1) >= 4 and not has_video_frame(r))
                    or (r.get("rev", 1) >= 3 and not r.get("has_media") and not (r.get("quoted_post") or {}).get("has_media"))}
         refresh = {pid: r.get("handle") for pid, r in posts.items() if pid not in current}
-        res = grok_source.collect(gclient, cfg, accounts, now, current, manual, refresh)
+        inbox, inbox_info = read_inbox(now)
+        res = grok_source.collect(gclient, cfg, accounts, now, current, manual, refresh, inbox_ids=inbox)
         for r in res["records"]:
             old_rec = posts.get(r["id"])
             if old_rec:
@@ -300,6 +331,8 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
         grok_ok = (grok_stats.get("grok") or "").startswith("ok")
         manual_at = load_json(MANUAL_PATH, {}).get("updated_at")
         manual_fresh = bool(manual_at) and now - parse_ts(manual_at) <= timedelta(hours=14)
+        inbox_at = inbox_info.get("latest_collected_at")
+        manual_fresh = manual_fresh or (bool(inbox_at) and now - parse_ts(inbox_at) <= timedelta(hours=14))
         list_ok = (grok_stats.get("list") or "").startswith("ok")
         for a in accounts:
             tl = grok_stats["timeline"].get(a["handle"], "")
@@ -393,6 +426,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
         "discovery_stats": grok_stats,
         "discovery_complete": discovery_complete,
         "manual_ids_updated_at": load_json(MANUAL_PATH, {}).get("updated_at"),
+        "pickle_inbox": inbox_info,
         "window_days": cfg.get("window_days", 7),
         "budget_stop": budget_stop,
         "errors": errors,
