@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-15T10:05:22+09:00",
+  "generated_at": "2026-11-15T21:05:25+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -172,7 +172,7 @@
     }
   ],
   "stats": {
-    "discovered": 122,
+    "discovered": 124,
     "new_items": 6,
     "decoded": 7,
     "bodies": 0,
@@ -717,18 +717,9 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-12T10:05:23+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4198184-openai-losses-revenue-comment/",
-            "kind": "news_article",
-            "preview": "OpenAI posts $13.5 billion operating loss against $10 billion in revenue, Bob Elliott notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-11T14:25:21+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-13T21:05:26+09:00",
             "url": "https://www.cnbc.com/video/2026/11/11/watch-cnbcs-full-interview-with-unlimited-ceo-bob-elliot.html",
@@ -801,27 +792,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-12T10:05:23+09:00",
-            "url": "https://www.carsongroup.com/insights/blog/blue-wave-red-wave-green-wave-and-timeless-lessons/",
-            "kind": "official_blog",
-            "preview": "Blue Wave, Red Wave, Green Wave, And Timeless Lessons",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-11T21:22:29+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-12T10:05:23+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4198931-sp500-200-day-support/",
-            "kind": "news_article",
-            "preview": "S&P 500 holds at key technical levels, Ryan Detrick notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-11T14:55:43+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-13T10:05:29+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4218670-ccc-spreads-high-yield/",
@@ -847,22 +820,6 @@
             "preview": "Ryan Detrick: Rotation is the name of the game and it's healthy to see in a bull market",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-13T19:11:17+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Warren Pies": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-12T10:05:23+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/11/the-market-is-not-priced-for-another-two-rate-hikes-says-3fourteen-researchs-warren-pies.html",
-            "kind": "video_page",
-            "preview": "The market is not priced for another two rate hikes, says 3Fourteen Research's Warren Pies",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-11T15:24:00+00:00",
             "noise_hint": false
           }
         ]
