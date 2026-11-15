@@ -1,0 +1,10 @@
+name: mirror_probe
+on: workflow_dispatch
+permissions: {contents: read}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q requests && python tools/mirror_probe.py dampedspring
