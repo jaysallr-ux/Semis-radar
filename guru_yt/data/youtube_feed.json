@@ -1,23 +1,17 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-15T10:10:33+09:00",
+  "generated_at": "2026-11-15T11:51:58+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-15T05:20:32+09:00",
-    "merged_from_discovery": 1,
+    "last_discovery_at": "2026-11-15T10:10:33+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 0,
-      "rejected": 0,
-      "retry_next_run": [
-        "g2ydjhRjBc0",
-        "yNTHAc7IauQ",
-        "CvKRIVi51IM",
-        "yNTHAc7IauQ"
-      ]
+      "accepted": 3,
+      "rejected": 0
     }
   },
   "quote_verify_threshold": 90,
@@ -163,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-11T08:00:39+09:00",
+      "oldest_rss": "2026-11-11T09:00:38+09:00",
       "gap_possible": false,
       "matched": 4
     },
@@ -218,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-14T05:41:02+09:00",
+      "oldest_rss": "2026-11-14T05:52:35+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -240,14 +234,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-10T10:00:32+09:00",
+      "oldest_rss": "2026-11-11T00:30:34+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 0,
-    "yta_server_remaining": null,
+    "yta_used_today": 2,
+    "yta_server_remaining": 8,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -256,14 +250,14 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 2,
-    "gemini_est_video_hours_today": 0.226,
+    "gemini_calls_today": 6,
+    "gemini_est_video_hours_today": 2.694,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 2,
+    "ready": 2,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -272,14 +266,14 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 2,
-    "ready": 1,
+    "attempted": 4,
+    "ready": 3,
     "not_speaking": 0,
     "busy": 0,
-    "errors": 1,
+    "errors": 0,
     "left_pending": 0,
     "budget_out": 0,
-    "chunked": 0,
+    "chunked": 1,
     "text_mode": 0,
     "quota_wait": 0
   },
@@ -416,6 +410,199 @@
       "quotes_grade_count": {
         "1차-A": 0,
         "1차-B": 3,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "yNTHAc7IauQ",
+      "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ",
+      "channel": "Carson Group",
+      "channel_id": "UCF03D8V34q2_Otj1OefLrUA",
+      "channel_mode": "filter",
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "match": "x_self_link",
+      "title": "Facts vs Feelings Social Hour with  Mike Larson and Sonali Basak (Ep. 7)",
+      "description": "",
+      "published_at": "2026-11-14T09:01:48+00:00",
+      "first_seen_at": "2026-11-15T11:51:58+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-15T11:51:58+09:00",
+      "transcript_language": null,
+      "transcript_chars": 68068,
+      "transcript_url": null,
+      "name_mentions": 6,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "es it. I know she's around. So listen, this is  [1:10] the latest and probably greatest Facts vs. Feelings social hour. Ryan and Sonu as always. Um we have two amazing guests and I'll let you introduce yourself here in a second, Mike, but we're excited. There's so much stuff to talk about and as long as we can figure o",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-15T11:51:58+09:00",
+      "gemini_mode": "video_chunks_2",
+      "person_speaks": true,
+      "gemini_evidence": "Ryan Detrick hosts the live session and discusses the broad market rotation underneath the headline index level, highlighting that non-tech sectors are up strongly despite tech pullbacks and noting a  / Ryan Detrick appears in the top-right video panel, actively hosting and speaking on inflation, economic growth, bond yields, and the US stock market.",
+      "stance": {
+        "us_equities": "mixed",
+        "summary": "Ryan Detrick views the broad market as underlyingly resilient, noting that while tech weakness has kept the main index sideways, broad rotation across non-tech sectors and historical buying thrust signals in semiconductors provide key positive tailwinds. | Ryan Detrick is bullish/constructive on US equities and the broader economy. He believes inflation settling around 3% is a structural reality rather than a crisis, and that the stock market and economy can perform fine even if 10-year Treasury yields rise towards 6%."
+      },
+      "quotes": [
+        {
+          "t": "16:27",
+          "t_sec": 987,
+          "speaker": "Ryan Detrick",
+          "topic": "",
+          "text": "The last all-time high for the S&P was October 6th. And if you said to anybody, including probably everyone on this call, that tech would be down more than 15%, I bet I'd look around and say, 'Oh boy, we're probably in trouble.' But that's not where we are, right? That's not where we are. Seven out of the other 10 sectors are up more than 5% since then.",
+          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=987s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.7,
+          "caption_sec": 985,
+          "caption_checked": true
+        },
+        {
+          "t": "16:50",
+          "t_sec": 1010,
+          "speaker": "Ryan Detrick",
+          "topic": "",
+          "text": "We all see these numbers, and it's just, it's just amazing to me, you know, this rotation we've seen. And it's like, you know, most stocks are going up. Now listen, when tech blows up like it's done lately, it's hard for the market, quote-unquote, to get moving. But, you know, for six months we've literally gone sideways.",
+          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=1010s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 93.8,
+          "caption_sec": 985,
+          "caption_checked": true
+        },
+        {
+          "t": "17:11",
+          "t_sec": 1031,
+          "speaker": "Ryan Detrick",
+          "topic": "",
+          "text": "Friday, Monday, Tuesday, Wednesday, those four days, it was up almost 17 and a half percent in four days. You go back in history when the SOX has a four-day rally like that, we're talking literally the lows of the GFC, the lows in 2003, the lows in 2022. Not the worst buying opportunity. They call it like a buying thrust.",
+          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=1031s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 92.9,
+          "caption_sec": 1015,
+          "caption_checked": true
+        },
+        {
+          "t": "39:51",
+          "t_sec": 2391,
+          "speaker": "Ryan Detrick",
+          "topic": "inflation & growth",
+          "text": "So we came into this year talking about an inflationary growth environment. We then the people hear the word inflation, they immediately think 2022 and it's going to be end of the world. That wasn't our case. We thought we'd have strong growth.",
+          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=2391s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 92.9,
+          "caption_sec": 2385,
+          "caption_checked": true
+        },
+        {
+          "t": "40:36",
+          "t_sec": 2436,
+          "speaker": "Ryan Detrick",
+          "topic": "structural inflation",
+          "text": "We have a bigger structural change in inflation, and we're not saying like it's a major problem, we're just saying inflation up around 3%, that might be the world we're in.",
+          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=2436s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 2416,
+          "caption_checked": true
+        },
+        {
+          "t": "40:48",
+          "t_sec": 2448,
+          "speaker": "Ryan Detrick",
+          "topic": "10-year yield & stock market outlook",
+          "text": "I wouldn't be shocked at all if a year from now we get to do this again, 10-year yields up around 6%, but the economy does just fine, and the stock market does just fine, and things go okay.",
+          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=2448s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.8,
+          "caption_sec": 2446,
+          "caption_checked": true
+        },
+        {
+          "t": "58:40",
+          "t_sec": 3520,
+          "speaker": "Ryan Detrick",
+          "topic": "S&P 500 market stance",
+          "text": "S&P's down half a percent right now. Not too big a deal, you know, we were off the lows, so you know, given back a little bit on a Friday, but it's still a decent week for the bulls.",
+          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=3520s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.0,
+          "caption_sec": 3514,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-15T11:51:58+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "16:27",
+          "point": "Seven out of ten non-tech S&P 500 sectors are up over 5% despite tech pulling back more than 15% from its highs.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "16:50",
+          "point": "The overall S&P 500 index has traded sideways for six months as strong rotation into other sectors offsets tech weakness.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "17:11",
+          "point": "The semiconductor index's 17.5% four-day rally acts as a historical buying thrust similar to major market bottoms in 2003, 2008, and 2022.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "39:51",
+          "point": "The market is in an inflationary growth environment with strong nominal GDP growth rather than a 2022-style crisis.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "40:36",
+          "point": "US inflation is undergoing a structural shift and is likely to remain around 3% without posing a major threat to growth.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "40:48",
+          "point": "The economy and stock market can continue to perform well even if 10-year Treasury yields rise up to 6% over the next year.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "1 year"
+        },
+        {
+          "t": "58:40",
+          "point": "Minor pullbacks in the S&P 500 do not undermine the ongoing positive week and broader trend for market bulls.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 113626,
+      "quotes_grade_count": {
+        "1차-A": 7,
+        "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
     },
@@ -566,6 +753,178 @@
       "quotes_grade_count": {
         "1차-A": 4,
         "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "g2ydjhRjBc0",
+      "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0",
+      "channel": "Bob Elliott",
+      "channel_id": "UClkYGk572o1kZp9juGxSSHg",
+      "channel_mode": "filter",
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "match": "x_self_link",
+      "title": "Macro Talk: 2026.11.13",
+      "description": "A recording from Bob Elliott and Prometheus Research's live video\n\nhttps://bobeunlimited.substack.com/p/macro-talk-20261113?utm_source=youtube",
+      "published_at": "2026-11-13T18:40:08+00:00",
+      "first_seen_at": "2026-11-15T11:51:58+09:00",
+      "is_short": false,
+      "transcript_status": "not_needed",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": true,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "tier 3: captions are kept for the tiers that drive judgments",
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-15T11:51:58+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Bob Elliott introduces himself at 00:02 ('I'm Bob Elliott') and speaks throughout the podcast episode, discussing macroeconomic market trends, inflation, Federal Reserve policy, and portfolio construction.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Bob Elliott maintains a skeptical and cautious stance on US equities, arguing that equity markets are pricing in unrealistically strong economic growth despite high real yields, tightening financial conditions, and a lack of broad productivity gains outside of mega-cap tech.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": ""
+      },
+      "quotes": [
+        {
+          "t": "02:20",
+          "t_sec": 140,
+          "speaker": "Bob Elliott",
+          "topic": "Market Discipline",
+          "text": "One of the things you learn in markets is don't get greedy. You get greedy, you get run over.",
+          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=140s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "04:58",
+          "t_sec": 298,
+          "speaker": "Bob Elliott",
+          "topic": "US Equities Valuation",
+          "text": "Growth is priced in right now to be extraordinary ahead and it's still priced to be extraordinary ahead, right?",
+          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=298s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "07:14",
+          "t_sec": 434,
+          "speaker": "Bob Elliott",
+          "topic": "US Equities Outlook",
+          "text": "Typically, it would be hard for stocks to continue to levitate in that sort of environment.",
+          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=434s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "13:51",
+          "t_sec": 831,
+          "speaker": "Bob Elliott",
+          "topic": "Fed Rate Hikes",
+          "text": "We can barely get this fool to hike 25 basis points despite the fact that inflation is 4%, like they're not going to hike 50 basis points.",
+          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=831s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "24:41",
+          "t_sec": 1481,
+          "speaker": "Bob Elliott",
+          "topic": "AI & Productivity",
+          "text": "Highlighting that there's been no meaningful improvement in productivity in the economy.",
+          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=1481s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "50:18",
+          "t_sec": 3018,
+          "speaker": "Bob Elliott",
+          "topic": "Alpha Allocation",
+          "text": "You should be very hesitant to put a lot of your risk into alpha because it is, as we both know, it is extremely hard to be able to generate alpha over time.",
+          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=3018s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-15T11:51:58+09:00",
+      "evidence_grade": "1차-B",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "02:20",
+          "point": "Investors should avoid getting greedy during market rallies and take profits when macro re-rating opportunities present themselves.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "04:58",
+          "point": "US equity markets remain priced for extraordinary economic growth expectations that are detached from macroeconomic fundamentals.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "06:55",
+          "point": "Signs of slowing growth and tightening liquidity outside the main equity/bond complex make it difficult for stocks to maintain elevated valuations.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "13:51",
+          "point": "The Federal Reserve is highly unlikely to re-accelerate rate hikes to 50 basis points despite sticky inflation figures.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "14:21",
+          "point": "The sharp sell-off in the bond market following inflation data was an overreaction given falling commodity prices and lagged inflation dynamics.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "24:41",
+          "point": "Massive capital expenditure in artificial intelligence has yet to show up in economy-wide productivity improvements or revenue per worker growth outside of mega-cap tech.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "50:18",
+          "point": "Individual investors should keep their risk allocation to active alpha strategies low due to the extreme difficulty of generating consistent alpha.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "57:08",
+          "point": "Commodities are an essential component of a strategic asset allocation to provide diversification when inflation drives stock and bond correlations higher.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        }
+      ],
+      "gemini_prompt_tokens": 134727,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 6,
         "excluded_speaker_mismatch": 0
       }
     },
@@ -859,6 +1218,180 @@
       "quotes_grade_count": {
         "1차-A": 6,
         "1차-B": 1,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "CvKRIVi51IM",
+      "url": "https://www.youtube.com/watch?v=CvKRIVi51IM",
+      "channel": "David Lin",
+      "channel_id": "UClBMLpP3UHXLmgEypMmXPuA",
+      "channel_mode": "filter",
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "match": "x_self_link",
+      "title": "Brutal 2027: How The Next Financial Crisis Starts",
+      "description": "Click the link http://kalshi.com/r/LIN or download the Kalshi App and use code LIN to sign up and trade today!\n\nCem Karson and Noel Smith of Kai Wealth discuss mounting risks for stocks in 2027, the possibility of a Treasury market crisis, rising inflation and interest rates, AI spending concerns, and strategies for protecting portfolios.\n\n*This video was recorded on November 10, 2026\n\nSubscribe to my clips channel: https://www.youtube.com/@DavidLinReportClips\nSubscribe to my free newsletter: https://davidlinreport.substack.com/\nListen on Spotify: https://open.spotify.com/show/510WZMFaqeh90Xk4jcE34s\nListen on Apple Podcasts: https://podcasters.spotify.com/pod/show/the-david-lin-report\n\nFOLLOW KAI WEALTH:\nKai Wealth: https://kaiwealth.com/\nKai Asset Management: https://kaiasset.com/\nX (@jam_croissant): https://x.com/jam_croissant\nX (@NoelSmith): https://x.com/NoelSmith\n\nFOLLOW DAVID LIN:\nX (@davidlin_TV): https://x.com/davidlin_TV\nTikTok (@davidlin_TV): https://www.tiktok.com/@davidlin_tv\nInstagram (@davidlin_TV): https://www.instagram.com/davidlin_tv/\n\nFor business inquiries, reach me at david@thedavidlinreport.com\n\nDISCLAIMER: This video is for informational and educational purposes only and does not constitute financial, investment, legal, or tax advice. Always conduct your own research and consult a licensed financial professional before making any investment decisions.\n\nThe views and opinions expressed by guests are solely their own and do not represent the views of this ",
+      "published_at": "2026-11-11T21:39:29+00:00",
+      "first_seen_at": "2026-11-15T11:51:58+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-15T11:51:58+09:00",
+      "transcript_language": null,
+      "transcript_chars": 51039,
+      "transcript_url": null,
+      "name_mentions": 1,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "5 cash here CFTC approved and available in all 50 states including California and Texas. Our next guest join us now Jam Carson, founder and co-CIO of K S A Management and his new co-CIO and head of portfolio management Noel Smith. Welcome back to the show Jam and good to see you Noel. Welcome to the show. >> Thank you.",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-15T11:51:58+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Cem Karsan appears in the video wearing a blue-and-white striped sweater and headphones, speaking extensively on macro economics, market volatility, inflation, interest rates, and equity positioning.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Cem Karsan maintains a structurally bearish outlook on US equities heading into 2027. While short-term year-end flows may temporarily bolster equity markets, he expects inelastic inflation, rising Treasury yields (potentially reaching 5.5% to 6%), high capex borrowing limits among tech giants, and changing political incentives to trigger a significant macro rollover.",
+        "timeframe": "Medium to long term (2026-2027)"
+      },
+      "quotes": [
+        {
+          "t": "03:02",
+          "t_sec": 182,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "I think of this as really a three-legged stool, three major sets of pressures when we're modeling forward predictions, which is really how we we think about what is the forward distribution of outcomes in a week, a month, a quarter, a year.",
+          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=182s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 86.8,
+          "caption_sec": 152,
+          "caption_checked": true
+        },
+        {
+          "t": "16:21",
+          "t_sec": 981,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "inflation is becoming, as we saw today in the CPI, is becoming much more inelastic.",
+          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=981s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 951,
+          "caption_checked": true
+        },
+        {
+          "t": "22:12",
+          "t_sec": 1332,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "I do think particularly at the end of the year, if we see a reflation here for the next couple months, we have a tend to get a cash squeeze at the end of the year.",
+          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=1332s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.2,
+          "caption_sec": 1316,
+          "caption_checked": true
+        },
+        {
+          "t": "22:41",
+          "t_sec": 1361,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "we could see close to 6. I could see 5 and a half to 6% if, let's again, if this market continues to reflate.",
+          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=1361s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 85.6,
+          "caption_sec": 1346,
+          "caption_checked": true
+        },
+        {
+          "t": "31:01",
+          "t_sec": 1861,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "That is an inflationary makeup under the hood that we have to be kind of aware of.",
+          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=1861s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 85.2,
+          "caption_sec": 982,
+          "caption_checked": true
+        },
+        {
+          "t": "38:26",
+          "t_sec": 2306,
+          "speaker": "Cem Karsan",
+          "topic": "",
+          "text": "I would be incredibly incredibly averse to to being long of Anthropic in the medium to long term.",
+          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=2306s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.9,
+          "caption_sec": 2296,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-15T11:51:58+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "03:02",
+          "point": "Market forward predictions rely on three main drivers: macro conditions (rates, inflation, growth), institutional player incentives (Fed and Treasury), and structural flows.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "05:48",
+          "point": "AI hyperscalers have exhausted their cash balances and borrowed heavily for capex, reaching the limit of what debt markets can support.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "13:38",
+          "point": "Post-midterm political incentives will shift from market support toward letting economic pressures manifest to prepare policy solutions ahead of 2028.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "16:21",
+          "point": "Inflation is becoming increasingly inelastic due to structural supply disruptions and delayed lag effects across key commodities.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "22:12",
+          "point": "If market reflation continues over the next couple of months, an end-of-year cash squeeze could push 10-year Treasury yields up to 5.5% or 6%.",
+          "condition": "if market reflation continues over the next couple of months",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "38:26",
+          "point": "Pure AI model developers like Anthropic face long-term risk of commoditization and regulatory pushback, making them unattractive long-term equity holdings.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 89194,
+      "quotes_grade_count": {
+        "1차-A": 3,
+        "1차-B": 3,
         "excluded_speaker_mismatch": 0
       }
     },
@@ -2613,10 +3146,26 @@
     "lookback_hours": 72,
     "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
     "people": {
+      "Bob Elliott": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-15T11:51:58+09:00",
+            "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0",
+            "kind": "video",
+            "preview": "Macro Talk: 2026.11.13",
+            "grade": "1차-B",
+            "published_at": "2026-11-13T18:40:08+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
       "Cem Karsan": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-12T21:10:34+09:00",
@@ -2635,30 +3184,14 @@
             "grade": "1차-A",
             "published_at": "2026-11-13T23:16:48Z",
             "noise_hint": false
-          }
-        ]
-      },
-      "Darius Dale": {
-        "role": "core",
-        "count": 2,
-        "non_noise": 2,
-        "items": [
-          {
-            "at": "2026-11-12T10:10:35+09:00",
-            "url": "https://www.youtube.com/watch?v=S3V9QHFGwRs",
-            "kind": "video",
-            "preview": "The Macro Minute: Anthropic and CoreWeave Signal Renewed Enthusiasm for AI",
-            "grade": "1차-A",
-            "published_at": "2026-11-11T21:00:19Z",
-            "noise_hint": false
           },
           {
-            "at": "2026-11-12T10:10:35+09:00",
-            "url": "https://www.youtube.com/watch?v=Hx4_54pMhUQ",
+            "at": "2026-11-15T11:51:58+09:00",
+            "url": "https://www.youtube.com/watch?v=CvKRIVi51IM",
             "kind": "video",
-            "preview": "When and How Should Investors Buy the Dip?",
+            "preview": "Brutal 2027: How The Next Financial Crisis Starts",
             "grade": "1차-A",
-            "published_at": "2026-11-11T13:59:38Z",
+            "published_at": "2026-11-11T21:39:29+00:00",
             "noise_hint": false
           }
         ]
@@ -2675,6 +3208,22 @@
             "preview": "Markets Weekly November 14, 2026",
             "grade": "1차-B",
             "published_at": "2026-11-14T20:02:57Z",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Ryan Detrick": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-15T11:51:58+09:00",
+            "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ",
+            "kind": "video",
+            "preview": "Facts vs Feelings Social Hour with Mike Larson and Sonali Basak (Ep. 7)",
+            "grade": "1차-A",
+            "published_at": "2026-11-14T09:01:48+00:00",
             "noise_hint": false
           }
         ]
