@@ -944,7 +944,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         vid, person = ex.get("video_id"), ex.get("person")
         if not vid or vid in videos or vid in seen_extra or person not in by_person:
             continue
-        meta = video_meta(http, vid, supadata_key, state, api_key)
+        meta = video_meta(http, vid, supadata_key, state, os.environ.get("YT_DATA_API_KEY") or None)
         if not meta.get("channel_name"):
             extra_stats.setdefault("retry_next_run", []).append(vid)  # transient: try again next run
             continue
