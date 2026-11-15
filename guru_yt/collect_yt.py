@@ -225,10 +225,27 @@ def read_uploads(http: Http, channel_id: str, api_key: str | None) -> tuple[list
         raise RuntimeError(f"{e}" + (f"; {api_err}" if api_err else ""))
 
 
-def video_meta(http: Http, vid: str, supadata_key: str | None, state: dict) -> dict:
-    """Channel from YouTube oEmbed (works from Actions; the watch page is behind a bot check there) and the
-    exact upload date from Supadata metadata (1 credit) when a key is set."""
+def video_meta(http: Http, vid: str, supadata_key: str | None, state: dict, api_key: str | None = None) -> dict:
+    """Channel and exact upload date. Data API videos.list first (1 unit of 10,000/day); then oEmbed for the
+    channel name and Supadata metadata (40 credits/month) only when no API key is set. The Supadata-only path ran
+    out mid-month on 11/2026 and left x_self_link videos (e.g. Cem Karsan on David Lin) retrying forever."""
     out = {}
+    if api_key:
+        try:
+            status, text, _ = http.get("https://www.googleapis.com/youtube/v3/videos",
+                                       params={"part": "snippet,contentDetails", "id": vid},
+                                       headers={"X-Goog-Api-Key": api_key})
+            items = (json.loads(text).get("items") or []) if status == 200 else []
+            if items:
+                sn, cd = items[0].get("snippet") or {}, items[0].get("contentDetails") or {}
+                out.update(title=sn.get("title", ""), channel_name=sn.get("channelTitle"), channel_id=sn.get("channelId"),
+                           published_at=sn.get("publishedAt"), description=(sn.get("description") or "")[:1500])
+                m = re.fullmatch(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", cd.get("duration") or "")
+                if m:
+                    out["is_short"] = sum(int(x or 0) * k for x, k in zip(m.groups(), (3600, 60, 1))) <= 60
+                return out
+        except Exception:
+            pass
     try:
         status, text, _ = http.get("https://www.youtube.com/oembed",
                                    params={"url": f"https://www.youtube.com/watch?v={vid}", "format": "json"})
@@ -927,7 +944,7 @@ def run(yta_key: str | None, supadata_key: str | None, http: Http | None = None,
         vid, person = ex.get("video_id"), ex.get("person")
         if not vid or vid in videos or vid in seen_extra or person not in by_person:
             continue
-        meta = video_meta(http, vid, supadata_key, state)
+        meta = video_meta(http, vid, supadata_key, state, api_key)
         if not meta.get("channel_name"):
             extra_stats.setdefault("retry_next_run", []).append(vid)  # transient: try again next run
             continue
