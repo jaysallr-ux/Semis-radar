@@ -62,7 +62,9 @@ def x_records(feed: dict, lo: datetime, hi: datetime) -> tuple[list[dict], list[
         vt = p.get("video_transcript") or {}
         vt_at = pi._parse(vt.get("at")) if vt.get("status") == "ready" else None
         late_video = bool(at and vt_at and at <= lo < vt_at <= hi)
-        if not at or not ((lo < at <= hi) or late_video):
+        seen = pi._parse(p.get("first_seen_at"))
+        late_found = bool(at and seen and at <= lo < seen <= hi)  # e.g. a reply the list embed hid, found via Pickle
+        if not at or not ((lo < at <= hi) or late_video or late_found):
             continue
         q = p.get("quoted_post") or {}
         rc = p.get("reply_context") or []
@@ -72,6 +74,7 @@ def x_records(feed: dict, lo: datetime, hi: datetime) -> tuple[list[dict], list[
              "preview": pi._preview(p.get("text"), 140), "quoted_author": q.get("author") if q else None,
              "in_reply_to": [f"@{c.get('author')}: {pi._preview(c.get('text'), 100)}" for c in rc] or None,
              "_same_yt": vt.get("same_as_youtube"),
+             "late_found": "늦게 발견 (이번 창에서 처음 수집)" if late_found and not late_video else None,
              "video": (f"{vt.get('evidence_grade')} · 검증 인용 {sum(1 for x in vt.get('quotes') or [] if x.get('speaker_verified'))}개"
                        + (" · 전사가 이번 창에 완료" if late_video else "")) if vt.get("status") == "ready" else None}
         (auto if pi.x_noise(p) else recs).append(r)

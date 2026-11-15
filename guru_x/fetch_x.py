@@ -330,8 +330,14 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
             old_rec = posts.get(r["id"])
             if old_rec:
                 r["discovered_via"] = sorted((set(old_rec.get("discovered_via", [])) | set(r["discovered_via"])) - {"refresh"})
+                if old_rec.get("first_seen_at"):
+                    r["first_seen_at"] = old_rec["first_seen_at"]
             else:
                 acc_status[r["handle"]]["new_originals"] += 1
+                r["first_seen_at"] = now.isoformat(timespec="seconds")
+            # posts found only through the Pickle inbox before first_seen_at existed (11/15): stamp them once now
+            if not r.get("first_seen_at") and r.get("discovered_via") == ["pickle_inbox"]:
+                r["first_seen_at"] = now.isoformat(timespec="seconds")
             posts[r["id"]] = r
         grok_cost, grok_stats = res["cost"], res["stats"]
         grok_ok = (grok_stats.get("grok") or "").startswith("ok")
