@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-15T11:56:34+09:00",
+  "generated_at": "2026-11-15T21:10:33+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-15T11:51:58+09:00",
+    "last_discovery_at": "2026-11-15T11:56:34+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -113,9 +113,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-09T02:48:59+09:00",
+      "oldest_rss": "2026-10-11T00:00:08+09:00",
       "gap_possible": false,
-      "matched": 2
+      "matched": 3
     },
     {
       "label": "MacroVoices",
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-14T02:08:13+09:00",
+      "oldest_rss": "2026-11-14T02:47:23+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-14T05:52:35+09:00",
+      "oldest_rss": "2026-11-14T06:34:20+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-13T10:00:17+09:00",
+      "oldest_rss": "2026-11-13T14:00:33+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -261,7 +261,7 @@
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
-    "expired": 0,
+    "expired": 1,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
@@ -925,6 +925,52 @@
       "quotes_grade_count": {
         "1차-A": 0,
         "1차-B": 6,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "Mi8DV2F3ToI",
+      "url": "https://www.youtube.com/watch?v=Mi8DV2F3ToI",
+      "channel": "Thoughtful Money",
+      "channel_id": "UCjqe6xtZYTfvA4pHs0HgJsQ",
+      "channel_mode": "filter",
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "match": "title",
+      "title": "The Most Important Investing Books Ever | According To Lacy Hunt, Kyle Bass, Lyn Alden & 30 Others",
+      "description": "GET OUR FREE \"ESSENTIAL READING FOR INVESTORS\" BOOK LIST at https://www.thoughtfulmoney.com/essential\n\nA principal part of Thoughtful Money’s mission is to democratize financial literacy.\n\nIn my pursuit of that goal, I often get asked: What makes a well-informed investor?\n\nSo to come up with a definitive & actionable answer, I’ve asked over 30 of the world’s foremost experts in money & wealth-building to share their top recommendations for the foundational publications a “well-informed investor” should read.\n\nThe result?\n\nA list of the 100+ most significant & powerful books, white papers and videos on successful wealth creation ever published.\n\nAs well as a list of the “Most Recommended” 20 books that were submitted by multiple experts.\n\nThe value of this combined knowledge is priceless.\n\nA treasure trove of wealth-building knowledge is just a click away. I’m very pleased and proud to make it available to you.\n\nGet it now at https://www.thoughtfulmoney.com/essential\n\n#investingforbeginners #investingbooks #investing101 \n_____________________________________________\n \nThoughtful Money LLC is a Registered Investment Advisor Promoter.\n\nWe produce educational content geared for the individual investor. It’s important to note that this content is NOT investment advice, individual or otherwise, nor should be construed as such.\n\nWe recommend that most investors, especially if inexperienced, should consider benefiting from the direction and guidance of a qualified financial advisor r",
+      "published_at": "2026-11-13T02:53:24Z",
+      "first_seen_at": "2026-11-15T21:10:33+09:00",
+      "is_short": null,
+      "transcript_status": "skipped_old",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
     },
