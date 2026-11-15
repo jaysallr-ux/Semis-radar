@@ -1,26 +1,22 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-14T21:10:33+09:00",
+  "generated_at": "2026-11-15T10:10:33+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-14T10:10:32+09:00",
-    "merged_from_discovery": 0,
+    "last_discovery_at": "2026-11-15T05:20:32+09:00",
+    "merged_from_discovery": 1,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
-      "rejected": 1,
-      "reasons": {
-        "HJjqCKHXFjM": "channel The Money Mission not allowlisted"
-      },
+      "rejected": 0,
       "retry_next_run": [
+        "g2ydjhRjBc0",
         "yNTHAc7IauQ",
         "CvKRIVi51IM",
-        "yNTHAc7IauQ",
-        "LBdOyp28RV8",
-        "LBdOyp28RV8"
+        "yNTHAc7IauQ"
       ]
     }
   },
@@ -57,7 +53,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-21T23:00:17+09:00",
+      "oldest_rss": "2026-09-23T23:00:29+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -68,7 +64,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-02T00:00:31+09:00",
+      "oldest_rss": "2026-10-02T18:00:14+09:00",
       "gap_possible": false,
       "matched": 2
     },
@@ -79,7 +75,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-13T23:30:05+09:00",
+      "oldest_rss": "2026-09-14T22:46:24+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -90,7 +86,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-07-05T05:01:35+09:00",
+      "oldest_rss": "2026-07-06T04:30:25+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -112,7 +108,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-13T00:52:15+09:00",
+      "oldest_rss": "2026-11-13T02:28:30+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -123,7 +119,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-09T00:00:07+09:00",
+      "oldest_rss": "2026-10-09T02:48:59+09:00",
       "gap_possible": false,
       "matched": 2
     },
@@ -156,7 +152,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-02-01T02:41:24+09:00",
+      "oldest_rss": "2026-02-08T02:21:31+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -167,7 +163,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-11T02:14:49+09:00",
+      "oldest_rss": "2026-11-11T08:00:39+09:00",
       "gap_possible": false,
       "matched": 4
     },
@@ -211,7 +207,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-13T16:57:35+09:00",
+      "oldest_rss": "2026-11-14T02:08:13+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -222,7 +218,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-14T01:45:00+09:00",
+      "oldest_rss": "2026-11-14T05:41:02+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -233,7 +229,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-13T04:30:07+09:00",
+      "oldest_rss": "2026-11-13T10:00:17+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -244,14 +240,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-10T06:30:25+09:00",
+      "oldest_rss": "2026-11-10T10:00:32+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 1,
-    "yta_server_remaining": 9,
+    "yta_used_today": 0,
+    "yta_server_remaining": null,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -260,8 +256,8 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 3,
-    "gemini_est_video_hours_today": 0.156,
+    "gemini_calls_today": 2,
+    "gemini_est_video_hours_today": 0.226,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
@@ -271,13 +267,13 @@
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
-    "expired": 1,
+    "expired": 0,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 1,
-    "ready": 0,
+    "attempted": 2,
+    "ready": 1,
     "not_speaking": 0,
     "busy": 0,
     "errors": 1,
@@ -288,6 +284,141 @@
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "L8SRWZhAuvI",
+      "url": "https://www.youtube.com/watch?v=L8SRWZhAuvI",
+      "channel": "Joseph Wang",
+      "channel_id": "UCsJxlgjWIOcuEbOJZ591V3Q",
+      "channel_mode": "dedicated",
+      "person": "Joseph Wang",
+      "tier": 4,
+      "role": "shadow",
+      "match": "dedicated_channel",
+      "title": "Markets Weekly November 14, 2026",
+      "description": "#federalreserve  #marketsanalysis\n00:00 - Intro \n00:43 - Hawkish Shift\n08:01 - More AI headwinds\n\nFor macro courses:\nwww.centralbanking101.com\n\nMy best seller on monetary policy:\nhttps://www.amazon.com/dp/0999136771",
+      "published_at": "2026-11-14T20:02:57Z",
+      "first_seen_at": "2026-11-15T05:20:32+09:00",
+      "is_short": false,
+      "transcript_status": "not_needed",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": true,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "shadow: captions are reserved for the core 11",
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-15T10:10:33+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Joseph Wang personally appears on camera and speaks throughout the video.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Joseph Wang is bearish on US equities and AI-related stocks, arguing that elevated interest rates, a hawkish Fed reaction function, and choking off circular financing mechanisms in the AI ecosystem pose serious headwinds and point to further market downside.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": ""
+      },
+      "quotes": [
+        {
+          "t": "14:41",
+          "t_sec": 881,
+          "speaker": "Joseph Wang",
+          "topic": "US Equities & AI Trade",
+          "text": "So the trend really is lower. It's not going to happen in a straight line, and we are approaching seasonally positive parts of the cycle, Thanksgiving and Christmas, but it does seem to me that with the Fed further rate-hiking, with the Nvidia maybe doing less of this circular financing stuff, it's more headwinds to the AI trade and there's further downside to come, not just for the AI stocks, but for the US economy as well.",
+          "url": "https://www.youtube.com/watch?v=L8SRWZhAuvI&t=881s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "06:58",
+          "t_sec": 418,
+          "speaker": "Joseph Wang",
+          "topic": "Federal Reserve Rate Hikes",
+          "text": "So looking at what's priced in the markets, the market is now pricing in more than three more hikes in the next 12 months.",
+          "url": "https://www.youtube.com/watch?v=L8SRWZhAuvI&t=418s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "14:09",
+          "t_sec": 849,
+          "speaker": "Joseph Wang",
+          "topic": "AI Financing & Markets",
+          "text": "And that avenue of financing has been shrunk, but now this Nvidia avenue under attack as well, that further chokes off financing to the AI ecosystem, and that suggests that there could be more downside to come.",
+          "url": "https://www.youtube.com/watch?v=L8SRWZhAuvI&t=849s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-15T10:10:33+09:00",
+      "evidence_grade": "1차-B",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "00:44",
+          "point": "Two-year Treasury yields have surged as recent Federal Reserve communications turned hawkish following warmer CPI data.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "02:41",
+          "point": "Governor Waller's remarks established a reaction function where strong core CPI data opened the door to a 50 basis point hike.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "06:58",
+          "point": "Financial markets are pricing in more than three rate hikes over the next 12 months, which is more hawkish than previous projections.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "09:25",
+          "point": "Leadership disruption at Nvidia is partly driven by geopolitical friction with national security hawks seeking tighter restrictions on chip access for China.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "12:35",
+          "point": "The AI ecosystem has been heavily supported by vendor circular financing and debt commitments from big tech companies.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "14:09",
+          "point": "Tighter vendor financing and higher interest rates will restrict capital flow into the AI ecosystem, creating risk of further downside for tech stocks and the US economy.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "14:41",
+          "point": "Despite seasonal tailwinds around Thanksgiving and Christmas, the broader trend for US stock indices is downward due to macro headwinds.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 30964,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 3,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "i0dhEf5U-Ls",
       "url": "https://www.youtube.com/watch?v=i0dhEf5U-Ls",
@@ -464,7 +595,7 @@
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "error",
+      "gemini_status": "unavailable",
       "gemini_model": null,
       "gemini_at": null,
       "gemini_mode": null,
@@ -472,7 +603,7 @@
       "gemini_evidence": null,
       "stance": null,
       "quotes": [],
-      "gemini_error_count": 2,
+      "gemini_error_count": 3,
       "gemini_last_error": "error 403 video not accessible to Gemini",
       "evidence_ready_at": null,
       "evidence_grade": "제목·설명만 확인",
@@ -2475,175 +2606,6 @@
         "1차-B": 3,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "KGM9O05H1-o",
-      "url": "https://www.youtube.com/watch?v=KGM9O05H1-o",
-      "channel": "Joseph Wang",
-      "channel_id": "UCsJxlgjWIOcuEbOJZ591V3Q",
-      "channel_mode": "dedicated",
-      "person": "Joseph Wang",
-      "tier": 4,
-      "role": "shadow",
-      "match": "dedicated_channel",
-      "title": "Markets Weekly November 7, 2026",
-      "description": "#federalreserve #marketsanalysis\n00:00 - Intro \n00:55 - Labor and Productivity \n03:31 - Blue Revolution\n09:21 - Markets react\n\nFor macro courses:\nwww.centralbanking101.com\n\nMy best seller on monetary policy:\nhttps://www.amazon.com/dp/0999136771",
-      "published_at": "2026-11-07T20:00:44Z",
-      "first_seen_at": "2026-11-08T05:20:30+09:00",
-      "is_short": false,
-      "transcript_status": "not_needed",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "shadow: captions are reserved for the core 11",
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-08T21:10:30+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Joseph Wang appears on camera speaking throughout the entire video presenting Market Weekly.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Expects risk assets and US equities to trend gradually lower as the AI boom unwinds and tax policies weigh on corporate profits, though a sharp crash is unlikely near-term due to positive year-end seasonality.",
-        "invalidation": "",
-        "targets": [],
-        "timeframe": "Medium-term"
-      },
-      "quotes": [
-        {
-          "t": "11:38",
-          "t_sec": 698,
-          "speaker": "Joseph Wang",
-          "topic": "us_equities",
-          "text": "Doesn't mean we're going to crash. I continue to believe that this will be kind of a process, right?",
-          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=698s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "11:57",
-          "t_sec": 717,
-          "speaker": "Joseph Wang",
-          "topic": "us_equities",
-          "text": "We are heading into a seasonally positive time of the year into Christmas, so, you know, don't think we're going to crash, but it does seem like the trend has changed as the AI trade implodes, so the market is going to have to sift through this and find a new narrative.",
-          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=717s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "14:58",
-          "t_sec": 898,
-          "speaker": "Joseph Wang",
-          "topic": "bonds_and_inflation",
-          "text": "I think this is all very bullish for bonds, and inflation to me, it will come down.",
-          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=898s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "16:38",
-          "t_sec": 998,
-          "speaker": "Joseph Wang",
-          "topic": "asset_prices",
-          "text": "It could be a better social model for the median person, but it doesn't seem like it's going to be good for asset prices, and that's something that we have to think about going forward.",
-          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=998s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "17:53",
-          "t_sec": 1073,
-          "speaker": "Joseph Wang",
-          "topic": "us_equities_and_bonds",
-          "text": "Going forward, though, I continue to think just grinding down lower in risk assets, rally in bond markets, with a potential flare-up in the Middle East.",
-          "url": "https://www.youtube.com/watch?v=KGM9O05H1-o&t=1073s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-08T21:10:30+09:00",
-      "evidence_grade": "1차-B",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 5,
-        "excluded_speaker_mismatch": 0
-      },
-      "key_points": [
-        {
-          "t": "01:14",
-          "point": "Strong productivity data indicates that AI adoption is starting to show up in tech sector revenue and head-count metrics.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "02:51",
-          "point": "Strong employment and non-farm payroll numbers demonstrate that the US labor market remains solid.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "03:20",
-          "point": "The Federal Reserve remains on track for a December rate hike due to persistent inflation pressures.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "10:32",
-          "point": "The expansion of AI data centers will likely slow down due to increased regulatory delays and environmental scrutinies.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "11:57",
-          "point": "Equities are unlikely to crash into year-end due to positive seasonal tailwinds, but the overall market trend has shifted lower as AI stocks unwind.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "12:21",
-          "point": "Oil prices are expected to decline as political pressure mounts to resolve Middle East conflicts and lower energy costs.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "14:30",
-          "point": "Political priority on affordability gives the Fed scope to maintain higher interest rates, which is bullish for fixed income.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "15:26",
-          "point": "Potential increases in corporate and capital gains taxes under new political leadership will negatively impact financial asset valuation.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "17:18",
-          "point": "A geopolitical escalation involving Iran remains a key downside risk for global markets through year-end.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 34900
     }
   ],
   "person_index": {
@@ -2697,6 +2659,22 @@
             "preview": "When and How Should Investors Buy the Dip?",
             "grade": "1차-A",
             "published_at": "2026-11-11T13:59:38Z",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Joseph Wang": {
+        "role": "shadow",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-15T10:10:33+09:00",
+            "url": "https://www.youtube.com/watch?v=L8SRWZhAuvI",
+            "kind": "video",
+            "preview": "Markets Weekly November 14, 2026",
+            "grade": "1차-B",
+            "published_at": "2026-11-14T20:02:57Z",
             "noise_hint": false
           }
         ]
