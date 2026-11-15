@@ -1,6 +1,6 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-15T20:59:28+09:00",
+  "generated_at": "2026-11-15T21:08:06+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
@@ -10,24 +10,24 @@
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 98,
-    "already_known": 42,
+    "urls_found": 107,
+    "already_known": 43,
     "too_old": 55,
-    "verified_syndication": 1,
+    "verified_syndication": 3,
     "verified_oembed": 0,
     "rejected_author": 0,
-    "reply_other_kept": 0,
+    "reply_other_kept": 6,
     "verify_failed": 0,
     "list_oldest": "2026-11-13T13:01:42.000Z",
     "refreshed": 0,
-    "inbox": 0
+    "inbox": 19
   },
   "discovery_complete": true,
   "manual_ids_updated_at": "2026-10-22T07:25:55+00:00",
   "pickle_inbox": {
-    "files": 0,
-    "ids": 0,
-    "latest_collected_at": null,
+    "files": 1,
+    "ids": 19,
+    "latest_collected_at": "2026-11-15T20:50:00+09:00",
     "blocked": [],
     "bad_files": []
   },
@@ -42,7 +42,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -53,7 +53,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -64,7 +64,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -75,7 +75,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -86,8 +86,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-15T21:08:06+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -97,8 +97,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
-      "new_originals_this_run": 1,
+      "last_success_at": "2026-11-15T21:08:06+09:00",
+      "new_originals_this_run": 5,
       "error": null
     },
     {
@@ -108,7 +108,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -119,8 +119,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-15T21:08:06+09:00",
+      "new_originals_this_run": 3,
       "error": null
     },
     {
@@ -130,7 +130,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -141,7 +141,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -152,7 +152,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -163,7 +163,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -174,7 +174,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-15T20:59:28+09:00",
+      "last_success_at": "2026-11-15T21:08:06+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -186,10 +186,10 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 0,
+    "described": 3,
     "pending": 0,
     "errors": 0,
-    "calls_today": 6,
+    "calls_today": 9,
     "daily_cap": 100,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
@@ -234,6 +234,52 @@
       ]
     },
     {
+      "id": "2121738431847944202",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-14T22:53:56.000Z",
+      "url": "https://x.com/dampedspring/status/2121738431847944202",
+      "text": "@JDBTC21 We all have our obsessions I guess.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2121737078803152906",
+          "author": "JDBTC21",
+          "created_at": "2026-11-14T22:48:34.000Z",
+          "url": "https://x.com/JDBTC21/status/2121737078803152906",
+          "text": "@dampedspring If you’re not going to buy the asset, what is your obsession with it? Did some Bitcoin maxis trolled you with the have fun staying poor meme? 😂",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2121710324055429315",
+          "author": "dampedspring",
+          "created_at": "2026-11-14T21:02:15.000Z",
+          "url": "https://x.com/dampedspring/status/2121710324055429315",
+          "text": "Hyperliquid?",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ]
+    },
+    {
       "id": "2121725133396041975",
       "person": "Joseph Wang",
       "handle": "josephwang",
@@ -263,6 +309,190 @@
       ]
     },
     {
+      "id": "2121715467203248526",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-14T21:22:41.000Z",
+      "url": "https://x.com/dampedspring/status/2121715467203248526",
+      "text": "@LukeAne10 42069 for BTC and 42.069 for hype",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2121712922346815548",
+          "author": "LukeAne10",
+          "created_at": "2026-11-14T21:12:34.000Z",
+          "url": "https://x.com/LukeAne10/status/2121712922346815548",
+          "text": "@dampedspring Does skateboard Andy like BTC here?",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2121710324055429315",
+          "author": "dampedspring",
+          "created_at": "2026-11-14T21:02:15.000Z",
+          "url": "https://x.com/dampedspring/status/2121710324055429315",
+          "text": "Hyperliquid?",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ]
+    },
+    {
+      "id": "2121715407044374665",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-14T21:22:27.000Z",
+      "url": "https://x.com/dampedspring/status/2121715407044374665",
+      "text": "@nipacrand Yep",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2121712925161525414",
+          "author": "nipacrand",
+          "created_at": "2026-11-14T21:12:35.000Z",
+          "url": "https://x.com/nipacrand/status/2121712925161525414",
+          "text": "@dampedspring Moving BTC buy to 42069?",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2121710324055429315",
+          "author": "dampedspring",
+          "created_at": "2026-11-14T21:02:15.000Z",
+          "url": "https://x.com/dampedspring/status/2121710324055429315",
+          "text": "Hyperliquid?",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ]
+    },
+    {
+      "id": "2121715376807436733",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-14T21:22:20.000Z",
+      "url": "https://x.com/dampedspring/status/2121715376807436733",
+      "text": "@wipolino 42.069 seems inevitable",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2121714317145907424",
+          "author": "wipolino",
+          "created_at": "2026-11-14T21:18:07.000Z",
+          "url": "https://x.com/wipolino/status/2121714317145907424",
+          "text": "@dampedspring now or we wait to 50ish ?",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2121710324055429315",
+          "author": "dampedspring",
+          "created_at": "2026-11-14T21:02:15.000Z",
+          "url": "https://x.com/dampedspring/status/2121710324055429315",
+          "text": "Hyperliquid?",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ]
+    },
+    {
+      "id": "2121710480838541443",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-14T21:02:52.000Z",
+      "url": "https://x.com/dampedspring/status/2121710480838541443",
+      "text": "@PrehensionHenri @jukan05 @citrini I'm a buyer and bought NVDA.  Not short.  Have never been short.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2121689611550478825",
+          "author": "PrehensionHenri",
+          "created_at": "2026-11-14T19:39:57.000Z",
+          "url": "https://x.com/PrehensionHenri/status/2121689611550478825",
+          "text": "@dampedspring @jukan05 @citrini Professional short sellers are bunch of depressed cockroaches",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2121556192057016542",
+          "author": "dampedspring",
+          "created_at": "2026-11-14T10:49:47.000Z",
+          "url": "https://x.com/dampedspring/status/2121556192057016542",
+          "text": "@jukan05 Figures.  @citrini  interested in your view on what $NVDA should do?",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ]
+    },
+    {
       "id": "2121710324055429315",
       "person": "Andy Constan",
       "handle": "dampedspring",
@@ -287,6 +517,43 @@
       "possibly_truncated": false,
       "discovered_via": [
         "list_embed"
+      ]
+    },
+    {
+      "id": "2121708191306400253",
+      "person": "Ryan Detrick",
+      "handle": "RyanDetrick",
+      "tier": 2,
+      "role": "core",
+      "author_id": "21232827",
+      "created_at": "2026-11-14T20:53:46.000Z",
+      "url": "https://x.com/RyanDetrick/status/2121708191306400253",
+      "text": "@sonalibasak @sonusvarghese Thank you 🙏🙏🙏 \n\nUsually we don't have that many tech issues, but the final product was 🔥",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2121700692717179233",
+          "author": "sonalibasak",
+          "created_at": "2026-11-14T20:23:59.000Z",
+          "url": "https://x.com/sonalibasak/status/2121700692717179233",
+          "text": "Spending time with @sonusvarghese & @RyanDetrick is an absolute pleasure. They are down to earth — with sharp and compelling views of the world. First time on their podcast and honored to join.",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
       ]
     },
     {
@@ -440,6 +707,198 @@
             "image_text": "But any sign of trouble could spook an already rattled base of investors. It would also pose a potentially ominous sign for the near-term future of the AI IPO rush, and chiefly, OpenAI's plans to eventually go public. And, in the worst-case scenario, it could mark the long-awaited beginning of the AI trade's oft-warned unraveling. \"We're seeing a circumstance where this may mark the final pump of ",
             "what_it_shows": "A screenshot of an article discussing the potential implications of an Anthropic IPO and quoting Unlimited Funds CEO Bob Elliott on AI valuations.",
             "chart_credit": "Morning Money"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2121646213313474674",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "role": "core",
+      "author_id": "188369814",
+      "created_at": "2026-11-14T16:47:30.000Z",
+      "url": "https://x.com/BiancoResearch/status/2121646213313474674",
+      "text": "5/5\n\nStrategy’s average purchase price is $75,820 (blue), well above current prices (orange). The current holdings are underwater by about $10,000. https://t.co/CBBonLmenm",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HXGZrX1WkAEUCFd.png"
+        }
+      ],
+      "videos": [],
+      "is_self_reply": true,
+      "is_reply_to_other": false,
+      "reply_context": [
+        {
+          "id": "2121646208464900494",
+          "author": "biancoresearch",
+          "created_at": "2026-11-14T16:47:29.000Z",
+          "url": "https://x.com/biancoresearch/status/2121646208464900494",
+          "text": "4/5\n\nOne of the largest single Bitcoin holders is Michael Saylor’s Strategy (formerly MicroStrategy).\n\nIt holds 850,364 BTC (blue). These holdings total about $60.12 billion. https://t.co/jplXQJqP6X",
+          "available": true,
+          "has_media": true
+        },
+        {
+          "id": "2121646203435954657",
+          "author": "biancoresearch",
+          "created_at": "2026-11-14T16:47:27.000Z",
+          "url": "https://x.com/biancoresearch/status/2121646203435954657",
+          "text": "3/5\n\nA big reason these ETFs are “leaking money” (outflows) is the average purchase price of nearly $83,000 (blue line). The current price (orange) is more than $14,000 below this level (bottom panel).\n\nIn other words, the average Bitcoin spot ETF investor is holding a loss. https://t.co/ymt1k7MaKf",
+          "available": true,
+          "has_media": true
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-15T12:08:06+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXGZrX1WkAEUCFd.png",
+            "image_text": "Strategy Average Cost\n$120K\n$100K\n$80K\n$60K\n$40K\n$20K\nAverage purchase price\nBitcoin Price\n$75.82K\n$65.63K\n$50K\n$40K\n$30K\n$20K\n$10K\n$0K\n-$10K\n-$20K\nUnrealized Gains/Losses\n11/8/21\n$40.62K\n10/6/25\n$50.37K\n4/8/25\n$7.57K\n11/21/22\n-$14.81K\n11/13/26\n-$10.19K\n2021\n2022\n2023\n2024\n2025\n2026\n2027\nSource: https://www.strategy.com/data\n© 2026 Bianco Research, L.L.C.",
+            "what_it_shows": "This chart compares Strategy's average purchase price with Bitcoin price alongside an unrealized gains/losses sub-chart from 2021 through 2027. It displays the latest values showing an average purchase price of $75.82K, a Bitcoin price of $65.63K, and an unrealized loss of -$10.19K as of 11/13/26.",
+            "chart_credit": "Bianco Research, L.L.C."
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2121646208464900494",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "role": "core",
+      "author_id": "188369814",
+      "created_at": "2026-11-14T16:47:29.000Z",
+      "url": "https://x.com/BiancoResearch/status/2121646208464900494",
+      "text": "4/5\n\nOne of the largest single Bitcoin holders is Michael Saylor’s Strategy (formerly MicroStrategy).\n\nIt holds 850,364 BTC (blue). These holdings total about $60.12 billion. https://t.co/jplXQJqP6X",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HXGZfFGWcAAd0eD.png"
+        }
+      ],
+      "videos": [],
+      "is_self_reply": true,
+      "is_reply_to_other": false,
+      "reply_context": [
+        {
+          "id": "2121646203435954657",
+          "author": "biancoresearch",
+          "created_at": "2026-11-14T16:47:27.000Z",
+          "url": "https://x.com/biancoresearch/status/2121646203435954657",
+          "text": "3/5\n\nA big reason these ETFs are “leaking money” (outflows) is the average purchase price of nearly $83,000 (blue line). The current price (orange) is more than $14,000 below this level (bottom panel).\n\nIn other words, the average Bitcoin spot ETF investor is holding a loss. https://t.co/ymt1k7MaKf",
+          "available": true,
+          "has_media": true
+        },
+        {
+          "id": "2121646198977167360",
+          "author": "biancoresearch",
+          "created_at": "2026-11-14T16:47:26.000Z",
+          "url": "https://x.com/biancoresearch/status/2121646198977167360",
+          "text": "2/5\n\nThe first spot Bitcoin ETFs started trading on January 11, 2024. Cumulative inflows (blue line) peaked on October 9, 2025, at $64.07B. (22 days is a calendar month, excluding weekends)\n\nSince then, these funds have been \"leaking money,\" and the cumulative flows now stand at https://t.co/5Bi0IRZUZQ",
+          "available": true,
+          "has_media": true
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-15T12:08:06+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXGZfFGWcAAd0eD.png",
+            "image_text": "Strategy Bitcoin Count\nCumulative Purchases\n800K\n600K\n400K\n200K\n0K\n11/13/26 850,364\nIndividual Purchases/Sales\n60K\n50K\n40K\n30K\n20K\n10K\n0K\n-10K\n11/25/24 55,500\n11/13/26 4,364\n7/2/26 -3,588\n8/24/26 -3,328\n2021\n2022\n2023\n2024\n2025\n2026\n2027\nSource: https://www.strategy.com/data\n© 2026 Bianco Research, L.L.C.",
+            "what_it_shows": "The chart displays Strategy's cumulative Bitcoin purchases and individual purchases/sales from 2021 through 2027, with cumulative holdings reaching 850,364 BTC by November 13, 2026.",
+            "chart_credit": "Bianco Research, L.L.C."
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2121646195571294612",
+      "person": "Jim Bianco",
+      "handle": "BiancoResearch",
+      "tier": 3,
+      "role": "core",
+      "author_id": "188369814",
+      "created_at": "2026-11-14T16:47:25.000Z",
+      "url": "https://x.com/BiancoResearch/status/2121646195571294612",
+      "text": "1/5\n\nThe combination of the Spot BTC ETFs and Strategy holds about 10% of all outstanding BTC. And collectively, they are now holding losses… again.\n\n🧵",
+      "quoted_post_id": "2121634244359270883",
+      "quoted_post": {
+        "id": "2121634244359270883",
+        "author": "biancoresearch",
+        "created_at": "2026-11-14T15:59:56.000Z",
+        "url": "https://x.com/biancoresearch/status/2121634244359270883",
+        "text": "Bitcoin is now down more than 25% from its September 21st peak of $87,381.\n\nThis decline has retraced more than 70% of the gain since the July 1st low of $57,742 (shown). That low was its lowest level since October 2024. https://t.co/rcgGqAKMZ7",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXGPFipWQAAJwY-.png"
+          }
+        ],
+        "videos": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-15T12:08:06+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXGPFipWQAAJwY-.png",
+            "image_text": "XBT-USD Cross Rate - Last Price 65638.50 -2683.64 May Jun Jul Aug 2026 Sep Oct Nov -25.55% (-86.39%ann.)",
+            "what_it_shows": "This is a candlestick price chart of the XBT-USD Cross Rate spanning from May to November 2026, showing a decline with an annotated percentage drop of -25.55% and a last price of 65638.50.",
+            "chart_credit": "unknown"
           }
         ],
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
@@ -10572,8 +11031,8 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 24,
-        "non_noise": 21,
+        "count": 29,
+        "non_noise": 26,
         "items": [
           {
             "at": "2026-11-12T21:18:57+09:00",
@@ -10742,6 +11201,41 @@
             "url": "https://x.com/dampedspring/status/2121710324055429315",
             "kind": "post",
             "preview": "Hyperliquid?",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-15T06:02:52+09:00",
+            "url": "https://x.com/dampedspring/status/2121710480838541443",
+            "kind": "reply",
+            "preview": "@PrehensionHenri @jukan05 @citrini I'm a buyer and bought NVDA. Not short. Have never been short.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-15T06:22:20+09:00",
+            "url": "https://x.com/dampedspring/status/2121715376807436733",
+            "kind": "reply",
+            "preview": "@wipolino 42.069 seems inevitable",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-15T06:22:27+09:00",
+            "url": "https://x.com/dampedspring/status/2121715407044374665",
+            "kind": "reply",
+            "preview": "@nipacrand Yep",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-15T06:22:41+09:00",
+            "url": "https://x.com/dampedspring/status/2121715467203248526",
+            "kind": "reply",
+            "preview": "@LukeAne10 42069 for BTC and 42.069 for hype",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-15T07:53:56+09:00",
+            "url": "https://x.com/dampedspring/status/2121738431847944202",
+            "kind": "reply",
+            "preview": "@JDBTC21 We all have our obsessions I guess.",
             "noise_hint": false
           },
           {
@@ -10952,8 +11446,8 @@
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 7,
-        "non_noise": 7,
+        "count": 10,
+        "non_noise": 10,
         "items": [
           {
             "at": "2026-11-13T06:02:24+09:00",
@@ -11005,6 +11499,28 @@
             "kind": "quote_post",
             "preview": "We are using floppy disks at the FAA. Boats are crashing into river cruise ships. Measles is spread…",
             "quoted_author": "JacobShap",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-15T01:47:25+09:00",
+            "url": "https://x.com/BiancoResearch/status/2121646195571294612",
+            "kind": "quote_post",
+            "preview": "1/5 The combination of the Spot BTC ETFs and Strategy holds about 10% of all outstanding BTC. And c…",
+            "quoted_author": "biancoresearch",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-15T01:47:29+09:00",
+            "url": "https://x.com/BiancoResearch/status/2121646208464900494",
+            "kind": "reply",
+            "preview": "4/5 One of the largest single Bitcoin holders is Michael Saylor’s Strategy (formerly MicroStrategy)…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-15T01:47:30+09:00",
+            "url": "https://x.com/BiancoResearch/status/2121646213313474674",
+            "kind": "reply",
+            "preview": "5/5 Strategy’s average purchase price is $75,820 (blue), well above current prices (orange). The cu…",
             "noise_hint": false
           }
         ]
@@ -11083,8 +11599,8 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 25,
-        "non_noise": 25,
+        "count": 26,
+        "non_noise": 26,
         "items": [
           {
             "at": "2026-11-13T01:00:17+09:00",
@@ -11267,6 +11783,13 @@
             "kind": "quote_post",
             "preview": "🤖🤖🤖",
             "quoted_author": "bespokeinvest",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-15T05:53:46+09:00",
+            "url": "https://x.com/RyanDetrick/status/2121708191306400253",
+            "kind": "reply",
+            "preview": "@sonalibasak @sonusvarghese Thank you 🙏🙏🙏 Usually we don't have that many tech issues, but the fina…",
             "noise_hint": false
           }
         ]
