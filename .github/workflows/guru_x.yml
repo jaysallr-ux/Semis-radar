@@ -75,9 +75,14 @@ jobs:
         if: steps.guard.outputs.run == 'true'
         run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
 
+      - name: Pickle inbox (post IDs from the Pickle agent's own public repo; read only)
+        if: steps.guard.outputs.run == 'true'
+        run: git clone -q --depth 1 https://github.com/jaysallr-ux/pickle-inbox "$RUNNER_TEMP/pickle-inbox" || echo "pickle-inbox not reachable"
+
       - name: Fetch X posts
         if: steps.guard.outputs.run == 'true'
         env:
+          PICKLE_INBOX_DIR: ${{ runner.temp }}/pickle-inbox
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

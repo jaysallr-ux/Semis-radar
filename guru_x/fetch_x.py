@@ -48,7 +48,12 @@ def read_inbox(now: datetime, keep_days: int = 3, delete_days: int = 7) -> tuple
     """IDs from inbox files collected within keep_days; files older than delete_days are deleted.
     Text is never taken from the file: every ID is re-read from X syndication by the normal verify path."""
     ids, info = {}, {"files": 0, "ids": 0, "latest_collected_at": None, "blocked": [], "bad_files": []}
-    for f in sorted(INBOX_DIR.glob("*.json")) if INBOX_DIR.exists() else []:
+    # Pickle writes to its own public repo (jaysallr-ux/pickle-inbox, cloned by the workflow into PICKLE_INBOX_DIR)
+    # so it never needs write access to this repo; the local inbox folder is still read for manual drops.
+    ext = Path(os.environ["PICKLE_INBOX_DIR"]) if os.environ.get("PICKLE_INBOX_DIR") else None
+    files = [(f, True) for f in sorted(INBOX_DIR.glob("*.json"))] if INBOX_DIR.exists() else []
+    files += [(f, False) for f in sorted(ext.rglob("pickle-*.json"))] if ext and ext.exists() else []
+    for f, local in files:
         try:
             d = json.loads(f.read_text(encoding="utf-8"))
             at = parse_ts(d["collected_at"])
@@ -56,7 +61,8 @@ def read_inbox(now: datetime, keep_days: int = 3, delete_days: int = 7) -> tuple
             info["bad_files"].append(f.name)
             continue
         if now - at > timedelta(days=delete_days):
-            f.unlink()
+            if local:
+                f.unlink()
             continue
         if now - at > timedelta(days=keep_days):
             continue
