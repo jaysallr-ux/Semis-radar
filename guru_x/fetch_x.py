@@ -335,10 +335,13 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
             else:
                 acc_status[r["handle"]]["new_originals"] += 1
                 r["first_seen_at"] = now.isoformat(timespec="seconds")
-            # posts found only through the Pickle inbox before first_seen_at existed (11/15): stamp them once now
-            if not r.get("first_seen_at") and r.get("discovered_via") == ["pickle_inbox"]:
-                r["first_seen_at"] = now.isoformat(timespec="seconds")
             posts[r["id"]] = r
+        # every kept post gets first_seen_at. Posts known before the field existed (11/15) and found only via the
+        # Pickle inbox are stamped now so the next manifest shows them; all others count from created_at.
+        for r in posts.values():
+            if not r.get("first_seen_at"):
+                r["first_seen_at"] = (now.isoformat(timespec="seconds") if r.get("discovered_via") == ["pickle_inbox"]
+                                      else r.get("created_at"))
         grok_cost, grok_stats = res["cost"], res["stats"]
         grok_ok = (grok_stats.get("grok") or "").startswith("ok")
         manual_at = load_json(MANUAL_PATH, {}).get("updated_at")
