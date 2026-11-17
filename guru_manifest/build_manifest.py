@@ -35,7 +35,9 @@ FEEDS = {
 # First build only: the checkpoints the 11/01 11:00 run stored.
 SEED_LOWER = {"x": "2026-11-01T10:15:33+09:00", "yt": "2026-11-01T10:10:28+09:00", "web": "2026-11-01T10:05:24+09:00"}
 PEOPLE = REPO / "guru_yt" / "channels.json"
-FIELDS_NOTE = ("rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a "
+FIELDS_NOTE = ("A reply_bundle record holds one person's replies to other accounts (items: each reply, its URL and the "
+               "post it answers); resolve it with one rid and one source entry, and show only the items with substance. "
+               "rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a "
                "source number [n] (several rids may share one [n] when they are the same appearance), or listed "
                "as noise by rid. auto_excluded records are games and bare reactions removed by code; they have no "
                "rid and need no handling. watch_only records (people flagged watch_only, e.g. Ryan Detrick) have no rid either: "
@@ -75,6 +77,7 @@ def x_records(feed: dict, lo: datetime, hi: datetime) -> tuple[list[dict], list[
              "in_reply_to": [f"@{c.get('author')}: {pi._preview(c.get('text'), 100)}" for c in rc] or None,
              "_same_yt": vt.get("same_as_youtube"),
              "late_found": "늦게 발견 (이번 창에서 처음 수집)" if late_found and not late_video else None,
+             "_reply_other": bool(p.get("is_reply_to_other")),
              "video": (f"{vt.get('evidence_grade')} · 검증 인용 {sum(1 for x in vt.get('quotes') or [] if x.get('speaker_verified'))}개"
                        + (" · 전사가 이번 창에 완료" if late_video else "")) if vt.get("status") == "ready" else None}
         (auto if pi.x_noise(p) else recs).append(r)
@@ -130,6 +133,27 @@ def base_lowers(prev: dict, now: datetime) -> list[dict]:
     return out[:MAX_BASES]
 
 
+def bundle_replies(recs: list[dict]) -> list[dict]:
+    """One record per person for all replies to other accounts in the window (the Pickle inbox surfaces dozens of
+    conversational replies; one rid each made the 11/17 manifest 73 records and the report gave up resolving them)."""
+    out, groups = [], {}
+    for r in recs:
+        if r.pop("_reply_other", False) and not r.get("video"):
+            groups.setdefault(r["person"], []).append(r)
+        else:
+            out.append(r)
+    for person, rs in groups.items():
+        if len(rs) == 1:
+            out.append(rs[0])
+            continue
+        rs.sort(key=lambda r: r["at"])
+        out.append({"feed": "X", "person": person, "role": rs[0]["role"], "tier": rs[0]["tier"], "at": rs[-1]["at"],
+                    "url": rs[-1]["url"], "kind": "reply_bundle",
+                    "preview": f"다른 계정에 단 답글 {len(rs)}개 묶음",
+                    "items": [{k: r[k] for k in ("at", "url", "preview", "in_reply_to", "late_found") if r.get(k)} for r in rs]})
+    return out
+
+
 def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:  # noqa: C901
     window, records, auto = {}, [], []
     for k, f in feeds.items():
@@ -145,7 +169,7 @@ def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:  # n
             yt_at = {v.get("video_id"): pi._parse(v.get("evidence_ready_at") or v.get("first_seen_at"))
                      for v in feeds["yt"].get("videos", [])}
             r = [x for x in r if not (x.get("_same_yt") and yt_at.get(x["_same_yt"]) and yt_at[x["_same_yt"]] <= yt_lo)]
-            records += r
+            records += bundle_replies(r)
             auto += a
         elif k == "yt":
             records += yt_records(f, lo, hi)
