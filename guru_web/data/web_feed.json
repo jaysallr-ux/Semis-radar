@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-16T21:05:34+09:00",
+  "generated_at": "2026-11-17T10:05:32+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -75,7 +75,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 8,
+      "items_in_window": 10,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -85,7 +85,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 4,
+      "items_in_window": 5,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -125,7 +125,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
+      "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -145,7 +145,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
+      "items_in_window": 4,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -156,8 +156,8 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 4,
-      "scoring_items": 1,
+      "items_in_window": 1,
+      "scoring_items": 0,
       "pending_items": 0
     },
     {
@@ -172,10 +172,10 @@
     }
   ],
   "stats": {
-    "discovered": 126,
-    "new_items": 9,
-    "decoded": 10,
-    "bodies": 0,
+    "discovered": 127,
+    "new_items": 12,
+    "decoded": 13,
+    "bodies": 4,
     "quotes_verified": 0,
     "video_candidates": 0,
     "gemini_calls": 0,
@@ -192,6 +192,102 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Katie Stockton",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "video_page",
+      "title": "Fairlead's Katie Stockton on if technical indicators are showing more downside ahead for Nvidia",
+      "outlet": "CNBC",
+      "published_at": "2026-11-16T22:54:14+00:00",
+      "discovered_at": "2026-11-17T10:05:32+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/16/fairleads-katie-stockton-on-if-technical-indicators-are-showing-more-downside-ahead-for-nvidia.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/16/fairleads-katie-stockton-on-if-technical-indicators-are-showing-more-downside-ahead-for-nvidia.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "EXCLUSIVE: Ryan Detrick Isn’t Worried About Midterm Election Outcome – ‘Focus on the Fundamentals’",
+      "outlet": "Benzinga",
+      "published_at": "2026-11-16T19:32:15+00:00",
+      "discovered_at": "2026-11-17T10:05:32+09:00",
+      "article_url": "https://www.benzinga.com/news/politics/26/11/63315199/exclusive-ryan-detrick-isnt-worried-about-midterm-election-outcome-focus-on-the-fundamentals",
+      "canonical_url": "https://www.benzinga.com/news/politics/26/11/63315199/exclusive-ryan-detrick-isnt-worried-about-midterm-election-outcome-focus-on-the-fundamentals",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Most sectors are outperforming XLK, Ryan Detrick notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-16T16:10:08+00:00",
+      "discovered_at": "2026-11-17T10:05:32+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4270969-xlk-sectors-relative-performance/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4270969-xlk-sectors-relative-performance/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Jonathan Krinsky",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "BTIG Strategist Puts Staples’ Edge Over Tech at 33%, Widest in About 25 Years",
+      "outlet": "www.tokenpost.com",
+      "published_at": "2026-11-16T13:25:07+00:00",
+      "discovered_at": "2026-11-17T10:05:32+09:00",
+      "article_url": "https://www.tokenpost.com/news/investing/58381",
+      "canonical_url": "https://www.tokenpost.com/news/investing/58381",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Bob Elliott: AI models show limited optimism for ANT IPO above $1.2 trillion",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-16T12:25:17+00:00",
+      "discovered_at": "2026-11-17T10:05:32+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4266148-ai-models-ant-ipo-valuation/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4266148-ai-models-ant-ipo-valuation/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Andy Constan",
       "tier": 2,
@@ -306,6 +402,25 @@
       "gemini_status": "no_direct_quotes",
       "gemini_error_count": 0,
       "yt_searched": true
+    },
+    {
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "tasty GUESTS Cem Karsan",
+      "outlet": "tastylive",
+      "published_at": "2026-11-13T19:30:38+00:00",
+      "discovered_at": "2026-11-17T10:05:32+09:00",
+      "article_url": "https://www.tastylive.com/shows/tasty-guests/episodes/tasty-guests-cem-karsan-11-13-2026",
+      "canonical_url": "https://www.tastylive.com/shows/tasty-guests/episodes/tasty-guests-cem-karsan-11-13-2026",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0
     },
     {
       "person": "Ryan Detrick",
@@ -636,91 +751,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "tasty Crumbs with Cem Karsan",
-      "outlet": "tastylive",
-      "published_at": "2026-11-09T22:18:10+00:00",
-      "discovered_at": "2026-11-10T21:05:25+09:00",
-      "article_url": "https://www.tastylive.com/shows/tasty-crumbs-with-cem-karsan/episodes/tasty-crumbs-with-cem-karsan-11-09-2026",
-      "canonical_url": "https://www.tastylive.com/shows/tasty-crumbs-with-cem-karsan/episodes/tasty-crumbs-with-cem-karsan-11-09-2026",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Mike Wilson",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "news_article",
-      "title": "Morgan Stanley's Mike Wilson Makes Bold S&P 500 Call for 2027",
-      "outlet": "Yahoo Finance",
-      "published_at": "2026-11-09T17:00:22+00:00",
-      "discovered_at": "2026-11-10T10:05:28+09:00",
-      "article_url": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanleys-mike-wilson-makes-170022293.html",
-      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanleys-mike-wilson-makes-170022293.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [
-        {
-          "text": "Every midterm election, the six- to 12-month period post the midterms is really, really good",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "Wilson said"
-        }
-      ],
-      "direction_hint": "bullish",
-      "evidence_grade": "1차-인용",
-      "evidence_ready_at": "2026-11-10T10:05:28+09:00",
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Mike Wilson",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "news_article",
-      "title": "Oil prices are set to decline, benefiting equities into 2027 – Morgan Stanley’s Mike Wilson",
-      "outlet": "Seeking Alpha",
-      "published_at": "2026-11-09T14:46:00+00:00",
-      "discovered_at": "2026-11-10T10:05:28+09:00",
-      "article_url": "https://seekingalpha.com/news/4669008-oil-prices-are-set-to-decline-benefiting-equities-into-2027-morgan-stanley-s-mike-wilson",
-      "canonical_url": "https://seekingalpha.com/news/4669008-oil-prices-are-set-to-decline-benefiting-equities-into-2027-morgan-stanley-s-mike-wilson",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Mike Wilson",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "video_page",
-      "title": "Morgan Stanley CIO Mike Wilson: Market correction entering final phase",
-      "outlet": "CNBC",
-      "published_at": "2026-11-09T14:14:00+00:00",
-      "discovered_at": "2026-11-10T10:05:28+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/11/09/morgan-stanley-cio-mike-wilson-market-correction-entering-final-phase.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/11/09/morgan-stanley-cio-mike-wilson-market-correction-entering-final-phase.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
     }
   ],
   "person_index": {
@@ -755,8 +785,8 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-14T21:05:27+09:00",
@@ -775,13 +805,38 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-14T14:25:19+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-17T10:05:32+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4266148-ai-models-ant-ipo-valuation/",
+            "kind": "news_article",
+            "preview": "Bob Elliott: AI models show limited optimism for ANT IPO above $1.2 trillion",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-16T12:25:17+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Cem Karsan": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-17T10:05:32+09:00",
+            "url": "https://www.tastylive.com/shows/tasty-guests/episodes/tasty-guests-cem-karsan-11-13-2026",
+            "kind": "news_article",
+            "preview": "tasty GUESTS Cem Karsan",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-13T19:30:38+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Jonathan Krinsky": {
         "role": "observer",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-14T21:05:27+09:00",
@@ -791,13 +846,22 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-13T22:19:16+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-17T10:05:32+09:00",
+            "url": "https://www.tokenpost.com/news/investing/58381",
+            "kind": "news_article",
+            "preview": "BTIG Strategist Puts Staples’ Edge Over Tech at 33%, Widest in About 25 Years",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-16T13:25:07+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Katie Stockton": {
         "role": "observer",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-14T21:05:27+09:00",
@@ -815,6 +879,15 @@
             "preview": "Nvidia sell-off shows signs of capitulation, says Fairlead's Katie Stockton",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-13T12:36:00+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-17T10:05:32+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/16/fairleads-katie-stockton-on-if-technical-indicators-are-showing-more-downside-ahead-for-nvidia.html",
+            "kind": "video_page",
+            "preview": "Fairlead's Katie Stockton on if technical indicators are showing more downside ahead for Nvidia",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-16T22:54:14+00:00",
             "noise_hint": false
           }
         ]
@@ -837,8 +910,8 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 6,
+        "non_noise": 6,
         "items": [
           {
             "at": "2026-11-14T21:05:27+09:00",
@@ -874,6 +947,24 @@
             "preview": "Chip Stocks Have 'Flushed Out Everybody:' Ryan Detrick Calls the 17% SOXX Rebound a Historic 'Buyin…",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-16T07:57:41+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-17T10:05:32+09:00",
+            "url": "https://www.benzinga.com/news/politics/26/11/63315199/exclusive-ryan-detrick-isnt-worried-about-midterm-election-outcome-focus-on-the-fundamentals",
+            "kind": "news_article",
+            "preview": "EXCLUSIVE: Ryan Detrick Isn’t Worried About Midterm Election Outcome – ‘Focus on the Fundamentals’",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-16T19:32:15+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-17T10:05:32+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4270969-xlk-sectors-relative-performance/",
+            "kind": "news_article",
+            "preview": "Most sectors are outperforming XLK, Ryan Detrick notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-16T16:10:08+00:00",
             "noise_hint": false
           }
         ]
