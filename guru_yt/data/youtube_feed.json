@@ -1,13 +1,13 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-17T10:10:38+09:00",
+  "generated_at": "2026-11-17T21:10:43+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-17T08:20:29+09:00",
-    "merged_from_discovery": 4,
+    "last_discovery_at": "2026-11-17T11:50:35+09:00",
+    "merged_from_discovery": 1,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
@@ -102,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-13T21:00:42+09:00",
+      "oldest_rss": "2026-11-14T02:00:20+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -157,9 +157,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-12T12:00:13+09:00",
+      "oldest_rss": "2026-11-13T02:40:00+09:00",
       "gap_possible": false,
-      "matched": 5
+      "matched": 4
     },
     {
       "label": "Maggie Lake Talking Markets",
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-16T17:15:42+09:00",
+      "oldest_rss": "2026-11-17T00:18:12+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-16T19:06:02+09:00",
+      "oldest_rss": "2026-11-16T22:48:40+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-15T00:00:29+09:00",
+      "oldest_rss": "2026-11-15T10:00:02+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,7 +234,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-12T04:00:19+09:00",
+      "oldest_rss": "2026-11-12T06:00:09+09:00",
       "gap_possible": false,
       "matched": 0
     }
@@ -256,18 +256,18 @@
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 3,
-    "ready": 3,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 0,
+    "skipped_short": 1,
     "expired": 0,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 4,
-    "ready": 4,
+    "attempted": 0,
+    "ready": 0,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
@@ -278,6 +278,52 @@
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "JCZMTbpW1aU",
+      "url": "https://www.youtube.com/watch?v=JCZMTbpW1aU",
+      "channel": "tastylive",
+      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
+      "channel_mode": "filter",
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "match": "title",
+      "title": "Cem Karsan Expects Another $10 Trillion Printed Within Nine Months",
+      "description": "Cem Karsan of Kai Wealth expects another 10 trillion dollars to be printed over the next six to nine months, which he compares in scale to the COVID response or larger. His point is about the sheer magnitude of what’s coming, and why it matters for how you think about currency debasement and positioning.\n\n#tastylive #cemkarsan #liquidity #moneyprinting #macro #dollar #markets #stockmarket\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, and over 25 personalities, we'll help you take your trading to the next level, whether you are new to trading or a seasoned veteran.\n\ntastylive content is created, produced, and provided solely by tastylive, Inc. (\"tastylive\") and is for informational and educational purposes only. It is not, nor is it intended to be, trading or investment advice or a recommendation that any security, futures contract, digital asset, other product, transaction, or investment strategy is suitable for any person. Trading securities, futures products, and digital assets involve risk and may result in a loss greater than the original amount invested. Investment information provided may not be appropriate for all investors and is provided without respect to individual investor financial sophistication, financial situation, investing time horizon or risk tolerance. Options, futures, ",
+      "published_at": "2026-11-17T02:30:29Z",
+      "first_seen_at": "2026-11-17T11:50:35+09:00",
+      "is_short": true,
+      "transcript_status": "skipped_short",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "short (skipped)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "xFBNhDRkC6M",
       "url": "https://www.youtube.com/watch?v=xFBNhDRkC6M",
@@ -2815,204 +2861,6 @@
       "quotes_grade_count": {
         "1차-A": 0,
         "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "L8g-ssmgS4M",
-      "url": "https://www.youtube.com/watch?v=L8g-ssmgS4M",
-      "channel": "Thoughtful Money",
-      "channel_id": "UCjqe6xtZYTfvA4pHs0HgJsQ",
-      "channel_mode": "filter",
-      "person": "Lyn Alden",
-      "tier": 3,
-      "role": "core",
-      "match": "title",
-      "title": "A \"Perfect Storm\" For Markets Lies Ahead Should Japan Repatriate Its US Assets | Lyn Alden",
-      "description": "WORRIED ABOUT THE MARKET? SCHEDULE YOUR FREE PORTFOLIO REVIEW with Thoughtful Money's endorsed financial advisors at https://www.thoughtfulmoney.com\n\nJapan poses a \"Godzilla\" risk to US markets.\n\nSo thinks Lyn Alden, due to tremendous amount of US assets held by Japanese households and corporations, and the growing risk that those assets may start to be repatriated in mass.\n\nAnd this could happen as the AI trade starts to run out of steam, hitting US markets with a one-two punch that Lyn calls a \"perfect storm\".\n\nFor all the details as well as the timing when Lyn thinks this will start to matter, watch this video.\n\n#marketcorrection #aistocks #japan \n\n0:00 — Introduction & Cold Open: A One-Two Punch For US Markets\n2:54 — Was Thursday's Plunge A One-Day Purge?\n4:31 — AI Trade Getting Long In The Tooth & Capex Pushback\n5:52 — Why The Selloff Was Concentrated In Tech\n8:05 — Have AI Earnings Estimates Come Down Yet?\n9:46 — Nvidia Trades Below Coca-Cola's Multiple & Micron's Cycle\n11:41 — Avoiding Hyperscalers, A Cautious Bull On Semis\n13:40 — Compute Demand & Freight Data Still Strong\n15:17 — Quality Of Earnings & Circular Financing Concerns\n17:25 — Frontier AI Models Have Little Economic Moat\n20:38 — Is A Period Of \"Dark Compute\" Inevitable?\n22:04 — Risk Of A Multi-Year Sideways Market\n24:39 — Jensen Huang's Scandal & Nvidia's Key-Man Risk\n28:11 — Data Center Pushback: Will The Feds Force The Buildout?\n31:49 — What Should The US Do About The AI Race With China?\n37:12 — Is AI Can",
-      "published_at": "2026-11-10T03:52:45Z",
-      "first_seen_at": "2026-11-10T21:20:38+09:00",
-      "is_short": false,
-      "transcript_status": "not_needed",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "tier 3: captions are kept for the tiers that drive judgments",
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-11T10:10:33+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Lyn Alden appears on video as an invited guest, participating in an extensive interview with host Adam Taggart from 0:00 through 1:04:57.",
-      "stance": {
-        "us_equities": "bullish",
-        "summary": "Lyn Alden remains broadly bullish on US equities on a 12-month horizon, viewing herself as a growth-at-a-reasonable-price investor attracted to sectors like semiconductors and financials on sell-offs. However, she notes that the AI trade is getting long in the tooth and warns of risks of a multi-year sideways market or higher volatility over a longer timeframe.",
-        "timeframe": "12 months"
-      },
-      "quotes": [
-        {
-          "t": "04:18",
-          "t_sec": 258,
-          "speaker": "Lyn Alden",
-          "topic": "AI trade and US equity volatility",
-          "text": "in the next two years we probably do have somewhat more volatility ahead. in general I think the AI trade is, while I don't think it's over, I think it's just getting, it's getting longer in the tooth.",
-          "url": "https://www.youtube.com/watch?v=L8g-ssmgS4M&t=258s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "09:16",
-          "t_sec": 556,
-          "speaker": "Lyn Alden",
-          "topic": "AI capex cycle timing",
-          "text": "my base case would be not this year. not the next 12 months. I do think that we will have that cycle, I mean we haven't eliminated cycles.",
-          "url": "https://www.youtube.com/watch?v=L8g-ssmgS4M&t=556s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "12:45",
-          "t_sec": 765,
-          "speaker": "Lyn Alden",
-          "topic": "Semiconductors outlook",
-          "text": "so I would describe myself as still a cautious bull in the semiconductor space. which is that when there are sell-offs, I have a probably a bullish perspective from those trough levels with say a 12-month view.",
-          "url": "https://www.youtube.com/watch?v=L8g-ssmgS4M&t=765s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "22:50",
-          "t_sec": 1370,
-          "speaker": "Lyn Alden",
-          "topic": "US market outlook",
-          "text": "we are certainly at risk of a multi-year at least a sideways market. I mean you don't have to, like, obviously people are always concerned about big drawdowns and those are always a possibility, but the other possibility is just going sideways in a choppy, plus 20% minus 20% range for years.",
-          "url": "https://www.youtube.com/watch?v=L8g-ssmgS4M&t=1370s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "55:02",
-          "t_sec": 3302,
-          "speaker": "Lyn Alden",
-          "topic": "US market concentration and rebalancing risk",
-          "text": "I think it becomes more of a risk when the prior discussion we had starts to happen, which is that the AI trade gets long in the tooth. I think at that point you risk having a perfect storm where if you look at global market capitalization, it is unusually shifted to the US right now.",
-          "url": "https://www.youtube.com/watch?v=L8g-ssmgS4M&t=3302s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "59:41",
-          "t_sec": 3581,
-          "speaker": "Lyn Alden",
-          "topic": "US and global equities",
-          "text": "So I'm still broadly bullish on US and global equities. Obviously if you re-visit in 12 months that might change.",
-          "url": "https://www.youtube.com/watch?v=L8g-ssmgS4M&t=3581s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-11T10:10:33+09:00",
-      "evidence_grade": "1차-B",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "04:18",
-          "point": "The AI trade is getting long in the tooth, which could lead to increased market volatility over the next two years.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "09:16",
-          "point": "An AI capex clearing cycle or major spending downturn is unlikely over the next 12 months, though it remains a longer-term risk.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "12:45",
-          "point": "Semiconductor equities present attractive buying opportunities on sell-offs over a 12-month horizon given strong free cash flow.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "17:30",
-          "point": "Frontier AI model companies lack economic moats and carry high long-term business model risks relative to their valuations.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "22:50",
-          "point": "US equity markets face a real risk of entering a multi-year choppy or sideways trading range rather than sustained expansion.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "33:00",
-          "point": "Local political pushback and environmental concerns surrounding data centers will not stop the AI buildout as market demand dominates.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "38:07",
-          "point": "Alphabet faces structural risks as AI search erodes monetizeable ad search results, though YouTube and cloud offset part of this risk.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "45:00",
-          "point": "Bonds yielding around 5 percent offer genuine competition to equities and gold, unlike the zero-interest rate era.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "50:08",
-          "point": "Fears of a massive Japanese capital repatriation triggering a global crisis are overstated given conservative domestic portfolio positioning.",
-          "condition": "",
-          "conviction": "not_expected",
-          "horizon": ""
-        },
-        {
-          "t": "55:02",
-          "point": "Heavy global market concentration in US equities creates a potential perfect storm if AI growth decelerates and international capital shifts elsewhere.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "59:41",
-          "point": "US and global equities remain broadly attractive over the next 12 months, with select value and growth-at-a-reasonable-price sectors leading.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "1:01:00",
-          "point": "Gold needs to build a new base around $4,000 following recent gains, while Bitcoin retains favorable fundamentals for a 2-to-3 year cycle.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 124177,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 6,
         "excluded_speaker_mismatch": 0
       }
     }
