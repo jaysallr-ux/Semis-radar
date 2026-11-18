@@ -1,13 +1,13 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-18T10:10:46+09:00",
+  "generated_at": "2026-11-18T21:10:33+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-18T06:20:31+09:00",
-    "merged_from_discovery": 2,
+    "last_discovery_at": "2026-11-18T10:10:46+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
@@ -102,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-14T07:30:34+09:00",
+      "oldest_rss": "2026-11-15T01:00:19+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -157,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-13T09:28:26+09:00",
+      "oldest_rss": "2026-11-14T02:16:30+09:00",
       "gap_possible": false,
       "matched": 4
     },
@@ -201,8 +201,8 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T23:10:08+09:00",
-      "gap_possible": true,
+      "oldest_rss": "2026-11-18T01:33:36+09:00",
+      "gap_possible": false,
       "matched": 0
     },
     {
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T13:01:40+09:00",
+      "oldest_rss": "2026-11-17T22:14:49+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T02:00:29+09:00",
+      "oldest_rss": "2026-11-17T08:00:23+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,7 +234,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-13T06:00:26+09:00",
+      "oldest_rss": "2026-11-13T07:00:02+09:00",
       "gap_possible": false,
       "matched": 0
     }
@@ -250,14 +250,14 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 8,
-    "gemini_est_video_hours_today": 0.0,
+    "gemini_calls_today": 9,
+    "gemini_est_video_hours_today": 0.115,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 2,
-    "ready": 2,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -266,15 +266,15 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 8,
+    "attempted": 1,
     "ready": 1,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 1,
+    "budget_out": 0,
     "chunked": 0,
-    "text_mode": 1,
+    "text_mode": 0,
     "quota_wait": 0
   },
   "videos": [
@@ -457,25 +457,121 @@
       "appearance_excerpt": "ow, take the non-core portion of your portfolio and start allocating to that. You know, you don't have to do everything Darius Dale does. You know, obviously our institutional investor clients don't and we have very sophisticated retail investor clients that don't do that as well. And so that's what I love. My favorite",
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-18T21:10:33+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Darius Dale appears on screen and speaks throughout the entire video segment.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Darius Dale is bearish on US equities over the next 2 to 3 months, as 42 Macro's Macro Weather Model signals that the market remains in a risk-off inflation regime.",
+        "timeframe": "2-3 months"
+      },
+      "quotes": [
+        {
+          "t": "0:20",
+          "t_sec": 20,
+          "speaker": "Darius Dale",
+          "topic": "market_regime",
+          "text": "looking at the macro weather model, the macro weather model says we're going to stay in this risk-off inflation market regime.",
+          "url": "https://www.youtube.com/watch?v=IPKi7VWRIbM&t=20s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.4,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "0:24",
+          "t_sec": 24,
+          "speaker": "Darius Dale",
+          "topic": "asset_class_outlook",
+          "text": "stocks, bonds, bitcoin bearish, commodities, dollar bullish, gold bullish, interesting there",
+          "url": "https://www.youtube.com/watch?v=IPKi7VWRIbM&t=24s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "4:22",
+          "t_sec": 262,
+          "speaker": "Darius Dale",
+          "topic": "timeframe_and_positioning",
+          "text": "we're likely to stay in the risk off inflation market regime over the next two to three months, which tells you that, you know, from a quantitative risk management signaling standpoint, it's saying we're we haven't exited.",
+          "url": "https://www.youtube.com/watch?v=IPKi7VWRIbM&t=262s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 96.8,
+          "caption_sec": 246,
+          "caption_checked": true
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "자막 확보, 인용 대기",
-      "appearance_source": "dedicated_channel",
-      "transcript_retained": true,
+      "evidence_ready_at": "2026-11-18T21:10:33+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
       "quotes_grade_count": {
-        "1차-A": 0,
+        "1차-A": 3,
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "0:20",
+          "point": "The Macro Weather Model projects that markets will remain in a risk-off inflation regime over a short-to-medium term horizon.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "0:24",
+          "point": "Under the current regime, stocks, bonds, and Bitcoin carry a bearish signal, while commodities, the US dollar, and gold carry a bullish signal.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "0:41",
+          "point": "The growth cycle provides a meaningful positive tailwind for risk assets due to solid real GDP and productivity growth.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "1:09",
+          "point": "The inflation cycle creates a modest headwind for risk assets, driven by elevated nominal GDP and inflation indicators.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "1:42",
+          "point": "Monetary policy represents a meaningful headwind for risk assets given elevated policy rates and tight liquidity measures.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "3:50",
+          "point": "Positioning metrics pose modest headwinds as top positioning indicators continue to breach historical bubble-peak levels.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "4:22",
+          "point": "Quantitative risk management signals indicate investors should not exit risk-off positioning over the next 2 to 3 months.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 15728
     },
     {
       "video_id": "JCZMTbpW1aU",
@@ -2847,52 +2943,6 @@
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "LgEFdKPDlp4",
-      "url": "https://www.youtube.com/watch?v=LgEFdKPDlp4",
-      "channel": "tastylive",
-      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
-      "channel_mode": "filter",
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "match": "title",
-      "title": "Cem Karsan Says This Bounce Doesn’t Make the Macro Healthy",
-      "description": "Cem Karsan explains why this bounce was no surprise: flows are positive and the market is well hedged, so vol compression follows naturally. But he warns that doesn’t make the macro story healthy, with liquidity drying up in the one part of the market that has been driving the profits. Noel Smith adds that gamma is carrying positively in the extremely short term, a rare situation.\n\n#tastylive #cemkarsan #noelsmith #volatility #liquidity #macro #hedging #gamma #optionstrading #stockmarket\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, and over 25 personalities, we'll help you take your trading to the next level, whether you are new to trading or a seasoned veteran.\n\ntastylive content is created, produced, and provided solely by tastylive, Inc. (\"tastylive\") and is for informational and educational purposes only. It is not, nor is it intended to be, trading or investment advice or a recommendation that any security, futures contract, digital asset, other product, transaction, or investment strategy is suitable for any person. Trading securities, futures products, and digital assets involve risk and may result in a loss greater than the original amount invested. Investment information provided may not be appropriate for all investors and is provided without respect to individual investor financ",
-      "published_at": "2026-11-11T02:22:28Z",
-      "first_seen_at": "2026-11-11T11:50:30+09:00",
-      "is_short": true,
-      "transcript_status": "skipped_short",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": null,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "short (skipped)",
-      "gemini_status": "skipped",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
     }
   ],
   "person_index": {
@@ -2900,36 +2950,11 @@
     "lookback_hours": 72,
     "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
     "people": {
-      "Bob Elliott": {
+      "Cem Karsan": {
         "role": "core",
         "count": 1,
         "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-15T11:51:58+09:00",
-            "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0",
-            "kind": "video",
-            "preview": "Macro Talk: 2026.11.13",
-            "grade": "1차-B",
-            "published_at": "2026-11-13T18:40:08+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Cem Karsan": {
-        "role": "core",
-        "count": 2,
-        "non_noise": 2,
-        "items": [
-          {
-            "at": "2026-11-15T11:51:58+09:00",
-            "url": "https://www.youtube.com/watch?v=CvKRIVi51IM",
-            "kind": "video",
-            "preview": "Brutal 2027: How The Next Financial Crisis Starts",
-            "grade": "1차-A",
-            "published_at": "2026-11-11T21:39:29+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-17T10:10:38+09:00",
             "url": "https://www.youtube.com/watch?v=xFBNhDRkC6M",
@@ -2965,21 +2990,21 @@
             "noise_hint": false
           },
           {
-            "at": "2026-11-17T23:20:28+09:00",
-            "url": "https://www.youtube.com/watch?v=IPKi7VWRIbM",
-            "kind": "video",
-            "preview": "Is It Time to Back Up the Truck on Cheap AI Stocks?",
-            "grade": "자막 확보, 인용 대기",
-            "published_at": "2026-11-17T14:00:01Z",
-            "noise_hint": false
-          },
-          {
             "at": "2026-11-18T10:10:46+09:00",
             "url": "https://www.youtube.com/watch?v=p5vjT82-rO4",
             "kind": "video",
             "preview": "The Macro Minute: What Does NVIDIA’s New Oversight Committee Signal to Investors?",
             "grade": "1차-A",
             "published_at": "2026-11-17T21:00:11Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T21:10:33+09:00",
+            "url": "https://www.youtube.com/watch?v=IPKi7VWRIbM",
+            "kind": "video",
+            "preview": "Is It Time to Back Up the Truck on Cheap AI Stocks?",
+            "grade": "1차-A",
+            "published_at": "2026-11-17T14:00:01Z",
             "noise_hint": false
           }
         ]
@@ -2996,22 +3021,6 @@
             "preview": "Bloomberg Surveillance 11/16/2026",
             "grade": "1차-B",
             "published_at": "2026-11-16T16:40:38Z",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Ryan Detrick": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-15T11:51:58+09:00",
-            "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ",
-            "kind": "video",
-            "preview": "Facts vs Feelings Social Hour with Mike Larson and Sonali Basak (Ep. 7)",
-            "grade": "1차-A",
-            "published_at": "2026-11-14T09:01:48+00:00",
             "noise_hint": false
           }
         ]
