@@ -1,13 +1,13 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-17T21:10:43+09:00",
+  "generated_at": "2026-11-18T10:10:46+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-17T11:50:35+09:00",
-    "merged_from_discovery": 1,
+    "last_discovery_at": "2026-11-18T06:20:31+09:00",
+    "merged_from_discovery": 2,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
@@ -25,9 +25,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-04T05:00:14+09:00",
+      "oldest_rss": "2026-09-09T06:14:44+09:00",
       "gap_possible": false,
-      "matched": 5
+      "matched": 6
     },
     {
       "label": "Schwab Network",
@@ -36,7 +36,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-14T03:19:20+09:00",
+      "oldest_rss": "2026-10-16T04:53:09+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -47,7 +47,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-25T23:00:22+09:00",
+      "oldest_rss": "2026-09-26T23:00:04+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -58,7 +58,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-04T00:00:07+09:00",
+      "oldest_rss": "2026-10-06T10:56:38+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -69,7 +69,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-17T03:14:37+09:00",
+      "oldest_rss": "2026-09-18T03:38:47+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -80,7 +80,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-07-08T01:07:35+09:00",
+      "oldest_rss": "2026-07-15T05:05:58+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -102,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-14T02:00:20+09:00",
+      "oldest_rss": "2026-11-14T07:30:34+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -113,9 +113,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-12T00:00:06+09:00",
+      "oldest_rss": "2026-10-14T00:00:09+09:00",
       "gap_possible": false,
-      "matched": 3
+      "matched": 2
     },
     {
       "label": "MacroVoices",
@@ -137,7 +137,7 @@
       "list_source": "data_api",
       "oldest_rss": "2026-09-25T05:29:33+09:00",
       "gap_possible": false,
-      "matched": 1
+      "matched": 0
     },
     {
       "label": "Joseph Wang",
@@ -157,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-13T02:40:00+09:00",
+      "oldest_rss": "2026-11-13T09:28:26+09:00",
       "gap_possible": false,
       "matched": 4
     },
@@ -179,7 +179,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-29T06:54:30+09:00",
+      "oldest_rss": "2026-09-29T08:10:28+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -190,7 +190,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-09T21:00:31+09:00",
+      "oldest_rss": "2026-10-12T21:43:15+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -201,9 +201,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T00:18:12+09:00",
-      "gap_possible": false,
-      "matched": 1
+      "oldest_rss": "2026-11-17T23:10:08+09:00",
+      "gap_possible": true,
+      "matched": 0
     },
     {
       "label": "Bloomberg Podcasts",
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-16T22:48:40+09:00",
+      "oldest_rss": "2026-11-17T13:01:40+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-15T10:00:02+09:00",
+      "oldest_rss": "2026-11-17T02:00:29+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,14 +234,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-12T06:00:09+09:00",
+      "oldest_rss": "2026-11-13T06:00:26+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 3,
-    "yta_server_remaining": 7,
+    "yta_used_today": 2,
+    "yta_server_remaining": 8,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -250,34 +250,233 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 4,
-    "gemini_est_video_hours_today": 2.607,
+    "gemini_calls_today": 8,
+    "gemini_est_video_hours_today": 0.0,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 2,
+    "ready": 2,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 1,
+    "skipped_short": 0,
     "expired": 0,
     "left_pending": 0,
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 8,
+    "ready": 1,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 0,
+    "budget_out": 1,
     "chunked": 0,
-    "text_mode": 0,
+    "text_mode": 1,
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "p5vjT82-rO4",
+      "url": "https://www.youtube.com/watch?v=p5vjT82-rO4",
+      "channel": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "channel_mode": "dedicated",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "dedicated_channel",
+      "title": "The Macro Minute: What Does NVIDIA’s New Oversight Committee Signal to Investors?",
+      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\n\nTwitter: https://bit.ly/3GcrD2b\n \nLinkedIn: https://bit.ly/3m3h7lS\n\nFacebook: https://bit.ly/30TzWQn",
+      "published_at": "2026-11-17T21:00:11Z",
+      "first_seen_at": "2026-11-18T06:20:31+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-18T10:10:46+09:00",
+      "transcript_language": null,
+      "transcript_chars": 12034,
+      "transcript_url": null,
+      "name_mentions": 3,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "[0:00] Happy Tuesday out there team42. It's your skipper here, Darius Dell to present our macro minute for Tuesday, November 17th, 2026. As always, we'll start with the executive summary from today's leadoff warning note. So, let's dive right in. What did we lear",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-flash-latest",
+      "gemini_at": "2026-11-18T10:10:46+09:00",
+      "gemini_mode": "caption_text",
+      "person_speaks": true,
+      "gemini_evidence": "The speaker introduces himself at 0:00 as 'your skipper here, Darius Dell' (transcription for Darius Dale) hosting the macro minute for team42 (42 Macro), and closes at 9:09 stating 'Darius still here presenting our macro minute'.",
+      "stance": {
+        "us_equities": "mixed",
+        "summary": "Dale sees elevated downside risk over the next 2 to 3 months similar to Q4 2018 due to circular AI financing, AI costs outpacing revenues, and export/compliance headwinds for Nvidia, but he maintains that the broader secular bull market remains intact and will not peak until 12 to 18 months out.",
+        "timeframe": "2-3 months painful risk-off, secular bull peaking in 12-18 months"
+      },
+      "quotes": [
+        {
+          "t": "2:03",
+          "t_sec": 123,
+          "speaker": "Darius Dale",
+          "topic": "markets",
+          "text": "The earnings upside must eventually trickle down to the S&P 493 or investors will be paying the price of historic capital misallocation for years. For what it's worth, we believe that it will. It just may not arrive in time to prevent a lower low in the current riskoff market machine.",
+          "url": "https://www.youtube.com/watch?v=p5vjT82-rO4&t=123s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 123,
+          "caption_checked": true
+        },
+        {
+          "t": "3:04",
+          "t_sec": 184,
+          "speaker": "Darius Dale",
+          "topic": "stocks",
+          "text": "all told, we continue to flag the fact that AI related costs are likely rising much faster than AI generated revenues for nonAI firms and the economy at large. Consistent with our productivity boom theme, we believe this bearish dynamic positively inlects into a bullish tailwind in the coming quarters.",
+          "url": "https://www.youtube.com/watch?v=p5vjT82-rO4&t=184s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 154,
+          "caption_checked": true
+        },
+        {
+          "t": "3:04",
+          "t_sec": 184,
+          "speaker": "Darius Dale",
+          "topic": "stocks",
+          "text": "Unfortunately, we do not believe this catalyst is imminent, i.e. the costs will continue to rise faster than the revenues for now. In fact, investors may receive more confirmation of this current bearish dynamic in the upcoming Q4 earnings season, uh, which obviously will be reported throughout the first quarter of next year.",
+          "url": "https://www.youtube.com/watch?v=p5vjT82-rO4&t=184s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 184,
+          "caption_checked": true
+        },
+        {
+          "t": "7:38",
+          "t_sec": 458,
+          "speaker": "Darius Dale",
+          "topic": "stocks",
+          "text": "You know, we don't think the AI race with China or the AI capex bubble is over. This may in fact supercharge it.",
+          "url": "https://www.youtube.com/watch?v=p5vjT82-rO4&t=458s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 428,
+          "caption_checked": true
+        },
+        {
+          "t": "8:38",
+          "t_sec": 518,
+          "speaker": "Darius Dale",
+          "topic": "markets",
+          "text": "which is why we continue to flag the risk that this may turn out to be something that looks a little bit more like Q4 2018. We don't think this is the end of the market cycle. We still think that this particular secular bull market peaks sometime in the second half of next year or the first half of 2028, which obviously is 12 to 18 months from now.",
+          "url": "https://www.youtube.com/watch?v=p5vjT82-rO4&t=518s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 488,
+          "caption_checked": true
+        },
+        {
+          "t": "8:38",
+          "t_sec": 518,
+          "speaker": "Darius Dale",
+          "topic": "stocks",
+          "text": "Uh but you know the next two to three months from now could look very very painful for retail investors who are just making up bull cases now because you know this is obviously not bullish. Nvidia having to redirect 40% of its sales allegedly according to this report is not bullish.",
+          "url": "https://www.youtube.com/watch?v=p5vjT82-rO4&t=518s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 518,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-18T10:10:46+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "2:03",
+          "point": "Circular AI financing earnings upside may not broaden to the S&P 493 fast enough to prevent lower lows in the current risk-off market regime.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "near term"
+        },
+        {
+          "t": "3:04",
+          "point": "AI costs are exceeding AI revenues for non-AI firms, a bearish dynamic likely confirmed in upcoming Q4 earnings before eventually inflecting positively.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "next 1-2 quarters"
+        },
+        {
+          "t": "8:38",
+          "point": "The market faces a correction risk akin to Q4 2018 over the next two to three months, though the secular bull market is expected to peak in 12 to 18 months.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "2-3 months to 12-18 months"
+        }
+      ],
+      "gemini_prompt_tokens": 0,
+      "quotes_grade_count": {
+        "1차-A": 6,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "IPKi7VWRIbM",
+      "url": "https://www.youtube.com/watch?v=IPKi7VWRIbM",
+      "channel": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "channel_mode": "dedicated",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "dedicated_channel",
+      "title": "Is It Time to Back Up the Truck on Cheap AI Stocks?",
+      "description": "Enjoy these clips from our Nov-26 monthly Macro Scouting Report (published on 11/13) and our November 14, 2026, weekly Around the Horn webcast in which we detail elements of the systematic process that we use to help investors all over the world answer these types of crucial questions. \n\nIf clairvoyance and confidence are currently missing from your investment process, consider partnering with 42 Macro. We can help.\n\nDownload a complimentary sample of our industry-leading research today:\nhttps://42macro.com/42-macro-sample-r...\n\n#Team42 #investing #finance #stockmarket #trading #marketupdates #macroeconomics #marketinsights #globalmarkets #economictrends #marketoutlook #stocks #federalreserve #inflation #liquidity #bitcoin #riskmanagement #assetmarkets #macroeconomics #macroinvesting #fourthturning \n\nSubscribe to the 42 Macro channel for tips about enhancing your risk management processes and preparing your portfolio for the changing market! \n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
+      "published_at": "2026-11-17T14:00:01Z",
+      "first_seen_at": "2026-11-17T23:20:28+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-18T10:10:46+09:00",
+      "transcript_language": null,
+      "transcript_chars": 10271,
+      "transcript_url": null,
+      "name_mentions": 4,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "ow, take the non-core portion of your portfolio and start allocating to that. You know, you don't have to do everything Darius Dale does. You know, obviously our institutional investor clients don't and we have very sophisticated retail investor clients that don't do that as well. And so that's what I love. My favorite",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "pending",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "자막 확보, 인용 대기",
+      "appearance_source": "dedicated_channel",
+      "transcript_retained": true,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "JCZMTbpW1aU",
       "url": "https://www.youtube.com/watch?v=JCZMTbpW1aU",
@@ -2694,175 +2893,6 @@
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "VL5FwQPNfnU",
-      "url": "https://www.youtube.com/watch?v=VL5FwQPNfnU",
-      "channel": "42 Macro",
-      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
-      "channel_mode": "dedicated",
-      "person": "Darius Dale",
-      "tier": 1,
-      "role": "core",
-      "match": "dedicated_channel",
-      "title": "The Macro Minute: What Does the October CPI Data Mean for Investors?",
-      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\n\nTwitter: https://bit.ly/3GcrD2b\n \nLinkedIn: https://bit.ly/3m3h7lS\n\nFacebook: https://bit.ly/30TzWQn",
-      "published_at": "2026-11-10T21:00:09Z",
-      "first_seen_at": "2026-11-11T06:20:30+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-11T10:10:33+09:00",
-      "transcript_language": null,
-      "transcript_chars": 9760,
-      "transcript_url": null,
-      "name_mentions": 1,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "[0:00] Happy Tuesday out there, team 42. It's your skipper here, Darius Dell to present our macro minute for Tuesday, November 10th, 2026. Hope everyone's having a great week. So, as always, we'll start with the executive summary from today's leadoff morning note. ",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-11T10:10:33+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Darius Dale presents 42 Macro's lead-off morning note, analyzing economic data, Fed policy expectations, inflation, and market cycle outlook.",
-      "stance": {
-        "us_equities": "bullish",
-        "summary": "Darius Dale expects the current bull market cycle to continue beyond current market volatility, ultimately peaking between H2 2027 and H1 2028.",
-        "invalidation": "",
-        "targets": [],
-        "timeframe": "Through H2 2027 / H1 2028"
-      },
-      "quotes": [
-        {
-          "t": "04:04",
-          "t_sec": 244,
-          "speaker": "Darius Dale",
-          "topic": "AI stocks & Market Sentiment",
-          "text": "The fact that AI stocks are not following through in last week's carnage amid the news signals growing investor fatigue in the bear case.",
-          "url": "https://www.youtube.com/watch?v=VL5FwQPNfnU&t=244s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 99.3,
-          "caption_sec": 216,
-          "caption_checked": true
-        },
-        {
-          "t": "04:45",
-          "t_sec": 285,
-          "speaker": "Darius Dale",
-          "topic": "Inflation Cycle",
-          "text": "Q2 of 2027 is the highest probability outcome for to see a trough in the year-over-year rate of change inflation cycle.",
-          "url": "https://www.youtube.com/watch?v=VL5FwQPNfnU&t=285s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 277,
-          "caption_checked": true
-        },
-        {
-          "t": "06:58",
-          "t_sec": 418,
-          "speaker": "Darius Dale",
-          "topic": "US Equities Market Cycle",
-          "text": "we do not believe the current risk off market regime is the end of this market cycle, we ultimately think this market cycle peaks sometime in the second half of 2027 or the first half of 2028",
-          "url": "https://www.youtube.com/watch?v=VL5FwQPNfnU&t=418s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 99.5,
-          "caption_sec": 397,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-11T10:10:33+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "00:15",
-          "point": "October economic data points to sticky inflation, supporting the view that the Fed must continue tightening on a transitory basis.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "Short-term"
-        },
-        {
-          "t": "04:04",
-          "point": "Resilience in AI stocks despite bad news signals growing investor fatigue with the bear case.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "Medium-term"
-        },
-        {
-          "t": "04:45",
-          "point": "Year-over-year inflation is projected to reach its trough around Q2 2027, giving the Fed room to pivot policy.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "2027"
-        },
-        {
-          "t": "06:58",
-          "point": "The broader market cycle is expected to peak between H2 2027 and H1 2028 before facing risks around the 2028 election.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "2027-2028"
-        }
-      ],
-      "gemini_prompt_tokens": 16105,
-      "quotes_grade_count": {
-        "1차-A": 3,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "who6xiAE8iY",
-      "url": "https://www.youtube.com/watch?v=who6xiAE8iY",
-      "channel": "Fundstrat",
-      "channel_id": "UCcBzKSM4A-pIHMJWSnxmi_g",
-      "channel_mode": "filter",
-      "person": "Mark Newton",
-      "tier": 1,
-      "role": "core",
-      "match": "title",
-      "title": "Mark Newton QQQ Downtrend",
-      "description": "$QQQ rallied more than 3.5% on Monday, recovering a good portion of last week’s decline.\nMa Newton says it still wasn’t enough to call the downtrend broken, and tech indices haven’t recorded any exhaustion yet.\nSo when does he see the low? Full video:https://fundstratdirect.com/technical-strategy/daily-technical-strategy/2026/11/09/mondays-tech-rebound-runs-into-resistance-while-crudes-weakness-also-could/?utm_medium=social&utm_source=YT-short&utm_campaign=publication&utm_term=20261110&utm_content=technical-strategy",
-      "published_at": "2026-11-10T15:23:00Z",
-      "first_seen_at": "2026-11-11T00:50:30+09:00",
-      "is_short": true,
-      "transcript_status": "skipped_short",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": null,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "short (skipped)",
-      "gemini_status": "skipped",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
     }
   ],
   "person_index": {
@@ -2913,8 +2943,8 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-17T10:10:38+09:00",
@@ -2933,6 +2963,24 @@
             "grade": "1차-A",
             "published_at": "2026-11-16T16:37:14Z",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-17T23:20:28+09:00",
+            "url": "https://www.youtube.com/watch?v=IPKi7VWRIbM",
+            "kind": "video",
+            "preview": "Is It Time to Back Up the Truck on Cheap AI Stocks?",
+            "grade": "자막 확보, 인용 대기",
+            "published_at": "2026-11-17T14:00:01Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T10:10:46+09:00",
+            "url": "https://www.youtube.com/watch?v=p5vjT82-rO4",
+            "kind": "video",
+            "preview": "The Macro Minute: What Does NVIDIA’s New Oversight Committee Signal to Investors?",
+            "grade": "1차-A",
+            "published_at": "2026-11-17T21:00:11Z",
+            "noise_hint": false
           }
         ]
       },
@@ -2948,22 +2996,6 @@
             "preview": "Bloomberg Surveillance 11/16/2026",
             "grade": "1차-B",
             "published_at": "2026-11-16T16:40:38Z",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Joseph Wang": {
-        "role": "shadow",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-15T10:10:33+09:00",
-            "url": "https://www.youtube.com/watch?v=L8SRWZhAuvI",
-            "kind": "video",
-            "preview": "Markets Weekly November 14, 2026",
-            "grade": "1차-B",
-            "published_at": "2026-11-14T20:02:57Z",
             "noise_hint": false
           }
         ]
