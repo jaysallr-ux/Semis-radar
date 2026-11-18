@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-17T21:05:26+09:00",
+  "generated_at": "2026-11-18T10:05:27+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -75,8 +75,8 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 9,
-      "scoring_items": 0,
+      "items_in_window": 14,
+      "scoring_items": 1,
       "pending_items": 0
     },
     {
@@ -85,7 +85,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 5,
+      "items_in_window": 6,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -145,7 +145,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 4,
+      "items_in_window": 5,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -166,23 +166,23 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 0,
+      "items_in_window": 1,
       "scoring_items": 0,
       "pending_items": 0
     }
   ],
   "stats": {
-    "discovered": 123,
-    "new_items": 9,
-    "decoded": 11,
-    "bodies": 2,
+    "discovered": 128,
+    "new_items": 11,
+    "decoded": 12,
+    "bodies": 6,
     "quotes_verified": 1,
     "video_candidates": 0,
-    "gemini_calls": 1,
+    "gemini_calls": 3,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 1,
+    "calls_today": 3,
     "daily_cap": 60,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -192,6 +192,170 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Ryan Detrick: Technology stocks outperformed S&P 500 while 75 stocks declined",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-17T21:12:10+00:00",
+      "discovered_at": "2026-11-18T10:05:27+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4293232-technology-beats-sp500-today/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4293232-technology-beats-sp500-today/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Katie Stockton",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "video_page",
+      "title": "Why Fairlead's Katie Stockton thinks the market is oversold ahead of Nvidia's earnings",
+      "outlet": "CNBC",
+      "published_at": "2026-11-17T18:59:34+00:00",
+      "discovered_at": "2026-11-18T10:05:27+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/17/why-fairleads-katie-stockton-thinks-the-market-is-oversold-ahead-of-nvidias-earnings.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/17/why-fairleads-katie-stockton-thinks-the-market-is-oversold-ahead-of-nvidias-earnings.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Katie Stockton",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "video_page",
+      "title": "Here are the key levels Katie Stockton is watching from Nvidia",
+      "outlet": "CNBC",
+      "published_at": "2026-11-17T17:02:52+00:00",
+      "discovered_at": "2026-11-18T10:05:27+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/17/here-are-the-key-levels-katie-stockton-is-watching-from-nvidia.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/17/here-are-the-key-levels-katie-stockton-is-watching-from-nvidia.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "official_blog",
+      "title": "What To Make of Nvidia’s Crash and The Anthropic IPO",
+      "outlet": "Carson Group",
+      "published_at": "2026-11-17T16:53:52+00:00",
+      "discovered_at": "2026-11-18T10:05:27+09:00",
+      "article_url": "https://www.carsongroup.com/insights/blog/what-to-make-of-nvidias-crash-and-the-anthropic-ipo/",
+      "canonical_url": "https://www.carsongroup.com/insights/blog/what-to-make-of-nvidias-crash-and-the-anthropic-ipo/",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "we continue to suggest being overweight equities in a bull market that likely isn’t over, but to be diversified to help you sleep at night when the former high fliers take a hit.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Ryan Detrick, Chief Market Strategist"
+        }
+      ],
+      "direction_hint": "bullish",
+      "evidence_grade": "1차",
+      "evidence_ready_at": "2026-11-18T10:05:27+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "video_page",
+      "title": "Carson Group Strategist Ryan Detrick Overviews AI Trade before NVIDIA Results",
+      "outlet": "Yahoo Finance",
+      "published_at": "2026-11-17T15:07:01+00:00",
+      "discovered_at": "2026-11-18T10:05:27+09:00",
+      "article_url": "https://finance.yahoo.com/video/carson-group-strategist-ryan-detrick-150701512.html",
+      "canonical_url": "https://finance.yahoo.com/video/carson-group-strategist-ryan-detrick-150701512.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Crack spreads and brent down significantly in recent weeks, Bob Elliott notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-17T14:55:14+00:00",
+      "discovered_at": "2026-11-18T10:05:27+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4287022-crack-spreads-brent-inflation/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4287022-crack-spreads-brent-inflation/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "official_blog",
+      "title": "Social Hour With Mike Larson and Sonali Basak (Ep. 7)",
+      "outlet": "Carson Group",
+      "published_at": "2026-11-17T14:00:28+00:00",
+      "discovered_at": "2026-11-18T10:05:27+09:00",
+      "article_url": "https://www.carsongroup.com/insights/blog/social-hour-with-mike-larson-and-sonali-basak/",
+      "canonical_url": "https://www.carsongroup.com/insights/blog/social-hour-with-mike-larson-and-sonali-basak/",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Scott Rubner",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "Citadel’s Rubner says equity volatility hits highest since April 2025",
+      "outlet": "Investing.com",
+      "published_at": "2026-11-17T13:10:15+00:00",
+      "discovered_at": "2026-11-18T10:05:27+09:00",
+      "article_url": "https://www.investing.com/news/stock-market-news/citadels-rubner-says-equity-volatility-hits-highest-since-april-2025-93CH-5032831",
+      "canonical_url": "https://www.investing.com/news/stock-market-news/citadels-rubner-says-equity-volatility-hits-highest-since-april-2025-93CH-5032831",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Andy Constan",
       "tier": 2,
@@ -742,6 +906,26 @@
       "gemini_error_count": 0
     },
     {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "official_blog",
+      "title": "Are You Not Entertained? (FvF Ep. 213)",
+      "outlet": "Carson Group",
+      "published_at": "2026-11-11T14:00:33+00:00",
+      "discovered_at": "2026-11-18T10:05:27+09:00",
+      "article_url": "https://www.carsongroup.com/insights/blog/are-you-not-entertained-fvf-ep-213/",
+      "canonical_url": "https://www.carsongroup.com/insights/blog/are-you-not-entertained-fvf-ep-213/",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
       "person": "Andy Constan",
       "tier": 2,
       "role": "core",
@@ -759,25 +943,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Katie Stockton",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "news_article",
-      "title": "Gold has been in a bear market since January. Katie Stockton sees a comeback ahead",
-      "outlet": "CNBC",
-      "published_at": "2026-11-10T16:01:46+00:00",
-      "discovered_at": "2026-11-11T12:27:25+09:00",
-      "article_url": "https://www.cnbc.com/2026/11/10/gold-has-been-in-a-bear-market-since-january-katie-stockton-sees-a-comeback-ahead.html",
-      "canonical_url": "https://www.cnbc.com/2026/11/10/gold-has-been-in-a-bear-market-since-january-katie-stockton-sees-a-comeback-ahead.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0
     }
   ],
   "person_index": {
@@ -787,18 +952,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-14T21:05:27+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4231325-digital-currency-daily-use-questioned/",
-            "kind": "news_article",
-            "preview": "Digital currency practicality questioned for daily use, Andy Constan notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-13T13:10:16+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-16T21:05:34+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4264760-btc-gold-ndx-correlation/",
@@ -821,27 +977,9 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-14T21:05:27+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/11/unlimited-ceo-bob-elliot-weighs-in-on-cutting-equity-risk-household-spending-dynamics.html",
-            "kind": "video_page",
-            "preview": "Unlimited CEO Bob Elliott weighs in on cutting equity risk, household spending dynamics",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-11T17:10:00+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-15T10:05:22+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4244780-ai-capex-earnings-risk/",
-            "kind": "news_article",
-            "preview": "A slowdown in AI capex growth could undermine earnings expansion, Bob Elliott warns",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-14T14:25:19+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-17T10:05:32+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4266148-ai-models-ant-ipo-valuation/",
@@ -849,6 +987,15 @@
             "preview": "Bob Elliott: AI models show limited optimism for ANT IPO above $1.2 trillion",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-16T12:25:17+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T10:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4287022-crack-spreads-brent-inflation/",
+            "kind": "news_article",
+            "preview": "Crack spreads and brent down significantly in recent weeks, Bob Elliott notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-17T14:55:14+00:00",
             "noise_hint": false
           }
         ]
@@ -880,18 +1027,9 @@
       },
       "Jonathan Krinsky": {
         "role": "observer",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-14T21:05:27+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/13/krinsky.html",
-            "kind": "video_page",
-            "preview": "Market rebound hasn't cleared technical risks, says BTIG's Jonathan Krinsky",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-13T22:19:16+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-17T10:05:32+09:00",
             "url": "https://www.tokenpost.com/news/investing/58381",
@@ -909,30 +1047,30 @@
         "non_noise": 3,
         "items": [
           {
-            "at": "2026-11-14T21:05:27+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/13/watch-cnbcs-full-interview-with-katie-stockton-of-fairlead-strategies.html",
-            "kind": "video_page",
-            "preview": "Watch CNBC's full interview with Katie Stockton of Fairlead Strategies",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-13T12:37:54+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-14T21:05:27+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/13/nvidia-sell-off-shows-signs-of-capitulation-says-fairleads-katie-stockton.html",
-            "kind": "video_page",
-            "preview": "Nvidia sell-off shows signs of capitulation, says Fairlead's Katie Stockton",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-13T12:36:00+00:00",
-            "noise_hint": false
-          },
-          {
             "at": "2026-11-17T10:05:32+09:00",
             "url": "https://www.cnbc.com/video/2026/11/16/fairleads-katie-stockton-on-if-technical-indicators-are-showing-more-downside-ahead-for-nvidia.html",
             "kind": "video_page",
             "preview": "Fairlead's Katie Stockton on if technical indicators are showing more downside ahead for Nvidia",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-16T22:54:14+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T10:05:27+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/17/why-fairleads-katie-stockton-thinks-the-market-is-oversold-ahead-of-nvidias-earnings.html",
+            "kind": "video_page",
+            "preview": "Why Fairlead's Katie Stockton thinks the market is oversold ahead of Nvidia's earnings",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-17T18:59:34+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T10:05:27+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/17/here-are-the-key-levels-katie-stockton-is-watching-from-nvidia.html",
+            "kind": "video_page",
+            "preview": "Here are the key levels Katie Stockton is watching from Nvidia",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-17T17:02:52+00:00",
             "noise_hint": false
           }
         ]
@@ -971,27 +1109,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 6,
-        "non_noise": 6,
+        "count": 9,
+        "non_noise": 9,
         "items": [
-          {
-            "at": "2026-11-14T21:05:27+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4238414-market-livestream-hour-away/",
-            "kind": "news_article",
-            "preview": "Facts vs Feelings Social Hour livestream starts in one hour, Ryan Detrick announces",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-13T19:11:42+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-14T21:05:27+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/13/ryan-detrick-rotation-is-the-name-of-the-game-and-its-healthy-to-see-in-a-bull-market.html",
-            "kind": "video_page",
-            "preview": "Ryan Detrick: Rotation is the name of the game and it's healthy to see in a bull market",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-13T19:11:17+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-16T10:05:25+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4256419-30-year-yield-breakout-retest/",
@@ -1026,6 +1146,67 @@
             "preview": "Most sectors are outperforming XLK, Ryan Detrick notes",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-16T16:10:08+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T10:05:27+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4293232-technology-beats-sp500-today/",
+            "kind": "news_article",
+            "preview": "Ryan Detrick: Technology stocks outperformed S&P 500 while 75 stocks declined",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-17T21:12:10+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T10:05:27+09:00",
+            "url": "https://www.carsongroup.com/insights/blog/what-to-make-of-nvidias-crash-and-the-anthropic-ipo/",
+            "kind": "official_blog",
+            "preview": "What To Make of Nvidia’s Crash and The Anthropic IPO",
+            "grade": "1차",
+            "published_at": "2026-11-17T16:53:52+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T10:05:27+09:00",
+            "url": "https://finance.yahoo.com/video/carson-group-strategist-ryan-detrick-150701512.html",
+            "kind": "video_page",
+            "preview": "Carson Group Strategist Ryan Detrick Overviews AI Trade before NVIDIA Results",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-17T15:07:01+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T10:05:27+09:00",
+            "url": "https://www.carsongroup.com/insights/blog/social-hour-with-mike-larson-and-sonali-basak/",
+            "kind": "official_blog",
+            "preview": "Social Hour With Mike Larson and Sonali Basak (Ep. 7)",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-17T14:00:28+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-18T10:05:27+09:00",
+            "url": "https://www.carsongroup.com/insights/blog/are-you-not-entertained-fvf-ep-213/",
+            "kind": "official_blog",
+            "preview": "Are You Not Entertained? (FvF Ep. 213)",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-11T14:00:33+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Scott Rubner": {
+        "role": "observer",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-18T10:05:27+09:00",
+            "url": "https://www.investing.com/news/stock-market-news/citadels-rubner-says-equity-volatility-hits-highest-since-april-2025-93CH-5032831",
+            "kind": "news_article",
+            "preview": "Citadel’s Rubner says equity volatility hits highest since April 2025",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-17T13:10:15+00:00",
             "noise_hint": false
           }
         ]
