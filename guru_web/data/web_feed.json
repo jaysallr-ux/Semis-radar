@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-19T10:05:24+09:00",
+  "generated_at": "2026-11-19T21:05:24+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -125,7 +125,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 2,
+      "items_in_window": 3,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -172,13 +172,13 @@
     }
   ],
   "stats": {
-    "discovered": 136,
-    "new_items": 7,
-    "decoded": 7,
-    "bodies": 1,
+    "discovered": 137,
+    "new_items": 6,
+    "decoded": 6,
+    "bodies": 0,
     "quotes_verified": 0,
     "video_candidates": 0,
-    "gemini_calls": 1,
+    "gemini_calls": 0,
     "gemini_skipped_cap": 0
   },
   "gemini": {
@@ -242,6 +242,25 @@
       "discovered_at": "2026-11-18T21:05:39+09:00",
       "article_url": "https://tradersunion.com/news/market-voices/show/4301248-nvidia-buyback-september-myth/",
       "canonical_url": "https://tradersunion.com/news/market-voices/show/4301248-nvidia-buyback-september-myth/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Jonathan Krinsky",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "Livin' on a Prayer: BTIG's Krinsky Warns the S&P 500 Has Another Leg Lower",
+      "outlet": "The Dark Side Of The Boom",
+      "published_at": "2026-11-18T06:30:49+00:00",
+      "discovered_at": "2026-11-19T21:05:24+09:00",
+      "article_url": "https://thedarksideoftheboom.substack.com/p/livin-on-a-prayer-btigs-krinsky-warns",
+      "canonical_url": "https://thedarksideoftheboom.substack.com/p/livin-on-a-prayer-btigs-krinsky-warns",
       "body_fetch_status": 403,
       "direct_quotes": [],
       "direction_hint": null,
@@ -1015,8 +1034,8 @@
       },
       "Jonathan Krinsky": {
         "role": "observer",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-17T10:05:32+09:00",
@@ -1025,6 +1044,15 @@
             "preview": "BTIG Strategist Puts Staples’ Edge Over Tech at 33%, Widest in About 25 Years",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-16T13:25:07+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-19T21:05:24+09:00",
+            "url": "https://thedarksideoftheboom.substack.com/p/livin-on-a-prayer-btigs-krinsky-warns",
+            "kind": "news_article",
+            "preview": "Livin' on a Prayer: BTIG's Krinsky Warns the S&P 500 Has Another Leg Lower",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-18T06:30:49+00:00",
             "noise_hint": false
           }
         ]
@@ -1133,18 +1161,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 9,
-        "non_noise": 9,
+        "count": 8,
+        "non_noise": 8,
         "items": [
-          {
-            "at": "2026-11-16T10:05:25+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4256419-30-year-yield-breakout-retest/",
-            "kind": "news_article",
-            "preview": "Ryan Detrick: 30-year yield sees breakout followed by retest",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-15T14:40:07+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-16T21:05:34+09:00",
             "url": "https://www.benzinga.com/markets/equities/26/11/63279788/chip-stocks-have-flushed-out-everybody-ryan-detrick-calls-the-17-soxx-rebound-a-historic-buying-thrust",
