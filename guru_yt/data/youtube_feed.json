@@ -1,13 +1,13 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-18T21:10:33+09:00",
+  "generated_at": "2026-11-19T10:10:37+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-18T10:10:46+09:00",
-    "merged_from_discovery": 0,
+    "last_discovery_at": "2026-11-19T06:20:29+09:00",
+    "merged_from_discovery": 1,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
@@ -25,9 +25,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-09T06:14:44+09:00",
+      "oldest_rss": "2026-09-10T05:00:28+09:00",
       "gap_possible": false,
-      "matched": 6
+      "matched": 5
     },
     {
       "label": "Schwab Network",
@@ -47,7 +47,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-26T23:00:04+09:00",
+      "oldest_rss": "2026-09-28T23:00:39+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -58,7 +58,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-06T10:56:38+09:00",
+      "oldest_rss": "2026-10-07T00:00:05+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -69,7 +69,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-18T03:38:47+09:00",
+      "oldest_rss": "2026-09-19T21:05:44+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -102,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-15T01:00:19+09:00",
+      "oldest_rss": "2026-11-17T01:13:45+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -113,9 +113,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-14T00:00:09+09:00",
+      "oldest_rss": "2026-10-15T00:00:08+09:00",
       "gap_possible": false,
-      "matched": 2
+      "matched": 1
     },
     {
       "label": "MacroVoices",
@@ -157,9 +157,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-14T02:16:30+09:00",
+      "oldest_rss": "2026-11-14T11:15:34+09:00",
       "gap_possible": false,
-      "matched": 4
+      "matched": 3
     },
     {
       "label": "Maggie Lake Talking Markets",
@@ -168,7 +168,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-06-16T05:55:29+09:00",
+      "oldest_rss": "2026-06-18T05:47:58+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -179,7 +179,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-29T08:10:28+09:00",
+      "oldest_rss": "2026-09-29T10:15:26+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -190,7 +190,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-12T21:43:15+09:00",
+      "oldest_rss": "2026-10-12T23:43:22+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-18T01:33:36+09:00",
+      "oldest_rss": "2026-11-18T08:44:27+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T22:14:49+09:00",
+      "oldest_rss": "2026-11-18T17:12:45+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T08:00:23+09:00",
+      "oldest_rss": "2026-11-18T02:19:52+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,14 +234,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-13T07:00:02+09:00",
+      "oldest_rss": "2026-11-14T00:00:03+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 2,
-    "yta_server_remaining": 8,
+    "yta_used_today": 1,
+    "yta_server_remaining": 9,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -250,14 +250,14 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 9,
-    "gemini_est_video_hours_today": 0.115,
+    "gemini_calls_today": 1,
+    "gemini_est_video_hours_today": 0.112,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 1,
+    "ready": 1,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -278,6 +278,143 @@
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "tLKqIik_dqI",
+      "url": "https://www.youtube.com/watch?v=tLKqIik_dqI",
+      "channel": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "channel_mode": "dedicated",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "dedicated_channel",
+      "title": "The Macro Minute: Why Was NVIDIA’s Beat and Raise Not Enough?",
+      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\n\nTwitter: https://bit.ly/3GcrD2b\n \nLinkedIn: https://bit.ly/3m3h7lS\n\nFacebook: https://bit.ly/30TzWQn",
+      "published_at": "2026-11-18T21:00:00Z",
+      "first_seen_at": "2026-11-19T06:20:29+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-19T10:10:37+09:00",
+      "transcript_language": null,
+      "transcript_chars": 9181,
+      "transcript_url": null,
+      "name_mentions": 1,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "[0:00] Happy Wednesday out there team42. It's your skipper here Darius D to present our macro minute for Wednesday, November 18th, 2026. As always, we'll start with the executive summary from today's leadoff morning note. So, let's dive right in. What do we learn ",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-19T10:10:37+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Darius Dale speaks throughout the video starting at 00:00.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Darius Dale expects the risk-off market regime to continue, warning investors against catching falling knives during the current market environment.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": ""
+      },
+      "quotes": [
+        {
+          "t": "0:14",
+          "t_sec": 14,
+          "speaker": "Darius Dale",
+          "topic": "us_equities",
+          "text": "The intraday reversal in Nvidia shares supported the durability and severity of the current risk-off inflation market regime.",
+          "url": "https://www.youtube.com/watch?v=tLKqIik_dqI&t=14s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.2,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "2:08",
+          "t_sec": 128,
+          "speaker": "Darius Dale",
+          "topic": "rates",
+          "text": "The Federal Reserve will not sacrifice financial stability to accelerate its make-believe journey back to its arbitrary 2% inflation target after a half-decade plus of positive inflation surprises.",
+          "url": "https://www.youtube.com/watch?v=tLKqIik_dqI&t=128s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.5,
+          "caption_sec": 121,
+          "caption_checked": true
+        },
+        {
+          "t": "6:39",
+          "t_sec": 399,
+          "speaker": "Darius Dale",
+          "topic": "us_equities",
+          "text": "As long as we're in a risk-off market regime, you know, you don't want to be catching falling knives with a significant portion of your portfolio.",
+          "url": "https://www.youtube.com/watch?v=tLKqIik_dqI&t=399s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 95.1,
+          "caption_sec": 396,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-19T10:10:37+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "0:14",
+          "point": "Nvidia's intraday share reversal supports the durability and severity of the current risk-off inflation market regime.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "1:37",
+          "point": "Fed Governor Chris Waller's call for a 50 basis point December rate hike contrasts with money markets pricing in smaller 25 basis point hikes.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "2:08",
+          "point": "The Federal Reserve will not sacrifice financial stability to reach its 2% inflation target.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "3:16",
+          "point": "The transition to a multipolar world order and weakening US fiscal dynamics will reduce foreign demand for US dollar assets over time.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "6:11",
+          "point": "The current environment could feel similar to the Q4 2018 market drawdown over the next few months.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": "months"
+        },
+        {
+          "t": "6:39",
+          "point": "Investors should align their portfolios with the prevailing market regime rather than catching falling knives.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 15311,
+      "quotes_grade_count": {
+        "1차-A": 3,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "p5vjT82-rO4",
       "url": "https://www.youtube.com/watch?v=p5vjT82-rO4",
@@ -2372,577 +2509,6 @@
         "1차-B": 1,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "CvKRIVi51IM",
-      "url": "https://www.youtube.com/watch?v=CvKRIVi51IM",
-      "channel": "David Lin",
-      "channel_id": "UClBMLpP3UHXLmgEypMmXPuA",
-      "channel_mode": "filter",
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "match": "x_self_link",
-      "title": "Brutal 2027: How The Next Financial Crisis Starts",
-      "description": "Click the link http://kalshi.com/r/LIN or download the Kalshi App and use code LIN to sign up and trade today!\n\nCem Karson and Noel Smith of Kai Wealth discuss mounting risks for stocks in 2027, the possibility of a Treasury market crisis, rising inflation and interest rates, AI spending concerns, and strategies for protecting portfolios.\n\n*This video was recorded on November 10, 2026\n\nSubscribe to my clips channel: https://www.youtube.com/@DavidLinReportClips\nSubscribe to my free newsletter: https://davidlinreport.substack.com/\nListen on Spotify: https://open.spotify.com/show/510WZMFaqeh90Xk4jcE34s\nListen on Apple Podcasts: https://podcasters.spotify.com/pod/show/the-david-lin-report\n\nFOLLOW KAI WEALTH:\nKai Wealth: https://kaiwealth.com/\nKai Asset Management: https://kaiasset.com/\nX (@jam_croissant): https://x.com/jam_croissant\nX (@NoelSmith): https://x.com/NoelSmith\n\nFOLLOW DAVID LIN:\nX (@davidlin_TV): https://x.com/davidlin_TV\nTikTok (@davidlin_TV): https://www.tiktok.com/@davidlin_tv\nInstagram (@davidlin_TV): https://www.instagram.com/davidlin_tv/\n\nFor business inquiries, reach me at david@thedavidlinreport.com\n\nDISCLAIMER: This video is for informational and educational purposes only and does not constitute financial, investment, legal, or tax advice. Always conduct your own research and consult a licensed financial professional before making any investment decisions.\n\nThe views and opinions expressed by guests are solely their own and do not represent the views of this ",
-      "published_at": "2026-11-11T21:39:29+00:00",
-      "first_seen_at": "2026-11-15T11:51:58+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-15T11:51:58+09:00",
-      "transcript_language": null,
-      "transcript_chars": 51039,
-      "transcript_url": null,
-      "name_mentions": 1,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "5 cash here CFTC approved and available in all 50 states including California and Texas. Our next guest join us now Jam Carson, founder and co-CIO of K S A Management and his new co-CIO and head of portfolio management Noel Smith. Welcome back to the show Jam and good to see you Noel. Welcome to the show. >> Thank you.",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-15T11:51:58+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Cem Karsan appears in the video wearing a blue-and-white striped sweater and headphones, speaking extensively on macro economics, market volatility, inflation, interest rates, and equity positioning.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Cem Karsan maintains a structurally bearish outlook on US equities heading into 2027. While short-term year-end flows may temporarily bolster equity markets, he expects inelastic inflation, rising Treasury yields (potentially reaching 5.5% to 6%), high capex borrowing limits among tech giants, and changing political incentives to trigger a significant macro rollover.",
-        "timeframe": "Medium to long term (2026-2027)"
-      },
-      "quotes": [
-        {
-          "t": "03:02",
-          "t_sec": 182,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "I think of this as really a three-legged stool, three major sets of pressures when we're modeling forward predictions, which is really how we we think about what is the forward distribution of outcomes in a week, a month, a quarter, a year.",
-          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=182s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 86.8,
-          "caption_sec": 152,
-          "caption_checked": true
-        },
-        {
-          "t": "16:21",
-          "t_sec": 981,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "inflation is becoming, as we saw today in the CPI, is becoming much more inelastic.",
-          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=981s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 951,
-          "caption_checked": true
-        },
-        {
-          "t": "22:12",
-          "t_sec": 1332,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "I do think particularly at the end of the year, if we see a reflation here for the next couple months, we have a tend to get a cash squeeze at the end of the year.",
-          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=1332s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.2,
-          "caption_sec": 1316,
-          "caption_checked": true
-        },
-        {
-          "t": "22:41",
-          "t_sec": 1361,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "we could see close to 6. I could see 5 and a half to 6% if, let's again, if this market continues to reflate.",
-          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=1361s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 85.6,
-          "caption_sec": 1346,
-          "caption_checked": true
-        },
-        {
-          "t": "31:01",
-          "t_sec": 1861,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "That is an inflationary makeup under the hood that we have to be kind of aware of.",
-          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=1861s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 85.2,
-          "caption_sec": 982,
-          "caption_checked": true
-        },
-        {
-          "t": "38:26",
-          "t_sec": 2306,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "I would be incredibly incredibly averse to to being long of Anthropic in the medium to long term.",
-          "url": "https://www.youtube.com/watch?v=CvKRIVi51IM&t=2306s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.9,
-          "caption_sec": 2296,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-15T11:51:58+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "03:02",
-          "point": "Market forward predictions rely on three main drivers: macro conditions (rates, inflation, growth), institutional player incentives (Fed and Treasury), and structural flows.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "05:48",
-          "point": "AI hyperscalers have exhausted their cash balances and borrowed heavily for capex, reaching the limit of what debt markets can support.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "13:38",
-          "point": "Post-midterm political incentives will shift from market support toward letting economic pressures manifest to prepare policy solutions ahead of 2028.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "16:21",
-          "point": "Inflation is becoming increasingly inelastic due to structural supply disruptions and delayed lag effects across key commodities.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "22:12",
-          "point": "If market reflation continues over the next couple of months, an end-of-year cash squeeze could push 10-year Treasury yields up to 5.5% or 6%.",
-          "condition": "if market reflation continues over the next couple of months",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        },
-        {
-          "t": "38:26",
-          "point": "Pure AI model developers like Anthropic face long-term risk of commoditization and regulatory pushback, making them unattractive long-term equity holdings.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 89194,
-      "quotes_grade_count": {
-        "1차-A": 3,
-        "1차-B": 3,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "S3V9QHFGwRs",
-      "url": "https://www.youtube.com/watch?v=S3V9QHFGwRs",
-      "channel": "42 Macro",
-      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
-      "channel_mode": "dedicated",
-      "person": "Darius Dale",
-      "tier": 1,
-      "role": "core",
-      "match": "dedicated_channel",
-      "title": "The Macro Minute: Anthropic and CoreWeave Signal Renewed Enthusiasm for AI",
-      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\n\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\n\nTwitter: https://bit.ly/3GcrD2b\n \nLinkedIn: https://bit.ly/3m3h7lS\n\nFacebook: https://bit.ly/30TzWQn",
-      "published_at": "2026-11-11T21:00:19Z",
-      "first_seen_at": "2026-11-12T06:25:09+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-12T10:10:35+09:00",
-      "transcript_language": null,
-      "transcript_chars": 12782,
-      "transcript_url": null,
-      "name_mentions": 2,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "[0:00] Happy Wednesday out there, team 42. It's your skipper here at Darius Dell to present our macro minute for Wednesday, November 11th, 2026. Happy Veterans Day out there to all my military friends and family. We're very, very grateful, deeply appreciative of all th",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-12T10:10:35+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Darius Dale here presenting our Macro Minute for Wednesday, November 11th, 2026.",
-      "stance": {
-        "us_equities": "bullish",
-        "summary": "Darius Dale sees upside potential for US equities, particularly secular AI growth themes, as hedge funds have aggressively de-risked and hawkish Fed policy is more likely to hurt cyclical sectors than AI leaders.",
-        "invalidation": "",
-        "targets": [],
-        "timeframe": ""
-      },
-      "quotes": [
-        {
-          "t": "01:31",
-          "t_sec": 91,
-          "speaker": "Darius Dale",
-          "topic": "US Equities & AI",
-          "text": "The fact that AI stocks are not following through on last week's carnage amid the Nvidia scandal signals growing investor fatigue in the bear case.",
-          "url": "https://www.youtube.com/watch?v=S3V9QHFGwRs&t=91s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 99.3,
-          "caption_sec": 62,
-          "caption_checked": true
-        },
-        {
-          "t": "01:39",
-          "t_sec": 99,
-          "speaker": "Darius Dale",
-          "topic": "AI Stocks & IPOs",
-          "text": "Amid relatively light positioning, the upside risk is that the Anthropic IPO is oversubscribed and gaps higher in the secondary market, signaling renewed enthusiasm for the AI trade.",
-          "url": "https://www.youtube.com/watch?v=S3V9QHFGwRs&t=99s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 94.4,
-          "caption_sec": 92,
-          "caption_checked": true
-        },
-        {
-          "t": "02:05",
-          "t_sec": 125,
-          "speaker": "Darius Dale",
-          "topic": "Data Centers & Policy Risk",
-          "text": "All told, while risk of near-term redistributive policy surrounding data center development may be priced in, we do not believe the market is seriously entertaining the risk of the invisible hand of income and wealth redistribution dramatically altering the return on invested capital assumptions of data center CapEx in the 2028 general election cycle and beyond.",
-          "url": "https://www.youtube.com/watch?v=S3V9QHFGwRs&t=125s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.9,
-          "caption_sec": 122,
-          "caption_checked": true
-        },
-        {
-          "t": "03:56",
-          "t_sec": 236,
-          "speaker": "Darius Dale",
-          "topic": "Fed Policy & Market Rotation",
-          "text": "All told, hawkish sentiment surrounding the near-term outlook for Fed policy continues to increase. This dynamic may actually spur rotation back into the secular-supported AI theme because investors may correctly view Fed tightening as more of a risk to the cyclical side of the economy than to the AI theme.",
-          "url": "https://www.youtube.com/watch?v=S3V9QHFGwRs&t=236s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 213,
-          "caption_checked": true
-        },
-        {
-          "t": "04:12",
-          "t_sec": 252,
-          "speaker": "Darius Dale",
-          "topic": "Hedge Fund Positioning",
-          "text": "To this point, global equity hedge funds cut risk at the fastest rate in over a decade, down 11% from June through early November, per Morgan Stanley Prime Brokerage data, so there's definitely opportunity here and scope for them to lever back up into the trade to the extent the market starts to send signals.",
-          "url": "https://www.youtube.com/watch?v=S3V9QHFGwRs&t=252s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.0,
-          "caption_sec": 243,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-12T10:10:35+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "01:31",
-          "point": "Lack of downside follow-through in AI stocks signals growing investor fatigue with the bear case.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "near_term"
-        },
-        {
-          "t": "01:39",
-          "point": "An oversubscribed Anthropic IPO could gap higher in the secondary market and re-ignulate enthusiasm for AI trades.",
-          "condition": "if Anthropic IPO is oversubscribed",
-          "conviction": "risk_scenario",
-          "horizon": "near_term"
-        },
-        {
-          "t": "02:05",
-          "point": "Markets are underestimating the long-term political and redistributive risks to data center CapEx returns leading into 2028.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "long_term"
-        },
-        {
-          "t": "03:56",
-          "point": "Hawkish Fed policy expectations may drive rotation back into secular AI growth stocks as cyclicals bear the brunt of monetary tightening.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "04:12",
-          "point": "Global equity hedge funds have cut risk by 11% since June, leaving ample room for re-leveraging into equities when market signals turn positive.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "07:05",
-          "point": "Macro risk management systems should accept false positives (Type 1 errors) in order to eliminate devastating false negatives (Type 2 errors).",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "unclear"
-        }
-      ],
-      "gemini_prompt_tokens": 20030,
-      "quotes_grade_count": {
-        "1차-A": 5,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "VdOwo-M95G8",
-      "url": "https://www.youtube.com/watch?v=VdOwo-M95G8",
-      "channel": "Thoughtful Money",
-      "channel_id": "UCjqe6xtZYTfvA4pHs0HgJsQ",
-      "channel_mode": "filter",
-      "person": "Lyn Alden",
-      "tier": 3,
-      "role": "core",
-      "match": "description",
-      "title": "The AI Boom's $1 Trillion Problem",
-      "description": "In this Short video, Lyn Alden and Adam Taggart discuss the hidden financial risks behind the AI boom, why trillion-dollar valuations may be difficult to justify, and how today's massive infrastructure buildout could eventually trigger a multi-year downturn in semiconductor stocks and the broader market.\n\n*\n\nThe AI revolution is real, but not every company participating in it will generate attractive investment returns. \n\nThe key is distinguishing between semiconductors, hyperscalers, and frontier AI model developers.\n\n1. Semiconductors: strong fundamentals, but cyclical risks $SMH $SOXX $NVDA \n\nUnlike other parts of the AI ecosystem, semiconductor companies are generating substantial earnings backed by real free cash flow. Their financial performance is largely legitimate, and their balance sheets appear strong enough to withstand an eventual downturn.\n\nVendor financing, where chipmakers help finance their own customers, is a legitimate concern but currently represents a relatively small portion of their balance sheets.\n\nHowever, semiconductors remain a highly cyclical industry. \n\nHistory shows that supply shortages drive exceptional profitability, encouraging manufacturers to expand capacity until supply eventually exceeds demand.\n\nThe result? Falling prices, shrinking margins, and potentially brutal bear markets lasting two to three years.\n\n*\n\n2. Frontier AI Models: the $1 trillion valuation problem\n\nLyn is considerably more concerned about frontier AI developers $ANT #Ope",
-      "published_at": "2026-11-11T20:00:12Z",
-      "first_seen_at": "2026-11-12T05:58:42+09:00",
-      "is_short": true,
-      "transcript_status": "skipped_short",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": null,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "short (skipped)",
-      "gemini_status": "skipped",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "Hx4_54pMhUQ",
-      "url": "https://www.youtube.com/watch?v=Hx4_54pMhUQ",
-      "channel": "42 Macro",
-      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
-      "channel_mode": "dedicated",
-      "person": "Darius Dale",
-      "tier": 1,
-      "role": "core",
-      "match": "dedicated_channel",
-      "title": "When and How Should Investors Buy the Dip?",
-      "description": "Enjoy this clip from our November 7, 2026, Around the Horn webcast in which we detail elements of the systematic process that we use to help investors all over the world answer these types of crucial questions. \n\nIf clairvoyance and confidence are currently missing from your investment process, consider partnering with 42 Macro. We can help.\n\nDownload a complimentary sample of our industry-leading research today:\nhttps://42macro.com/42-macro-sample-r...\n\n#Team42 #investing #finance #stockmarket #trading #marketupdates #macroeconomics #marketinsights #globalmarkets #economictrends #marketoutlook #stocks #federalreserve #inflation #liquidity #bitcoin #riskmanagement #assetmarkets #macroeconomics #macroinvesting #fourthturning \n\nSubscribe to the 42 Macro channel for tips about enhancing your risk management processes and preparing your portfolio for the changing market! \n\nTrack the trends on 42 Macro socials!\nTwitter: https://bit.ly/3GcrD2b \nLinkedIn: https://bit.ly/3m3h7lS\nFacebook: https://bit.ly/30TzWQn",
-      "published_at": "2026-11-11T13:59:38Z",
-      "first_seen_at": "2026-11-11T23:20:35+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-12T10:10:35+09:00",
-      "transcript_language": null,
-      "transcript_chars": 14167,
-      "transcript_url": null,
-      "name_mentions": 1,
-      "appearance_confirmed": true,
-      "appearance_excerpt": " I surmise that there's few firms on earth that have done a better job of helping their clients avoid this carnage than 42 macro over the past six weeks. And so if if if our content is too long for you then you don't have to watch. Just read the  [4:33] summary, read the kiss, read the Dr. Mo, and go back to your merry",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-12T10:10:35+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Darius Dale appears on camera speaking throughout the clip from 00:00 to 11:04, discussing macro market regimes, factor performance, market positioning, and risk management.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Darius Dale maintains a tactical bearish stance on US equities, citing broken key levels in factor ratios like High Beta/Low Beta and Cyclicals/Defensives that have triggered cascading buy-side de-grossing. He warns that market behavior and forced deleveraging could cause sharper sell-offs than fundamentals alone imply, though he expects the multi-decade secular bull market to ultimately peak around late 2027 or early 2028.",
-        "targets": [],
-        "timeframe": "Short-to-medium term (tactical risk-off); long-term peak expected late 2027 to 1H 2028"
-      },
-      "quotes": [
-        {
-          "t": "00:00",
-          "t_sec": 0,
-          "speaker": "Darius Dale",
-          "topic": "market signals / factor ratios",
-          "text": "High beta low beta ratio and the cyclicals defensives ratio are bearish. We talked about it over the last few weeks that hey, if we snap this this level here, it's going to get ugly, and guess what? We snapped those levels.",
-          "url": "https://www.youtube.com/watch?v=Hx4_54pMhUQ&t=0s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 93.1,
-          "caption_sec": 0,
-          "caption_checked": true
-        },
-        {
-          "t": "01:25",
-          "t_sec": 85,
-          "speaker": "Darius Dale",
-          "topic": "market regime / risk matrix",
-          "text": "We use our global macro risk matrix to nowcast the market regime, which investors must position for to avoid FOMO or FOML, fear of missing out causes investors to buy cycle tops, and fear of more losses causes investors to sell cycle lows.",
-          "url": "https://www.youtube.com/watch?v=Hx4_54pMhUQ&t=85s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 93.6,
-          "caption_sec": 122,
-          "caption_checked": true
-        },
-        {
-          "t": "03:17",
-          "t_sec": 197,
-          "speaker": "Darius Dale",
-          "topic": "market risk / behavior",
-          "text": "This could get worse than you would expect it to just based on fundamentals, because part of the game is behavioral as well.",
-          "url": "https://www.youtube.com/watch?v=Hx4_54pMhUQ&t=197s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.7,
-          "caption_sec": 183,
-          "caption_checked": true
-        },
-        {
-          "t": "03:59",
-          "t_sec": 239,
-          "speaker": "Darius Dale",
-          "topic": "secular bull market peak",
-          "text": "We don't think this is the end of the secular bull market that started 17 plus years ago, but we do believe that it will peak in sometime in late 2027 or the first half of 2028.",
-          "url": "https://www.youtube.com/watch?v=Hx4_54pMhUQ&t=239s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 93.7,
-          "caption_sec": 213,
-          "caption_checked": true
-        },
-        {
-          "t": "05:05",
-          "t_sec": 305,
-          "speaker": "Darius Dale",
-          "topic": "market regime / deflation",
-          "text": "We're still in this risk-off inflation market regime, it's got a high strength to signal. Deflation is ripping and roaring just like it did in Q4 2018.",
-          "url": "https://www.youtube.com/watch?v=Hx4_54pMhUQ&t=305s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.6,
-          "caption_sec": 304,
-          "caption_checked": true
-        },
-        {
-          "t": "07:20",
-          "t_sec": 440,
-          "speaker": "Darius Dale",
-          "topic": "portfolio management / risk management",
-          "text": "You want to be keeping your portfolio near a high net asset value of all times. That way when the market does go up, you're gaining more wealth on a nominal basis.",
-          "url": "https://www.youtube.com/watch?v=Hx4_54pMhUQ&t=440s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.8,
-          "caption_sec": 429,
-          "caption_checked": true
-        },
-        {
-          "t": "08:00",
-          "t_sec": 480,
-          "speaker": "Darius Dale",
-          "topic": "positioning / sentiment",
-          "text": "We're in the 67th percentile of implied crowded bullish positioning when you go back and you study all this data since, you know, at least 1987 on a median basis, and so, you know, we're slightly lower than where we typically are when we peak when the the market cycle peaks.",
-          "url": "https://www.youtube.com/watch?v=Hx4_54pMhUQ&t=480s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.9,
-          "caption_sec": 459,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-12T10:10:35+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "00:00",
-          "point": "Key factor ratios such as High Beta/Low Beta and Cyclicals/Defensives have broken down, forcing cascading de-grossing across the buy-side.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short-term"
-        },
-        {
-          "t": "02:33",
-          "point": "Forced margin liquidations and behavioral risk aversion to protect year-to-date returns can exacerbate sell-offs beyond fundamental expectations.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short-term"
-        },
-        {
-          "t": "03:59",
-          "point": "The secular bull market that began over 17 years ago remains intact and is projected to peak in late 2027 or the first half of 2028.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "multi-year"
-        },
-        {
-          "t": "05:05",
-          "point": "Macro indicators signal a strong risk-off inflation regime with deflationary dynamics similar to the Q4 2018 market correction.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short-to-medium term"
-        },
-        {
-          "t": "07:20",
-          "point": "Portfolio strategy should prioritize protecting capital and avoiding falling-knife trades so that compounding occurs at peak net asset values.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "ongoing"
-        },
-        {
-          "t": "08:00",
-          "point": "Implied crowded bullish positioning sits at the 67th percentile, indicating that market positioning has moderated but has not reached true capitulation levels.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short-to-medium term"
-        }
-      ],
-      "gemini_prompt_tokens": 21643,
-      "quotes_grade_count": {
-        "1차-A": 7,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
     }
   ],
   "person_index": {
@@ -2968,8 +2534,8 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 5,
+        "non_noise": 5,
         "items": [
           {
             "at": "2026-11-17T10:10:38+09:00",
@@ -3005,6 +2571,15 @@
             "preview": "Is It Time to Back Up the Truck on Cheap AI Stocks?",
             "grade": "1차-A",
             "published_at": "2026-11-17T14:00:01Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-19T10:10:37+09:00",
+            "url": "https://www.youtube.com/watch?v=tLKqIik_dqI",
+            "kind": "video",
+            "preview": "The Macro Minute: Why Was NVIDIA’s Beat and Raise Not Enough?",
+            "grade": "1차-A",
+            "published_at": "2026-11-18T21:00:00Z",
             "noise_hint": false
           }
         ]
