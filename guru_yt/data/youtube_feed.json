@@ -1,16 +1,16 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-19T10:10:37+09:00",
+  "generated_at": "2026-11-19T21:10:31+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-19T06:20:29+09:00",
-    "merged_from_discovery": 1,
+    "last_discovery_at": "2026-11-19T10:10:37+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 0,
+      "accepted": 1,
       "rejected": 0
     }
   },
@@ -102,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T01:13:45+09:00",
+      "oldest_rss": "2026-11-17T01:28:55+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -157,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-14T11:15:34+09:00",
+      "oldest_rss": "2026-11-15T08:00:34+09:00",
       "gap_possible": false,
       "matched": 3
     },
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-18T08:44:27+09:00",
+      "oldest_rss": "2026-11-19T01:09:22+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-18T17:12:45+09:00",
+      "oldest_rss": "2026-11-19T00:47:40+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-18T02:19:52+09:00",
+      "oldest_rss": "2026-11-18T08:00:06+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -240,8 +240,8 @@
     }
   ],
   "quota": {
-    "yta_used_today": 1,
-    "yta_server_remaining": 9,
+    "yta_used_today": 2,
+    "yta_server_remaining": 8,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -250,7 +250,7 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 1,
+    "gemini_calls_today": 10,
     "gemini_est_video_hours_today": 0.112,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
@@ -266,18 +266,64 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 9,
+    "ready": 0,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 0,
-    "chunked": 0,
+    "budget_out": 1,
+    "chunked": 1,
     "text_mode": 0,
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "RFqmE_xXp88",
+      "url": "https://www.youtube.com/watch?v=RFqmE_xXp88",
+      "channel": "tastylive",
+      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
+      "channel_mode": "filter",
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "match": "x_self_link",
+      "title": "Nvidia’s $130B Forecast Fuels AI as Anthropic’s $1.4 TRILLION IPO | Wednesday Nov 18 Live Trading",
+      "description": "tastylive — Wednesday, November 18\nAll times CT\n\n8:00–8:14 AM — tastylive Pre-Market — Gus\n\n8:15–8:30 AM — Morning News — Chris (R)\n\n8:30–8:44 AM — Opening Bell — Chris (R), Julia\n\n8:45–8:59 AM — Live Trades on tastylive — Chris (R), Julia\n\n9:00–9:19 AM — Tasty Guest — Chris (R), Jeff Holden (R)\n\n9:20–9:39 AM — Trading Charts — Chris (R), Tim Knight (R)\n\n9:40–9:59 AM — Live from CBOE — Chris (R), Errol\n\n10:00–10:15 AM — Trades of the Day — TP (R)\n\n10:15–10:30 AM — Trades of the Day — Chris (R)\n\n10:30–10:45 AM — Trades of the Day — Errol\n\n10:45–11:00 AM — Trades of the Day — Sahil\n\n11:00–11:15 AM — Trades of the Day — TBD\n\n11:15–11:30 AM — Trades of the Day — Ilya (R)\n\n11:30–11:45 AM — Technical Trading — Danielle (R)\n\n11:45 AM–12:15 PM — Risk and Reward — Errol\n\n12:15–12:45 PM — Confirm and Send — TP (R)\n\n12:45–1:00 PM — Market Measures — Gad\n\n1:00–1:30 PM — Forex Focus — Ilya (R), Glen\n\n1:30–1:59 PM — Live Trades with TP — TP (R)\n\n2:00–2:29 PM — Trading Charts — Tim Knight (R)\n\n2:30–3:01 PM — Last Call — Chris (R), Errol (R)\n\n3:01–3:30 PM — Overtime — Chris (R), Ilya (R), Noel Smith (R)\n\nEND OF SHOW — 3:30 PM CT\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, and over 25 personalities, we’ll help you take your trading to the next level, whether you are new to trading or a seasoned veteran.  ",
+      "published_at": "2026-11-18T21:48:41+00:00",
+      "first_seen_at": "2026-11-19T21:10:31+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-19T21:10:31+09:00",
+      "transcript_language": null,
+      "transcript_chars": 427567,
+      "transcript_url": null,
+      "name_mentions": 5,
+      "appearance_confirmed": null,
+      "appearance_excerpt": " on to talk about with uh with Illen a little bit. And al also coming up uh uh we do have N Smith coming on as well. Uh Jem is gallivanting through Europe. So, he has called himself off the bench to replace him for today's overtime, which we appreciate here. Errol, volumes today in this market, they're sizable. Nearly ",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "pending",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "자막 확보, 인용 대기",
+      "appearance_source": null,
+      "transcript_retained": true,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "tLKqIik_dqI",
       "url": "https://www.youtube.com/watch?v=tLKqIik_dqI",
@@ -2306,207 +2352,6 @@
       "quotes_grade_count": {
         "1차-A": 0,
         "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "79Vp2lfBpbI",
-      "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI",
-      "channel": "tastylive",
-      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
-      "channel_mode": "filter",
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "match": "title",
-      "title": "Cem Karsan Says You're Trading With One Arm Tied Behind You",
-      "description": "Cem Karsan of Kai Volatility has a blunt message: if you're trading this market without understanding the structural flows, you're playing with one arm strapped behind your back. Daily flows structurally sell volatility, December carries one of the largest options expirations ever, and skew sits among the three highest readings of the last decade. Every day that passes brings vol compression and delta buyback. He's equally clear the macro is bad and will get worse, but the flows keep pushing higher.\n\n📊 tastylive: https://www.tastylive.com/\n📰 Get Tom's pre-market analysis every morning: https://www.tastylive.com/newsletters\n📘 FREE Options Strategy Guide: https://tinyurl.com/bp9ms763\n📱 Follow tastylive on X: https://x.com/tastyliveshow\n\nChapters\n00:00 Up again, off the highs\n00:40 Why five days told different stories\n01:20 The structural flows nobody accounts for\n02:10 December's enormous open interest\n03:00 Why skew is so high right now\n03:40 What happens every day that passes\n04:30 The move after the event passed\n05:40 The macro is bad and gets worse\n06:30 How fast the calendar shortens\n07:40 The discrete events left this year\n\n#tastylive #overtime #cemkarsan #kaivolatility #structuralflows #volatility #opex #skew #optionstrading #stockmarket\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, an",
-      "published_at": "2026-11-12T03:54:13Z",
-      "first_seen_at": "2026-11-12T13:20:35+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-12T21:10:34+09:00",
-      "transcript_language": null,
-      "transcript_chars": 17191,
-      "transcript_url": null,
-      "name_mentions": 7,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "[0:00] I'm your host Chris Veia with Ilas Pivik and Jeb Carson from Kai volatility our typical Wednesday guest returning champion here to overtime Kai or Chem good to see you not going to call you Kai that's the name of your company Ilia uh yeah yeah 2 fee",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-12T21:10:34+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Cem Karsan appears on screen from Kai Volatility and speaks extensively about market option flows, volatility compression, macroeconomic risks, and holiday seasonality.",
-      "stance": {
-        "us_equities": "bullish",
-        "summary": "Cem Karsan expects U.S. equities to trend higher into the end of the year and mid-January due to massive structural option selling, volatility compression, and holiday seasonality, despite underlying macroeconomic fundamentals being poor and deteriorating long term.",
-        "timeframe": "End of year to mid-January"
-      },
-      "quotes": [
-        {
-          "t": "01:17",
-          "t_sec": 77,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "we have massive structural every day option flows come in that are net selling structurally just selling vol.",
-          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=77s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.1,
-          "caption_sec": 62,
-          "caption_checked": true
-        },
-        {
-          "t": "01:29",
-          "t_sec": 89,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "On top of that, we're getting to the end of the year here in December, which is the biggest options expiration ever.",
-          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=89s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 62,
-          "caption_checked": true
-        },
-        {
-          "t": "02:05",
-          "t_sec": 125,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "That means every day that goes by, there's vol compression, every day that goes by, there's mass amount of buyback of Deltas unless, unless we can activate that real convex little pocket of tinder that's sitting out in that Dec OPEX.",
-          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=125s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.8,
-          "caption_sec": 123,
-          "caption_checked": true
-        },
-        {
-          "t": "04:05",
-          "t_sec": 245,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "The macro is bad. It's bad, and it's only going to get worse, I'm telling you. Okay? But in the meantime, laissez les bons temps rouler, as they say in New Orleans, let the good times roll.",
-          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=245s",
-          "speaker_verified": true,
-          "grade": "1차-B",
-          "caption_match": 88.3,
-          "caption_sec": 214,
-          "caption_checked": true
-        },
-        {
-          "t": "07:08",
-          "t_sec": 428,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "The holidays, Thanksgiving and Christmas, drive a November through December period, really till mid-January, that has the most what I call the lowest volume weighted time of any other period.",
-          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=428s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 98.9,
-          "caption_sec": 426,
-          "caption_checked": true
-        },
-        {
-          "t": "08:34",
-          "t_sec": 514,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "November expiration is positive flows right into Thanksgiving, right out of, now that we only have three weeks till December OPEX, all those biggest flows start really kicking off then into Dec OPEX.",
-          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=514s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 94.4,
-          "caption_sec": 487,
-          "caption_checked": true
-        },
-        {
-          "t": "14:41",
-          "t_sec": 881,
-          "speaker": "Cem Karsan",
-          "topic": "",
-          "text": "And what you see when things get really cheap like this, even once the news stabilizes and we get kind of resolution, is I'm talking three to six months of of difficult sledding.",
-          "url": "https://www.youtube.com/watch?v=79Vp2lfBpbI&t=881s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 852,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-12T21:10:34+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "01:17",
-          "point": "Daily structural option flows continue to net sell volatility, creating an ongoing bid for equities.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "01:29",
-          "point": "The upcoming December options expiration carries massive open interest and high skew, driving significant structural market dynamics.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "02:05",
-          "point": "Daily volatility compression forces dealers to continuously buy back deltas, supporting stock prices unless downside momentum triggers convex put positions.",
-          "condition": "Unless downside momentum activates convex put options in December OPEX",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "04:05",
-          "point": "Macroeconomic conditions are weak and will deteriorate, but positive structural option flows will keep equity prices supported near term.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "07:08",
-          "point": "The period from Thanksgiving through mid-January experiences the lowest volume-weighted trading of the year, amplifying volatility crush and supporting market rallies.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "08:34",
-          "point": "Structural flows following November expiration straight into December OPEX and year-end re-leveraging set a high barrier against deep market sell-offs.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "14:41",
-          "point": "Nvidia faces three to six months of sluggish price action due to loss of upside momentum and news overhang, despite remaining a strong business overall.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "17:09",
-          "point": "Credit contraction and Fed rate actions will eventually lead to a broader market rollover, though near-term positioning tailwinds dominate.",
-          "condition": "",
-          "conviction": "risk_scenario",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 33850,
-      "quotes_grade_count": {
-        "1차-A": 6,
-        "1차-B": 1,
         "excluded_speaker_mismatch": 0
       }
     }
