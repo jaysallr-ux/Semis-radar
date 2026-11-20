@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-20T10:05:25+09:00",
+  "generated_at": "2026-11-20T21:05:29+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -172,13 +172,13 @@
     }
   ],
   "stats": {
-    "discovered": 137,
-    "new_items": 11,
-    "decoded": 11,
-    "bodies": 3,
-    "quotes_verified": 2,
-    "video_candidates": 1,
-    "gemini_calls": 1,
+    "discovered": 131,
+    "new_items": 6,
+    "decoded": 7,
+    "bodies": 1,
+    "quotes_verified": 0,
+    "video_candidates": 0,
+    "gemini_calls": 0,
     "gemini_skipped_cap": 0
   },
   "gemini": {
@@ -1003,18 +1003,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-17T21:05:26+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4282936-legally-compliant-10q-challenge/",
-            "kind": "news_article",
-            "preview": "Evaluating the complexity of 10-Q compliance, Andy Constan notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-17T11:26:40+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-18T21:05:39+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4301248-nvidia-buyback-september-myth/",
@@ -1037,18 +1028,9 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-17T10:05:32+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4266148-ai-models-ant-ipo-valuation/",
-            "kind": "news_article",
-            "preview": "Bob Elliott: AI models show limited optimism for ANT IPO above $1.2 trillion",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-16T12:25:17+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-18T10:05:27+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4287022-crack-spreads-brent-inflation/",
@@ -1065,31 +1047,6 @@
             "preview": "Bob Elliott: Data suggests economic crisis emerging in China",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-19T12:25:16+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Cem Karsan": {
-        "role": "core",
-        "count": 2,
-        "non_noise": 2,
-        "items": [
-          {
-            "at": "2026-11-17T10:05:32+09:00",
-            "url": "https://www.tastylive.com/shows/tasty-guests/episodes/tasty-guests-cem-karsan-11-13-2026",
-            "kind": "news_article",
-            "preview": "tasty GUESTS Cem Karsan",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-13T19:30:38+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T21:05:26+09:00",
-            "url": "https://www.tastylive.com/shows/tasty-crumbs-with-cem-karsan/episodes/tasty-crumbs-with-cem-karsan-11-16-2026",
-            "kind": "news_article",
-            "preview": "tasty Crumbs with Cem Karsan",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-17T06:08:34+00:00",
             "noise_hint": false
           }
         ]
@@ -1112,18 +1069,9 @@
       },
       "Jonathan Krinsky": {
         "role": "observer",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-17T10:05:32+09:00",
-            "url": "https://www.tokenpost.com/news/investing/58381",
-            "kind": "news_article",
-            "preview": "BTIG Strategist Puts Staples’ Edge Over Tech at 33%, Widest in About 25 Years",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-16T13:25:07+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-19T21:05:24+09:00",
             "url": "https://thedarksideoftheboom.substack.com/p/livin-on-a-prayer-btigs-krinsky-warns",
@@ -1137,18 +1085,9 @@
       },
       "Katie Stockton": {
         "role": "observer",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-17T10:05:32+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/16/fairleads-katie-stockton-on-if-technical-indicators-are-showing-more-downside-ahead-for-nvidia.html",
-            "kind": "video_page",
-            "preview": "Fairlead's Katie Stockton on if technical indicators are showing more downside ahead for Nvidia",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-16T22:54:14+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-18T10:05:27+09:00",
             "url": "https://www.cnbc.com/video/2026/11/17/why-fairleads-katie-stockton-thinks-the-market-is-oversold-ahead-of-nvidias-earnings.html",
@@ -1205,18 +1144,9 @@
       },
       "Mike Wilson": {
         "role": "observer",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-17T21:05:26+09:00",
-            "url": "https://www.tradingview.com/news/stocktwits:2976abb70094b:0-morgan-stanley-s-mike-wilson-is-bullish-on-s-p-500-with-a-15-upside-view-for-2027/?mobileapp_new=",
-            "kind": "news_article",
-            "preview": "Morgan Stanley’s Mike Wilson Is Bullish On S&P 500 With A 15% Upside View For 2027",
-            "grade": "1차-인용",
-            "published_at": "2026-11-16T17:27:38+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-18T21:05:39+09:00",
             "url": "https://www.cnbc.com/video/2026/11/18/december-fed-meeting-is-the-final-hurdle-before-stocks-find-a-bottom.html",
@@ -1239,27 +1169,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 7,
-        "non_noise": 7,
+        "count": 5,
+        "non_noise": 5,
         "items": [
-          {
-            "at": "2026-11-17T10:05:32+09:00",
-            "url": "https://www.benzinga.com/news/politics/26/11/63315199/exclusive-ryan-detrick-isnt-worried-about-midterm-election-outcome-focus-on-the-fundamentals",
-            "kind": "news_article",
-            "preview": "EXCLUSIVE: Ryan Detrick Isn’t Worried About Midterm Election Outcome – ‘Focus on the Fundamentals’",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-16T19:32:15+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T10:05:32+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4270969-xlk-sectors-relative-performance/",
-            "kind": "news_article",
-            "preview": "Most sectors are outperforming XLK, Ryan Detrick notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-16T16:10:08+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-18T10:05:27+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4293232-technology-beats-sp500-today/",
