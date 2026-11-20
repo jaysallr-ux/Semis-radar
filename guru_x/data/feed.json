@@ -1,33 +1,33 @@
 {
   "schema": "guru-x/v1",
-  "generated_at": "2026-11-20T10:15:58+09:00",
+  "generated_at": "2026-11-20T21:16:14+09:00",
   "data_ok": true,
   "provider": "free",
   "source": "Post IDs discovered via X profile embed and/or Grok x_search (URLs only, Grok wording discarded). Text, author, and time come from X syndication (or X oEmbed fallback), verbatim. Discovery may miss posts; absence from this feed does not mean the person posted nothing.",
   "oembed_selftest": "syndication ok, oembed ok",
   "discovery_stats": {
-    "list": "ok (88 entries)",
+    "list": "ok (85 entries)",
     "timeline": {},
     "grok": "skipped (no XAI_API_KEY)",
     "manual": 55,
-    "urls_found": 241,
-    "already_known": 135,
+    "urls_found": 228,
+    "already_known": 157,
     "too_old": 55,
-    "verified_syndication": 41,
+    "verified_syndication": 8,
     "verified_oembed": 0,
     "rejected_author": 0,
-    "reply_other_kept": 10,
+    "reply_other_kept": 8,
     "verify_failed": 0,
-    "list_oldest": "2026-11-18T17:01:59.000Z",
+    "list_oldest": "2026-11-18T19:46:46.000Z",
     "refreshed": 0,
-    "inbox": 146
+    "inbox": 141
   },
   "discovery_complete": true,
   "manual_ids_updated_at": "2026-10-22T07:25:55+00:00",
   "pickle_inbox": {
     "files": 6,
-    "ids": 146,
-    "latest_collected_at": "2026-11-20T09:50:00+09:00",
+    "ids": 141,
+    "latest_collected_at": "2026-11-20T20:50:00+09:00",
     "blocked": [],
     "bad_files": []
   },
@@ -42,8 +42,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
-      "new_originals_this_run": 3,
+      "last_success_at": "2026-11-20T21:16:14+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -53,8 +53,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-20T21:16:14+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -64,8 +64,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
-      "new_originals_this_run": 0,
+      "last_success_at": "2026-11-20T21:16:14+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -75,8 +75,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
-      "new_originals_this_run": 11,
+      "last_success_at": "2026-11-20T21:16:14+09:00",
+      "new_originals_this_run": 2,
       "error": null
     },
     {
@@ -86,8 +86,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
-      "new_originals_this_run": 9,
+      "last_success_at": "2026-11-20T21:16:14+09:00",
+      "new_originals_this_run": 0,
       "error": null
     },
     {
@@ -97,8 +97,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
-      "new_originals_this_run": 17,
+      "last_success_at": "2026-11-20T21:16:14+09:00",
+      "new_originals_this_run": 9,
       "error": null
     },
     {
@@ -108,8 +108,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
-      "new_originals_this_run": 2,
+      "last_success_at": "2026-11-20T21:16:14+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -119,7 +119,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
+      "last_success_at": "2026-11-20T21:16:14+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -130,8 +130,8 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
-      "new_originals_this_run": 5,
+      "last_success_at": "2026-11-20T21:16:14+09:00",
+      "new_originals_this_run": 1,
       "error": null
     },
     {
@@ -141,7 +141,7 @@
       "role": "core",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
+      "last_success_at": "2026-11-20T21:16:14+09:00",
       "new_originals_this_run": 2,
       "error": null
     },
@@ -152,7 +152,7 @@
       "role": "shadow",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
+      "last_success_at": "2026-11-20T21:16:14+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -163,7 +163,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
+      "last_success_at": "2026-11-20T21:16:14+09:00",
       "new_originals_this_run": 0,
       "error": null
     },
@@ -174,7 +174,7 @@
       "role": "observer",
       "user_id": null,
       "last_fetch_ok": true,
-      "last_success_at": "2026-11-20T10:15:58+09:00",
+      "last_success_at": "2026-11-20T21:16:14+09:00",
       "new_originals_this_run": 0,
       "error": null
     }
@@ -186,26 +186,718 @@
   },
   "media_vision": {
     "status": "ok",
-    "described": 30,
+    "described": 8,
     "pending": 0,
     "errors": 0,
-    "calls_today": 30,
+    "calls_today": 38,
     "daily_cap": 100,
     "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
   },
   "video_audio": {
     "status": "ok",
-    "transcribed": 7,
-    "verified_quotes": 46,
+    "transcribed": 0,
+    "verified_quotes": 0,
     "pending": 0,
     "skipped": 0,
     "errors": 0,
     "calls_today": 7,
     "daily_cap": 20,
     "note": "Gemini transcription of the video attached to the post. Quotes are machine-transcribed without a caption check: evidence at most 1차-B and only for quotes with speaker_verified=true. key_points and direction_hint are Gemini's reading, never evidence.",
-    "linked_to_youtube": 8
+    "linked_to_youtube": 12
   },
   "posts": [
+    {
+      "id": "2123752139818451181",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-20T12:15:42.000Z",
+      "url": "https://x.com/dampedspring/status/2123752139818451181",
+      "text": "$STRC getting cheap to BTC and $MSTR.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00"
+    },
+    {
+      "id": "2123751963976470565",
+      "person": "Bob Elliott",
+      "handle": "BobEUnlimited",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1499109588674793476",
+      "created_at": "2026-11-20T12:15:00.000Z",
+      "url": "https://x.com/BobEUnlimited/status/2123751963976470565",
+      "text": "The Washout\n\nThe recent selloff has felt large up close but pricing of growth across the markets remains elevated just at a time when the risks of a more self-reinforcing down move are growing.\n\nhttps://t.co/ZiErY8oA5h https://t.co/bQ0mnvkINw",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://bobeunlimited.substack.com/p/the-washout"
+      ],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HXkSYDNXUAAiDJQ.png"
+        }
+      ],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00",
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-20T12:16:14+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXkSYDNXUAAiDJQ.png",
+            "image_text": "SPY vs TLT 40% 30% 20% 10% 0% -10% -20% Jan-25 Apr-25 Jul-25 Oct-25 Jan-26 Apr-26 Jul-26 Oct-26",
+            "what_it_shows": "The chart shows the performance comparison between SPY and TLT from January 2025 to late 2026, displaying values ranging from -20% to 40%.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2123741952319381648",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-20T11:35:13.000Z",
+      "url": "https://x.com/dampedspring/status/2123741952319381648",
+      "text": "@Notbullnorbear I've traded 10,186 days while NYSE was open LTD all end with Day.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2123063699342766272",
+          "author": "Notbullnorbear",
+          "created_at": "2026-11-18T14:40:05.000Z",
+          "url": "https://x.com/Notbullnorbear/status/2123063699342766272",
+          "text": "oh you're a day trader? name every day you ever traded",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00"
+    },
+    {
+      "id": "2123732953318478011",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-20T10:59:27.000Z",
+      "url": "https://x.com/dampedspring/status/2123732953318478011",
+      "text": "@alliafzaliann Meh.  Need an actual slowdown to materialize",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2123724724299604305",
+          "author": "alliafzaliann",
+          "created_at": "2026-11-20T10:26:45.000Z",
+          "url": "https://x.com/alliafzaliann/status/2123724724299604305",
+          "text": "@dampedspring I don't know about stocks but bonds are quite attractive still\nImo",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2123718966895952343",
+          "author": "dampedspring",
+          "created_at": "2026-11-20T10:03:53.000Z",
+          "url": "https://x.com/dampedspring/status/2123718966895952343",
+          "text": "Both sides now!",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00"
+    },
+    {
+      "id": "2123732543711154602",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-20T10:57:50.000Z",
+      "url": "https://x.com/dampedspring/status/2123732543711154602",
+      "text": "@ftraderft Nope.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2123724860719550624",
+          "author": "ftraderft",
+          "created_at": "2026-11-20T10:27:18.000Z",
+          "url": "https://x.com/ftraderft/status/2123724860719550624",
+          "text": "@dampedspring Is that code for the trade is done?",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2123718966895952343",
+          "author": "dampedspring",
+          "created_at": "2026-11-20T10:03:53.000Z",
+          "url": "https://x.com/dampedspring/status/2123718966895952343",
+          "text": "Both sides now!",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00"
+    },
+    {
+      "id": "2123732482466128364",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-20T10:57:35.000Z",
+      "url": "https://x.com/dampedspring/status/2123732482466128364",
+      "text": "Turns out it was a bubble https://t.co/8Ta1gglO77 https://t.co/yk5gSkt2zi",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [
+        "https://dampedspring.com/wp-content/uploads/2026/05/Not-enough-pie-its-a-bubble.pdf"
+      ],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HXkDb6DXAAAUM9C.jpg"
+        },
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HXkDb6CXYAAi8Gp.jpg"
+        }
+      ],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed",
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00",
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-20T12:16:14+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXkDb6DXAAAUM9C.jpg",
+            "image_text": "KOSPI Index 4869.96 -267.93 -5.21% At 01:32:50 Price Chart 01/02 - 06/19 Period: 1D Start 4309.63 Change 4742.79 (110.05%) High on 06/18/26 9063.84 Low on 01/02/26 4309.63 EMA(21) 8249.09 9052.42 8.5k 8249.09 8.0k 7.5k 7.0k 6.5k 6.0k 5.5k 5.0k 4.5k Volume 517.25M SMA(15) 529.4M 1.5B 1.0B 529.4M Jan Feb Mar Apr May Jun 2026",
+            "what_it_shows": "The chart shows the KOSPI Index from January 2026 to June 2026, including its price and volume. The index rises sharply to a peak near 9,063 in mid-June before dropping to 4,869.96.",
+            "chart_credit": "unknown"
+          },
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXkDb6CXYAAi8Gp.jpg",
+            "image_text": "KOSPI Index 4869.96 -267.93 -5.21% At 01:32:50 Price Chart YTD 12/30/25 - 11/20/26 Period: 1D Start 4214.17 Change 655.79 (15.56%) High on 06/22/26 9114.55 Low on 12/30/25 4214.17 EMA(21) 5385.36 9.0k 8.5k 8.0k 7.5k 7.0k 6.5k 6.0k 5.5k 5385.36 5.0k 4869.96 4.5k 4.0k Volume 0 SMA(15) 222.83M 1.5B 1.0B 0.5B 222.83M J F M A M J J A S O N 2026",
+            "what_it_shows": "The chart shows the year-to-date KOSPI Index from December 2025 to November 2026, displaying price action and volume. After peaking above 9,100 in mid-2026, the index declines to 4,869.96 by November.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2123730098151133377",
+      "person": "Marko Papic",
+      "handle": "Geo_papic",
+      "tier": 3,
+      "role": "core",
+      "author_id": "1502354421421785088",
+      "created_at": "2026-11-20T10:48:07.000Z",
+      "url": "https://x.com/Geo_papic/status/2123730098151133377",
+      "text": "@iancw79 @JacobShap Totally right Ian. That's a great time period. Trying to stave off Nazis in Weimar would be a cool strategy game.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2123519822327865382",
+          "author": "iancw79",
+          "created_at": "2026-11-19T20:52:33.000Z",
+          "url": "https://x.com/iancw79/status/2123519822327865382",
+          "text": "@JacobShap @Geo_papic You guys will cover all the Paradox games like Europa Universalis and Victoria when you do your “video games” pod. I’ll say one game that I think would be cool that isn’t made: a geopol game about 1920’s Germany. Nazis, commies, monarchist and dems. Gotta be a game there.",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2123491677746626881",
+          "author": "JacobShap",
+          "created_at": "2026-11-19T19:00:43.000Z",
+          "url": "https://x.com/JacobShap/status/2123491677746626881",
+          "text": "Behold, the Cousins are back, dispensing hot takes, free + critical geopol advice for tech CEOs and Democrats, and all the reasons why it's obvious no one actually knows their history. \n\n@Geo_papic \n\nhttps://t.co/Zf9yoG856D",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00"
+    },
+    {
+      "id": "2123729770579976380",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-20T10:46:48.000Z",
+      "url": "https://x.com/dampedspring/status/2123729770579976380",
+      "text": "The direction matters more than the destination at the moment but a few crossroads approach\nOn 11/8 We publish \"Clear Sailing\" calling for a growth scare.  Red Star.  We even called for the crazy ivan rip to 7650 Green Dotted line.  Now we are back on the growth scare path in https://t.co/WQey8OvmiK",
+      "quoted_post_id": "2123513134069760196",
+      "quoted_post": {
+        "id": "2123513134069760196",
+        "author": "dampedspring",
+        "created_at": "2026-11-19T20:25:58.000Z",
+        "url": "https://x.com/dampedspring/status/2123513134069760196",
+        "text": "Our \"Clear Sailing\" WNW to slowdown sea DSR from 11/8 is here.  It links to the more complete \"Karmic Winds\" DSR.  \n\nSince writing we got much shorter equities and thanks to @Jimmyjude13 near the local top.  \n\nIf interested in joining see pinned tweet. https://t.co/uO2s1u9wXG",
+        "available": true,
+        "has_media": false,
+        "media": [],
+        "videos": []
+      },
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HXj_L46XgAASlcn.jpg"
+        }
+      ],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00",
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-20T12:16:14+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXj_L46XgAASlcn.jpg",
+            "image_text": "SPX <5750 5750-6500 6500-7500 7500-8250 >8250 10 Year Note <3 3.0-3.75 3.75-4.5 4.5 > 5.25 >5.25 Recession Island Slowdown Sea Soft Landing Island AI Miracle Beach Debasement Cove T.A.H.I.T.I Run it hot Point Higherer for Longerer Island The House Bessent suspends all 10's to 30's issuance 4% + Inflation Gold at ATH DXY down 5-10% Strait of America",
+            "what_it_shows": "The chart is a conceptual matrix mapping SPX ranges against 10-Year Note yield ranges, divided into themed regions such as Recession Island, Slowdown Sea, and Soft Landing Island. Colored stars and dashed arrows indicate various paths and scenario markers across the grid.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2123726815256515032",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-11-20T10:35:04.000Z",
+      "url": "https://x.com/DariusDale42/status/2123726815256515032",
+      "text": "@Temjinck @claudeai 🤣 https://t.co/4RHJMZAl0J",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "video_frame",
+          "url": "https://pbs.twimg.com/tweet_video_thumb/HXj-R_XXIAAYx6S.jpg"
+        }
+      ],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2123533526578631075",
+          "author": "Temjinck",
+          "created_at": "2026-11-19T21:47:00.000Z",
+          "url": "https://x.com/Temjinck/status/2123533526578631075",
+          "text": "@DariusDale42 @claudeai They are making someone wealthier. The one who sell AI based automated trading system. 🤣",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2123482468762439887",
+          "author": "DariusDale42",
+          "created_at": "2026-11-19T18:24:07.000Z",
+          "url": "https://x.com/DariusDale42/status/2123482468762439887",
+          "text": "QUESTION: If AI/SI is so powerful, why isn’t the technology making retail investors much wealthier? It's already smart enough to solve most/all previously unsolved math problems that were centuries old. Surely @claudeai is smarter than \"newsletter writers\" like me. Thoughts?",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00",
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-20T12:16:14+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "video_frame",
+            "url": "https://pbs.twimg.com/tweet_video_thumb/HXj-R_XXIAAYx6S.jpg",
+            "image_text": "",
+            "what_it_shows": "This is a meme image showing actor Antonio Banderas looking intently at a computer screen before reacting with a nod and a smile.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2123726513707122737",
+      "person": "Darius Dale",
+      "handle": "DariusDale42",
+      "tier": 1,
+      "role": "core",
+      "author_id": "1374003455195545601",
+      "created_at": "2026-11-20T10:33:52.000Z",
+      "url": "https://x.com/DariusDale42/status/2123726513707122737",
+      "text": "America is still one of the few countries, if not the only one, where someone can transition from standing in food bank lines every week to meaningfully supporting them. This country is worth saving. ❤️+🤍+💙=💜\n\nP.S. God is good all the time and all the time God is good!",
+      "quoted_post_id": "2122712038686499111",
+      "quoted_post": {
+        "id": "2122712038686499111",
+        "author": "steven7lamar",
+        "created_at": "2026-11-17T15:22:42.000Z",
+        "url": "https://x.com/steven7lamar/status/2122712038686499111",
+        "text": "Today Einstein Energy launched The Genius of Giving: 200,000+ of our bars donated to Feeding America food banks in Illinois and Missouri, the LA Regional Food Bank, and The Guardsmen in San Francisco.\n\n\"Only a life lived for others is a life worthwhile.\" Albert Einstein https://t.co/DHysCGxqE8",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXVjOxHbUAAFOBj.jpg"
+          }
+        ],
+        "videos": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00",
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-20T12:16:14+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXVjOxHbUAAFOBj.jpg",
+            "image_text": "THE GENIUS OF GIVING SUPER SMART SNACKS EINSTEIN ENERGY",
+            "what_it_shows": "An advertisement featuring a purple-toned depiction of Albert Einstein holding out a snack bar, with the text 'THE GENIUS OF GIVING' and 'EINSTEIN ENERGY SUPER SMART SNACKS'.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2123718966895952343",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-20T10:03:53.000Z",
+      "url": "https://x.com/dampedspring/status/2123718966895952343",
+      "text": "Both sides now!",
+      "quoted_post_id": "2120989238900457578",
+      "quoted_post": {
+        "id": "2120989238900457578",
+        "author": "dampedspring",
+        "created_at": "2026-11-12T21:16:55.000Z",
+        "url": "https://x.com/dampedspring/status/2120989238900457578",
+        "text": "Got lucky selling the top and buying the bottom of this anti growth trade.  Got back in selling stocks and buying bonds at great levels today.  Will add to max. https://t.co/jA9OIPXFRD",
+        "available": true,
+        "has_media": true,
+        "media": [
+          {
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HW9EePjXgAAbdIq.jpg"
+          }
+        ],
+        "videos": []
+      },
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed",
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00",
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-20T12:16:14+00:00",
+        "images": [
+          {
+            "of": "quoted_post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HW9EePjXgAAbdIq.jpg",
+            "image_text": ".SPYTLT U Index 9.4921 0.1025 1.09% At 16:14:04 Price Chart 6M 05/12 - 11/12 Period: 1D Start 8.6855 Change 0.8117 (9.35%) EMA(21) 9.3831 10.0 9.8 9.6 9.4 9.2 9.0 8.8 8.6 8.4 May Jun Jul Aug Sep Oct 11/12/26 1D 3D 1M 6M YTD 1Y 5Y",
+            "what_it_shows": "This chart shows the 6-month price movement and a 21-period EMA for the .SPYTLT U Index from May to November 2026. The index is at 9.4921, reflecting a 1.09% daily change.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
+    {
+      "id": "2123713411376955437",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-20T09:41:48.000Z",
+      "url": "https://x.com/dampedspring/status/2123713411376955437",
+      "text": "Wordle 1,980 3/6*\n\n🟨⬜🟨🟨🟩\n🟨🟨⬜🟩🟩\n🟩🟩🟩🟩🟩\n\nWoke up early for this one",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "list_embed"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00"
+    },
+    {
+      "id": "2123642228442530017",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-20T04:58:57.000Z",
+      "url": "https://x.com/LynAldenContact/status/2123642228442530017",
+      "text": "@ElTimuro To be fair, it’s equally unclear to me why Rings of Power cost a billion dollars.",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2123641365129056726",
+          "author": "ElTimuro",
+          "created_at": "2026-11-20T04:55:31.000Z",
+          "url": "https://x.com/ElTimuro/status/2123641365129056726",
+          "text": "@LynAldenContact \"What I’m confused about is why it cost a billion dollars\"\n\nsame reason rings of power did\n\n\"Complainers on my feed aren’t saying there’s too much violence. Quite the contrary.\"\n\nbecause this is actually GTA (2)\n\nhttps://t.co/p2as8wAcjw\n\nstarting with 3 it because this social",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2123618022371774833",
+          "author": "LynAldenContact",
+          "created_at": "2026-11-20T03:22:46.000Z",
+          "url": "https://x.com/LynAldenContact/status/2123618022371774833",
+          "text": "To be clear, I understand why men want to virtually steal cars and do whatever they want and build rep.\n\nWhat I’m confused about is why it cost a billion dollars, half of Twitter hates it, and it reached my macro feed.\n\n-Complainers on my feed aren’t saying there’s too much",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00"
+    },
+    {
+      "id": "2123609145538457626",
+      "person": "Lyn Alden",
+      "handle": "LynAldenContact",
+      "tier": 3,
+      "role": "core",
+      "author_id": "823766058909761536",
+      "created_at": "2026-11-20T02:47:29.000Z",
+      "url": "https://x.com/LynAldenContact/status/2123609145538457626",
+      "text": "Seems like a billion dollars misspent to me, but I was never the target audience anyway.\n\nNow it’s all over my feed. https://t.co/2LGwGUHCx1",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HXiTQ59XwAA-Q-J.jpg"
+        }
+      ],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": false,
+      "reply_context": [],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00",
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-20T12:16:14+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXiTQ59XwAA-Q-J.jpg",
+            "image_text": "EXPLAIN TO ME WHY YOU ALL CARE ABOUT GTA 6.",
+            "what_it_shows": "An internet meme featuring an illustrated character asking why people care about the video game GTA 6.",
+            "chart_credit": "unknown"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
+    },
     {
       "id": "2123577803798884502",
       "person": "Bob Elliott",
@@ -543,6 +1235,53 @@
         ],
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
       }
+    },
+    {
+      "id": "2123568833390903698",
+      "person": "Andy Constan",
+      "handle": "dampedspring",
+      "tier": 2,
+      "role": "core",
+      "author_id": "1546222940",
+      "created_at": "2026-11-20T00:07:18.000Z",
+      "url": "https://x.com/dampedspring/status/2123568833390903698",
+      "text": "@vermontmountain I mean the literal babies.  Trump accounts",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": false,
+      "thread": [],
+      "media": [],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2123567258328830245",
+          "author": "vermontmountain",
+          "created_at": "2026-11-20T00:01:03.000Z",
+          "url": "https://x.com/vermontmountain/status/2123567258328830245",
+          "text": "@dampedspring Been doing this a long time and it is still a great lesson",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2123566959832777101",
+          "author": "dampedspring",
+          "created_at": "2026-11-19T23:59:51.000Z",
+          "url": "https://x.com/dampedspring/status/2123566959832777101",
+          "text": "The baby's experiencing their first drawdown is a great lesson https://t.co/IKX11C3QF4",
+          "available": true,
+          "has_media": true
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00"
     },
     {
       "id": "2123552449247998001",
@@ -1225,7 +1964,9 @@
             "conviction": "stated"
           }
         ],
-        "direction_hint": "mixed"
+        "direction_hint": "mixed",
+        "same_as_youtube": "rkiRV0HcOaM",
+        "same_as_youtube_score": 0.87
       }
     },
     {
@@ -2035,7 +2776,10 @@
             "conviction": "stated"
           }
         ],
-        "direction_hint": "bearish"
+        "direction_hint": "bearish",
+        "same_as_youtube_basis": "same show within 3h",
+        "same_as_youtube": "rkiRV0HcOaM",
+        "same_as_youtube_score": 0.8
       }
     },
     {
@@ -2203,7 +2947,10 @@
             "conviction": "hypothetical"
           }
         ],
-        "direction_hint": "bearish"
+        "direction_hint": "bearish",
+        "same_as_youtube_basis": "same show within 3h",
+        "same_as_youtube": "rkiRV0HcOaM",
+        "same_as_youtube_score": 0.8
       }
     },
     {
@@ -2681,7 +3428,10 @@
             "conviction": "risk_scenario"
           }
         ],
-        "direction_hint": "bearish"
+        "direction_hint": "bearish",
+        "same_as_youtube_basis": "same show within 3h",
+        "same_as_youtube": "rkiRV0HcOaM",
+        "same_as_youtube_score": 0.8
       }
     },
     {
@@ -3190,6 +3940,74 @@
         "list_embed"
       ],
       "first_seen_at": "2026-11-20T01:15:58+00:00"
+    },
+    {
+      "id": "2123409874616820140",
+      "person": "Warren Pies",
+      "handle": "WarrenPies",
+      "tier": 1,
+      "role": "core",
+      "author_id": "2326980139",
+      "created_at": "2026-11-19T13:35:39.000Z",
+      "url": "https://x.com/WarrenPies/status/2123409874616820140",
+      "text": "@TheStalwart I haven't finished the whole podcast (currently listening).\n\nBut, my initial thought is that the cost of capital angle is not convincing. If the rise in rents was a function of higher cost of capital, then you would see availability creeping up too (our data). But, all GPUs have https://t.co/XiMzQIdGzD",
+      "quoted_post_id": null,
+      "quoted_post": null,
+      "links": [],
+      "has_media": true,
+      "thread": [],
+      "media": [
+        {
+          "kind": "photo",
+          "url": "https://pbs.twimg.com/media/HXfdk1_WkAIBqwt.jpg"
+        }
+      ],
+      "videos": [],
+      "is_self_reply": false,
+      "is_reply_to_other": true,
+      "reply_context": [
+        {
+          "id": "2123395350937714814",
+          "author": "TheStalwart",
+          "created_at": "2026-11-19T12:37:57.000Z",
+          "url": "https://x.com/TheStalwart/status/2123395350937714814",
+          "text": "Lots of folks who are all in on AI have been tweeting this chart, or variations of it. But if compute buyers are seeing their financing conditions weaken, or cost of capital going up, the more they have to pay for chips.",
+          "available": true,
+          "has_media": false
+        },
+        {
+          "id": "2123390368766886138",
+          "author": "TheStalwart",
+          "created_at": "2026-11-19T12:18:09.000Z",
+          "url": "https://x.com/TheStalwart/status/2123390368766886138",
+          "text": "There’s plenty of politics and scandal right now in this industry. But we’ll leave most of txt to others. The question for us is whether the math maths out. And really there are good reasons to think it’s not, at least as currently arranged.",
+          "available": true,
+          "has_media": false
+        }
+      ],
+      "verification": "syndication",
+      "rev": 5,
+      "possibly_truncated": false,
+      "discovered_via": [
+        "pickle_inbox"
+      ],
+      "first_seen_at": "2026-11-20T12:16:14+00:00",
+      "media_summary": {
+        "status": "ready",
+        "model": "models/gemini-3.5-flash-lite",
+        "at": "2026-11-20T12:16:14+00:00",
+        "images": [
+          {
+            "of": "post",
+            "kind": "photo",
+            "url": "https://pbs.twimg.com/media/HXfdk1_WkAIBqwt.jpg",
+            "image_text": "3Fourteen GPU Availability Fast Index\nDaily Frequency 2023-08-19 to 2026-11-19\nComposite of on-demand cloud availability across multiple Nvidia datacenter GPUs: A100, H100, GH200, B200. Newer generations carry greater weight. Underlying series use trailing 10-day averages.\n3Fourteen GPU Availability Fast Index (2026-11-19 = 8.4%)\nA100 H100 GH200 B200\n3FOURTEEN RESEARCH\nMANAGE RISK. EXPLOIT OPPORTU",
+            "what_it_shows": "The chart shows the 3Fourteen GPU Availability Fast Index from August 19, 2023, to November 19, 2026, tracking on-demand cloud availability for Nvidia GPU models A100, H100, GH200, and B200. The composite index stands at 8.4% at the latest reading on November 19, 2026.",
+            "chart_credit": "3Fourteen Research"
+          }
+        ],
+        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
+      }
     },
     {
       "id": "2123394236301316409",
@@ -19052,232 +19870,6 @@
         "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
       },
       "first_seen_at": "2026-11-13T12:34:15.000Z"
-    },
-    {
-      "id": "2121215248988295307",
-      "person": "Bob Elliott",
-      "handle": "BobEUnlimited",
-      "tier": 3,
-      "role": "core",
-      "author_id": "1499109588674793476",
-      "created_at": "2026-11-13T12:15:00.000Z",
-      "url": "https://x.com/BobEUnlimited/status/2121215248988295307",
-      "text": "“There’s A Dragon in My Garage!”\n\nEvery day we hear tales of extraordinary productivity growth from the AI revolution. But there is a much simpler explanation for the limited signs of improving output - an old school capex boom.\n\nhttps://t.co/uqbJVWlc3U https://t.co/poldQCnjBm",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [
-        "https://bobeunlimited.substack.com/p/theres-a-dragon-in-my-garage"
-      ],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HXAJ5ciXwAE3uYZ.png"
-        }
-      ],
-      "videos": [],
-      "is_self_reply": false,
-      "is_reply_to_other": false,
-      "reply_context": [],
-      "verification": "syndication",
-      "rev": 5,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-13T12:17:21+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HXAJ5ciXwAE3uYZ.png",
-            "image_text": "APOLLO\nProductivity growth: TFP vs. Labor output per hour\n% (yoy)\n-TFP -Output per hour\n8\n6\n4\n2\n0\n-2\n-4\nJan-85\nJan-87\nJan-89\nJan-91\nJan-93\nJan-95\nJan-97\nJan-99\nJan-01\nJan-03\nJan-05\nJan-07\nJan-09\nJan-11\nJan-13\nJan-15\nJan-17\nJan-19\nJan-21\nJan-23\nJan-25\nNote: Total Factor Productivity (TFP) is the utilization-adjusted series from the San Francisco Fed (Fernald, 2014), adjusted for cyclical variation ",
-            "what_it_shows": "The line chart displays year-over-year productivity growth for TFP and output per hour from January 1985 to approximately January 2025.",
-            "chart_credit": "APOLLO"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      },
-      "first_seen_at": "2026-11-13T12:15:00.000Z"
-    },
-    {
-      "id": "2121187594302259260",
-      "person": "Andy Constan",
-      "handle": "dampedspring",
-      "tier": 2,
-      "role": "core",
-      "author_id": "1546222940",
-      "created_at": "2026-11-13T10:25:06.000Z",
-      "url": "https://x.com/dampedspring/status/2121187594302259260",
-      "text": "Wordle 1,973 4/6*\n\n⬜⬜⬜⬜🟩\n⬜⬜🟨⬜🟩\n🟩🟩⬜🟩🟩\n🟩🟩🟩🟩🟩\n\nEven I'm not this old",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": false,
-      "thread": [],
-      "media": [],
-      "videos": [],
-      "is_self_reply": false,
-      "is_reply_to_other": false,
-      "reply_context": [],
-      "verification": "syndication",
-      "rev": 5,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "first_seen_at": "2026-11-13T10:25:06.000Z"
-    },
-    {
-      "id": "2121092200003956918",
-      "person": "Ryan Detrick",
-      "handle": "RyanDetrick",
-      "tier": 2,
-      "role": "core",
-      "author_id": "21232827",
-      "created_at": "2026-11-13T04:06:03.000Z",
-      "url": "https://x.com/RyanDetrick/status/2121092200003956918",
-      "text": "Rough year for some of the TIME persons of the year. 📉 \n\nThe 2026 winner is announced soon. 👀 https://t.co/EptD1GxH96",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HW-iHSmWEAAfuls.jpg"
-        }
-      ],
-      "videos": [],
-      "is_self_reply": false,
-      "is_reply_to_other": false,
-      "reply_context": [],
-      "verification": "syndication",
-      "rev": 5,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-13T12:17:21+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HW-iHSmWEAAfuls.jpg",
-            "image_text": "DEC. 29, 2025 PERSON OF THE YEAR TIME THE ARCHITECTS OF AI",
-            "what_it_shows": "This image is a mock TIME magazine cover dated Dec. 29, 2025, titled 'Person of the Year: The Architects of AI' featuring figures sitting on a steel beam above a cityscape.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      },
-      "first_seen_at": "2026-11-13T04:06:03.000Z"
-    },
-    {
-      "id": "2121078591731777540",
-      "person": "Jim Bianco",
-      "handle": "BiancoResearch",
-      "tier": 3,
-      "role": "core",
-      "author_id": "188369814",
-      "created_at": "2026-11-13T03:11:58.000Z",
-      "url": "https://x.com/BiancoResearch/status/2121078591731777540",
-      "text": "The 10-year yield has risen over 25 bps in four days (this week). In recent years, only four other periods have seen larger moves.\n\nThis yield rise is approaching the \"epic\" stage. https://t.co/gDeKIv7Z5y",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HW-RPmHaMAAxzQB.png"
-        }
-      ],
-      "videos": [],
-      "is_self_reply": false,
-      "is_reply_to_other": false,
-      "reply_context": [],
-      "verification": "syndication",
-      "rev": 5,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-13T12:17:21+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HW-RPmHaMAAxzQB.png",
-            "image_text": "US 10-Year Yield\nYield *\n5.0%\n4.5%\n4.0%\n3.5%\n3.0%\n2.5%\n10/19/23 4.990%\n10/5/26 5.305%\n11/5/26 4.835%\n11/12/26 5.111%\n9/27/22 0.415%\n0.4%\n10/19/23 0.377%\n10/7/24 0.294%\n4-Day Change\n4/10/25 0.431%\n9/24/26 0.202%\n11/12/26 0.253%\n0.2%\n0.0%\n-0.2%\n-0.4%\n2023\n2024\n2025\n2026\n2027\nSource: Bloomberg\n© 2026 Bianco Research, L.L.C.",
-            "what_it_shows": "The chart shows the US 10-Year Yield from 2023 to 2027 in the top panel and the corresponding 4-Day Change in the bottom panel. Annotated points highlight specific historical dates and values for both the yield level and its 4-day changes.",
-            "chart_credit": "Bianco Research, L.L.C."
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      },
-      "first_seen_at": "2026-11-13T03:11:58.000Z"
-    },
-    {
-      "id": "2121050241289924858",
-      "person": "Mark Newton",
-      "handle": "MarkNewtonCMT",
-      "tier": 1,
-      "role": "core",
-      "author_id": "253168011",
-      "created_at": "2026-11-13T01:19:19.000Z",
-      "url": "https://x.com/MarkNewtonCMT/status/2121050241289924858",
-      "text": "$AMD has gained ground rapidly as NVDA has fallen & while i have no illusions about these being substitutes, it is worth paying attention to-  Ideally, some backing and filling in AMD between now and Nov Expiration which would make this attractive \n\nThese \"attempted\" H&S patterns https://t.co/gEdteV6Cp6",
-      "quoted_post_id": null,
-      "quoted_post": null,
-      "links": [],
-      "has_media": true,
-      "thread": [],
-      "media": [
-        {
-          "kind": "photo",
-          "url": "https://pbs.twimg.com/media/HW967cVXMAA6-AD.jpg"
-        }
-      ],
-      "videos": [],
-      "is_self_reply": false,
-      "is_reply_to_other": false,
-      "reply_context": [],
-      "verification": "syndication",
-      "rev": 5,
-      "possibly_truncated": false,
-      "discovered_via": [
-        "list_embed"
-      ],
-      "media_summary": {
-        "status": "ready",
-        "model": "models/gemini-3.5-flash-lite",
-        "at": "2026-11-13T12:17:21+00:00",
-        "images": [
-          {
-            "of": "post",
-            "kind": "photo",
-            "url": "https://pbs.twimg.com/media/HW967cVXMAA6-AD.jpg",
-            "image_text": "Advanced Micro Devices Inc. About Elec-Semiconductor Fablss (123/145) Set Alert Add to List 50 Days Avg Vol. 25,414,580 Market Cap. $906.80B 50 Day Avg $ Vol. $13,503,589,538 21 Day ATR % 7.79% Off 52-Week High -11.12% 0% from pivot in 39 days $582.91 (-$2.39) -0.41% After Hours 07:59 PM ET 11/12/2026 $585.30 AMD(+$32.40) +5.86% Vol. 55,393,795+144.63% Last Update: 04:00 PM ET 11/12/2026 01 15 29 ",
-            "what_it_shows": "The chart shows the stock price and volume for Advanced Micro Devices Inc. (AMD) from August through January, featuring a moving average line and multiple labeled price points.",
-            "chart_credit": "unknown"
-          }
-        ],
-        "note": "Gemini description of the attached image(s). Context only: not the tracked person's words, never evidence for stance, freshness, convergence, or alerts."
-      },
-      "first_seen_at": "2026-11-13T01:19:19.000Z"
     }
   ],
   "person_index": {
@@ -19287,24 +19879,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 42,
-        "non_noise": 39,
+        "count": 49,
+        "non_noise": 46,
         "items": [
-          {
-            "at": "2026-11-17T20:02:21+09:00",
-            "url": "https://x.com/dampedspring/status/2122646519895797765",
-            "kind": "post",
-            "preview": "Wordle 1,977 3/6* 🟨⬜🟩🟨⬜ ⬜🟨🟩🟩⬜ 🟩🟩🟩🟩🟩",
-            "noise_hint": true
-          },
-          {
-            "at": "2026-11-17T20:16:58+09:00",
-            "url": "https://x.com/dampedspring/status/2122650198136828070",
-            "kind": "quote_post",
-            "preview": "Hadn't thought about the ability to produce a legally compliant 10-Q. Interesting thought. $NVDA",
-            "quoted_author": "HyperbolicDisco",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-17T22:23:27+09:00",
             "url": "https://x.com/dampedspring/status/2122682026369470908",
@@ -19552,6 +20129,13 @@
             "noise_hint": false
           },
           {
+            "at": "2026-11-20T09:07:18+09:00",
+            "url": "https://x.com/dampedspring/status/2123568833390903698",
+            "kind": "reply",
+            "preview": "@vermontmountain I mean the literal babies. Trump accounts",
+            "noise_hint": false
+          },
+          {
             "at": "2026-11-20T09:07:42+09:00",
             "url": "https://x.com/dampedspring/status/2123568932694921243",
             "kind": "post",
@@ -19592,6 +20176,64 @@
             "kind": "reply",
             "preview": "@Davesally6 Not enough juice for me. .8 maybe. 1.25 go the other way",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T18:41:48+09:00",
+            "url": "https://x.com/dampedspring/status/2123713411376955437",
+            "kind": "post",
+            "preview": "Wordle 1,980 3/6* 🟨⬜🟨🟨🟩 🟨🟨⬜🟩🟩 🟩🟩🟩🟩🟩 Woke up early for this one",
+            "noise_hint": true
+          },
+          {
+            "at": "2026-11-20T19:03:53+09:00",
+            "url": "https://x.com/dampedspring/status/2123718966895952343",
+            "kind": "quote_post",
+            "preview": "Both sides now!",
+            "quoted_author": "dampedspring",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T19:46:48+09:00",
+            "url": "https://x.com/dampedspring/status/2123729770579976380",
+            "kind": "quote_post",
+            "preview": "The direction matters more than the destination at the moment but a few crossroads approach On 11/8…",
+            "quoted_author": "dampedspring",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T19:57:35+09:00",
+            "url": "https://x.com/dampedspring/status/2123732482466128364",
+            "kind": "post",
+            "preview": "Turns out it was a bubble",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T19:57:50+09:00",
+            "url": "https://x.com/dampedspring/status/2123732543711154602",
+            "kind": "reply",
+            "preview": "@ftraderft Nope.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T19:59:27+09:00",
+            "url": "https://x.com/dampedspring/status/2123732953318478011",
+            "kind": "reply",
+            "preview": "@alliafzaliann Meh. Need an actual slowdown to materialize",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T20:35:13+09:00",
+            "url": "https://x.com/dampedspring/status/2123741952319381648",
+            "kind": "reply",
+            "preview": "@Notbullnorbear I've traded 10,186 days while NYSE was open LTD all end with Day.",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T21:15:42+09:00",
+            "url": "https://x.com/dampedspring/status/2123752139818451181",
+            "kind": "post",
+            "preview": "$STRC getting cheap to BTC and $MSTR.",
+            "noise_hint": false
           }
         ]
       },
@@ -19600,13 +20242,6 @@
         "count": 21,
         "non_noise": 21,
         "items": [
-          {
-            "at": "2026-11-17T21:15:00+09:00",
-            "url": "https://x.com/BobEUnlimited/status/2122664801310548220",
-            "kind": "post",
-            "preview": "Markets See Peak Nominal Growth Behind Us Oil, copper, stocks, gold, bitcoin, and the dollar all su…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-17T23:41:57+09:00",
             "url": "https://x.com/BobEUnlimited/status/2122701782555980167",
@@ -19748,22 +20383,21 @@
             "kind": "post",
             "preview": "Is it me or is $NVDA at fall '24 levels and 15x trailing 12m earnings starting to look interesting?…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T21:15:00+09:00",
+            "url": "https://x.com/BobEUnlimited/status/2123751963976470565",
+            "kind": "post",
+            "preview": "The Washout The recent selloff has felt large up close but pricing of growth across the markets rem…",
+            "noise_hint": false
           }
         ]
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 16,
-        "non_noise": 16,
+        "count": 15,
+        "non_noise": 15,
         "items": [
-          {
-            "at": "2026-11-17T12:09:40+09:00",
-            "url": "https://x.com/jam_croissant/status/2122527562098487534",
-            "kind": "quote_post",
-            "preview": "🔄 🔄 🔄 🔄",
-            "quoted_author": "nbcsnl",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-17T23:24:06+09:00",
             "url": "https://x.com/jam_croissant/status/2122697292423573611",
@@ -19879,46 +20513,9 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 28,
-        "non_noise": 27,
+        "count": 25,
+        "non_noise": 24,
         "items": [
-          {
-            "at": "2026-11-17T20:16:15+09:00",
-            "url": "https://x.com/DariusDale42/status/2122650015025766464",
-            "kind": "quote_post",
-            "preview": "Reminder: You are an adult; you can do whatever you want with your money. Reminder: The market does…",
-            "quoted_author": "42Macro",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T20:16:30+09:00",
-            "url": "https://x.com/DariusDale42/status/2122650078380794074",
-            "kind": "quote_post",
-            "preview": "Reminder: You are an adult; you can do whatever you want with your money. Reminder: The market does…",
-            "quoted_author": "42Macro",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T20:22:20+09:00",
-            "url": "https://x.com/DariusDale42/status/2122651546865525159",
-            "kind": "reply",
-            "preview": "@BeameAbe Thank you, brother Abe! Your continued support means a lot, my friend. Win the day!",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T20:22:53+09:00",
-            "url": "https://x.com/DariusDale42/status/2122651684279099545",
-            "kind": "reply",
-            "preview": "@NovitskySc94827 Thanks, Scott! I appreciate you, my friend. Consider joining our global investor c…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T20:25:08+09:00",
-            "url": "https://x.com/DariusDale42/status/2122652251311243316",
-            "kind": "reply",
-            "preview": "@WildForLess @42Macro Thanks, mate—we appreciate you. Good question for the @42Macro dashboard. I d…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-17T23:05:50+09:00",
             "url": "https://x.com/DariusDale42/status/2122692691616006392",
@@ -20091,30 +20688,29 @@
             "kind": "reply",
             "preview": "Here’s the Stan Druckenmiller discussion that I referenced:",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T19:33:52+09:00",
+            "url": "https://x.com/DariusDale42/status/2123726513707122737",
+            "kind": "quote_post",
+            "preview": "America is still one of the few countries, if not the only one, where someone can transition from s…",
+            "quoted_author": "steven7lamar",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T19:35:04+09:00",
+            "url": "https://x.com/DariusDale42/status/2123726815256515032",
+            "kind": "reply",
+            "preview": "@Temjinck @claudeai 🤣",
+            "noise_hint": false
           }
         ]
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-17T13:50:03+09:00",
-            "url": "https://x.com/BiancoResearch/status/2122552826538996058",
-            "kind": "quote_post",
-            "preview": "@RMKOutFront",
-            "quoted_author": "Acyn",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T14:23:47+09:00",
-            "url": "https://x.com/BiancoResearch/status/2122561316263174205",
-            "kind": "quote_post",
-            "preview": "@Cryptokiwi15 @OryxInvMarkets @Cointelegraph @glassnode Updated here",
-            "quoted_author": "biancoresearch",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-18T22:51:12+09:00",
             "url": "https://x.com/BiancoResearch/status/2123051396823953682",
@@ -20191,8 +20787,8 @@
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 11,
-        "non_noise": 11,
+        "count": 13,
+        "non_noise": 13,
         "items": [
           {
             "at": "2026-11-18T08:15:39+09:00",
@@ -20274,6 +20870,20 @@
             "kind": "reply",
             "preview": "@dubberod @TXMCtrades @_wurldonfilm Mistborn is shorter, faster, and more accessible than Stormligh…",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T11:47:29+09:00",
+            "url": "https://x.com/LynAldenContact/status/2123609145538457626",
+            "kind": "post",
+            "preview": "Seems like a billion dollars misspent to me, but I was never the target audience anyway. Now it’s a…",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T13:58:57+09:00",
+            "url": "https://x.com/LynAldenContact/status/2123642228442530017",
+            "kind": "reply",
+            "preview": "@ElTimuro To be fair, it’s equally unclear to me why Rings of Power cost a billion dollars.",
+            "noise_hint": false
           }
         ]
       },
@@ -20328,8 +20938,8 @@
       },
       "Marko Papic": {
         "role": "core",
-        "count": 6,
-        "non_noise": 6,
+        "count": 7,
+        "non_noise": 7,
         "items": [
           {
             "at": "2026-11-17T23:26:27+09:00",
@@ -20372,56 +20982,21 @@
             "kind": "reply",
             "preview": "@geo_fed @JacobShap What is there to fade?",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-20T19:48:07+09:00",
+            "url": "https://x.com/Geo_papic/status/2123730098151133377",
+            "kind": "reply",
+            "preview": "@iancw79 @JacobShap Totally right Ian. That's a great time period. Trying to stave off Nazis in Wei…",
+            "noise_hint": false
           }
         ]
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 55,
-        "non_noise": 55,
+        "count": 49,
+        "non_noise": 49,
         "items": [
-          {
-            "at": "2026-11-17T12:51:00+09:00",
-            "url": "https://x.com/RyanDetrick/status/2122537966111273360",
-            "kind": "post",
-            "preview": "Big day for packaged foods & meats",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T12:51:50+09:00",
-            "url": "https://x.com/RyanDetrick/status/2122538174631076014",
-            "kind": "post",
-            "preview": "Not surprising, the worst stocks of the day was a lot of tech",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T12:52:40+09:00",
-            "url": "https://x.com/RyanDetrick/status/2122538386372038815",
-            "kind": "post",
-            "preview": "Only 2 out of 46 country ETFs higher today",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T13:18:55+09:00",
-            "url": "https://x.com/RyanDetrick/status/2122544992057004150",
-            "kind": "post",
-            "preview": "Shelter no longer helping overall inflation? @ApartmentList index YoY is finally positive after thr…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T13:23:13+09:00",
-            "url": "https://x.com/RyanDetrick/status/2122546074116034721",
-            "kind": "post",
-            "preview": "The @AtlantaFed Sticky Price CPI measures inflation for items whose prices typically don't change f…",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T14:14:55+09:00",
-            "url": "https://x.com/RyanDetrick/status/2122559084004012485",
-            "kind": "post",
-            "preview": "$XLK is down more than 18% since the last $SPY ATH on October 6. Six sectors are up more than 5% si…",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-17T22:22:26+09:00",
             "url": "https://x.com/RyanDetrick/status/2122681771103854638",
@@ -20774,8 +21349,8 @@
       },
       "Warren Pies": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-18T07:46:53+09:00",
@@ -20789,6 +21364,13 @@
             "url": "https://x.com/WarrenPies/status/2122836315892797598",
             "kind": "reply",
             "preview": "@jnconkle 👀",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-19T22:35:39+09:00",
+            "url": "https://x.com/WarrenPies/status/2123409874616820140",
+            "kind": "reply",
+            "preview": "@TheStalwart I haven't finished the whole podcast (currently listening). But, my initial thought is…",
             "noise_hint": false
           }
         ]
