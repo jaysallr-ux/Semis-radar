@@ -15,7 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -35,7 +35,10 @@ FEEDS = {
 # First build only: the checkpoints the 11/01 11:00 run stored.
 SEED_LOWER = {"x": "2026-11-01T10:15:33+09:00", "yt": "2026-11-01T10:10:28+09:00", "web": "2026-11-01T10:05:24+09:00"}
 PEOPLE = REPO / "guru_yt" / "channels.json"
-FIELDS_NOTE = ("A reply_bundle record holds one person's replies to other accounts (items: each reply, its URL and the "
+FIELDS_NOTE = ("A repost_bundle record holds one person's quote posts of material published before this window "
+               "(items: own text, quoted author and quoted_at, the original date); resolve it like a reply_bundle, and date "
+               "any statement from the quoted material by quoted_at, never by the re-share. "
+               "A reply_bundle record holds one person's replies to other accounts (items: each reply, its URL and the "
                "post it answers); resolve it with one rid and one source entry, and show only the items with substance. "
                "rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a "
                "source number [n] (several rids may share one [n] when they are the same appearance), or listed "
@@ -71,6 +74,7 @@ def x_records(feed: dict, lo: datetime, hi: datetime) -> tuple[list[dict], list[
         q = p.get("quoted_post") or {}
         rc = p.get("reply_context") or []
         kind = "quote_post" if q else ("reply" if rc else "post")
+        q_at = pi._parse(q.get("created_at")) if q else None
         r = {"feed": "X", "person": p.get("person"), "role": p.get("role") or "core", "tier": p.get("tier"),
              "at": kst(at), "url": p.get("url"), "kind": kind,
              "preview": pi._preview(p.get("text"), 140), "quoted_author": q.get("author") if q else None,
@@ -78,6 +82,9 @@ def x_records(feed: dict, lo: datetime, hi: datetime) -> tuple[list[dict], list[
              "_same_yt": vt.get("same_as_youtube"),
              "late_found": "늦게 발견 (이번 창에서 처음 수집)" if late_found and not late_video else None,
              "_reply_other": bool(p.get("is_reply_to_other")),
+             "quoted_at": kst(q_at)[:10] if q_at else None,
+             # re-share of something published well before this window (e.g. 5x "ICYMI" of old 42 Macro clips)
+             "_old_quote": bool(q_at and q_at <= lo - timedelta(days=1)),
              "video": (f"{vt.get('evidence_grade')} · 검증 인용 {sum(1 for x in vt.get('quotes') or [] if x.get('speaker_verified'))}개"
                        + (" · 전사가 이번 창에 완료" if late_video else "")) if vt.get("status") == "ready" else None}
         (auto if pi.x_noise(p) else recs).append(r)
@@ -154,6 +161,51 @@ def bundle_replies(recs: list[dict]) -> list[dict]:
     return out
 
 
+def bundle_reposts(recs: list[dict]) -> list[dict]:
+    """One record per person for re-shares of older material (quote posts whose quoted post predates the window by
+    more than a day). Five "ICYMI" re-shares of October clips made five rids on 11/20 and pushed the report over."""
+    out, groups = [], {}
+    for r in recs:
+        if r.pop("_old_quote", False) and r.get("kind") == "quote_post":
+            groups.setdefault(r["person"], []).append(r)
+        else:
+            out.append(r)
+    for person, rs in groups.items():
+        if len(rs) == 1:
+            rs[0]["repost_of_older"] = f"인용한 원글은 {rs[0].get('quoted_at')} 게시 (이번 창 이전)"
+            out.append(rs[0])
+            continue
+        rs.sort(key=lambda r: r["at"])
+        out.append({"feed": "X", "person": person, "role": rs[0]["role"], "tier": rs[0]["tier"], "at": rs[-1]["at"],
+                    "url": rs[-1]["url"], "kind": "repost_bundle",
+                    "preview": f"예전 글·영상 재공유 {len(rs)}개 묶음 (원본 {rs[0].get('quoted_at')}~{rs[-1].get('quoted_at')})",
+                    "_same_yt": None,
+                    "items": [{k: r[k] for k in ("at", "url", "preview", "quoted_author", "quoted_at", "video") if r.get(k)}
+                              for r in rs]})
+    return out
+
+
+def link_web_to_yt(records: list[dict], yt_videos: list[dict]) -> None:
+    """A web video page of the same interview a YouTube record already covers (e.g. Bitcoin Magazine's page for a
+    Bitcoin Magazine interview re-uploaded on 42 Macro) shares that record's appearance."""
+    meta = {v.get("video_id"): v for v in yt_videos}
+    yts = [r for r in records if r.get("_vid")]
+    for w in records:
+        if w.get("feed") != "web" or w.get("kind") != "video_page" or not w.get("outlet"):
+            continue
+        outlet = w["outlet"].lower()
+        w_pub = pi._parse(w.get("published_at"))
+        for y in yts:
+            v = meta.get(y["_vid"]) or {}
+            if y["person"] != w["person"]:
+                continue
+            text = " ".join(str(v.get(k) or "") for k in ("title", "description", "appearance_excerpt", "channel")).lower()
+            y_pub = pi._parse(v.get("published_at"))
+            if outlet in text and w_pub and y_pub and abs((w_pub - y_pub).total_seconds()) <= 48 * 3600:
+                w.setdefault("_same_rec", []).append(y)
+                y.setdefault("_same_rec", []).append(w)
+
+
 def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:  # noqa: C901
     window, records, auto = {}, [], []
     for k, f in feeds.items():
@@ -169,12 +221,13 @@ def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:  # n
             yt_at = {v.get("video_id"): pi._parse(v.get("evidence_ready_at") or v.get("first_seen_at"))
                      for v in feeds["yt"].get("videos", [])}
             r = [x for x in r if not (x.get("_same_yt") and yt_at.get(x["_same_yt"]) and yt_at[x["_same_yt"]] <= yt_lo)]
-            records += bundle_replies(r)
+            records += bundle_reposts(bundle_replies(r))
             auto += a
         elif k == "yt":
             records += yt_records(f, lo, hi)
         else:
             records += web_records(f, lo, hi)
+    link_web_to_yt(records, feeds["yt"].get("videos", []))
     watch_only = [r for r in records if r["person"] in watch]
     records = [r for r in records if r["person"] not in watch]
     order = {"core": 0, "shadow": 1, "observer": 2}
@@ -194,8 +247,11 @@ def build_one(feeds: dict, lower: dict, now: datetime, watch: set) -> dict:  # n
         if yt in vid_rid:
             same.append(vid_rid[yt])
         same += x_same.get(r.pop("_vid", None) or "", [])
+        same += [o["rid"] for o in r.get("_same_rec", []) if o.get("rid") and o["rid"] not in same]
         if same:
             r["same_interview_as"] = same
+    for r in records:
+        r.pop("_same_rec", None)
     records = [{k: v for k, v in r.items() if v not in (None, "", [])} for r in records]
     by_person: dict[str, list[str]] = {}
     for r in records:
