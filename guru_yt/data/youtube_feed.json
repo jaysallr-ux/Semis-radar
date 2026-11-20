@@ -1,21 +1,17 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-20T10:10:38+09:00",
+  "generated_at": "2026-11-20T21:10:35+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-20T06:20:27+09:00",
-    "merged_from_discovery": 3,
+    "last_discovery_at": "2026-11-20T10:10:38+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 0,
-      "rejected": 2,
-      "reasons": {
-        "GVYglll7Wgs": "channel Bitcoin Magazine not allowlisted",
-        "GIEk6iHtD2E": "older than window"
-      }
+      "accepted": 1,
+      "rejected": 0
     }
   },
   "quote_verify_threshold": 90,
@@ -62,7 +58,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-07T03:00:32+09:00",
+      "oldest_rss": "2026-10-08T00:00:01+09:00",
       "gap_possible": false,
       "matched": 2
     },
@@ -95,7 +91,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-04-16T23:07:24+09:00",
+      "oldest_rss": "2026-04-23T06:58:33+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -106,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-18T06:50:14+09:00",
+      "oldest_rss": "2026-11-18T07:08:16+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -205,8 +201,8 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-19T22:53:27+09:00",
-      "gap_possible": true,
+      "oldest_rss": "2026-11-20T00:25:19+09:00",
+      "gap_possible": false,
       "matched": 0
     },
     {
@@ -216,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-19T20:36:06+09:00",
+      "oldest_rss": "2026-11-20T00:56:06+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -227,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-19T00:09:31+09:00",
+      "oldest_rss": "2026-11-19T04:30:37+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -238,14 +234,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-15T11:30:14+09:00",
+      "oldest_rss": "2026-11-15T22:30:22+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 2,
-    "yta_server_remaining": 8,
+    "yta_used_today": 3,
+    "yta_server_remaining": 7,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -254,14 +250,14 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 10,
+    "gemini_calls_today": 17,
     "gemini_est_video_hours_today": 0.53,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 2,
-    "ready": 2,
+    "attempted": 1,
+    "ready": 1,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -270,13 +266,13 @@
     "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 10,
-    "ready": 2,
+    "attempted": 7,
+    "ready": 0,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 2,
+    "budget_out": 3,
     "chunked": 1,
     "text_mode": 0,
     "quota_wait": 0
@@ -916,6 +912,52 @@
       "gemini_prompt_tokens": 15311,
       "quotes_grade_count": {
         "1차-A": 3,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "6r3D-CMJkuI",
+      "url": "https://www.youtube.com/watch?v=6r3D-CMJkuI",
+      "channel": "iConnections",
+      "channel_id": "UCY6TEokyfC4sw--JMLoojDg",
+      "channel_mode": "filter",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "x_self_link",
+      "title": "Stan Druckenmiller: Why He's \"Not Playing\" Right Now | TomorrowX Summit",
+      "description": "Legendary investor Stan Druckenmiller, CEO of Duquesne Family Office, sits down with Iliana Bouzali of Morgan Stanley on the Arena Stage at TomorrowX Summit in Austin.\nStan explains why, after 50 years of investing, he has rarely had less clarity, and what he is watching instead: AI use cases over infrastructure, why the leading labs could sell tasks instead of tokens, and how swarms of agents could defend us in cybersecurity. He shares the moment he realized AI was the biggest thing in the history of American business, his bold predictions for the next decade, from fusion and data centers in space to beating cancer within ten years, and the lessons that separate great investors from good ones.\n\nKEY TAKEAWAYS\nWhy Stan is in capital preservation mode\nRisk management: the P&L is the signal\nHot streaks, cold streaks and knowing when to play big\nAI use cases: selling tasks, not tokens\nPredictions: fusion, data centers in space, beating cancer\nPut all your eggs in one basket, then watch the basket very carefully\nWhat separates great investors from good ones\n\nCHAPTERS\n0:00 How Gavin Baker called the AI boom\n1:15 Looking back at January's portfolio\n4:11 Why everything has flipped\n5:34 \"\"I'm not playing\"\"\n9:09 Hot streaks, cold streaks and risk management\n10:55 What he's watching: AI use cases\n13:11 What's happening quietly\n16:21 How smart people get in their own way\n18:04 What separates great investors\n19:16 How Stan makes decisions\n20:24 Predictions for the next ten years\n21:41 Fil",
+      "published_at": "2026-11-18T05:08:38+00:00",
+      "first_seen_at": "2026-11-20T21:10:35+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-20T21:10:35+09:00",
+      "transcript_language": null,
+      "transcript_chars": 19341,
+      "transcript_url": null,
+      "name_mentions": 0,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "pending",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "자막 확보, 인용 대기",
+      "appearance_source": null,
+      "transcript_retained": true,
+      "quotes_grade_count": {
+        "1차-A": 0,
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
@@ -1981,6 +2023,52 @@
       }
     },
     {
+      "video_id": "D7h-RARhtaA",
+      "url": "https://www.youtube.com/watch?v=D7h-RARhtaA",
+      "channel": "Morningstar",
+      "channel_id": "UChub1tZZuWn9YYHJZZYTbMg",
+      "channel_mode": "filter",
+      "person": "David Sekera",
+      "tier": 2,
+      "role": "core",
+      "match": "description",
+      "title": "5 Stocks to Buy After Earnings I November 16, 2026",
+      "description": "#TheMorningFilter #StockstoBuy #StockMarket \n\nPlus, what to know ahead of Nvidia’s results. \n\nIn this new episode of The Morning Filter podcast, co-hosts Dave Sekera and Sarah Hansen discuss last week’s market action, including the rebound in artificial intelligence stocks that followed CoreWeave’s latest earnings report. They also cover the runup in the 10-year Treasury yield and the implications of October’s hotter-than-expected Consumer Price Index Report.  \n\nWith all eyes on Nvidia, Sekera and Hansen cover what investors need to know ahead of the chip giant’s third quarter earnings results. They also preview upcoming earnings from consumer stalwarts Home Depot, Lowe’s, Walmart and Target.  \n\nSekera and Hansen answer an audience question about a recent selloff in defense stocks: why did these names fall after the midterm elections, if they have government contracts locked in for decades? They wrap up the episode with five stocks that look like buys after earnings. Tune in to hear why Alphabet GOOGL made the list, even after it’s recent stumble. \n\nEpisode Highlights  \n\n00:00:00 Welcome\n\n00:01:10 Why AI stocks surged after CoreWeave’s CRWV earnings.  \n\n00:04:29 Economic data to watch this week.   \n\n00:04:58 Key considerations ahead of Nvidia’s NVDA upcoming third quarter results.  \n\n00:13:37 Why we’ll be watching earnings reports from Home Depot HD, Lowe’s LOW, Walmart WMT and Target TGT.   \n\n00:20:35 Berkshire Hathaway BRK.B is up 16% over three months. Is it a buy?  \n\n00:2",
+      "published_at": "2026-11-16T14:46:10Z",
+      "first_seen_at": "2026-11-20T21:10:35+09:00",
+      "is_short": null,
+      "transcript_status": "skipped_old",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
       "video_id": "9Z86eSya_nY",
       "url": "https://www.youtube.com/watch?v=9Z86eSya_nY",
       "channel": "tastylive",
@@ -2675,52 +2763,6 @@
         "1차-B": 6,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "Mi8DV2F3ToI",
-      "url": "https://www.youtube.com/watch?v=Mi8DV2F3ToI",
-      "channel": "Thoughtful Money",
-      "channel_id": "UCjqe6xtZYTfvA4pHs0HgJsQ",
-      "channel_mode": "filter",
-      "person": "Lyn Alden",
-      "tier": 3,
-      "role": "core",
-      "match": "title",
-      "title": "The Most Important Investing Books Ever | According To Lacy Hunt, Kyle Bass, Lyn Alden & 30 Others",
-      "description": "GET OUR FREE \"ESSENTIAL READING FOR INVESTORS\" BOOK LIST at https://www.thoughtfulmoney.com/essential\n\nA principal part of Thoughtful Money’s mission is to democratize financial literacy.\n\nIn my pursuit of that goal, I often get asked: What makes a well-informed investor?\n\nSo to come up with a definitive & actionable answer, I’ve asked over 30 of the world’s foremost experts in money & wealth-building to share their top recommendations for the foundational publications a “well-informed investor” should read.\n\nThe result?\n\nA list of the 100+ most significant & powerful books, white papers and videos on successful wealth creation ever published.\n\nAs well as a list of the “Most Recommended” 20 books that were submitted by multiple experts.\n\nThe value of this combined knowledge is priceless.\n\nA treasure trove of wealth-building knowledge is just a click away. I’m very pleased and proud to make it available to you.\n\nGet it now at https://www.thoughtfulmoney.com/essential\n\n#investingforbeginners #investingbooks #investing101 \n_____________________________________________\n \nThoughtful Money LLC is a Registered Investment Advisor Promoter.\n\nWe produce educational content geared for the individual investor. It’s important to note that this content is NOT investment advice, individual or otherwise, nor should be construed as such.\n\nWe recommend that most investors, especially if inexperienced, should consider benefiting from the direction and guidance of a qualified financial advisor r",
-      "published_at": "2026-11-13T02:53:24Z",
-      "first_seen_at": "2026-11-15T21:10:33+09:00",
-      "is_short": null,
-      "transcript_status": "skipped_old",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": null,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
-      "gemini_status": "skipped",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
     }
   ],
   "person_index": {
@@ -2728,45 +2770,11 @@
     "lookback_hours": 72,
     "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
     "people": {
-      "Cem Karsan": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-17T10:10:38+09:00",
-            "url": "https://www.youtube.com/watch?v=xFBNhDRkC6M",
-            "kind": "video",
-            "preview": "Cem Karsan Called for a 25 to 40% Decline, and He Still Does",
-            "grade": "1차-A",
-            "published_at": "2026-11-16T23:05:13Z",
-            "noise_hint": false
-          }
-        ]
-      },
       "Darius Dale": {
         "role": "core",
-        "count": 7,
-        "non_noise": 7,
+        "count": 5,
+        "non_noise": 5,
         "items": [
-          {
-            "at": "2026-11-17T10:10:38+09:00",
-            "url": "https://www.youtube.com/watch?v=6YjSrbLXfus",
-            "kind": "video",
-            "preview": "The Macro Minute: NVIDIA Guidance Could Reset Market Expectations",
-            "grade": "1차-A",
-            "published_at": "2026-11-16T21:00:15Z",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-17T10:10:38+09:00",
-            "url": "https://www.youtube.com/watch?v=rGmh17ZoYrQ",
-            "kind": "video",
-            "preview": "Is It Still Too Early to Buy the Dip?",
-            "grade": "1차-A",
-            "published_at": "2026-11-16T16:37:14Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-18T10:10:46+09:00",
             "url": "https://www.youtube.com/watch?v=p5vjT82-rO4",
@@ -2810,22 +2818,6 @@
             "preview": "Will Bitcoin Test $50k Before It Rallies to $150k?",
             "grade": "1차-A",
             "published_at": "2026-11-19T20:26:07Z",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Jim Bianco": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-17T10:10:38+09:00",
-            "url": "https://www.youtube.com/watch?v=prpIDNYJJ8A",
-            "kind": "video",
-            "preview": "Bloomberg Surveillance 11/16/2026",
-            "grade": "1차-B",
-            "published_at": "2026-11-16T16:40:38Z",
             "noise_hint": false
           }
         ]
