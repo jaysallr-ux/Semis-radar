@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-20T21:05:29+09:00",
+  "generated_at": "2026-11-21T10:05:34+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -14,7 +14,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 2,
+      "items_in_window": 1,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -44,7 +44,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 0,
+      "items_in_window": 1,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -85,7 +85,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 4,
+      "items_in_window": 5,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -105,7 +105,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
+      "items_in_window": 5,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -125,8 +125,8 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
-      "scoring_items": 0,
+      "items_in_window": 4,
+      "scoring_items": 1,
       "pending_items": 0
     },
     {
@@ -135,7 +135,7 @@
       "role": "shadow",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 0,
+      "items_in_window": 1,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -145,7 +145,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 6,
+      "items_in_window": 5,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -172,17 +172,17 @@
     }
   ],
   "stats": {
-    "discovered": 131,
-    "new_items": 6,
-    "decoded": 7,
-    "bodies": 1,
-    "quotes_verified": 0,
+    "discovered": 138,
+    "new_items": 17,
+    "decoded": 18,
+    "bodies": 5,
+    "quotes_verified": 5,
     "video_candidates": 0,
-    "gemini_calls": 0,
+    "gemini_calls": 2,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 1,
+    "calls_today": 2,
     "daily_cap": 60,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -192,6 +192,232 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Warren Pies",
+      "tier": 1,
+      "role": "core",
+      "source_kind": "video_page",
+      "title": "3Fourteen's Warren Pies: Market poised for a bounce after sell-off",
+      "outlet": "CNBC",
+      "published_at": "2026-11-20T22:10:23+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/20/3fourteens-warren-pies-market-poised-for-a-bounce-after-sell-off.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/20/3fourteens-warren-pies-market-poised-for-a-bounce-after-sell-off.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Lyn Alden: Bonds remain flat as stocks, gold and bitcoin decline",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-20T21:40:09+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4351312-bonds-flat-stocks-fall/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4351312-bonds-flat-stocks-fall/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Jonathan Krinsky",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "video_page",
+      "title": "Would be unprecedented to see final bottom on S&P with Apple where it is: BTIG’s Jonathan Krinsky",
+      "outlet": "CNBC",
+      "published_at": "2026-11-20T18:09:28+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/20/unprecedented-to-see-final-bottom-on-sp-with-apple-where-it-is-now-says-btigas-jonathan-krinsky.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/20/unprecedented-to-see-final-bottom-on-sp-with-apple-where-it-is-now-says-btigas-jonathan-krinsky.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Jonathan Krinsky",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "S&P 500 is near a bottom, but breadth still shows final low is not there yet – BTIG’s Krinsky",
+      "outlet": "TradingView",
+      "published_at": "2026-11-20T16:23:15+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://www.tradingview.com/news/seekingalpha:6c8ae1805094b:0-s-p-500-is-near-a-bottom-but-breadth-still-shows-final-low-is-not-there-yet-btig-s-krinsky/",
+      "canonical_url": "https://www.tradingview.com/news/seekingalpha:6c8ae1805094b:0-s-p-500-is-near-a-bottom-but-breadth-still-shows-final-low-is-not-there-yet-btig-s-krinsky/",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "Tactically the downside is 80% full here.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "saying"
+        },
+        {
+          "text": "could see a 4-5% recovery, which would take it back up towards the 200-day moving average",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Krinsky believes"
+        },
+        {
+          "text": "In the last 30 years, if we look at all S&P 500 pullbacks of 8% or more, the median reading of names above their 50-day MA is 11%",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "the strategist explained"
+        },
+        {
+          "text": "it would be unprecedented to be putting in a final low here with half of the S&P 500 still above the 50-day MA.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "adding that"
+        },
+        {
+          "text": "It would be unprecedented to make a final low with the world's biggest stock so close to an all-time high,",
+          "quote_match": 95.2,
+          "speaker_verified": true,
+          "attribution": "he said"
+        }
+      ],
+      "direction_hint": "mixed",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-21T10:05:34+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Katie Stockton",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "video_page",
+      "title": "Fairlead Strategy Founder Katie Stockton Charts Latest Market Choppiness",
+      "outlet": "Yahoo Finance",
+      "published_at": "2026-11-20T16:19:29+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://finance.yahoo.com/video/fairlead-strategy-founder-katie-stockton-161929300.html",
+      "canonical_url": "https://finance.yahoo.com/video/fairlead-strategy-founder-katie-stockton-161929300.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Ryan Detrick: S&P 500 posts six-day losing streak, longest since April 2024",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-20T13:55:49+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4340146-sp500-six-day-losing-streak/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4340146-sp500-six-day-losing-streak/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Joseph Wang",
+      "tier": 4,
+      "role": "shadow",
+      "source_kind": "news_article",
+      "title": "Rates across curve move lower after equity market drops, Joseph Wang notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-20T12:50:48+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4338308-rates-market-equities-policy/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4338308-rates-market-equities-policy/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Growth valuations stay high while downside risks build, Bob Elliott notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-20T12:25:25+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4337621-growth-risks-market-selloff/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4337621-growth-risks-market-selloff/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Lyn Alden: \"This Correction isn't Over\" - Gold, Bitcoin, Crypto, AI and the Debasement Trade",
+      "outlet": "Holland Gold",
+      "published_at": "2026-11-20T11:44:40+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://www.hollandgold.nl/en/news/lyn-alden-this-correction-isn-t-over-gold-bitcoin-crypto-ai-and-the-debasement-trade/",
+      "canonical_url": "https://www.hollandgold.nl/en/news/lyn-alden-this-correction-isn-t-over-gold-bitcoin-crypto-ai-and-the-debasement-trade/",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Andy Constan",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Andy Constan: QYLD selling $10 billion notional 50% delta NDX calls between 11:30 and 1:30",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-19T21:51:19+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4344760-qyld-ndx-call-sale/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4344760-qyld-ndx-call-sale/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Darius Dale",
       "tier": 1,
@@ -275,6 +501,25 @@
       "discovered_at": "2026-11-20T10:05:25+09:00",
       "article_url": "https://tradersunion.com/news/market-voices/show/4318696-china-domestic-economic-crisis/",
       "canonical_url": "https://tradersunion.com/news/market-voices/show/4318696-china-domestic-economic-crisis/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "S&P 500 dips below 200-day average after long streak, Ryan Detrick notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-19T02:25:17+00:00",
+      "discovered_at": "2026-11-21T10:05:34+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4312400-sp500-falls-200-day/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4312400-sp500-falls-200-day/",
       "body_fetch_status": 403,
       "direct_quotes": [],
       "direction_hint": null,
@@ -857,143 +1102,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Jonathan Krinsky",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "video_page",
-      "title": "Market rebound hasn't cleared technical risks, says BTIG's Jonathan Krinsky",
-      "outlet": "CNBC",
-      "published_at": "2026-11-13T22:19:16+00:00",
-      "discovered_at": "2026-11-14T21:05:27+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/11/13/krinsky.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/11/13/krinsky.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
-    },
-    {
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "tasty GUESTS Cem Karsan",
-      "outlet": "tastylive",
-      "published_at": "2026-11-13T19:30:38+00:00",
-      "discovered_at": "2026-11-17T10:05:32+09:00",
-      "article_url": "https://www.tastylive.com/shows/tasty-guests/episodes/tasty-guests-cem-karsan-11-13-2026",
-      "canonical_url": "https://www.tastylive.com/shows/tasty-guests/episodes/tasty-guests-cem-karsan-11-13-2026",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Facts vs Feelings Social Hour livestream starts in one hour, Ryan Detrick announces",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-13T19:11:42+00:00",
-      "discovered_at": "2026-11-14T21:05:27+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4238414-market-livestream-hour-away/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4238414-market-livestream-hour-away/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "video_page",
-      "title": "Ryan Detrick: Rotation is the name of the game and it's healthy to see in a bull market",
-      "outlet": "CNBC",
-      "published_at": "2026-11-13T19:11:17+00:00",
-      "discovered_at": "2026-11-14T21:05:27+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/11/13/ryan-detrick-rotation-is-the-name-of-the-game-and-its-healthy-to-see-in-a-bull-market.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/11/13/ryan-detrick-rotation-is-the-name-of-the-game-and-its-healthy-to-see-in-a-bull-market.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
-    },
-    {
-      "person": "Andy Constan",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Digital currency practicality questioned for daily use, Andy Constan notes",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-13T13:10:16+00:00",
-      "discovered_at": "2026-11-14T21:05:27+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4231325-digital-currency-daily-use-questioned/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4231325-digital-currency-daily-use-questioned/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Katie Stockton",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "video_page",
-      "title": "Watch CNBC's full interview with Katie Stockton of Fairlead Strategies",
-      "outlet": "CNBC",
-      "published_at": "2026-11-13T12:37:54+00:00",
-      "discovered_at": "2026-11-14T21:05:27+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/11/13/watch-cnbcs-full-interview-with-katie-stockton-of-fairlead-strategies.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/11/13/watch-cnbcs-full-interview-with-katie-stockton-of-fairlead-strategies.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
-    },
-    {
-      "person": "Katie Stockton",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "video_page",
-      "title": "Nvidia sell-off shows signs of capitulation, says Fairlead's Katie Stockton",
-      "outlet": "CNBC",
-      "published_at": "2026-11-13T12:36:00+00:00",
-      "discovered_at": "2026-11-14T21:05:27+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/11/13/nvidia-sell-off-shows-signs-of-capitulation-says-fairleads-katie-stockton.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/11/13/nvidia-sell-off-shows-signs-of-capitulation-says-fairleads-katie-stockton.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
     }
   ],
   "person_index": {
@@ -1003,8 +1111,8 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-18T21:05:39+09:00",
@@ -1023,6 +1131,15 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-19T16:25:25+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4344760-qyld-ndx-call-sale/",
+            "kind": "news_article",
+            "preview": "Andy Constan: QYLD selling $10 billion notional 50% delta NDX calls between 11:30 and 1:30",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-19T21:51:19+00:00",
+            "noise_hint": false
           }
         ]
       },
@@ -1032,21 +1149,21 @@
         "non_noise": 2,
         "items": [
           {
-            "at": "2026-11-18T10:05:27+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4287022-crack-spreads-brent-inflation/",
-            "kind": "news_article",
-            "preview": "Crack spreads and brent down significantly in recent weeks, Bob Elliott notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-17T14:55:14+00:00",
-            "noise_hint": false
-          },
-          {
             "at": "2026-11-20T10:05:25+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4318696-china-domestic-economic-crisis/",
             "kind": "news_article",
             "preview": "Bob Elliott: Data suggests economic crisis emerging in China",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-19T12:25:16+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4337621-growth-risks-market-selloff/",
+            "kind": "news_article",
+            "preview": "Growth valuations stay high while downside risks build, Bob Elliott notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-20T12:25:25+00:00",
             "noise_hint": false
           }
         ]
@@ -1069,8 +1186,8 @@
       },
       "Jonathan Krinsky": {
         "role": "observer",
-        "count": 1,
-        "non_noise": 1,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-19T21:05:24+09:00",
@@ -1080,32 +1197,48 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-18T06:30:49+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/20/unprecedented-to-see-final-bottom-on-sp-with-apple-where-it-is-now-says-btigas-jonathan-krinsky.html",
+            "kind": "video_page",
+            "preview": "Would be unprecedented to see final bottom on S&P with Apple where it is: BTIG’s Jonathan Krinsky",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-20T18:09:28+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://www.tradingview.com/news/seekingalpha:6c8ae1805094b:0-s-p-500-is-near-a-bottom-but-breadth-still-shows-final-low-is-not-there-yet-btig-s-krinsky/",
+            "kind": "news_article",
+            "preview": "S&P 500 is near a bottom, but breadth still shows final low is not there yet – BTIG’s Krinsky",
+            "grade": "1차-인용",
+            "published_at": "2026-11-20T16:23:15+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Joseph Wang": {
+        "role": "shadow",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4338308-rates-market-equities-policy/",
+            "kind": "news_article",
+            "preview": "Rates across curve move lower after equity market drops, Joseph Wang notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-20T12:50:48+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Katie Stockton": {
         "role": "observer",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-18T10:05:27+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/17/why-fairleads-katie-stockton-thinks-the-market-is-oversold-ahead-of-nvidias-earnings.html",
-            "kind": "video_page",
-            "preview": "Why Fairlead's Katie Stockton thinks the market is oversold ahead of Nvidia's earnings",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-17T18:59:34+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-18T10:05:27+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/17/here-are-the-key-levels-katie-stockton-is-watching-from-nvidia.html",
-            "kind": "video_page",
-            "preview": "Here are the key levels Katie Stockton is watching from Nvidia",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-17T17:02:52+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-20T10:05:25+09:00",
             "url": "https://www.moomoo.com/community/feed/just-in-fairlead-strategies-founder-katie-stockton-says-our-longer-117644319129605",
@@ -1114,13 +1247,22 @@
             "grade": "1차-인용",
             "published_at": "2026-11-19T18:07:51+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://finance.yahoo.com/video/fairlead-strategy-founder-katie-stockton-161929300.html",
+            "kind": "video_page",
+            "preview": "Fairlead Strategy Founder Katie Stockton Charts Latest Market Choppiness",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-20T16:19:29+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-18T21:05:39+09:00",
@@ -1138,6 +1280,24 @@
             "preview": "Lyn Alden anticipated lower moves in gold, Brunell says",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-18T15:40:15+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4351312-bonds-flat-stocks-fall/",
+            "kind": "news_article",
+            "preview": "Lyn Alden: Bonds remain flat as stocks, gold and bitcoin decline",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-20T21:40:09+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://www.hollandgold.nl/en/news/lyn-alden-this-correction-isn-t-over-gold-bitcoin-crypto-ai-and-the-debasement-trade/",
+            "kind": "news_article",
+            "preview": "Lyn Alden: \"This Correction isn't Over\" - Gold, Bitcoin, Crypto, AI and the Debasement Trade",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-20T11:44:40+00:00",
             "noise_hint": false
           }
         ]
@@ -1169,45 +1329,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-18T10:05:27+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4293232-technology-beats-sp500-today/",
-            "kind": "news_article",
-            "preview": "Ryan Detrick: Technology stocks outperformed S&P 500 while 75 stocks declined",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-17T21:12:10+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-18T10:05:27+09:00",
-            "url": "https://www.carsongroup.com/insights/blog/what-to-make-of-nvidias-crash-and-the-anthropic-ipo/",
-            "kind": "official_blog",
-            "preview": "What To Make of Nvidia’s Crash and The Anthropic IPO",
-            "grade": "1차",
-            "published_at": "2026-11-17T16:53:52+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-18T10:05:27+09:00",
-            "url": "https://finance.yahoo.com/video/carson-group-strategist-ryan-detrick-150701512.html",
-            "kind": "video_page",
-            "preview": "Carson Group Strategist Ryan Detrick Overviews AI Trade before NVIDIA Results",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-17T15:07:01+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-18T10:05:27+09:00",
-            "url": "https://www.carsongroup.com/insights/blog/social-hour-with-mike-larson-and-sonali-basak/",
-            "kind": "official_blog",
-            "preview": "Social Hour With Mike Larson and Sonali Basak (Ep. 7)",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-17T14:00:28+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-19T10:05:24+09:00",
             "url": "https://www.carsongroup.com/insights/blog/is-the-bank-of-nvidia-closed-fvf-ep-214/",
@@ -1216,23 +1340,32 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-18T14:00:44+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4340146-sp500-six-day-losing-streak/",
+            "kind": "news_article",
+            "preview": "Ryan Detrick: S&P 500 posts six-day losing streak, longest since April 2024",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-20T13:55:49+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4312400-sp500-falls-200-day/",
+            "kind": "news_article",
+            "preview": "S&P 500 dips below 200-day average after long streak, Ryan Detrick notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-19T02:25:17+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Scott Rubner": {
         "role": "observer",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-18T10:05:27+09:00",
-            "url": "https://www.investing.com/news/stock-market-news/citadels-rubner-says-equity-volatility-hits-highest-since-april-2025-93CH-5032831",
-            "kind": "news_article",
-            "preview": "Citadel’s Rubner says equity volatility hits highest since April 2025",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-17T13:10:15+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-19T10:05:24+09:00",
             "url": "https://in.investing.com/news/stock-market-news/citadels-rubner-says-equity-volatility-hits-highest-since-april-2025-93CH-5709726",
@@ -1240,6 +1373,22 @@
             "preview": "Citadel’s Rubner says equity volatility hits highest since April 2025 By Investing.com",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-17T13:09:53+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Warren Pies": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-21T10:05:34+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/20/3fourteens-warren-pies-market-poised-for-a-bounce-after-sell-off.html",
+            "kind": "video_page",
+            "preview": "3Fourteen's Warren Pies: Market poised for a bounce after sell-off",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-20T22:10:23+00:00",
             "noise_hint": false
           }
         ]
