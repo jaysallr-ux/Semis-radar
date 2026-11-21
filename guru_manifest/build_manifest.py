@@ -176,9 +176,10 @@ def bundle_reposts(recs: list[dict]) -> list[dict]:
             out.append(rs[0])
             continue
         rs.sort(key=lambda r: r["at"])
+        qd = [r.get("quoted_at") or "?" for r in rs]
         out.append({"feed": "X", "person": person, "role": rs[0]["role"], "tier": rs[0]["tier"], "at": rs[-1]["at"],
                     "url": rs[-1]["url"], "kind": "repost_bundle",
-                    "preview": f"예전 글·영상 재공유 {len(rs)}개 묶음 (원본 {rs[0].get('quoted_at')}~{rs[-1].get('quoted_at')})",
+                    "preview": f"예전 글·영상 재공유 {len(rs)}개 묶음 (원본 {min(qd)}~{max(qd)})",
                     "_same_yt": None,
                     "items": [{k: r[k] for k in ("at", "url", "preview", "quoted_author", "quoted_at", "video") if r.get(k)}
                               for r in rs]})
