@@ -1,13 +1,13 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-21T10:10:33+09:00",
+  "generated_at": "2026-11-21T21:10:34+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-21T06:20:39+09:00",
-    "merged_from_discovery": 3,
+    "last_discovery_at": "2026-11-21T10:10:33+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
@@ -102,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-19T00:24:30+09:00",
+      "oldest_rss": "2026-11-19T01:00:36+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -157,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T10:22:48+09:00",
+      "oldest_rss": "2026-11-17T11:30:29+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-20T05:18:07+09:00",
+      "oldest_rss": "2026-11-15T20:52:06+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,8 +212,8 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-20T22:59:31+09:00",
-      "gap_possible": true,
+      "oldest_rss": "2026-11-21T01:26:27+09:00",
+      "gap_possible": false,
       "matched": 0
     },
     {
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-19T23:00:18+09:00",
+      "oldest_rss": "2026-11-20T02:15:23+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -250,25 +250,25 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 14,
+    "gemini_calls_today": 18,
     "gemini_est_video_hours_today": 0.441,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 2,
-    "ready": 2,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
-    "expired": 1,
+    "expired": 0,
     "left_pending": 0,
     "waiting_for_gemini": 2
   },
   "gemini_stats": {
-    "attempted": 14,
-    "ready": 1,
-    "not_speaking": 1,
+    "attempted": 4,
+    "ready": 0,
+    "not_speaking": 0,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
@@ -2557,199 +2557,6 @@
         "1차-B": 3,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "yNTHAc7IauQ",
-      "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ",
-      "channel": "Carson Group",
-      "channel_id": "UCF03D8V34q2_Otj1OefLrUA",
-      "channel_mode": "filter",
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "match": "x_self_link",
-      "title": "Facts vs Feelings Social Hour with  Mike Larson and Sonali Basak (Ep. 7)",
-      "description": "",
-      "published_at": "2026-11-14T09:01:48+00:00",
-      "first_seen_at": "2026-11-15T11:51:58+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-15T11:51:58+09:00",
-      "transcript_language": null,
-      "transcript_chars": 68068,
-      "transcript_url": null,
-      "name_mentions": 6,
-      "appearance_confirmed": true,
-      "appearance_excerpt": "es it. I know she's around. So listen, this is  [1:10] the latest and probably greatest Facts vs. Feelings social hour. Ryan and Sonu as always. Um we have two amazing guests and I'll let you introduce yourself here in a second, Mike, but we're excited. There's so much stuff to talk about and as long as we can figure o",
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-15T11:51:58+09:00",
-      "gemini_mode": "video_chunks_2",
-      "person_speaks": true,
-      "gemini_evidence": "Ryan Detrick hosts the live session and discusses the broad market rotation underneath the headline index level, highlighting that non-tech sectors are up strongly despite tech pullbacks and noting a  / Ryan Detrick appears in the top-right video panel, actively hosting and speaking on inflation, economic growth, bond yields, and the US stock market.",
-      "stance": {
-        "us_equities": "mixed",
-        "summary": "Ryan Detrick views the broad market as underlyingly resilient, noting that while tech weakness has kept the main index sideways, broad rotation across non-tech sectors and historical buying thrust signals in semiconductors provide key positive tailwinds. | Ryan Detrick is bullish/constructive on US equities and the broader economy. He believes inflation settling around 3% is a structural reality rather than a crisis, and that the stock market and economy can perform fine even if 10-year Treasury yields rise towards 6%."
-      },
-      "quotes": [
-        {
-          "t": "16:27",
-          "t_sec": 987,
-          "speaker": "Ryan Detrick",
-          "topic": "",
-          "text": "The last all-time high for the S&P was October 6th. And if you said to anybody, including probably everyone on this call, that tech would be down more than 15%, I bet I'd look around and say, 'Oh boy, we're probably in trouble.' But that's not where we are, right? That's not where we are. Seven out of the other 10 sectors are up more than 5% since then.",
-          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=987s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.7,
-          "caption_sec": 985,
-          "caption_checked": true
-        },
-        {
-          "t": "16:50",
-          "t_sec": 1010,
-          "speaker": "Ryan Detrick",
-          "topic": "",
-          "text": "We all see these numbers, and it's just, it's just amazing to me, you know, this rotation we've seen. And it's like, you know, most stocks are going up. Now listen, when tech blows up like it's done lately, it's hard for the market, quote-unquote, to get moving. But, you know, for six months we've literally gone sideways.",
-          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=1010s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 93.8,
-          "caption_sec": 985,
-          "caption_checked": true
-        },
-        {
-          "t": "17:11",
-          "t_sec": 1031,
-          "speaker": "Ryan Detrick",
-          "topic": "",
-          "text": "Friday, Monday, Tuesday, Wednesday, those four days, it was up almost 17 and a half percent in four days. You go back in history when the SOX has a four-day rally like that, we're talking literally the lows of the GFC, the lows in 2003, the lows in 2022. Not the worst buying opportunity. They call it like a buying thrust.",
-          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=1031s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 92.9,
-          "caption_sec": 1015,
-          "caption_checked": true
-        },
-        {
-          "t": "39:51",
-          "t_sec": 2391,
-          "speaker": "Ryan Detrick",
-          "topic": "inflation & growth",
-          "text": "So we came into this year talking about an inflationary growth environment. We then the people hear the word inflation, they immediately think 2022 and it's going to be end of the world. That wasn't our case. We thought we'd have strong growth.",
-          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=2391s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 92.9,
-          "caption_sec": 2385,
-          "caption_checked": true
-        },
-        {
-          "t": "40:36",
-          "t_sec": 2436,
-          "speaker": "Ryan Detrick",
-          "topic": "structural inflation",
-          "text": "We have a bigger structural change in inflation, and we're not saying like it's a major problem, we're just saying inflation up around 3%, that might be the world we're in.",
-          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=2436s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 2416,
-          "caption_checked": true
-        },
-        {
-          "t": "40:48",
-          "t_sec": 2448,
-          "speaker": "Ryan Detrick",
-          "topic": "10-year yield & stock market outlook",
-          "text": "I wouldn't be shocked at all if a year from now we get to do this again, 10-year yields up around 6%, but the economy does just fine, and the stock market does just fine, and things go okay.",
-          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=2448s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 97.8,
-          "caption_sec": 2446,
-          "caption_checked": true
-        },
-        {
-          "t": "58:40",
-          "t_sec": 3520,
-          "speaker": "Ryan Detrick",
-          "topic": "S&P 500 market stance",
-          "text": "S&P's down half a percent right now. Not too big a deal, you know, we were off the lows, so you know, given back a little bit on a Friday, but it's still a decent week for the bulls.",
-          "url": "https://www.youtube.com/watch?v=yNTHAc7IauQ&t=3520s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 96.0,
-          "caption_sec": 3514,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-15T11:51:58+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "16:27",
-          "point": "Seven out of ten non-tech S&P 500 sectors are up over 5% despite tech pulling back more than 15% from its highs.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "16:50",
-          "point": "The overall S&P 500 index has traded sideways for six months as strong rotation into other sectors offsets tech weakness.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "17:11",
-          "point": "The semiconductor index's 17.5% four-day rally acts as a historical buying thrust similar to major market bottoms in 2003, 2008, and 2022.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "39:51",
-          "point": "The market is in an inflationary growth environment with strong nominal GDP growth rather than a 2022-style crisis.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "40:36",
-          "point": "US inflation is undergoing a structural shift and is likely to remain around 3% without posing a major threat to growth.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        },
-        {
-          "t": "40:48",
-          "point": "The economy and stock market can continue to perform well even if 10-year Treasury yields rise up to 6% over the next year.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "1 year"
-        },
-        {
-          "t": "58:40",
-          "point": "Minor pullbacks in the S&P 500 do not undermine the ongoing positive week and broader trend for market bulls.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": ""
-        }
-      ],
-      "gemini_prompt_tokens": 113626,
-      "quotes_grade_count": {
-        "1차-A": 7,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
     }
   ],
   "person_index": {
@@ -2759,27 +2566,9 @@
     "people": {
       "Darius Dale": {
         "role": "core",
-        "count": 6,
-        "non_noise": 6,
+        "count": 4,
+        "non_noise": 4,
         "items": [
-          {
-            "at": "2026-11-18T10:10:46+09:00",
-            "url": "https://www.youtube.com/watch?v=p5vjT82-rO4",
-            "kind": "video",
-            "preview": "The Macro Minute: What Does NVIDIA’s New Oversight Committee Signal to Investors?",
-            "grade": "1차-A",
-            "published_at": "2026-11-17T21:00:11Z",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-18T21:10:33+09:00",
-            "url": "https://www.youtube.com/watch?v=IPKi7VWRIbM",
-            "kind": "video",
-            "preview": "Is It Time to Back Up the Truck on Cheap AI Stocks?",
-            "grade": "1차-A",
-            "published_at": "2026-11-17T14:00:01Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-19T10:10:37+09:00",
             "url": "https://www.youtube.com/watch?v=tLKqIik_dqI",
