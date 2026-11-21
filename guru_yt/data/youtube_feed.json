@@ -1,16 +1,16 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-20T21:10:35+09:00",
+  "generated_at": "2026-11-21T10:10:33+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-20T10:10:38+09:00",
-    "merged_from_discovery": 0,
+    "last_discovery_at": "2026-11-21T06:20:39+09:00",
+    "merged_from_discovery": 3,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 1,
+      "accepted": 0,
       "rejected": 0
     }
   },
@@ -25,9 +25,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-16T05:00:14+09:00",
+      "oldest_rss": "2026-09-17T01:15:53+09:00",
       "gap_possible": false,
-      "matched": 7
+      "matched": 8
     },
     {
       "label": "Schwab Network",
@@ -36,7 +36,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-16T04:53:09+09:00",
+      "oldest_rss": "2026-10-17T03:33:05+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -47,7 +47,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-28T23:00:39+09:00",
+      "oldest_rss": "2026-09-29T23:00:33+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -58,9 +58,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-08T00:00:01+09:00",
+      "oldest_rss": "2026-10-09T18:00:30+09:00",
       "gap_possible": false,
-      "matched": 2
+      "matched": 3
     },
     {
       "label": "Excess Returns",
@@ -69,9 +69,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-20T22:03:35+09:00",
+      "oldest_rss": "2026-09-22T01:45:39+09:00",
       "gap_possible": false,
-      "matched": 0
+      "matched": 1
     },
     {
       "label": "Monetary Matters",
@@ -91,7 +91,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-04-23T06:58:33+09:00",
+      "oldest_rss": "2026-04-24T16:00:00+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -102,7 +102,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-18T07:08:16+09:00",
+      "oldest_rss": "2026-11-19T00:24:30+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -157,9 +157,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-16T12:06:44+09:00",
+      "oldest_rss": "2026-11-17T10:22:48+09:00",
       "gap_possible": false,
-      "matched": 3
+      "matched": 1
     },
     {
       "label": "Maggie Lake Talking Markets",
@@ -168,7 +168,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-06-18T05:47:58+09:00",
+      "oldest_rss": "2026-06-23T23:00:06+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -179,7 +179,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-29T19:15:20+09:00",
+      "oldest_rss": "2026-09-30T01:15:18+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -190,7 +190,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-14T00:33:26+09:00",
+      "oldest_rss": "2026-10-15T00:55:11+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-20T00:25:19+09:00",
+      "oldest_rss": "2026-11-20T05:18:07+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,8 +212,8 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-20T00:56:06+09:00",
-      "gap_possible": false,
+      "oldest_rss": "2026-11-20T22:59:31+09:00",
+      "gap_possible": true,
       "matched": 0
     },
     {
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-19T04:30:37+09:00",
+      "oldest_rss": "2026-11-19T23:00:18+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,14 +234,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-15T22:30:22+09:00",
+      "oldest_rss": "2026-11-17T07:30:10+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 3,
-    "yta_server_remaining": 7,
+    "yta_used_today": 2,
+    "yta_server_remaining": 8,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -250,34 +250,295 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 17,
-    "gemini_est_video_hours_today": 0.53,
+    "gemini_calls_today": 14,
+    "gemini_est_video_hours_today": 0.441,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 2,
+    "ready": 2,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
     "expired": 1,
     "left_pending": 0,
-    "waiting_for_gemini": 1
+    "waiting_for_gemini": 2
   },
   "gemini_stats": {
-    "attempted": 7,
-    "ready": 0,
-    "not_speaking": 0,
+    "attempted": 14,
+    "ready": 1,
+    "not_speaking": 1,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 3,
+    "budget_out": 4,
     "chunked": 1,
     "text_mode": 0,
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "SNdJ5XYCMxU",
+      "url": "https://www.youtube.com/watch?v=SNdJ5XYCMxU",
+      "channel": "42 Macro",
+      "channel_id": "UCu0L0QCubkYD3Cd9jSdxTNQ",
+      "channel_mode": "dedicated",
+      "person": "Darius Dale",
+      "tier": 1,
+      "role": "core",
+      "match": "dedicated_channel",
+      "title": "The Macro Minute: Anthropic's Violent Reversal Sends a Warning",
+      "description": "📧 42 Macro Newsletters\n\n42 Macro publishes The Weekly and The Monthly, helping investors understand the economic trends, market developments, and risks shaping financial markets.\nIf you're an investor who wants to know what's happening, why it matters, and what it could mean for your portfolio, subscribe here: https://42macro.com/insights?src=social\n\nTrack the trends on 42 Macro socials!\n\nTwitter: https://bit.ly/3GcrD2b\n \nLinkedIn: https://bit.ly/3m3h7lS\n\nFacebook: https://bit.ly/30TzWQn",
+      "published_at": "2026-11-20T21:00:06Z",
+      "first_seen_at": "2026-11-21T06:20:39+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-21T10:10:33+09:00",
+      "transcript_language": null,
+      "transcript_chars": 9244,
+      "transcript_url": null,
+      "name_mentions": 4,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "[0:00] Happy Friday out there, team 42. It's your skipper here, Darius Dell, to present our macro minute for Friday, November 20th, 2026. I would say I hope everyone's having a great week, but I understand and recognize that there are a lot of people out there who",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-21T10:10:33+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Darius Dale appears on camera and speaks throughout the entire video.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Darius Dale highlights that markets are currently in a deepening risk-off regime. He notes that while a full secular bear market has not started yet, high AI-related capital expenditures and concerns over returns on invested capital mean the AI CapEx bubble will ultimately end in a secular bear market.",
+        "invalidation": "",
+        "targets": [],
+        "timeframe": "Coming weeks to next 3-5 years"
+      },
+      "quotes": [
+        {
+          "t": "00:22",
+          "t_sec": 22,
+          "speaker": "Darius Dale",
+          "topic": "",
+          "text": "Let me just remind you that it's never too late to get your portfolio on the right side of market risk.",
+          "url": "https://www.youtube.com/watch?v=SNdJ5XYCMxU&t=22s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "00:48",
+          "t_sec": 48,
+          "speaker": "Darius Dale",
+          "topic": "",
+          "text": "Start taking steps today because you don't know where this market cycle is going to take prices, you don't know when it's going to end, you don't know when we're going to transition out of the current condition, which is obviously a deepening risk-off market regime",
+          "url": "https://www.youtube.com/watch?v=SNdJ5XYCMxU&t=48s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.6,
+          "caption_sec": 30,
+          "caption_checked": true
+        },
+        {
+          "t": "01:49",
+          "t_sec": 109,
+          "speaker": "Darius Dale",
+          "topic": "",
+          "text": "All told, while we do not believe the pending secular bear market has started yet, this kind of violent reversal is eerily reminiscent of Cisco Systems' historic miss in 2000.",
+          "url": "https://www.youtube.com/watch?v=SNdJ5XYCMxU&t=109s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.4,
+          "caption_sec": 92,
+          "caption_checked": true
+        },
+        {
+          "t": "02:02",
+          "t_sec": 122,
+          "speaker": "Darius Dale",
+          "topic": "",
+          "text": "If the market is offering its shares this quickly, the consensus return on invested capital expectations for the AI CapEx bubble must be reduced or pushed out further in time, which reduces their net present value anyway.",
+          "url": "https://www.youtube.com/watch?v=SNdJ5XYCMxU&t=122s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.5,
+          "caption_sec": 122,
+          "caption_checked": true
+        },
+        {
+          "t": "02:55",
+          "t_sec": 175,
+          "speaker": "Darius Dale",
+          "topic": "",
+          "text": "We are convinced that this CapEx bubble will end just like each of the CapEx bubbles before it, i.e. in a secular bear market.",
+          "url": "https://www.youtube.com/watch?v=SNdJ5XYCMxU&t=175s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 99.2,
+          "caption_sec": 154,
+          "caption_checked": true
+        },
+        {
+          "t": "04:11",
+          "t_sec": 251,
+          "speaker": "Darius Dale",
+          "topic": "",
+          "text": "Trading in financial markets could get sloppy in the coming weeks.",
+          "url": "https://www.youtube.com/watch?v=SNdJ5XYCMxU&t=251s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 248,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-21T10:10:33+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "00:48",
+          "point": "Markets are currently in a deepening risk-off regime, so investors should take steps to align their portfolios with market risk.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        },
+        {
+          "t": "01:49",
+          "point": "The pending secular bear market has not officially started yet, but stock reversals in major AI market leaders resemble the dot-com bubble top.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "02:02",
+          "point": "Consensus expectations for returns on invested capital in AI CapEx must be reduced or delayed, lowering the net present value of major technology companies.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "medium_term"
+        },
+        {
+          "t": "02:55",
+          "point": "The current AI CapEx bubble will eventually end in a secular bear market, following the pattern of past capital expenditure cycles.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "long_term"
+        },
+        {
+          "t": "04:11",
+          "point": "Trading conditions across financial markets could become sloppy in the coming weeks due to rising fear of market losses.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "short_term"
+        }
+      ],
+      "gemini_prompt_tokens": 15123,
+      "quotes_grade_count": {
+        "1차-A": 6,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "aIBwhyRgywY",
+      "url": "https://www.youtube.com/watch?v=aIBwhyRgywY",
+      "channel": "Morningstar",
+      "channel_id": "UChub1tZZuWn9YYHJZZYTbMg",
+      "channel_mode": "filter",
+      "person": "David Sekera",
+      "tier": 2,
+      "role": "core",
+      "match": "description",
+      "title": "5 Surprising Stocks to Buy Before Year-End I November 23, 2026",
+      "description": "#TheMorningFilter #StockstoBuy #AnthropicStock \n\nPlus, why Anthropic stock is worth $92. \n\nIn this new episode of The Morning Filter podcast, co-hosts Dave Sekera and Susan Dziubinski discuss why Morningstar pegs a $92 per share valuation on Anthropic stock. They preview this week’s PCE data and what the numbers may mean for the Federal Reserve’s meeting in December. Tune in to find out which upcoming earnings reports to watch for and hear Morningstar’s post-earnings take on some big retailers—as well as Nvidia and Palo Alto Networks PANW. \n\nThey answer a viewer question about Kimberly-Clark now that the Kenvue deal is behind it. They close the episode with some unlikely (but undervalued) stock picks. \n\nEpisode Highlights  \n\nIs Anthropic ANT a buy after its IPO? \n\nHow this week’s PCE could impact the Fed’s December meeting. \n\nEarnings season is ramping up for cybersecurity stocks. Here’s what to watch for. \n\nWhy we’re holding our $250 fair value on Nvidia NVDA—for now. \n\nAre Walmart WMT or Target TGT or Home Depot HD or Lowe’s LOW attractive after earnings? \n\nOur view on Kimberly-Clark KMB following the Kenvue deal. \n\nThese unexpected stock picks have upside potential. \n\n\nRead about topics from this episode.  \n\nBonus Episode: A Deep Dive into Anthropic https://youtu.be/bPhrkjcCotQ?si=tBe-qmIcjwqBS5IZ \n\nRead Dave's complete archive. https://www.morningstar.com/people/david-sekera \n\nGot a question for Dave? Send it to themorningfilter@morningstar.com. \n\nFollow us on social medi",
+      "published_at": "2026-11-20T15:15:48Z",
+      "first_seen_at": "2026-11-21T00:20:33+09:00",
+      "is_short": false,
+      "transcript_status": "pending_quota",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "pending",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "PhaAlq5w1R0",
+      "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0",
+      "channel": "Excess Returns",
+      "channel_id": "UCPYvx_y92dvI1PSdiho0ALw",
+      "channel_mode": "filter",
+      "person": "Andy Constan",
+      "tier": 2,
+      "role": "core",
+      "match": "title",
+      "title": "The Three Poisons Behind the Sell-Off | Andy Constan on Why This Dip Is Different",
+      "description": "Andy Constan of Damped Spring explains why heavier borrowing, weaker buyback support and persistent high interest rates could be changing the outlook for stocks.\n\nOn the November First Principles, Andy joins Justin Carbonneau and Jack Forehand to connect the financing of the AI boom with the earnings growth investors expect from it. Companies are spending more on their businesses, issuing securities and leaving less cash for share repurchases. At the same time, he questions whether even strong economic growth can deliver all the profits embedded in stock prices.\n\nAndy walks through how government deficits contribute to corporate profits, what new bond and stock offerings reveal about investor demand, and why high borrowing costs matter more when they persist. He also explains how a prolonged stock-market decline could weaken spending through the wealth effect, turning a growth scare into an actual slowdown.\n\nThe discussion closes with how Andy distinguishes his long-term portfolio from tactical positions in stocks, bonds and gold, why inflation may complicate a quick policy rescue, and the evidence that would change his outlook. He remains optimistic about AI's capabilities; his test is whether customers can use it profitably at prices that also reward the companies supplying it.\n\nTopics covered:\n- Andy Constan's three pressures on markets: financing needs, earnings expectations and persistent high rates\n- Why capital spending, share issuance and fewer net buybacks change the",
+      "published_at": "2026-11-20T14:12:31Z",
+      "first_seen_at": "2026-11-20T23:20:37+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-21T10:10:33+09:00",
+      "transcript_language": null,
+      "transcript_chars": 53968,
+      "transcript_url": null,
+      "name_mentions": 3,
+      "appearance_confirmed": null,
+      "appearance_excerpt": "an  [0:30] buy gold at relatively low prices. It's not time to be a hero in a bubble regime in either direction. >> Hey Andy, welcome back. Nice to see you again. >> Hey Justin, looking forward to the holidays. >> Yeah, well, we always like to have these conversations with you all throughout the year. Once a month, we ",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "pending",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "자막 확보, 인용 대기",
+      "appearance_source": null,
+      "transcript_retained": true,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "rkiRV0HcOaM",
       "url": "https://www.youtube.com/watch?v=rkiRV0HcOaM",
@@ -938,29 +1199,31 @@
       "transcript_chars": 19341,
       "transcript_url": null,
       "name_mentions": 0,
-      "appearance_confirmed": null,
+      "appearance_confirmed": false,
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
+      "gemini_status": "not_speaking",
+      "gemini_model": "models/gemini-flash-latest",
+      "gemini_at": "2026-11-21T10:10:33+09:00",
+      "gemini_mode": "video",
+      "person_speaks": false,
+      "gemini_evidence": "Darius Dale does not appear or speak in the video. The conversation is between Stanley Druckenmiller and Iliana Bouzali.",
       "stance": null,
       "quotes": [],
       "gemini_error_count": 0,
       "gemini_last_error": null,
       "evidence_ready_at": null,
-      "evidence_grade": "자막 확보, 인용 대기",
-      "appearance_source": null,
-      "transcript_retained": true,
+      "evidence_grade": "본인 발언 없음",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
       "quotes_grade_count": {
         "1차-A": 0,
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [],
+      "gemini_prompt_tokens": 45155
     },
     {
       "video_id": "p5vjT82-rO4",
@@ -2115,6 +2378,52 @@
       }
     },
     {
+      "video_id": "Mi8DV2F3ToI",
+      "url": "https://www.youtube.com/watch?v=Mi8DV2F3ToI",
+      "channel": "Thoughtful Money",
+      "channel_id": "UCjqe6xtZYTfvA4pHs0HgJsQ",
+      "channel_mode": "filter",
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "match": "title",
+      "title": "The Most Important Investing Books Ever | According To Lacy Hunt, Kyle Bass, Lyn Alden & 30 Others",
+      "description": "GET OUR FREE \"ESSENTIAL READING FOR INVESTORS\" BOOK LIST at https://www.thoughtfulmoney.com/essential\n\nA principal part of Thoughtful Money’s mission is to democratize financial literacy.\n\nIn my pursuit of that goal, I often get asked: What makes a well-informed investor?\n\nSo to come up with a definitive & actionable answer, I’ve asked over 30 of the world’s foremost experts in money & wealth-building to share their top recommendations for the foundational publications a “well-informed investor” should read.\n\nThe result?\n\nA list of the 100+ most significant & powerful books, white papers and videos on successful wealth creation ever published.\n\nAs well as a list of the “Most Recommended” 20 books that were submitted by multiple experts.\n\nThe value of this combined knowledge is priceless.\n\nA treasure trove of wealth-building knowledge is just a click away. I’m very pleased and proud to make it available to you.\n\nGet it now at https://www.thoughtfulmoney.com/essential\n\n#investingforbeginners #investingbooks #investing101 \n_____________________________________________\n \nThoughtful Money LLC is a Registered Investment Advisor Promoter.\n\nWe produce educational content geared for the individual investor. It’s important to note that this content is NOT investment advice, individual or otherwise, nor should be construed as such.\n\nWe recommend that most investors, especially if inexperienced, should consider benefiting from the direction and guidance of a qualified financial advisor r",
+      "published_at": "2026-11-15T16:00:11Z",
+      "first_seen_at": "2026-11-21T10:10:33+09:00",
+      "is_short": null,
+      "transcript_status": "skipped_old",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
+      "gemini_status": "skipped",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
       "video_id": "L8SRWZhAuvI",
       "url": "https://www.youtube.com/watch?v=L8SRWZhAuvI",
       "channel": "Joseph Wang",
@@ -2441,328 +2750,6 @@
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "i0dhEf5U-Ls",
-      "url": "https://www.youtube.com/watch?v=i0dhEf5U-Ls",
-      "channel": "tastylive",
-      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
-      "channel_mode": "filter",
-      "person": "Cem Karsan",
-      "tier": 1,
-      "role": "core",
-      "match": "title",
-      "title": "Cem Karsan Explains Why All That News Didn’t Move the Market",
-      "description": "Cem Karsan calls this the most extreme example yet of flows overpowering macro. Lay out everything that happened over two weeks and almost nobody would believe the index is sitting roughly 2% from its all-time high. His explanation is mechanical: options markets have grown so large they're no longer the tail wagging the dog, they are the dog, and the skew sitting in them has become the biggest carry trade in the world. Every day without a big move, dealers buy deltas and sell vol.\n\n📊 tastylive: https://www.tastylive.com/\n📰 Get Tom's pre-market analysis every morning: https://www.tastylive.com/newsletters\n📘 FREE Options Strategy Guide: https://tinyurl.com/bp9ms763\n📱 Follow tastylive on X: https://x.com/tastyliveshow\n\nChapters\n00:00 Cem Karsan joins after a long week\n00:22 The most extreme example of flows\n00:48 Watch the next month closely\n01:15 List the news, guess the market\n02:27 Options markets are the dog now\n03:04 The biggest carry trade in the world\n03:50 Why the loop is self-reinforcing\n04:20 Why nobody wants to own vol\n05:21 The one window this can break\n07:47 Why December expiration matters\n\n#tastylive #cemkarsan #structuralflows #volatility #skew #opex #marketstructure #carrytrade #optionstrading #stockmarket\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, and over 25 personalities,",
-      "published_at": "2026-11-13T23:16:48Z",
-      "first_seen_at": "2026-11-14T08:20:37+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-14T10:10:32+09:00",
-      "transcript_language": null,
-      "transcript_chars": 9715,
-      "transcript_url": null,
-      "name_mentions": 0,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-14T10:10:32+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Cem Karsan appears live via video call and speaks extensively about US equity market dynamics, structural flows, volatility compression, and his market outlook heading into December OPEX.",
-      "stance": {
-        "us_equities": "bullish",
-        "summary": "Cem Karsan expects US equities to remain strongly supported over the next 1 to 1.5 months leading into December OPEX due to powerful options-driven structural flows, dealer delta buybacks, and volatility compression, before macro headwinds potentially regain dominance in early January.",
-        "invalidation": "A severe pocket where bad news intersects with illiquidity, particularly from a Friday into a Monday, triggering volatility unpinning.",
-        "targets": [],
-        "timeframe": "Next 1 to 1.5 months (through December OPEX into early January)"
-      },
-      "quotes": [
-        {
-          "t": "0:46",
-          "t_sec": 46,
-          "speaker": "Cem Karsan",
-          "topic": "us_equities",
-          "text": "Watch the next, I mean honestly we're going to talk about this a bunch, watch the next month to month and a half of action. Okay, this is going to be flows on parade.",
-          "url": "https://www.youtube.com/watch?v=i0dhEf5U-Ls&t=46s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 30,
-          "caption_checked": true
-        },
-        {
-          "t": "3:00",
-          "t_sec": 180,
-          "speaker": "Cem Karsan",
-          "topic": "us_equities",
-          "text": "What we have is now the biggest carry trade in the world, and it is all a reflexive loop.",
-          "url": "https://www.youtube.com/watch?v=i0dhEf5U-Ls&t=180s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 100.0,
-          "caption_sec": 155,
-          "caption_checked": true
-        },
-        {
-          "t": "7:50",
-          "t_sec": 470,
-          "speaker": "Cem Karsan",
-          "topic": "us_equities",
-          "text": "As you now approach closer and closer to that Dec OPEX, we're now five weeks away, you're getting to a point where it is increasingly difficult to unpin this market.",
-          "url": "https://www.youtube.com/watch?v=i0dhEf5U-Ls&t=470s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 94.4,
-          "caption_sec": 465,
-          "caption_checked": true
-        },
-        {
-          "t": "9:42",
-          "t_sec": 582,
-          "speaker": "Cem Karsan",
-          "topic": "us_equities",
-          "text": "There will be a moment, post Dec OPEX, probably early January, where those flows are no longer at the level even close of what we've seen, at which point the macro will become more dominant again.",
-          "url": "https://www.youtube.com/watch?v=i0dhEf5U-Ls&t=582s",
-          "speaker_verified": true,
-          "grade": "1차-A",
-          "caption_match": 92.7,
-          "caption_sec": 589,
-          "caption_checked": true
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-14T10:10:32+09:00",
-      "evidence_grade": "1차-A",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "0:46",
-          "point": "Market action over the next month to month-and-a-half will be heavily dominated by structural flows rather than macro headlines.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "next 1 to 1.5 months"
-        },
-        {
-          "t": "3:00",
-          "point": "The options market has created a massive reflexive carry trade driven by high put skew and daily volatility decay.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "5:22",
-          "point": "The primary risk for a market unpinning occurs when negative headlines intersect with illiquidity, especially across Friday-to-Monday calendar windows.",
-          "condition": "bad news intersects with illiquidity",
-          "conviction": "risk_scenario",
-          "horizon": "short_term"
-        },
-        {
-          "t": "7:49",
-          "point": "It will become increasingly difficult to unpin equities over the next five weeks leading into December OPEX as volatility selling and dealer delta buybacks accelerate.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "next 5 weeks"
-        },
-        {
-          "t": "8:13",
-          "point": "Thanksgiving week and the final weeks preceding December OPEX will experience peak supportive buyback flows and low-volume volatility compression.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "through December OPEX"
-        },
-        {
-          "t": "9:42",
-          "point": "Following December OPEX in early January, supportive structural flows will diminish, allowing macro factors to become the dominant market driver once again.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "early January"
-        }
-      ],
-      "gemini_prompt_tokens": 21288,
-      "quotes_grade_count": {
-        "1차-A": 4,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
-    },
-    {
-      "video_id": "g2ydjhRjBc0",
-      "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0",
-      "channel": "Bob Elliott",
-      "channel_id": "UClkYGk572o1kZp9juGxSSHg",
-      "channel_mode": "filter",
-      "person": "Bob Elliott",
-      "tier": 3,
-      "role": "core",
-      "match": "x_self_link",
-      "title": "Macro Talk: 2026.11.13",
-      "description": "A recording from Bob Elliott and Prometheus Research's live video\n\nhttps://bobeunlimited.substack.com/p/macro-talk-20261113?utm_source=youtube",
-      "published_at": "2026-11-13T18:40:08+00:00",
-      "first_seen_at": "2026-11-15T11:51:58+09:00",
-      "is_short": false,
-      "transcript_status": "not_needed",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": true,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "tier 3: captions are kept for the tiers that drive judgments",
-      "gemini_status": "ready",
-      "gemini_model": "models/gemini-3.5-flash",
-      "gemini_at": "2026-11-15T11:51:58+09:00",
-      "gemini_mode": "video",
-      "person_speaks": true,
-      "gemini_evidence": "Bob Elliott introduces himself at 00:02 ('I'm Bob Elliott') and speaks throughout the podcast episode, discussing macroeconomic market trends, inflation, Federal Reserve policy, and portfolio construction.",
-      "stance": {
-        "us_equities": "bearish",
-        "summary": "Bob Elliott maintains a skeptical and cautious stance on US equities, arguing that equity markets are pricing in unrealistically strong economic growth despite high real yields, tightening financial conditions, and a lack of broad productivity gains outside of mega-cap tech.",
-        "invalidation": "",
-        "targets": [],
-        "timeframe": ""
-      },
-      "quotes": [
-        {
-          "t": "02:20",
-          "t_sec": 140,
-          "speaker": "Bob Elliott",
-          "topic": "Market Discipline",
-          "text": "One of the things you learn in markets is don't get greedy. You get greedy, you get run over.",
-          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=140s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "04:58",
-          "t_sec": 298,
-          "speaker": "Bob Elliott",
-          "topic": "US Equities Valuation",
-          "text": "Growth is priced in right now to be extraordinary ahead and it's still priced to be extraordinary ahead, right?",
-          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=298s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "07:14",
-          "t_sec": 434,
-          "speaker": "Bob Elliott",
-          "topic": "US Equities Outlook",
-          "text": "Typically, it would be hard for stocks to continue to levitate in that sort of environment.",
-          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=434s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "13:51",
-          "t_sec": 831,
-          "speaker": "Bob Elliott",
-          "topic": "Fed Rate Hikes",
-          "text": "We can barely get this fool to hike 25 basis points despite the fact that inflation is 4%, like they're not going to hike 50 basis points.",
-          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=831s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "24:41",
-          "t_sec": 1481,
-          "speaker": "Bob Elliott",
-          "topic": "AI & Productivity",
-          "text": "Highlighting that there's been no meaningful improvement in productivity in the economy.",
-          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=1481s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        },
-        {
-          "t": "50:18",
-          "t_sec": 3018,
-          "speaker": "Bob Elliott",
-          "topic": "Alpha Allocation",
-          "text": "You should be very hesitant to put a lot of your risk into alpha because it is, as we both know, it is extremely hard to be able to generate alpha over time.",
-          "url": "https://www.youtube.com/watch?v=g2ydjhRjBc0&t=3018s",
-          "speaker_verified": true,
-          "grade": "1차-B"
-        }
-      ],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": "2026-11-15T11:51:58+09:00",
-      "evidence_grade": "1차-B",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "key_points": [
-        {
-          "t": "02:20",
-          "point": "Investors should avoid getting greedy during market rallies and take profits when macro re-rating opportunities present themselves.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "04:58",
-          "point": "US equity markets remain priced for extraordinary economic growth expectations that are detached from macroeconomic fundamentals.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "06:55",
-          "point": "Signs of slowing growth and tightening liquidity outside the main equity/bond complex make it difficult for stocks to maintain elevated valuations.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "medium_term"
-        },
-        {
-          "t": "13:51",
-          "point": "The Federal Reserve is highly unlikely to re-accelerate rate hikes to 50 basis points despite sticky inflation figures.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "14:21",
-          "point": "The sharp sell-off in the bond market following inflation data was an overreaction given falling commodity prices and lagged inflation dynamics.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "short_term"
-        },
-        {
-          "t": "24:41",
-          "point": "Massive capital expenditure in artificial intelligence has yet to show up in economy-wide productivity improvements or revenue per worker growth outside of mega-cap tech.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "long_term"
-        },
-        {
-          "t": "50:18",
-          "point": "Individual investors should keep their risk allocation to active alpha strategies low due to the extreme difficulty of generating consistent alpha.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "long_term"
-        },
-        {
-          "t": "57:08",
-          "point": "Commodities are an essential component of a strategic asset allocation to provide diversification when inflation drives stock and bond correlations higher.",
-          "condition": "",
-          "conviction": "base_case",
-          "horizon": "long_term"
-        }
-      ],
-      "gemini_prompt_tokens": 134727,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 6,
-        "excluded_speaker_mismatch": 0
-      }
     }
   ],
   "person_index": {
@@ -2772,8 +2759,8 @@
     "people": {
       "Darius Dale": {
         "role": "core",
-        "count": 5,
-        "non_noise": 5,
+        "count": 6,
+        "non_noise": 6,
         "items": [
           {
             "at": "2026-11-18T10:10:46+09:00",
@@ -2818,6 +2805,15 @@
             "preview": "Will Bitcoin Test $50k Before It Rallies to $150k?",
             "grade": "1차-A",
             "published_at": "2026-11-19T20:26:07Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-21T10:10:33+09:00",
+            "url": "https://www.youtube.com/watch?v=SNdJ5XYCMxU",
+            "kind": "video",
+            "preview": "The Macro Minute: Anthropic's Violent Reversal Sends a Warning",
+            "grade": "1차-A",
+            "published_at": "2026-11-20T21:00:06Z",
             "noise_hint": false
           }
         ]
