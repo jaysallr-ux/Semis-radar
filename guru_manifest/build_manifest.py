@@ -28,7 +28,7 @@ OUT = REPO / "guru_manifest" / "data" / "manifest.json"
 CATCHUP = REPO / "guru_manifest" / "data" / "manifest_catchup.json"
 MAX_BASES = 3   # main manifest + up to 2 catch-up sets (1-2 missed or unsaved morning runs)
 FEEDS = {
-    "x": REPO / "guru_x" / "data" / "feed.json",
+    "x": REPO / "guru_x" / "data" / ("feed_full.json" if (REPO / "guru_x" / "data" / "feed_full.json").exists() else "feed.json"),
     "yt": REPO / "guru_yt" / "data" / "youtube_feed.json",
     "web": REPO / "guru_web" / "data" / "web_feed.json",
 }

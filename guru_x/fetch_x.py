@@ -38,7 +38,9 @@ ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "accounts.json"
 DATA_DIR = ROOT / "data"
 STATE_PATH = DATA_DIR / "state.json"
-FEED_PATH = DATA_DIR / "feed.json"
+FEED_PATH = DATA_DIR / "feed.json"          # slim: what GPT reads (posts touched in the last SLIM_HOURS)
+FULL_PATH = DATA_DIR / "feed_full.json"     # full 7-day archive: collector state and manifest input
+SLIM_HOURS = 72  # the 11/22 report failed when GPT's read of a 1.06 MB feed got cut off; 72 h is ~0.45 MB
 RUNS_PATH = DATA_DIR / "runs.csv"
 MANUAL_PATH = DATA_DIR / "manual_ids.json"
 INBOX_DIR = DATA_DIR / "inbox"  # pickle-YYYYMMDD-HHMM.json from the Pickle agent: post IDs only
@@ -113,11 +115,34 @@ def load_json(path: Path, default):
     return default
 
 
-def write_json(path: Path, obj) -> None:
+def write_json(path: Path, obj, compact: bool = False) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    text = json.dumps(obj, ensure_ascii=False, separators=(",", ":")) if compact else json.dumps(obj, ensure_ascii=False, indent=2)
+    tmp.write_text(text + "\n", encoding="utf-8")
     tmp.replace(path)
+
+
+def slim_feed(feed: dict, now: datetime) -> dict:
+    """Posts whose created_at, first_seen_at, transcript or image reading falls in the last SLIM_HOURS."""
+    lo = now - timedelta(hours=SLIM_HOURS)
+
+    def recent(p: dict) -> bool:
+        for v in (p.get("created_at"), p.get("first_seen_at"), (p.get("video_transcript") or {}).get("at"),
+                  (p.get("media_summary") or {}).get("at")):
+            try:
+                if v and datetime.fromisoformat(str(v).replace("Z", "+00:00")) > lo:
+                    return True
+            except ValueError:
+                continue
+        return False
+
+    slim = {k: v for k, v in feed.items() if k != "posts"}
+    slim["posts"] = [p for p in feed.get("posts", []) if recent(p)]
+    slim["posts_scope"] = (f"posts touched in the last {SLIM_HOURS} hours ({len(slim['posts'])} of "
+                           f"{len(feed.get('posts', []))}); the full {feed.get('window_days', 7)}-day archive is "
+                           "guru_x/data/feed_full.json. person_index covers the full archive.")
+    return slim
 
 
 class XClient:
@@ -252,7 +277,7 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     window = timedelta(days=cfg.get("window_days", 7))
     recheck = timedelta(hours=cfg.get("thread_recheck_hours", 12))
     state = load_json(STATE_PATH, {"user_ids": {}, "since_id": {}})
-    old_feed = load_json(FEED_PATH, {})
+    old_feed = load_json(FULL_PATH, None) or load_json(FEED_PATH, {})
     posts = {p["id"]: p for p in old_feed.get("posts", [])}
 
     errors: dict[str, str] = {}
@@ -454,7 +479,8 @@ def run(token: str | None, http_get: Callable | None = None, now: datetime | Non
     feed["person_index"] = person_index.for_x(kept, fetched_at)
 
     write_json(STATE_PATH, state)
-    write_json(FEED_PATH, feed)
+    write_json(FULL_PATH, feed, compact=True)
+    write_json(FEED_PATH, slim_feed(feed, datetime.fromisoformat(fetched_at)), compact=True)
     new_file = not RUNS_PATH.exists()
     with RUNS_PATH.open("a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
