@@ -1,16 +1,16 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-22T10:10:41+09:00",
+  "generated_at": "2026-11-22T21:10:34+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-22T05:20:30+09:00",
-    "merged_from_discovery": 1,
+    "last_discovery_at": "2026-11-22T10:10:41+09:00",
+    "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 1,
+      "accepted": 0,
       "rejected": 0
     }
   },
@@ -113,7 +113,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-10-18T00:00:09+09:00",
+      "oldest_rss": "2026-10-19T00:00:07+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -157,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-18T02:50:24+09:00",
+      "oldest_rss": "2026-11-18T03:23:12+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-20T09:48:38+09:00",
+      "oldest_rss": "2026-11-16T00:05:40+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-21T05:10:24+09:00",
+      "oldest_rss": "2026-11-21T05:32:33+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-20T09:00:25+09:00",
+      "oldest_rss": "2026-11-20T10:00:07+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,7 +234,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T11:30:04+09:00",
+      "oldest_rss": "2026-11-17T13:00:22+09:00",
       "gap_possible": false,
       "matched": 0
     }
@@ -250,8 +250,8 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 12,
-    "gemini_est_video_hours_today": 0.0,
+    "gemini_calls_today": 24,
+    "gemini_est_video_hours_today": 6.406,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
@@ -268,11 +268,11 @@
   "gemini_stats": {
     "attempted": 12,
     "ready": 0,
-    "not_speaking": 0,
+    "not_speaking": 1,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 6,
+    "budget_out": 5,
     "chunked": 1,
     "text_mode": 0,
     "quota_wait": 0
@@ -1108,29 +1108,31 @@
       "transcript_chars": 427567,
       "transcript_url": null,
       "name_mentions": 5,
-      "appearance_confirmed": null,
+      "appearance_confirmed": false,
       "appearance_excerpt": " on to talk about with uh with Illen a little bit. And al also coming up uh uh we do have N Smith coming on as well. Uh Jem is gallivanting through Europe. So, he has called himself off the bench to replace him for today's overtime, which we appreciate here. Errol, volumes today in this market, they're sizable. Nearly ",
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
+      "gemini_status": "not_speaking",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-22T21:10:34+09:00",
+      "gemini_mode": "video_chunks_12",
+      "person_speaks": false,
+      "gemini_evidence": "Cem Karsan is listed in show promos displayed on screen during the broadcast, but does not appear or speak in this video segment. / Cem Karsan does not appear or speak in this video segment. The featured speakers are Julia Spina, Chris Vecchio, and Jeff Holden. / Cem Karsan is listed in promotional lower-third graphics during the show, but he does not personally appear or speak in the video. / Cem",
       "stance": null,
       "quotes": [],
       "gemini_error_count": 0,
       "gemini_last_error": null,
       "evidence_ready_at": null,
-      "evidence_grade": "자막 확보, 인용 대기",
-      "appearance_source": null,
-      "transcript_retained": true,
+      "evidence_grade": "본인 발언 없음",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
       "quotes_grade_count": {
         "1차-A": 0,
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [],
+      "gemini_prompt_tokens": 876403
     },
     {
       "video_id": "tLKqIik_dqI",
