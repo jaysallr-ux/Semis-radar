@@ -106,10 +106,19 @@ async def login_cookies(krx_id, krx_pw):
         diag += " / KRX 안내창=" + (layer.strip()[:300] or "없음")
         print("LOGIN DIAG:", diag)
 
-        try:
-            await page.goto(MENU, wait_until="domcontentloaded", timeout=40000)
-        except PWTimeout:
-            raise Fail("KRX_CONNECT", "로그인 후 데이터 화면 접속 시간초과")
+        await asyncio.sleep(4)
+        for attempt in range(3):
+            try:
+                await page.goto(MENU, wait_until="domcontentloaded", timeout=40000)
+                break
+            except PWTimeout:
+                raise Fail("KRX_CONNECT", "로그인 후 데이터 화면 접속 시간초과")
+            except Exception as e:
+                if "interrupted" in str(e) and attempt < 2:
+                    await asyncio.sleep(4)
+                    continue
+                raise
+        await asyncio.sleep(3)
         if "MDCCOMS001" in page.url:
             msg = (" / KRX 메시지: " + " | ".join(dialogs)) if dialogs else ""
             raise Fail("LOGIN_FAILED", "로그인 거부" + msg + " / " + diag[:400])
@@ -125,6 +134,11 @@ async def login_cookies(krx_id, krx_pw):
             results.append((d, r))
             if r["status"] == 200 and "LOGOUT" not in r["text"] and '"WT_STKPRC_NETASST_RTO"' in r["text"] and '"코스피"' in r["text"]:
                 break
+        try:
+            await page.goto(BASE + "/contents/MDC/COMS/client/MDCCOMS001D2.cmd", wait_until="domcontentloaded", timeout=20000)
+            print("LOGOUT: 세션 정리 완료")
+        except Exception:
+            print("LOGOUT: 세션 정리 실패(다음 실행 때 중복로그인 창 뜰 수 있음)")
         await b.close()
         return results
 
