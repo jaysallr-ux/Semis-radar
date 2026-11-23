@@ -113,39 +113,36 @@ async def login_cookies(krx_id, krx_pw):
         if "MDCCOMS001" in page.url:
             msg = (" / KRX 메시지: " + " | ".join(dialogs)) if dialogs else ""
             raise Fail("LOGIN_FAILED", "로그인 거부" + msg + " / " + diag[:400])
-        cookies = await ctx.cookies([BASE])
+        today = kst_now()
+        js = """async (d) => { const r = await fetch('/comm/bldAttendant/getJsonData.cmd', {method:'POST', credentials:'include', headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8','X-Requested-With':'XMLHttpRequest','Accept':'application/json, text/javascript, */*; q=0.01'}, body: new URLSearchParams({bld:'dbms/MDC/STAT/standard/MDCSTAT00701', locale:'ko_KR', searchType:'A', idxIndMidclssCd:'02', trdDd:d, csvxls_isNo:'false'}).toString()}); return {status:r.status, ctype:r.headers.get('content-type')||'', text: await r.text()}; }"""
+        results = []
+        for i in range(8):
+            d = (today - datetime.timedelta(days=i)).strftime("%Y%m%d")
+            try:
+                r = await page.evaluate(js, d)
+            except Exception as e:
+                raise Fail("KRX_CONNECT", "브라우저 내 데이터 요청 실패: " + type(e).__name__)
+            results.append((d, r))
+            if r["status"] == 200 and "LOGOUT" not in r["text"] and '"WT_STKPRC_NETASST_RTO"' in r["text"] and '"코스피"' in r["text"]:
+                break
         await b.close()
-        if not any(c["name"] == "mdc.client_session" for c in cookies):
-            raise Fail("LOGIN_FAILED", "로그인은 넘어갔는데 세션 쿠키(mdc.client_session)가 안 나옴")
-        return cookies
+        return results
 
 
-def fetch(s, day):
-    try:
-        r = s.post(BASE + "/comm/bldAttendant/getJsonData.cmd", data={
-            "bld": "dbms/MDC/STAT/standard/MDCSTAT00701",
-            "locale": "ko_KR",
-            "searchType": "A",
-            "idxIndMidclssCd": "02",
-            "trdDd": day,
-            "csvxls_isNo": "false",
-        }, timeout=20)
-    except requests.Timeout:
-        raise Fail("KRX_CONNECT", "PBR 데이터 요청 시간초과")
-    except requests.RequestException as e:
-        raise Fail("KRX_CONNECT", "PBR 데이터 요청 실패: " + str(e)[:150])
-    if r.status_code in (401, 403, 429):
-        raise Fail("KRX_BLOCKED", "PBR 데이터 요청 HTTP " + str(r.status_code) + " (차단 또는 요청 제한)")
-    if r.status_code >= 400:
-        raise Fail("KRX_HTTP", "PBR 데이터 요청 HTTP " + str(r.status_code))
-    if "text/html" in r.headers.get("Content-Type", "") or not r.text.strip():
-        raise Fail("SESSION_INVALID", "JSON 대신 HTML/빈 응답 (세션이 안 먹힘)")
-    try:
-        j = r.json()
-    except Exception:
-        raise Fail("RESPONSE_CHANGED", "응답이 JSON이 아님: " + r.text[:120])
-    if j.get("RESULT") == "LOGOUT":
+def parse(r):
+    if r["status"] in (401, 403, 429):
+        raise Fail("KRX_BLOCKED", "PBR 데이터 요청 HTTP " + str(r["status"]) + " (차단 또는 요청 제한)")
+    if r["status"] >= 400:
+        raise Fail("KRX_HTTP", "PBR 데이터 요청 HTTP " + str(r["status"]))
+    t = r["text"].strip()
+    if not t or t.startswith("<"):
+        raise Fail("SESSION_INVALID", "JSON 대신 HTML/빈 응답: " + re.sub(r"\s+", " ", t)[:150])
+    if t == "LOGOUT" or '"RESULT":"LOGOUT"' in t.replace(" ", ""):
         raise Fail("SESSION_INVALID", "KRX가 LOGOUT 반환 (세션 만료 또는 로그인 미인정)")
+    try:
+        j = json.loads(t)
+    except Exception:
+        raise Fail("RESPONSE_CHANGED", "응답이 JSON이 아님: " + t[:120])
     return next((v for v in j.values() if isinstance(v, list)), None)
 
 
@@ -164,34 +161,27 @@ def get_official():
     except requests.RequestException as e:
         raise Fail("KRX_CONNECT", "KRX 연결 실패: " + type(e).__name__)
     try:
-        cookies = asyncio.run(login_cookies(krx_id, krx_pw))
+        results = asyncio.run(login_cookies(krx_id, krx_pw))
     except Fail:
         raise
     except Exception as e:
         raise Fail("UNKNOWN", "로그인 단계 예외: " + type(e).__name__ + " " + str(e)[:150])
-    s = requests.Session()
-    s.headers.update({"User-Agent": UA, "Referer": MENU, "Origin": BASE, "X-Requested-With": "XMLHttpRequest"})
-    for c in cookies:
-        s.cookies.set(c["name"], c["value"], domain=c["domain"])
-    today = kst_now()
-    sample_keys = None
-    for i in range(8):
-        d = (today - datetime.timedelta(days=i)).strftime("%Y%m%d")
-        rows = fetch(s, d)
+    for i, (d, r) in enumerate(results):
+        rows = parse(r)
         if rows is None:
             raise Fail("RESPONSE_CHANGED", "응답에 데이터 목록이 없음 (KRX 응답 구조 변경)")
         if i == 0:
             print("RAW sample:", json.dumps(rows[:2], ensure_ascii=False))
         if not rows:
             continue
-        sample_keys = list(rows[0].keys())
-        row = next((r for r in rows if str(r.get("IDX_NM", "")).strip() == "코스피"), None)
+        keys = list(rows[0].keys())
+        row = next((x for x in rows if str(x.get("IDX_NM", "")).strip() == "코스피"), None)
         if row is None:
-            raise Fail("RESPONSE_CHANGED", "코스피 행을 못 찾음. 응답 키: " + ",".join(sample_keys))
+            raise Fail("RESPONSE_CHANGED", "코스피 행을 못 찾음. 응답 키: " + ",".join(keys))
+        if "WT_STKPRC_NETASST_RTO" not in row:
+            raise Fail("RESPONSE_CHANGED", "PBR 컬럼 이름이 바뀜. 응답 키: " + ",".join(keys))
         pbr = num(row.get("WT_STKPRC_NETASST_RTO"))
         if pbr is None:
-            if "WT_STKPRC_NETASST_RTO" not in row:
-                raise Fail("RESPONSE_CHANGED", "PBR 컬럼 이름이 바뀜. 응답 키: " + ",".join(sample_keys))
             continue
         return {"date": d, "close": num(row.get("CLSPRC_IDX")), "pbr": pbr, "per": num(row.get("WT_PER")), "div_yield": num(row.get("DIV_YD"))}
     raise Fail("NO_DATA", "최근 8일 동안 코스피 PBR 데이터 없음 (장기 휴장 또는 KRX 데이터 미갱신)")
