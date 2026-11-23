@@ -3,13 +3,15 @@ from playwright.async_api import async_playwright
 async def main():
     async with async_playwright() as p:
         b = await p.chromium.launch(headless=True)
-        page = await (await b.new_context(locale="ko-KR")).new_page()
+        page = await (await b.new_context(locale="ko-KR", user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36", viewport={"width":1920,"height":1080})).new_page()
         await page.goto("https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001.cmd", wait_until="domcontentloaded")
-        await page.wait_for_selector("iframe", state="attached", timeout=30000)
-        await asyncio.sleep(3)
+        await asyncio.sleep(10)
+        print("URL", page.url)
+        top = await page.content()
+        print("TOPLEN", len(top), re.sub(r"\s+"," ",top)[:1500])
         for f in page.frames:
             print("FRAME", f.url)
-        fr = (await (await page.query_selector("iframe")).content_frame())
+        fr = page.frames[-1]
         html = await fr.content()
         for m in re.findall(r"<form[\s\S]*?</form>", html)[:3]:
             print("FORM", re.sub(r"\s+", " ", m)[:3000])
