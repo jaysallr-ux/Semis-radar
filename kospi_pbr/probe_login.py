@@ -5,7 +5,7 @@ async def main():
         b = await p.chromium.launch(headless=True)
         page = await (await b.new_context(locale="ko-KR")).new_page()
         await page.goto("https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001.cmd", wait_until="domcontentloaded")
-        await page.wait_for_selector("iframe", timeout=20000)
+        await page.wait_for_selector("iframe", state="attached", timeout=30000)
         await asyncio.sleep(3)
         for f in page.frames:
             print("FRAME", f.url)
