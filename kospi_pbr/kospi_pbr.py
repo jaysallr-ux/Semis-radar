@@ -81,6 +81,16 @@ async def login_cookies(krx_id, krx_pw):
         except PWTimeout:
             raise Fail("LOGIN_PAGE_CHANGED", "아이디/비번 입력칸 또는 로그인 버튼을 못 찾음 (KRX 로그인 화면 구조 변경)")
         await asyncio.sleep(4)
+        for fr in (frame, page):
+            try:
+                if "이미 로그인된" in (await fr.inner_text("body")):
+                    btn = fr.get_by_text("확인", exact=True)
+                    await btn.last.click(timeout=5000)
+                    print("LOGIN: 기존 세션 로그아웃 확인 클릭")
+                    await asyncio.sleep(5)
+                    break
+            except Exception as e:
+                print("LOGIN: 확인 클릭 실패", type(e).__name__)
         diag = "click후 URL=" + page.url
         js = "() => Array.from(document.querySelectorAll('[class*=layer],[class*=alert],[class*=modal],[class*=dialog]')).filter(e => e.offsetParent !== null && e.innerText && e.innerText.trim().length > 3 && e.innerText.length < 400).map(e => e.innerText.trim().replace(/\\s+/g, ' ')).slice(0, 3).join(' | ')"
         layer = ""
