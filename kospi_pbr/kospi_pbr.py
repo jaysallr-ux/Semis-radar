@@ -48,13 +48,17 @@ async def login_cookies(krx_id, krx_pw):
         page.on("dialog", on_dialog)
 
         try:
-            resp = await page.goto(BASE + "/contents/MDC/COMS/client/MDCCOMS001.cmd", wait_until="networkidle", timeout=40000)
+            resp = await page.goto(BASE + "/contents/MDC/COMS/client/MDCCOMS001.cmd", wait_until="domcontentloaded", timeout=40000)
         except PWTimeout:
             raise Fail("KRX_CONNECT", "KRX 로그인 페이지 접속 시간초과 (서버 장애 또는 해외 IP 차단 의심)")
         except Exception as e:
             raise Fail("KRX_CONNECT", "KRX 로그인 페이지 접속 실패: " + str(e)[:150])
         if resp is not None and resp.status >= 400:
             raise Fail("KRX_BLOCKED", "KRX 로그인 페이지 HTTP " + str(resp.status) + " (접속 차단 의심)")
+        try:
+            await page.wait_for_selector("iframe", timeout=20000)
+        except PWTimeout:
+            pass
         await asyncio.sleep(2)
 
         try:
@@ -72,7 +76,7 @@ async def login_cookies(krx_id, krx_pw):
         await asyncio.sleep(4)
 
         try:
-            await page.goto(MENU, wait_until="networkidle", timeout=40000)
+            await page.goto(MENU, wait_until="domcontentloaded", timeout=40000)
         except PWTimeout:
             raise Fail("KRX_CONNECT", "로그인 후 데이터 화면 접속 시간초과")
         if "MDCCOMS001" in page.url:
@@ -119,6 +123,15 @@ def get_official():
     krx_pw = os.environ.get("KRX_PW", "").strip()
     if not krx_id or not krx_pw:
         raise Fail("SECRETS_MISSING", "깃허브 Secrets에 KRX_ID 또는 KRX_PW가 없음")
+    try:
+        t = requests.get(BASE + "/contents/MDC/COMS/client/MDCCOMS001.cmd", headers={"User-Agent": UA}, timeout=20)
+        print("PROBE: HTTP", t.status_code, len(t.text), "bytes")
+        if t.status_code in (401, 403, 429):
+            raise Fail("KRX_BLOCKED", "KRX가 HTTP " + str(t.status_code) + " 반환 (해외 IP 차단 의심)")
+    except requests.Timeout:
+        raise Fail("KRX_CONNECT", "KRX 응답 없음 20초 (해외 IP 차단 또는 서버 장애)")
+    except requests.RequestException as e:
+        raise Fail("KRX_CONNECT", "KRX 연결 실패: " + type(e).__name__)
     try:
         cookies = asyncio.run(login_cookies(krx_id, krx_pw))
     except Fail:
