@@ -132,7 +132,12 @@ async def login_cookies(krx_id, krx_pw):
             except Exception as e:
                 raise Fail("KRX_CONNECT", "브라우저 내 데이터 요청 실패: " + type(e).__name__)
             results.append((d, r))
-            if r["status"] == 200 and "LOGOUT" not in r["text"] and '"WT_STKPRC_NETASST_RTO"' in r["text"] and '"코스피"' in r["text"]:
+            try:
+                rows = parse(r) or []
+            except Fail:
+                break
+            k = next((x for x in rows if str(x.get("IDX_NM", "")).strip() == "코스피"), None)
+            if k is None or num(k.get("WT_STKPRC_NETASST_RTO")) is not None:
                 break
         try:
             await page.goto(BASE + "/contents/MDC/COMS/client/MDCCOMS001D2.cmd", wait_until="domcontentloaded", timeout=20000)
