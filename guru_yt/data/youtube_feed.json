@@ -1,12 +1,12 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-22T21:10:34+09:00",
+  "generated_at": "2026-11-23T10:10:44+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-22T10:10:41+09:00",
+    "last_discovery_at": "2026-11-22T21:10:34+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
@@ -47,7 +47,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-30T23:00:12+09:00",
+      "oldest_rss": "2026-10-01T23:00:22+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -69,7 +69,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-09-22T01:45:39+09:00",
+      "oldest_rss": "2026-09-23T21:54:04+09:00",
       "gap_possible": false,
       "matched": 1
     },
@@ -80,7 +80,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-07-16T22:26:50+09:00",
+      "oldest_rss": "2026-07-21T00:16:26+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -115,7 +115,7 @@
       "list_source": "data_api",
       "oldest_rss": "2026-10-19T00:00:07+09:00",
       "gap_possible": false,
-      "matched": 1
+      "matched": 0
     },
     {
       "label": "MacroVoices",
@@ -157,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-18T03:23:12+09:00",
+      "oldest_rss": "2026-11-18T08:00:13+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-16T00:05:40+09:00",
+      "oldest_rss": "2026-11-20T22:01:27+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-21T05:32:33+09:00",
+      "oldest_rss": "2026-11-21T07:48:34+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-20T10:00:07+09:00",
+      "oldest_rss": "2026-11-21T00:00:10+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,14 +234,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-17T13:00:22+09:00",
+      "oldest_rss": "2026-11-18T03:00:18+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 0,
-    "yta_server_remaining": null,
+    "yta_used_today": 1,
+    "yta_server_remaining": 9,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -250,14 +250,14 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 24,
-    "gemini_est_video_hours_today": 6.406,
+    "gemini_calls_today": 6,
+    "gemini_est_video_hours_today": 2.75,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 0,
-    "ready": 0,
+    "attempted": 1,
+    "ready": 1,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
@@ -266,13 +266,13 @@
     "waiting_for_gemini": 2
   },
   "gemini_stats": {
-    "attempted": 12,
-    "ready": 0,
-    "not_speaking": 1,
+    "attempted": 6,
+    "ready": 4,
+    "not_speaking": 0,
     "busy": 0,
-    "errors": 0,
+    "errors": 1,
     "left_pending": 0,
-    "budget_out": 5,
+    "budget_out": 0,
     "chunked": 1,
     "text_mode": 0,
     "quota_wait": 0
@@ -304,25 +304,144 @@
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": "shadow: captions are reserved for the core 11",
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-23T10:10:44+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Joseph Wang appears on camera speaking throughout the entire video about macro market dynamics and equities.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "The AI trade and data center capex boom are slowing due to tighter credit, regulatory resistance, and supply headwinds. Equities are expected to grind down slowly over the coming months despite potential short-term tactical bear market rallies, as the Fed will maintain restrictive policy until inflation is fully controlled.",
+        "invalidation": "The market begins pricing in Fed rate cuts rather than just an end to rate hikes.",
+        "targets": [],
+        "timeframe": "Next few weeks to months"
+      },
+      "quotes": [
+        {
+          "t": "00:13",
+          "t_sec": 13,
+          "speaker": "Joseph Wang",
+          "topic": "AI trade",
+          "text": "I think it's pretty clear now that the AI trade is over.",
+          "url": "https://www.youtube.com/watch?v=9cR-SnyehwI&t=13s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "06:47",
+          "t_sec": 407,
+          "speaker": "Joseph Wang",
+          "topic": "Data center build-out",
+          "text": "So all of this is telling you that the data center build out is going to slow. It's not ending, but it is going to slow.",
+          "url": "https://www.youtube.com/watch?v=9cR-SnyehwI&t=407s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "12:00",
+          "t_sec": 720,
+          "speaker": "Joseph Wang",
+          "topic": "US equity rally",
+          "text": "We're going to have a really rip roaring bear market rally that could be fierce.",
+          "url": "https://www.youtube.com/watch?v=9cR-SnyehwI&t=720s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "12:54",
+          "t_sec": 774,
+          "speaker": "Joseph Wang",
+          "topic": "Fed monetary policy",
+          "text": "10% correction in equity markets is not going to cause the Fed the pivot.",
+          "url": "https://www.youtube.com/watch?v=9cR-SnyehwI&t=774s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "15:36",
+          "t_sec": 936,
+          "speaker": "Joseph Wang",
+          "topic": "US equities outlook",
+          "text": "I continue to think, like I've been saying for the past few months, that we were just going to grind down slowly.",
+          "url": "https://www.youtube.com/watch?v=9cR-SnyehwI&t=936s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "16:15",
+          "t_sec": 975,
+          "speaker": "Joseph Wang",
+          "topic": "Equity buying signal",
+          "text": "I guess the clue that I would be looking for is that the market begins to price in not just no more hikes, but maybe towards some cuts, I think that would be a time to begin to look at buying.",
+          "url": "https://www.youtube.com/watch?v=9cR-SnyehwI&t=975s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": "dedicated_channel",
+      "evidence_ready_at": "2026-11-23T10:10:44+09:00",
+      "evidence_grade": "1차-B",
+      "appearance_source": "gemini",
       "transcript_retained": false,
       "quotes_grade_count": {
         "1차-A": 0,
-        "1차-B": 0,
+        "1차-B": 6,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "01:21",
+          "point": "The AI data center build-out is slowing due to financing challenges for neo-clouds, regulatory opposition at state levels, and tighter GPU export controls.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "07:11",
+          "point": "The SEC investigation into Nvidia's accounting acts as a significant headwind for the leading stock of the AI market.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "08:58",
+          "point": "Incoming equity supply from insider lock-up expirations at companies like Anthropic will create ongoing selling pressure in equity markets.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "11:21",
+          "point": "High implied volatility and put options unwinding could trigger a sharp, short-term bear market rally.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "12:21",
+          "point": "The Federal Reserve will not pivot or cut rates in response to a 10% equity decline, as high real rates are being intentionally maintained to tame inflation.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "15:36",
+          "point": "US equity markets are expected to continue grinding down slowly over the next several months rather than experience a rapid V-shaped recovery.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "16:15",
+          "point": "Investors should wait until market pricing shifts toward Federal Reserve rate cuts before considering significant equity re-entry.",
+          "condition": "Market starts pricing in Fed rate cuts",
+          "conviction": "hypothetical",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 32843
     },
     {
       "video_id": "WbQoMMoZW7A",
@@ -346,29 +465,155 @@
       "transcript_chars": null,
       "transcript_url": null,
       "name_mentions": null,
-      "appearance_confirmed": null,
+      "appearance_confirmed": true,
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": "tier 3: captions are kept for the tiers that drive judgments",
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-23T10:10:44+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Bob Elliott speaks throughout the video, co-hosting Macro Talk and giving extensive analysis on macro market trends, US growth, asset risk premiums, Fed policy, and equity market dynamics.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Bob Elliott is cautious to bearish on US equities, noting that expanding risk premiums and mediocre US growth make stocks vulnerable to an asset shock. He sees further downside room for equity growth repricing against bonds and warns that sector rotation reflects deleveraging rather than market resilience, with central bank policy unlikely to ease fast enough to stop a market correction from turning into a bear market.",
+        "invalidation": "Central bank policy response easing fast enough or a significant turn in economic and asset market weakness that prompts early monetary support.",
+        "targets": [],
+        "timeframe": ""
+      },
+      "quotes": [
+        {
+          "t": "02:18",
+          "t_sec": 138,
+          "speaker": "Bob Elliott",
+          "topic": "us_equities",
+          "text": "I'd say it's a combination of a negative growth week... it was really like an expanding risk premiums week too in terms of basically all assets, basically everything selling off except for bonds.",
+          "url": "https://www.youtube.com/watch?v=WbQoMMoZW7A&t=138s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "16:24",
+          "t_sec": 984,
+          "speaker": "Bob Elliott",
+          "topic": "us_equities",
+          "text": "We're sort of in this mediocre growth position which, you know, the challenge with that is that there's just not nearly as much room. If you take like we have sort of mediocre or moderate growth, and then a policy tightening environment, that combination is not great in terms of being resilient in the event that we get essentially like an asset shock.",
+          "url": "https://www.youtube.com/watch?v=WbQoMMoZW7A&t=984s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "25:35",
+          "t_sec": 1535,
+          "speaker": "Bob Elliott",
+          "topic": "us_equities",
+          "text": "It feels like there's been a huge reversal in growth expectations, but in reality, you know, we've basically just unwound a few months' worth of what were extreme nominal growth expectations.",
+          "url": "https://www.youtube.com/watch?v=WbQoMMoZW7A&t=1535s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "28:35",
+          "t_sec": 1715,
+          "speaker": "Bob Elliott",
+          "topic": "us_equities",
+          "text": "You basically have, you know, it starts with a rising set of risk premiums... That unwinding then creates a hit to asset prices, that hit to asset prices then inhibits real economy players in terms of their balance sheets and their cash flows, and then that in turn creates a shift in their behaviors to essentially cut back, which then undermines the growth dynamic.",
+          "url": "https://www.youtube.com/watch?v=WbQoMMoZW7A&t=1715s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "30:21",
+          "t_sec": 1821,
+          "speaker": "Bob Elliott",
+          "topic": "us_equities",
+          "text": "I'm having a hard time seeing the policy response shifting fast enough to create a bottom here. I don't see a lot in the fiscal side, so what is the thing that creates that bottom that can sort of arrest this correction moving to bear?",
+          "url": "https://www.youtube.com/watch?v=WbQoMMoZW7A&t=1821s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        },
+        {
+          "t": "57:50",
+          "t_sec": 3470,
+          "speaker": "Bob Elliott",
+          "topic": "us_equities",
+          "text": "Rotation is not necessarily indicative of resilience. Almost always hard rotation is indicative of flows and deleveraging, and deleveraging environments are generally bad, not good for stocks ahead.",
+          "url": "https://www.youtube.com/watch?v=WbQoMMoZW7A&t=3470s",
+          "speaker_verified": true,
+          "grade": "1차-B"
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
+      "evidence_ready_at": "2026-11-23T10:10:44+09:00",
+      "evidence_grade": "1차-B",
+      "appearance_source": "gemini",
       "transcript_retained": false,
       "quotes_grade_count": {
         "1차-A": 0,
-        "1차-B": 0,
+        "1차-B": 6,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "02:18",
+          "point": "Recent market weakness reflects both a slowdown in growth expectations and a broad-based expansion in asset risk premiums.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "05:46",
+          "point": "The market sell-off originally tied to AI and tech pricing is broadening to cyclical commodities like copper.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "16:10",
+          "point": "US economic growth has moderated to mediocre levels, leaving equities vulnerable to asset shocks when combined with tight monetary policy.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "25:35",
+          "point": "The repricing in stocks relative to bonds has only unwound a few months of extreme growth expectations and has further downside potential.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "28:35",
+          "point": "Market corrections turn into bear markets when expanding risk premiums depress asset prices enough to force corporate spending cutbacks.",
+          "condition": "",
+          "conviction": "hypothetical",
+          "horizon": ""
+        },
+        {
+          "t": "30:21",
+          "point": "A market bottom is unlikely to materialize quickly because the Federal Reserve will not pivot to easing without deeper economic or asset weakness.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "54:50",
+          "point": "The current corporate earnings boom is fueled by an unsustainable capex boom, creating classic late-cycle bubble dynamics.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        },
+        {
+          "t": "57:50",
+          "point": "Recent sector rotation signals active portfolio deleveraging rather than market resilience, which historically precedes broader stock market declines.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 120730
     },
     {
       "video_id": "SNdJ5XYCMxU",
@@ -565,7 +810,7 @@
       "appearance_excerpt": null,
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "pending",
+      "gemini_status": "error",
       "gemini_model": null,
       "gemini_at": null,
       "gemini_mode": null,
@@ -573,8 +818,8 @@
       "gemini_evidence": null,
       "stance": null,
       "quotes": [],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
+      "gemini_error_count": 1,
+      "gemini_last_error": "error 403 video not accessible to Gemini",
       "evidence_ready_at": null,
       "evidence_grade": "제목·설명만 확인",
       "appearance_source": null,
@@ -607,29 +852,323 @@
       "transcript_chars": 53968,
       "transcript_url": null,
       "name_mentions": 3,
-      "appearance_confirmed": null,
+      "appearance_confirmed": true,
       "appearance_excerpt": "an  [0:30] buy gold at relatively low prices. It's not time to be a hero in a bubble regime in either direction. >> Hey Andy, welcome back. Nice to see you again. >> Hey Justin, looking forward to the holidays. >> Yeah, well, we always like to have these conversations with you all throughout the year. Once a month, we ",
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-23T10:10:44+09:00",
+      "gemini_mode": "video_chunks_2",
+      "person_speaks": true,
+      "gemini_evidence": "Andy Constan is present throughout the video, discussing macroeconomic headwinds, interest rates, AI productivity, corporate share buybacks, and equity market expectations. / Andy Constan speaks extensively throughout the video clip starting at 39:30, sharing his outlook on Fed policy, bond supply, inflation, market corrections, and equity positioning.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Andy Constan believes the market environment has shifted away from being supportive of US equities due to persistent high interest rates, over-optimistic corporate earnings expectations, and corporations shifting from buying back their own shares to issuing new stock to fund heavy capex. | Andy Constan is bearish on US equities in the near term, expecting a growth scare to drive a ~10% pullback in the S&P 500. He advises maintaining short equity exposure and respecting risk discipline rather than rushing to buy the dip during a bubble regime unwind."
+      },
+      "quotes": [
+        {
+          "t": "00:04",
+          "t_sec": 4,
+          "speaker": "Andy Constan",
+          "topic": "",
+          "text": "Corporations have no longer been able to afford both their capex and their share buybacks, so one had to go, and they canceled share buybacks.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=4s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.1,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "00:18",
+          "t_sec": 18,
+          "speaker": "Andy Constan",
+          "topic": "",
+          "text": "In aggregate, there's just not enough pie to go around.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=18s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "00:21",
+          "t_sec": 21,
+          "speaker": "Andy Constan",
+          "topic": "",
+          "text": "Listen, I'm very optimistic about the capabilities of AI, I just don't know about the pricing.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=21s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "00:26",
+          "t_sec": 26,
+          "speaker": "Andy Constan",
+          "topic": "",
+          "text": "And right now the markets are giving great opportunities. You can buy bonds at relatively attractive yields, you can buy gold at relatively low prices. It's not time to be a hero in a bubble regime, in either direction.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=26s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.6,
+          "caption_sec": 0,
+          "caption_checked": true
+        },
+        {
+          "t": "03:00",
+          "t_sec": 180,
+          "speaker": "Andy Constan",
+          "topic": "",
+          "text": "The karmic winds have shifted from enthusiastic, optimistic, extreme growth scenario, which is very beneficial for equities, to something not that, going in the opposite direction.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=180s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.3,
+          "caption_sec": 152,
+          "caption_checked": true
+        },
+        {
+          "t": "07:20",
+          "t_sec": 440,
+          "speaker": "Andy Constan",
+          "topic": "",
+          "text": "The dynamic today is that interest rates have not V-topped and are persisting at high levels. And that's what you need to actually shift the wind. That's what poisons the economy.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=440s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.3,
+          "caption_sec": 433,
+          "caption_checked": true
+        },
+        {
+          "t": "08:11",
+          "t_sec": 491,
+          "speaker": "Andy Constan",
+          "topic": "",
+          "text": "Not a recession, but the opposite of what we had been getting, which is extremely optimistic, high growth expectations.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=491s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.4,
+          "caption_sec": 463,
+          "caption_checked": true
+        },
+        {
+          "t": "44:31",
+          "t_sec": 2671,
+          "speaker": "Andy Constan",
+          "topic": "us_equities",
+          "text": "I think it's the beginnings of a growth scare driven by the things I think are the case.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=2671s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.3,
+          "caption_sec": 2652,
+          "caption_checked": true
+        },
+        {
+          "t": "45:23",
+          "t_sec": 2723,
+          "speaker": "Andy Constan",
+          "topic": "us_equities",
+          "text": "What does a growth scare mean to me? It means, you know, 10% on S&P 500.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=2723s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 2715,
+          "caption_checked": true
+        },
+        {
+          "t": "48:09",
+          "t_sec": 2889,
+          "speaker": "Andy Constan",
+          "topic": "us_equities",
+          "text": "If we V-bottom at, I don't know, call it 7 down 10%, let's call it 7,000 on the S&P, and we're 7300 a month from now, or 7400 or 7500 a month from now, no one it won't have had any effect on the economy at all. If we stay at 7,000 and sort of drift sideways for 3-4 months, it will slow the economy.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=2889s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 95.5,
+          "caption_sec": 2872,
+          "caption_checked": true
+        },
+        {
+          "t": "51:48",
+          "t_sec": 3108,
+          "speaker": "Andy Constan",
+          "topic": "us_equities",
+          "text": "For now, just be short equities and be willing to stay short if policy makers don't act.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=3108s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 98.8,
+          "caption_sec": 3092,
+          "caption_checked": true
+        },
+        {
+          "t": "53:04",
+          "t_sec": 3184,
+          "speaker": "Andy Constan",
+          "topic": "us_equities",
+          "text": "At 6,000, policy makers are stepping in. At 7,000, inflation's still pretty damn high.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=3184s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 3184,
+          "caption_checked": true
+        },
+        {
+          "t": "57:52",
+          "t_sec": 3472,
+          "speaker": "Andy Constan",
+          "topic": "us_equities",
+          "text": "Buying when you missed it, you're tempted to get in on the way back down, and that has destroyed a lot of wealth in my experience over the years.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=3472s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 3463,
+          "caption_checked": true
+        },
+        {
+          "t": "58:19",
+          "t_sec": 3499,
+          "speaker": "Andy Constan",
+          "topic": "us_equities",
+          "text": "Stick with your risk discipline. It's not time to start—in a bubble regime, it's not time to lever up into the bubble and it's not time to lever up at all.",
+          "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0&t=3499s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 3495,
+          "caption_checked": true
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "자막 확보, 인용 대기",
-      "appearance_source": null,
-      "transcript_retained": true,
+      "evidence_ready_at": "2026-11-23T10:10:44+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
       "quotes_grade_count": {
-        "1차-A": 0,
+        "1차-A": 14,
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "01:56",
+          "point": "The macroeconomic environment is shifting away from being highly supportive of equities as underlying pressures accumulate.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "05:32",
+          "point": "Equity markets are pricing in aggressive earnings expectations that cannot be met in aggregate based on realistic GDP growth forecasts.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "07:20",
+          "point": "Interest rates remaining persistently elevated rather than quickly dropping will continue to slow economic activity and weigh on asset prices.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "10:28",
+          "point": "Corporations are shifting from net buyers of equity via share buybacks to net issuers to fund capital expenditures and AI investments.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "26:07",
+          "point": "AI could eventually spark an unprecedented productivity boom that reduces the need for human labor, but that remains a speculative long-term scenario.",
+          "condition": "",
+          "conviction": "hypothetical",
+          "horizon": ""
+        },
+        {
+          "t": "30:47",
+          "point": "AI services may currently be heavily subsidized, making it unclear whether users will maintain usage when prices reflect true underlying costs.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "39:37",
+          "point": "The Federal Reserve and policymakers have become more hawkish due to elevated inflation persisting well above target for nearly six years.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "41:24",
+          "point": "Central banks will require an actual economic slowdown before easing monetary policy, which combined with elevated Treasury bond supply will keep interest rates higher for longer.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "44:31",
+          "point": "Recent equity market softness represents the start of a growth scare driven by high rates and realistic growth recalibrations.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "45:23",
+          "point": "A typical growth scare implies a drawdown of roughly 10% in the S&P 500 index.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "48:09",
+          "point": "A quick V-bottom rebound in equities will not impact real economic growth, but staying depressed or sideways for 3-4 months will slow the broader economy.",
+          "condition": "",
+          "conviction": "hypothetical",
+          "horizon": ""
+        },
+        {
+          "t": "51:48",
+          "point": "Investors should stay short equities until policymakers act or until it becomes clear whether the growth scare turns into a full economic slowdown.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "53:04",
+          "point": "Policymakers will not rush to rescue stock market pullbacks at higher levels while inflation is high, but would likely intervene if drawdowns reach deeper levels like S&P 6,000.",
+          "condition": "",
+          "conviction": "hypothetical",
+          "horizon": ""
+        },
+        {
+          "t": "57:52",
+          "point": "Rushing to buy the dip on the downside of a bubble regime is a common mistake that destroys investor capital.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        },
+        {
+          "t": "59:05",
+          "point": "A sustained resumption of the AI market rally requires real enterprise end-users demonstrating actual earnings or productivity profits from AI tokens.",
+          "condition": "",
+          "conviction": "risk_scenario",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 118898
     },
     {
       "video_id": "rkiRV0HcOaM",
@@ -1055,36 +1594,63 @@
       "published_at": "2026-11-19T16:01:55Z",
       "first_seen_at": "2026-11-20T01:20:32+09:00",
       "is_short": false,
-      "transcript_status": "pending_quota",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-23T10:10:44+09:00",
       "transcript_language": null,
-      "transcript_chars": null,
+      "transcript_chars": 54502,
       "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": null,
-      "appearance_excerpt": null,
+      "name_mentions": 4,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "[0:06] [music] Hello, I'm Dave Sakara, Morning Stars chief US market strategist and the co-host of the weekly podcast No More. Morning filter. Today I'm joined by Ahmed Khan, senior equity analyst on our technology team, who c",
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-23T10:10:44+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "David Sekera appears as the host of the Morning Filter podcast starting at 00:24, introducing the episode topic and interviewing Morningstar senior equity analyst Malik Ahmed Khan.",
+      "stance": {
+        "us_equities": "not_stated",
+        "summary": "David Sekera hosts a detailed discussion examining Morningstar's equity analysis and valuation of Anthropic ahead of its potential IPO, without stating a personal directional view on the broader US stock market."
+      },
+      "quotes": [
+        {
+          "t": "01:07",
+          "t_sec": 67,
+          "speaker": "David Sekera",
+          "topic": "cybersecurity",
+          "text": "I think it was last fall and even earlier this year, the market was much more concerned that AI would disrupt or displace the cybersecurity industry, a lot of those stocks sold off getting well into 4-star and 5-star territory and as we've seen the past couple of months, a lot of those have rallied back and not only are they 3-star stocks, some of have moved up enough that they're now even into 2-star territory.",
+          "url": "https://www.youtube.com/watch?v=bPhrkjcCotQ&t=67s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.9,
+          "caption_sec": 66,
+          "caption_checked": true
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
+      "evidence_ready_at": "2026-11-23T10:10:44+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
       "transcript_retained": false,
       "quotes_grade_count": {
-        "1차-A": 0,
+        "1차-A": 1,
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "01:07",
+          "point": "Cybersecurity stocks previously fell into 4-star and 5-star Morningstar valuation territory on fears that AI would disrupt the industry, but have since rallied back to 3-star and 2-star territory as AI has proven to make cybersecurity more valuable.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": ""
+        }
+      ],
+      "gemini_prompt_tokens": 103760
     },
     {
       "video_id": "RFqmE_xXp88",
@@ -2470,52 +3036,6 @@
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "Mi8DV2F3ToI",
-      "url": "https://www.youtube.com/watch?v=Mi8DV2F3ToI",
-      "channel": "Thoughtful Money",
-      "channel_id": "UCjqe6xtZYTfvA4pHs0HgJsQ",
-      "channel_mode": "filter",
-      "person": "Lyn Alden",
-      "tier": 3,
-      "role": "core",
-      "match": "title",
-      "title": "The Most Important Investing Books Ever | According To Lacy Hunt, Kyle Bass, Lyn Alden & 30 Others",
-      "description": "GET OUR FREE \"ESSENTIAL READING FOR INVESTORS\" BOOK LIST at https://www.thoughtfulmoney.com/essential\n\nA principal part of Thoughtful Money’s mission is to democratize financial literacy.\n\nIn my pursuit of that goal, I often get asked: What makes a well-informed investor?\n\nSo to come up with a definitive & actionable answer, I’ve asked over 30 of the world’s foremost experts in money & wealth-building to share their top recommendations for the foundational publications a “well-informed investor” should read.\n\nThe result?\n\nA list of the 100+ most significant & powerful books, white papers and videos on successful wealth creation ever published.\n\nAs well as a list of the “Most Recommended” 20 books that were submitted by multiple experts.\n\nThe value of this combined knowledge is priceless.\n\nA treasure trove of wealth-building knowledge is just a click away. I’m very pleased and proud to make it available to you.\n\nGet it now at https://www.thoughtfulmoney.com/essential\n\n#investingforbeginners #investingbooks #investing101 \n_____________________________________________\n \nThoughtful Money LLC is a Registered Investment Advisor Promoter.\n\nWe produce educational content geared for the individual investor. It’s important to note that this content is NOT investment advice, individual or otherwise, nor should be construed as such.\n\nWe recommend that most investors, especially if inexperienced, should consider benefiting from the direction and guidance of a qualified financial advisor r",
-      "published_at": "2026-11-15T16:00:11Z",
-      "first_seen_at": "2026-11-21T10:10:33+09:00",
-      "is_short": null,
-      "transcript_status": "skipped_old",
-      "transcript_provider": null,
-      "transcript_ready_at": null,
-      "transcript_language": null,
-      "transcript_chars": null,
-      "transcript_url": null,
-      "name_mentions": null,
-      "appearance_confirmed": null,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": "older than transcript_max_age_hours when first discovered (backfill limit)",
-      "gemini_status": "skipped",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "제목·설명만 확인",
-      "appearance_source": null,
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      }
     }
   ],
   "person_index": {
@@ -2523,29 +3043,43 @@
     "lookback_hours": 72,
     "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
     "people": {
-      "Darius Dale": {
+      "Andy Constan": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 1,
+        "non_noise": 1,
         "items": [
           {
-            "at": "2026-11-20T10:10:38+09:00",
-            "url": "https://www.youtube.com/watch?v=rkiRV0HcOaM",
+            "at": "2026-11-23T10:10:44+09:00",
+            "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0",
             "kind": "video",
-            "preview": "The Macro Minute: Could Anthropic’s IPO Challenge the Risk-Off Market Regime?",
+            "preview": "The Three Poisons Behind the Sell-Off | Andy Constan on Why This Dip Is Different",
             "grade": "1차-A",
-            "published_at": "2026-11-19T21:00:11Z",
+            "published_at": "2026-11-20T14:12:31Z",
             "noise_hint": false
-          },
+          }
+        ]
+      },
+      "Bob Elliott": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
           {
-            "at": "2026-11-20T10:10:38+09:00",
-            "url": "https://www.youtube.com/watch?v=FbSLl14Fk8s",
+            "at": "2026-11-23T10:10:44+09:00",
+            "url": "https://www.youtube.com/watch?v=WbQoMMoZW7A",
             "kind": "video",
-            "preview": "Will Bitcoin Test $50k Before It Rallies to $150k?",
-            "grade": "1차-A",
-            "published_at": "2026-11-19T20:26:07Z",
+            "preview": "Macro Talk: 2026.11.20",
+            "grade": "1차-B",
+            "published_at": "2026-11-21T11:11:51+00:00",
             "noise_hint": false
-          },
+          }
+        ]
+      },
+      "Darius Dale": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
           {
             "at": "2026-11-21T10:10:33+09:00",
             "url": "https://www.youtube.com/watch?v=SNdJ5XYCMxU",
@@ -2557,17 +3091,33 @@
           }
         ]
       },
+      "David Sekera": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-23T10:10:44+09:00",
+            "url": "https://www.youtube.com/watch?v=bPhrkjcCotQ",
+            "kind": "video",
+            "preview": "Should You Buy Anthropic Stock at Its IPO? Here's Everything to Know Before Deciding",
+            "grade": "1차-A",
+            "published_at": "2026-11-19T16:01:55Z",
+            "noise_hint": false
+          }
+        ]
+      },
       "Joseph Wang": {
         "role": "shadow",
         "count": 1,
         "non_noise": 1,
         "items": [
           {
-            "at": "2026-11-22T05:20:30+09:00",
+            "at": "2026-11-23T10:10:44+09:00",
             "url": "https://www.youtube.com/watch?v=9cR-SnyehwI",
             "kind": "video",
             "preview": "Markets Weekly November 21, 2026",
-            "grade": "제목·설명만 확인",
+            "grade": "1차-B",
             "published_at": "2026-11-21T20:01:57Z",
             "noise_hint": false
           }
