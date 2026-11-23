@@ -66,8 +66,15 @@ async def login_cookies(krx_id, krx_pw):
             if iframe is None:
                 raise Fail("LOGIN_PAGE_CHANGED", "로그인 iframe 없음 (KRX 로그인 화면 구조 변경)")
             frame = await iframe.content_frame()
-            await (await frame.wait_for_selector("#mbrId", timeout=15000)).fill(krx_id)
-            await (await frame.wait_for_selector('input[name="pw"]', timeout=15000)).fill(krx_pw)
+            await asyncio.sleep(3)
+            idb = await frame.wait_for_selector("#mbrId", timeout=15000)
+            await idb.click()
+            await idb.type(krx_id, delay=120)
+            pwb = await frame.wait_for_selector('input[name="pw"]', timeout=15000)
+            await pwb.click()
+            await asyncio.sleep(1)
+            await page.keyboard.type(krx_pw, delay=150)
+            await asyncio.sleep(1)
             await (await frame.wait_for_selector("a.jsLoginBtn", timeout=15000)).click()
         except Fail:
             raise
@@ -75,10 +82,18 @@ async def login_cookies(krx_id, krx_pw):
             raise Fail("LOGIN_PAGE_CHANGED", "아이디/비번 입력칸 또는 로그인 버튼을 못 찾음 (KRX 로그인 화면 구조 변경)")
         await asyncio.sleep(4)
         diag = "click후 URL=" + page.url
-        try:
-            diag += " / 로그인창 문구=" + (await frame.inner_text("body"))[:200].replace("\n", " ")
-        except Exception:
-            diag += " / 로그인창 닫힘"
+        js = "() => Array.from(document.querySelectorAll('[class*=layer],[class*=alert],[class*=modal],[class*=dialog]')).filter(e => e.offsetParent !== null && e.innerText && e.innerText.trim().length > 3 && e.innerText.length < 400).map(e => e.innerText.trim().replace(/\\s+/g, ' ')).slice(0, 3).join(' | ')"
+        layer = ""
+        for fr in (frame, page):
+            try:
+                t = await fr.evaluate(js)
+                if t:
+                    layer += t + " "
+            except Exception:
+                pass
+        if layer:
+            dialogs.append(layer.strip()[:300])
+        diag += " / KRX 안내창=" + (layer.strip()[:300] or "없음")
         print("LOGIN DIAG:", diag)
 
         try:
@@ -87,7 +102,7 @@ async def login_cookies(krx_id, krx_pw):
             raise Fail("KRX_CONNECT", "로그인 후 데이터 화면 접속 시간초과")
         if "MDCCOMS001" in page.url:
             msg = (" / KRX 메시지: " + " | ".join(dialogs)) if dialogs else ""
-            raise Fail("LOGIN_FAILED", "로그인 거부 (아이디·비번 오류, 비번 변경 요구, 계정 잠김 중 하나)" + msg + " / " + diag[:250])
+            raise Fail("LOGIN_FAILED", "로그인 거부" + msg + " / " + diag[:400])
         cookies = await ctx.cookies([BASE])
         await b.close()
         if not any(c["name"] == "mdc.client_session" for c in cookies):
