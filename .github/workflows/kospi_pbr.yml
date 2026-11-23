@@ -2,7 +2,7 @@ name: kospi-pbr
 
 on:
   schedule:
-    - cron: "40 9 * * 1-5"  # KST 18:40
+    - cron: "20 8 * * 1-5"  # KST 17:20 (GPT 17:40 알람 전)
   workflow_dispatch: {}
   push:
     paths:
