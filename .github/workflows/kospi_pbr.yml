@@ -1,0 +1,47 @@
+name: kospi-pbr
+
+on:
+  schedule:
+    - cron: "40 9 * * 1-5"  # KST 18:40
+  workflow_dispatch: {}
+  push:
+    paths:
+      - ".github/workflows/kospi_pbr.yml"
+      - "kospi_pbr/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kospi-pbr
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install requests playwright && python -m playwright install --with-deps chromium
+
+      - name: Fetch KOSPI PBR
+        env:
+          TZ: Asia/Seoul
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
+        run: python kospi_pbr/kospi_pbr.py
+
+      - name: Commit results
+        run: |
+          git config user.name "semis-radar-bot"
+          git config user.email "semis-radar-bot@users.noreply.github.com"
+          git add output/kospi_pbr.json
+          git commit -m "kospi pbr $(date +'%Y-%m-%d %H:%M')" || echo "변경 없음"
+          git pull --rebase
+          git push
