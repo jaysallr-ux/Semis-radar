@@ -1,6 +1,6 @@
 {
   "schema": "guru-manifest-catchup/v1",
-  "built_at": "2026-11-24T10:40:31+09:00",
+  "built_at": "2026-11-24T14:12:37+09:00",
   "note": "Use only when manifest.json's window lower_exclusive values differ from the stored 11:00 checkpoints (an earlier 11:00 run was missed or not saved). Pick the one set whose window.x/yt/web.lower_exclusive equal the checkpoints AO/AQ/AS exactly and use it exactly like manifest.json (its own rids and expected_records); write set=<id> in the COVERAGE row. If no set matches, the manifest check fails.",
   "sets": [
     {

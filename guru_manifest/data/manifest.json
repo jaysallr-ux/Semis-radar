@@ -1,6 +1,6 @@
 {
   "schema": "guru-manifest/v1",
-  "built_at": "2026-11-24T10:40:31+09:00",
+  "built_at": "2026-11-24T14:12:37+09:00",
   "note": "A repost_bundle record holds one person's quote posts of material published before this window (items: own text, quoted author and quoted_at, the original date); resolve it like a reply_bundle, and date any statement from the quoted material by quoted_at, never by the re-share. A reply_bundle record holds one person's replies to other accounts (items: each reply, its URL and the post it answers); resolve it with one rid and one source entry, and show only the items with substance. rid is fixed for this manifest. Every rid in records must be resolved in the report: cited by a source number [n] (several rids may share one [n] when they are the same appearance), or listed as noise by rid. auto_excluded records are games and bare reactions removed by code; they have no rid and need no handling. watch_only records (people flagged watch_only, e.g. Ryan Detrick) have no rid either: they are not shown in the reading section and are checked only for their T2 trigger. expected_records is the count to print; never recount.",
   "window": {
     "x": {
