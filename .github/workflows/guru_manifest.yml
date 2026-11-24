@@ -33,6 +33,12 @@ jobs:
       - name: Build manifest
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then python guru_manifest/build_manifest.py --force; else python guru_manifest/build_manifest.py; fi
+      - name: Build report pack
+        # The feed entries behind each ledger set, copied verbatim with a body hash (one JSON per set), so the
+        # 11:00 report reads one file instead of ~1.1 MB of raw feeds.
+        # A failed pack never blocks the manifest commit: a set whose pack is not written is simply read from the feeds.
+        continue-on-error: true
+        run: python guru_manifest/build_report_pack.py
       - name: Commit
         run: |
           git config user.name "guru-manifest-bot"
@@ -44,3 +50,12 @@ jobs:
             sleep 5
           done
           exit 1
+      - name: Mirror manifest to sheet
+        # GitHub stays canonical; the sheet copy lets the 11:00 report read the manifest via the Sheets connector.
+        # Skips (exit 0) until secrets GURU_SHEET_ID and GCP_SA_KEY exist. Fails the job if the read-back differs.
+        env:
+          GURU_SHEET_ID: ${{ secrets.GURU_SHEET_ID }}
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        run: |
+          pip install -q "google-auth>=2.20" "requests>=2.28"
+          python guru_manifest/sheet_mirror.py
