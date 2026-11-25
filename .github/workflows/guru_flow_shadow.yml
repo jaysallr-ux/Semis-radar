@@ -1,0 +1,44 @@
+name: guru-flow-shadow
+
+# SHADOW collector (Charlie McElligott). Not part of the Macro Guru canon: not dispatched by tick,
+# not read by the report, audits, T1/T2 stances or alerts. Once a day, KST 08:47.
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "47 23 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guru-flow-shadow
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install requests
+
+      - name: Collect flow notes (shadow)
+        run: python guru_flow/collect_flow.py
+
+      - name: Commit shadow data only
+        run: |
+          git config user.name "guru-flow-bot"
+          git config user.email "guru-flow-bot@users.noreply.github.com"
+          git add guru_flow/data/
+          git commit -m "guru-flow shadow $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')" || { echo "변경 없음"; exit 0; }
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 5
+          done
+          exit 1

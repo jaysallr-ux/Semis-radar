@@ -1,0 +1,35 @@
+{
+  "discovery_days": 3,
+  "max_fetch_per_run": 20,
+  "max_retry_per_run": 10,
+  "max_attempts": 3,
+  "retry_days": 5,
+  "retry_gap_hours": 10,
+  "min_para_chars": 40,
+  "min_body_chars": 400,
+  "max_excerpts": 6,
+  "max_excerpt_chars": 320,
+  "same_note_hours": 36,
+  "same_note_title_sim": 0.72,
+  "same_quote_sim": 0.85,
+  "retention_days": 60,
+  "digest_days": 3,
+  "digest_cap": 5,
+  "people": [
+    {
+      "person": "Charlie McElligott",
+      "firm": "Nomura",
+      "names": [
+        "Charlie McElligott",
+        "Charles McElligott"
+      ],
+      "headline_names": [
+        "Nomura's McElligott",
+        "Nomura’s McElligott"
+      ],
+      "surnames": [
+        "McElligott"
+      ]
+    }
+  ]
+}
