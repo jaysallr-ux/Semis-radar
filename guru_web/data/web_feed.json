@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-25T10:05:26+09:00",
+  "generated_at": "2026-11-25T21:05:34+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -34,7 +34,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
+      "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -54,7 +54,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 6,
+      "items_in_window": 5,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -75,7 +75,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 7,
+      "items_in_window": 8,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -105,7 +105,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 7,
+      "items_in_window": 6,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -125,7 +125,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 7,
+      "items_in_window": 6,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -145,7 +145,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 6,
+      "items_in_window": 7,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -156,7 +156,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 3,
+      "items_in_window": 1,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -172,10 +172,10 @@
     }
   ],
   "stats": {
-    "discovered": 157,
-    "new_items": 14,
-    "decoded": 14,
-    "bodies": 5,
+    "discovered": 132,
+    "new_items": 9,
+    "decoded": 9,
+    "bodies": 3,
     "quotes_verified": 0,
     "video_candidates": 0,
     "gemini_calls": 0,
@@ -192,6 +192,26 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Mark Newton",
+      "tier": 1,
+      "role": "core",
+      "source_kind": "video_page",
+      "title": "Mark Newton Says Many Stocks Have Not Bottomed Yet",
+      "outlet": "Yahoo Finance",
+      "published_at": "2026-11-24T21:16:49+00:00",
+      "discovered_at": "2026-11-25T21:05:34+09:00",
+      "article_url": "https://finance.yahoo.com/video/mark-newton-says-many-stocks-211649766.html",
+      "canonical_url": "https://finance.yahoo.com/video/mark-newton-says-many-stocks-211649766.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
     {
       "person": "Mark Newton",
       "tier": 1,
@@ -222,6 +242,25 @@
       "discovered_at": "2026-11-25T10:05:26+09:00",
       "article_url": "https://www.tokenpost.com/news/insights/62492",
       "canonical_url": "https://www.tokenpost.com/news/insights/62492",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Katie Stockton",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "Katie Stockton Sees Keysight Technologies Rebounding Toward $322-$329",
+      "outlet": "TradingView",
+      "published_at": "2026-11-24T19:01:29+00:00",
+      "discovered_at": "2026-11-25T21:05:34+09:00",
+      "article_url": "https://www.tradingview.com/news/binance_news:7935c2d2e094b:0",
+      "canonical_url": "https://www.tradingview.com/news/binance_news:7935c2d2e094b:0",
       "body_fetch_status": 200,
       "direct_quotes": [],
       "direction_hint": null,
@@ -268,6 +307,25 @@
       "gemini_status": "no_direct_quotes",
       "gemini_error_count": 0,
       "yt_searched": true
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Ryan Detrick: High yield and CCC credit spreads widened sharply Friday, then retraced partially Monday",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-24T17:40:21+00:00",
+      "discovered_at": "2026-11-25T21:05:34+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4400642-credit-spreads-sharp-move/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4400642-credit-spreads-sharp-move/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
     },
     {
       "person": "Darius Dale",
@@ -1111,103 +1169,6 @@
       "gemini_status": "ready",
       "gemini_error_count": 0,
       "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Andy Constan",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Andy Constan: Blackout window opening described as a myth, Nvidia buyback announced September 28",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-18T11:47:14+00:00",
-      "discovered_at": "2026-11-18T21:05:39+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4301248-nvidia-buyback-september-myth/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4301248-nvidia-buyback-september-myth/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Jonathan Krinsky",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "news_article",
-      "title": "Livin' on a Prayer: BTIG's Krinsky Warns the S&P 500 Has Another Leg Lower",
-      "outlet": "The Dark Side Of The Boom",
-      "published_at": "2026-11-18T06:30:49+00:00",
-      "discovered_at": "2026-11-19T21:05:24+09:00",
-      "article_url": "https://thedarksideoftheboom.substack.com/p/livin-on-a-prayer-btigs-krinsky-warns",
-      "canonical_url": "https://thedarksideoftheboom.substack.com/p/livin-on-a-prayer-btigs-krinsky-warns",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Mike Wilson",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "video_page",
-      "title": "Fed's December meeting the 'final hurdle' before stocks find a bottom: Morgan Stanley's Mike Wilson",
-      "outlet": "CNBC",
-      "published_at": "2026-11-18T04:33:00+00:00",
-      "discovered_at": "2026-11-18T21:05:39+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/11/18/december-fed-meeting-is-the-final-hurdle-before-stocks-find-a-bottom.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/11/18/december-fed-meeting-is-the-final-hurdle-before-stocks-find-a-bottom.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
-    },
-    {
-      "person": "Lyn Alden",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Having bitcoin, gold, and cash makes a difference, Lyn Alden notes",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-18T04:25:12+00:00",
-      "discovered_at": "2026-11-18T21:05:39+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4295488-gold-bitcoin-cash-outage/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4295488-gold-bitcoin-cash-outage/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Mike Wilson",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "video_page",
-      "title": "'We're getting a fat pitch now': Morgan Stanley's Mike Wilson",
-      "outlet": "CNBC",
-      "published_at": "2026-11-18T03:23:51+00:00",
-      "discovered_at": "2026-11-18T21:05:39+09:00",
-      "article_url": "https://www.cnbc.com/video/2026/11/18/were-getting-a-fat-pitch-now-morgan-stanleys-mike-wilson.html",
-      "canonical_url": "https://www.cnbc.com/video/2026/11/18/were-getting-a-fat-pitch-now-morgan-stanleys-mike-wilson.html",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
     }
   ],
   "person_index": {
@@ -1251,18 +1212,9 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-22T10:05:30+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4358422-credit-spreads-fed-reaction/",
-            "kind": "news_article",
-            "preview": "Bob Elliott: Low credit spreads suggest more widening may be needed for Fed response",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-21T17:25:19+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-24T10:05:28+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4372705-policy-response-market-repricing/",
@@ -1376,8 +1328,8 @@
       },
       "Katie Stockton": {
         "role": "observer",
-        "count": 4,
-        "non_noise": 4,
+        "count": 5,
+        "non_noise": 5,
         "items": [
           {
             "at": "2026-11-24T10:05:28+09:00",
@@ -1413,6 +1365,15 @@
             "preview": "Katie Stockton sees a potential relief rally for a tech stock that's faced a sharp downturn",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-24T18:32:08+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-25T21:05:34+09:00",
+            "url": "https://www.tradingview.com/news/binance_news:7935c2d2e094b:0",
+            "kind": "news_article",
+            "preview": "Katie Stockton Sees Keysight Technologies Rebounding Toward $322-$329",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-24T19:01:29+00:00",
             "noise_hint": false
           }
         ]
@@ -1453,8 +1414,8 @@
       },
       "Mark Newton": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-25T10:05:26+09:00",
@@ -1463,6 +1424,15 @@
             "preview": "Feels like a bear market— tech names Mark Newton is buying now",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-24T21:12:04+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-25T21:05:34+09:00",
+            "url": "https://finance.yahoo.com/video/mark-newton-says-many-stocks-211649766.html",
+            "kind": "video_page",
+            "preview": "Mark Newton Says Many Stocks Have Not Bottomed Yet",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-24T21:16:49+00:00",
             "noise_hint": false
           }
         ]
@@ -1489,15 +1459,6 @@
         "non_noise": 4,
         "items": [
           {
-            "at": "2026-11-22T10:05:30+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4357715-sp500-major-drops/",
-            "kind": "news_article",
-            "preview": "Seventeen of the twenty largest S&P 500 drops began below the 200-day moving average, Ryan Detrick …",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-21T15:25:24+00:00",
-            "noise_hint": false
-          },
-          {
             "at": "2026-11-23T10:05:27+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4364183-sp500-seven-day-streak-history/",
             "kind": "news_article",
@@ -1522,6 +1483,15 @@
             "preview": "Nvidia adds almost $1 trillion in market cap in two hours, Ryan Detrick notes",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-23T16:40:40+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-25T21:05:34+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4400642-credit-spreads-sharp-move/",
+            "kind": "news_article",
+            "preview": "Ryan Detrick: High yield and CCC credit spreads widened sharply Friday, then retraced partially Mon…",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-24T17:40:21+00:00",
             "noise_hint": false
           }
         ]
