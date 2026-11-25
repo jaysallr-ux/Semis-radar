@@ -1,16 +1,16 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-25T10:10:40+09:00",
+  "generated_at": "2026-11-25T21:10:41+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-25T06:20:35+09:00",
-    "merged_from_discovery": 4,
+    "last_discovery_at": "2026-11-25T20:20:44+09:00",
+    "merged_from_discovery": 1,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 0,
+      "accepted": 1,
       "rejected": 0
     }
   },
@@ -91,9 +91,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-04-30T04:13:56+09:00",
+      "oldest_rss": "2026-04-30T16:00:00+09:00",
       "gap_possible": false,
-      "matched": 0
+      "matched": 1
     },
     {
       "label": "Yahoo Finance",
@@ -157,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-20T09:51:37+09:00",
+      "oldest_rss": "2026-11-21T01:14:22+09:00",
       "gap_possible": false,
       "matched": 5
     },
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-24T07:26:54+09:00",
+      "oldest_rss": "2026-11-24T17:19:54+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-24T09:27:01+09:00",
+      "oldest_rss": "2026-11-24T22:11:57+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +223,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-23T22:45:36+09:00",
+      "oldest_rss": "2026-11-24T03:30:16+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,14 +234,14 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-20T05:30:14+09:00",
+      "oldest_rss": "2026-11-20T08:00:05+09:00",
       "gap_possible": false,
       "matched": 0
     }
   ],
   "quota": {
-    "yta_used_today": 3,
-    "yta_server_remaining": 7,
+    "yta_used_today": 4,
+    "yta_server_remaining": 6,
     "yta_daily_cap": 10,
     "yta_reserve_for_manual": 1,
     "supadata_used_total": 9,
@@ -250,34 +250,240 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 14,
-    "gemini_est_video_hours_today": 0.355,
+    "gemini_calls_today": 25,
+    "gemini_est_video_hours_today": 1.248,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 3,
-    "ready": 3,
+    "attempted": 1,
+    "ready": 1,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 1,
+    "skipped_short": 0,
     "expired": 0,
     "left_pending": 0,
-    "waiting_for_gemini": 0
+    "waiting_for_gemini": 1
   },
   "gemini_stats": {
-    "attempted": 14,
-    "ready": 3,
+    "attempted": 11,
+    "ready": 1,
     "not_speaking": 0,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 3,
+    "budget_out": 4,
     "chunked": 2,
     "text_mode": 0,
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "D4Eg4LXl-lw",
+      "url": "https://www.youtube.com/watch?v=D4Eg4LXl-lw",
+      "channel": "Forward Guidance",
+      "channel_id": "UCkrwgzhIBKccuDsi_SvZtnQ",
+      "channel_mode": "filter",
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "match": "description",
+      "title": "Washington Wants The Market Even Lower | Weekly Roundup",
+      "description": "Who still has an incentive to bid this market?\n\nThis week, we're joined by Cem Karsan and Noel Smith to unpack why Cem says the administration will clip the left tail but still wants the market lower after the midterms.\n\nWe explore why a 40 VIX is \"nothing,\" his 20 to 30% path for the S&P, the gold-calls and oil-puts trade, and Waller's 50 basis point hike as credibility theater. Enjoy!\n\n\nTIMESTAMPS:\n00:00 A Tuesday Thanksgiving Special\n04:37 The Third Leg Of The Stool\n08:48 A 25 To 40% Decline\n10:46 Fidelity, Blockworks MCP\n11:50 AI CapEx Crowds Out Sovereign\n16:24 Breadth And The Two Paths\n23:44 Stair-Step Down Into December\n27:42 Noel On Market Structure\n28:12 Fidelity, Blockworks MCP\n29:23 Noel On Market Structure (cont.)\n33:03 Waller's Credibility Theater\n39:43 Gold Calls And Oil Puts\n41:37 40 VIX Is Not Enough\n52:31 Deeper Cuts, Compressed Vol\n58:32 Cem's 2027 Ranges\n\n\nFOLLOW\n› Forward Guidance – https://x.com/ForwardGuidance\n› Cem – https://x.com/jam_croissant\n› Noel – https://x.com/NoelSmith\n› Felix – https://x.com/fejau_inc \n› Quinn – https://x.com/qthomp \n› Telegram – https://t.me/+CAoZQpC-i6BjYTEx \n› Blockworks – https://x.com/Blockworks \n\n\nSPONSORS\n› Fidelity Crypto was built in-house with over a dozen years of crypto experience. So you can trade crypto and stocks in one place at Fidelity, backed by industry-leading security. Fidelity Crypto. We're here to help you feel good about investing in crypto. Crypto is offered by Fidelity Digital Assets, NA, is not insure",
+      "published_at": "2026-11-25T11:00:12Z",
+      "first_seen_at": "2026-11-25T20:20:44+09:00",
+      "is_short": false,
+      "transcript_status": "ready",
+      "transcript_provider": "youtube-transcript-ai",
+      "transcript_ready_at": "2026-11-25T21:10:41+09:00",
+      "transcript_language": null,
+      "transcript_chars": 66493,
+      "transcript_url": null,
+      "name_mentions": 3,
+      "appearance_confirmed": true,
+      "appearance_excerpt": "n you know what you think is interesting. So that was kind of the genesis of the the initial conversations and you know Jem is really busy doing a lot of stuff and there's you know irrespective of his uh competency there's only so much of him to go around so the idea is that I'm able to optimize  [4:08] some of that uh",
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-25T21:10:41+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Cem Karsan is present on screen in the video (labeled as Cem Karsan / Kai Wealth) and actively speaks throughout the discussion about macro, options flows, volatility, and market forecasts.",
+      "stance": {
+        "us_equities": "bearish",
+        "summary": "Cem Karsan expects a stair-step decline in US equities into December followed by a deeper 25% to 40% market correction in early 2027 (reaching 5,000–5,900 on the S&P 500 by June 2027) as AI CapEx debt crowds out sovereign debt and macro pressures mount, before a Fed pivot triggers a eventual market rebound.",
+        "targets": [
+          "S&P 500 5,000 to 5,900 by June 2027"
+        ],
+        "timeframe": "Late 2026 into June 2027"
+      },
+      "quotes": [
+        {
+          "t": "08:48",
+          "t_sec": 528,
+          "speaker": "Cem Karsan",
+          "topic": "S&P 500 Market Correction Forecast",
+          "text": "I've called for a 25 to 40% decline for some time, starting sometime after the midterm, likely before February it would start, and be done sometime between March and June of this coming year.",
+          "url": "https://www.youtube.com/watch?v=D4Eg4LXl-lw&t=528s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 87.6,
+          "caption_sec": 524,
+          "caption_checked": true
+        },
+        {
+          "t": "24:08",
+          "t_sec": 1448,
+          "speaker": "Cem Karsan",
+          "topic": "Near-term Equity Path into December",
+          "text": "One is a stair-step down into December. Why? Because the structural flows are incredibly supportive right now.",
+          "url": "https://www.youtube.com/watch?v=D4Eg4LXl-lw&t=1448s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.2,
+          "caption_sec": 1417,
+          "caption_checked": true
+        },
+        {
+          "t": "25:21",
+          "t_sec": 1521,
+          "speaker": "Cem Karsan",
+          "topic": "December Market Trajectory",
+          "text": "My point to you is stair-steps till December are overwhelmingly likely.",
+          "url": "https://www.youtube.com/watch?v=D4Eg4LXl-lw&t=1521s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.1,
+          "caption_sec": 1508,
+          "caption_checked": true
+        },
+        {
+          "t": "39:27",
+          "t_sec": 2367,
+          "speaker": "Cem Karsan",
+          "topic": "Gold and Oil Options Trade Strategy",
+          "text": "It's coming again in the next 6 to 9 months, you're going to get another run in gold. Gold calls, sell oil puts, that's the trade.",
+          "url": "https://www.youtube.com/watch?v=D4Eg4LXl-lw&t=2367s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 64.8,
+          "caption_sec": 2339,
+          "caption_conflict": true,
+          "caption_checked": true
+        },
+        {
+          "t": "59:12",
+          "t_sec": 3552,
+          "speaker": "Cem Karsan",
+          "topic": "S&P 500 Price Target by June",
+          "text": "I think by June of next year we have visited somewhere between 5500 and 5900 in the S&P.",
+          "url": "https://www.youtube.com/watch?v=D4Eg4LXl-lw&t=3552s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 90.8,
+          "caption_sec": 3536,
+          "caption_checked": true
+        },
+        {
+          "t": "60:32",
+          "t_sec": 3632,
+          "speaker": "Cem Karsan",
+          "topic": "10-Year Treasury Yield Outlook",
+          "text": "10-year bond visits 3.8, 3.9... undercut just barely, and then I think it gets back to 5.5, 6.",
+          "url": "https://www.youtube.com/watch?v=D4Eg4LXl-lw&t=3632s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 72.4,
+          "caption_sec": 3628,
+          "caption_checked": true
+        }
+      ],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": "2026-11-25T21:10:41+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
+      "key_points": [
+        {
+          "t": "08:48",
+          "point": "Cem Karsan expects a 25% to 40% market decline starting in late 2026 or early 2027 and completing between March and June 2027.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "6 to 9 months"
+        },
+        {
+          "t": "12:30",
+          "point": "Hyper-scaler AI CapEx spending and massive debt issuance are depleting cash reserves and crowding out sovereign debt markets.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Medium term"
+        },
+        {
+          "t": "15:38",
+          "point": "The Strait of Hormuz closure will persist for a year or more, imposing structurally higher costs across the global economy.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "12 to 24 months"
+        },
+        {
+          "t": "24:08",
+          "point": "Structural option dealer flows and volatility compression dictate a stair-step market decline into December Opex.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "1 to 2 months"
+        },
+        {
+          "t": "34:40",
+          "point": "The Federal Reserve is currently engaging in credibility theater but will inevitably pivot to aggressive rate cuts and money printing within 7 to 8 months.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "7 to 8 months"
+        },
+        {
+          "t": "39:27",
+          "point": "Recommends buying long-dated gold call options and selling oil put options to position for the upcoming commodity macro cycle over the next 6 to 9 months.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "6 to 9 months"
+        },
+        {
+          "t": "53:08",
+          "point": "Equity market declines accompanied by compressed index volatility tend to cut deeper and inflict more pain than high-VIX panic crashes.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Medium term"
+        },
+        {
+          "t": "59:12",
+          "point": "Projects the S&P 500 will bottom between 5,000 and 5,900 by June 2027 before staging a significant recovery.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "By June 2027"
+        },
+        {
+          "t": "59:40",
+          "point": "Forecasts WTI crude oil will drop to the $50s-$60s on demand weakness before spiking back up to $130-$140.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "12 to 24 months"
+        },
+        {
+          "t": "60:31",
+          "point": "Anticipates 10-year Treasury yields will temporarily dip to 3.8%-3.9% before rebounding sharply to 5.5%-6.0%.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "12 to 24 months"
+        }
+      ],
+      "gemini_prompt_tokens": 122143,
+      "quotes_grade_count": {
+        "1차-A": 3,
+        "1차-B": 3,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "Mue9ni8NwR4",
       "url": "https://www.youtube.com/watch?v=Mue9ni8NwR4",
@@ -1755,6 +1961,52 @@
       "quotes_grade_count": {
         "1차-A": 4,
         "1차-B": 1,
+        "excluded_speaker_mismatch": 0
+      }
+    },
+    {
+      "video_id": "GN-JtfMPmWQ",
+      "url": "https://www.youtube.com/watch?v=GN-JtfMPmWQ",
+      "channel": "Phil Rosen",
+      "channel_id": "UC8IiDLgSC7YPN-pAq4rVoeA",
+      "channel_mode": "filter",
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "match": "x_self_link",
+      "title": "ELITE Macro Strategist: Jensen Huang's RETURN won't SAVE the AI Bubble?!",
+      "description": "Bob Elliott is the CEO and chief investment officer of Unlimited Funds, where he deploys hedge fund strategies into low-cost ETFs. He also authors the Nonconsensus Substack. He joins Phil Rosen on Full Signal to discuss the why the AI trade losing momentum, how to hedge against an AI bear market, the outlook for asset prices in 2027, and why the math driving the AI boom doesn’t make sense.\n\nThis episode is sponsored by Bloomberg: http://bloomberg.com/equityindices\n\n\nFull Signal is available on Apple Podcasts and Spotify 3 hours before YouTube:\n\n🍎 Apple: https://podcasts.apple.com/us/podcast/full-signal/id1850620905\n📢 Spotify: https://open.spotify.com/show/2CX5KAB0jdOTBNPVJOHN6D\n\n📨 Subscribe to Opening Bell Daily: https://www.openingbelldailynews.com/subscribe\n\nFollow Phil on X: https://x.com/philrosenn\nFollow Phil on LinkedIn: https://www.linkedin.com/in/phil-rosen-763601187/\n\n💸 Sign up for Silvia, your personal AI CFO that helps you manage your finances: https://silvia.com/?utm_source=opening_bell&utm_medium=partner&utm_campaign=phil_rosen\n\nTIMESTAMPS:\n\n0:00 - Nominal growth falling\n1:29 - $3 trillion problem\n3:09 - Little real-economy benefit\n5:03 - Productivity stuck at 2%\n10:15 - Why Wall Street stays bullish\n13:19 - Mag 7 vs. S&P 493\n16:31 - Big profits, flat headcount\n19:13 - Peak capex growth\n20:55 - Frontier lab revenue doubts\n23:27 - AI usage data flattening\n28:16 - Where AI sits on the S-curve\n30:43 - The coastal blind spot\n32:26 - Going short\n34:20 - Gold\n37:04 - W",
+      "published_at": "2026-11-23T14:00:20+00:00",
+      "first_seen_at": "2026-11-25T21:10:41+09:00",
+      "is_short": false,
+      "transcript_status": "not_needed",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": "tier 3: captions are kept for the tiers that drive judgments",
+      "gemini_status": "pending",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 0,
+      "gemini_last_error": null,
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
     },
@@ -3705,54 +3957,6 @@
         "1차-B": 0,
         "excluded_speaker_mismatch": 0
       }
-    },
-    {
-      "video_id": "6r3D-CMJkuI",
-      "url": "https://www.youtube.com/watch?v=6r3D-CMJkuI",
-      "channel": "iConnections",
-      "channel_id": "UCY6TEokyfC4sw--JMLoojDg",
-      "channel_mode": "filter",
-      "person": "Darius Dale",
-      "tier": 1,
-      "role": "core",
-      "match": "x_self_link",
-      "title": "Stan Druckenmiller: Why He's \"Not Playing\" Right Now | TomorrowX Summit",
-      "description": "Legendary investor Stan Druckenmiller, CEO of Duquesne Family Office, sits down with Iliana Bouzali of Morgan Stanley on the Arena Stage at TomorrowX Summit in Austin.\nStan explains why, after 50 years of investing, he has rarely had less clarity, and what he is watching instead: AI use cases over infrastructure, why the leading labs could sell tasks instead of tokens, and how swarms of agents could defend us in cybersecurity. He shares the moment he realized AI was the biggest thing in the history of American business, his bold predictions for the next decade, from fusion and data centers in space to beating cancer within ten years, and the lessons that separate great investors from good ones.\n\nKEY TAKEAWAYS\nWhy Stan is in capital preservation mode\nRisk management: the P&L is the signal\nHot streaks, cold streaks and knowing when to play big\nAI use cases: selling tasks, not tokens\nPredictions: fusion, data centers in space, beating cancer\nPut all your eggs in one basket, then watch the basket very carefully\nWhat separates great investors from good ones\n\nCHAPTERS\n0:00 How Gavin Baker called the AI boom\n1:15 Looking back at January's portfolio\n4:11 Why everything has flipped\n5:34 \"\"I'm not playing\"\"\n9:09 Hot streaks, cold streaks and risk management\n10:55 What he's watching: AI use cases\n13:11 What's happening quietly\n16:21 How smart people get in their own way\n18:04 What separates great investors\n19:16 How Stan makes decisions\n20:24 Predictions for the next ten years\n21:41 Fil",
-      "published_at": "2026-11-18T05:08:38+00:00",
-      "first_seen_at": "2026-11-20T21:10:35+09:00",
-      "is_short": false,
-      "transcript_status": "ready",
-      "transcript_provider": "youtube-transcript-ai",
-      "transcript_ready_at": "2026-11-20T21:10:35+09:00",
-      "transcript_language": null,
-      "transcript_chars": 19341,
-      "transcript_url": null,
-      "name_mentions": 0,
-      "appearance_confirmed": false,
-      "appearance_excerpt": null,
-      "error_count": 0,
-      "last_error": null,
-      "gemini_status": "not_speaking",
-      "gemini_model": "models/gemini-flash-latest",
-      "gemini_at": "2026-11-21T10:10:33+09:00",
-      "gemini_mode": "video",
-      "person_speaks": false,
-      "gemini_evidence": "Darius Dale does not appear or speak in the video. The conversation is between Stanley Druckenmiller and Iliana Bouzali.",
-      "stance": null,
-      "quotes": [],
-      "gemini_error_count": 0,
-      "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "본인 발언 없음",
-      "appearance_source": "gemini",
-      "transcript_retained": false,
-      "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
-        "excluded_speaker_mismatch": 0
-      },
-      "key_points": [],
-      "gemini_prompt_tokens": 45155
     }
   ],
   "person_index": {
@@ -3794,8 +3998,8 @@
       },
       "Cem Karsan": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-24T10:10:40+09:00",
@@ -3813,6 +4017,15 @@
             "preview": "Cem Karsan Sees a 25% S&P Decline, Really Starting Before March",
             "grade": "1차-A",
             "published_at": "2026-11-24T19:00:30Z",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-25T21:10:41+09:00",
+            "url": "https://www.youtube.com/watch?v=D4Eg4LXl-lw",
+            "kind": "video",
+            "preview": "Washington Wants The Market Even Lower | Weekly Roundup",
+            "grade": "1차-A",
+            "published_at": "2026-11-25T11:00:12Z",
             "noise_hint": false
           }
         ]
