@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-25T21:05:34+09:00",
+  "generated_at": "2026-11-26T10:05:26+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -44,7 +44,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
+      "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -75,8 +75,8 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 8,
-      "scoring_items": 1,
+      "items_in_window": 12,
+      "scoring_items": 2,
       "pending_items": 0
     },
     {
@@ -85,7 +85,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 5,
+      "items_in_window": 6,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -95,8 +95,8 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 1,
-      "scoring_items": 0,
+      "items_in_window": 2,
+      "scoring_items": 1,
       "pending_items": 0
     },
     {
@@ -125,7 +125,7 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 6,
+      "items_in_window": 7,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -172,17 +172,17 @@
     }
   ],
   "stats": {
-    "discovered": 132,
-    "new_items": 9,
-    "decoded": 9,
-    "bodies": 3,
-    "quotes_verified": 0,
-    "video_candidates": 0,
-    "gemini_calls": 0,
+    "discovered": 156,
+    "new_items": 12,
+    "decoded": 12,
+    "bodies": 6,
+    "quotes_verified": 8,
+    "video_candidates": 1,
+    "gemini_calls": 5,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 0,
+    "calls_today": 5,
     "daily_cap": 60,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -192,6 +192,252 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Warren Pies",
+      "tier": 1,
+      "role": "core",
+      "source_kind": "video_page",
+      "title": "Fed worries driving market selloff, not AI, says 3Fourteen's Warren Pies",
+      "outlet": "CNBC",
+      "published_at": "2026-11-25T21:14:24+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://www.cnbc.com/video/2026/11/25/fed-worries-driving-market-selloff-not-ai-says-3fourteens-warren-pies.html",
+      "canonical_url": "https://www.cnbc.com/video/2026/11/25/fed-worries-driving-market-selloff-not-ai-says-3fourteens-warren-pies.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_direct_quotes",
+      "gemini_error_count": 0,
+      "yt_searched": true
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "407 S&P 500 stocks post gains in broad rally, Ryan Detrick notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-25T19:10:23+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4420040-sp500-stocks-broad-rally/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4420040-sp500-stocks-broad-rally/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "ANT's valuation relies on rapid revenue growth, Bob Elliott notes",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-25T17:25:11+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4418297-ant-valuation-revenue-growth/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4418297-ant-valuation-revenue-growth/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "EXCLUSIVE: Ryan Detrick Says Tech Sector Important but Doesn’t Have to Lead — ‘Lifeblood of Bull Market is Rotation’",
+      "outlet": "TradingView",
+      "published_at": "2026-11-25T16:36:56+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://www.tradingview.com/news/benzinga:ab2e6c23e094b:0-exclusive-ryan-detrick-says-tech-sector-important-but-doesn-t-have-to-lead-lifeblood-of-bull-market-is-rotation/",
+      "canonical_url": "https://www.tradingview.com/news/benzinga:ab2e6c23e094b:0-exclusive-ryan-detrick-says-tech-sector-important-but-doesn-t-have-to-lead-lifeblood-of-bull-market-is-rotation/",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "We still think this wave is real,",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Detrick told Benzinga"
+        },
+        {
+          "text": "The earnings are still solid. So we still think there’s optimism, reasons to think this bull market likely will continue.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Detrick told Benzinga"
+        },
+        {
+          "text": "The hard data is still pretty solid, and the economy is not perfect,",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he added"
+        },
+        {
+          "text": "Our job is to look at the aggregate, and honestly, the aggregate on the economy still looks solid.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he added"
+        },
+        {
+          "text": "We’ve been using the phrase ‘tech or bust’ for a while, and it doesn’t mean go all in on tech or bust and lose your money,",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Detrick said"
+        },
+        {
+          "text": "The lifeblood of a bull market is rotation.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Detrick also pointed to"
+        }
+      ],
+      "direction_hint": "bullish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-26T10:05:26+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Lyn Alden",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Bitcoin Bears Eye $25,000, but There's No Reason for That, Lyn Alden Says",
+      "outlet": "Benzinga",
+      "published_at": "2026-11-25T16:23:18+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://www.benzinga.com/crypto/cryptocurrency/26/11/63634366/bitcoin-bears-eye-25000-but-theres-no-reason-for-that-lyn-alden-says",
+      "canonical_url": "https://www.benzinga.com/crypto/cryptocurrency/26/11/63634366/bitcoin-bears-eye-25000-but-theres-no-reason-for-that-lyn-alden-says",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "official_blog",
+      "title": "What the Heck Just Happened? (FvF Ep. 215)",
+      "outlet": "Carson Group",
+      "published_at": "2026-11-25T14:56:54+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://www.carsongroup.com/insights/blog/what-the-heck-just-happened-fvf-ep-215/",
+      "canonical_url": "https://www.carsongroup.com/insights/blog/what-the-heck-just-happened-fvf-ep-215/",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Jim Bianco",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Jim Bianco Calls Nvidia “the Federal Reserve of AI.” Here’s What That Means for Your Portfolio",
+      "outlet": "Yahoo Finance",
+      "published_at": "2026-11-25T14:47:23+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://finance.yahoo.com/markets/stocks/articles/jim-bianco-calls-nvidia-federal-144723002.html",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/jim-bianco-calls-nvidia-federal-144723002.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "Nvidia has become the 'Federal Reserve of AI,'",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he wrote on X on Nov. 24"
+        },
+        {
+          "text": "The AI trade now props up roughly half of U.S. GDP, which keeps the Fed on track to hike at least 25bp in December.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Bianco also added in the post"
+        }
+      ],
+      "direction_hint": "bearish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-26T10:05:26+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "official_blog",
+      "title": "The Future of Our Industry with Burt White and George Gatch (FvF Ep. 216)",
+      "outlet": "Carson Group",
+      "published_at": "2026-11-25T14:00:20+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://www.carsongroup.com/insights/blog/the-future-of-our-industry-with-burt-white-and-george-gatch-fvf-ep-216/",
+      "canonical_url": "https://www.carsongroup.com/insights/blog/the-future-of-our-industry-with-burt-white-and-george-gatch-fvf-ep-216/",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Ryan Detrick Says Nvidia Is Cheapest in Years After 48% Slide, Calls Tech ‘Annihilated’",
+      "outlet": "Benzinga",
+      "published_at": "2026-11-25T13:10:05+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://www.benzinga.com/markets/equities/26/11/63618833/ryan-detrick-says-nvidia-is-cheapest-in-years-after-48-slide-calls-tech-annihilated",
+      "canonical_url": "https://www.benzinga.com/markets/equities/26/11/63618833/ryan-detrick-says-nvidia-is-cheapest-in-years-after-48-slide-calls-tech-annihilated",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
+    {
+      "person": "Jonathan Krinsky",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "BTIG's Krinsky Called the S&P 500's Slide to 7,000 and the Bounce That Followed. Now He Says the Bottom Isn't In.",
+      "outlet": "BigGo Finance",
+      "published_at": "2026-11-25T12:05:00+00:00",
+      "discovered_at": "2026-11-26T10:05:26+09:00",
+      "article_url": "https://finance.biggo.com/news/9a52dc0b-af22-480e-b19e-714733faa90b",
+      "canonical_url": "https://finance.biggo.com/news/9a52dc0b-af22-480e-b19e-714733faa90b",
+      "body_fetch_status": 200,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
     {
       "person": "Mark Newton",
       "tier": 1,
@@ -1130,45 +1376,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Lyn Alden",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Lyn Alden anticipated lower moves in gold, Brunell says",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-18T15:40:15+00:00",
-      "discovered_at": "2026-11-19T10:05:24+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4305613-lynn-alden-gold-warning/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4305613-lynn-alden-gold-warning/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "official_blog",
-      "title": "Is the Bank of NVIDIA Closed? (FvF Ep. 214)",
-      "outlet": "Carson Group",
-      "published_at": "2026-11-18T14:00:44+00:00",
-      "discovered_at": "2026-11-19T10:05:24+09:00",
-      "article_url": "https://www.carsongroup.com/insights/blog/is-the-bank-of-nvidia-closed-fvf-ep-214/",
-      "canonical_url": "https://www.carsongroup.com/insights/blog/is-the-bank-of-nvidia-closed-fvf-ep-214/",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
     }
   ],
   "person_index": {
@@ -1212,8 +1419,8 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 3,
+        "non_noise": 3,
         "items": [
           {
             "at": "2026-11-24T10:05:28+09:00",
@@ -1231,6 +1438,15 @@
             "preview": "Bob Elliott: Cash flows are more important than palace intrigue in assessing reality",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-24T14:27:13+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4418297-ant-valuation-revenue-growth/",
+            "kind": "news_article",
+            "preview": "ANT's valuation relies on rapid revenue growth, Bob Elliott notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-25T17:25:11+00:00",
             "noise_hint": false
           }
         ]
@@ -1278,8 +1494,8 @@
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-24T10:05:28+09:00",
@@ -1289,13 +1505,22 @@
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-23T22:48:54+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/jim-bianco-calls-nvidia-federal-144723002.html",
+            "kind": "news_article",
+            "preview": "Jim Bianco Calls Nvidia “the Federal Reserve of AI.” Here’s What That Means for Your Portfolio",
+            "grade": "1차-인용",
+            "published_at": "2026-11-25T14:47:23+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Jonathan Krinsky": {
         "role": "observer",
-        "count": 3,
-        "non_noise": 3,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-23T10:05:27+09:00",
@@ -1322,6 +1547,15 @@
             "preview": "BTIG's Jonathan Krinsky: Sell the Jensen Squeeze? Absolutely — The 12-for-12 Warning Wall Street Ca…",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-24T13:31:05+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://finance.biggo.com/news/9a52dc0b-af22-480e-b19e-714733faa90b",
+            "kind": "news_article",
+            "preview": "BTIG's Krinsky Called the S&P 500's Slide to 7,000 and the Bounce That Followed. Now He Says the Bo…",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-25T12:05:00+00:00",
             "noise_hint": false
           }
         ]
@@ -1380,8 +1614,8 @@
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-23T10:05:27+09:00",
@@ -1408,6 +1642,15 @@
             "preview": "AI investment could persist as semiconductor demand shapes outlook, Lyn Alden says",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-24T19:20:23+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://www.benzinga.com/crypto/cryptocurrency/26/11/63634366/bitcoin-bears-eye-25000-but-theres-no-reason-for-that-lyn-alden-says",
+            "kind": "news_article",
+            "preview": "Bitcoin Bears Eye $25,000, but There's No Reason for That, Lyn Alden Says",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-25T16:23:18+00:00",
             "noise_hint": false
           }
         ]
@@ -1455,8 +1698,8 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 9,
+        "non_noise": 9,
         "items": [
           {
             "at": "2026-11-23T10:05:27+09:00",
@@ -1492,6 +1735,67 @@
             "preview": "Ryan Detrick: High yield and CCC credit spreads widened sharply Friday, then retraced partially Mon…",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-24T17:40:21+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4420040-sp500-stocks-broad-rally/",
+            "kind": "news_article",
+            "preview": "407 S&P 500 stocks post gains in broad rally, Ryan Detrick notes",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-25T19:10:23+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://www.tradingview.com/news/benzinga:ab2e6c23e094b:0-exclusive-ryan-detrick-says-tech-sector-important-but-doesn-t-have-to-lead-lifeblood-of-bull-market-is-rotation/",
+            "kind": "news_article",
+            "preview": "EXCLUSIVE: Ryan Detrick Says Tech Sector Important but Doesn’t Have to Lead — ‘Lifeblood of Bull Ma…",
+            "grade": "1차-인용",
+            "published_at": "2026-11-25T16:36:56+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://www.carsongroup.com/insights/blog/what-the-heck-just-happened-fvf-ep-215/",
+            "kind": "official_blog",
+            "preview": "What the Heck Just Happened? (FvF Ep. 215)",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-25T14:56:54+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://www.carsongroup.com/insights/blog/the-future-of-our-industry-with-burt-white-and-george-gatch-fvf-ep-216/",
+            "kind": "official_blog",
+            "preview": "The Future of Our Industry with Burt White and George Gatch (FvF Ep. 216)",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-25T14:00:20+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://www.benzinga.com/markets/equities/26/11/63618833/ryan-detrick-says-nvidia-is-cheapest-in-years-after-48-slide-calls-tech-annihilated",
+            "kind": "news_article",
+            "preview": "Ryan Detrick Says Nvidia Is Cheapest in Years After 48% Slide, Calls Tech ‘Annihilated’",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-25T13:10:05+00:00",
+            "noise_hint": false
+          }
+        ]
+      },
+      "Warren Pies": {
+        "role": "core",
+        "count": 1,
+        "non_noise": 1,
+        "items": [
+          {
+            "at": "2026-11-26T10:05:26+09:00",
+            "url": "https://www.cnbc.com/video/2026/11/25/fed-worries-driving-market-selloff-not-ai-says-3fourteens-warren-pies.html",
+            "kind": "video_page",
+            "preview": "Fed worries driving market selloff, not AI, says 3Fourteen's Warren Pies",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-25T21:14:24+00:00",
             "noise_hint": false
           }
         ]
