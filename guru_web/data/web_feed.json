@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-26T10:05:26+09:00",
+  "generated_at": "2026-11-26T21:05:29+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -75,7 +75,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 12,
+      "items_in_window": 11,
       "scoring_items": 2,
       "pending_items": 0
     },
@@ -85,8 +85,8 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 6,
-      "scoring_items": 0,
+      "items_in_window": 7,
+      "scoring_items": 1,
       "pending_items": 0
     },
     {
@@ -125,8 +125,8 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 7,
-      "scoring_items": 1,
+      "items_in_window": 9,
+      "scoring_items": 2,
       "pending_items": 0
     },
     {
@@ -156,8 +156,8 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 1,
-      "scoring_items": 1,
+      "items_in_window": 2,
+      "scoring_items": 2,
       "pending_items": 0
     },
     {
@@ -172,17 +172,17 @@
     }
   ],
   "stats": {
-    "discovered": 156,
-    "new_items": 12,
-    "decoded": 12,
-    "bodies": 6,
-    "quotes_verified": 8,
-    "video_candidates": 1,
-    "gemini_calls": 5,
+    "discovered": 160,
+    "new_items": 8,
+    "decoded": 8,
+    "bodies": 3,
+    "quotes_verified": 11,
+    "video_candidates": 0,
+    "gemini_calls": 3,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 5,
+    "calls_today": 8,
     "daily_cap": 60,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -192,6 +192,52 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Jonathan Krinsky",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "S&P 500 Fell 9% and Rebounded, as a BTIG Strategist Expected",
+      "outlet": "Gotrade",
+      "published_at": "2026-11-26T06:36:00+00:00",
+      "discovered_at": "2026-11-26T21:05:29+09:00",
+      "article_url": "https://www.heygotrade.com/en/news/sp-500-fell-9-percent-rebounded-btig-strategist/",
+      "canonical_url": "https://www.heygotrade.com/en/news/sp-500-fell-9-percent-rebounded-btig-strategist/",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "We think a short-term bottom should materialize in the next few days around the SPX 7k level.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Krinsky wrote"
+        }
+      ],
+      "direction_hint": "bullish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-26T21:05:29+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
+      "person": "Jonathan Krinsky",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "Cold Turkey Without Gravy — BTIG's Jonathan Krinsky Warns the March Lows May Be Next",
+      "outlet": "The Dark Side Of The Boom",
+      "published_at": "2026-11-26T05:30:56+00:00",
+      "discovered_at": "2026-11-26T21:05:29+09:00",
+      "article_url": "https://thedarksideoftheboom.substack.com/p/cold-turkey-without-gravy-btigs-jonathan",
+      "canonical_url": "https://thedarksideoftheboom.substack.com/p/cold-turkey-without-gravy-btigs-jonathan",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Warren Pies",
       "tier": 1,
@@ -478,6 +524,57 @@
       "gemini_error_count": 0
     },
     {
+      "person": "Bob Elliott",
+      "tier": 3,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Bob Elliott: AI's $3 trillion problem and how to hedge",
+      "outlet": "Opening Bell Daily",
+      "published_at": "2026-11-24T21:02:10+00:00",
+      "discovered_at": "2026-11-26T21:05:29+09:00",
+      "article_url": "https://www.openingbelldailynews.com/p/bob-elliott-unlimited-ai-3-trillion-problem-hedge-full-signal",
+      "canonical_url": "https://www.openingbelldailynews.com/p/bob-elliott-unlimited-ai-3-trillion-problem-hedge-full-signal",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "those are huge moves that would have a massive implication in the market,",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he said"
+        },
+        {
+          "text": "If you've got something that you're claiming to be the greatest productivity enhancing technology in the history of man, you got to do something, you got to see it somewhere,",
+          "quote_match": 96.5,
+          "speaker_verified": true,
+          "attribution": "he said"
+        },
+        {
+          "text": "The question for a real economy company is, can I get people to eat more cereal?",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he said"
+        },
+        {
+          "text": "tactically, you go short, which is a dangerous thing,",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "Elliott said"
+        },
+        {
+          "text": "Take a minute, lock that stuff in and live to fight another day,",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "he said"
+        }
+      ],
+      "direction_hint": "bearish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-26T21:05:29+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
+    },
+    {
       "person": "Lyn Alden",
       "tier": 3,
       "role": "core",
@@ -648,6 +745,57 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
+    },
+    {
+      "person": "Mike Wilson",
+      "tier": 4,
+      "role": "observer",
+      "source_kind": "news_article",
+      "title": "He correctly said the S&P 500 would fall to 7100; Now, Morgan Stanley's Mike Wilson has another gutsy forecast",
+      "outlet": "Yahoo Finance",
+      "published_at": "2026-11-24T03:03:00+00:00",
+      "discovered_at": "2026-11-26T21:05:29+09:00",
+      "article_url": "https://finance.yahoo.com/markets/stocks/articles/correctly-said-p-500-fall-030300186.html",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/correctly-said-p-500-fall-030300186.html",
+      "body_fetch_status": 200,
+      "direct_quotes": [
+        {
+          "text": "Last week delivered the capitulation and index catch-down we'd been waiting for. While the S&P broke below our 7,100–7,300 range, we view this as an overshoot of fair value",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "wrote Wilson."
+        },
+        {
+          "text": "This is the fat pitch we have patiently been waiting for, and we're not going to miss it. Markets bottom on bad news and deleveraging. We have had a lot of both.",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "wrote Wilson."
+        },
+        {
+          "text": "Our sentiment indicator reached −1.6 and the VIX hit 36, matching December 2018, with hedge fund positioning similarly washed out. While the S&P broke below our 7,100–7,300 range, we view this as an overshoot of fair value and remain constructive into 2027",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "wrote Wilson."
+        },
+        {
+          "text": "Valuations Support Adding Exposure. The S&P 500 trades at 16.4x versus our 19–19.6x fair value range, a discount of roughly three multiple turns even after accounting for rates. The Nasdaq 100 is below 17x and its COVID valuation trough",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "wrote Wilson."
+        },
+        {
+          "text": "Bottom line, we reiterate our constructive view on 2027 but with a much more bullish tactical view now given the capitulation witnessed last week and attractive valuation levels",
+          "quote_match": 100.0,
+          "speaker_verified": true,
+          "attribution": "concluded Wilson"
+        }
+      ],
+      "direction_hint": "bullish",
+      "evidence_grade": "1차-인용",
+      "evidence_ready_at": "2026-11-26T21:05:29+09:00",
+      "gemini_status": "ready",
+      "gemini_error_count": 0,
+      "gemini_model": "models/gemini-3.5-flash-lite"
     },
     {
       "person": "Lyn Alden",
@@ -1357,25 +1505,6 @@
       "evidence_ready_at": null,
       "gemini_status": "no_body",
       "gemini_error_count": 0
-    },
-    {
-      "person": "Ryan Detrick",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "S&P 500 dips below 200-day average after long streak, Ryan Detrick notes",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-19T02:25:17+00:00",
-      "discovered_at": "2026-11-21T10:05:34+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4312400-sp500-falls-200-day/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4312400-sp500-falls-200-day/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
     }
   ],
   "person_index": {
@@ -1385,18 +1514,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-23T10:05:27+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4362841-1987-market-decline-experience/",
-            "kind": "news_article",
-            "preview": "Specific positioning observed on October 16, 1987, Andy Constan notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-22T10:55:08+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-24T10:05:28+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4372427-sell-buy-wait-levels/",
@@ -1419,8 +1539,8 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 4,
+        "non_noise": 4,
         "items": [
           {
             "at": "2026-11-24T10:05:28+09:00",
@@ -1447,6 +1567,15 @@
             "preview": "ANT's valuation relies on rapid revenue growth, Bob Elliott notes",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-25T17:25:11+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T21:05:29+09:00",
+            "url": "https://www.openingbelldailynews.com/p/bob-elliott-unlimited-ai-3-trillion-problem-hedge-full-signal",
+            "kind": "news_article",
+            "preview": "Bob Elliott: AI's $3 trillion problem and how to hedge",
+            "grade": "1차-인용",
+            "published_at": "2026-11-24T21:02:10+00:00",
             "noise_hint": false
           }
         ]
@@ -1519,18 +1648,9 @@
       },
       "Jonathan Krinsky": {
         "role": "observer",
-        "count": 4,
-        "non_noise": 4,
+        "count": 5,
+        "non_noise": 5,
         "items": [
-          {
-            "at": "2026-11-23T10:05:27+09:00",
-            "url": "https://www.tradingview.com/news/binance_news:56deb40b0094b:0-jonathan-krinsky-sees-more-market-downside-as-apple-holds-up/",
-            "kind": "news_article",
-            "preview": "Jonathan Krinsky Sees More Market Downside as Apple Holds Up",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-22T12:53:42+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-23T21:05:32+09:00",
             "url": "https://beincrypto.com/sp-500-bottom-unlikely-apple-krinsky/",
@@ -1556,6 +1676,24 @@
             "preview": "BTIG's Krinsky Called the S&P 500's Slide to 7,000 and the Bounce That Followed. Now He Says the Bo…",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-25T12:05:00+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T21:05:29+09:00",
+            "url": "https://www.heygotrade.com/en/news/sp-500-fell-9-percent-rebounded-btig-strategist/",
+            "kind": "news_article",
+            "preview": "S&P 500 Fell 9% and Rebounded, as a BTIG Strategist Expected",
+            "grade": "1차-인용",
+            "published_at": "2026-11-26T06:36:00+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T21:05:29+09:00",
+            "url": "https://thedarksideoftheboom.substack.com/p/cold-turkey-without-gravy-btigs-jonathan",
+            "kind": "news_article",
+            "preview": "Cold Turkey Without Gravy — BTIG's Jonathan Krinsky Warns the March Lows May Be Next",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-26T05:30:56+00:00",
             "noise_hint": false
           }
         ]
@@ -1614,18 +1752,9 @@
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-23T10:05:27+09:00",
-            "url": "https://www.hokanews.com/2026/11/lyn-alden-repeats-bitcoin-is-dead.html",
-            "kind": "news_article",
-            "preview": "Lyn Alden Repeats “Bitcoin Is Dead” Remark as BTC Falls 56% From $126,000 Record",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-22T03:15:00+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-24T10:05:28+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4384213-bitcoin-gold-iran-war/",
@@ -1682,8 +1811,8 @@
       },
       "Mike Wilson": {
         "role": "observer",
-        "count": 1,
-        "non_noise": 1,
+        "count": 2,
+        "non_noise": 2,
         "items": [
           {
             "at": "2026-11-24T10:05:28+09:00",
@@ -1693,23 +1822,23 @@
             "grade": "1차-인용",
             "published_at": "2026-11-23T14:41:38+00:00",
             "noise_hint": false
+          },
+          {
+            "at": "2026-11-26T21:05:29+09:00",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/correctly-said-p-500-fall-030300186.html",
+            "kind": "news_article",
+            "preview": "He correctly said the S&P 500 would fall to 7100; Now, Morgan Stanley's Mike Wilson has another gut…",
+            "grade": "1차-인용",
+            "published_at": "2026-11-24T03:03:00+00:00",
+            "noise_hint": false
           }
         ]
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 9,
-        "non_noise": 9,
+        "count": 8,
+        "non_noise": 8,
         "items": [
-          {
-            "at": "2026-11-23T10:05:27+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4364183-sp500-seven-day-streak-history/",
-            "kind": "news_article",
-            "preview": "Ryan Detrick: S&P 500 rose after seven-day losing streak in 16 out of 17 years since 1978",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-22T15:55:07+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-24T10:05:28+09:00",
             "url": "https://www.carsongroup.com/insights/blog/15-things-to-know-about-this-sell-off/",
