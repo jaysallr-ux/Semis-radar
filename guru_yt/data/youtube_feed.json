@@ -1,17 +1,20 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-26T10:10:35+09:00",
+  "generated_at": "2026-11-26T21:10:39+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-26T06:20:44+09:00",
-    "merged_from_discovery": 3,
+    "last_discovery_at": "2026-11-26T10:50:39+09:00",
+    "merged_from_discovery": 1,
     "discovery_errors": {},
     "extra_videos": {
       "accepted": 0,
-      "rejected": 0
+      "rejected": 1,
+      "reasons": {
+        "a1swkqvISJg": "older than window"
+      }
     }
   },
   "quote_verify_threshold": 90,
@@ -157,9 +160,9 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-21T06:35:40+09:00",
+      "oldest_rss": "2026-11-21T09:43:28+09:00",
       "gap_possible": false,
-      "matched": 5
+      "matched": 6
     },
     {
       "label": "Maggie Lake Talking Markets",
@@ -201,7 +204,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-25T02:10:17+09:00",
+      "oldest_rss": "2026-11-25T06:55:52+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,7 +215,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-25T20:49:47+09:00",
+      "oldest_rss": "2026-11-26T00:41:20+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -223,7 +226,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-24T23:30:01+09:00",
+      "oldest_rss": "2026-11-25T04:41:48+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,7 +237,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-21T04:00:23+09:00",
+      "oldest_rss": "2026-11-21T06:30:10+09:00",
       "gap_possible": false,
       "matched": 0
     }
@@ -250,34 +253,80 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 11,
+    "gemini_calls_today": 18,
     "gemini_est_video_hours_today": 0.0,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 1,
-    "ready": 1,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
-    "skipped_short": 1,
+    "skipped_short": 0,
     "expired": 0,
     "left_pending": 0,
-    "waiting_for_gemini": 1
+    "waiting_for_gemini": 2
   },
   "gemini_stats": {
-    "attempted": 11,
+    "attempted": 7,
     "ready": 0,
     "not_speaking": 0,
     "busy": 1,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 5,
-    "chunked": 2,
+    "budget_out": 6,
+    "chunked": 0,
     "text_mode": 0,
     "quota_wait": 0
   },
   "videos": [
+    {
+      "video_id": "RiTZElBIvis",
+      "url": "https://www.youtube.com/watch?v=RiTZElBIvis",
+      "channel": "tastylive",
+      "channel_id": "UCLJiSMXJ9K-1AOTqIqdXJgQ",
+      "channel_mode": "filter",
+      "person": "Cem Karsan",
+      "tier": 1,
+      "role": "core",
+      "match": "description",
+      "title": "It Has Only Happened Twice Before, and Both Were March 2020",
+      "description": "The VIX looks like it is pushing higher this week, and part of that is an artifact. It is a calendar day calculation, so Thanksgiving, the half session and the weekend get pulled out, four days gone, and the number comes back higher on Monday. Cem Karsan also explains why dealers warehousing massive short stock into the largest expiration yet makes a fast decline unlikely, and where he wants to own volatility instead. Ilya Spivak has been short since early October.\n\n📊 tastylive: https://www.tastylive.com/\n📰 Get Tom's pre-market analysis every morning: https://www.tastylive.com/newsletters\n📘 FREE Options Strategy Guide: https://tinyurl.com/bp9ms763\n📱 Follow tastylive on X: https://x.com/tastyliveshow\n\nChapters\n00:00 Why this doesn't feel like a bottom\n00:09 Short since early October\n01:05 What a real capitulation would look like\n01:16 Adding to the Russell short\n01:28 Back short on precious metals\n02:30 The world is warehousing short stock\n03:21 Why dealers have to keep buying\n03:41 The beach ball underwater\n05:03 Four days pulled out of the VIX\n06:23 Own January, not December\n\n#tastylive #overtime #cemkarsan #vix #volatility #opex #dealerflows #skew #optionstrading #stockmarket\n\ntastylive is a real financial network, producing hours of live programming every day. Follow along as our experts navigate the markets, provide actionable trading insights, and teach you how to trade. With over 120 original segments, and over 25 personalities, we'll help you take your trading to the n",
+      "published_at": "2026-11-26T01:30:30Z",
+      "first_seen_at": "2026-11-26T10:50:39+09:00",
+      "is_short": false,
+      "transcript_status": "pending_quota",
+      "transcript_provider": null,
+      "transcript_ready_at": null,
+      "transcript_language": null,
+      "transcript_chars": null,
+      "transcript_url": null,
+      "name_mentions": null,
+      "appearance_confirmed": null,
+      "appearance_excerpt": null,
+      "error_count": 0,
+      "last_error": null,
+      "gemini_status": "error",
+      "gemini_model": null,
+      "gemini_at": null,
+      "gemini_mode": null,
+      "person_speaks": null,
+      "gemini_evidence": null,
+      "stance": null,
+      "quotes": [],
+      "gemini_error_count": 1,
+      "gemini_last_error": "busy 503 (gemini-3.8-flash)",
+      "evidence_ready_at": null,
+      "evidence_grade": "제목·설명만 확인",
+      "appearance_source": null,
+      "transcript_retained": false,
+      "quotes_grade_count": {
+        "1차-A": 0,
+        "1차-B": 0,
+        "excluded_speaker_mismatch": 0
+      }
+    },
     {
       "video_id": "1RAqnQcWeNs",
       "url": "https://www.youtube.com/watch?v=1RAqnQcWeNs",
@@ -3917,38 +3966,6 @@
     "lookback_hours": 72,
     "note": "Finding aid only, never evidence. Entries newer than the run's checkpoint (by the clock named here) are this run's new material. A person with at least one entry where noise_hint is false after the checkpoint must not be listed under '새 발언 없음'; read the full record before writing about it. noise_hint=true marks only obvious noise (games, bare reactions with nothing quoted); everything else still needs judging. If the checkpoint is older than lookback_hours, scan the full feed instead.",
     "people": {
-      "Andy Constan": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-23T10:10:44+09:00",
-            "url": "https://www.youtube.com/watch?v=PhaAlq5w1R0",
-            "kind": "video",
-            "preview": "The Three Poisons Behind the Sell-Off | Andy Constan on Why This Dip Is Different",
-            "grade": "1차-A",
-            "published_at": "2026-11-20T14:12:31Z",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Bob Elliott": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-23T10:10:44+09:00",
-            "url": "https://www.youtube.com/watch?v=WbQoMMoZW7A",
-            "kind": "video",
-            "preview": "Macro Talk: 2026.11.20",
-            "grade": "1차-B",
-            "published_at": "2026-11-21T11:11:51+00:00",
-            "noise_hint": false
-          }
-        ]
-      },
       "Cem Karsan": {
         "role": "core",
         "count": 3,
@@ -4046,18 +4063,9 @@
       },
       "David Sekera": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-23T10:10:44+09:00",
-            "url": "https://www.youtube.com/watch?v=bPhrkjcCotQ",
-            "kind": "video",
-            "preview": "Should You Buy Anthropic Stock at Its IPO? Here's Everything to Know Before Deciding",
-            "grade": "1차-A",
-            "published_at": "2026-11-19T16:01:55Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-24T10:10:40+09:00",
             "url": "https://www.youtube.com/watch?v=aIBwhyRgywY",
@@ -4065,22 +4073,6 @@
             "preview": "5 Surprising Stocks to Buy Before Year-End I November 23, 2026",
             "grade": "1차-A",
             "published_at": "2026-11-20T15:15:48Z",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Joseph Wang": {
-        "role": "shadow",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-23T10:10:44+09:00",
-            "url": "https://www.youtube.com/watch?v=9cR-SnyehwI",
-            "kind": "video",
-            "preview": "Markets Weekly November 21, 2026",
-            "grade": "1차-B",
-            "published_at": "2026-11-21T20:01:57Z",
             "noise_hint": false
           }
         ]
