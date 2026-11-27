@@ -1,6 +1,6 @@
 {
   "schema": "guru-web/v1",
-  "generated_at": "2026-11-26T21:05:29+09:00",
+  "generated_at": "2026-11-27T10:05:32+09:00",
   "data_ok": true,
   "errors": {},
   "source": "Google News discovery (publisher URL decoded), Carson Group feed (author Ryan Detrick), Morgan Stanley Thoughts on the Market (Mike Wilson). direct_quotes are proposed by a light Gemini model and kept only if code finds them in the source text (quote_match >= 95) and, for articles, near the person's name. News quotes = 1차-인용, the person's own blog/transcript = 1차. direction_hint is Gemini's reading, not evidence. Article bodies are never stored. Video pages are handed to guru_yt via yt_candidates.json.",
@@ -24,7 +24,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 3,
+      "items_in_window": 2,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -54,7 +54,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 5,
+      "items_in_window": 3,
       "scoring_items": 0,
       "pending_items": 0
     },
@@ -75,7 +75,7 @@
       "discovery_ok": true,
       "error": null,
       "official_source_ok": true,
-      "items_in_window": 11,
+      "items_in_window": 12,
       "scoring_items": 2,
       "pending_items": 0
     },
@@ -85,7 +85,7 @@
       "role": "core",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 7,
+      "items_in_window": 6,
       "scoring_items": 1,
       "pending_items": 0
     },
@@ -145,8 +145,8 @@
       "role": "observer",
       "discovery_ok": true,
       "error": null,
-      "items_in_window": 7,
-      "scoring_items": 1,
+      "items_in_window": 6,
+      "scoring_items": 0,
       "pending_items": 0
     },
     {
@@ -172,17 +172,17 @@
     }
   ],
   "stats": {
-    "discovered": 160,
-    "new_items": 8,
-    "decoded": 8,
-    "bodies": 3,
-    "quotes_verified": 11,
+    "discovered": 159,
+    "new_items": 5,
+    "decoded": 5,
+    "bodies": 0,
+    "quotes_verified": 0,
     "video_candidates": 0,
-    "gemini_calls": 3,
+    "gemini_calls": 0,
     "gemini_skipped_cap": 0
   },
   "gemini": {
-    "calls_today": 8,
+    "calls_today": 0,
     "daily_cap": 60,
     "models": [
       "models/gemini-3.5-flash-lite",
@@ -192,6 +192,25 @@
     "status": "ok"
   },
   "items": [
+    {
+      "person": "Ryan Detrick",
+      "tier": 2,
+      "role": "core",
+      "source_kind": "news_article",
+      "title": "Ryan Detrick: Stocks much cheaper than at start of year as S&P 500 P/E drops",
+      "outlet": "Traders Union",
+      "published_at": "2026-11-26T23:40:13+00:00",
+      "discovered_at": "2026-11-27T10:05:32+09:00",
+      "article_url": "https://tradersunion.com/news/market-voices/show/4436984-stocks-down-year/",
+      "canonical_url": "https://tradersunion.com/news/market-voices/show/4436984-stocks-down-year/",
+      "body_fetch_status": 403,
+      "direct_quotes": [],
+      "direction_hint": null,
+      "evidence_grade": "제목·설명만 확인",
+      "evidence_ready_at": null,
+      "gemini_status": "no_body",
+      "gemini_error_count": 0
+    },
     {
       "person": "Jonathan Krinsky",
       "tier": 4,
@@ -1395,116 +1414,6 @@
       "gemini_status": "ready",
       "gemini_error_count": 0,
       "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Andy Constan",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Andy Constan: QYLD selling $10 billion notional 50% delta NDX calls between 11:30 and 1:30",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-19T21:51:19+00:00",
-      "discovered_at": "2026-11-21T10:05:34+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4344760-qyld-ndx-call-sale/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4344760-qyld-ndx-call-sale/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Darius Dale",
-      "tier": 1,
-      "role": "core",
-      "source_kind": "video_page",
-      "title": "Darius Dale: 2027 Should Be A “Great Year For Bitcoin” As Fed Rate Cuts Come",
-      "outlet": "Bitcoin Magazine",
-      "published_at": "2026-11-19T20:15:14+00:00",
-      "discovered_at": "2026-11-20T10:05:25+09:00",
-      "article_url": "https://bitcoinmagazine.com/videos/darius-dale-2027-should-be-a-great-year-for-bitcoin-as-fed-rate-cuts-come",
-      "canonical_url": "https://bitcoinmagazine.com/videos/darius-dale-2027-should-be-a-great-year-for-bitcoin-as-fed-rate-cuts-come",
-      "body_fetch_status": 200,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_direct_quotes",
-      "gemini_error_count": 0,
-      "yt_searched": true
-    },
-    {
-      "person": "Katie Stockton",
-      "tier": 4,
-      "role": "observer",
-      "source_kind": "news_article",
-      "title": "JUST IN: Fairlead Strategies Founder Katie Stockton says \"our longer-term indicators for Bitcoin are somewhat constructive\" 👀 \"As long as it holds above that $58,000 to $60,000 or within that range, then it preserves the potential for a long-term basing phase fo",
-      "outlet": "Moomoo",
-      "published_at": "2026-11-19T18:07:51+00:00",
-      "discovered_at": "2026-11-20T10:05:25+09:00",
-      "article_url": "https://www.moomoo.com/community/feed/just-in-fairlead-strategies-founder-katie-stockton-says-our-longer-117644319129605",
-      "canonical_url": "https://www.moomoo.com/community/feed/just-in-fairlead-strategies-founder-katie-stockton-says-our-longer-117644319129605",
-      "body_fetch_status": 200,
-      "direct_quotes": [
-        {
-          "text": "our longer-term indicators for Bitcoin are somewhat constructive",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "Katie Stockton says"
-        },
-        {
-          "text": "As long as it holds above that $58,000 to $60,000 or within that range, then it preserves the potential for a long-term basing phase for Bitcoin",
-          "quote_match": 100.0,
-          "speaker_verified": true,
-          "attribution": "Katie Stockton says"
-        }
-      ],
-      "direction_hint": "not_stated",
-      "evidence_grade": "1차-인용",
-      "evidence_ready_at": "2026-11-20T10:05:25+09:00",
-      "gemini_status": "ready",
-      "gemini_error_count": 0,
-      "gemini_model": "models/gemini-3.5-flash-lite"
-    },
-    {
-      "person": "Andy Constan",
-      "tier": 2,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Downloading and saving financial account data daily is good housekeeping, Andy Constan advises",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-19T16:25:25+00:00",
-      "discovered_at": "2026-11-20T10:05:25+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4324355-save-financial-account-downloads/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4324355-save-financial-account-downloads/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
-    },
-    {
-      "person": "Bob Elliott",
-      "tier": 3,
-      "role": "core",
-      "source_kind": "news_article",
-      "title": "Bob Elliott: Data suggests economic crisis emerging in China",
-      "outlet": "Traders Union",
-      "published_at": "2026-11-19T12:25:16+00:00",
-      "discovered_at": "2026-11-20T10:05:25+09:00",
-      "article_url": "https://tradersunion.com/news/market-voices/show/4318696-china-domestic-economic-crisis/",
-      "canonical_url": "https://tradersunion.com/news/market-voices/show/4318696-china-domestic-economic-crisis/",
-      "body_fetch_status": 403,
-      "direct_quotes": [],
-      "direction_hint": null,
-      "evidence_grade": "제목·설명만 확인",
-      "evidence_ready_at": null,
-      "gemini_status": "no_body",
-      "gemini_error_count": 0
     }
   ],
   "person_index": {
@@ -1514,18 +1423,9 @@
     "people": {
       "Andy Constan": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4372427-sell-buy-wait-levels/",
-            "kind": "news_article",
-            "preview": "Andy Constan: Advises sell at $7600, buy at $6600, otherwise wait",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-23T11:55:20+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-25T10:05:26+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4391531-ant-green-shoe-underwriting/",
@@ -1539,18 +1439,9 @@
       },
       "Bob Elliott": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4372705-policy-response-market-repricing/",
-            "kind": "news_article",
-            "preview": "Policy action may stay limited until market repricing deepens, Bob Elliott notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-23T12:25:12+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-25T10:05:26+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4393732-elliott-cash-flow-priority/",
@@ -1598,18 +1489,9 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://www.benzinga.com/crypto/cryptocurrency/26/11/63525569/bitcoin-could-fall-another-40-if-stocks-crater-by-christmas-darius-dale-warns",
-            "kind": "news_article",
-            "preview": "Bitcoin Could Fall Another 40% if Stocks Crater by Christmas, Darius Dale Warns",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-23T13:50:07+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-25T10:05:26+09:00",
             "url": "https://en.bitcoinsistemi.com/darius-dale-ceo-of-42-macro-a-38-400-scenario-for-bitcoin-is-on-the-table/",
@@ -1623,18 +1505,9 @@
       },
       "Jim Bianco": {
         "role": "core",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/23/market-researcher-jim-bianco-on-importance-of-the-feds-upcoming-december-meeting-after-market-swings.html",
-            "kind": "video_page",
-            "preview": "Market researcher Jim Bianco on importance of the Feds upcoming December meeting after market swings",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-23T22:48:54+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-26T10:05:26+09:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/jim-bianco-calls-nvidia-federal-144723002.html",
@@ -1648,18 +1521,9 @@
       },
       "Jonathan Krinsky": {
         "role": "observer",
-        "count": 5,
-        "non_noise": 5,
+        "count": 4,
+        "non_noise": 4,
         "items": [
-          {
-            "at": "2026-11-23T21:05:32+09:00",
-            "url": "https://beincrypto.com/sp-500-bottom-unlikely-apple-krinsky/",
-            "kind": "news_article",
-            "preview": "BTIG's Krinsky Says S&P 500 Bottom Unlikely While Apple Holds Near Highs",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-23T05:06:28+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-25T10:05:26+09:00",
             "url": "https://thedarksideoftheboom.substack.com/p/btigs-jonathan-krinsky-sell-the-jensen",
@@ -1700,27 +1564,9 @@
       },
       "Katie Stockton": {
         "role": "observer",
-        "count": 5,
-        "non_noise": 5,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/23/katie-stockton-charts-the-technicals-on-nvidia.html",
-            "kind": "video_page",
-            "preview": "Fairlead's Katie Stockton charts the technicals on Nvidia",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-23T22:48:57+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://www.cnbc.com/video/2026/11/23/the-market-could-snap-back-as-soon-as-sentiment-shifts-says-fairleads-katie-stockton.html",
-            "kind": "video_page",
-            "preview": "The market could snap back as soon as sentiment shifts, says Fairlead's Katie Stockton",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-23T12:45:33+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-25T10:05:26+09:00",
             "url": "https://www.cnbc.com/2026/11/24/katie-stockton-sees-a-comeback-ahead-for-this-beaten-down-tech-stock.html",
@@ -1752,18 +1598,9 @@
       },
       "Lyn Alden": {
         "role": "core",
-        "count": 3,
-        "non_noise": 3,
+        "count": 2,
+        "non_noise": 2,
         "items": [
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4384213-bitcoin-gold-iran-war/",
-            "kind": "news_article",
-            "preview": "Bitcoin outperformed gold after Iran War broke out, Lyn Alden notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-23T23:55:08+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-25T10:05:26+09:00",
             "url": "https://www.tokenpost.com/news/insights/62492",
@@ -1811,18 +1648,9 @@
       },
       "Mike Wilson": {
         "role": "observer",
-        "count": 2,
-        "non_noise": 2,
+        "count": 1,
+        "non_noise": 1,
         "items": [
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://www.thewealthadvisor.com/article/morgan-stanleys-mike-wilson-says-market-just-handed-investors-rare-buying-opportunity",
-            "kind": "news_article",
-            "preview": "Morgan Stanley's Mike Wilson Says The Market Just Handed Investors A Rare Buying Opportunity",
-            "grade": "1차-인용",
-            "published_at": "2026-11-23T14:41:38+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-26T21:05:29+09:00",
             "url": "https://finance.yahoo.com/markets/stocks/articles/correctly-said-p-500-fall-030300186.html",
@@ -1836,27 +1664,9 @@
       },
       "Ryan Detrick": {
         "role": "core",
-        "count": 8,
-        "non_noise": 8,
+        "count": 7,
+        "non_noise": 7,
         "items": [
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://www.carsongroup.com/insights/blog/15-things-to-know-about-this-sell-off/",
-            "kind": "official_blog",
-            "preview": "15 Things to Know About This Sell-Off",
-            "grade": "1차",
-            "published_at": "2026-11-23T19:55:20+00:00",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-24T10:05:28+09:00",
-            "url": "https://tradersunion.com/news/market-voices/show/4379356-nvidia-record-market-gain/",
-            "kind": "news_article",
-            "preview": "Nvidia adds almost $1 trillion in market cap in two hours, Ryan Detrick notes",
-            "grade": "제목·설명만 확인",
-            "published_at": "2026-11-23T16:40:40+00:00",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-25T21:05:34+09:00",
             "url": "https://tradersunion.com/news/market-voices/show/4400642-credit-spreads-sharp-move/",
@@ -1909,6 +1719,15 @@
             "preview": "Ryan Detrick Says Nvidia Is Cheapest in Years After 48% Slide, Calls Tech ‘Annihilated’",
             "grade": "제목·설명만 확인",
             "published_at": "2026-11-25T13:10:05+00:00",
+            "noise_hint": false
+          },
+          {
+            "at": "2026-11-27T10:05:32+09:00",
+            "url": "https://tradersunion.com/news/market-voices/show/4436984-stocks-down-year/",
+            "kind": "news_article",
+            "preview": "Ryan Detrick: Stocks much cheaper than at start of year as S&P 500 P/E drops",
+            "grade": "제목·설명만 확인",
+            "published_at": "2026-11-26T23:40:13+00:00",
             "noise_hint": false
           }
         ]
