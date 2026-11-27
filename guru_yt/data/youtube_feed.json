@@ -1,16 +1,16 @@
 {
   "schema": "guru-yt/v1",
-  "generated_at": "2026-11-27T10:10:32+09:00",
+  "generated_at": "2026-11-27T21:10:37+09:00",
   "data_ok": true,
   "source": "Discovery via allowlisted channel RSS. quotes[] are extracted by Gemini from the video itself (gemini_mode video or video_chunks_N) or, if that failed, from our captions (caption_text). Each quote carries its own grade: 1차-A = matched the captions >= quote_verify_threshold and is at least quote_min_chars_for_a long; otherwise 1차-B. Quotes with speaker_verified=false are kept for audit but excluded from grade counts and must not be used as evidence. Captions are never published: they are held privately only until verification is done. key_points[] are Gemini's point-by-point reading of the person's arguments (with condition and conviction); they are NOT verified quotes and are for the reading digest only. stance is Gemini's reading of the person's own words, not a quote.",
   "new_statement_clock": "evidence_ready_at",
   "generated_at_note": "generated_at is the time of the last full run (captions + Gemini). Discovery-only runs never change it; see discovery.last_discovery_at.",
   "discovery": {
-    "last_discovery_at": "2026-11-26T21:10:39+09:00",
+    "last_discovery_at": "2026-11-27T10:10:32+09:00",
     "merged_from_discovery": 0,
     "discovery_errors": {},
     "extra_videos": {
-      "accepted": 1,
+      "accepted": 0,
       "rejected": 0
     }
   },
@@ -157,7 +157,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-22T02:00:30+09:00",
+      "oldest_rss": "2026-11-22T03:00:17+09:00",
       "gap_possible": false,
       "matched": 6
     },
@@ -201,7 +201,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-25T07:56:59+09:00",
+      "oldest_rss": "2026-11-25T15:57:35+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -212,7 +212,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-26T01:20:16+09:00",
+      "oldest_rss": "2026-11-26T03:30:46+09:00",
       "gap_possible": false,
       "matched": 0
     },
@@ -234,7 +234,7 @@
       "rss_ok": true,
       "rss_count": 50,
       "list_source": "data_api",
-      "oldest_rss": "2026-11-21T22:30:09+09:00",
+      "oldest_rss": "2026-11-22T05:30:06+09:00",
       "gap_possible": false,
       "matched": 0
     }
@@ -250,29 +250,29 @@
       "youtube-transcript-ai": "ok",
       "supadata": "ok"
     },
-    "gemini_calls_today": 9,
-    "gemini_est_video_hours_today": 0.368,
+    "gemini_calls_today": 19,
+    "gemini_est_video_hours_today": 1.022,
     "gemini_daily_video_hours_cap": 30,
     "gemini": "ok"
   },
   "stats": {
-    "attempted": 2,
-    "ready": 2,
+    "attempted": 0,
+    "ready": 0,
     "unavailable": 0,
     "errors": 0,
     "skipped_short": 0,
     "expired": 0,
     "left_pending": 0,
-    "waiting_for_gemini": 2
+    "waiting_for_gemini": 0
   },
   "gemini_stats": {
-    "attempted": 9,
-    "ready": 2,
-    "not_speaking": 1,
+    "attempted": 10,
+    "ready": 1,
+    "not_speaking": 0,
     "busy": 0,
     "errors": 0,
     "left_pending": 0,
-    "budget_out": 5,
+    "budget_out": 4,
     "chunked": 1,
     "text_mode": 0,
     "quota_wait": 0
@@ -300,29 +300,160 @@
       "transcript_chars": 56105,
       "transcript_url": null,
       "name_mentions": 24,
-      "appearance_confirmed": null,
+      "appearance_confirmed": true,
       "appearance_excerpt": "what he thinks is going to happen to not just economic growth, but  [0:30] also Fed policy and market action into 2027. Darius Dale joins us once more. Founder and CEO of 42 Macro. It's been a while, Darius. Welcome back to the show. Good to see you. >> It's a real pleasure to be here, David, and thanks for having me. ",
       "error_count": 0,
       "last_error": null,
-      "gemini_status": "pending",
-      "gemini_model": null,
-      "gemini_at": null,
-      "gemini_mode": null,
-      "person_speaks": null,
-      "gemini_evidence": null,
-      "stance": null,
-      "quotes": [],
+      "gemini_status": "ready",
+      "gemini_model": "models/gemini-3.5-flash",
+      "gemini_at": "2026-11-27T21:10:37+09:00",
+      "gemini_mode": "video",
+      "person_speaks": true,
+      "gemini_evidence": "Darius Dale appears on screen via video call wearing a white shirt and purple tie with a blue '42 Macro' logo backdrop, discussing macroeconomic cycles, inflation, Federal Reserve policy, and portfolio allocation.",
+      "stance": {
+        "us_equities": "mixed",
+        "summary": "Darius Dale is currently holding a 100% cash position in his flagship model due to an ongoing risk-off inflation macro regime. However, he expects monetary policy to eventually shift to easing, creating significant scope for equity multiple expansion and a strong risk-on reflationary regime once quantitative model signals confirm the pivot.",
+        "invalidation": "If inflation remains persistently high while economic growth accelerates much faster than expected without Fed policy easing or financial stability pressure.",
+        "targets": [],
+        "timeframe": "Late 2026 into 2027-2028"
+      },
+      "quotes": [
+        {
+          "t": "03:31",
+          "t_sec": 211,
+          "speaker": "Darius Dale",
+          "topic": "Fed Policy & Rate Hikes",
+          "text": "In our view, our base case currently is that the Fed hikes in December, they're probably going to have to hike again in March for credibility's sake.",
+          "url": "https://www.youtube.com/watch?v=Ibnrc4b8H2Y&t=211s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 94.5,
+          "caption_sec": 215,
+          "caption_checked": true
+        },
+        {
+          "t": "07:00",
+          "t_sec": 420,
+          "speaker": "Darius Dale",
+          "topic": "Treasury Yields",
+          "text": "Our fair value estimate for the 10-year nominal Treasury yield is north of 5.9%, somewhere around 5.88%.",
+          "url": "https://www.youtube.com/watch?v=Ibnrc4b8H2Y&t=420s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 95.0,
+          "caption_sec": 398,
+          "caption_checked": true
+        },
+        {
+          "t": "14:26",
+          "t_sec": 866,
+          "speaker": "Darius Dale",
+          "topic": "Portfolio Allocation",
+          "text": "KISS has been 100% cash for at least for a few weeks, really since late September.",
+          "url": "https://www.youtube.com/watch?v=Ibnrc4b8H2Y&t=866s",
+          "speaker_verified": true,
+          "grade": "1차-B",
+          "caption_match": 70.9,
+          "caption_sec": 860,
+          "caption_checked": true
+        },
+        {
+          "t": "15:21",
+          "t_sec": 921,
+          "speaker": "Darius Dale",
+          "topic": "Equities & Market Outlook",
+          "text": "We think there's ample scope for multiple expansion in the equity market, ample scope for credit spread compression.",
+          "url": "https://www.youtube.com/watch?v=Ibnrc4b8H2Y&t=921s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 97.4,
+          "caption_sec": 921,
+          "caption_checked": true
+        },
+        {
+          "t": "24:41",
+          "t_sec": 1481,
+          "speaker": "Darius Dale",
+          "topic": "Investment Strategy",
+          "text": "We want to be the second investor in a confirmed trade, as opposed to being the first investor in an unconfirmed trade.",
+          "url": "https://www.youtube.com/watch?v=Ibnrc4b8H2Y&t=1481s",
+          "speaker_verified": true,
+          "grade": "1차-A",
+          "caption_match": 100.0,
+          "caption_sec": 1471,
+          "caption_checked": true
+        }
+      ],
       "gemini_error_count": 0,
       "gemini_last_error": null,
-      "evidence_ready_at": null,
-      "evidence_grade": "자막 확보, 인용 대기",
-      "appearance_source": null,
-      "transcript_retained": true,
+      "evidence_ready_at": "2026-11-27T21:10:37+09:00",
+      "evidence_grade": "1차-A",
+      "appearance_source": "gemini",
+      "transcript_retained": false,
       "quotes_grade_count": {
-        "1차-A": 0,
-        "1차-B": 0,
+        "1차-A": 4,
+        "1차-B": 1,
         "excluded_speaker_mismatch": 0
-      }
+      },
+      "key_points": [
+        {
+          "t": "01:23",
+          "point": "October PCE data remains consistent with a sticky inflation environment, where core PCE equilibrium sits around 3%.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Medium-term"
+        },
+        {
+          "t": "03:31",
+          "point": "The Fed is expected to hike interest rates in December and again in March for policy credibility.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Short-term"
+        },
+        {
+          "t": "06:11",
+          "point": "A deep and sustained 10s-2s yield curve inversion is unlikely as the Fed is only 1 to 3 rate hikes away from neutral.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Medium-term"
+        },
+        {
+          "t": "07:00",
+          "point": "Fair value for the 10-year Treasury yield is around 5.88% to 5.9%.",
+          "condition": "Strong economic growth tailwinds and AI capital demands persist",
+          "conviction": "base_case",
+          "horizon": "Medium-term"
+        },
+        {
+          "t": "14:26",
+          "point": "The KISS portfolio strategy has shifted to 100% cash to protect capital during the risk-off inflation regime.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Immediate"
+        },
+        {
+          "t": "15:21",
+          "point": "A pivot toward dovish monetary easing in 2027 will drive equity multiple expansion, credit spread compression, and rallies across crypto and commodities.",
+          "condition": "FOMC adopts recommendations from task force frameworks",
+          "conviction": "base_case",
+          "horizon": "2027-2028"
+        },
+        {
+          "t": "33:50",
+          "point": "Tariff announcements dominate headlines but affect only 10% of the US economy, making media panic over tariffs a distraction for investors.",
+          "condition": "",
+          "conviction": "base_case",
+          "horizon": "Long-term"
+        },
+        {
+          "t": "38:10",
+          "point": "Hyperscaler data center construction accounts for 30% to 40% of YTD US GDP growth, and a politically induced slowdown poses a downside risk to economic momentum.",
+          "condition": "Local political pushback and grid constraints slow down construction",
+          "conviction": "risk_scenario",
+          "horizon": "2026-2027"
+        }
+      ],
+      "gemini_prompt_tokens": 89448
     },
     {
       "video_id": "RiTZElBIvis",
@@ -3750,18 +3881,9 @@
     "people": {
       "Cem Karsan": {
         "role": "core",
-        "count": 4,
-        "non_noise": 4,
+        "count": 3,
+        "non_noise": 3,
         "items": [
-          {
-            "at": "2026-11-24T10:10:40+09:00",
-            "url": "https://www.youtube.com/watch?v=93nvMT3aSOg",
-            "kind": "video",
-            "preview": "December 16 Is the Biggest Expiration in the World and It Has a Fat Left Tail",
-            "grade": "1차-A",
-            "published_at": "2026-11-24T01:00:00Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-25T10:10:40+09:00",
             "url": "https://www.youtube.com/watch?v=yhgixyGcYa4",
@@ -3793,36 +3915,9 @@
       },
       "Darius Dale": {
         "role": "core",
-        "count": 6,
-        "non_noise": 6,
+        "count": 4,
+        "non_noise": 4,
         "items": [
-          {
-            "at": "2026-11-24T10:10:40+09:00",
-            "url": "https://www.youtube.com/watch?v=qz-LclwUH2M",
-            "kind": "video",
-            "preview": "The Macro Minute: Jensen Huang Is Back. What Is Next?",
-            "grade": "1차-A",
-            "published_at": "2026-11-23T21:00:16Z",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-24T10:10:40+09:00",
-            "url": "https://www.youtube.com/watch?v=C71_sVcAj3k",
-            "kind": "video",
-            "preview": "Jensen Huang Is Back at Nvidia. What Happens Now? | Market Hang",
-            "grade": "1차-A",
-            "published_at": "2026-11-23T18:40:52Z",
-            "noise_hint": false
-          },
-          {
-            "at": "2026-11-24T10:10:40+09:00",
-            "url": "https://www.youtube.com/watch?v=OAnbv9qGkco",
-            "kind": "video",
-            "preview": "Are Asset Markets About to Transition from Panic Selling to Panic Buying?",
-            "grade": "1차-A",
-            "published_at": "2026-11-23T14:00:20Z",
-            "noise_hint": false
-          },
           {
             "at": "2026-11-25T10:10:40+09:00",
             "url": "https://www.youtube.com/watch?v=Mue9ni8NwR4",
@@ -3849,37 +3944,14 @@
             "grade": "1차-A",
             "published_at": "2026-11-25T21:00:28Z",
             "noise_hint": false
-          }
-        ]
-      },
-      "David Sekera": {
-        "role": "core",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
+          },
           {
-            "at": "2026-11-24T10:10:40+09:00",
-            "url": "https://www.youtube.com/watch?v=aIBwhyRgywY",
+            "at": "2026-11-27T21:10:37+09:00",
+            "url": "https://www.youtube.com/watch?v=Ibnrc4b8H2Y",
             "kind": "video",
-            "preview": "5 Surprising Stocks to Buy Before Year-End I November 23, 2026",
+            "preview": "‘I'm In 100% Cash’: Strategist Called Market Crash, Reveals What's Next | Darius Dale",
             "grade": "1차-A",
-            "published_at": "2026-11-20T15:15:48Z",
-            "noise_hint": false
-          }
-        ]
-      },
-      "Katie Stockton": {
-        "role": "observer",
-        "count": 1,
-        "non_noise": 1,
-        "items": [
-          {
-            "at": "2026-11-24T10:10:40+09:00",
-            "url": "https://www.youtube.com/watch?v=-JKIFpnsjN4",
-            "kind": "video",
-            "preview": "The market could snap back as soon as sentiment shifts, says Fairlead's Katie Stockton",
-            "grade": "1차-B",
-            "published_at": "2026-11-23T13:00:29+00:00",
+            "published_at": "2026-11-26T03:39:36+00:00",
             "noise_hint": false
           }
         ]
