@@ -1,4 +1,5 @@
 import json, os, re, time, html, requests
+PROBE_VERSION = 2
 OUT = os.path.join(os.path.dirname(__file__), "data", "sec")
 os.makedirs(OUT, exist_ok=True)
 UA_STR = os.environ.get("SEC_USER_AGENT", "").strip()
