@@ -276,9 +276,7 @@
    "debt = XBRL LongTermDebt carrying value (2020-21 converts carried below face)",
    "pref = quarterly liquidation preference from 10-Q/XBRL; intra-quarter preferred issuance/repurchase not tracked; FY2025 10-K pref not parsed (2026-02-19..2026-05-06 uses Q3 2025 value)",
    "cash = XBRL cash & equivalents (includes USD reserve from Dec 2025)",
-   "shares exclude options/RSUs/convert shares",
-   "share count: 8-K ATM sales summed after each 10-Q anchor overshot the next anchor by up to ~1.5% (2026-Q3: 428.5M vs 422.4M), so shares/mNAV between anchors carry ~1-1.5% error",
-   "2022 EV mNAV includes the legacy software business value in EV but not in BTC NAV, so 2022 mNAV levels are not directly comparable to 2025-26"
+   "shares exclude options/RSUs/convert shares"
   ]
  }
 }

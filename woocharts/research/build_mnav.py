@@ -126,7 +126,7 @@ for day in sorted(MSTR):
 	de = asof(debt, cutoff)
 	ca = asof(cash, cutoff)
 	pf = asof(pref, cutoff)
-	r = {"date": day, "mstr": MSTR[day][3], "mstr_low": MSTR[day][2], "btc_px": btc_px, "btc_held": b["val"] if b else None, "shares": sh, "shares_anchor": anc["asof"] if anc else None, "debt": de["val"] if de else 0.0, "cash": ca["val"] if ca else None, "pref": pf["val"] if pf else 0.0, "missing": []}
+	r = {"date": day, "mstr": MSTR[day][3], "mstr_low": MSTR[day][2], "btc_px": btc_px, "btc_held": b["val"] if b else None, "shares": sh, "shares_anchor": anc["asof"] if anc else None, "debt": de["val"] if de else (0.0 if day < "2020-12-11" else None), "cash": ca["val"] if ca else None, "pref": pf["val"] if pf else (0.0 if day < "2025-01-31" else None), "missing": []}
 	if not b:
 		r["missing"].append("btc_held")
 	if not sh:
@@ -141,7 +141,7 @@ for day in sorted(MSTR):
 		r["missing"].append("pref_not_yet_in_10Q")
 	if pf and "2026-02-19" <= day < "2026-05-06":
 		r["flags"] = ["pref_stale_FY2025_10K_not_parsed"]
-	if not r["missing"] or r["missing"] in (["debt_not_yet_in_10Q"], ["pref_not_yet_in_10Q"]):
+	if not r["missing"]:
 		nav = r["btc_held"] * btc_px
 		mcap = r["mstr"] * sh
 		evv = mcap + r["debt"] + r["pref"] - r["cash"]
@@ -157,4 +157,4 @@ with open(os.path.join(H, "mstr_mnav_daily.csv"), "w") as f:
 		f.write(",".join("" if r.get(c) is None else (";".join(r[c]) if c == "missing" else (f"{r[c]:.6g}" if isinstance(r[c], float) else str(r[c]))) for c in cols) + "\n")
 print("btc events", len(ev["btc"]), "share anchors", len(ev["shares_anchor"]), "atm", len(ev["atm"]), "pref", len(pref), "debt", len(debt), "cash", len(cash))
 for r in rows[::90] + rows[-3:]:
-	print(r["date"], r["btc_held"], r["shares"], round(r["debt"] / 1e6), round(r["pref"] / 1e6), r["cash"] and round(r["cash"] / 1e6), r.get("mnav_ev") and round(r["mnav_ev"], 3), r.get("mnav_eq") and round(r["mnav_eq"], 3), r["missing"])
+	print(r["date"], r["btc_held"], r["shares"], r["debt"], r["pref"], r["cash"], r.get("mnav_ev"), r["missing"])
