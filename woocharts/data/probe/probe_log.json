@@ -1,0 +1,162 @@
+{
+ "bc_supply": {
+  "url": "https://api.blockchain.info/charts/total-bitcoins?timespan=all&format=json&sampled=false",
+  "status": 200,
+  "bytes": 30897052
+ },
+ "bc_height": {
+  "url": "https://api.blockchain.info/charts/n-blocks-total?timespan=all&format=json&sampled=false",
+  "status": 404,
+  "bytes": 35
+ },
+ "coc_index": {
+  "url": "https://charts.checkonchain.com/",
+  "status": 200,
+  "bytes": 196564
+ },
+ "coc_hits": [
+  "btconchain/adoption/transfer_volumes_btc/transfer_volumes_btc_light.html",
+  "btconchain/adoption/transfer_volumes_usd/transfer_volumes_usd_light.html",
+  "btconchain/adoption/transfervolume_momentum/transfervolume_momentum_light.html",
+  "btconchain/adoption/transfervolume_momentum_usd/transfervolume_momentum_usd_light.html",
+  "btconchain/cointime/cointime_pricing_all_1/cointime_pricing_all_1_light.html",
+  "btconchain/cointime/pricing_mvrv_active_1/pricing_mvrv_active_1_light.html",
+  "btconchain/cointime/pricing_mvrv_aviv_1/pricing_mvrv_aviv_1_light.html",
+  "btconchain/cointime/pricing_mvrv_cointime_0/pricing_mvrv_cointime_0_light.html",
+  "btconchain/cointime/pricing_mvrv_vaulted_1/pricing_mvrv_vaulted_1_light.html",
+  "btconchain/entities/btctc_balance_0/btctc_balance_0_light.html",
+  "btconchain/entities/btctc_balance_1/btctc_balance_1_light.html",
+  "btconchain/etfs/etf_balance_0/etf_balance_0_light.html",
+  "btconchain/etfs/etf_balance_1/etf_balance_1_light.html",
+  "btconchain/etfs/etf_balance_2/etf_balance_2_light.html",
+  "btconchain/etfs/ibit_balance_vs_options/ibit_balance_vs_options_light.html",
+  "btconchain/pricing/btmmodels/btmmodels_light.html",
+  "btconchain/pricing/cagr_endpoints_usd/cagr_endpoints_usd_light.html",
+  "btconchain/pricing/consecutivedays_mvrv/consecutivedays_mvrv_light.html",
+  "btconchain/pricing/consecutivedays_mvrv_sth/consecutivedays_mvrv_sth_light.html",
+  "btconchain/pricing/consecutivedays_sopr/consecutivedays_sopr_light.html",
+  "btconchain/pricing/consecutivedays_sopr_sth/consecutivedays_sopr_sth_light.html",
+  "btconchain/pricing/drawdown_infadj/drawdown_infadj_light.html",
+  "btconchain/pricing/histogram_mayermultiple/histogram_mayermultiple_light.html",
+  "btconchain/pricing/histogram_mvrv_zscore_bullbear_Mayer/histogram_mvrv_zscore_bullbear_Mayer_light.html",
+  "btconchain/pricing/ism_pmi_bitcoin/ism_pmi_bitcoin_light.html",
+  "btconchain/pricing/meanreversion_bands/meanreversion_bands_light.html",
+  "btconchain/pricing/meanreversion_bands_pit/meanreversion_bands_pit_light.html",
+  "btconchain/pricing/meanreversion_bystrike/meanreversion_bystrike_light.html",
+  "btconchain/pricing/meanreversion_index/meanreversion_index_light.html",
+  "btconchain/pricing/meanreversion_index_pit/meanreversion_index_pit_light.html",
+  "btconchain/pricing/price_drawdown/price_drawdown_light.html",
+  "btconchain/pricing/price_infadj_0/price_infadj_0_light.html",
+  "btconchain/pricing/price_infadj_1/price_infadj_1_light.html",
+  "btconchain/pricing/price_infadj_2/price_infadj_2_light.html",
+  "btconchain/pricing/price_log/price_log_light.html",
+  "btconchain/pricing/pricediscovery/pricediscovery_light.html",
+  "btconchain/pricing/pricemodel_cagr/pricemodel_cagr_light.html",
+  "btconchain/pricing/pricemodel_cagr_extrapolated/pricemodel_cagr_extrapolated_light.html",
+  "btconchain/pricing/pricing_costbasisoriginals/pricing_costbasisoriginals_light.html",
+  "btconchain/pricing/pricing_euphoriazone/pricing_euphoriazone_light.html",
+  "btconchain/pricing/pricing_investortool/pricing_investortool_light.html",
+  "btconchain/pricing/pricing_magiclines/pricing_magiclines_light.html",
+  "btconchain/pricing/pricing_mayermultiple/pricing_mayermultiple_light.html",
+  "btconchain/pricing/pricing_mayermultiple_zscore/pricing_mayermultiple_zscore_light.html",
+  "btconchain/pricing/pricing_mvrv_bands/pricing_mvrv_bands_light.html",
+  "btconchain/pricing/pricing_nvtprice/pricing_nvtprice_light.html",
+  "btconchain/pricing/pricing_onchainoriginals/pricing_onchainoriginals_light.html",
+  "btconchain/pricing/pricing_picycleindicator/pricing_picycleindicator_light.html",
+  "btconchain/pricing/pricing_powerlaw_porkopolis/pricing_powerlaw_porkopolis_light.html",
+  "btconchain/pricing/pricing_price_fibs_2019/pricing_price_fibs_2019_light.html",
+  "btconchain/pricing/pricing_price_fibs_2021_22/pricing_price_fibs_2021_22_light.html",
+  "btconchain/pricing/pricing_price_fibs_2021_rally/pricing_price_fibs_2021_rally_light.html",
+  "btconchain/pricing/pricing_price_fibs_2022_bear/pricing_price_fibs_2022_bear_light.html",
+  "btconchain/pricing/pricing_price_fibs_2023_24/pricing_price_fibs_2023_24_light.html",
+  "btconchain/pricing/pricing_price_fibs_2024_chop/pricing_price_fibs_2024_chop_light.html",
+  "btconchain/pricing/pricing_price_fibs_today/pricing_price_fibs_today_light.html",
+  "btconchain/pricing/pricing_realisedcap/pricing_realisedcap_light.html",
+  "btconchain/pricing/pricing_yearlycostbasis/pricing_yearlycostbasis_light.html",
+  "btconchain/pricing/production_premium/production_premium_light.html",
+  "btconchain/pricing/quantiles_200dma/quantiles_200dma_light.html",
+  "btconchain/pricing/quantiles_200wma/quantiles_200wma_light.html",
+  "btconchain/pricing/quantiles_powerlaw/quantiles_powerlaw_light.html",
+  "btconchain/pricing/quantiles_pricetruemean/quantiles_pricetruemean_light.html",
+  "btconchain/pricing/quantiles_realizedprice/quantiles_realizedprice_light.html",
+  "btconchain/pricing/quantiles_realizedprice_sth/quantiles_realizedprice_sth_light.html",
+  "btconchain/pricing/topmodels/topmodels_light.html",
+  "btconchain/pricing/topping_bands_aviv_730/topping_bands_aviv_730_light.html",
+  "btconchain/pricing/topping_bands_mayer_730/topping_bands_mayer_730_light.html",
+  "btconchain/pricing/topping_bands_mvrv_730/topping_bands_mvrv_730_light.html",
+  "btconchain/pricing/topping_bands_mvrv_sth_730/topping_bands_mvrv_sth_730_light.html",
+  "macroeconomic/macro/usgov_balancesheet/usgov_balancesheet_light.html"
+ ],
+ "coc_0": {
+  "url": "https://charts.checkonchain.com/btconchain/adoption/transfer_volumes_btc/transfer_volumes_btc_light.html",
+  "status": 200,
+  "bytes": 845,
+  "trace_names": []
+ },
+ "coc_1": {
+  "url": "https://charts.checkonchain.com/btconchain/adoption/transfer_volumes_usd/transfer_volumes_usd_light.html",
+  "status": 200,
+  "bytes": 845,
+  "trace_names": []
+ },
+ "coc_2": {
+  "url": "https://charts.checkonchain.com/btconchain/adoption/transfervolume_momentum/transfervolume_momentum_light.html",
+  "status": 200,
+  "bytes": 860,
+  "trace_names": []
+ },
+ "coc_3": {
+  "url": "https://charts.checkonchain.com/btconchain/adoption/transfervolume_momentum_usd/transfervolume_momentum_usd_light.html",
+  "status": 200,
+  "bytes": 886,
+  "trace_names": []
+ },
+ "coc_4": {
+  "url": "https://charts.checkonchain.com/btconchain/cointime/cointime_pricing_all_1/cointime_pricing_all_1_light.html",
+  "status": 200,
+  "bytes": 809,
+  "trace_names": []
+ },
+ "coc_5": {
+  "url": "https://charts.checkonchain.com/btconchain/cointime/pricing_mvrv_active_1/pricing_mvrv_active_1_light.html",
+  "status": 200,
+  "bytes": 855,
+  "trace_names": []
+ },
+ "coc_6": {
+  "url": "https://charts.checkonchain.com/btconchain/cointime/pricing_mvrv_aviv_1/pricing_mvrv_aviv_1_light.html",
+  "status": 200,
+  "bytes": 854,
+  "trace_names": []
+ },
+ "coc_7": {
+  "url": "https://charts.checkonchain.com/btconchain/cointime/pricing_mvrv_cointime_0/pricing_mvrv_cointime_0_light.html",
+  "status": 200,
+  "bytes": 865,
+  "trace_names": []
+ },
+ "coc_8": {
+  "url": "https://charts.checkonchain.com/btconchain/cointime/pricing_mvrv_vaulted_1/pricing_mvrv_vaulted_1_light.html",
+  "status": 200,
+  "bytes": 860,
+  "trace_names": []
+ },
+ "coc_9": {
+  "url": "https://charts.checkonchain.com/btconchain/entities/btctc_balance_0/btctc_balance_0_light.html",
+  "status": 200,
+  "bytes": 842,
+  "trace_names": []
+ },
+ "coc_10": {
+  "url": "https://charts.checkonchain.com/btconchain/entities/btctc_balance_1/btctc_balance_1_light.html",
+  "status": 200,
+  "bytes": 857,
+  "trace_names": []
+ },
+ "coc_11": {
+  "url": "https://charts.checkonchain.com/btconchain/etfs/etf_balance_0/etf_balance_0_light.html",
+  "status": 200,
+  "bytes": 794,
+  "trace_names": []
+ }
+}
