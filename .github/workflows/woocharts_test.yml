@@ -8,6 +8,7 @@ on:
       - "woocharts/fetch.py"
       - "woocharts/probe_sources.py"
       - "woocharts/probe_coc.py"
+      - "woocharts/probe_exchanges.py"
       - ".github/workflows/woocharts_test.yml"
 
 permissions:
@@ -20,7 +21,7 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,6 +31,7 @@ jobs:
       - run: python woocharts/fetch.py
       - run: python woocharts/probe_sources.py
       - run: python woocharts/probe_coc.py
+      - run: python woocharts/probe_exchanges.py
       - name: Commit result
         run: |
           git config user.name "woocharts-bot"
