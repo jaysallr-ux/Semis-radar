@@ -93,7 +93,7 @@ let x0=D.date[0];
 if(range!=='all'){const t=new Date(last);t.setFullYear(t.getFullYear()-(+range));x0=t.toISOString().slice(0,10)}
 const tr=(k,name,color,w,dash)=>({x:D.date,y:D[k],name,type:'scattergl',mode:'lines',line:{color,width:w,dash:dash||'solid'},hovertemplate:'%{y:$,.0f}<extra>'+name+'</extra>'});
 const traces=[tr('price','가격',css('--btc'),1.6),tr('cvdd','CVDD',css('--cvdd'),2),tr('cvdd105','CVDD×1.05',css('--entry'),1.4,'dot'),tr('coc_balanced','밸런스드(체크온체인)',css('--bal'),1.5),tr('realized','리얼라이즈드',css('--real'),1.2)];
-const b=R.bottoms;
+const b=R.bottoms.filter(q=>!q.ongoing);
 traces.push({x:b.map(l=>l.bottom_date),y:b.map(l=>l.close),name:'사이클 바닥',type:'scatter',mode:'markers',marker:{size:10,color:'rgba(0,0,0,0)',line:{color:ink,width:2}},hovertemplate:'%{x}<br>%{y:$,.2f}<extra>바닥</extra>'});
 Plotly.react('chart',traces,{paper_bgcolor:'rgba(0,0,0,0)',plot_bgcolor:'rgba(0,0,0,0)',font:{family:'Inter,sans-serif',color:ink,size:narrow?11:13},margin:{l:narrow?44:60,r:10,t:10,b:narrow?78:40},hovermode:'x unified',hoverlabel:{bgcolor:css('--bg'),bordercolor:line,font:{color:ink}},legend:{orientation:'h',y:narrow?-0.22:1.08,x:0,font:{size:narrow?11:13}},xaxis:{range:[x0,last],gridcolor:line,linecolor:line,tickfont:{color:mute}},yaxis:{type:'log',gridcolor:line,linecolor:line,tickfont:{color:mute},tickprefix:'$',tickformat:'~s'}},{displayModeBar:false,responsive:true});
 };
@@ -115,14 +115,14 @@ let et='<thead><tr><th>사이클·배수</th><th>진입일</th><th>현물 최대
 for(const e of R.etf){et+='<tr><td>'+esc(e.cycle_top.slice(0,4)==='2017'?'2018':'2022')+' ×'+e.mult.toFixed(2)+'</td><td>'+esc(e.entry_date)+'</td><td>'+e.x2.spot_worst_close_pct.toFixed(1)+'%</td><td class="neg">'+e.x2.worst_nav_loss_pct.toFixed(1)+'%</td><td class="neg">'+e.x3.worst_nav_loss_pct.toFixed(1)+'%</td><td>'+((e.x3.nav_at_window_end-1)*100).toFixed(1)+'%</td></tr>'}
 $('#tetf').innerHTML=et+'</tbody>';
 let o='<thead><tr><th>바닥일</th><th>종가</th><th>CVDD</th><th>가격/CVDD</th><th>시간봉저가/CVDD</th><th>밸런스드(CoC)</th><th>밸런스드(역산)</th><th>리얼라이즈드</th><th>델타</th></tr></thead><tbody>';
-for(const b of R.bottoms){o+='<tr><td>'+esc(b.bottom_date+(b.ongoing?' (현재까지)':''))+'</td><td>'+fmt(b.close)+'</td><td>'+fmt(b.cvdd)+'</td><td>'+x2(b.cvdd_ratio)+'</td><td>'+x2(b.cvdd_ratio_hourly_low)+'</td><td>'+x2(b.coc_balanced_ratio)+'</td><td>'+x2(b.balanced_ratio)+'</td><td>'+x2(b.realized_ratio)+'</td><td>'+x2(b.delta_ratio)+'</td></tr>'}
+for(const b of R.bottoms){o+='<tr><td>'+esc(b.ongoing?'진행중: 종가 최저 '+b.bottom_date+' / 장중 11-21 $55,081(Bitstamp)':b.bottom_date)+'</td><td>'+fmt(b.close)+'</td><td>'+fmt(b.cvdd)+'</td><td>'+x2(b.cvdd_ratio)+'</td><td>'+x2(b.cvdd_ratio_hourly_low)+'</td><td>'+x2(b.coc_balanced_ratio)+'</td><td>'+x2(b.balanced_ratio)+'</td><td>'+x2(b.realized_ratio)+'</td><td>'+x2(b.delta_ratio)+'</td></tr>'}
 $('#tbo').innerHTML=o+'</tbody>';
 const bv=R.bal;
 const notes=['데이터: 가격·CVDD·리얼라이즈드·델타는 woocharts.com 가격모델(Glassnode 기반, 일봉 UTC). 밸런스드(CoC)와 시간봉 가격은 체크온체인 Onchain Originals 차트. 유통량은 blockchain.info 블록별 총발행량의 UTC 일말 값(추정치 아님).',
 '역산 밸런스드(리얼라이즈드 − CVDD×600만÷유통량)는 '+bv.latest.date+' 기준 체크온체인과 '+bv.latest.diff_pct.toFixed(2)+'% 차이로 거의 같음. 근데 과거로 가면 벌어짐: 2020년 이후 중앙값 '+bv.since_2020.median_abs_pct.toFixed(1)+'%, 2015년 이후 중앙값 '+bv.since_2015.median_abs_pct.toFixed(1)+'%, 최대 '+bv.since_2015.max_abs_pct.toFixed(1)+'%. 그래서 차트와 백테스트의 밸런스드는 체크온체인 값을 씀.',
 '거래소 일봉: Bitstamp(2011-08~), Coinbase(2015-07~), Binance BTCUSDT(2017-08~). 상장 전 기간은 결측. Coinbase 2017-04-15 저가 $0.06은 다른 거래소와 안 맞는 오류 틱이라 시가/종가 중 낮은 값으로 대체. 2011년 사이클은 Bitstamp 거래가 너무 적어서 거래소 분석에서 제외.','룩어헤드: 당일 CVDD 대신 전일·2일 전 CVDD로 바꿔도 하락률 차이는 대부분 0.1~0.3%p. CVDD가 하루에 거의 안 움직여서 이 편향은 실질적으로 작았음.','청산 판정은 현물 거래소 저가 기준이라 실제 선물 마크가격(여러 거래소 평균)보다 가혹함. 반대로 선물 체결가 꼬리(2020년 BitMEX 등)는 현물보다 깊었는데, BitMEX 데이터는 막혀서 못 넣음.',
 '2011~2013년 체크온체인 시간봉은 일봉을 채워 넣은 걸로 보임(2011년 바닥 시간봉 저가 = 종가). 2011년 행은 사실상 종가 기준.',
-'2025~ 사이클은 진행 중이라 바닥이 아님. 현재까지 최저 종가는 2026-06-30, 시간봉 최저는 2026-11-21 $55,699(CVDD×1.15 터치). ×1.05는 아직 미체결.',
+'2025~ 사이클은 진행 중이라 바닥 표시 안 함. 종가 최저는 아직 2026-06-30 $58,544(11-20 종가 $58,907로 근접)지만, 장중으로는 11-21 Bitstamp $55,081로 이미 6월 저점을 깼음. ×1.05선은 아직 미체결.',
 '표본이 사이클 5~6개뿐이라 확률이나 미래 적중률로 읽으면 안 됨.'];
 $('#notes').innerHTML=notes.map(n=>'<li>'+esc(n)+'</li>').join('');
 };
