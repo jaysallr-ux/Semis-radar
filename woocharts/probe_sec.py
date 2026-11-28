@@ -1,5 +1,6 @@
 import json, os, re, time, html, requests
-PROBE_VERSION = 2
+PROBE_VERSION = 3
+import gzip
 OUT = os.path.join(os.path.dirname(__file__), "data", "sec")
 os.makedirs(OUT, exist_ok=True)
 UA_STR = os.environ.get("SEC_USER_AGENT", "").strip()
@@ -68,14 +69,14 @@ for f in want:
 		t = html.unescape(t)
 		t = re.sub(r"\s+", " ", t)
 		if f["form"] in ("10-Q", "10-K"):
-			keep = [m.group(0) for m in re.finditer(r"[^.]{0,300}(?:held (?:an aggregate of )?approximately [\d,]+ bitcoin|[\d,]+ bitcoins? (?:held|on hand)|shares of (?:the registrant's )?class a common stock outstanding|class b common stock outstanding|outstanding as of)[^.]{0,300}\.", t, re.I)][:40]
+			i = [m.start() for m in re.finditer(r"bitcoin|class a common stock outstanding|Convertible Notes|liquidation preference", t, re.I)]
+			keep = [t[max(0, j - 400): j + 600] for j in i[:300]]
 		else:
-			keep = [m.group(0) for m in SENT.finditer(t)][:80]
-			tab = re.findall(r"(?:Aggregate|Total) (?:BTC|bitcoin) (?:Holdings|holdings)[^A-Za-z]{0,400}", t)
-			keep += tab[:5]
+			keep = [t[:60000]]
 		texts.append({"doc": dname, "snips": keep, "len": len(t)})
 	snips[f["accessionNumber"]] = {"meta": f, "docs": texts}
-json.dump(snips, open(os.path.join(OUT, "filing_snips.json"), "w"))
+with gzip.open(os.path.join(OUT, "filing_text.json.gz"), "wt") as g:
+	json.dump(snips, g)
 log["snips"] = len(snips)
 json.dump(log, open(os.path.join(OUT, "log.json"), "w"), indent=1)
 print(json.dumps(log, indent=1))
