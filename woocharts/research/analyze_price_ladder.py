@@ -69,8 +69,12 @@ def sim(entry, end, plan, remainder_days=None, budget=1.0):
 			buys.append({"date": t, "w": round(rest, 4), "px": round(c, 3), "mnav_prev": round(mnav_prev(t), 3) if mnav_prev(t) else None, "why": f"remainder_{remainder_days}d"})
 			pending = []
 		if cost > 0:
-			worst_dep = min(worst_dep, units * l / cost - 1)
-			worst_bud = min(worst_bud, (units * l - cost) / budget)
+			u_prev = sum(b["w"] * budget / b["px"] for b in buys if b["date"] < t)
+			u_lim = sum(b["w"] * budget / b["px"] for b in buys if b["date"] == t and b["why"] == "limit")
+			u_cls = sum(b["w"] * budget / b["px"] for b in buys if b["date"] == t and b["why"] != "limit")
+			mark = (u_prev + u_lim) * l + u_cls * c
+			worst_dep = min(worst_dep, mark / cost - 1)
+			worst_bud = min(worst_bud, (mark - cost) / budget)
 	lows = [MO[t][2] for t in days]
 	cyc_low = min(lows)
 	rets = {}
@@ -95,7 +99,7 @@ PLANS = {
 def time_plan(entry, weeks):
 	st = dt.date.fromisoformat(entry)
 	return [{"type": "close", "w": 1 / weeks}] + [{"type": "date_close", "date": (st + dt.timedelta(weeks=k)).isoformat(), "w": 1 / weeks} for k in range(1, weeks)]
-out = {"meta": {"entry": "signal = Bitstamp daily low <= mult*CVDD(t-1); first buy at MSTR close if first hourly BTC price below threshold was before US close, else next trading day close", "limit_fill": "limit at first-buy price*(1+drop); filled if MSTR daily low <= level; fill = min(level, open)", "mnav_rule": "mNAV used only as reported auxiliary (prev-day point-in-time EV mNAV at each fill); in mNAV-conditional comparison plan, decision uses t-1 mNAV and fills at t close", "loss_metrics": "worst_loss_on_deployed = min over days of (units*day_low/cost_so_far - 1); worst_loss_vs_budget = min of (units*day_low - cost_so_far)/budget; unspent cash earns 0", "ret_365d": "(value of shares bought by +180d/+365d at that close + unspent cash)/budget - 1; uses data beyond the drawdown window", "window": "until 2023-06-30 for 2022 cycle; until latest data for 2025-26 (ongoing)", "caveats": ["2022 is the only completed cycle with MSTR as a BTC treasury company; 2025-26 signals are days old", "multiple multipliers in one cycle are not independent samples", "ladder levels and weights are not optimized; picking the best row is overfitting", "basic shares, not fully diluted"]}, "signals": {}, "results": {}}
+out = {"meta": {"entry": "signal = Bitstamp daily low <= mult*CVDD(t-1); first buy at MSTR close if first hourly BTC price below threshold was before US close, else next trading day close", "limit_fill": "limit at first-buy price*(1+drop); filled if MSTR daily low <= level; fill = min(level, open)", "mnav_rule": "mNAV used only as reported auxiliary (prev-day point-in-time EV mNAV at each fill); in mNAV-conditional comparison plan, decision uses t-1 mNAV and fills at t close", "loss_metrics": "shares bought at a close are marked at that close on the buy day (not that day's low); limit fills and older shares are marked at the day low. worst_loss_on_deployed = min over days of (units*day_low/cost_so_far - 1); worst_loss_vs_budget = min of (units*day_low - cost_so_far)/budget; unspent cash earns 0", "ret_365d": "(value of shares bought by +180d/+365d at that close + unspent cash)/budget - 1; uses data beyond the drawdown window", "window": "until 2023-06-30 for 2022 cycle; until latest data for 2025-26 (ongoing)", "caveats": ["2022 is the only completed cycle with MSTR as a BTC treasury company; 2025-26 signals are days old", "multiple multipliers in one cycle are not independent samples", "ladder levels and weights are not optimized; picking the best row is overfitting", "basic shares, not fully diluted"]}, "signals": {}, "results": {}}
 for cy, (top, end, ongoing) in CYC.items():
 	for m in [1.05, 1.10, 1.15, 1.20]:
 		sig, entry, hit = signal(top, end, m)

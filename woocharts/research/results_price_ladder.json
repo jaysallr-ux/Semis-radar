@@ -3,7 +3,7 @@
   "entry": "signal = Bitstamp daily low <= mult*CVDD(t-1); first buy at MSTR close if first hourly BTC price below threshold was before US close, else next trading day close",
   "limit_fill": "limit at first-buy price*(1+drop); filled if MSTR daily low <= level; fill = min(level, open)",
   "mnav_rule": "mNAV used only as reported auxiliary (prev-day point-in-time EV mNAV at each fill); in mNAV-conditional comparison plan, decision uses t-1 mNAV and fills at t close",
-  "loss_metrics": "worst_loss_on_deployed = min over days of (units*day_low/cost_so_far - 1); worst_loss_vs_budget = min of (units*day_low - cost_so_far)/budget; unspent cash earns 0",
+  "loss_metrics": "shares bought at a close are marked at that close on the buy day (not that day's low); limit fills and older shares are marked at the day low. worst_loss_on_deployed = min over days of (units*day_low/cost_so_far - 1); worst_loss_vs_budget = min of (units*day_low - cost_so_far)/budget; unspent cash earns 0",
   "ret_365d": "(value of shares bought by +180d/+365d at that close + unspent cash)/budget - 1; uses data beyond the drawdown window",
   "window": "until 2023-06-30 for 2022 cycle; until latest data for 2025-26 (ongoing)",
   "caveats": [
