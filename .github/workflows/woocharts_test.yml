@@ -36,6 +36,8 @@ jobs:
       - run: python woocharts/probe_exchanges.py
       - run: python woocharts/probe_equities.py
       - run: python woocharts/probe_sec.py
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
       - name: Commit result
         run: |
           git config user.name "woocharts-bot"

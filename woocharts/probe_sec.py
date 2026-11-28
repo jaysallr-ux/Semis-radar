@@ -1,7 +1,13 @@
 import json, os, re, time, html, requests
 OUT = os.path.join(os.path.dirname(__file__), "data", "sec")
 os.makedirs(OUT, exist_ok=True)
-UA = {"User-Agent": "semis-radar personal research contact jaysallr-ux@users.noreply.github.com", "Accept-Encoding": "gzip, deflate"}
+UA_STR = os.environ.get("SEC_USER_AGENT", "").strip()
+if not UA_STR:
+	os.makedirs(OUT, exist_ok=True)
+	json.dump({"error": "SEC_USER_AGENT secret not set (SEC requires a declared name + real contact email)"}, open(os.path.join(OUT, "log.json"), "w"), indent=1)
+	print("SEC_USER_AGENT not set; skipping")
+	raise SystemExit(0)
+UA = {"User-Agent": UA_STR, "Accept-Encoding": "gzip, deflate"}
 CIK = "0001050446"
 log = {}
 def get(url, **kw):
