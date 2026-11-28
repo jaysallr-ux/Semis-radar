@@ -1,5 +1,5 @@
 import json, os, re, time, html, requests
-PROBE_VERSION = 3
+PROBE_VERSION = 4
 import gzip
 OUT = os.path.join(os.path.dirname(__file__), "data", "sec")
 os.makedirs(OUT, exist_ok=True)
@@ -69,7 +69,7 @@ for f in want:
 		t = html.unescape(t)
 		t = re.sub(r"\s+", " ", t)
 		if f["form"] in ("10-Q", "10-K"):
-			i = [m.start() for m in re.finditer(r"bitcoin|class a common stock outstanding|Convertible Notes|liquidation preference", t, re.I)]
+			i = [m.start() for m in re.finditer(r"bitcoin|registrant had|common stock outstanding|Convertible Notes|liquidation preference", t, re.I)]
 			keep = [t[max(0, j - 400): j + 600] for j in i[:300]]
 		else:
 			keep = [t[:60000]]
