@@ -18,6 +18,11 @@ if r.ok:
 	open(os.path.join(OUT, "companyfacts.json"), "wb").write(r.content)
 r = get(f"https://data.sec.gov/submissions/CIK{CIK}.json")
 log["submissions"] = r.status_code
+if not r.ok:
+	log["submissions_body_head"] = r.text[:400]
+	json.dump(log, open(os.path.join(OUT, "log.json"), "w"), indent=1)
+	print(json.dumps(log, indent=1))
+	raise SystemExit(0)
 sub = r.json()
 filings = []
 def add(block):
