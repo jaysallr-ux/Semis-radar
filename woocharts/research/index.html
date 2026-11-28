@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>비트 바닥선 차트</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: 신문 그래픽 데스크 — 결론 먼저, 숫자 다음, 차트 크게, 연구 표는 정확하게
+IDEA: 역대 사이클 바닥 장부 — 바닥선에 닿은 날과 그 뒤 얼마나 더 빠졌나
+PICTURE: 로그 스케일 전체 기간 라인차트 + CVDD×1.05 진입선
+COLOUR: 비트 오렌지 가격, 코발트 CVDD, 점선 CVDD×1.05, 마젠타 밸런스드, 회색 리얼라이즈드
+TYPE: Inter Tight 700 + Inter / LAYOUT: 결론, 수치 줄, 차트, 백테스트 표, 바닥 괴리 표, 검증 메모
+*/
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0b0e14);--ink:light-dark(#11151c,#e8ebf0);--mute:light-dark(#5b6472,#9aa3b2);--line:light-dark(#e3e6ea,#232a36);--btc:#f7931a;--cvdd:light-dark(#1240e0,#5b8cff);--entry:light-dark(#0b7a75,#3cc8c0);--bal:light-dark(#b0179b,#e05ad0);--real:light-dark(#8a929e,#7d8696);--chip:light-dark(#f2f4f7,#151a23);--bad:light-dark(#c2410c,#ff8a5b)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(20px,4vw,48px) max(4vw,14px);max-width:1240px;margin:0 auto}
+h1{font:700 clamp(26px,4.4vw,44px)/1.08 "Inter Tight",Inter,sans-serif;margin:0 0 10px;text-wrap:balance}
+.lede{color:var(--mute);margin:0 0 20px;max-width:70ch}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:16px}
+.f{padding:12px 14px 12px 0}
+.f b{display:block;font:700 clamp(20px,3vw,28px)/1.1 "Inter Tight",sans-serif;white-space:nowrap}
+.f span{font-size:13px;color:var(--mute)}
+.f i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.ctl button{font:500 15px Inter,sans-serif;min-height:44px;padding:0 16px;border-radius:10px;border:1px solid var(--line);background:var(--chip);color:var(--ink);cursor:pointer}
+.ctl button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ctl button:focus-visible{outline:3px solid var(--cvdd);outline-offset:2px}
+.fig{position:relative;height:clamp(380px,62vh,620px)}
+#chart{position:absolute;inset:0}
+h2{font:700 22px/1.2 "Inter Tight",sans-serif;margin:34px 0 6px}
+.sub{color:var(--mute);font-size:14px;margin:0 0 10px;max-width:80ch}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--mute);font-size:13px}
+td.neg{color:var(--bad);font-weight:600}
+.note{font-size:13px;color:var(--mute);margin-top:14px;max-width:84ch}
+.note li{margin-bottom:4px}
+.scroll{overflow-x:auto}
+@media(max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8.5em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:8em;margin-inline-start:-8.5em;white-space:normal;color:var(--mute)}.stack td:empty{display:none}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+<div class="band">
+<h1 id="title">CVDD×1.05에서 샀으면 그 뒤 최대 −3~−7% 더 빠짐</h1>
+<p class="lede">2015·2018·2020·2022년 4번 사이클 기준, CVDD×1.05 지정가에 체결된 뒤 시간봉 최저가까지 −3.4~−6.7%였음. 2011년은 −12.4%. 다만 시간봉은 거래소 꼬리를 다 못 잡아서 실제 청산 위험은 이것보다 큼.</p>
+<div class="figs" id="figs"></div>
+<div class="ctl" role="group" aria-label="기간">
+<button data-r="all" aria-pressed="true">전체</button>
+<button data-r="8">8년</button>
+<button data-r="4">4년</button>
+<button data-r="1">1년</button>
+</div>
+<div class="fig"><div id="chart"></div></div>
+
+<h2 id="backtest">CVDD 배수별 최초 진입 후 최대 추가 하락</h2>
+<p class="sub">하락장(사이클 고점 이후)에서 시간봉 저가가 처음 배수×CVDD에 닿은 날 지정가로 체결됐다고 가정. 하락률은 그 체결가에서 이후 사이클 시간봉 최저가까지. 괄호는 최저가까지 걸린 일수.</p>
+<div class="scroll"><table class="stack" id="tbt"></table></div>
+
+<h2 id="bottoms">역대 바닥에서 지표별 괴리</h2>
+<p class="sub">바닥일 = 사이클 고점 이후 다음 고점 전까지 일봉 종가(UTC) 최저일. 숫자는 가격 ÷ 지표. 1.00 미만이면 지표 밑까지 뚫은 것.</p>
+<div class="scroll"><table class="stack" id="tbo"></table></div>
+
+<h2 id="verify">검증 메모</h2>
+<ul class="note" id="notes"></ul>
+</div>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script>
+{
+const $=s=>document.querySelector(s);
+const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=v=>v==null?'—':'$'+(v>=100?Math.round(v).toLocaleString('en-US'):v.toFixed(2));
+const x2=v=>v==null?'—':v.toFixed(2);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let D=null,R=null,range='all';
+const plot=()=>{
+if(!D)return;
+const ink=css('--ink'),mute=css('--mute'),line=css('--line');
+const narrow=$('#chart').clientWidth<520;
+const last=D.date[D.date.length-1];
+let x0=D.date[0];
+if(range!=='all'){const t=new Date(last);t.setFullYear(t.getFullYear()-(+range));x0=t.toISOString().slice(0,10)}
+const tr=(k,name,color,w,dash)=>({x:D.date,y:D[k],name,type:'scattergl',mode:'lines',line:{color,width:w,dash:dash||'solid'},hovertemplate:'%{y:$,.0f}<extra>'+name+'</extra>'});
+const traces=[tr('price','가격',css('--btc'),1.6),tr('cvdd','CVDD',css('--cvdd'),2),tr('cvdd105','CVDD×1.05',css('--entry'),1.4,'dot'),tr('coc_balanced','밸런스드(체크온체인)',css('--bal'),1.5),tr('realized','리얼라이즈드',css('--real'),1.2)];
+const b=R.bottoms;
+traces.push({x:b.map(l=>l.bottom_date),y:b.map(l=>l.close),name:'사이클 바닥',type:'scatter',mode:'markers',marker:{size:10,color:'rgba(0,0,0,0)',line:{color:ink,width:2}},hovertemplate:'%{x}<br>%{y:$,.2f}<extra>바닥</extra>'});
+Plotly.react('chart',traces,{paper_bgcolor:'rgba(0,0,0,0)',plot_bgcolor:'rgba(0,0,0,0)',font:{family:'Inter,sans-serif',color:ink,size:narrow?11:13},margin:{l:narrow?44:60,r:10,t:10,b:narrow?78:40},hovermode:'x unified',hoverlabel:{bgcolor:css('--bg'),bordercolor:line,font:{color:ink}},legend:{orientation:'h',y:narrow?-0.22:1.08,x:0,font:{size:narrow?11:13}},xaxis:{range:[x0,last],gridcolor:line,linecolor:line,tickfont:{color:mute}},yaxis:{type:'log',gridcolor:line,linecolor:line,tickfont:{color:mute},tickprefix:'$',tickformat:'~s'}},{displayModeBar:false,responsive:true});
+};
+const tables=()=>{
+const c=R.cur;
+const f=[['가격 ('+c.date+')',c.price,'--btc',''],['CVDD',c.cvdd,'--cvdd','가격 '+c.ratio.toFixed(2)+'배'],['CVDD×1.05',c.cvdd105,'--entry','여기까지 '+((c.cvdd105/c.price-1)*100).toFixed(1)+'%'],['밸런스드(체크온체인)',c.coc_balanced,'--bal','가격 '+(c.price/c.coc_balanced).toFixed(2)+'배']];
+$('#figs').innerHTML=f.map(([l,v,col,s])=>'<div class="f"><b>'+fmt(v)+'</b><span><i style="background:var('+col+')"></i>'+esc(l)+(s?' · '+esc(s):'')+'</span></div>').join('');
+const cyc=[...new Set(R.limit.map(x=>x.cycle_top))];
+const lab=t=>{const b=R.bottoms.find(q=>q.cycle_top===t);return b.ongoing?'2025~ 진행중':b.bottom_date.slice(0,4)};
+const ms=[1.3,1.2,1.1,1.05,1.0];
+let h='<thead><tr><th>사이클(바닥 연도)</th>'+ms.map(m=>'<th>×'+m.toFixed(2)+'</th>').join('')+'</tr></thead><tbody>';
+for(const t of cyc){h+='<tr><td>'+esc(lab(t))+'</td>'+ms.map(m=>{const x=R.limit.find(q=>q.cycle_top===t&&q.mult===m);if(!x||!x.triggered)return'<td>미체결</td>';return'<td class="'+(x.max_dd_hourly_pct<=-10?'neg':'')+'">'+x.max_dd_hourly_pct.toFixed(1)+'% ('+x.days_to_low+'일)</td>'}).join('')+'</tr>'}
+$('#tbt').innerHTML=h+'</tbody>';
+let o='<thead><tr><th>바닥일</th><th>종가</th><th>CVDD</th><th>가격/CVDD</th><th>시간봉저가/CVDD</th><th>밸런스드(CoC)</th><th>밸런스드(역산)</th><th>리얼라이즈드</th><th>델타</th></tr></thead><tbody>';
+for(const b of R.bottoms){o+='<tr><td>'+esc(b.bottom_date+(b.ongoing?' (현재까지)':''))+'</td><td>'+fmt(b.close)+'</td><td>'+fmt(b.cvdd)+'</td><td>'+x2(b.cvdd_ratio)+'</td><td>'+x2(b.cvdd_ratio_hourly_low)+'</td><td>'+x2(b.coc_balanced_ratio)+'</td><td>'+x2(b.balanced_ratio)+'</td><td>'+x2(b.realized_ratio)+'</td><td>'+x2(b.delta_ratio)+'</td></tr>'}
+$('#tbo').innerHTML=o+'</tbody>';
+const bv=R.bal;
+const notes=['데이터: 가격·CVDD·리얼라이즈드·델타는 woocharts.com 가격모델(Glassnode 기반, 일봉 UTC). 밸런스드(CoC)와 시간봉 가격은 체크온체인 Onchain Originals 차트. 유통량은 blockchain.info 블록별 총발행량의 UTC 일말 값(추정치 아님).',
+'역산 밸런스드(리얼라이즈드 − CVDD×600만÷유통량)는 '+bv.latest.date+' 기준 체크온체인과 '+bv.latest.diff_pct.toFixed(2)+'% 차이로 거의 같음. 근데 과거로 가면 벌어짐: 2020년 이후 중앙값 '+bv.since_2020.median_abs_pct.toFixed(1)+'%, 2015년 이후 중앙값 '+bv.since_2015.median_abs_pct.toFixed(1)+'%, 최대 '+bv.since_2015.max_abs_pct.toFixed(1)+'%. 그래서 차트와 백테스트의 밸런스드는 체크온체인 값을 씀.',
+'시간봉은 거래소 꼬리를 다 못 잡음. 2020년 3월 13일 체크온체인 시간봉 저가는 $4,519인데 당시 주요 현물거래소 장중 저점은 $3,800대였음. 레버리지 청산가는 이 표보다 훨씬 깊게 잡아야 함.',
+'2011~2013년 체크온체인 시간봉은 일봉을 채워 넣은 걸로 보임(2011년 바닥 시간봉 저가 = 종가). 2011년 행은 사실상 종가 기준.',
+'2025~ 사이클은 진행 중이라 바닥이 아님. 현재까지 최저 종가는 2026-06-30, 시간봉 최저는 2026-11-21 $55,699(CVDD×1.15 터치). ×1.05는 아직 미체결.',
+'표본이 사이클 5~6개뿐이라 확률이나 미래 적중률로 읽으면 안 됨.'];
+$('#notes').innerHTML=notes.map(n=>'<li>'+esc(n)+'</li>').join('');
+};
+const build=txt=>{
+const rows=txt.trim().split('\n').slice(1).map(l=>l.split(','));
+const n=v=>v===''?null:+v;
+D={date:rows.map(r=>r[0]),price:rows.map(r=>n(r[1])),cvdd:rows.map(r=>n(r[2])),cvdd105:rows.map(r=>n(r[3])),realized:rows.map(r=>n(r[4])),balanced:rows.map(r=>n(r[5])),coc_balanced:rows.map(r=>n(r[6]))};
+plot();
+};
+document.querySelectorAll('.ctl button').forEach(btn=>btn.addEventListener('click',()=>{range=btn.dataset.r;document.querySelectorAll('.ctl button').forEach(x=>x.setAttribute('aria-pressed',x===btn));plot()}));
+const ro=new ResizeObserver(()=>{if(D)Plotly.Plots.resize('chart')});ro.observe($('#chart'));
+new MutationObserver(plot).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',plot);
+Promise.all([fetch('research.json').then(r=>r.json()),fetch('data.csv').then(r=>r.text())]).then(([j,t])=>{R=j;tables();build(t)}).catch(()=>{$('.lede').textContent='데이터를 못 불러왔음. 새로고침 해봐.'});
+}
+</script>
+</body>
+</html>
