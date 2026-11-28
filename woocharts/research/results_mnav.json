@@ -1,0 +1,284 @@
+{
+ "cycles": {
+  "2022": {
+   "btc_low": [
+    "2022-11-21",
+    15479.0
+   ],
+   "mstr_low": [
+    "2022-12-30",
+    13.255999565124512
+   ],
+   "mnav_ev_min": [
+    "2022-05-11",
+    1.095,
+    16.81999969482422
+   ],
+   "mnav_eq_min": [
+    "2022-05-11",
+    1.236
+   ],
+   "days_equity_nav_negative": 43,
+   "first_last_neg_eq": [
+    "2022-11-09",
+    "2023-01-11"
+   ],
+   "lag_days": {
+    "mstr_low_minus_btc_low": 39,
+    "mnav_ev_min_minus_btc_low": -194
+   },
+   "cvdd105_signal": "2022-11-09",
+   "first_executable_close": "2022-11-09",
+   "first_hour_below": "2022-11-09T20:00:00",
+   "mnav_ev_at_entry": 1.998,
+   "mstr_at_entry": 17.035999298095703,
+   "mnav_ev_range_from_entry": [
+    1.426,
+    2.108
+   ]
+  },
+  "2025-26": {
+   "btc_low": [
+    "2026-11-21",
+    55081.31
+   ],
+   "mstr_low": [
+    "2026-11-25",
+    70.37000274658203
+   ],
+   "mnav_ev_min": [
+    "2026-06-26",
+    0.899,
+    82.30999755859375
+   ],
+   "mnav_eq_min": [
+    "2026-06-26",
+    0.852
+   ],
+   "days_equity_nav_negative": 0,
+   "first_last_neg_eq": null,
+   "lag_days": {
+    "mstr_low_minus_btc_low": 4,
+    "mnav_ev_min_minus_btc_low": -148
+   },
+   "cvdd105_signal": null,
+   "first_executable_close": null,
+   "first_hour_below": null,
+   "mnav_ev_at_entry": null,
+   "mstr_at_entry": null,
+   "mnav_ev_range_from_entry": null
+  }
+ },
+ "strategies": {
+  "2022": {
+   "entry": "2022-11-09",
+   "cycle_mstr_low_after_entry": 13.255999565124512,
+   "window_end": "2023-06-30",
+   "results": {
+    "\uc989\uc2dc \ub9e4\uc218": {
+     "filled_pct": 100,
+     "avg": 17.04,
+     "avg_vs_cycle_low_pct": 28.5,
+     "max_dd_from_avg_pct": -22.2,
+     "first_buy": "2022-11-09",
+     "last_buy": "2022-11-09"
+    },
+    "2\uc8fc \ubd84\ud560": {
+     "filled_pct": 100,
+     "avg": 16.99,
+     "avg_vs_cycle_low_pct": 28.2,
+     "max_dd_from_avg_pct": -22.0,
+     "first_buy": "2022-11-09",
+     "last_buy": "2022-11-16"
+    },
+    "4\uc8fc \ubd84\ud560": {
+     "filled_pct": 100,
+     "avg": 17.79,
+     "avg_vs_cycle_low_pct": 34.2,
+     "max_dd_from_avg_pct": -25.5,
+     "first_buy": "2022-11-09",
+     "last_buy": "2022-11-30"
+    },
+    "6\uc8fc \ubd84\ud560": {
+     "filled_pct": 100,
+     "avg": 18.41,
+     "avg_vs_cycle_low_pct": 38.9,
+     "max_dd_from_avg_pct": -28.0,
+     "first_buy": "2022-11-09",
+     "last_buy": "2022-12-14"
+    },
+    "8\uc8fc \ubd84\ud560": {
+     "filled_pct": 100,
+     "avg": 17.48,
+     "avg_vs_cycle_low_pct": 31.9,
+     "max_dd_from_avg_pct": -24.2,
+     "first_buy": "2022-11-09",
+     "last_buy": "2022-12-28"
+    },
+    "12\uc8fc \ubd84\ud560": {
+     "filled_pct": 100,
+     "avg": 18.31,
+     "avg_vs_cycle_low_pct": 38.1,
+     "max_dd_from_avg_pct": -27.6,
+     "first_buy": "2022-11-09",
+     "last_buy": "2023-01-25"
+    },
+    "mNAV 1.0/0.9/0.8/0.7 \uc0ac\ub2e4\ub9ac": {
+     "filled_pct": 0,
+     "avg": null
+    },
+    "mNAV \uc0ac\ub2e4\ub9ac + 12\uc8fc \ub4a4 \uc794\ub7c9 \ub9e4\uc218": {
+     "filled_pct": 100,
+     "avg": 26.79,
+     "avg_vs_cycle_low_pct": 102.1,
+     "max_dd_from_avg_pct": -29.7,
+     "first_buy": "2023-02-01",
+     "last_buy": "2023-02-01"
+    },
+    "8\uc8fc \ubd84\ud560 + mNAV\u22641.0 \uc870\uac74": {
+     "filled_pct": 0,
+     "avg": null
+    },
+    "8\uc8fc \ubd84\ud560 + mNAV\u22641.0 \uc870\uac74 + 12\uc8fc \ub4a4 \uc794\ub7c9": {
+     "filled_pct": 100,
+     "avg": 26.79,
+     "avg_vs_cycle_low_pct": 102.1,
+     "max_dd_from_avg_pct": -29.7,
+     "first_buy": "2023-02-01",
+     "last_buy": "2023-02-01"
+    },
+    "8\uc8fc \ubd84\ud560 + mNAV\u22641.1 \uc870\uac74": {
+     "filled_pct": 0,
+     "avg": null
+    },
+    "8\uc8fc \ubd84\ud560 + mNAV\u22641.1 \uc870\uac74 + 12\uc8fc \ub4a4 \uc794\ub7c9": {
+     "filled_pct": 100,
+     "avg": 26.79,
+     "avg_vs_cycle_low_pct": 102.1,
+     "max_dd_from_avg_pct": -29.7,
+     "first_buy": "2023-02-01",
+     "last_buy": "2023-02-01"
+    }
+   }
+  }
+ },
+ "mnav_down_btc_up": {
+  "2022": {
+   "rule": "20 trading days: BTC > +5% while EV mNAV < -5%",
+   "episodes": [
+    {
+     "start": "2022-01-10",
+     "end": "2022-02-16",
+     "worst": -14.3,
+     "btc_chg_pct": 6.2,
+     "mnav_ev_chg_pct": -12.6,
+     "mstr_chg_pct": -9.7,
+     "shares_chg_pct": 0.6,
+     "mnav_from_to": [
+      1.45,
+      1.268
+     ]
+    },
+    {
+     "start": "2022-03-08",
+     "end": "2022-04-07",
+     "worst": -8.4,
+     "btc_chg_pct": 12.7,
+     "mnav_ev_chg_pct": -6.5,
+     "mstr_chg_pct": 13.0,
+     "shares_chg_pct": 0.0,
+     "mnav_from_to": [
+      1.393,
+      1.303
+     ]
+    },
+    {
+     "start": "2022-12-15",
+     "end": "2023-04-10",
+     "worst": -16.6,
+     "btc_chg_pct": 67.5,
+     "mnav_ev_chg_pct": -20.6,
+     "mstr_chg_pct": 66.4,
+     "shares_chg_pct": 14.0,
+     "mnav_from_to": [
+      1.961,
+      1.558
+     ]
+    },
+    {
+     "start": "2023-05-24",
+     "end": "2023-06-30",
+     "worst": -7.7,
+     "btc_chg_pct": 15.8,
+     "mnav_ev_chg_pct": -5.2,
+     "mstr_chg_pct": 20.4,
+     "shares_chg_pct": 8.3,
+     "mnav_from_to": [
+      1.57,
+      1.488
+     ]
+    }
+   ]
+  },
+  "2025-26": {
+   "rule": "20 trading days: BTC > +5% while EV mNAV < -5%",
+   "episodes": [
+    {
+     "start": "2025-12-12",
+     "end": "2026-01-14",
+     "worst": -5.7,
+     "btc_chg_pct": 8.2,
+     "mnav_ev_chg_pct": -5.7,
+     "mstr_chg_pct": 1.6,
+     "shares_chg_pct": 6.2,
+     "mnav_from_to": [
+      1.115,
+      1.052
+     ]
+    },
+    {
+     "start": "2026-02-13",
+     "end": "2026-03-24",
+     "worst": -6.1,
+     "btc_chg_pct": 0.9,
+     "mnav_ev_chg_pct": -5.9,
+     "mstr_chg_pct": 1.8,
+     "shares_chg_pct": 4.9,
+     "mnav_from_to": [
+      1.185,
+      1.115
+     ]
+    },
+    {
+     "start": "2026-06-05",
+     "end": "2026-07-07",
+     "worst": -16.1,
+     "btc_chg_pct": 5.8,
+     "mnav_ev_chg_pct": -16.1,
+     "mstr_chg_pct": -19.2,
+     "shares_chg_pct": 5.3,
+     "mnav_from_to": [
+      1.149,
+      0.965
+     ]
+    }
+   ]
+  }
+ },
+ "meta": {
+  "mnav_ev": "(mcap + debt + pref - cash)/(btc_held*btc_px); mcap uses basic shares (10-Q/10-K cover anchor + 8-K ATM sales after anchor). Converts treated as debt only (no share dilution) to avoid double counting.",
+  "mnav_eq": "mcap/(btc_nav - debt - pref + cash); undefined when equity NAV <= 0",
+  "point_in_time": "each input used only after its SEC acceptance time and before the day's US close (20/21 UTC)",
+  "btc_px": "checkonchain hourly BTC price one hour before US close",
+  "entry_signal": "BTC (Bitstamp) daily low <= 1.05*CVDD(t-1); buy at MSTR close if first hourly price below threshold came before US close, else next trading day close",
+  "limits": [
+   "2 cycles only (2022, 2025-26 ongoing)",
+   "debt = XBRL LongTermDebt carrying value (2020-21 converts carried below face)",
+   "pref = quarterly liquidation preference from 10-Q/XBRL; intra-quarter preferred issuance/repurchase not tracked; FY2025 10-K pref not parsed (2026-02-19..2026-05-06 uses Q3 2025 value)",
+   "cash = XBRL cash & equivalents (includes USD reserve from Dec 2025)",
+   "shares exclude options/RSUs/convert shares",
+   "share count: 8-K ATM sales summed after each 10-Q anchor overshot the next anchor by up to ~1.5% (2026-Q3: 428.5M vs 422.4M), so shares/mNAV between anchors carry ~1-1.5% error",
+   "2022 EV mNAV includes the legacy software business value in EV but not in BTC NAV, so 2022 mNAV levels are not directly comparable to 2025-26"
+  ]
+ }
+}

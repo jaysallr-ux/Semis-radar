@@ -8,7 +8,7 @@ coc = json.load(open(os.path.join(B, "probe", "coc_onchainoriginals.json")))["Pr
 HR = {x[:13]: y for x, y in zip(coc["x"], coc["y"]) if y}
 MON = {m: i + 1 for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"])}
 def pdate(s):
-	m = re.match(r"([A-Z][a-z]+) (\d{1,2}), (\d{4})", s)
+	m = re.match(r"([A-Z][a-z]+) (\d{1,2}), ?(\d{4})", s)
 	return dt.date(int(m.group(3)), MON[m.group(1)], int(m.group(2))).isoformat() if m and m.group(1) in MON else None
 num = lambda s: int(s.replace(",", ""))
 SPLIT = "2024-08-08"
@@ -28,10 +28,10 @@ for f in filings:
 		mm = re.search(r"(?:holds?|held|purchased a total of)[^.|]{0,40}?(?:aggregate of )?(?:approximately )?([\d,]{4,}) bitcoins", t)
 		if mm:
 			got = num(mm.group(1))
-	if got:
+	if got and m["form"].startswith("8-K"):
 		ev["btc"].append({"acc": acc, "form": m["form"], "val": got})
 	if m["form"] in ("10-Q", "10-K"):
-		mm = re.search(r"As of ([A-Z][a-z]+ \d{1,2}, \d{4}), the registrant had ([\d,]+) and ([\d,]+) shares of class A common stock and class B common stock", t)
+		mm = re.search(r"As of ([A-Z][a-z]+ \d{1,2}, ?\d{4}) ?,? (?:the )?r ?egistrant had ([\d,]+) a ?nd ([\d,]+) shares of class A common stock and class B common stock", t)
 		if mm:
 			d0 = pdate(mm.group(1))
 			v = num(mm.group(2)) + num(mm.group(3))
@@ -39,8 +39,11 @@ for f in filings:
 				v *= 10
 			ev["shares_anchor"].append({"acc": acc, "asof": d0, "val": v, "src": m["form"]})
 		prefs = {}
-		for mm in re.finditer(r"([A-Za-z0-9.% ]{0,60}?Preferred Stock), \$ 0\.001 par value;[^;]{0,80}?shares issued and outstanding at ([A-Z][a-z]+ \d{1,2}, \d{4}); redemption value and liquidation preference of (\$|€) ([\d,]+)", t):
-			prefs[mm.group(1).strip()[-45:]] = (pdate(mm.group(2)), mm.group(3), num(mm.group(4)) * 1000)
+		for mm in re.finditer(r"liquidation preference of (\$|€) ([\d,]+) at ([A-Z][a-z]+),? (\d{1,2}), ?(\d{4})", t):
+			pre = t[max(0, mm.start() - 320):mm.start()]
+			ks = re.findall(r"(Strike|Strife|Stride|Stretch|Stream)", pre, re.I)
+			if ks:
+				prefs.setdefault(ks[-1].title(), (pdate(f"{mm.group(3)} {mm.group(4)}, {mm.group(5)}"), mm.group(1), num(mm.group(2)) * 1000))
 		if prefs:
 			ev["pref"].append({"acc": acc, "src": "10-Q/K balance sheet text", "series": prefs})
 	mm = re.search(r"Basic Shares Outstanding \(\d\)((?:\s+\d{1,3}(?:,\d{3})+)+)", t)
@@ -64,6 +67,14 @@ for f in filings:
 			if wend and wend < SPLIT:
 				sold *= 10
 			ev["atm"].append({"acc": acc, "window_end": wend, "val": sold})
+clean, rej = [], []
+for x in ev["btc"]:
+	if clean and x["val"] < 0.8 * clean[-1]["val"]:
+		rej.append(x)
+		continue
+	clean.append(x)
+ev["btc"] = clean
+ev["btc_rejected"] = rej
 def xbrl_series(tag, conv=1):
 	pts = CF[tag]["units"]["USD"]
 	byf = {}
@@ -128,6 +139,8 @@ for day in sorted(MSTR):
 		r["missing"].append("debt_not_yet_in_10Q")
 	if day >= "2025-01-31" and not pf:
 		r["missing"].append("pref_not_yet_in_10Q")
+	if pf and "2026-02-19" <= day < "2026-05-06":
+		r["flags"] = ["pref_stale_FY2025_10K_not_parsed"]
 	if not r["missing"] or r["missing"] in (["debt_not_yet_in_10Q"], ["pref_not_yet_in_10Q"]):
 		nav = r["btc_held"] * btc_px
 		mcap = r["mstr"] * sh
@@ -135,6 +148,7 @@ for day in sorted(MSTR):
 		eqnav = nav - r["debt"] - r["pref"] + r["cash"]
 		r.update({"btc_nav": nav, "mcap": mcap, "mnav_ev": evv / nav, "mnav_eq": mcap / eqnav if eqnav > 0 else None, "eq_nav_per_share": eqnav / sh})
 	rows.append(r)
+json.dump(rows, open(os.path.join(H, "mstr_mnav_daily.json"), "w"))
 json.dump({"events": ev, "debt": debt, "cash": cash, "pref": pref}, open(os.path.join(H, "mnav_events.json"), "w"), indent=1)
 with open(os.path.join(H, "mstr_mnav_daily.csv"), "w") as f:
 	cols = ["date", "mstr", "mstr_low", "btc_px", "btc_held", "shares", "shares_anchor", "debt", "pref", "cash", "mnav_ev", "mnav_eq", "eq_nav_per_share", "missing"]
