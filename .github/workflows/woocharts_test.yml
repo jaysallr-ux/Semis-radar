@@ -6,6 +6,7 @@ on:
       - woocharts-test
     paths:
       - "woocharts/fetch.py"
+      - "woocharts/probe_sources.py"
       - ".github/workflows/woocharts_test.yml"
 
 permissions:
@@ -26,10 +27,11 @@ jobs:
           python-version: "3.11"
       - run: pip install requests
       - run: python woocharts/fetch.py
+      - run: python woocharts/probe_sources.py
       - name: Commit result
         run: |
           git config user.name "woocharts-bot"
           git config user.email "woocharts-bot@users.noreply.github.com"
           git add woocharts/data
-          git commit -m "woocharts test fetch $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')" || exit 0
+          git commit -m "woocharts research fetch $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')" || exit 0
           git push origin HEAD:woocharts-test
