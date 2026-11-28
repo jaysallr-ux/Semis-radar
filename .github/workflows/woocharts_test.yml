@@ -9,6 +9,7 @@ on:
       - "woocharts/probe_sources.py"
       - "woocharts/probe_coc.py"
       - "woocharts/probe_exchanges.py"
+      - "woocharts/probe_equities.py"
       - ".github/workflows/woocharts_test.yml"
 
 permissions:
@@ -32,6 +33,7 @@ jobs:
       - run: python woocharts/probe_sources.py
       - run: python woocharts/probe_coc.py
       - run: python woocharts/probe_exchanges.py
+      - run: python woocharts/probe_equities.py
       - name: Commit result
         run: |
           git config user.name "woocharts-bot"
