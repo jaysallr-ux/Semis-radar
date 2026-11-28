@@ -47,8 +47,8 @@ td.neg{color:var(--bad);font-weight:600}
 </head>
 <body>
 <div class="band">
-<h1 id="title">CVDD×1.05에서 샀으면 그 뒤 최대 −3~−7% 더 빠짐</h1>
-<p class="lede">2015·2018·2020·2022년 4번 사이클 기준, CVDD×1.05 지정가에 체결된 뒤 시간봉 최저가까지 −3.4~−6.7%였음. 2011년은 −12.4%. 다만 시간봉은 거래소 꼬리를 다 못 잡아서 실제 청산 위험은 이것보다 큼.</p>
+<h1 id="title">CVDD×1.05 체결 후 거래소 장중 저가 기준 최대 −19%</h1>
+<p class="lede">전일 CVDD로 지정가를 걸고(룩어헤드 제거) Bitstamp·Coinbase·Binance 일봉 저가로 다시 돌린 결과. 2015·2018·2020·2022년 중 최악은 2020년 −19.1%, 버틸 수 있는 최대 레버리지는 약 5.1배. 1.10배부터는 5배가 2020년에 청산됨.</p>
 <div class="figs" id="figs"></div>
 <div class="ctl" role="group" aria-label="기간">
 <button data-r="all" aria-pressed="true">전체</button>
@@ -58,8 +58,14 @@ td.neg{color:var(--bad);font-weight:600}
 </div>
 <div class="fig"><div id="chart"></div></div>
 
-<h2 id="backtest">CVDD 배수별 최초 진입 후 최대 추가 하락</h2>
-<p class="sub">하락장(사이클 고점 이후)에서 시간봉 저가가 처음 배수×CVDD에 닿은 날 지정가로 체결됐다고 가정. 하락률은 그 체결가에서 이후 사이클 시간봉 최저가까지. 괄호는 최저가까지 걸린 일수.</p>
+<h2 id="stress">거래소 장중 저가 스트레스 (전일 CVDD 기준)</h2>
+<p class="sub">Bitstamp에서 배수×전일 CVDD 지정가 체결(갭하락이면 시가 체결) 후, 매일 세 거래소 중 가장 낮은 저가로 최대 추가 하락 계산. 오른쪽은 네 사이클 모두 안 털리는 최대 레버리지(격리, 유지증거금 0.5%, 수수료 0.05%, 펀딩 하루 0.03% 가정)와 청산된 사이클.</p>
+<div class="scroll"><table class="stack" id="tst"></table></div>
+<h2 id="etf">일일 재조정 레버리지 ETF (2018·2022)</h2>
+<p class="sub">청산은 없지만 매일 재조정 때문에 손실이 배수보다 커짐. 진입 = 종가가 처음 배수×전일 CVDD 이하인 날, 기간 = 현물이 진입가를 되찾은 날까지. 보수 연 1.85%, (배수−1)에 금리 연 5% 가정.</p>
+<div class="scroll"><table class="stack" id="tetf"></table></div>
+<h2 id="backtest">참고: 체크온체인 시간봉 기준 (당일 CVDD)</h2>
+<p class="sub">이전 연구 결과 보존용. 시간봉은 꼬리를 덜 잡고 당일 CVDD를 써서 위 표보다 낙관적임.</p>
 <div class="scroll"><table class="stack" id="tbt"></table></div>
 
 <h2 id="bottoms">역대 바닥에서 지표별 괴리</h2>
@@ -101,13 +107,20 @@ const ms=[1.3,1.2,1.1,1.05,1.0];
 let h='<thead><tr><th>사이클(바닥 연도)</th>'+ms.map(m=>'<th>×'+m.toFixed(2)+'</th>').join('')+'</tr></thead><tbody>';
 for(const t of cyc){h+='<tr><td>'+esc(lab(t))+'</td>'+ms.map(m=>{const x=R.limit.find(q=>q.cycle_top===t&&q.mult===m);if(!x||!x.triggered)return'<td>미체결</td>';return'<td class="'+(x.max_dd_hourly_pct<=-10?'neg':'')+'">'+x.max_dd_hourly_pct.toFixed(1)+'% ('+x.days_to_low+'일)</td>'}).join('')+'</tr>'}
 $('#tbt').innerHTML=h+'</tbody>';
+const ML=['1.0','1.05','1.1','1.15','1.2','1.3'];
+let st='<thead><tr><th>배수</th><th>2015</th><th>2018</th><th>2020</th><th>2022</th><th>최대 안전 레버리지</th><th>5배 청산</th><th>3배 청산</th></tr></thead><tbody>';
+for(const k of ML){const v=R.lev[k];const c=v.stress_dd_by_cycle;st+='<tr><td>×'+(+k).toFixed(2)+'</td>'+['2015','2018','2020','2022'].map(y=>'<td class="'+(c[y]<=-15?'neg':'')+'">'+c[y].toFixed(1)+'%</td>').join('')+'<td>'+v.min_safe_lev[2].toFixed(1)+'배</td><td>'+esc(v.liq['5'].join(', ')||'없음')+'</td><td>'+esc(v.liq['3'].join(', ')||'없음')+'</td></tr>'}
+$('#tst').innerHTML=st+'</tbody>';
+let et='<thead><tr><th>사이클·배수</th><th>진입일</th><th>현물 최대손실</th><th>2배 ETF</th><th>3배 ETF</th><th>현물 원금 회복 때 3배 ETF</th></tr></thead><tbody>';
+for(const e of R.etf){et+='<tr><td>'+esc(e.cycle_top.slice(0,4)==='2017'?'2018':'2022')+' ×'+e.mult.toFixed(2)+'</td><td>'+esc(e.entry_date)+'</td><td>'+e.x2.spot_worst_close_pct.toFixed(1)+'%</td><td class="neg">'+e.x2.worst_nav_loss_pct.toFixed(1)+'%</td><td class="neg">'+e.x3.worst_nav_loss_pct.toFixed(1)+'%</td><td>'+((e.x3.nav_at_window_end-1)*100).toFixed(1)+'%</td></tr>'}
+$('#tetf').innerHTML=et+'</tbody>';
 let o='<thead><tr><th>바닥일</th><th>종가</th><th>CVDD</th><th>가격/CVDD</th><th>시간봉저가/CVDD</th><th>밸런스드(CoC)</th><th>밸런스드(역산)</th><th>리얼라이즈드</th><th>델타</th></tr></thead><tbody>';
 for(const b of R.bottoms){o+='<tr><td>'+esc(b.bottom_date+(b.ongoing?' (현재까지)':''))+'</td><td>'+fmt(b.close)+'</td><td>'+fmt(b.cvdd)+'</td><td>'+x2(b.cvdd_ratio)+'</td><td>'+x2(b.cvdd_ratio_hourly_low)+'</td><td>'+x2(b.coc_balanced_ratio)+'</td><td>'+x2(b.balanced_ratio)+'</td><td>'+x2(b.realized_ratio)+'</td><td>'+x2(b.delta_ratio)+'</td></tr>'}
 $('#tbo').innerHTML=o+'</tbody>';
 const bv=R.bal;
 const notes=['데이터: 가격·CVDD·리얼라이즈드·델타는 woocharts.com 가격모델(Glassnode 기반, 일봉 UTC). 밸런스드(CoC)와 시간봉 가격은 체크온체인 Onchain Originals 차트. 유통량은 blockchain.info 블록별 총발행량의 UTC 일말 값(추정치 아님).',
 '역산 밸런스드(리얼라이즈드 − CVDD×600만÷유통량)는 '+bv.latest.date+' 기준 체크온체인과 '+bv.latest.diff_pct.toFixed(2)+'% 차이로 거의 같음. 근데 과거로 가면 벌어짐: 2020년 이후 중앙값 '+bv.since_2020.median_abs_pct.toFixed(1)+'%, 2015년 이후 중앙값 '+bv.since_2015.median_abs_pct.toFixed(1)+'%, 최대 '+bv.since_2015.max_abs_pct.toFixed(1)+'%. 그래서 차트와 백테스트의 밸런스드는 체크온체인 값을 씀.',
-'시간봉은 거래소 꼬리를 다 못 잡음. 2020년 3월 13일 체크온체인 시간봉 저가는 $4,519인데 당시 주요 현물거래소 장중 저점은 $3,800대였음. 레버리지 청산가는 이 표보다 훨씬 깊게 잡아야 함.',
+'거래소 일봉: Bitstamp(2011-08~), Coinbase(2015-07~), Binance BTCUSDT(2017-08~). 상장 전 기간은 결측. Coinbase 2017-04-15 저가 $0.06은 다른 거래소와 안 맞는 오류 틱이라 시가/종가 중 낮은 값으로 대체. 2011년 사이클은 Bitstamp 거래가 너무 적어서 거래소 분석에서 제외.','룩어헤드: 당일 CVDD 대신 전일·2일 전 CVDD로 바꿔도 하락률 차이는 대부분 0.1~0.3%p. CVDD가 하루에 거의 안 움직여서 이 편향은 실질적으로 작았음.','청산 판정은 현물 거래소 저가 기준이라 실제 선물 마크가격(여러 거래소 평균)보다 가혹함. 반대로 선물 체결가 꼬리(2020년 BitMEX 등)는 현물보다 깊었는데, BitMEX 데이터는 막혀서 못 넣음.',
 '2011~2013년 체크온체인 시간봉은 일봉을 채워 넣은 걸로 보임(2011년 바닥 시간봉 저가 = 종가). 2011년 행은 사실상 종가 기준.',
 '2025~ 사이클은 진행 중이라 바닥이 아님. 현재까지 최저 종가는 2026-06-30, 시간봉 최저는 2026-11-21 $55,699(CVDD×1.15 터치). ×1.05는 아직 미체결.',
 '표본이 사이클 5~6개뿐이라 확률이나 미래 적중률로 읽으면 안 됨.'];

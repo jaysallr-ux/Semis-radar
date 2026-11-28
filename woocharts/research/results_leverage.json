@@ -1,0 +1,8997 @@
+{
+ "meta": {
+  "entry": "limit at mult*CVDD(t-lag); fill if exchange daily low <= limit; fill=min(limit, open)",
+  "drawdown": "fill -> lowest daily low until next cycle top (ongoing: until now)",
+  "stress": "lows replaced by worst low across bitstamp/coinbase/binance each day, entry still on named exchange",
+  "leverage_model": "isolated linear long, taker fee 0.0005, maintenance margin 0.005, funding 0.0003/day of notional paid every day held (conservative, ignores negative funding), liquidation checked on daily low",
+  "caveats": [
+   "exchanges liquidate on mark/index price (multi-exchange average), so single-exchange spot lows are harsher than real liquidation triggers",
+   "derivative last-trade wicks (e.g. BitMEX 2020-03-13) can be deeper than spot; BitMEX data blocked, not included",
+   "bitstamp 2011 data is thin (few trades/day)",
+   "cvdd for day t is computed from day t close, so lag 0 uses information not available intraday"
+  ],
+  "summary_rule": "lag1, cycles 2015-2022, only exchanges listed before that cycle bottom"
+ },
+ "runs": [
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 168.01,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -9.29,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-14",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.21
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 168.01,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -9.29,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-14",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.21
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 167.89,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -9.23,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-14",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.28
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 167.89,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -9.23,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-14",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.28
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 167.72,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -9.14,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-14",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.37
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 167.72,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -9.14,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-14",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.37
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 176.42,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -13.61,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.09
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 176.42,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -13.61,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.09
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 176.29,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -13.55,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.13
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 176.29,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -13.55,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.13
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 176.11,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -13.46,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.17
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 176.11,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -13.46,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.17
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 184.82,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -17.54,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.55
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 184.82,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -17.54,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.55
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 184.68,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -17.48,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.57
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 184.68,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -17.48,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.57
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 184.49,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -17.4,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.6
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 184.49,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -17.4,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.6
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 193.22,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -21.12,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.64
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 193.22,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -21.12,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.64
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 193.07,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -21.07,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.65
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 193.07,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -21.07,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.65
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 192.88,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -20.99,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.67
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 192.88,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -20.99,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.67
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 201.62,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -24.41,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.03
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 201.62,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -24.41,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.03
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 201.47,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -24.36,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.03
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 201.47,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -24.36,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.03
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 201.27,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -24.28,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.05
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-14",
+    "fill": 201.27,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -24.28,
+    "days_to_low": 0,
+    "breakeven_date": "2015-01-15",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 4.05
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-13",
+    "fill": 218.26,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -30.17,
+    "days_to_low": 1,
+    "breakeven_date": "2015-01-21",
+    "days_underwater": 8,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 3.27
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-01-13",
+    "fill": 218.26,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -30.17,
+    "days_to_low": 1,
+    "breakeven_date": "2015-01-21",
+    "days_underwater": 8,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 3.27
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-13",
+    "fill": 218.04,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -30.1,
+    "days_to_low": 1,
+    "breakeven_date": "2015-01-21",
+    "days_underwater": 8,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 3.28
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-01-13",
+    "fill": 218.04,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -30.1,
+    "days_to_low": 1,
+    "breakeven_date": "2015-01-21",
+    "days_underwater": 8,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 3.28
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-13",
+    "fill": 218.03,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -30.1,
+    "days_to_low": 1,
+    "breakeven_date": "2015-01-21",
+    "days_underwater": 8,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 3.28
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-01-13",
+    "fill": 218.03,
+    "gap_open_fill": false,
+    "low_date": "2015-01-14",
+    "low": 152.4,
+    "max_dd_pct": -30.1,
+    "days_to_low": 1,
+    "breakeven_date": "2015-01-21",
+    "days_underwater": 8,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2015-01-14"
+    },
+    "max_safe_leverage": 3.28
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-08-25",
+    "fill": 198.12,
+    "gap_open_fill": false,
+    "low_date": "2015-08-25",
+    "low": 198.02,
+    "max_dd_pct": -0.05,
+    "days_to_low": 0,
+    "breakeven_date": "2015-08-25",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 166.9
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-08-18",
+    "fill": 205.6,
+    "gap_open_fill": false,
+    "low_date": "2015-08-25",
+    "low": 198.02,
+    "max_dd_pct": -3.69,
+    "days_to_low": 7,
+    "breakeven_date": "2015-08-25",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 22.59
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-08-18",
+    "fill": 205.61,
+    "gap_open_fill": false,
+    "low_date": "2015-08-25",
+    "low": 198.02,
+    "max_dd_pct": -3.69,
+    "days_to_low": 7,
+    "breakeven_date": "2015-08-25",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 22.57
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-08-18",
+    "fill": 205.59,
+    "gap_open_fill": false,
+    "low_date": "2015-08-25",
+    "low": 198.02,
+    "max_dd_pct": -3.68,
+    "days_to_low": 7,
+    "breakeven_date": "2015-08-25",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 22.61
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2015-08-18",
+    "fill": 222.73,
+    "gap_open_fill": false,
+    "low_date": "2015-08-25",
+    "low": 198.02,
+    "max_dd_pct": -11.09,
+    "days_to_low": 7,
+    "breakeven_date": "2015-08-25",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 8.48
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2015-08-18",
+    "fill": 222.74,
+    "gap_open_fill": false,
+    "low_date": "2015-08-25",
+    "low": 198.02,
+    "max_dd_pct": -11.1,
+    "days_to_low": 7,
+    "breakeven_date": "2015-08-25",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 8.47
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2015-08-18",
+    "fill": 222.72,
+    "gap_open_fill": false,
+    "low_date": "2015-08-25",
+    "low": 198.02,
+    "max_dd_pct": -11.09,
+    "days_to_low": 7,
+    "breakeven_date": "2015-08-25",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 8.48
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "bottom": "2015-01-14",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3256.02,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -4.11,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 20.5
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3256.02,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -4.11,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 20.5
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3255.3,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -4.09,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 20.59
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3255.3,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -4.09,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 20.59
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3247.15,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -3.85,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 21.66
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3247.15,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -3.85,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 21.66
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3418.06,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -8.65,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 11,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.6
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3418.06,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -8.65,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 11,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.6
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3418.06,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -8.65,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.64
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3418.06,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -8.65,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.64
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3409.51,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -8.42,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.9
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3409.51,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -8.42,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.9
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3580.83,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -12.81,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.37
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3580.83,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -12.81,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.37
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3571.86,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -12.59,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.49
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3571.86,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -12.59,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.49
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3559.2,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -12.28,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.67
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3559.2,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -12.28,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.67
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3532.29,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -11.61,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 23,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.87
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3532.29,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -11.61,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 23,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.87
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3531.1,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -11.58,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 23,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.89
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3531.1,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -11.58,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 23,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.89
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3530.0,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -11.55,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 23,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.91
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3530.0,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -11.55,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 23,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.91
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3684.63,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -15.26,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.11
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3684.63,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -15.26,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.11
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3683.48,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -15.24,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-19",
+    "days_underwater": 25,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.12
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3683.48,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -15.24,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-19",
+    "days_underwater": 25,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.12
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3682.73,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -15.22,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-19",
+    "days_underwater": 25,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.13
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3682.73,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -15.22,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-19",
+    "days_underwater": 25,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.13
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3991.68,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -21.78,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.38
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3991.68,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -21.78,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.38
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3990.43,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -21.76,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.38
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3990.43,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -21.76,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.38
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3989.63,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -21.74,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.38
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3989.63,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3122.28,
+    "max_dd_pct": -21.74,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.38
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3256.02,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -3.9,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 21.39
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3255.3,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -3.88,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 21.49
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3247.15,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -3.64,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 22.66
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3418.06,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -8.46,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 11,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 10.83
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3409.51,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -8.23,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 11,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 11.1
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3409.51,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -8.23,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 11.14
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3580.83,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -12.62,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.48
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3571.86,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -12.4,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.6
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3559.2,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -12.09,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.78
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3532.29,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -11.42,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 23,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.99
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3531.1,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -11.39,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 23,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 8.01
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3530.0,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -11.36,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 23,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 8.03
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3684.63,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -15.08,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.18
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3683.48,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -15.06,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.19
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3682.73,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -15.04,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.19
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3991.68,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -21.61,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.41
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3990.43,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -21.59,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.41
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3989.63,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3128.89,
+    "max_dd_pct": -21.57,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.42
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3256.02,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -3.06,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 26.05
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3255.3,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -3.04,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 26.2
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3247.15,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -2.8,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 27.97
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3418.82,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -7.68,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 11.86
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3418.06,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -7.66,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 11.89
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-07",
+    "fill": 3409.51,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -7.43,
+    "days_to_low": 8,
+    "breakeven_date": "2018-12-17",
+    "days_underwater": 10,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 12.22
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3580.83,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -11.86,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.93
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3571.86,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -11.64,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 8.07
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3559.2,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -11.32,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-18",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 8.28
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3743.59,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -15.69,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.09
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3734.22,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -15.48,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.17
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-12-06",
+    "fill": 3720.99,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -15.18,
+    "days_to_low": 9,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.28
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3685.87,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -14.37,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 25,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.47
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3684.63,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -14.34,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 25,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.49
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-25",
+    "fill": 3683.48,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -14.31,
+    "days_to_low": 20,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 25,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.5
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3991.68,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -20.93,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.54
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3990.43,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -20.9,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.55
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "bottom": "2018-12-15",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2018-11-24",
+    "fill": 3989.63,
+    "gap_open_fill": false,
+    "low_date": "2018-12-15",
+    "low": 3156.26,
+    "max_dd_pct": -20.89,
+    "days_to_low": 21,
+    "breakeven_date": "2018-12-20",
+    "days_underwater": 26,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2018-12-07"
+    },
+    "max_safe_leverage": 4.55
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4456.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -13.61,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.1
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4456.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -15.13,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.41
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4449.55,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -13.47,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.16
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4449.55,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -15.0,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.46
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4442.4,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -13.34,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.24
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4442.4,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -14.86,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.52
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4679.47,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -17.73,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.5
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4679.47,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -19.18,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.09
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4672.02,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -17.59,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.54
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4672.02,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -19.05,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.13
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4664.52,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -17.46,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.58
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4664.52,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -18.92,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.16
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4894.5,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -21.34,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.58
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4894.5,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -22.73,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.31
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4886.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -21.21,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.61
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4886.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -22.6,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.33
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4882.85,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -21.15,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.62
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4882.85,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -22.54,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.35
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5116.98,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -24.76,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.97
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5116.98,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -26.09,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.77
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5108.76,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -24.64,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.98
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5108.76,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -25.97,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.79
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5104.8,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -24.58,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.99
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5104.8,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -25.91,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.79
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5339.46,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -27.9,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.53
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5339.46,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -29.17,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.38
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5330.88,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -27.78,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.54
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5330.88,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -29.05,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.39
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5326.74,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -27.72,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.55
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5326.74,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -29.0,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.4
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5784.41,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -33.44,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 2.95
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5784.41,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -34.62,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-12"
+    },
+    "max_safe_leverage": 2.86
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5775.12,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -33.33,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 2.96
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5775.12,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -34.51,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-12"
+    },
+    "max_safe_leverage": 2.86
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5770.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3850.0,
+    "max_dd_pct": -33.28,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 2.97
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5770.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -34.46,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-12"
+    },
+    "max_safe_leverage": 2.87
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4456.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -13.43,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.19
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4449.55,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -13.29,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.26
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-13",
+    "fill": 4442.4,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -13.16,
+    "days_to_low": 0,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.33
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4672.02,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -17.42,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.58
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4664.52,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -17.29,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.62
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4660.9,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -17.23,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.64
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4894.5,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -21.18,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.62
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4886.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -21.05,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.65
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4882.85,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -20.99,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.66
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5116.98,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -24.6,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.99
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5108.76,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -24.48,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.01
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5104.8,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -24.42,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.02
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5339.46,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -27.75,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.55
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5330.88,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -27.63,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.56
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5326.74,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -27.57,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.57
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5784.41,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -33.3,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-12"
+    },
+    "max_safe_leverage": 2.97
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5775.12,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -33.2,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-12"
+    },
+    "max_safe_leverage": 2.98
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5770.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3858.0,
+    "max_dd_pct": -33.14,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 2.98
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4449.55,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -15.0,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.45
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4442.4,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -14.86,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.51
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4438.95,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -14.8,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.53
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4672.02,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -19.05,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.12
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4664.52,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -18.92,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.15
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4660.9,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -18.85,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.17
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4894.5,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -22.73,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.31
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4886.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -22.6,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.33
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 4882.85,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -22.54,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 4.35
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5116.98,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -26.09,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.77
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5108.76,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -25.97,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.79
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5104.8,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -25.91,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.79
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5339.46,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -29.17,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.38
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5330.88,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -29.05,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.39
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5326.74,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -29.0,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-13",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2020-03-13"
+    },
+    "max_safe_leverage": 3.4
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5784.41,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -34.62,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-12"
+    },
+    "max_safe_leverage": 2.86
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5775.12,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -34.51,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-12"
+    },
+    "max_safe_leverage": 2.86
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "bottom": "2020-03-12",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2020-03-12",
+    "fill": 5770.64,
+    "gap_open_fill": false,
+    "low_date": "2020-03-13",
+    "low": 3782.13,
+    "max_dd_pct": -34.46,
+    "days_to_low": 1,
+    "breakeven_date": "2020-03-19",
+    "days_underwater": 7,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": "2020-03-13",
+     "5": "2020-03-12"
+    },
+    "max_safe_leverage": 2.87
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15666.05,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -1.19,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 47.66
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15666.05,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -1.32,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 45.07
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15659.41,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -1.15,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 48.63
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15659.41,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -1.27,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 45.93
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15654.05,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -1.12,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 49.44
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15654.05,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -1.24,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 46.65
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16449.35,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -5.9,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.75
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16449.35,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -6.01,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.5
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16442.38,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -5.86,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.84
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16442.38,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -5.97,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.59
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16436.76,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -5.83,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.91
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16436.76,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -5.94,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.66
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17225.35,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -10.14,
+    "days_to_low": 13,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 30,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.07
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17225.35,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -10.25,
+    "days_to_low": 13,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 30,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 8.98
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17219.46,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -10.11,
+    "days_to_low": 13,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 30,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.09
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17219.46,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -10.22,
+    "days_to_low": 13,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 30,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.0
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17216.98,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -10.09,
+    "days_to_low": 13,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 30,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.1
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17216.98,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -10.2,
+    "days_to_low": 13,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 30,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.01
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 17646.96,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -12.29,
+    "days_to_low": 156,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 178,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.73
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 17646.96,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -12.39,
+    "days_to_low": 156,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 178,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.69
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 17637.24,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -12.24,
+    "days_to_low": 156,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 178,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.75
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 17637.24,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -12.34,
+    "days_to_low": 156,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 178,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.71
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17999.57,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -14.0,
+    "days_to_low": 13,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 65,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.72
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17999.57,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -14.11,
+    "days_to_low": 13,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 65,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.68
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18414.22,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -15.94,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-21"
+    },
+    "max_safe_leverage": 4.74
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18414.22,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -16.04,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 4.72
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18404.08,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -15.89,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-21"
+    },
+    "max_safe_leverage": 4.75
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18404.08,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -16.0,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 4.73
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18338.87,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -15.59,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-21"
+    },
+    "max_safe_leverage": 4.82
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18338.87,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -15.7,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 4.8
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19948.74,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -22.41,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-14",
+    "days_underwater": 210,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.63
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19948.74,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -22.5,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-14",
+    "days_underwater": 210,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.62
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19937.75,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -22.36,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-14",
+    "days_underwater": 210,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.64
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19937.75,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -22.46,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-14",
+    "days_underwater": 210,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.63
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19867.11,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15479.0,
+    "max_dd_pct": -22.09,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-13",
+    "days_underwater": 209,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.68
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19867.11,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -22.18,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-13",
+    "days_underwater": 209,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.66
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15666.05,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -1.32,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 45.07
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15659.41,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -1.27,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 45.93
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15654.05,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -1.24,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 46.65
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16449.35,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -6.01,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.5
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16442.38,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -5.97,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.59
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16436.76,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -5.94,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.66
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 17232.66,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -10.29,
+    "days_to_low": 12,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 34,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 8.97
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 17225.35,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -10.25,
+    "days_to_low": 12,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 29,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.0
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 17219.46,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -10.22,
+    "days_to_low": 12,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 29,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.03
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 17646.96,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -12.39,
+    "days_to_low": 156,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 178,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.69
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 17637.24,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -12.34,
+    "days_to_low": 156,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 178,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.71
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 17574.75,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -12.03,
+    "days_to_low": 156,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 178,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.81
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18414.22,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -16.04,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 4.72
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18404.08,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -16.0,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 4.73
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18338.87,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -15.7,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 4.8
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19948.74,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -22.5,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-14",
+    "days_underwater": 210,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.62
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19937.75,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -22.46,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-14",
+    "days_underwater": 210,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.63
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19867.11,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15460.0,
+    "max_dd_pct": -22.18,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-13",
+    "days_underwater": 209,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.66
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15666.05,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -1.21,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 47.24
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15659.41,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -1.17,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 48.18
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 15654.05,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -1.14,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-21",
+    "days_underwater": 12,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 48.98
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16449.35,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -5.92,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.71
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16442.38,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -5.88,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.8
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-09",
+    "fill": 16436.76,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -5.85,
+    "days_to_low": 12,
+    "breakeven_date": "2022-11-23",
+    "days_underwater": 14,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.87
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17225.35,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -10.16,
+    "days_to_low": 13,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 35,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.05
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17219.46,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -10.12,
+    "days_to_low": 13,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 30,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.08
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17216.98,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -10.11,
+    "days_to_low": 13,
+    "breakeven_date": "2022-12-08",
+    "days_underwater": 30,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 9.09
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 17646.96,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -12.3,
+    "days_to_low": 156,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 178,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.72
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 17637.24,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -12.25,
+    "days_to_low": 156,
+    "breakeven_date": "2022-12-13",
+    "days_underwater": 178,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 5.74
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-11-08",
+    "fill": 17999.57,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -14.02,
+    "days_to_low": 13,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 65,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.72
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18414.22,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -15.96,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 4.74
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18404.08,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -15.91,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 4.75
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 18338.87,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -15.61,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-12",
+    "days_underwater": 208,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-21"
+    },
+    "max_safe_leverage": 4.82
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19948.74,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -22.42,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-14",
+    "days_underwater": 210,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.63
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19937.75,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -22.38,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-14",
+    "days_underwater": 210,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.64
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "bottom": "2022-11-21",
+   "ongoing": false,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2022-06-18",
+    "fill": 19867.11,
+    "gap_open_fill": false,
+    "low_date": "2022-11-21",
+    "low": 15476.0,
+    "max_dd_pct": -22.1,
+    "days_to_low": 156,
+    "breakeven_date": "2023-01-13",
+    "days_underwater": 209,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": "2022-11-09"
+    },
+    "max_safe_leverage": 3.67
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.0,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.0,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.05,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.05,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.1,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.1,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56255.18,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -2.09,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 38.08
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56255.18,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -2.09,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 38.08
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56238.82,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -2.06,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 38.49
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56238.82,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -2.06,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 38.49
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56214.85,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -2.02,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 39.12
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56214.85,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -2.02,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 39.12
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58683.98,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -6.14,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.95
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58683.98,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -6.14,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 14.95
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58658.98,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -6.1,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.04
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58658.98,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -6.1,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.04
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58643.12,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -6.07,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.1
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58643.12,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -6.07,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.1
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60402.6,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -8.81,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.95
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60402.6,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -8.81,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.95
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60382.74,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -8.78,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.97
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60382.74,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -8.78,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.97
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60371.6,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -8.76,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.97
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "bitstamp+worst",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60371.6,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55081.31,
+    "max_dd_pct": -8.76,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.97
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.0,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.05,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.1,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56255.18,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55106.0,
+    "max_dd_pct": -2.04,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 38.72
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56238.82,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55106.0,
+    "max_dd_pct": -2.01,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 39.15
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56214.85,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55106.0,
+    "max_dd_pct": -1.97,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 39.8
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58683.98,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55106.0,
+    "max_dd_pct": -6.1,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.05
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58658.98,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55106.0,
+    "max_dd_pct": -6.06,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.14
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58643.12,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55106.0,
+    "max_dd_pct": -6.03,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.19
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60402.6,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55106.0,
+    "max_dd_pct": -8.77,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.97
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60382.74,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55106.0,
+    "max_dd_pct": -8.74,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.99
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "coinbase",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60371.6,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55106.0,
+    "max_dd_pct": -8.72,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.99
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.0,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.05,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 0,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 1,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.1,
+   "lag": 2,
+   "result": null
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56255.18,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55130.0,
+    "max_dd_pct": -2.0,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 39.37
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56238.82,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55130.0,
+    "max_dd_pct": -1.97,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 39.81
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.15,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-11-21",
+    "fill": 56214.85,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55130.0,
+    "max_dd_pct": -1.93,
+    "days_to_low": 0,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 0,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 40.48
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58683.98,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55130.0,
+    "max_dd_pct": -6.06,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.14
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58658.98,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55130.0,
+    "max_dd_pct": -6.02,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.23
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.2,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-11-20",
+    "fill": 58643.12,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55130.0,
+    "max_dd_pct": -5.99,
+    "days_to_low": 1,
+    "breakeven_date": "2026-11-21",
+    "days_underwater": 1,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 15.29
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 0,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60402.6,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55130.0,
+    "max_dd_pct": -8.73,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 6.99
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 1,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60382.74,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55130.0,
+    "max_dd_pct": -8.7,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.0
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "bottom": "2026-06-30",
+   "ongoing": true,
+   "exchange": "binance",
+   "mult": 1.3,
+   "lag": 2,
+   "result": {
+    "fill_date": "2026-06-05",
+    "fill": 60371.6,
+    "gap_open_fill": false,
+    "low_date": "2026-11-21",
+    "low": 55130.0,
+    "max_dd_pct": -8.68,
+    "days_to_low": 169,
+    "breakeven_date": "2026-11-22",
+    "days_underwater": 170,
+    "liquidated": {
+     "1": null,
+     "2": null,
+     "3": null,
+     "5": null
+    },
+    "max_safe_leverage": 7.01
+   }
+  }
+ ],
+ "etf": [
+  {
+   "cycle_top": "2013-12-04",
+   "mult": 1.0,
+   "triggered": false
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "mult": 1.05,
+   "triggered": true,
+   "entry_date": "2015-01-14",
+   "entry_close": 171.41,
+   "window_end": "2015-01-15",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.4615
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.6922
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "mult": 1.1,
+   "triggered": true,
+   "entry_date": "2015-01-14",
+   "entry_close": 171.41,
+   "window_end": "2015-01-15",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.4615
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.6922
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "mult": 1.15,
+   "triggered": true,
+   "entry_date": "2015-01-14",
+   "entry_close": 171.41,
+   "window_end": "2015-01-15",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.4615
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.6922
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "mult": 1.2,
+   "triggered": true,
+   "entry_date": "2015-01-14",
+   "entry_close": 171.41,
+   "window_end": "2015-01-15",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.4615
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.6922
+   }
+  },
+  {
+   "cycle_top": "2013-12-04",
+   "mult": 1.3,
+   "triggered": true,
+   "entry_date": "2015-01-14",
+   "entry_close": 171.41,
+   "window_end": "2015-01-15",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.4615
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2015-01-14",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.6922
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "mult": 1.0,
+   "triggered": true,
+   "entry_date": "2018-12-14",
+   "entry_close": 3195.75,
+   "window_end": "2018-12-17",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -1.03,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -0.51,
+    "naive_L_times_spot_pct": -1.01,
+    "nav_at_window_end": 1.1876
+   },
+   "3x": {
+    "worst_nav_loss_pct": -1.55,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -0.51,
+    "naive_L_times_spot_pct": -1.52,
+    "nav_at_window_end": 1.2809
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "mult": 1.05,
+   "triggered": true,
+   "entry_date": "2018-12-07",
+   "entry_close": 3380.68,
+   "window_end": "2018-12-17",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -12.26,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -5.95,
+    "naive_L_times_spot_pct": -11.9,
+    "nav_at_window_end": 1.0529
+   },
+   "3x": {
+    "worst_nav_loss_pct": -18.67,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -5.95,
+    "naive_L_times_spot_pct": -17.85,
+    "nav_at_window_end": 1.0582
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "mult": 1.1,
+   "triggered": true,
+   "entry_date": "2018-12-06",
+   "entry_close": 3437.26,
+   "window_end": "2018-12-17",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -15.16,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -7.5,
+    "naive_L_times_spot_pct": -15.0,
+    "nav_at_window_end": 1.018
+   },
+   "3x": {
+    "worst_nav_loss_pct": -22.71,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -7.5,
+    "naive_L_times_spot_pct": -22.49,
+    "nav_at_window_end": 1.0056
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "mult": 1.15,
+   "triggered": true,
+   "entry_date": "2018-12-05",
+   "entry_close": 3696.69,
+   "window_end": "2018-12-20",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -27.09,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -13.99,
+    "naive_L_times_spot_pct": -27.98,
+    "nav_at_window_end": 1.1735
+   },
+   "3x": {
+    "worst_nav_loss_pct": -39.01,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -13.99,
+    "naive_L_times_spot_pct": -41.97,
+    "nav_at_window_end": 1.2138
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "mult": 1.2,
+   "triggered": true,
+   "entry_date": "2018-12-05",
+   "entry_close": 3696.69,
+   "window_end": "2018-12-20",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -27.09,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -13.99,
+    "naive_L_times_spot_pct": -27.98,
+    "nav_at_window_end": 1.1735
+   },
+   "3x": {
+    "worst_nav_loss_pct": -39.01,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -13.99,
+    "naive_L_times_spot_pct": -41.97,
+    "nav_at_window_end": 1.2138
+   }
+  },
+  {
+   "cycle_top": "2017-12-16",
+   "mult": 1.3,
+   "triggered": true,
+   "entry_date": "2018-11-24",
+   "entry_close": 3785.65,
+   "window_end": "2018-12-20",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -32.76,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -16.01,
+    "naive_L_times_spot_pct": -32.02,
+    "nav_at_window_end": 1.0822
+   },
+   "3x": {
+    "worst_nav_loss_pct": -48.49,
+    "worst_day": "2018-12-15",
+    "spot_worst_close_pct": -16.01,
+    "naive_L_times_spot_pct": -48.03,
+    "nav_at_window_end": 1.025
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "mult": 1.0,
+   "triggered": false
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "mult": 1.05,
+   "triggered": false
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "mult": 1.1,
+   "triggered": true,
+   "entry_date": "2020-03-12",
+   "entry_close": 4841.67,
+   "window_end": "2020-03-13",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2020-03-12",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.3225
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2020-03-12",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.4836
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "mult": 1.15,
+   "triggered": true,
+   "entry_date": "2020-03-12",
+   "entry_close": 4841.67,
+   "window_end": "2020-03-13",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2020-03-12",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.3225
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2020-03-12",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.4836
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "mult": 1.2,
+   "triggered": true,
+   "entry_date": "2020-03-12",
+   "entry_close": 4841.67,
+   "window_end": "2020-03-13",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2020-03-12",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.3225
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2020-03-12",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.4836
+   }
+  },
+  {
+   "cycle_top": "2019-06-26",
+   "mult": 1.3,
+   "triggered": true,
+   "entry_date": "2020-03-12",
+   "entry_close": 4841.67,
+   "window_end": "2020-03-13",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2020-03-12",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.3225
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2020-03-12",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.4836
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "mult": 1.0,
+   "triggered": true,
+   "entry_date": "2022-11-21",
+   "entry_close": 15766.0,
+   "window_end": "2022-11-22",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.0545
+   },
+   "3x": {
+    "worst_nav_loss_pct": 0.0,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": 0.0,
+    "naive_L_times_spot_pct": 0.0,
+    "nav_at_window_end": 1.0817
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "mult": 1.05,
+   "triggered": true,
+   "entry_date": "2022-11-09",
+   "entry_close": 15877.0,
+   "window_end": "2022-11-22",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -2.95,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -0.7,
+    "naive_L_times_spot_pct": -1.4,
+    "nav_at_window_end": 1.0234
+   },
+   "3x": {
+    "worst_nav_loss_pct": -6.25,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -0.7,
+    "naive_L_times_spot_pct": -2.1,
+    "nav_at_window_end": 1.0141
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "mult": 1.1,
+   "triggered": true,
+   "entry_date": "2022-11-09",
+   "entry_close": 15877.0,
+   "window_end": "2022-11-22",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -2.95,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -0.7,
+    "naive_L_times_spot_pct": -1.4,
+    "nav_at_window_end": 1.0234
+   },
+   "3x": {
+    "worst_nav_loss_pct": -6.25,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -0.7,
+    "naive_L_times_spot_pct": -2.1,
+    "nav_at_window_end": 1.0141
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "mult": 1.15,
+   "triggered": true,
+   "entry_date": "2022-11-09",
+   "entry_close": 15877.0,
+   "window_end": "2022-11-22",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -2.95,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -0.7,
+    "naive_L_times_spot_pct": -1.4,
+    "nav_at_window_end": 1.0234
+   },
+   "3x": {
+    "worst_nav_loss_pct": -6.25,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -0.7,
+    "naive_L_times_spot_pct": -2.1,
+    "nav_at_window_end": 1.0141
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "mult": 1.2,
+   "triggered": true,
+   "entry_date": "2022-09-21",
+   "entry_close": 18466.0,
+   "window_end": "2023-01-12",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -32.78,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -14.62,
+    "naive_L_times_spot_pct": -29.24,
+    "nav_at_window_end": 0.9389
+   },
+   "3x": {
+    "worst_nav_loss_pct": -51.19,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -14.62,
+    "naive_L_times_spot_pct": -43.86,
+    "nav_at_window_end": 0.7878
+   }
+  },
+  {
+   "cycle_top": "2021-11-08",
+   "mult": 1.3,
+   "triggered": true,
+   "entry_date": "2022-06-18",
+   "entry_close": 18956.8,
+   "window_end": "2023-01-13",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -43.33,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -16.83,
+    "naive_L_times_spot_pct": -33.66,
+    "nav_at_window_end": 0.8819
+   },
+   "3x": {
+    "worst_nav_loss_pct": -67.76,
+    "worst_day": "2022-11-21",
+    "spot_worst_close_pct": -16.83,
+    "naive_L_times_spot_pct": -50.5,
+    "nav_at_window_end": 0.6094
+   }
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "mult": 1.0,
+   "triggered": false
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "mult": 1.05,
+   "triggered": false
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "mult": 1.1,
+   "triggered": false
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "mult": 1.15,
+   "triggered": false
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "mult": 1.2,
+   "triggered": false
+  },
+  {
+   "cycle_top": "2025-10-06",
+   "mult": 1.3,
+   "triggered": true,
+   "entry_date": "2026-06-25",
+   "entry_close": 59696.26,
+   "window_end": "2026-07-01",
+   "window_end_reason": "spot back to entry close",
+   "2x": {
+    "worst_nav_loss_pct": -4.07,
+    "worst_day": "2026-06-30",
+    "spot_worst_close_pct": -1.96,
+    "naive_L_times_spot_pct": -3.92,
+    "nav_at_window_end": 1.0062
+   },
+   "3x": {
+    "worst_nav_loss_pct": -6.21,
+    "worst_day": "2026-06-30",
+    "spot_worst_close_pct": -1.96,
+    "naive_L_times_spot_pct": -5.88,
+    "nav_at_window_end": 1.0067
+   }
+  }
+ ],
+ "data_cleaning": [
+  {
+   "exchange": "coinbase",
+   "date": "2017-04-15",
+   "raw_low": 0.06,
+   "other_lows": [
+    1165.0
+   ],
+   "replaced_with": 1173.13
+  }
+ ],
+ "skipped_cycles": {
+  "2011-06-08": "bitstamp 2011 data too thin (daily low 2.50 on bottom day vs Mt.Gox-era 2.05), excluded"
+ },
+ "etf_meta": "daily rebalanced, bitstamp UTC close-to-close every calendar day, expense 0.0185/yr + financing 0.05/yr on (L-1); entry at first close <= mult*CVDD(t-1)",
+ "summary_lag1": {
+  "1.0": {
+   "stress_dd_by_cycle": {
+    "2015": -9.23,
+    "2018": -4.09,
+    "2020": -15.0,
+    "2022": -1.27
+   },
+   "worst": [
+    "2020",
+    "bitstamp+worst",
+    -15.0
+   ],
+   "min_safe_lev": [
+    "2020",
+    "bitstamp+worst",
+    6.46
+   ],
+   "liq": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "5": []
+   }
+  },
+  "1.05": {
+   "stress_dd_by_cycle": {
+    "2015": -13.55,
+    "2018": -8.65,
+    "2020": -19.05,
+    "2022": -5.97
+   },
+   "worst": [
+    "2020",
+    "bitstamp+worst",
+    -19.05
+   ],
+   "min_safe_lev": [
+    "2020",
+    "bitstamp+worst",
+    5.13
+   ],
+   "liq": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "5": []
+   }
+  },
+  "1.1": {
+   "stress_dd_by_cycle": {
+    "2015": -17.48,
+    "2018": -12.59,
+    "2020": -22.6,
+    "2022": -10.22
+   },
+   "worst": [
+    "2020",
+    "bitstamp+worst",
+    -22.6
+   ],
+   "min_safe_lev": [
+    "2020",
+    "bitstamp+worst",
+    4.33
+   ],
+   "liq": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "5": [
+     "2020"
+    ]
+   }
+  },
+  "1.15": {
+   "stress_dd_by_cycle": {
+    "2015": -21.07,
+    "2018": -11.58,
+    "2020": -25.97,
+    "2022": -12.34
+   },
+   "worst": [
+    "2020",
+    "bitstamp+worst",
+    -25.97
+   ],
+   "min_safe_lev": [
+    "2020",
+    "bitstamp+worst",
+    3.79
+   ],
+   "liq": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "5": [
+     "2015",
+     "2020"
+    ]
+   }
+  },
+  "1.2": {
+   "stress_dd_by_cycle": {
+    "2015": -24.36,
+    "2018": -15.24,
+    "2020": -29.05,
+    "2022": -16.0
+   },
+   "worst": [
+    "2020",
+    "bitstamp+worst",
+    -29.05
+   ],
+   "min_safe_lev": [
+    "2020",
+    "bitstamp+worst",
+    3.39
+   ],
+   "liq": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "5": [
+     "2015",
+     "2020",
+     "2022"
+    ]
+   }
+  },
+  "1.3": {
+   "stress_dd_by_cycle": {
+    "2015": -30.1,
+    "2018": -21.76,
+    "2020": -34.51,
+    "2022": -22.46
+   },
+   "worst": [
+    "2020",
+    "bitstamp+worst",
+    -34.51
+   ],
+   "min_safe_lev": [
+    "2020",
+    "bitstamp+worst",
+    2.86
+   ],
+   "liq": {
+    "1": [],
+    "2": [],
+    "3": [
+     "2020"
+    ],
+    "5": [
+     "2015",
+     "2018",
+     "2020",
+     "2022"
+    ]
+   }
+  }
+ }
+}
