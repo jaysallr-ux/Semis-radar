@@ -7,6 +7,7 @@ on:
     paths:
       - "woocharts/fetch.py"
       - "woocharts/probe_sources.py"
+      - "woocharts/probe_coc.py"
       - ".github/workflows/woocharts_test.yml"
 
 permissions:
@@ -25,9 +26,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install requests
+      - run: pip install requests numpy
       - run: python woocharts/fetch.py
       - run: python woocharts/probe_sources.py
+      - run: python woocharts/probe_coc.py
       - name: Commit result
         run: |
           git config user.name "woocharts-bot"
